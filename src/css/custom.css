@@ -1,0 +1,108 @@
+/**
+ * ACT3 AI Marketing Site - Custom CSS
+ * Using Infima CSS variables for theming.
+ */
+
+/* Brand colors */
+:root {
+  --ifm-color-primary: #7c3aed;
+  --ifm-color-primary-dark: #6d28d9;
+  --ifm-color-primary-darker: #5b21b6;
+  --ifm-color-primary-darkest: #4c1d95;
+  --ifm-color-primary-light: #8b5cf6;
+  --ifm-color-primary-lighter: #a78bfa;
+  --ifm-color-primary-lightest: #c4b5fd;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  --act3-gradient-start: #7c3aed;
+  --act3-gradient-end: #2563eb;
+  --act3-gradient: linear-gradient(135deg, var(--act3-gradient-start), var(--act3-gradient-end));
+}
+
+[data-theme="dark"] {
+  --ifm-color-primary: #a78bfa;
+  --ifm-color-primary-dark: #8b5cf6;
+  --ifm-color-primary-darker: #7c3aed;
+  --ifm-color-primary-darkest: #6d28d9;
+  --ifm-color-primary-light: #c4b5fd;
+  --ifm-color-primary-lighter: #ddd6fe;
+  --ifm-color-primary-lightest: #ede9fe;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  --ifm-background-color: #0f0f1a;
+  --ifm-background-surface-color: #1a1a2e;
+}
+
+/* Hero section */
+.hero--primary {
+  background: var(--act3-gradient);
+  color: white;
+}
+
+.hero__title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.hero__subtitle {
+  font-size: 1.5rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+/* Feature cards */
+.featureCard {
+  border-radius: 12px;
+  padding: 2rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.featureCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Navbar */
+.navbar {
+  backdrop-filter: blur(8px);
+  background: rgba(15, 15, 26, 0.9);
+  border-bottom: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+[data-theme="light"] .navbar {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(124, 58, 237, 0.15);
+}
+
+/* CTA buttons */
+.button--primary {
+  background: var(--act3-gradient);
+  border: none;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.button--primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Section spacing */
+.section {
+  padding: 5rem 0;
+}
+
+/* Markdown content improvements */
+.markdown h2 {
+  margin-top: 3rem;
+}
+
+/* Footer */
+.footer {
+  background: #0a0a14;
+}

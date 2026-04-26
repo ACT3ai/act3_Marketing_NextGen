@@ -1,0 +1,210 @@
+/* Hero Section */
+.heroBanner {
+  padding: 6rem 0 5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a0533 0%, #0f1642 50%, #0d1f3c 100%);
+}
+
+.heroBanner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 60% 40%, rgba(124, 58, 237, 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse at 30% 70%, rgba(37, 99, 235, 0.25) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroBadge {
+  display: inline-block;
+  background: rgba(124, 58, 237, 0.3);
+  border: 1px solid rgba(167, 139, 250, 0.4);
+  color: #c4b5fd;
+  padding: 0.35rem 1rem;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.025em;
+}
+
+.heroTitle {
+  font-size: 3.75rem;
+  font-weight: 900;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+
+.heroTitleGradient {
+  background: linear-gradient(135deg, #a78bfa, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSubtitle {
+  font-size: 1.375rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.heroDescription {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.heroButtonSecondary {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: white !important;
+}
+
+.heroButtonSecondary:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: white !important;
+}
+
+/* Features Section */
+.featuresSection {
+  padding: 5rem 0;
+  background: var(--ifm-background-color);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.sectionHeader h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.sectionHeader p {
+  font-size: 1.2rem;
+  opacity: 0.75;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.featureCol {
+  margin-bottom: 1.5rem;
+}
+
+.featureCard {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 2rem;
+  height: 100%;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.featureCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(124, 58, 237, 0.15);
+  border-color: var(--ifm-color-primary);
+}
+
+.featureIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Workflow Section */
+.workflowSection {
+  padding: 5rem 0;
+  background: var(--ifm-background-surface-color);
+}
+
+.workflowSteps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.workflowStep {
+  position: relative;
+  padding: 1.5rem;
+}
+
+.workflowStepNumber {
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--ifm-color-primary), #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 6rem 0;
+  text-align: center;
+  background: linear-gradient(135deg, #1a0533 0%, #0d1f3c 100%);
+  color: white;
+}
+
+.ctaSection h2 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.ctaSection p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 550px;
+  margin: 0 auto 2.5rem;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .ctaSection h2 {
+    font-size: 2rem;
+  }
+
+  .sectionHeader h2 {
+    font-size: 2rem;
+  }
+}
