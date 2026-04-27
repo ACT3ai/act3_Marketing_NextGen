@@ -375,7 +375,7 @@ body {
 }
 
 /* ===== PRICING ===== */
-.pricing__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; align-items: stretch; }
+.pricing__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; align-items: stretch; max-width: 900px; margin-left: auto; margin-right: auto; }
 .tier {
   position: relative; background: var(--paper); border: 1px solid var(--line);
   border-radius: var(--radius-lg); padding: 28px 26px; display: flex; flex-direction: column;
@@ -400,8 +400,7 @@ body {
 .tier__feats li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--ink-2); }
 .tier__feats li svg { flex-shrink: 0; margin-top: 1px; }
 
-@media (max-width: 1024px) { .pricing__grid { grid-template-columns: 1fr 1fr; } .tier--featured { transform: none; } }
-@media (max-width: 600px)  { .pricing__grid { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .pricing__grid { grid-template-columns: 1fr; } .tier--featured { transform: none; } }
 
 /* ===== TESTIMONIALS ===== */
 .quotes { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
@@ -1102,7 +1101,6 @@ export default function Home(): JSX.Element {
 
     // ── Pricing ────────────────────────────────────────────────────────────────
     const TIERS = [
-      { name: "Free",       price: "$0",     per: "forever",    desc: "Explore the platform, no credit card required.", cta: "Start Free",     featured: false, feats: ["Up to 10 shots / month", "720p export", "Community access"] },
       { name: "Creator",    price: "$49",    per: "per month",  desc: "For individual creators and screenwriters.",      cta: "Choose Creator", featured: false, feats: ["Unlimited drafting", "1080p export", "Script import (PDF / FDX)", "All visual styles"] },
       { name: "Studio",     price: "$149",   per: "per month",  desc: "Full pipeline for indie films and series.",       cta: "Choose Studio",  featured: true,  feats: ["Long-form (up to 3 hours)", "4K &amp; ProRes export", "Story Arc engine", "Up to 5 collaborators", "Priority render queue"] },
       { name: "Enterprise", price: "Custom", per: "contact us", desc: "For studios, agencies, and teams.",               cta: "Contact Sales",  featured: false, feats: ["SSO &amp; role permissions", "Multi-org workspace", "Custom model routing", "Dedicated success engineer"] },
