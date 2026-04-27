@@ -749,62 +749,6 @@ const BODY_HTML = `
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="section testimonials">
-  <div class="wrap">
-    <div class="sec-head sec-head--center">
-      <div class="label">— What Creators Say</div>
-      <h2 class="serif">The Filmmakers <em style="color:var(--accent)">Building with ACT 3.</em></h2>
-    </div>
-    <div class="quotes">
-      <figure class="quote">
-        <div class="quote__mark" aria-hidden="true">"</div>
-        <blockquote class="quote__q">I wrote a feature in Final Draft, imported it, and watched my opening sequence cut together by lunch. It's the closest I've come to seeing what was in my head.</blockquote>
-        <figcaption class="quote__cap">
-          <div class="quote__avatar" aria-hidden="true"><span>MC</span></div>
-          <div>
-            <div class="quote__name">Maren Coetzee</div>
-            <div class="quote__role">Screenwriter — drama feature in development</div>
-          </div>
-        </figcaption>
-      </figure>
-      <figure class="quote">
-        <div class="quote__mark" aria-hidden="true">"</div>
-        <blockquote class="quote__q">We finished a 22-minute short on a budget that wouldn't have covered a single shoot day. Consistency held across 480 shots. It's not a clip generator. It's a studio.</blockquote>
-        <figcaption class="quote__cap">
-          <div class="quote__avatar" aria-hidden="true"><span>IR</span></div>
-          <div>
-            <div class="quote__name">Iván Reséndez</div>
-            <div class="quote__role">Indie filmmaker, Buenos Aires</div>
-          </div>
-        </figcaption>
-      </figure>
-      <figure class="quote">
-        <div class="quote__mark" aria-hidden="true">"</div>
-        <blockquote class="quote__q">Our agency went from one brand film a quarter to one a week — without sacrificing quality. The Brand Kit alone paid for the year.</blockquote>
-        <figcaption class="quote__cap">
-          <div class="quote__avatar" aria-hidden="true"><span>PB</span></div>
-          <div>
-            <div class="quote__name">Priya Bhattacharya</div>
-            <div class="quote__role">Creative Director, Northtype Studio</div>
-          </div>
-        </figcaption>
-      </figure>
-    </div>
-    <div class="logos">
-      <div class="logos__label">— Used by teams at</div>
-      <div class="logos__row">
-        <span class="logos__item">NORTHTYPE</span>
-        <span class="logos__item">OAKWOOD PICTURES</span>
-        <span class="logos__item">FALCON &amp; CO.</span>
-        <span class="logos__item">STUDIO 47</span>
-        <span class="logos__item">BRIGHT/ADJ</span>
-        <span class="logos__item">MERIDIAN</span>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FINAL CTA -->
 <section class="finalcta">
   <svg class="finalcta__pattern" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
@@ -857,7 +801,7 @@ const BODY_HTML = `
         </div>
         <div class="footer__col">
           <div class="footer__col-head">Legal</div>
-          <ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Cookie Policy</a></li></ul>
+          <ul><li><a href="https://legal.act3ai.com/docs/privacy-policy#welcome">Privacy Policy</a></li><li><a href="https://legal.act3ai.com/docs/terms-of-service/">Terms of Service</a></li><li><a href="#">Cookie Policy</a></li></ul>
         </div>
       </div>
     </div>
