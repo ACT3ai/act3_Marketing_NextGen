@@ -1005,7 +1005,6 @@ export default function Home(): JSX.Element {
       <div class="vrow__media">
         <div class="vrow__media-wrap">
           ${(row as any).mediaHtml || stripeHTML("16/10", row.tag, row.cap)}
-          <div class="vrow__media-tag">${String(idx + 1).padStart(2, "0")} / 14</div>
         </div>
       </div>
       <div class="vrow__copy">
