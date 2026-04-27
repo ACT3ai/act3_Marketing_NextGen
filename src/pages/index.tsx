@@ -510,7 +510,7 @@ const BODY_HTML = `
 
     <div class="nav__actions">
       <a class="nav__link nav__link--quiet" href="#login">Log In</a>
-      <a class="btn btn--accent btn--sm" href="#start">Start Free</a>
+      <a class="btn btn--accent btn--sm" href="#start">Get Started</a>
     </div>
   </div>
 </header>
@@ -533,7 +533,7 @@ const BODY_HTML = `
         Create 5-minute to 3-hour videos with the lowest labor in the industry. No prompt engineering. No tool switching. Write your story — ACT 3 handles everything else.
       </p>
       <div class="hero__ctas">
-        <a class="btn btn--accent btn--lg" href="#start">Start Creating Your Film <span class="arrow">→</span></a>
+        <a class="btn btn--accent btn--lg" href="#start">Get Started <span class="arrow">→</span></a>
         <a class="btn btn--ghost btn--lg" href="#demo">
           <span class="hero__playdot" aria-hidden="true">
             <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z" fill="currentColor"/></svg>
