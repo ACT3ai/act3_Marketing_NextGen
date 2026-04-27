@@ -929,7 +929,8 @@ export default function Home(): JSX.Element {
         h: "Define Your World Once. Every Shot Follows.",
         body: "Build your set — an office, a city street, a spaceship — once. ACT 3 applies it consistently across every scene and shot. No redescribing the environment per prompt. No inconsistent backgrounds.",
         bullets: ["2D and 3D environments", "Procedural city and building generation", "Set persists across all shots in a scene or episode"],
-        tag: "02.02", cap: "SET BUILDER — INT. APARTMENT" },
+        tag: "02.02", cap: "SET BUILDER — INT. APARTMENT",
+        mediaHtml: '<img src="/img/Sets_Marketing_ACT3.gif" alt="ACT3 Set Builder — Define Your World Once" style="width:100%;border-radius:var(--radius-lg);border:1px solid var(--line);display:block;" />' },
       { id: "screenwriters", side: "L", label: "For Screenwriters",
         h: "Write It. See It. Ship It.",
         body: "ACT 3 is the screenwriter's dream realized. Import your script, watch it visualized shot by shot, iterate in real time. You wrote the story — now see it as a film before a single dollar of production budget is spent.",
@@ -1003,7 +1004,7 @@ export default function Home(): JSX.Element {
     <div class="wrap vrow__grid">
       <div class="vrow__media">
         <div class="vrow__media-wrap">
-          ${stripeHTML("16/10", row.tag, row.cap)}
+          ${(row as any).mediaHtml || stripeHTML("16/10", row.tag, row.cap)}
           <div class="vrow__media-tag">${String(idx + 1).padStart(2, "0")} / 14</div>
         </div>
       </div>

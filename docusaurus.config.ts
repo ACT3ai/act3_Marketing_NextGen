@@ -30,16 +30,20 @@ const config: Config = {
     locales: ["en"],
   },
 
+  staticDirectories: ["site/static"],
+
   presets: [
     [
       "classic",
       {
         docs: {
+          path: "site/docs",
           sidebarPath: "./sidebars.ts",
           editUrl: undefined,
           routeBasePath: "docs",
         },
         blog: {
+          path: "site/blog",
           showReadingTime: true,
           editUrl: undefined,
           blogTitle: "ACT3 AI Blog",
@@ -47,8 +51,11 @@ const config: Config = {
           postsPerPage: 10,
           onInlineAuthors: "ignore",
         },
+        pages: {
+          path: "site/pages",
+        },
         theme: {
-          customCss: "./src/css/custom.css",
+          customCss: "./site/css/custom.css",
         },
         sitemap: {
           changefreq: "weekly",
