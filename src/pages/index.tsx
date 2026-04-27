@@ -1,235 +1,1203 @@
-import type { ReactNode } from "react";
-import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Layout from "@theme/Layout";
-import Heading from "@theme/Heading";
-import clsx from "clsx";
+import React, { useEffect } from "react";
+import Head from "@docusaurus/Head";
 
-import styles from "./index.module.css";
-
-type FeatureItem = {
-  title: string;
-  icon: string;
-  description: ReactNode;
-};
-
-const features: FeatureItem[] = [
-  {
-    title: "Script to Screen",
-    icon: "🎬",
-    description: (
-      <>
-        Transform your screenplay into fully produced video. ACT3 AI breaks your
-        script into beats, scenes, and shots — then generates cinematic footage
-        automatically.
-      </>
-    ),
-  },
-  {
-    title: "AI Cinematography",
-    icon: "🎥",
-    description: (
-      <>
-        Professional camera angles, lighting setups, and shot compositions
-        powered by AI. Every shot is crafted with cinematic intent — not random
-        generation.
-      </>
-    ),
-  },
-  {
-    title: "Veo 3 & Runway Integration",
-    icon: "⚡",
-    description: (
-      <>
-        Harness the best AI video models — Google Veo 3, Runway, FLUX, ComfyUI,
-        Hunyuan, and Wan 2.1 — all from a single unified platform.
-      </>
-    ),
-  },
-  {
-    title: "Custom Actors & Characters",
-    icon: "🎭",
-    description: (
-      <>
-        Create consistent characters, manage actors across scenes, add lip-sync,
-        motion capture, and TTS — full character pipeline in one place.
-      </>
-    ),
-  },
-  {
-    title: "Built-in Video Editor",
-    icon: "✂️",
-    description: (
-      <>
-        Edit your generated footage in our timeline editor. Cut, arrange, add
-        audio, and export to YouTube, Instagram, TikTok, and more — all without
-        leaving ACT3 AI.
-      </>
-    ),
-  },
-  {
-    title: "AI Showrunner",
-    icon: "🤖",
-    description: (
-      <>
-        Your AI co-creator that maintains story continuity, tracks character
-        arcs, and keeps your production consistent from first act to final frame.
-      </>
-    ),
-  },
-];
-
-function Feature({ title, icon, description }: FeatureItem) {
-  return (
-    <div className={clsx("col col--4", styles.featureCol)}>
-      <div className={styles.featureCard}>
-        <div className={styles.featureIcon}>{icon}</div>
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
-    </div>
-  );
+// ── Extracted CSS from the standalone marketing page ──────────────────────────
+const PAGE_CSS = `
+/* ===== Design Tokens ===== */
+:root {
+  --bg: #faf8f3;
+  --bg-2: #f3efe5;
+  --bg-3: #ebe5d6;
+  --ink: #1a1714;
+  --ink-2: #4a4540;
+  --ink-3: #837c72;
+  --line: #e2dccb;
+  --line-2: #d4ccb6;
+  --accent: #c4612b;
+  --accent-ink: #ffffff;
+  --accent-soft: #f3e2d2;
+  --paper: #ffffff;
+  --maxw: 1200px;
+  --pad-x: clamp(20px, 4vw, 56px);
+  --section-y: clamp(80px, 9vw, 140px);
+  --radius: 8px;
+  --radius-lg: 14px;
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 }
 
-function HeroSection() {
-  const { siteConfig } = useDocusaurusContext();
-  return (
-    <header className={clsx("hero hero--primary", styles.heroBanner)}>
-      <div className="container">
-        <div className={styles.heroContent}>
-          <div className={styles.heroBadge}>Now with Google Veo 3</div>
-          <Heading as="h1" className={styles.heroTitle}>
-            Make Movies with AI.
-            <br />
-            <span className={styles.heroTitleGradient}>At Cinematic Scale.</span>
-          </Heading>
-          <p className={styles.heroSubtitle}>{siteConfig.tagline}</p>
-          <p className={styles.heroDescription}>
-            ACT3 AI turns your script into production-ready video. Beats, scenes,
-            shots, actors, lighting, sets — all AI-generated. The world's first
-            AI Showrunner platform.
-          </p>
-          <div className={styles.heroButtons}>
-            <Link
-              className="button button--primary button--lg"
-              to="https://act3ai.com"
-            >
-              Start Creating Free
-            </Link>
-            <Link
-              className={clsx("button button--lg", styles.heroButtonSecondary)}
-              to="/docs/intro"
-            >
-              See How It Works
-            </Link>
+/* ===== Reset ===== */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+h1, h2, h3, h4 { margin: 0; }
+p { margin: 0; }
+ul { margin: 0; padding: 0; }
+figure { margin: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--accent); color: var(--accent-ink); }
+
+/* ===== Typography helpers ===== */
+.serif { font-family: var(--font-display); font-feature-settings: "ss01","ss02"; letter-spacing: -0.015em; }
+.mono  { font-family: var(--font-mono); }
+.label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+.label--accent { color: var(--accent); }
+
+/* ===== Layout ===== */
+.wrap { max-width: var(--maxw); margin: 0 auto; padding-left: var(--pad-x); padding-right: var(--pad-x); }
+.section { padding-top: var(--section-y); padding-bottom: var(--section-y); position: relative; }
+.section--alt { background: var(--bg-2); }
+.section--paper { background: var(--paper); }
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14.5px;
+  letter-spacing: -0.005em;
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease, color .15s ease, box-shadow .2s ease;
+  white-space: nowrap;
+}
+.btn--primary { background: var(--ink); color: var(--bg); box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 8px 24px -12px rgba(0,0,0,.4); }
+.btn--primary:hover { background: var(--accent); color: var(--accent-ink); transform: translateY(-1px); }
+.btn--accent { background: var(--accent); color: var(--accent-ink); box-shadow: 0 8px 24px -12px var(--accent); }
+.btn--accent:hover { transform: translateY(-1px); filter: brightness(1.05); }
+.btn--ghost { background: transparent; color: var(--ink); border-color: var(--line-2); }
+.btn--ghost:hover { border-color: var(--ink); background: var(--bg-2); }
+.btn--sm { padding: 9px 16px; font-size: 13.5px; }
+.btn--lg { padding: 16px 28px; font-size: 15.5px; }
+.btn .arrow { display: inline-block; transition: transform .2s ease; }
+.btn:hover .arrow { transform: translateX(3px); }
+
+/* ===== Section headers ===== */
+.sec-head { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; max-width: 720px; margin-bottom: 56px; }
+.sec-head--center { align-items: center; text-align: center; margin-left: auto; margin-right: auto; }
+.sec-head h2 { font-size: clamp(36px, 4.6vw, 60px); font-weight: 400; letter-spacing: -0.02em; line-height: 1.05; }
+.sec-head p { color: var(--ink-2); font-size: 18px; max-width: 56ch; }
+
+/* ===== Logo ===== */
+.logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
+.logo__mark { color: var(--accent); display: inline-flex; }
+.logo__word { font-family: var(--font-display); font-size: 19px; letter-spacing: -0.01em; font-weight: 500; line-height: 1; }
+.logo__word-num { color: var(--accent); font-style: italic; margin-left: 2px; }
+
+/* ===== Stripe placeholder ===== */
+.stripes {
+  position: relative; width: 100%; border-radius: var(--radius-lg);
+  background: var(--bg-3); color: var(--ink-3); overflow: hidden;
+  border: 1px solid var(--line-2);
+}
+.stripes__bg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .8; }
+.stripes__frame { position: absolute; inset: 16px; border: 1px dashed var(--line-2); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+.stripes__corners { position: absolute; inset: -1px; pointer-events: none; }
+.stripes__corners span { position: absolute; width: 14px; height: 14px; border: 1.5px solid var(--ink); }
+.stripes__corners span:nth-child(1) { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+.stripes__corners span:nth-child(2) { top: -1px; right: -1px; border-left: none; border-bottom: none; }
+.stripes__corners span:nth-child(3) { bottom: -1px; left: -1px; border-right: none; border-top: none; }
+.stripes__corners span:nth-child(4) { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+.stripes__play {
+  width: 64px; height: 64px; border-radius: 999px; background: var(--paper);
+  border: 1px solid var(--line-2); color: var(--accent); display: inline-flex; align-items: center; justify-content: center;
+  cursor: pointer; box-shadow: 0 12px 30px -14px rgba(0,0,0,.25);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.stripes__play svg { transform: translateX(2px); }
+.stripes:hover .stripes__play { transform: scale(1.06); background: var(--accent); color: var(--paper); }
+.stripes__meta { position: absolute; left: 14px; bottom: 12px; right: 14px; display: flex; gap: 10px; align-items: center; justify-content: space-between; font-size: 11px; color: var(--ink-2); }
+.stripes__tag { font-family: var(--font-mono); background: var(--paper); border: 1px solid var(--line); padding: 3px 7px; border-radius: 4px; }
+.stripes__caption { font-family: var(--font-mono); letter-spacing: .04em; }
+
+/* ===== Proof bullets ===== */
+.proof-list { list-style: none; padding: 0; margin: 28px 0 0; }
+.proof { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 15.5px; line-height: 1.5; }
+.proof:last-child { border-bottom: 1px solid var(--line); }
+.proof__dot { color: var(--accent); margin-top: 7px; flex-shrink: 0; }
+
+/* ===== NAV ===== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  backdrop-filter: blur(0px);
+  transition: background .25s ease, border-color .25s ease, backdrop-filter .25s ease;
+  background: transparent; border-bottom: 1px solid transparent;
+}
+.nav--solid {
+  background: color-mix(in oklab, var(--bg) 88%, transparent);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+}
+.nav__inner {
+  max-width: var(--maxw); margin: 0 auto; padding: 18px var(--pad-x);
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; position: relative;
+}
+.nav__links { display: flex; gap: 8px; justify-self: center; }
+.nav__link {
+  background: transparent; border: 0; padding: 8px 14px;
+  font-family: var(--font-body); font-size: 14px; font-weight: 500;
+  color: var(--ink-2); cursor: pointer; text-decoration: none;
+  border-radius: 6px; display: inline-flex; align-items: center;
+  transition: color .15s ease, background .15s ease;
+}
+.nav__link:hover, .nav__link.is-open { color: var(--ink); background: var(--bg-2); }
+.nav__link--quiet { color: var(--ink-2); }
+.nav__actions { display: flex; gap: 12px; align-items: center; justify-self: end; }
+.nav__dropdown {
+  position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+  margin-top: 6px; background: var(--paper); border: 1px solid var(--line);
+  border-radius: 14px; padding: 14px; box-shadow: 0 30px 60px -30px rgba(0,0,0,.18);
+  min-width: 560px; display: none;
+}
+.nav__dropdown.is-open { display: block; }
+.nav__dropdown-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.nav__dropdown-item { padding: 12px 14px; border-radius: 10px; text-decoration: none; color: var(--ink); display: block; transition: background .15s ease; }
+.nav__dropdown-item:hover { background: var(--bg-2); }
+.nav__dropdown-name { font-family: var(--font-display); font-size: 17px; }
+.nav__dropdown-desc { font-size: 13px; color: var(--ink-3); margin-top: 2px; }
+.nav__chevron { display: inline-flex; transition: transform .2s ease; margin-left: 4px; }
+.nav__link.is-open .nav__chevron { transform: rotate(180deg); }
+
+@media (max-width: 820px) {
+  .nav__links { display: none; }
+  .nav__inner { grid-template-columns: 1fr auto; }
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative; min-height: 100vh; display: flex; align-items: center;
+  padding: 120px 0 64px; overflow: hidden;
+}
+.hero__bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.hero__grain {
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(1200px 600px at 80% -10%, color-mix(in oklab, var(--accent) 14%, transparent), transparent 60%),
+    radial-gradient(900px 500px at 0% 100%, color-mix(in oklab, var(--accent) 9%, transparent), transparent 60%);
+}
+.hero__glow { position: absolute; border-radius: 999px; filter: blur(80px); }
+.hero__glow--a { width: 380px; height: 380px; background: var(--accent); top: -120px; right: -100px; opacity: .12; }
+.hero__glow--b { width: 500px; height: 500px; background: var(--accent); bottom: -200px; left: -180px; opacity: .08; }
+.hero__inner {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.05fr);
+  gap: clamp(32px, 5vw, 80px); align-items: center;
+}
+.hero__copy { max-width: 620px; }
+.hero__h { font-family: var(--font-display); font-size: clamp(48px, 6.4vw, 92px); font-weight: 400; letter-spacing: -0.02em; line-height: 1.05; margin-top: 18px; }
+.hero__em { font-style: italic; color: var(--accent); }
+.hero__sub { margin-top: 22px; font-size: 18.5px; line-height: 1.55; color: var(--ink-2); max-width: 56ch; }
+.hero__ctas { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+.hero__playdot {
+  width: 22px; height: 22px; border-radius: 999px; background: var(--accent);
+  color: white; display: inline-flex; align-items: center; justify-content: center;
+}
+.hero__playdot svg { transform: translateX(1px); }
+.hero__proof { margin-top: 28px; font-size: 13.5px; color: var(--ink-3); letter-spacing: .01em; }
+
+.hero__strip { position: relative; }
+.strip__row { display: grid; grid-template-columns: 1.1fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; transform: rotate(-2deg); }
+.strip__cell:nth-child(1) { transform: translateY(-14px); }
+.strip__cell:nth-child(4) { transform: translateY(14px); }
+.strip__caption {
+  margin-top: 28px; display: flex; gap: 10px; align-items: center; justify-content: center;
+  flex-wrap: wrap; font-size: 11.5px; color: var(--ink-3); font-family: var(--font-mono);
+  padding: 10px 14px; background: var(--paper); border: 1px solid var(--line);
+  border-radius: 999px; width: fit-content; margin-left: auto; margin-right: auto;
+}
+.strip__sep { color: var(--accent); }
+
+.hero__scroll {
+  position: absolute; left: 50%; transform: translateX(-50%); bottom: 28px;
+  display: inline-flex; align-items: center; gap: 8px; color: var(--ink-3);
+  font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  text-decoration: none; font-family: var(--font-mono);
+}
+.hero__chev { display: inline-flex; animation: bounce 2.2s ease-in-out infinite; }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+
+@media (max-width: 920px) {
+  .hero__inner { grid-template-columns: 1fr; }
+  .hero__strip { display: none; }
+}
+
+/* ===== STATS ===== */
+.stats { padding: clamp(60px,7vw,110px) 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.stats__grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; }
+.stat { padding: 12px 36px; border-left: 1px solid var(--line-2); }
+.stat:first-child { border-left: 0; padding-left: 0; }
+.stat__num {
+  font-family: var(--font-display); font-size: clamp(46px,5.4vw,76px); font-weight: 400;
+  letter-spacing: -0.03em; opacity: 0; transform: translateY(8px);
+  transition: opacity .9s ease, transform .9s ease; line-height: 1;
+}
+.stat__num.is-in { opacity: 1; transform: none; }
+.stat__dim { color: var(--ink-3); font-style: italic; padding: 0 4px; }
+.stat__unit { font-size: 0.4em; font-style: italic; color: var(--ink-2); margin-left: 6px; letter-spacing: -0.01em; }
+.stat__label { margin-top: 14px; color: var(--ink-2); font-size: 15px; max-width: 28ch; }
+
+@media (max-width: 820px) {
+  .stats__grid { grid-template-columns: 1fr; gap: 32px; }
+  .stat { border-left: 0; padding-left: 0; border-top: 1px solid var(--line-2); padding-top: 24px; }
+  .stat:first-child { border-top: 0; padding-top: 0; }
+}
+
+/* ===== HOW IT WORKS ===== */
+.how__grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; }
+.how__step { padding: 36px 32px 36px 0; position: relative; }
+.how__step + .how__step { padding-left: 40px; border-left: 1px solid var(--line); }
+.how__num { font-family: var(--font-display); font-size: 90px; color: var(--accent); opacity: .25; line-height: 1; font-style: italic; font-weight: 300; }
+.how__t { font-family: var(--font-display); font-size: 28px; font-weight: 400; margin-top: 18px; letter-spacing: -0.02em; }
+.how__d { margin-top: 14px; color: var(--ink-2); font-size: 16px; max-width: 38ch; }
+
+@media (max-width: 820px) {
+  .how__grid { grid-template-columns: 1fr; }
+  .how__step + .how__step { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); padding-top: 28px; }
+}
+
+/* ===== VALUE ROWS ===== */
+.vrow { padding: clamp(72px,8vw,120px) 0; }
+.vrow__grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(36px,5vw,80px); align-items: center; }
+.vrow--flip .vrow__grid { grid-template-columns: 1fr 1.4fr; }
+.vrow--flip .vrow__media { order: 2; }
+.vrow--flip .vrow__copy { order: 1; }
+.vrow__media-wrap { position: relative; }
+.vrow__media-tag {
+  position: absolute; top: -14px; left: 14px; background: var(--paper);
+  border: 1px solid var(--line); padding: 4px 10px; border-radius: 999px;
+  font-size: 11px; color: var(--ink-3); font-family: var(--font-mono); white-space: nowrap;
+}
+.vrow__h { font-family: var(--font-display); font-size: clamp(28px,3.6vw,46px); font-weight: 400; letter-spacing: -0.02em; margin-top: 18px; line-height: 1.05; }
+.vrow__p { margin-top: 18px; color: var(--ink-2); font-size: 16.5px; max-width: 52ch; }
+
+@media (max-width: 900px) {
+  .vrow__grid, .vrow--flip .vrow__grid { grid-template-columns: 1fr; }
+  .vrow--flip .vrow__media, .vrow--flip .vrow__copy { order: initial; }
+}
+
+/* ===== VISUAL STYLES ===== */
+.styles__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+.style__row { display: flex; align-items: baseline; justify-content: space-between; margin-top: 14px; gap: 12px; }
+.style__name { font-family: var(--font-display); font-size: 22px; font-weight: 400; }
+.style__note { font-family: var(--font-mono); font-size: 11px; color: var(--ink-3); letter-spacing: .06em; text-transform: uppercase; }
+
+@media (max-width: 900px) { .styles__grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .styles__grid { grid-template-columns: 1fr; } }
+
+/* ===== CREW ===== */
+.crew__row { display: grid; grid-template-columns: repeat(5,1fr); gap: 18px; }
+.crew__card {
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg);
+  padding: 28px 22px; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.crew__card:hover { transform: translateY(-3px); box-shadow: 0 20px 40px -28px rgba(0,0,0,.18); border-color: var(--line-2); }
+.crew__badge {
+  width: 56px; height: 56px; border-radius: 999px; background: var(--bg-2); color: var(--accent);
+  display: inline-flex; align-items: center; justify-content: center; position: relative;
+  font-family: var(--font-display); font-size: 22px; font-style: italic;
+}
+.crew__ring {
+  position: absolute; inset: -6px; width: calc(100% + 12px); height: calc(100% + 12px);
+  color: var(--accent); opacity: .6; animation: spin 18s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.crew__role { font-family: var(--font-display); font-size: 21px; font-weight: 400; margin-top: 22px; letter-spacing: -0.02em; }
+.crew__desc { color: var(--ink-2); margin-top: 10px; font-size: 14.5px; line-height: 1.5; }
+
+@media (max-width: 1100px) { .crew__row { grid-template-columns: repeat(3,1fr); } }
+@media (max-width: 700px)  { .crew__row { grid-template-columns: 1fr 1fr; } }
+
+/* ===== THE MATH ===== */
+.math__row {
+  display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  gap: 0; align-items: stretch; background: var(--paper);
+  border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 8px;
+}
+.math__block { padding: 28px 24px; text-align: center; border-radius: 10px; }
+.math__block.is-accent { background: var(--accent); color: var(--accent-ink); }
+.math__block.is-accent .math__d { color: color-mix(in oklab, var(--accent-ink) 80%, transparent); }
+.math__num { font-family: var(--font-display); font-size: clamp(40px,4.4vw,64px); line-height: 1; letter-spacing: -0.03em; font-weight: 400; }
+.math__u { font-size: 0.36em; font-style: italic; color: var(--ink-3); margin-left: 4px; }
+.math__block.is-accent .math__u { color: color-mix(in oklab, var(--accent-ink) 80%, transparent); }
+.math__d { color: var(--ink-2); margin-top: 12px; font-size: 14px; }
+.math__arrow { display: flex; align-items: center; justify-content: center; color: var(--ink-3); }
+.math__concl { margin: 36px auto 0; max-width: 60ch; text-align: center; font-style: italic; font-size: 22px; color: var(--ink); font-family: var(--font-display); font-weight: 400; }
+
+@media (max-width: 980px) {
+  .math__row { grid-template-columns: 1fr 1fr; gap: 6px; }
+  .math__arrow { display: none; }
+}
+
+/* ===== COMPARE ===== */
+.cmp { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; }
+.cmp__head, .cmp__row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; align-items: center; }
+.cmp__head { padding: 22px; border-bottom: 1px solid var(--line); background: var(--bg-2); }
+.cmp__col { text-align: center; padding: 4px 8px; }
+.cmp__col--us { background: var(--accent); color: var(--accent-ink); padding: 14px 8px; border-radius: 10px; }
+.cmp__col-name { font-family: var(--font-display); font-size: 18px; font-weight: 400; }
+.cmp__col--us .cmp__col-name { color: var(--accent-ink); }
+.cmp__col-tag { font-family: var(--font-mono); font-size: 10.5px; color: var(--ink-3); margin-top: 4px; letter-spacing: .08em; text-transform: uppercase; }
+.cmp__col--us .cmp__col-tag { color: color-mix(in oklab, var(--accent-ink) 80%, transparent); }
+.cmp__row { padding: 0 22px; border-top: 1px solid var(--line); }
+.cmp__feat { padding: 18px 0; color: var(--ink); font-size: 15px; }
+.cmp__cell { padding: 18px 0; display: flex; justify-content: center; }
+.cmp__cell--us { background: color-mix(in oklab, var(--accent) 8%, transparent); margin: 0 4px; border-radius: 6px; }
+.cmp__c { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 999px; }
+.cmp__c--yes { background: var(--accent); color: var(--accent-ink); }
+.cmp__c--partial { background: var(--bg-3); color: var(--ink-2); }
+.cmp__c--no { background: transparent; color: var(--ink-3); }
+
+@media (max-width: 760px) {
+  .cmp__head, .cmp__row { grid-template-columns: 1.4fr 1fr 1fr 1fr; padding: 0 12px; }
+  .cmp__feat { font-size: 13.5px; }
+}
+
+/* ===== PRICING ===== */
+.pricing__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; align-items: stretch; }
+.tier {
+  position: relative; background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius-lg); padding: 28px 26px; display: flex; flex-direction: column;
+}
+.tier--featured { border-color: var(--accent); box-shadow: 0 30px 60px -28px color-mix(in oklab, var(--accent) 40%, transparent); transform: translateY(-6px); }
+.tier__badge {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--accent); color: var(--accent-ink); font-family: var(--font-mono);
+  font-size: 11px; padding: 5px 12px; border-radius: 999px; letter-spacing: .12em;
+  text-transform: uppercase; white-space: nowrap;
+}
+.tier__name { font-family: var(--font-display); font-size: 22px; font-weight: 400; }
+.tier__price { font-family: var(--font-display); font-size: 42px; margin-top: 14px; line-height: 1; letter-spacing: -0.03em; font-weight: 400; }
+.tier__per { font-style: italic; font-size: 14px; color: var(--ink-3); margin-left: 2px; }
+.tier__desc { color: var(--ink-2); margin-top: 12px; font-size: 14px; min-height: 42px; }
+.tier__cta { width: 100%; justify-content: center; margin-top: 22px; }
+.tier__feats {
+  list-style: none; padding: 22px 0 0; margin: 22px 0 0;
+  display: flex; flex-direction: column; gap: 12px;
+  border-top: 1px solid var(--line);
+}
+.tier__feats li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--ink-2); }
+.tier__feats li svg { flex-shrink: 0; margin-top: 1px; }
+
+@media (max-width: 1024px) { .pricing__grid { grid-template-columns: 1fr 1fr; } .tier--featured { transform: none; } }
+@media (max-width: 600px)  { .pricing__grid { grid-template-columns: 1fr; } }
+
+/* ===== TESTIMONIALS ===== */
+.quotes { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+.quote { margin: 0; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 28px; position: relative; }
+.quote__mark { position: absolute; top: 8px; right: 18px; font-family: var(--font-display); font-size: 70px; line-height: 1; color: var(--accent); opacity: .3; font-style: italic; }
+.quote__q { font-family: var(--font-display); font-size: 19px; line-height: 1.45; letter-spacing: -0.005em; color: var(--ink); font-weight: 400; margin: 0 0 22px; }
+.quote__cap { display: flex; gap: 14px; align-items: center; padding-top: 18px; border-top: 1px solid var(--line); }
+.quote__avatar { width: 40px; height: 40px; border-radius: 999px; background: var(--bg-3); color: var(--accent); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 14px; font-style: italic; flex-shrink: 0; }
+.quote__name { font-weight: 500; font-size: 14.5px; }
+.quote__role { color: var(--ink-3); font-size: 13px; margin-top: 2px; }
+.logos { margin-top: 72px; text-align: center; }
+.logos__label { font-family: var(--font-mono); color: var(--ink-3); font-size: 11px; letter-spacing: .14em; }
+.logos__row { display: flex; justify-content: center; align-items: center; gap: clamp(20px,3vw,48px); flex-wrap: wrap; margin-top: 16px; }
+.logos__item { font-family: var(--font-display); font-size: 17px; color: var(--ink-2); letter-spacing: .04em; opacity: .8; transition: opacity .2s ease; }
+.logos__item:hover { opacity: 1; }
+
+@media (max-width: 980px) { .quotes { grid-template-columns: 1fr; } }
+
+/* ===== FINAL CTA ===== */
+.finalcta {
+  background: linear-gradient(135deg, color-mix(in oklab, var(--accent) 88%, black 12%) 0%, var(--accent) 60%, color-mix(in oklab, var(--accent) 75%, #d97a3a 25%) 100%);
+  color: white; position: relative; overflow: hidden;
+  padding: clamp(100px,12vw,160px) 0;
+}
+.finalcta__pattern { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.finalcta__inner { position: relative; z-index: 1; text-align: center; }
+.finalcta__h { font-family: var(--font-display); font-size: clamp(48px,7vw,96px); font-weight: 400; margin-top: 20px; letter-spacing: -0.02em; line-height: 1.05; }
+.finalcta__h em { font-style: italic; color: color-mix(in oklab, white 92%, var(--accent)); }
+.finalcta__sub { margin-top: 20px; font-size: 19px; opacity: .9; }
+.finalcta__ctas { margin-top: 36px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.finalcta__btn { background: white; color: var(--accent); padding: 16px 30px; font-size: 15.5px; }
+.finalcta__btn:hover { background: var(--bg-2); transform: translateY(-1px); }
+.finalcta__ghost { background: transparent; color: white; border: 1px solid color-mix(in oklab, white 50%, transparent); padding: 16px 30px; font-size: 15.5px; }
+.finalcta__ghost:hover { background: color-mix(in oklab, white 10%, transparent); border-color: white; }
+
+/* ===== FOOTER ===== */
+.footer { padding: 80px 0 40px; border-top: 1px solid var(--line); }
+.footer__top { display: grid; grid-template-columns: 1.2fr 2.4fr; gap: clamp(32px,5vw,80px); }
+.footer__tag { color: var(--ink-2); margin: 18px 0 22px; max-width: 30ch; }
+.footer__cols { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
+.footer__col-head { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 14px; letter-spacing: -0.005em; }
+.footer__col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.footer__col a { color: var(--ink-2); text-decoration: none; font-size: 14px; transition: color .15s ease; }
+.footer__col a:hover { color: var(--accent); }
+.footer__bot { display: flex; align-items: center; justify-content: space-between; margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 13px; color: var(--ink-3); }
+.footer__social { display: flex; gap: 6px; }
+.footer__social a { width: 36px; height: 36px; border-radius: 999px; border: 1px solid var(--line); display: inline-flex; align-items: center; justify-content: center; color: var(--ink-2); transition: color .15s ease, border-color .15s ease, background .15s ease; }
+.footer__social a:hover { color: var(--accent); border-color: var(--accent); background: var(--bg-2); }
+
+@media (max-width: 900px) {
+  .footer__top { grid-template-columns: 1fr; }
+  .footer__cols { grid-template-columns: 1fr 1fr; }
+}
+`;
+
+// ── Static body HTML (nav, hero, stats, how-it-works, containers, cta, footer) ──
+const BODY_HTML = `
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#top" class="logo" aria-label="ACT 3 home">
+      <span class="logo__mark">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path d="M12 2.5L22 20H2L12 2.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          <circle cx="12" cy="14.5" r="2.2" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="logo__word serif">ACT<span class="logo__word-num">3</span></span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <button class="nav__link" id="nav-videos-btn" aria-haspopup="true" aria-expanded="false">
+        Videos
+        <span class="nav__chevron">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </button>
+      <a class="nav__link" href="#pricing">Plans</a>
+      <a class="nav__link" href="#about">About Us</a>
+
+      <div class="nav__dropdown" id="nav-videos-menu" role="menu">
+        <div class="nav__dropdown-grid">
+          <a class="nav__dropdown-item" href="#social-media" role="menuitem">
+            <div class="nav__dropdown-name">Social Media</div>
+            <div class="nav__dropdown-desc">Vertical, fast, scroll-native</div>
+          </a>
+          <a class="nav__dropdown-item" href="#marketing" role="menuitem">
+            <div class="nav__dropdown-name">Marketing</div>
+            <div class="nav__dropdown-desc">Brand films, ads, product</div>
+          </a>
+          <a class="nav__dropdown-item" href="#corporate" role="menuitem">
+            <div class="nav__dropdown-name">Corporate</div>
+            <div class="nav__dropdown-desc">Town halls, training, comms</div>
+          </a>
+          <a class="nav__dropdown-item" href="#movies" role="menuitem">
+            <div class="nav__dropdown-name">Movies</div>
+            <div class="nav__dropdown-desc">Shorts, features, indie</div>
+          </a>
+          <a class="nav__dropdown-item" href="#tv" role="menuitem">
+            <div class="nav__dropdown-name">ACT 3 TV</div>
+            <div class="nav__dropdown-desc">Episodic series &amp; streaming</div>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="nav__link nav__link--quiet" href="#login">Log In</a>
+      <a class="btn btn--accent btn--sm" href="#start">Start Free</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__grain"></div>
+    <div class="hero__glow hero__glow--a"></div>
+    <div class="hero__glow hero__glow--b"></div>
+  </div>
+  <div class="wrap hero__inner">
+    <div class="hero__copy">
+      <div class="label label--accent">— AI Filmmaking Platform</div>
+      <h1 class="hero__h">
+        Create Movies at the<br>
+        <em class="hero__em">Speed of Storytelling.</em>
+      </h1>
+      <p class="hero__sub">
+        Create 5-minute to 3-hour videos with the lowest labor in the industry. No prompt engineering. No tool switching. Write your story — ACT 3 handles everything else.
+      </p>
+      <div class="hero__ctas">
+        <a class="btn btn--accent btn--lg" href="#start">Start Creating Your Film <span class="arrow">→</span></a>
+        <a class="btn btn--ghost btn--lg" href="#demo">
+          <span class="hero__playdot" aria-hidden="true">
+            <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z" fill="currentColor"/></svg>
+          </span>
+          See ACT 3 in Action
+        </a>
+      </div>
+      <p class="hero__proof">Trusted by screenwriters, indie filmmakers, and studios.</p>
+    </div>
+
+    <div class="hero__strip" aria-hidden="true">
+      <div class="strip__row">
+        <div class="strip__cell">
+          <div class="stripes" style="aspect-ratio:4/3">
+            <svg class="stripes__bg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><defs><pattern id="sp1" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(35)"><line x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="0.7" opacity="0.5"/></pattern></defs><rect width="100" height="100" fill="url(#sp1)"/></svg>
+            <div class="stripes__frame">
+              <div class="stripes__corners"><span></span><span></span><span></span><span></span></div>
+              <button class="stripes__play" aria-label="Play preview"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
+              <div class="stripes__meta"><span class="stripes__tag">01.A</span><span class="stripes__caption">EXT. ROOFTOP — DUSK</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="strip__cell">
+          <div class="stripes" style="aspect-ratio:4/3">
+            <svg class="stripes__bg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><defs><pattern id="sp2" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(35)"><line x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="0.7" opacity="0.5"/></pattern></defs><rect width="100" height="100" fill="url(#sp2)"/></svg>
+            <div class="stripes__frame">
+              <div class="stripes__corners"><span></span><span></span><span></span><span></span></div>
+              <button class="stripes__play" aria-label="Play preview"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
+              <div class="stripes__meta"><span class="stripes__tag">01.B</span><span class="stripes__caption">INT. CAFÉ — DAY</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="strip__cell">
+          <div class="stripes" style="aspect-ratio:4/3">
+            <svg class="stripes__bg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><defs><pattern id="sp3" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(35)"><line x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="0.7" opacity="0.5"/></pattern></defs><rect width="100" height="100" fill="url(#sp3)"/></svg>
+            <div class="stripes__frame">
+              <div class="stripes__corners"><span></span><span></span><span></span><span></span></div>
+              <button class="stripes__play" aria-label="Play preview"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
+              <div class="stripes__meta"><span class="stripes__tag">01.C</span><span class="stripes__caption">MED. CLOSEUP — KIRA</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="strip__cell">
+          <div class="stripes" style="aspect-ratio:4/3">
+            <svg class="stripes__bg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><defs><pattern id="sp4" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(35)"><line x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="0.7" opacity="0.5"/></pattern></defs><rect width="100" height="100" fill="url(#sp4)"/></svg>
+            <div class="stripes__frame">
+              <div class="stripes__corners"><span></span><span></span><span></span><span></span></div>
+              <button class="stripes__play" aria-label="Play preview"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
+              <div class="stripes__meta"><span class="stripes__tag">01.D</span><span class="stripes__caption">WIDE — CITY ESTABLISH</span></div>
+            </div>
           </div>
         </div>
       </div>
-    </header>
-  );
-}
+      <div class="strip__caption mono">
+        <span>SCRIPT.fdx</span><span class="strip__sep">→</span>
+        <span>650 shots planned</span><span class="strip__sep">→</span>
+        <span>render: 14m 22s</span>
+      </div>
+    </div>
+  </div>
+  <a href="#stats" class="hero__scroll" aria-label="Scroll to next section">
+    <span class="mono">scroll</span>
+    <span class="hero__chev">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+  </a>
+</section>
 
-function FeaturesSection() {
-  return (
-    <section className={styles.featuresSection}>
-      <div className="container">
-        <div className={styles.sectionHeader}>
-          <Heading as="h2">Everything You Need to Produce AI Films</Heading>
-          <p>
-            One platform. Complete pipeline. From screenplay to finished video.
-          </p>
+<!-- STATS -->
+<section class="stats section--alt" id="stats">
+  <div class="wrap stats__grid">
+    <div class="stat">
+      <div class="stat__num serif" data-stat>80<span class="stat__dim">–</span>200<span class="stat__unit"> hrs</span></div>
+      <div class="stat__label">of pre-production collapsed to ~2 hours</div>
+    </div>
+    <div class="stat">
+      <div class="stat__num serif" data-stat>1<span class="stat__unit"> Platform</span></div>
+      <div class="stat__label">replaces 10+ traditional production tools</div>
+    </div>
+    <div class="stat">
+      <div class="stat__num serif" data-stat>Full<span class="stat__unit"> Films</span></div>
+      <div class="stat__label">not 8–40 second clips</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section how" id="how">
+  <div class="wrap">
+    <div class="sec-head sec-head--center">
+      <div class="label">— How It Works</div>
+      <h2 class="serif">From Script to Finished Film <em style="color:var(--accent)">in Three Steps.</em></h2>
+    </div>
+    <div class="how__grid">
+      <div class="how__step">
+        <div class="how__num">01</div>
+        <div class="how__t">Write Your Story</div>
+        <p class="how__d">Type dialogue, scene descriptions, and camera notes in plain language. ACT 3 understands intent, not just prompts.</p>
+      </div>
+      <div class="how__step">
+        <div class="how__num">02</div>
+        <div class="how__t">AI Produces Your Film</div>
+        <p class="how__d">Casting, set building, cinematography, lighting, and rendering happen automatically. Every shot informed by your script.</p>
+      </div>
+      <div class="how__step">
+        <div class="how__num">03</div>
+        <div class="how__t">Edit, Refine, Export</div>
+        <p class="how__d">The integrated editor lets you adjust any shot. When you're done, export to any format — YouTube, TikTok, ProRes, 4K.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE ROWS (14) — populated by JS -->
+<div id="value-rows"></div>
+
+<!-- VISUAL STYLES -->
+<section class="section styles">
+  <div class="wrap">
+    <div class="sec-head sec-head--center">
+      <div class="label">— Visual Styles</div>
+      <h2 class="serif">Pick the Visual Style That <em style="color:var(--accent)">Fits Your Story.</em></h2>
+      <p>From photorealistic to anime to 3D animation — every style, one platform.</p>
+    </div>
+    <div class="styles__grid" id="styles-grid"></div>
+  </div>
+</section>
+
+<!-- AI CREW -->
+<section class="section crew section--alt">
+  <div class="wrap">
+    <div class="sec-head sec-head--center">
+      <div class="label">— AI Production Crew</div>
+      <h2 class="serif">A Full Production Team, <em style="color:var(--accent)">Working for You.</em></h2>
+    </div>
+    <div class="crew__row" id="crew-row"></div>
+  </div>
+</section>
+
+<!-- THE MATH -->
+<section class="section math">
+  <div class="wrap">
+    <div class="sec-head sec-head--center">
+      <div class="label">— The Math</div>
+      <h2 class="serif">The Numbers <em style="color:var(--accent)">Don't Lie.</em></h2>
+    </div>
+    <div class="math__row">
+      <div class="math__block">
+        <div class="math__num serif">650<span class="math__u"> shots</span></div>
+        <div class="math__d">typical 40-minute film</div>
+      </div>
+      <div class="math__arrow" aria-hidden="true">
+        <svg width="40" height="14" viewBox="0 0 40 14" fill="none"><path d="M0 7h36m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </div>
+      <div class="math__block">
+        <div class="math__num serif">8<span class="math__u"> hours</span></div>
+        <div class="math__d">per shot with other AI tools</div>
+      </div>
+      <div class="math__arrow" aria-hidden="true">
+        <svg width="40" height="14" viewBox="0 0 40 14" fill="none"><path d="M0 7h36m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </div>
+      <div class="math__block">
+        <div class="math__num serif">5,200<span class="math__u"> hours</span></div>
+        <div class="math__d">total manual work required elsewhere</div>
+      </div>
+      <div class="math__arrow" aria-hidden="true">
+        <svg width="40" height="14" viewBox="0 0 40 14" fill="none"><path d="M0 7h36m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </div>
+      <div class="math__block is-accent">
+        <div class="math__num serif">~2<span class="math__u"> hours</span></div>
+        <div class="math__d">total setup time in ACT 3</div>
+      </div>
+    </div>
+    <p class="math__concl serif">The difference isn't incremental. It's the difference between a project that ships and one that gets abandoned.</p>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="section compare section--alt">
+  <div class="wrap">
+    <div class="sec-head sec-head--center">
+      <div class="label">— How We Compare</div>
+      <h2 class="serif">Built for Films. <em style="color:var(--accent)">Not Clips. Not Corporate Avatars.</em></h2>
+    </div>
+    <div class="cmp">
+      <div class="cmp__head">
+        <div></div>
+        <div class="cmp__col cmp__col--us">
+          <div class="cmp__col-name serif">ACT 3</div>
+          <div class="cmp__col-tag">— filmmaking platform</div>
         </div>
-        <div className="row">
-          {features.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
+        <div class="cmp__col">
+          <div class="cmp__col-name">Clip Generators</div>
+          <div class="cmp__col-tag">runway · pika · sora</div>
+        </div>
+        <div class="cmp__col">
+          <div class="cmp__col-name">Business Video</div>
+          <div class="cmp__col-tag">heygen · synthesia</div>
         </div>
       </div>
-    </section>
-  );
-}
+      <div id="cmp-body"></div>
+    </div>
+  </div>
+</section>
 
-function WorkflowSection() {
-  return (
-    <section className={styles.workflowSection}>
-      <div className="container">
-        <div className={styles.sectionHeader}>
-          <Heading as="h2">How It Works</Heading>
-          <p>From script to cinematic video in four steps.</p>
+<!-- PRICING -->
+<section class="section pricing" id="pricing">
+  <div class="wrap">
+    <div class="sec-head sec-head--center">
+      <div class="label">— Simple Pricing</div>
+      <h2 class="serif">Start Free. <em style="color:var(--accent)">Scale as You Create.</em></h2>
+    </div>
+    <div class="pricing__grid" id="pricing-grid"></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials">
+  <div class="wrap">
+    <div class="sec-head sec-head--center">
+      <div class="label">— What Creators Say</div>
+      <h2 class="serif">The Filmmakers <em style="color:var(--accent)">Building with ACT 3.</em></h2>
+    </div>
+    <div class="quotes">
+      <figure class="quote">
+        <div class="quote__mark" aria-hidden="true">"</div>
+        <blockquote class="quote__q">I wrote a feature in Final Draft, imported it, and watched my opening sequence cut together by lunch. It's the closest I've come to seeing what was in my head.</blockquote>
+        <figcaption class="quote__cap">
+          <div class="quote__avatar" aria-hidden="true"><span>MC</span></div>
+          <div>
+            <div class="quote__name">Maren Coetzee</div>
+            <div class="quote__role">Screenwriter — drama feature in development</div>
+          </div>
+        </figcaption>
+      </figure>
+      <figure class="quote">
+        <div class="quote__mark" aria-hidden="true">"</div>
+        <blockquote class="quote__q">We finished a 22-minute short on a budget that wouldn't have covered a single shoot day. Consistency held across 480 shots. It's not a clip generator. It's a studio.</blockquote>
+        <figcaption class="quote__cap">
+          <div class="quote__avatar" aria-hidden="true"><span>IR</span></div>
+          <div>
+            <div class="quote__name">Iván Reséndez</div>
+            <div class="quote__role">Indie filmmaker, Buenos Aires</div>
+          </div>
+        </figcaption>
+      </figure>
+      <figure class="quote">
+        <div class="quote__mark" aria-hidden="true">"</div>
+        <blockquote class="quote__q">Our agency went from one brand film a quarter to one a week — without sacrificing quality. The Brand Kit alone paid for the year.</blockquote>
+        <figcaption class="quote__cap">
+          <div class="quote__avatar" aria-hidden="true"><span>PB</span></div>
+          <div>
+            <div class="quote__name">Priya Bhattacharya</div>
+            <div class="quote__role">Creative Director, Northtype Studio</div>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="logos">
+      <div class="logos__label">— Used by teams at</div>
+      <div class="logos__row">
+        <span class="logos__item">NORTHTYPE</span>
+        <span class="logos__item">OAKWOOD PICTURES</span>
+        <span class="logos__item">FALCON &amp; CO.</span>
+        <span class="logos__item">STUDIO 47</span>
+        <span class="logos__item">BRIGHT/ADJ</span>
+        <span class="logos__item">MERIDIAN</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="finalcta">
+  <svg class="finalcta__pattern" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+    <defs><pattern id="finalstripes" patternUnits="userSpaceOnUse" width="3" height="3" patternTransform="rotate(35)"><line x1="0" y1="0" x2="0" y2="3" stroke="white" stroke-width="0.4" opacity="0.18"/></pattern></defs>
+    <rect width="100" height="100" fill="url(#finalstripes)"/>
+  </svg>
+  <div class="wrap finalcta__inner">
+    <div class="label" style="color:color-mix(in oklab, white 80%, transparent)">— Begin</div>
+    <h2 class="finalcta__h serif">
+      Your Story Deserves<br>
+      <em>to Be Seen.</em>
+    </h2>
+    <p class="finalcta__sub">Start creating your film today. Free to begin.</p>
+    <div class="finalcta__ctas">
+      <a class="btn finalcta__btn" href="#start">Start Creating Your Film <span class="arrow">→</span></a>
+      <a class="btn finalcta__ghost" href="#demo">Watch the demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="#top" class="logo" aria-label="ACT 3 home">
+          <span class="logo__mark">
+            <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
+              <path d="M12 2.5L22 20H2L12 2.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <circle cx="12" cy="14.5" r="2.2" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="logo__word serif">ACT<span class="logo__word-num">3</span></span>
+        </a>
+        <p class="footer__tag">Create movies at the speed of storytelling.</p>
+        <a class="btn btn--accent btn--sm" href="#start">Start Free <span class="arrow">→</span></a>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <div class="footer__col-head">Product</div>
+          <ul><li><a href="#">Features</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#">Changelog</a></li><li><a href="#">Roadmap</a></li></ul>
         </div>
-        <div className={styles.workflowSteps}>
-          {[
-            {
-              step: "01",
-              title: "Write Your Script",
-              desc: "Upload or write your screenplay. ACT3 AI parses your story into acts, scenes, and beats automatically.",
-            },
-            {
-              step: "02",
-              title: "Design Your Shots",
-              desc: "Our AI cinematographer breaks each scene into individual shots with camera angles, lighting, and movement.",
-            },
-            {
-              step: "03",
-              title: "Generate Video",
-              desc: "Send shots to Veo 3, Runway, or your preferred AI model. Generate multiple takes, pick the best.",
-            },
-            {
-              step: "04",
-              title: "Edit & Export",
-              desc: "Assemble your shots in the timeline editor, add audio, and export for any platform.",
-            },
-          ].map(({ step, title, desc }) => (
-            <div key={step} className={styles.workflowStep}>
-              <div className={styles.workflowStepNumber}>{step}</div>
-              <Heading as="h3">{title}</Heading>
-              <p>{desc}</p>
-            </div>
-          ))}
+        <div class="footer__col">
+          <div class="footer__col-head">Company</div>
+          <ul><li><a href="#about">About</a></li><li><a href="#">Team</a></li><li><a href="#">Careers</a></li><li><a href="#">Press</a></li></ul>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-head">Resources</div>
+          <ul><li><a href="#">Documentation</a></li><li><a href="#">Blog</a></li><li><a href="#">Tutorials</a></li><li><a href="#">Community</a></li></ul>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-head">Legal</div>
+          <ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Cookie Policy</a></li></ul>
         </div>
       </div>
-    </section>
-  );
-}
+    </div>
+    <div class="footer__bot">
+      <div>© 2026 ACT 3 AI. All rights reserved.</div>
+      <div class="footer__social">
+        <a href="#" aria-label="X / Twitter">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24"><path d="M3 7c0-1.5 1-2 2-2h14c1 0 2 .5 2 2v10c0 1.5-1 2-2 2H5c-1 0-2-.5-2-2V7zm7 1.5v7l6-3.5-6-3.5z" fill="currentColor"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 10v7M7 7v.01M11 10v7M11 13c0-2 1.5-3 3-3s3 1 3 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+`;
 
-function CTASection() {
-  return (
-    <section className={styles.ctaSection}>
-      <div className="container">
-        <Heading as="h2">Ready to Make Your Film?</Heading>
-        <p>
-          Join thousands of creators, filmmakers, and studios using ACT3 AI to
-          produce cinematic content at scale.
-        </p>
-        <div className={styles.ctaButtons}>
-          <Link
-            className="button button--primary button--lg"
-            to="https://act3ai.com"
-          >
-            Get Started Free
-          </Link>
-          <Link className="button button--secondary button--lg" to="/pricing">
-            View Pricing
-          </Link>
+export default function Home(): JSX.Element {
+  useEffect(() => {
+    // ── Stripe placeholder helper ──────────────────────────────────────────────
+    let _spIdx = 10;
+    function stripeHTML(aspect: string, tag: string, caption: string): string {
+      const id = "sp" + _spIdx++;
+      return `<div class="stripes" style="aspect-ratio:${aspect}">
+    <svg class="stripes__bg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <defs><pattern id="${id}" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(35)">
+        <line x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="0.7" opacity="0.5"/>
+      </pattern></defs>
+      <rect width="100" height="100" fill="url(#${id})"/>
+    </svg>
+    <div class="stripes__frame">
+      <div class="stripes__corners"><span></span><span></span><span></span><span></span></div>
+      <button class="stripes__play" aria-label="Play preview">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+      </button>
+      <div class="stripes__meta">
+        <span class="stripes__tag">${tag}</span>
+        <span class="stripes__caption">${caption}</span>
+      </div>
+    </div>
+  </div>`;
+    }
+
+    function proofBullet(text: string): string {
+      return `<li class="proof">
+    <span class="proof__dot" aria-hidden="true">
+      <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="3.2" fill="currentColor"/></svg>
+    </span>
+    <span>${text}</span>
+  </li>`;
+    }
+
+    // ── Value Rows ─────────────────────────────────────────────────────────────
+    const VALUE_ROWS = [
+      { id: "script-speed", side: "L", label: "Script-Speed Creation",
+        h: "Type Your Story. Watch It Come to Life.",
+        body: "Write dialogue the way you think it: \"He said this. She said that.\" ACT 3 reads your script and automates every production decision — casting, camera angles, lighting, sets. No prompt engineering. No shot-by-shot setup. Just storytelling.",
+        bullets: ["Write natural-language dialogue and scene descriptions", "AI infers cinematography, staging, and set needs", "650-shot film set up in ~2 hours vs. 5,200 hours manually"],
+        tag: "02.01", cap: "SCRIPT → SHOT LIST" },
+      { id: "sets", side: "R", label: "Sets &amp; Backgrounds",
+        h: "Define Your World Once. Every Shot Follows.",
+        body: "Build your set — an office, a city street, a spaceship — once. ACT 3 applies it consistently across every scene and shot. No redescribing the environment per prompt. No inconsistent backgrounds.",
+        bullets: ["2D and 3D environments", "Procedural city and building generation", "Set persists across all shots in a scene or episode"],
+        tag: "02.02", cap: "SET BUILDER — INT. APARTMENT" },
+      { id: "screenwriters", side: "L", label: "For Screenwriters",
+        h: "Write It. See It. Ship It.",
+        body: "ACT 3 is the screenwriter's dream realized. Import your script, watch it visualized shot by shot, iterate in real time. You wrote the story — now see it as a film before a single dollar of production budget is spent.",
+        bullets: ["Import PDF, TXT, or Final Draft files", "AI expands a concept into full beats, scenes, and shots", "Human and AI script versions side by side"],
+        tag: "02.03", cap: "SCRIPT EDITOR — DRAFT 4" },
+      { id: "social", side: "R", label: "Social Media Video",
+        h: "Create Cinematic Content at Social Media Speed.",
+        body: "From concept to polished short-form video in a fraction of the time. Format for any platform — vertical for TikTok and Reels, horizontal for YouTube, square for Instagram — in one workflow.",
+        bullets: ["Auto-format exports for TikTok, Reels, YouTube Shorts", "Cinematic quality, not clip-generator quality", "Batch-produce a week of content in hours"],
+        tag: "02.04", cap: "MULTI-FORMAT EXPORT" },
+      { id: "marketing", side: "L", label: "Marketing Video",
+        h: "More Video Output. Higher Quality. Lower Budgets.",
+        body: "Replace expensive video production cycles with an AI pipeline that delivers broadcast-quality marketing video on demand. Define your brand style once — every video stays on brand.",
+        bullets: ["Define brand visual style; apply across all outputs", "Product demos, testimonials, brand films", "Export-ready for digital, broadcast, and social"],
+        tag: "02.05", cap: "BRAND KIT — APPLIED" },
+      { id: "explainer", side: "R", label: "Explainer Video",
+        h: "Explain Anything. Visually. In Minutes.",
+        body: "Turn a product description or concept into a polished animated or live-action explainer. AI handles voiceover, visuals, transitions, and pacing.",
+        bullets: ["Start from a script or a single paragraph", "AI voiceover with natural prosody", "Multiple visual styles available"],
+        tag: "02.06", cap: "EXPLAINER — RENDER" },
+      { id: "corporate", side: "L", label: "Corporate Video",
+        h: "Professional Corporate Video Without the Production Budget.",
+        body: "Town halls, training videos, executive announcements, internal communications. ACT 3 produces them quickly, consistently, and at a fraction of traditional production cost.",
+        bullets: ["Consistent on-brand presenter appearance", "Multilingual voiceover and dubbing", "Roles and approval workflows for enterprise teams"],
+        tag: "02.07", cap: "PRESENTER — TAKE 03" },
+      { id: "movies", side: "R", label: "Movies &amp; Series",
+        h: "Full-Length Films. Not 8-Second Clips.",
+        body: "ACT 3 is purpose-built for long-form. Script a feature film, a short, a TV episode, or a web series. The Story Arc engine plans across episodes. Consistency holds across hundreds of shots.",
+        bullets: ["Story Arc engine for multi-episode planning", "Visual and character consistency across 600+ shots", "AI Showrunner orchestrates the full production"],
+        tag: "02.08", cap: "EP 01 — SCENE 14 OF 32" },
+      { id: "voice", side: "L", label: "Voice &amp; Dialogue",
+        h: "AI Voices for Drafts. Human Voices When You're Ready.",
+        body: "Every character has a voice from the first draft. High-quality AI TTS with natural cadence and emotional range. When you're ready to elevate, bring in human voice actors through the same interface.",
+        bullets: ["Multilingual TTS and dubbing", "Lipsync for any character", "Human voice actor integration in the same pipeline"],
+        tag: "02.09", cap: "DIALOGUE — KIRA L." },
+      { id: "actors", side: "R", label: "Actor &amp; Costume Consistency",
+        h: "Cast Your Characters. Keep Them Consistent.",
+        body: "Define your cast from a central character directory. ACT 3 maintains physical consistency, wardrobe, and performance style across every scene. LoRA-based character consistency. No recreating characters per shot.",
+        bullets: ["Character library with age, appearance, and wardrobe management", "Marker-less motion capture from iPhone or webcam", "AI casting agent suggests characters from brief descriptions"],
+        tag: "02.10", cap: "CASTING — 5 ACTORS" },
+      { id: "editor", side: "L", label: "Unified Editor",
+        h: "One Editor. Full Control. Move Fast.",
+        body: "The integrated editor handles everything from shot-level adjustments to full-scene assembly. Timeline, keyframes, transitions, and render controls — all without opening another application.",
+        bullets: ["Three-column layout with script, visual, and timeline panels", "Persona-aware views for Writers, Directors, and Actors", "One-click AI regeneration per shot"],
+        tag: "02.11", cap: "EDITOR — TIMELINE VIEW" },
+      { id: "models", side: "R", label: "Powered by Best AI",
+        h: "Built on Top of the Best Video AI Models.",
+        body: "ACT 3 routes each shot to the right model automatically — Veo 3, Runway, FLUX, Hunyuan, Wan 2.1, and more. You get the best output for each task without managing models yourself.",
+        bullets: ["Multi-model routing engine selects the best model per shot type", "New models integrated as they become available", "No prompt engineering required"],
+        tag: "02.12", cap: "MODEL ROUTER" },
+      { id: "screens", side: "L", label: "Screens, Monitors &amp; Phone Content",
+        h: "Screens Within Scenes. Fully Controlled.",
+        body: "Place live video or graphics on any in-scene display — a laptop screen, a billboard, a smartphone — and control exactly what appears. Perfect for product demos, tech stories, and brand placement.",
+        bullets: ["Place content on any in-scene display surface", "Fully controlled per shot", "Ideal for product placement and tech narratives"],
+        tag: "02.13", cap: "IN-SCENE DISPLAY" },
+      { id: "teams", side: "R", label: "Teams &amp; Collaboration",
+        h: "Your Team. One Platform. Full Access Controls.",
+        body: "Writers, directors, editors, and producers work on the same project simultaneously. Role-based permissions, scene locking, version history, and approval workflows keep production organized.",
+        bullets: ["Role-based permissions (Writer, Director, Producer, Admin)", "Version history and visual diffing", "Multi-org support for agencies managing multiple clients"],
+        tag: "02.14", cap: "TEAM — 6 EDITING" },
+    ];
+
+    const vrContainer = document.getElementById("value-rows");
+    if (vrContainer) {
+      vrContainer.innerHTML = "";
+      VALUE_ROWS.forEach((row, idx) => {
+        const flipped = row.side === "R";
+        const altBg = idx % 2 === 1 ? "section--alt" : "";
+        vrContainer.innerHTML += `
+  <section class="vrow ${flipped ? "vrow--flip" : ""} ${altBg}" id="${row.id}">
+    <div class="wrap vrow__grid">
+      <div class="vrow__media">
+        <div class="vrow__media-wrap">
+          ${stripeHTML("16/10", row.tag, row.cap)}
+          <div class="vrow__media-tag">${String(idx + 1).padStart(2, "0")} / 14</div>
         </div>
       </div>
-    </section>
-  );
-}
+      <div class="vrow__copy">
+        <div class="label label--accent">— ${row.label}</div>
+        <h2 class="vrow__h">${row.h}</h2>
+        <p class="vrow__p">${row.body}</p>
+        <ul class="proof-list">${row.bullets.map(proofBullet).join("")}</ul>
+      </div>
+    </div>
+  </section>`;
+      });
+    }
 
-export default function Home(): ReactNode {
-  const { siteConfig } = useDocusaurusContext();
+    // ── Visual Styles ──────────────────────────────────────────────────────────
+    const STYLES = [
+      { name: "Realistic",             note: "photoreal · 35mm" },
+      { name: "Cinematic",             note: "anamorphic · color grade" },
+      { name: "Anime",                 note: "2D · cel-shaded" },
+      { name: "3D Animation",          note: "stylized · pixar-likeness" },
+      { name: "Cartoon",               note: "flat · bold linework" },
+      { name: "Stylized / Illustrated", note: "painterly · editorial" },
+    ];
+    const stylesGrid = document.getElementById("styles-grid");
+    if (stylesGrid) {
+      stylesGrid.innerHTML = "";
+      STYLES.forEach((s, i) => {
+        stylesGrid.innerHTML += `<div class="style">
+    ${stripeHTML("4/3", "S." + String(i + 1).padStart(2, "0"), s.note)}
+    <div class="style__row">
+      <span class="style__name">${s.name}</span>
+      <span class="style__note mono">${s.note}</span>
+    </div>
+  </div>`;
+      });
+    }
+
+    // ── AI Crew ────────────────────────────────────────────────────────────────
+    const CREW = [
+      { role: "AI Writer",                 desc: "Develops scripts, dialogue, and narrative structure from your inputs.", g: "W" },
+      { role: "AI Director",               desc: "Orchestrates overall vision, scene pacing, and story flow.", g: "D" },
+      { role: "AI Cinematographer",        desc: "Camera placement, movement, shot composition, and visual storytelling.", g: "C" },
+      { role: "AI Set Designer",           desc: "Creates virtual environments, location designs, and spatial planning.", g: "S" },
+      { role: "AI Casting &amp; Wardrobe", desc: "Selects characters, designs costumes, maintains visual consistency.", g: "K" },
+    ];
+    const crewRow = document.getElementById("crew-row");
+    if (crewRow) {
+      crewRow.innerHTML = "";
+      CREW.forEach((c) => {
+        crewRow.innerHTML += `<div class="crew__card">
+    <div class="crew__badge">
+      ${c.g}
+      <svg viewBox="0 0 100 100" class="crew__ring" aria-hidden="true">
+        <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 4"/>
+      </svg>
+    </div>
+    <div class="crew__role serif">${c.role}</div>
+    <div class="crew__desc">${c.desc}</div>
+  </div>`;
+      });
+    }
+
+    // ── Compare table ──────────────────────────────────────────────────────────
+    const CMP_FEATURES = [
+      "Full-length films and series (not just clips)",
+      "Script-to-film pipeline (write once, produce everything)",
+      "Define-once character and set consistency",
+      "3D pipeline and Blender integration",
+      "Motion capture (iPhone/webcam)",
+      "Virtual camera system with full cinematography controls",
+      "AI Showrunner for long-form story arcs",
+      "Multi-format export (YouTube, TikTok, ProRes, 4K)",
+      "Multi-user collaboration with role permissions",
+    ];
+    const CMP_MATRIX = [
+      [2, 0, 1], [2, 0, 0], [2, 1, 1], [2, 0, 0], [2, 0, 0],
+      [2, 1, 0], [2, 0, 0], [2, 1, 1], [2, 0, 1],
+    ];
+    function cellIcon(v: number): string {
+      if (v === 2) return `<span class="cmp__c cmp__c--yes" aria-label="Yes"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4.5 12.5l4.5 4.5L19.5 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`;
+      if (v === 1) return `<span class="cmp__c cmp__c--partial" aria-label="Partial"><svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="3" fill="currentColor"/></svg></span>`;
+      return `<span class="cmp__c cmp__c--no" aria-label="No"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>`;
+    }
+    const cmpBody = document.getElementById("cmp-body");
+    if (cmpBody) {
+      cmpBody.innerHTML = "";
+      CMP_FEATURES.forEach((feat, i) => {
+        cmpBody.innerHTML += `<div class="cmp__row">
+    <div class="cmp__feat">${feat}</div>
+    <div class="cmp__cell cmp__cell--us">${cellIcon(CMP_MATRIX[i][0])}</div>
+    <div class="cmp__cell">${cellIcon(CMP_MATRIX[i][1])}</div>
+    <div class="cmp__cell">${cellIcon(CMP_MATRIX[i][2])}</div>
+  </div>`;
+      });
+    }
+
+    // ── Pricing ────────────────────────────────────────────────────────────────
+    const TIERS = [
+      { name: "Free",       price: "$0",     per: "forever",    desc: "Explore the platform, no credit card required.", cta: "Start Free",     featured: false, feats: ["Up to 10 shots / month", "720p export", "Community access"] },
+      { name: "Creator",    price: "$49",    per: "per month",  desc: "For individual creators and screenwriters.",      cta: "Choose Creator", featured: false, feats: ["Unlimited drafting", "1080p export", "Script import (PDF / FDX)", "All visual styles"] },
+      { name: "Studio",     price: "$149",   per: "per month",  desc: "Full pipeline for indie films and series.",       cta: "Choose Studio",  featured: true,  feats: ["Long-form (up to 3 hours)", "4K &amp; ProRes export", "Story Arc engine", "Up to 5 collaborators", "Priority render queue"] },
+      { name: "Enterprise", price: "Custom", per: "contact us", desc: "For studios, agencies, and teams.",               cta: "Contact Sales",  featured: false, feats: ["SSO &amp; role permissions", "Multi-org workspace", "Custom model routing", "Dedicated success engineer"] },
+    ];
+    const checkSVG = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color:var(--accent);flex-shrink:0"><path d="M4.5 12.5l4.5 4.5L19.5 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+    const pricingGrid = document.getElementById("pricing-grid");
+    if (pricingGrid) {
+      pricingGrid.innerHTML = "";
+      TIERS.forEach((t) => {
+        pricingGrid.innerHTML += `<div class="tier${t.featured ? " tier--featured" : ""}">
+    ${t.featured ? '<div class="tier__badge">Most Popular</div>' : ""}
+    <div class="tier__name serif">${t.name}</div>
+    <div class="tier__price serif">${t.price}<span class="tier__per"> ${t.per}</span></div>
+    <div class="tier__desc">${t.desc}</div>
+    <a class="btn ${t.featured ? "btn--accent" : "btn--ghost"} tier__cta" href="#start">${t.cta} <span class="arrow">→</span></a>
+    <ul class="tier__feats">${t.feats.map((f) => `<li>${checkSVG}<span>${f}</span></li>`).join("")}</ul>
+  </div>`;
+      });
+    }
+
+    // ── Nav scroll + dropdown ──────────────────────────────────────────────────
+    const nav     = document.getElementById("nav");
+    const vidBtn  = document.getElementById("nav-videos-btn") as HTMLButtonElement | null;
+    const vidMenu = document.getElementById("nav-videos-menu");
+
+    function closeMenu(): void {
+      vidBtn?.classList.remove("is-open");
+      vidMenu?.classList.remove("is-open");
+      vidBtn?.setAttribute("aria-expanded", "false");
+    }
+    function openMenu(): void {
+      vidBtn?.classList.add("is-open");
+      vidMenu?.classList.add("is-open");
+      vidBtn?.setAttribute("aria-expanded", "true");
+    }
+
+    const scrollHandler = (): void => {
+      nav?.classList.toggle("nav--solid", window.scrollY > 24);
+    };
+    const vidBtnClickHandler = (): void => {
+      vidMenu?.classList.contains("is-open") ? closeMenu() : openMenu();
+    };
+    const docClickHandler = (e: MouseEvent): void => {
+      if (nav && !nav.contains(e.target as Node)) closeMenu();
+    };
+
+    window.addEventListener("scroll", scrollHandler, { passive: true });
+    vidBtn?.addEventListener("click", vidBtnClickHandler);
+    vidBtn?.addEventListener("mouseenter", openMenu);
+    nav?.addEventListener("mouseleave", closeMenu);
+    document.addEventListener("click", docClickHandler);
+
+    // ── Stats intersection observer ────────────────────────────────────────────
+    const statNums = document.querySelectorAll("[data-stat]");
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-in");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    statNums.forEach((el) => io.observe(el));
+
+    // ── Cleanup ────────────────────────────────────────────────────────────────
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+      vidBtn?.removeEventListener("click", vidBtnClickHandler);
+      vidBtn?.removeEventListener("mouseenter", openMenu);
+      nav?.removeEventListener("mouseleave", closeMenu);
+      document.removeEventListener("click", docClickHandler);
+      io.disconnect();
+    };
+  }, []);
+
   return (
-    <Layout
-      title={`${siteConfig.title} — AI Filmmaking Platform`}
-      description="ACT3 AI turns your script into cinematic video using Google Veo 3, Runway, and more. The world's first AI Showrunner platform for creators and studios."
-    >
-      <HeroSection />
-      <main>
-        <FeaturesSection />
-        <WorkflowSection />
-        <CTASection />
-      </main>
-    </Layout>
+    <>
+      <Head>
+        <title>ACT 3 — Create Movies at the Speed of Storytelling</title>
+        <meta
+          name="description"
+          content="ACT 3 is the AI filmmaking platform for creating movies, TV, and marketing videos. Write your story — ACT 3 handles everything else."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400;9..144,1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+          rel="stylesheet"
+        />
+        <style>{PAGE_CSS}</style>
+      </Head>
+      <div dangerouslySetInnerHTML={{ __html: BODY_HTML }} />
+    </>
   );
 }
