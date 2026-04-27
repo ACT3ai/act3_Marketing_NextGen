@@ -544,53 +544,7 @@ const BODY_HTML = `
     </div>
 
     <div class="hero__strip" aria-hidden="true">
-      <div class="strip__row">
-        <div class="strip__cell">
-          <div class="stripes" style="aspect-ratio:4/3">
-            <svg class="stripes__bg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><defs><pattern id="sp1" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(35)"><line x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="0.7" opacity="0.5"/></pattern></defs><rect width="100" height="100" fill="url(#sp1)"/></svg>
-            <div class="stripes__frame">
-              <div class="stripes__corners"><span></span><span></span><span></span><span></span></div>
-              <button class="stripes__play" aria-label="Play preview"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
-              <div class="stripes__meta"><span class="stripes__tag">01.A</span><span class="stripes__caption">EXT. ROOFTOP — DUSK</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="strip__cell">
-          <div class="stripes" style="aspect-ratio:4/3">
-            <svg class="stripes__bg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><defs><pattern id="sp2" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(35)"><line x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="0.7" opacity="0.5"/></pattern></defs><rect width="100" height="100" fill="url(#sp2)"/></svg>
-            <div class="stripes__frame">
-              <div class="stripes__corners"><span></span><span></span><span></span><span></span></div>
-              <button class="stripes__play" aria-label="Play preview"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
-              <div class="stripes__meta"><span class="stripes__tag">01.B</span><span class="stripes__caption">INT. CAFÉ — DAY</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="strip__cell">
-          <div class="stripes" style="aspect-ratio:4/3">
-            <svg class="stripes__bg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><defs><pattern id="sp3" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(35)"><line x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="0.7" opacity="0.5"/></pattern></defs><rect width="100" height="100" fill="url(#sp3)"/></svg>
-            <div class="stripes__frame">
-              <div class="stripes__corners"><span></span><span></span><span></span><span></span></div>
-              <button class="stripes__play" aria-label="Play preview"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
-              <div class="stripes__meta"><span class="stripes__tag">01.C</span><span class="stripes__caption">MED. CLOSEUP — KIRA</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="strip__cell">
-          <div class="stripes" style="aspect-ratio:4/3">
-            <svg class="stripes__bg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><defs><pattern id="sp4" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(35)"><line x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="0.7" opacity="0.5"/></pattern></defs><rect width="100" height="100" fill="url(#sp4)"/></svg>
-            <div class="stripes__frame">
-              <div class="stripes__corners"><span></span><span></span><span></span><span></span></div>
-              <button class="stripes__play" aria-label="Play preview"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
-              <div class="stripes__meta"><span class="stripes__tag">01.D</span><span class="stripes__caption">WIDE — CITY ESTABLISH</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="strip__caption mono">
-        <span>SCRIPT.fdx</span><span class="strip__sep">→</span>
-        <span>650 shots planned</span><span class="strip__sep">→</span>
-        <span>render: 14m 22s</span>
-      </div>
+      <img src="/img/Slides_Top_Fold.gif" alt="ACT 3 in action" style="width:100%;aspect-ratio:16/9;border-radius:var(--radius-lg);display:block;object-fit:cover;" />
     </div>
   </div>
   <a href="#stats" class="hero__scroll" aria-label="Scroll to next section">
