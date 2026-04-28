@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
+import SiteFooter from "../components/SiteFooter";
 
 const SECTION_CSS = `
 .about-page { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #131625; }
@@ -40,6 +41,7 @@ export default function About(): React.ReactNode {
     <Layout
       title="About Us — ACT3 AI"
       description="Meet the team behind ACT3 AI — filmmakers, writers, and technologists dedicated to empowering creators everywhere."
+      noFooter
     >
       <style>{SECTION_CSS}</style>
       <div className="about-page">
@@ -177,6 +179,7 @@ export default function About(): React.ReactNode {
         </section>
 
       </div>
+      <SiteFooter />
     </Layout>
   );
 }

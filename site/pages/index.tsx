@@ -775,15 +775,15 @@ const BODY_HTML = `
       <div class="footer__cols">
         <div class="footer__col">
           <div class="footer__col-head">Product</div>
-          <ul><li><a href="https://app.act3ai.com/settings/plans/">Pricing</a></li><li><a href="#">Changelog</a></li><li><a href="#">Tutorials</a></li></ul>
+          <ul><li><a href="https://app.act3ai.com/settings/plans/">Pricing</a></li></ul>
         </div>
         <div class="footer__col">
           <div class="footer__col-head">Company</div>
-          <ul><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="#">Community</a></li></ul>
+          <ul><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li></ul>
         </div>
         <div class="footer__col">
           <div class="footer__col-head">Resources</div>
-          <ul><li><a href="https://documentation.act3ai.com/">Documentation</a></li><li><a href="#">Blog</a></li></ul>
+          <ul><li><a href="https://documentation.act3ai.com/">Documentation</a></li></ul>
         </div>
         <div class="footer__col">
           <div class="footer__col-head">Legal</div>
@@ -800,11 +800,8 @@ const BODY_HTML = `
         <a href="https://www.youtube.com/@ACT3AI" aria-label="YouTube">
           <svg width="18" height="18" viewBox="0 0 24 24"><path d="M3 7c0-1.5 1-2 2-2h14c1 0 2 .5 2 2v10c0 1.5-1 2-2 2H5c-1 0-2-.5-2-2V7zm7 1.5v7l6-3.5-6-3.5z" fill="currentColor"/></svg>
         </a>
-        <a href="https://www.linkedin.com/company/act3ai" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/company/act3ai/" aria-label="LinkedIn">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 10v7M7 7v.01M11 10v7M11 13c0-2 1.5-3 3-3s3 1 3 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        </a>
-        <a href="https://www.instagram.com/act3ai" aria-label="Instagram">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg>
         </a>
       </div>
     </div>

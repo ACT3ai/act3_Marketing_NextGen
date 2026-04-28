@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Layout from "@theme/Layout";
+import SiteFooter from "../components/SiteFooter";
 
 const SECTION_CSS = `
 .contact-page { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #131625; }
@@ -95,6 +96,7 @@ export default function Contact(): React.ReactNode {
     <Layout
       title="Contact Us — ACT3 AI"
       description="Have questions about ACT 3? Need technical support? Want to explore enterprise solutions? We're here to help."
+      noFooter
     >
       <style>{SECTION_CSS}</style>
       <div className="contact-page">
@@ -248,6 +250,7 @@ export default function Contact(): React.ReactNode {
         </section>
 
       </div>
+      <SiteFooter />
     </Layout>
   );
 }
