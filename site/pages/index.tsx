@@ -187,7 +187,7 @@ body {
 
 /* ===== HERO ===== */
 .hero {
-  position: relative; min-height: 100vh; max-height: 1600px; display: flex; align-items: stretch;
+  position: relative; min-height: 100vh; max-height: 1600px; display: flex; align-items: center;
   overflow: hidden;
 }
 .hero__bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
@@ -203,7 +203,7 @@ body {
 .hero__inner {
   position: relative; z-index: 1;
   display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.1fr);
-  align-items: stretch; width: 100%;
+  align-items: center; width: 100%;
 }
 .hero__copy-area {
   display: flex; align-items: center;
@@ -565,7 +565,7 @@ const BODY_HTML = `
     </div>
 
     <div class="hero__strip" aria-hidden="true">
-      <img src="/images/Slides_Top_Fold.gif" alt="ACT 3 in action" style="width:100%;height:100%;border-radius:0;display:block;object-fit:cover;" />
+      <img src="/images/Slides_Top_Fold.gif" alt="ACT 3 in action" style="width:100%;height:auto;display:block;object-fit:cover;" />
     </div>
   </div>
   <a href="#stats" class="hero__scroll" aria-label="Scroll to next section">
