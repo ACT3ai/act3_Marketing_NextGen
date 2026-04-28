@@ -113,6 +113,7 @@ body {
   border: 1px solid var(--line-2);
 }
 .stripes__bg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .8; }
+.stripes__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .stripes__frame { position: absolute; inset: 16px; border: 1px dashed var(--line-2); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
 .stripes__corners { position: absolute; inset: -1px; pointer-events: none; }
 .stripes__corners span { position: absolute; width: 14px; height: 14px; border: 1.5px solid var(--ink); }
@@ -575,7 +576,53 @@ const BODY_HTML = `
     </div>
 
     <div class="hero__strip" aria-hidden="true">
-      <img src="/images/Slides_Top_Fold.gif" alt="ACT 3 in action" style="width:100%;height:auto;display:block;object-fit:cover;" />
+      <div class="strip__row">
+        <div class="strip__cell">
+          <div class="stripes" style="aspect-ratio:4/3">
+            <img src="/images/Slides_Top_Fold.gif" class="stripes__img" alt="" />
+            <div class="stripes__frame">
+              <div class="stripes__corners"><span></span><span></span><span></span><span></span></div>
+              <button class="stripes__play" aria-label="Play preview"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
+              <div class="stripes__meta"><span class="stripes__tag">01.A</span><span class="stripes__caption">SCRIPT → SHOT LIST</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="strip__cell">
+          <div class="stripes" style="aspect-ratio:4/3">
+            <img src="/images/Social_Media_Beach.jpeg" class="stripes__img" alt="" />
+            <div class="stripes__frame">
+              <div class="stripes__corners"><span></span><span></span><span></span><span></span></div>
+              <button class="stripes__play" aria-label="Play preview"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
+              <div class="stripes__meta"><span class="stripes__tag">01.B</span><span class="stripes__caption">SOCIAL MEDIA — BEACH</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="strip__cell">
+          <div class="stripes" style="aspect-ratio:4/3">
+            <img src="/images/Sets_Marketing_ACT3.gif" class="stripes__img" alt="" />
+            <div class="stripes__frame">
+              <div class="stripes__corners"><span></span><span></span><span></span><span></span></div>
+              <button class="stripes__play" aria-label="Play preview"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
+              <div class="stripes__meta"><span class="stripes__tag">01.C</span><span class="stripes__caption">SET BUILDER — INTERIOR</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="strip__cell">
+          <div class="stripes" style="aspect-ratio:4/3">
+            <img src="/images/Ad_Beach.jpeg" class="stripes__img" alt="" />
+            <div class="stripes__frame">
+              <div class="stripes__corners"><span></span><span></span><span></span><span></span></div>
+              <button class="stripes__play" aria-label="Play preview"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
+              <div class="stripes__meta"><span class="stripes__tag">01.D</span><span class="stripes__caption">AD CAMPAIGN — FINAL</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="strip__caption mono">
+        <span>SCRIPT.fdx</span><span class="strip__sep">→</span>
+        <span>650 shots planned</span><span class="strip__sep">→</span>
+        <span>render: 14m 22s</span>
+      </div>
     </div>
   </div>
   <a href="#stats" class="hero__scroll" aria-label="Scroll to next section">
@@ -731,6 +778,62 @@ const BODY_HTML = `
       <h2 class="serif">Start Free. <em style="color:var(--accent)">Scale as You Create.</em></h2>
     </div>
     <div class="pricing__grid" id="pricing-grid"></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials">
+  <div class="wrap">
+    <div class="sec-head sec-head--center">
+      <div class="label">— What Creators Say</div>
+      <h2 class="serif">The Filmmakers <em style="color:var(--accent)">Building with ACT 3.</em></h2>
+    </div>
+    <div class="quotes">
+      <figure class="quote">
+        <div class="quote__mark" aria-hidden="true">"</div>
+        <blockquote class="quote__q">I wrote a feature in Final Draft, imported it, and watched my opening sequence cut together by lunch. It's the closest I've come to seeing what was in my head.</blockquote>
+        <figcaption class="quote__cap">
+          <div class="quote__avatar" aria-hidden="true"><span>MC</span></div>
+          <div>
+            <div class="quote__name">Maren Coetzee</div>
+            <div class="quote__role">Screenwriter — drama feature in development</div>
+          </div>
+        </figcaption>
+      </figure>
+      <figure class="quote">
+        <div class="quote__mark" aria-hidden="true">"</div>
+        <blockquote class="quote__q">We finished a 22-minute short on a budget that wouldn't have covered a single shoot day. Consistency held across 480 shots. It's not a clip generator. It's a studio.</blockquote>
+        <figcaption class="quote__cap">
+          <div class="quote__avatar" aria-hidden="true"><span>IR</span></div>
+          <div>
+            <div class="quote__name">Iván Reséndez</div>
+            <div class="quote__role">Indie filmmaker, Buenos Aires</div>
+          </div>
+        </figcaption>
+      </figure>
+      <figure class="quote">
+        <div class="quote__mark" aria-hidden="true">"</div>
+        <blockquote class="quote__q">Our agency went from one brand film a quarter to one a week — without sacrificing quality. The Brand Kit alone paid for the year.</blockquote>
+        <figcaption class="quote__cap">
+          <div class="quote__avatar" aria-hidden="true"><span>PB</span></div>
+          <div>
+            <div class="quote__name">Priya Bhattacharya</div>
+            <div class="quote__role">Creative Director, Northtype Studio</div>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="logos">
+      <div class="logos__label">— Used by teams at</div>
+      <div class="logos__row">
+        <span class="logos__item">NORTHTYPE</span>
+        <span class="logos__item">OAKWOOD PICTURES</span>
+        <span class="logos__item">FALCON &amp; CO.</span>
+        <span class="logos__item">STUDIO 47</span>
+        <span class="logos__item">BRIGHT/ADJ</span>
+        <span class="logos__item">MERIDIAN</span>
+      </div>
+    </div>
   </div>
 </section>
 
