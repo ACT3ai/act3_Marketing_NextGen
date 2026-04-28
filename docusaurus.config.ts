@@ -83,14 +83,9 @@ const config: Config = {
       items: [
         {
           to: "/",
-          label: "Home",
+          label: "Main",
           position: "left",
           activeBaseRegex: "^/$",
-        },
-        {
-          href: "/#pricing",
-          label: "Plans",
-          position: "left",
         },
         {
           to: "/about",
@@ -99,13 +94,19 @@ const config: Config = {
         },
         {
           to: "/contact",
-          label: "Contact",
+          label: "Contact Us",
+          position: "left",
+        },
+        {
+          href: "/#pricing",
+          label: "Plans",
           position: "left",
         },
         {
           href: "https://www.youtube.com/@ACT3AI",
           label: "Videos",
           position: "left",
+          target: "_blank",
         },
         {
           href: "https://act3ai.com/login",

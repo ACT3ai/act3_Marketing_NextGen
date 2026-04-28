@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Head from "@docusaurus/Head";
+import SiteFooter from "../components/SiteFooter";
 
 // ── Extracted CSS from the standalone marketing page ──────────────────────────
 const PAGE_CSS = `
@@ -166,20 +167,6 @@ body {
 .nav__link:hover, .nav__link.is-open { color: var(--ink); background: var(--bg-2); }
 .nav__link--quiet { color: var(--ink-2); }
 .nav__actions { display: flex; gap: 12px; align-items: center; justify-self: end; }
-.nav__dropdown {
-  position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
-  margin-top: 6px; background: var(--paper); border: 1px solid var(--line);
-  border-radius: 14px; padding: 14px; box-shadow: 0 30px 60px -30px rgba(0,0,0,.18);
-  min-width: 560px; display: none;
-}
-.nav__dropdown.is-open { display: block; }
-.nav__dropdown-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
-.nav__dropdown-item { padding: 12px 14px; border-radius: 10px; text-decoration: none; color: var(--ink); display: block; transition: background .15s ease; }
-.nav__dropdown-item:hover { background: var(--bg-2); }
-.nav__dropdown-name { font-family: var(--font-display); font-size: 17px; }
-.nav__dropdown-desc { font-size: 13px; color: var(--ink-3); margin-top: 2px; }
-.nav__chevron { display: inline-flex; transition: transform .2s ease; margin-left: 4px; }
-.nav__link.is-open .nav__chevron { transform: rotate(180deg); }
 
 @media (max-width: 820px) {
   .nav__links { display: none; }
@@ -466,24 +453,6 @@ body {
 .finalcta__ghost { background: transparent; color: white; border: 1px solid color-mix(in oklab, white 50%, transparent); padding: 16px 30px; font-size: 15.5px; }
 .finalcta__ghost:hover { background: color-mix(in oklab, white 10%, transparent); border-color: white; }
 
-/* ===== FOOTER ===== */
-.footer { padding: 80px 0 40px; border-top: 1px solid var(--line); }
-.footer__top { display: grid; grid-template-columns: 1.2fr 2.4fr; gap: clamp(32px,5vw,80px); }
-.footer__tag { color: var(--ink-2); margin: 18px 0 22px; max-width: 30ch; }
-.footer__cols { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
-.footer__col-head { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 14px; letter-spacing: -0.005em; }
-.footer__col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
-.footer__col a { color: var(--ink-2); text-decoration: none; font-size: 14px; transition: color .15s ease; }
-.footer__col a:hover { color: var(--accent); }
-.footer__bot { display: flex; align-items: center; justify-content: space-between; margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 13px; color: var(--ink-3); }
-.footer__social { display: flex; gap: 6px; }
-.footer__social a { width: 36px; height: 36px; border-radius: 999px; border: 1px solid var(--line); display: inline-flex; align-items: center; justify-content: center; color: var(--ink-2); transition: color .15s ease, border-color .15s ease, background .15s ease; }
-.footer__social a:hover { color: var(--accent); border-color: var(--accent); background: var(--bg-2); }
-
-@media (max-width: 900px) {
-  .footer__top { grid-template-columns: 1fr; }
-  .footer__cols { grid-template-columns: 1fr 1fr; }
-}
 `;
 
 // ── Static body HTML (nav, hero, stats, how-it-works, containers, cta, footer) ──
@@ -502,39 +471,11 @@ const BODY_HTML = `
     </a>
 
     <nav class="nav__links" aria-label="Primary">
-      <button class="nav__link" id="nav-videos-btn" aria-haspopup="true" aria-expanded="false">
-        Videos
-        <span class="nav__chevron">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-      </button>
-      <a class="nav__link" href="#pricing">Plans</a>
+      <a class="nav__link" href="/">Main</a>
       <a class="nav__link" href="/about">About Us</a>
-
-      <div class="nav__dropdown" id="nav-videos-menu" role="menu">
-        <div class="nav__dropdown-grid">
-          <a class="nav__dropdown-item" href="#social-media" role="menuitem">
-            <div class="nav__dropdown-name">Social Media</div>
-            <div class="nav__dropdown-desc">Vertical, fast, scroll-native</div>
-          </a>
-          <a class="nav__dropdown-item" href="#marketing" role="menuitem">
-            <div class="nav__dropdown-name">Marketing</div>
-            <div class="nav__dropdown-desc">Brand films, ads, product</div>
-          </a>
-          <a class="nav__dropdown-item" href="#corporate" role="menuitem">
-            <div class="nav__dropdown-name">Corporate</div>
-            <div class="nav__dropdown-desc">Town halls, training, comms</div>
-          </a>
-          <a class="nav__dropdown-item" href="#movies" role="menuitem">
-            <div class="nav__dropdown-name">Movies</div>
-            <div class="nav__dropdown-desc">Shorts, features, indie</div>
-          </a>
-          <a class="nav__dropdown-item" href="#tv" role="menuitem">
-            <div class="nav__dropdown-name">ACT 3 TV</div>
-            <div class="nav__dropdown-desc">Episodic series &amp; streaming</div>
-          </a>
-        </div>
-      </div>
+      <a class="nav__link" href="/contact">Contact Us</a>
+      <a class="nav__link" href="#pricing">Plans</a>
+      <a class="nav__link" href="https://www.youtube.com/@ACT3AI" target="_blank" rel="noopener noreferrer">Videos</a>
     </nav>
 
     <div class="nav__actions">
@@ -755,58 +696,6 @@ const BODY_HTML = `
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="wrap">
-    <div class="footer__top">
-      <div class="footer__brand">
-        <a href="#top" class="logo" aria-label="ACT 3 home">
-          <span class="logo__mark">
-            <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
-              <path d="M12 2.5L22 20H2L12 2.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-              <circle cx="12" cy="14.5" r="2.2" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="logo__word serif" style="color:white">ACT<span class="logo__word-num">3</span></span>
-        </a>
-        <p class="footer__tag">Create movies at the speed of storytelling.</p>
-        <a class="btn btn--accent btn--sm" href="https://app.act3ai.com/signup/">Get Started <span class="arrow">→</span></a>
-      </div>
-      <div class="footer__cols">
-        <div class="footer__col">
-          <div class="footer__col-head">Product</div>
-          <ul><li><a href="https://app.act3ai.com/settings/plans/">Pricing</a></li></ul>
-        </div>
-        <div class="footer__col">
-          <div class="footer__col-head">Company</div>
-          <ul><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li></ul>
-        </div>
-        <div class="footer__col">
-          <div class="footer__col-head">Resources</div>
-          <ul><li><a href="https://documentation.act3ai.com/">Documentation</a></li></ul>
-        </div>
-        <div class="footer__col">
-          <div class="footer__col-head">Legal</div>
-          <ul><li><a href="https://legal.act3ai.com/docs/privacy-policy#welcome">Privacy Policy</a></li><li><a href="https://legal.act3ai.com/docs/terms-of-service/">Terms of Service</a></li></ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer__bot">
-      <div>© 2026 ACT 3 AI. All rights reserved.</div>
-      <div class="footer__social">
-        <a href="https://x.com/act3ai" aria-label="X / Twitter">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        </a>
-        <a href="https://www.youtube.com/@ACT3AI" aria-label="YouTube">
-          <svg width="18" height="18" viewBox="0 0 24 24"><path d="M3 7c0-1.5 1-2 2-2h14c1 0 2 .5 2 2v10c0 1.5-1 2-2 2H5c-1 0-2-.5-2-2V7zm7 1.5v7l6-3.5-6-3.5z" fill="currentColor"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/company/act3ai/" aria-label="LinkedIn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 10v7M7 7v.01M11 10v7M11 13c0-2 1.5-3 3-3s3 1 3 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</footer>
 `;
 
 export default function Home(): JSX.Element {
@@ -1081,37 +970,14 @@ export default function Home(): JSX.Element {
       if (howStage) howStage.innerHTML = buildFlipCube(howCur, howNxt);
     }, 6000);
 
-    // ── Nav scroll + dropdown ──────────────────────────────────────────────────
-    const nav     = document.getElementById("nav");
-    const vidBtn  = document.getElementById("nav-videos-btn") as HTMLButtonElement | null;
-    const vidMenu = document.getElementById("nav-videos-menu");
-
-    function closeMenu(): void {
-      vidBtn?.classList.remove("is-open");
-      vidMenu?.classList.remove("is-open");
-      vidBtn?.setAttribute("aria-expanded", "false");
-    }
-    function openMenu(): void {
-      vidBtn?.classList.add("is-open");
-      vidMenu?.classList.add("is-open");
-      vidBtn?.setAttribute("aria-expanded", "true");
-    }
+    // ── Nav scroll ────────────────────────────────────────────────────────────
+    const nav = document.getElementById("nav");
 
     const scrollHandler = (): void => {
       nav?.classList.toggle("nav--solid", window.scrollY > 24);
     };
-    const vidBtnClickHandler = (): void => {
-      vidMenu?.classList.contains("is-open") ? closeMenu() : openMenu();
-    };
-    const docClickHandler = (e: MouseEvent): void => {
-      if (nav && !nav.contains(e.target as Node)) closeMenu();
-    };
 
     window.addEventListener("scroll", scrollHandler, { passive: true });
-    vidBtn?.addEventListener("click", vidBtnClickHandler);
-    vidBtn?.addEventListener("mouseenter", openMenu);
-    nav?.addEventListener("mouseleave", closeMenu);
-    document.addEventListener("click", docClickHandler);
 
     // ── Stats intersection observer ────────────────────────────────────────────
     const statNums = document.querySelectorAll("[data-stat]");
@@ -1132,10 +998,6 @@ export default function Home(): JSX.Element {
     return () => {
       clearInterval(flipTimer);
       window.removeEventListener("scroll", scrollHandler);
-      vidBtn?.removeEventListener("click", vidBtnClickHandler);
-      vidBtn?.removeEventListener("mouseenter", openMenu);
-      nav?.removeEventListener("mouseleave", closeMenu);
-      document.removeEventListener("click", docClickHandler);
       io.disconnect();
     };
   }, []);
@@ -1157,6 +1019,7 @@ export default function Home(): JSX.Element {
         <style>{PAGE_CSS}</style>
       </Head>
       <div dangerouslySetInnerHTML={{ __html: BODY_HTML }} />
+      <SiteFooter />
     </>
   );
 }
