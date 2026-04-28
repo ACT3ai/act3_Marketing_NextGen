@@ -539,7 +539,7 @@ const BODY_HTML = `
 
     <div class="nav__actions">
       <a class="nav__link nav__link--quiet" href="https://app.act3ai.com/signin/">Log In</a>
-      <a class="btn btn--accent btn--sm" href="https://act3ai.com">Start Free</a>
+      <a class="btn btn--accent btn--sm" href="https://app.act3ai.com/signup/">Get Started</a>
     </div>
   </div>
 </header>
@@ -563,7 +563,7 @@ const BODY_HTML = `
           Create 5-minute to 3-hour videos with the lowest labor in the industry. No prompt engineering. No tool switching. Write your story — ACT 3 handles everything else.
         </p>
         <div class="hero__ctas">
-          <a class="btn btn--accent btn--lg" href="https://act3ai.com">Get Started <span class="arrow">→</span></a>
+          <a class="btn btn--accent btn--lg" href="https://app.act3ai.com/signup/">Get Started <span class="arrow">→</span></a>
           <a class="btn btn--ghost btn--lg" href="https://www.youtube.com/@ACT3AI">
             <span class="hero__playdot" aria-hidden="true">
               <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z" fill="currentColor"/></svg>
@@ -826,7 +826,7 @@ const BODY_HTML = `
           <span class="logo__word serif">ACT<span class="logo__word-num">3</span></span>
         </a>
         <p class="footer__tag">Create movies at the speed of storytelling.</p>
-        <a class="btn btn--accent btn--sm" href="https://act3ai.com">Start Free <span class="arrow">→</span></a>
+        <a class="btn btn--accent btn--sm" href="https://app.act3ai.com/signup/">Get Started <span class="arrow">→</span></a>
       </div>
       <div class="footer__cols">
         <div class="footer__col">
