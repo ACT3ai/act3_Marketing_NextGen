@@ -927,7 +927,7 @@ export default function Home(): JSX.Element {
 
     // ── Pricing ────────────────────────────────────────────────────────────────
     const TIERS = [
-      { name: "Creator",    price: "$49",    per: "per month",  desc: "For individual creators and screenwriters.",      cta: "Choose Creator", href: "https://app.act3ai.com/signin/?redirectTo=%2Fsettings%2Fplans%2F", featured: false, feats: ["Unlimited drafting", "1080p export", "Script import (PDF / FDX)", "All visual styles"] },
+      { name: "Creator",    price: "$49",    per: "per month",  desc: "For individual creators and screenwriters.",      cta: "Choose Creator", href: "https://app.act3ai.com/signin/?redirectTo=%2Fsettings%2Fplans%2F", featured: false, feats: ["24,500 credits / month", "1080p export", "Script import (PDF / FDX)", "All visual styles"] },
       { name: "Studio",     price: "$149",   per: "per month",  desc: "Full pipeline for indie films and series.",       cta: "Choose Studio",  href: "https://app.act3ai.com/signin/?redirectTo=%2Fsettings%2Fplans%2F", featured: true,  feats: ["Long-form (up to 3 hours)", "4K &amp; ProRes export", "Story Arc engine", "Up to 5 collaborators", "Priority render queue"] },
       { name: "Enterprise", price: "Custom", per: "contact us", desc: "For studios, agencies, and teams.",               cta: "Contact Sales",  href: "mailto:ContactUs@ACT3ai.com", featured: false, feats: ["SSO &amp; role permissions", "Multi-org workspace", "Custom model routing", "Dedicated success engineer"] },
     ];
