@@ -749,7 +749,7 @@ const BODY_HTML = `
     </h2>
     <p class="finalcta__sub">Start creating your film today. Free to begin.</p>
     <div class="finalcta__ctas">
-      <a class="btn finalcta__btn" href="https://act3ai.com">Start Creating Your Film <span class="arrow">→</span></a>
+      <a class="btn finalcta__btn" href="https://app.act3ai.com/signup/">Start Creating Your Film <span class="arrow">→</span></a>
       <a class="btn finalcta__ghost" href="https://www.youtube.com/@ACT3AI">Watch the demo</a>
     </div>
   </div>
@@ -767,7 +767,7 @@ const BODY_HTML = `
               <circle cx="12" cy="14.5" r="2.2" fill="currentColor"/>
             </svg>
           </span>
-          <span class="logo__word serif">ACT<span class="logo__word-num">3</span></span>
+          <span class="logo__word serif" style="color:white">ACT<span class="logo__word-num">3</span></span>
         </a>
         <p class="footer__tag">Create movies at the speed of storytelling.</p>
         <a class="btn btn--accent btn--sm" href="https://app.act3ai.com/signup/">Get Started <span class="arrow">→</span></a>
@@ -775,26 +775,26 @@ const BODY_HTML = `
       <div class="footer__cols">
         <div class="footer__col">
           <div class="footer__col-head">Product</div>
-          <ul><li><a href="/#how">Features</a></li><li><a href="https://app.act3ai.com/settings/plans/">Pricing</a></li><li><a href="#">Changelog</a></li><li><a href="#">Roadmap</a></li></ul>
+          <ul><li><a href="https://app.act3ai.com/settings/plans/">Pricing</a></li><li><a href="#">Changelog</a></li><li><a href="#">Tutorials</a></li></ul>
         </div>
         <div class="footer__col">
           <div class="footer__col-head">Company</div>
-          <ul><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="#">Careers</a></li><li><a href="#">Press</a></li></ul>
+          <ul><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="#">Community</a></li></ul>
         </div>
         <div class="footer__col">
           <div class="footer__col-head">Resources</div>
-          <ul><li><a href="#">Documentation</a></li><li><a href="#">Blog</a></li><li><a href="#">Tutorials</a></li><li><a href="#">Community</a></li></ul>
+          <ul><li><a href="https://documentation.act3ai.com/">Documentation</a></li><li><a href="#">Blog</a></li></ul>
         </div>
         <div class="footer__col">
           <div class="footer__col-head">Legal</div>
-          <ul><li><a href="https://legal.act3ai.com/docs/privacy-policy#welcome">Privacy Policy</a></li><li><a href="https://legal.act3ai.com/docs/terms-of-service/">Terms of Service</a></li><li><a href="#">Cookie Policy</a></li></ul>
+          <ul><li><a href="https://legal.act3ai.com/docs/privacy-policy#welcome">Privacy Policy</a></li><li><a href="https://legal.act3ai.com/docs/terms-of-service/">Terms of Service</a></li></ul>
         </div>
       </div>
     </div>
     <div class="footer__bot">
       <div>© 2026 ACT 3 AI. All rights reserved.</div>
       <div class="footer__social">
-        <a href="https://x.com/ACT3AI" aria-label="X / Twitter">
+        <a href="https://x.com/act3ai" aria-label="X / Twitter">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </a>
         <a href="https://www.youtube.com/@ACT3AI" aria-label="YouTube">
