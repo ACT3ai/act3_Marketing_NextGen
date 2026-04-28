@@ -187,8 +187,8 @@ body {
 
 /* ===== HERO ===== */
 .hero {
-  position: relative; min-height: 100vh; max-height: 1600px; display: flex; align-items: center;
-  padding: clamp(72px, 8vh, 96px) 0 clamp(40px, 4vh, 56px); overflow: hidden;
+  position: relative; min-height: 100vh; max-height: 1600px; display: flex; align-items: stretch;
+  overflow: hidden;
 }
 .hero__bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
 .hero__grain {
@@ -202,8 +202,15 @@ body {
 .hero__glow--b { width: 500px; height: 500px; background: var(--accent); bottom: -200px; left: -180px; opacity: .08; }
 .hero__inner {
   position: relative; z-index: 1;
-  display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.05fr);
-  gap: clamp(32px, 5vw, 80px); align-items: center;
+  display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.1fr);
+  align-items: stretch; width: 100%;
+}
+.hero__copy-area {
+  display: flex; align-items: center;
+  padding-top: clamp(72px, 8vh, 96px);
+  padding-bottom: clamp(40px, 4vh, 56px);
+  padding-left: calc(max(0px, (100vw - var(--maxw)) / 2) + var(--pad-x));
+  padding-right: clamp(20px, 3vw, 48px);
 }
 .hero__copy { max-width: 620px; }
 .hero__h { font-family: var(--font-display); font-size: clamp(48px, 6.4vw, 92px); font-weight: 400; letter-spacing: -0.02em; line-height: 1.05; margin-top: 18px; }
@@ -217,7 +224,7 @@ body {
 .hero__playdot svg { transform: translateX(1px); }
 .hero__proof { margin-top: 28px; font-size: 13.5px; color: var(--ink-3); letter-spacing: .01em; }
 
-.hero__strip { position: relative; }
+.hero__strip { position: relative; overflow: hidden; }
 .strip__row { display: grid; grid-template-columns: 1.1fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; transform: rotate(-2deg); }
 .strip__cell:nth-child(1) { transform: translateY(-14px); }
 .strip__cell:nth-child(4) { transform: translateY(14px); }
@@ -241,6 +248,7 @@ body {
 @media (max-width: 920px) {
   .hero__inner { grid-template-columns: 1fr; }
   .hero__strip { display: none; }
+  .hero__copy-area { padding-left: var(--pad-x); padding-right: var(--pad-x); }
 }
 
 /* ===== STATS ===== */
@@ -532,30 +540,32 @@ const BODY_HTML = `
     <div class="hero__glow hero__glow--a"></div>
     <div class="hero__glow hero__glow--b"></div>
   </div>
-  <div class="wrap hero__inner">
-    <div class="hero__copy">
-      <div class="label label--accent">— AI Filmmaking Platform</div>
-      <h1 class="hero__h">
-        Create Movies at the<br>
-        <em class="hero__em">Speed of Storytelling.</em>
-      </h1>
-      <p class="hero__sub">
-        Create 5-minute to 3-hour videos with the lowest labor in the industry. No prompt engineering. No tool switching. Write your story — ACT 3 handles everything else.
-      </p>
-      <div class="hero__ctas">
-        <a class="btn btn--accent btn--lg" href="#start">Get Started <span class="arrow">→</span></a>
-        <a class="btn btn--ghost btn--lg" href="#demo">
-          <span class="hero__playdot" aria-hidden="true">
-            <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z" fill="currentColor"/></svg>
-          </span>
-          See ACT 3 in Action
-        </a>
+  <div class="hero__inner">
+    <div class="hero__copy-area">
+      <div class="hero__copy">
+        <div class="label label--accent">— AI Filmmaking Platform</div>
+        <h1 class="hero__h">
+          Create Movies at the<br>
+          <em class="hero__em">Speed of Storytelling.</em>
+        </h1>
+        <p class="hero__sub">
+          Create 5-minute to 3-hour videos with the lowest labor in the industry. No prompt engineering. No tool switching. Write your story — ACT 3 handles everything else.
+        </p>
+        <div class="hero__ctas">
+          <a class="btn btn--accent btn--lg" href="#start">Get Started <span class="arrow">→</span></a>
+          <a class="btn btn--ghost btn--lg" href="#demo">
+            <span class="hero__playdot" aria-hidden="true">
+              <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z" fill="currentColor"/></svg>
+            </span>
+            See ACT 3 in Action
+          </a>
+        </div>
+        <p class="hero__proof">Trusted by screenwriters, indie filmmakers, and studios.</p>
       </div>
-      <p class="hero__proof">Trusted by screenwriters, indie filmmakers, and studios.</p>
     </div>
 
     <div class="hero__strip" aria-hidden="true">
-      <img src="/images/Slides_Top_Fold.gif" alt="ACT 3 in action" style="width:100%;aspect-ratio:16/9;border-radius:var(--radius-lg);display:block;object-fit:cover;" />
+      <img src="/images/Slides_Top_Fold.gif" alt="ACT 3 in action" style="width:100%;height:100%;border-radius:0;display:block;object-fit:cover;" />
     </div>
   </div>
   <a href="#stats" class="hero__scroll" aria-label="Scroll to next section">
