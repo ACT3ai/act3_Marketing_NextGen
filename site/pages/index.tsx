@@ -187,8 +187,8 @@ body {
 
 /* ===== HERO ===== */
 .hero {
-  position: relative; min-height: 100vh; display: flex; align-items: center;
-  padding: 120px 0 64px; overflow: hidden;
+  position: relative; min-height: 100vh; max-height: 1600px; display: flex; align-items: center;
+  padding: clamp(72px, 8vh, 96px) 0 clamp(40px, 4vh, 56px); overflow: hidden;
 }
 .hero__bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
 .hero__grain {
