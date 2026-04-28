@@ -62,8 +62,6 @@ export default function SiteFooter(): React.ReactNode {
                 <div className="sf-footer__col-head">Product</div>
                 <ul>
                   <li><a href="https://app.act3ai.com/settings/plans/">Pricing</a></li>
-                  <li><a href="#">Changelog</a></li>
-                  <li><a href="#">Tutorials</a></li>
                 </ul>
               </div>
               <div className="sf-footer__col">
@@ -71,14 +69,12 @@ export default function SiteFooter(): React.ReactNode {
                 <ul>
                   <li><a href="/about">About</a></li>
                   <li><a href="/contact">Contact</a></li>
-                  <li><a href="#">Community</a></li>
                 </ul>
               </div>
               <div className="sf-footer__col">
                 <div className="sf-footer__col-head">Resources</div>
                 <ul>
                   <li><a href="https://documentation.act3ai.com/">Documentation</a></li>
-                  <li><a href="#">Blog</a></li>
                 </ul>
               </div>
               <div className="sf-footer__col">
