@@ -1061,19 +1061,26 @@ export default function Home(): JSX.Element {
     }
 
     // ── FlipCube word rotation ─────────────────────────────────────────────
-    const FLIP_WORDS = ["Movies", "Videos"];
+    const HERO_WORDS = ["Movies", "Videos"];
+    const HOW_WORDS  = ["Film",   "Video"];
     let flipIdx = 0;
-    const flipStage = document.querySelector<HTMLElement>("#hero-flipcube .flipcube__stage");
-    const flipLabel = document.getElementById("hero-flipcube");
+    const heroStage = document.querySelector<HTMLElement>("#hero-flipcube .flipcube__stage");
+    const heroLabel = document.getElementById("hero-flipcube");
+    const howStage  = document.querySelector<HTMLElement>("#how-flipcube .flipcube__stage");
+    const howLabel  = document.getElementById("how-flipcube");
     function buildFlipCube(cur: string, nxt: string): string {
       return `<span class="flipcube__cube"><span class="flipcube__face flipcube__face--top">${cur}</span><span class="flipcube__face flipcube__face--front">${nxt}</span></span>`;
     }
     const flipTimer = setInterval(() => {
-      flipIdx = (flipIdx + 1) % FLIP_WORDS.length;
-      const cur = FLIP_WORDS[flipIdx];
-      const nxt = FLIP_WORDS[(flipIdx + 1) % FLIP_WORDS.length];
-      if (flipLabel) flipLabel.setAttribute("aria-label", cur);
-      if (flipStage) flipStage.innerHTML = buildFlipCube(cur, nxt);
+      flipIdx = (flipIdx + 1) % HERO_WORDS.length;
+      const heroCur = HERO_WORDS[flipIdx];
+      const heroNxt = HERO_WORDS[(flipIdx + 1) % HERO_WORDS.length];
+      if (heroLabel) heroLabel.setAttribute("aria-label", heroCur);
+      if (heroStage) heroStage.innerHTML = buildFlipCube(heroCur, heroNxt);
+      const howCur = HOW_WORDS[flipIdx];
+      const howNxt = HOW_WORDS[(flipIdx + 1) % HOW_WORDS.length];
+      if (howLabel) howLabel.setAttribute("aria-label", howCur);
+      if (howStage) howStage.innerHTML = buildFlipCube(howCur, howNxt);
     }, 6000);
 
     // ── Nav scroll + dropdown ──────────────────────────────────────────────────
