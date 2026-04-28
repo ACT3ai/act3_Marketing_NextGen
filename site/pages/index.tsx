@@ -735,62 +735,6 @@ const BODY_HTML = `
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="section testimonials">
-  <div class="wrap">
-    <div class="sec-head sec-head--center">
-      <div class="label">— What Creators Say</div>
-      <h2 class="serif">The Filmmakers <em style="color:var(--accent)">Building with ACT 3.</em></h2>
-    </div>
-    <div class="quotes">
-      <figure class="quote">
-        <div class="quote__mark" aria-hidden="true">"</div>
-        <blockquote class="quote__q">I wrote a feature in Final Draft, imported it, and watched my opening sequence cut together by lunch. It's the closest I've come to seeing what was in my head.</blockquote>
-        <figcaption class="quote__cap">
-          <div class="quote__avatar" aria-hidden="true"><span>MC</span></div>
-          <div>
-            <div class="quote__name">Maren Coetzee</div>
-            <div class="quote__role">Screenwriter — drama feature in development</div>
-          </div>
-        </figcaption>
-      </figure>
-      <figure class="quote">
-        <div class="quote__mark" aria-hidden="true">"</div>
-        <blockquote class="quote__q">We finished a 22-minute short on a budget that wouldn't have covered a single shoot day. Consistency held across 480 shots. It's not a clip generator. It's a studio.</blockquote>
-        <figcaption class="quote__cap">
-          <div class="quote__avatar" aria-hidden="true"><span>IR</span></div>
-          <div>
-            <div class="quote__name">Iván Reséndez</div>
-            <div class="quote__role">Indie filmmaker, Buenos Aires</div>
-          </div>
-        </figcaption>
-      </figure>
-      <figure class="quote">
-        <div class="quote__mark" aria-hidden="true">"</div>
-        <blockquote class="quote__q">Our agency went from one brand film a quarter to one a week — without sacrificing quality. The Brand Kit alone paid for the year.</blockquote>
-        <figcaption class="quote__cap">
-          <div class="quote__avatar" aria-hidden="true"><span>PB</span></div>
-          <div>
-            <div class="quote__name">Priya Bhattacharya</div>
-            <div class="quote__role">Creative Director, Northtype Studio</div>
-          </div>
-        </figcaption>
-      </figure>
-    </div>
-    <div class="logos">
-      <div class="logos__label">— Used by teams at</div>
-      <div class="logos__row">
-        <span class="logos__item">NORTHTYPE</span>
-        <span class="logos__item">OAKWOOD PICTURES</span>
-        <span class="logos__item">FALCON &amp; CO.</span>
-        <span class="logos__item">STUDIO 47</span>
-        <span class="logos__item">BRIGHT/ADJ</span>
-        <span class="logos__item">MERIDIAN</span>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FINAL CTA -->
 <section class="finalcta">
   <svg class="finalcta__pattern" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
@@ -831,7 +775,7 @@ const BODY_HTML = `
       <div class="footer__cols">
         <div class="footer__col">
           <div class="footer__col-head">Product</div>
-          <ul><li><a href="/#how">Features</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#">Changelog</a></li><li><a href="#">Roadmap</a></li></ul>
+          <ul><li><a href="/#how">Features</a></li><li><a href="https://app.act3ai.com/settings/plans/">Pricing</a></li><li><a href="#">Changelog</a></li><li><a href="#">Roadmap</a></li></ul>
         </div>
         <div class="footer__col">
           <div class="footer__col-head">Company</div>
@@ -1097,9 +1041,9 @@ export default function Home(): JSX.Element {
 
     // ── Pricing ────────────────────────────────────────────────────────────────
     const TIERS = [
-      { name: "Creator",    price: "$49",    per: "per month",  desc: "For individual creators and screenwriters.",      cta: "Choose Creator", featured: false, feats: ["Unlimited drafting", "1080p export", "Script import (PDF / FDX)", "All visual styles"] },
-      { name: "Studio",     price: "$149",   per: "per month",  desc: "Full pipeline for indie films and series.",       cta: "Choose Studio",  featured: true,  feats: ["Long-form (up to 3 hours)", "4K &amp; ProRes export", "Story Arc engine", "Up to 5 collaborators", "Priority render queue"] },
-      { name: "Enterprise", price: "Custom", per: "contact us", desc: "For studios, agencies, and teams.",               cta: "Contact Sales",  featured: false, feats: ["SSO &amp; role permissions", "Multi-org workspace", "Custom model routing", "Dedicated success engineer"] },
+      { name: "Creator",    price: "$49",    per: "per month",  desc: "For individual creators and screenwriters.",      cta: "Choose Creator", href: "https://app.act3ai.com/signin/?redirectTo=%2Fsettings%2Fplans%2F", featured: false, feats: ["Unlimited drafting", "1080p export", "Script import (PDF / FDX)", "All visual styles"] },
+      { name: "Studio",     price: "$149",   per: "per month",  desc: "Full pipeline for indie films and series.",       cta: "Choose Studio",  href: "https://app.act3ai.com/signin/?redirectTo=%2Fsettings%2Fplans%2F", featured: true,  feats: ["Long-form (up to 3 hours)", "4K &amp; ProRes export", "Story Arc engine", "Up to 5 collaborators", "Priority render queue"] },
+      { name: "Enterprise", price: "Custom", per: "contact us", desc: "For studios, agencies, and teams.",               cta: "Contact Sales",  href: "mailto:ContactUs@ACT3ai.com", featured: false, feats: ["SSO &amp; role permissions", "Multi-org workspace", "Custom model routing", "Dedicated success engineer"] },
     ];
     const checkSVG = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color:var(--accent);flex-shrink:0"><path d="M4.5 12.5l4.5 4.5L19.5 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
     const pricingGrid = document.getElementById("pricing-grid");
@@ -1111,7 +1055,7 @@ export default function Home(): JSX.Element {
     <div class="tier__name serif">${t.name}</div>
     <div class="tier__price serif">${t.price}<span class="tier__per"> ${t.per}</span></div>
     <div class="tier__desc">${t.desc}</div>
-    <a class="btn ${t.featured ? "btn--accent" : "btn--ghost"} tier__cta" href="https://act3ai.com">${t.cta} <span class="arrow">→</span></a>
+    <a class="btn ${t.featured ? "btn--accent" : "btn--ghost"} tier__cta" href="${(t as any).href}">${t.cta} <span class="arrow">→</span></a>
     <ul class="tier__feats">${t.feats.map((f) => `<li>${checkSVG}<span>${f}</span></li>`).join("")}</ul>
   </div>`;
       });

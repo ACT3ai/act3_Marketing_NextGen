@@ -7,7 +7,7 @@ ACT3 AI marketing site — Docusaurus static site deployed to GitHub Pages.
 PROJECT_DIR dir is ~/BGit/act3/act3_Marketing_NextGen
 
 * Tech: Docusaurus 3.10.0, React 19, TypeScript, pnpm
-* Live URL: https://marketing.act3ai.com/
+* Live URL: https://act3ai.com/
 * GitHub repo: https://github.com/ACT3ai/act3_Marketing_NextGen
 * Org: ACT3ai
 
