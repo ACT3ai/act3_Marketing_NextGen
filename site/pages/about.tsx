@@ -1,140 +1,182 @@
-import type { ReactNode } from "react";
-import Link from "@docusaurus/Link";
+import React from "react";
 import Layout from "@theme/Layout";
-import Heading from "@theme/Heading";
+import Link from "@docusaurus/Link";
 
-type ValueCardProps = { title: string; body: string };
+const SECTION_CSS = `
+.about-page { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #131625; }
+.about-hero { background: #fff8f8; padding: 80px 24px; text-align: center; border-bottom: 1px solid #e8e8e8; }
+.about-hero h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 700; margin: 0 0 24px; line-height: 1.2; }
+.about-hero p { font-size: 1.05rem; color: #384155; line-height: 1.7; max-width: 820px; margin: 0 auto; }
+.about-section { padding: 72px 24px; }
+.about-section--alt { background: #f4f6fa; }
+.about-section--white { background: #fff; }
+.about-inner { max-width: 1100px; margin: 0 auto; }
+.about-section-head { text-align: center; margin-bottom: 52px; }
+.about-section-icon { width: 64px; height: 64px; background: #c4612b; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; margin: 0 auto 20px; }
+.about-section-head h2 { font-size: 2rem; font-weight: 700; margin: 0 0 16px; line-height: 1.2; }
+.about-section-head p { font-size: 1rem; color: #384155; line-height: 1.7; max-width: 720px; margin: 0 auto; }
+.about-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+@media (max-width: 820px) { .about-cards { grid-template-columns: 1fr; } }
+.about-card { background: white; border-radius: 14px; padding: 36px 28px; box-shadow: 0 6px 18px rgba(0,0,0,0.07); }
+.about-card--value { text-align: center; background: transparent; box-shadow: none; padding: 24px 16px; }
+.about-card h3 { font-size: 1.25rem; font-weight: 700; margin: 0 0 14px; line-height: 1.2; }
+.about-card p { font-size: 1rem; color: #384155; line-height: 1.65; margin: 0; }
+.about-value-icon { width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; margin: 0 auto 16px; }
+.about-team-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 760px; margin: 0 auto; }
+@media (max-width: 700px) { .about-team-cards { grid-template-columns: 1fr; } }
+.about-team-card { text-align: center; }
+.about-team-icon { width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 36px; margin: 0 auto 16px; }
+.about-team-card h4 { font-size: 1rem; font-weight: 700; margin: 0 0 8px; }
+.about-team-card p { font-size: 0.88rem; color: #384155; margin: 0; line-height: 1.5; }
+.about-cta-box { background: white; border-radius: 14px; box-shadow: 0 6px 18px rgba(0,0,0,0.07); padding: 64px 48px; max-width: 820px; margin: 0 auto; text-align: center; }
+.about-cta-box h3 { font-size: 2rem; font-weight: 700; margin: 0 0 20px; }
+.about-cta-box p { font-size: 1rem; color: #384155; line-height: 1.7; max-width: 560px; margin: 0 auto 32px; }
+.about-btn { display: inline-flex; align-items: center; gap: 8px; background: #c4612b; color: white; font-weight: 600; font-size: 1rem; padding: 14px 32px; border-radius: 8px; text-decoration: none; transition: background 0.15s; }
+.about-btn:hover { background: #a85024; color: white; text-decoration: none; }
+`;
 
-function ValueCard({ title, body }: ValueCardProps) {
-  return (
-    <div style={{
-      background: "var(--ifm-background-surface-color)",
-      border: "1px solid var(--ifm-color-emphasis-200)",
-      borderRadius: 12,
-      padding: "2rem",
-      flex: "1 1 260px",
-    }}>
-      <Heading as="h3" style={{ marginBottom: "0.75rem" }}>{title}</Heading>
-      <p style={{ opacity: 0.8, lineHeight: 1.7, margin: 0 }}>{body}</p>
-    </div>
-  );
-}
-
-type FeatureRowProps = { title: string; body: string };
-
-function FeatureRow({ title, body }: FeatureRowProps) {
-  return (
-    <div style={{ marginBottom: "2rem" }}>
-      <Heading as="h3" style={{ marginBottom: "0.5rem" }}>{title}</Heading>
-      <p style={{ opacity: 0.8, lineHeight: 1.8, margin: 0 }}>{body}</p>
-    </div>
-  );
-}
-
-export default function About(): ReactNode {
+export default function About(): React.ReactNode {
   return (
     <Layout
       title="About Us — ACT3 AI"
-      description="We're a passionate team of filmmakers, writers, and technologists dedicated to empowering creators to bring their visions to life."
+      description="Meet the team behind ACT3 AI — filmmakers, writers, and technologists dedicated to empowering creators everywhere."
     >
-      <main>
+      <style>{SECTION_CSS}</style>
+      <div className="about-page">
+
         {/* Hero */}
-        <section style={{
-          background: "linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(37, 99, 235, 0.06))",
-          padding: "5rem 0 4rem",
-          borderBottom: "1px solid var(--ifm-color-emphasis-200)",
-        }}>
-          <div className="container" style={{ maxWidth: 820 }}>
-            <Heading as="h1" style={{ fontSize: "2.75rem", lineHeight: 1.2, marginBottom: "1.5rem" }}>
-              Welcome to ACT 3 AI
-            </Heading>
-            <p style={{ fontSize: "1.3rem", lineHeight: 1.75, opacity: 0.9, marginBottom: 0 }}>
-              Where storytelling meets cutting-edge artificial intelligence. We're a passionate team
-              of filmmakers, writers, and technologists dedicated to empowering creators of all
-              backgrounds to bring their visions to life faster and more collaboratively than ever before.
-            </p>
-          </div>
+        <section className="about-hero">
+          <h1>About Us</h1>
+          <p>
+            Welcome to ACT 3 AI — where storytelling meets cutting-edge artificial intelligence.
+            We're a passionate team of filmmakers, writers, and technologists dedicated to empowering
+            creators of all backgrounds to bring their visions to life faster and more collaboratively
+            than ever before.
+          </p>
         </section>
 
         {/* Mission */}
-        <section style={{ padding: "4rem 0", borderBottom: "1px solid var(--ifm-color-emphasis-200)" }}>
-          <div className="container" style={{ maxWidth: 820 }}>
-            <Heading as="h2" style={{ marginBottom: "1rem" }}>Our Mission</Heading>
-            <p style={{ fontSize: "1.2rem", lineHeight: 1.8, opacity: 0.85 }}>
-              To simplify and enrich the video-making process by providing an integrated AI-driven
-              platform that combines scriptwriting, storyboarding, character creation, and video
-              generation in a single, intuitive workspace.
-            </p>
-            <p style={{ lineHeight: 1.8, opacity: 0.8 }}>
-              We believe that great storytelling shouldn't require a Hollywood budget. With the rise
-              of AI video generation models like Google Veo 3, Runway, and others, the tools to create
-              cinematic content are now within reach of any creator. ACT3 AI connects all those tools
-              into a single production pipeline — with a professional cinematography layer on top.
-            </p>
+        <section className="about-section about-section--white">
+          <div className="about-inner">
+            <div className="about-section-head">
+              <div className="about-section-icon">🎯</div>
+              <h2>Our Mission</h2>
+              <p>
+                To simplify and enrich the video-making process by providing an integrated AI-driven
+                platform that combines scriptwriting, storyboarding, character creation, and video
+                generation in a single, intuitive workspace.
+              </p>
+            </div>
           </div>
         </section>
 
         {/* What We Do */}
-        <section style={{ padding: "4rem 0", borderBottom: "1px solid var(--ifm-color-emphasis-200)" }}>
-          <div className="container" style={{ maxWidth: 820 }}>
-            <Heading as="h2" style={{ marginBottom: "2.5rem" }}>What We Do</Heading>
-            <FeatureRow
-              title="Streamlined Workflow"
-              body="From importing your screenplay to exporting a polished video, ACT3 AI keeps every step of production under one roof — no tool switching, no lost context, no juggling a dozen apps."
-            />
-            <FeatureRow
-              title="AI-Enhanced Creativity"
-              body="Leverage powerful AI engines — Google Veo 3, WAN AI, Runway — to generate voice, motion, visuals, and effects. Our platform handles the technical complexity so you stay focused on the story."
-            />
-            <FeatureRow
-              title="Collaboration & Control"
-              body="Real-time co-editing, version history, and granular lock-down controls let teams work together without stepping on each other. Your creative vision stays intact at every stage."
-            />
+        <section className="about-section about-section--alt">
+          <div className="about-inner">
+            <div className="about-section-head">
+              <div className="about-section-icon">⚡</div>
+              <h2>What We Do</h2>
+            </div>
+            <div className="about-cards">
+              <div className="about-card">
+                <h3>Streamlined Workflow</h3>
+                <p>
+                  From importing your screenplay to exporting a polished video, ACT 3 AI keeps
+                  every step under one roof — no tool switching, no lost context.
+                </p>
+              </div>
+              <div className="about-card">
+                <h3>AI-Enhanced Creativity</h3>
+                <p>
+                  Leverage powerful AI engines — Google Veo 3, WAN AI, Runway — to generate voice,
+                  motion, visuals, and effects with simple, natural-language direction.
+                </p>
+              </div>
+              <div className="about-card">
+                <h3>Collaboration &amp; Control</h3>
+                <p>
+                  Real-time co-editing, version history, and granular lock-down ensure your team
+                  stays in sync and your creative vision stays intact.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Values */}
-        <section style={{ padding: "4rem 0", borderBottom: "1px solid var(--ifm-color-emphasis-200)" }}>
-          <div className="container" style={{ maxWidth: 900 }}>
-            <Heading as="h2" style={{ marginBottom: "2.5rem" }}>Our Values</Heading>
-            <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
-              <ValueCard
-                title="Creativity First"
-                body="Technology should unlock, not replace, human imagination. Every feature we build is designed to give creators more expressive power, not less."
-              />
-              <ValueCard
-                title="Accessibility"
-                body="Whether you're a solo creator or a large studio, our platform scales to your needs. World-class filmmaking tools should be available to everyone."
-              />
-              <ValueCard
-                title="Transparency"
-                body="Clear credit estimates, in-app guidance, and open pricing. No hidden fees, no surprise bills — just honest tools that respect your time and money."
-              />
+        {/* Our Values */}
+        <section className="about-section about-section--white">
+          <div className="about-inner">
+            <div className="about-section-head">
+              <div className="about-section-icon">👥</div>
+              <h2>Our Values</h2>
+            </div>
+            <div className="about-cards">
+              <div className="about-card about-card--value">
+                <div className="about-value-icon" style={{ background: "#c4612b" }}>❤️</div>
+                <h3>Creativity First</h3>
+                <p>We believe technology should unlock, not replace, human imagination.</p>
+              </div>
+              <div className="about-card about-card--value">
+                <div className="about-value-icon" style={{ background: "#00c2b2" }}>🌐</div>
+                <h3>Accessibility</h3>
+                <p>Whether you're a solo creator or a large studio, our platform scales to your needs.</p>
+              </div>
+              <div className="about-card about-card--value">
+                <div className="about-value-icon" style={{ background: "#1e2534" }}>👁️</div>
+                <h3>Transparency</h3>
+                <p>Clear credit estimates, in-app guidance, and open pricing so you can focus on storytelling.</p>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Team */}
-        <section style={{ padding: "4rem 0" }}>
-          <div className="container" style={{ maxWidth: 820 }}>
-            <Heading as="h2" style={{ marginBottom: "1rem" }}>Our Team</Heading>
-            <p style={{ lineHeight: 1.8, opacity: 0.85, marginBottom: "3rem" }}>
-              We're a diverse group of filmmakers, writers, and technologists who share a passion for
-              storytelling. Our team includes industry veterans from Entertainment, Technology, and
-              the Creative Arts — united by the belief that AI can open cinematic storytelling to
-              everyone, not just those with Hollywood budgets.
-            </p>
-            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-              <Link className="button button--primary button--lg" to="https://act3ai.com">
-                Start Creating
-              </Link>
-              <Link className="button button--secondary button--lg" to="/contact">
-                Contact Us
+        <section className="about-section about-section--alt">
+          <div className="about-inner">
+            <div className="about-section-head">
+              <h2>Our Team</h2>
+              <p>
+                We're a diverse group of filmmakers, writers, and technologists who share a common
+                passion for storytelling and innovation. Our team combines decades of experience in
+                entertainment, technology, and creative arts to build tools that truly serve creators.
+              </p>
+            </div>
+            <div className="about-team-cards">
+              <div className="about-team-card">
+                <div className="about-team-icon" style={{ background: "#c4612b" }}>🎬</div>
+                <h4>Filmmakers</h4>
+                <p>Industry veterans who understand the creative process</p>
+              </div>
+              <div className="about-team-card">
+                <div className="about-team-icon" style={{ background: "#00c2b2" }}>⚡</div>
+                <h4>Technologists</h4>
+                <p>AI and software experts pushing the boundaries of what's possible</p>
+              </div>
+              <div className="about-team-card">
+                <div className="about-team-icon" style={{ background: "#1e2534" }}>✍️</div>
+                <h4>Creators</h4>
+                <p>Artists and writers who live and breathe storytelling</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Closing CTA */}
+        <section className="about-section about-section--white">
+          <div className="about-inner">
+            <div className="about-cta-box">
+              <h3>Let's Create Together</h3>
+              <p>
+                Thank you for choosing ACT 3 AI. Let's create the next chapter of storytelling — together.
+              </p>
+              <Link className="about-btn" to="https://act3ai.com">
+                Start Your Journey →
               </Link>
             </div>
           </div>
         </section>
-      </main>
+
+      </div>
     </Layout>
   );
 }

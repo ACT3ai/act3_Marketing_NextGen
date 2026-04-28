@@ -19,6 +19,7 @@ const config: Config = {
   trailingSlash: false,
 
   onBrokenLinks: "throw",
+  onBrokenAnchors: "ignore",
   markdown: {
     hooks: {
       onBrokenMarkdownLinks: "warn",
@@ -97,7 +98,7 @@ const config: Config = {
           position: "left",
         },
         {
-          to: "/pricing",
+          href: "/#pricing",
           label: "Plans",
           position: "left",
         },
