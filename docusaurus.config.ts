@@ -11,7 +11,7 @@ const config: Config = {
     v4: true,
   },
 
-  url: "https://marketing.act3ai.com",
+  url: "https://act3ai.com",
   baseUrl: "/",
 
   organizationName: "ACT3ai",
