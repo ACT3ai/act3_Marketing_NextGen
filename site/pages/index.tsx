@@ -538,7 +538,7 @@ const BODY_HTML = `
     </nav>
 
     <div class="nav__actions">
-      <a class="nav__link nav__link--quiet" href="https://act3ai.com/login">Log In</a>
+      <a class="nav__link nav__link--quiet" href="https://app.act3ai.com/signin/">Log In</a>
       <a class="btn btn--accent btn--sm" href="https://act3ai.com">Start Free</a>
     </div>
   </div>
