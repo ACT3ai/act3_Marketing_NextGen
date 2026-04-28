@@ -544,7 +544,7 @@ const BODY_HTML = `
     </div>
 
     <div class="hero__strip" aria-hidden="true">
-      <img src="/img/Slides_Top_Fold.gif" alt="ACT 3 in action" style="width:100%;aspect-ratio:16/9;border-radius:var(--radius-lg);display:block;object-fit:cover;" />
+      <img src="/images/Slides_Top_Fold.gif" alt="ACT 3 in action" style="width:100%;aspect-ratio:16/9;border-radius:var(--radius-lg);display:block;object-fit:cover;" />
     </div>
   </div>
   <a href="#stats" class="hero__scroll" aria-label="Scroll to next section">
@@ -827,7 +827,7 @@ export default function Home(): JSX.Element {
         body: "Build your set — an office, a city street, a spaceship — once. ACT 3 applies it consistently across every scene and shot. No redescribing the environment per prompt. No inconsistent backgrounds.",
         bullets: ["2D and 3D environments", "Procedural city and building generation", "Set persists across all shots in a scene or episode"],
         tag: "02.02", cap: "SET BUILDER — INT. APARTMENT",
-        mediaHtml: '<img src="/img/Sets_Marketing_ACT3.gif" alt="ACT3 Set Builder — Define Your World Once" style="width:100%;border-radius:var(--radius-lg);border:1px solid var(--line);display:block;" />' },
+        mediaHtml: '<img src="/images/Sets_Marketing_ACT3.gif" alt="ACT3 Set Builder — Define Your World Once" style="width:100%;border-radius:var(--radius-lg);border:1px solid var(--line);display:block;" />' },
       { id: "screenwriters", side: "L", label: "For Screenwriters",
         h: "Write It. See It. Ship It.",
         body: "ACT 3 is the screenwriter's dream realized. Import your script, watch it visualized shot by shot, iterate in real time. You wrote the story — now see it as a film before a single dollar of production budget is spent.",
@@ -837,7 +837,8 @@ export default function Home(): JSX.Element {
         h: "Create Cinematic Content at Social Media Speed.",
         body: "From concept to polished short-form video in a fraction of the time. Format for any platform — vertical for TikTok and Reels, horizontal for YouTube, square for Instagram — in one workflow.",
         bullets: ["Auto-format exports for TikTok, Reels, YouTube Shorts", "Cinematic quality, not clip-generator quality", "Batch-produce a week of content in hours"],
-        tag: "02.04", cap: "MULTI-FORMAT EXPORT" },
+        tag: "02.04", cap: "MULTI-FORMAT EXPORT",
+        mediaHtml: '<img src="/images/Social_Media_Beach.jpeg" alt="Social media cinematic video example" style="width:100%;border-radius:var(--radius-lg);display:block;object-fit:cover;" />' },
       { id: "marketing", side: "L", label: "Marketing Video",
         h: "More Video Output. Higher Quality. Lower Budgets.",
         body: "Replace expensive video production cycles with an AI pipeline that delivers broadcast-quality marketing video on demand. Define your brand style once — every video stays on brand.",
