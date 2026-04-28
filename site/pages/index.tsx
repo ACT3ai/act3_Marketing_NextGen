@@ -609,7 +609,7 @@ const BODY_HTML = `
   <div class="wrap">
     <div class="sec-head sec-head--center">
       <div class="label">— How It Works</div>
-      <h2 class="serif">From Script to Finished Film <em style="color:var(--accent)">in Three Steps.</em></h2>
+      <h2 class="serif">From Script to Finished <span class="flipcube" id="how-flipcube" aria-label="Film"><span class="flipcube__sizer" aria-hidden="true"><span class="flipcube__sizer-w">Film</span><span class="flipcube__sizer-w">Video</span></span><span class="flipcube__stage" aria-hidden="true"><span class="flipcube__cube"><span class="flipcube__face flipcube__face--top">Film</span><span class="flipcube__face flipcube__face--front">Video</span></span></span></span> <em style="color:var(--accent)">in Three Steps.</em></h2>
     </div>
     <div class="how__grid">
       <div class="how__step">
