@@ -88,18 +88,18 @@ const config: Config = {
           activeBaseRegex: "^/$",
         },
         {
+          href: "/#pricing",
+          label: "Plans",
+          position: "left",
+        },
+        {
           to: "/about",
           label: "About Us",
           position: "left",
         },
         {
           to: "/contact",
-          label: "Contact Us",
-          position: "left",
-        },
-        {
-          href: "/#pricing",
-          label: "Plans",
+          label: "Contact",
           position: "left",
         },
         {
@@ -114,7 +114,7 @@ const config: Config = {
         },
         {
           href: "https://act3ai.com",
-          label: "Get Started",
+          label: "Start Free",
           position: "right",
           className: "button button--primary navbar__button",
         },

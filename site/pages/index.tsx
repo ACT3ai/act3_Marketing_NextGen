@@ -508,7 +508,7 @@ const BODY_HTML = `
         </span>
       </button>
       <a class="nav__link" href="#pricing">Plans</a>
-      <a class="nav__link" href="#about">About Us</a>
+      <a class="nav__link" href="/about">About Us</a>
 
       <div class="nav__dropdown" id="nav-videos-menu" role="menu">
         <div class="nav__dropdown-grid">
@@ -537,8 +537,8 @@ const BODY_HTML = `
     </nav>
 
     <div class="nav__actions">
-      <a class="nav__link nav__link--quiet" href="#login">Log In</a>
-      <a class="btn btn--accent btn--sm" href="#start">Get Started</a>
+      <a class="nav__link nav__link--quiet" href="https://act3ai.com/login">Log In</a>
+      <a class="btn btn--accent btn--sm" href="https://act3ai.com">Start Free</a>
     </div>
   </div>
 </header>
@@ -562,8 +562,8 @@ const BODY_HTML = `
           Create 5-minute to 3-hour videos with the lowest labor in the industry. No prompt engineering. No tool switching. Write your story — ACT 3 handles everything else.
         </p>
         <div class="hero__ctas">
-          <a class="btn btn--accent btn--lg" href="#start">Get Started <span class="arrow">→</span></a>
-          <a class="btn btn--ghost btn--lg" href="#demo">
+          <a class="btn btn--accent btn--lg" href="https://act3ai.com">Get Started <span class="arrow">→</span></a>
+          <a class="btn btn--ghost btn--lg" href="https://www.youtube.com/@ACT3AI">
             <span class="hero__playdot" aria-hidden="true">
               <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z" fill="currentColor"/></svg>
             </span>
@@ -748,8 +748,8 @@ const BODY_HTML = `
     </h2>
     <p class="finalcta__sub">Start creating your film today. Free to begin.</p>
     <div class="finalcta__ctas">
-      <a class="btn finalcta__btn" href="#start">Start Creating Your Film <span class="arrow">→</span></a>
-      <a class="btn finalcta__ghost" href="#demo">Watch the demo</a>
+      <a class="btn finalcta__btn" href="https://act3ai.com">Start Creating Your Film <span class="arrow">→</span></a>
+      <a class="btn finalcta__ghost" href="https://www.youtube.com/@ACT3AI">Watch the demo</a>
     </div>
   </div>
 </section>
@@ -769,16 +769,16 @@ const BODY_HTML = `
           <span class="logo__word serif">ACT<span class="logo__word-num">3</span></span>
         </a>
         <p class="footer__tag">Create movies at the speed of storytelling.</p>
-        <a class="btn btn--accent btn--sm" href="#start">Start Free <span class="arrow">→</span></a>
+        <a class="btn btn--accent btn--sm" href="https://act3ai.com">Start Free <span class="arrow">→</span></a>
       </div>
       <div class="footer__cols">
         <div class="footer__col">
           <div class="footer__col-head">Product</div>
-          <ul><li><a href="#">Features</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#">Changelog</a></li><li><a href="#">Roadmap</a></li></ul>
+          <ul><li><a href="/#how">Features</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#">Changelog</a></li><li><a href="#">Roadmap</a></li></ul>
         </div>
         <div class="footer__col">
           <div class="footer__col-head">Company</div>
-          <ul><li><a href="#about">About</a></li><li><a href="#">Team</a></li><li><a href="#">Careers</a></li><li><a href="#">Press</a></li></ul>
+          <ul><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="#">Careers</a></li><li><a href="#">Press</a></li></ul>
         </div>
         <div class="footer__col">
           <div class="footer__col-head">Resources</div>
@@ -793,16 +793,16 @@ const BODY_HTML = `
     <div class="footer__bot">
       <div>© 2026 ACT 3 AI. All rights reserved.</div>
       <div class="footer__social">
-        <a href="#" aria-label="X / Twitter">
+        <a href="https://x.com/ACT3AI" aria-label="X / Twitter">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </a>
-        <a href="#" aria-label="YouTube">
+        <a href="https://www.youtube.com/@ACT3AI" aria-label="YouTube">
           <svg width="18" height="18" viewBox="0 0 24 24"><path d="M3 7c0-1.5 1-2 2-2h14c1 0 2 .5 2 2v10c0 1.5-1 2-2 2H5c-1 0-2-.5-2-2V7zm7 1.5v7l6-3.5-6-3.5z" fill="currentColor"/></svg>
         </a>
-        <a href="#" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/company/act3ai" aria-label="LinkedIn">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 10v7M7 7v.01M11 10v7M11 13c0-2 1.5-3 3-3s3 1 3 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
         </a>
-        <a href="#" aria-label="Instagram">
+        <a href="https://www.instagram.com/act3ai" aria-label="Instagram">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg>
         </a>
       </div>
@@ -1054,7 +1054,7 @@ export default function Home(): JSX.Element {
     <div class="tier__name serif">${t.name}</div>
     <div class="tier__price serif">${t.price}<span class="tier__per"> ${t.per}</span></div>
     <div class="tier__desc">${t.desc}</div>
-    <a class="btn ${t.featured ? "btn--accent" : "btn--ghost"} tier__cta" href="#start">${t.cta} <span class="arrow">→</span></a>
+    <a class="btn ${t.featured ? "btn--accent" : "btn--ghost"} tier__cta" href="https://act3ai.com">${t.cta} <span class="arrow">→</span></a>
     <ul class="tier__feats">${t.feats.map((f) => `<li>${checkSVG}<span>${f}</span></li>`).join("")}</ul>
   </div>`;
       });
