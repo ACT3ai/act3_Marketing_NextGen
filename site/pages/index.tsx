@@ -224,6 +224,16 @@ body {
 .hero__playdot svg { transform: translateX(1px); }
 .hero__proof { margin-top: 28px; font-size: 13.5px; color: var(--ink-3); letter-spacing: .01em; }
 
+.flipcube { position: relative; display: inline-block; vertical-align: baseline; font-style: italic; line-height: 1; }
+.flipcube__sizer { display: inline-grid; visibility: hidden; }
+.flipcube__sizer-w { grid-area: 1 / 1; padding: 0.06em 0.18em; }
+.flipcube__stage { position: absolute; inset: 0; perspective: 1400px; }
+.flipcube__cube { position: absolute; inset: 0; transform-style: preserve-3d; transform-origin: 50% 100% 0; animation: flipcube-roll 6s cubic-bezier(.7,.04,.22,1) infinite; will-change: transform; }
+.flipcube__face { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 0.06em 0.18em; color: var(--ink); background: linear-gradient(165deg, #ffffff 0%, #f4f2ed 55%, #d9d6cd 100%); border-radius: 0.05em; box-shadow: inset 0 1px 0 rgba(255,255,255,.95), inset 0 -2px 0 rgba(0,0,0,.07), 0 18px 36px -22px rgba(0,0,0,.45), 0 4px 10px -6px rgba(0,0,0,.25); backface-visibility: hidden; -webkit-backface-visibility: hidden; font-style: italic; }
+.flipcube__face--top { transform: translateY(-50%) rotateX(90deg); transform-origin: 50% 100%; }
+.flipcube__face--front { transform: rotateY(0deg); }
+@keyframes flipcube-roll { 0%, 83% { transform: rotateX(0deg); } 100% { transform: rotateX(-90deg); } }
+
 .hero__strip { position: relative; overflow: hidden; }
 .strip__row { display: grid; grid-template-columns: 1.1fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; transform: rotate(-2deg); }
 .strip__cell:nth-child(1) { transform: translateY(-14px); }
@@ -545,7 +555,7 @@ const BODY_HTML = `
       <div class="hero__copy">
         <div class="label label--accent">— AI Filmmaking Platform</div>
         <h1 class="hero__h">
-          Create Movies at the<br>
+          Create <span class="flipcube" id="hero-flipcube" aria-label="Movies"><span class="flipcube__sizer" aria-hidden="true"><span class="flipcube__sizer-w">Movies</span><span class="flipcube__sizer-w">Videos</span></span><span class="flipcube__stage" aria-hidden="true"><span class="flipcube__cube"><span class="flipcube__face flipcube__face--top">Movies</span><span class="flipcube__face flipcube__face--front">Videos</span></span></span></span> at the<br>
           <em class="hero__em">Speed of Storytelling.</em>
         </h1>
         <p class="hero__sub">
@@ -1050,6 +1060,22 @@ export default function Home(): JSX.Element {
       });
     }
 
+    // ── FlipCube word rotation ─────────────────────────────────────────────
+    const FLIP_WORDS = ["Movies", "Videos"];
+    let flipIdx = 0;
+    const flipStage = document.querySelector<HTMLElement>("#hero-flipcube .flipcube__stage");
+    const flipLabel = document.getElementById("hero-flipcube");
+    function buildFlipCube(cur: string, nxt: string): string {
+      return `<span class="flipcube__cube"><span class="flipcube__face flipcube__face--top">${cur}</span><span class="flipcube__face flipcube__face--front">${nxt}</span></span>`;
+    }
+    const flipTimer = setInterval(() => {
+      flipIdx = (flipIdx + 1) % FLIP_WORDS.length;
+      const cur = FLIP_WORDS[flipIdx];
+      const nxt = FLIP_WORDS[(flipIdx + 1) % FLIP_WORDS.length];
+      if (flipLabel) flipLabel.setAttribute("aria-label", cur);
+      if (flipStage) flipStage.innerHTML = buildFlipCube(cur, nxt);
+    }, 6000);
+
     // ── Nav scroll + dropdown ──────────────────────────────────────────────────
     const nav     = document.getElementById("nav");
     const vidBtn  = document.getElementById("nav-videos-btn") as HTMLButtonElement | null;
@@ -1099,6 +1125,7 @@ export default function Home(): JSX.Element {
 
     // ── Cleanup ────────────────────────────────────────────────────────────────
     return () => {
+      clearInterval(flipTimer);
       window.removeEventListener("scroll", scrollHandler);
       vidBtn?.removeEventListener("click", vidBtnClickHandler);
       vidBtn?.removeEventListener("mouseenter", openMenu);
