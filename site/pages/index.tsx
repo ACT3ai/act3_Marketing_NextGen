@@ -576,53 +576,7 @@ const BODY_HTML = `
     </div>
 
     <div class="hero__strip" aria-hidden="true">
-      <div class="strip__row">
-        <div class="strip__cell">
-          <div class="stripes" style="aspect-ratio:4/3">
-            <img src="/images/Slides_Top_Fold.gif" class="stripes__img" alt="" />
-            <div class="stripes__frame">
-              <div class="stripes__corners"><span></span><span></span><span></span><span></span></div>
-              <button class="stripes__play" aria-label="Play preview"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
-              <div class="stripes__meta"><span class="stripes__tag">01.A</span><span class="stripes__caption">SCRIPT → SHOT LIST</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="strip__cell">
-          <div class="stripes" style="aspect-ratio:4/3">
-            <img src="/images/Social_Media_Beach.jpeg" class="stripes__img" alt="" />
-            <div class="stripes__frame">
-              <div class="stripes__corners"><span></span><span></span><span></span><span></span></div>
-              <button class="stripes__play" aria-label="Play preview"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
-              <div class="stripes__meta"><span class="stripes__tag">01.B</span><span class="stripes__caption">SOCIAL MEDIA — BEACH</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="strip__cell">
-          <div class="stripes" style="aspect-ratio:4/3">
-            <img src="/images/Sets_Marketing_ACT3.gif" class="stripes__img" alt="" />
-            <div class="stripes__frame">
-              <div class="stripes__corners"><span></span><span></span><span></span><span></span></div>
-              <button class="stripes__play" aria-label="Play preview"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
-              <div class="stripes__meta"><span class="stripes__tag">01.C</span><span class="stripes__caption">SET BUILDER — INTERIOR</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="strip__cell">
-          <div class="stripes" style="aspect-ratio:4/3">
-            <img src="/images/Ad_Beach.jpeg" class="stripes__img" alt="" />
-            <div class="stripes__frame">
-              <div class="stripes__corners"><span></span><span></span><span></span><span></span></div>
-              <button class="stripes__play" aria-label="Play preview"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
-              <div class="stripes__meta"><span class="stripes__tag">01.D</span><span class="stripes__caption">AD CAMPAIGN — FINAL</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="strip__caption mono">
-        <span>SCRIPT.fdx</span><span class="strip__sep">→</span>
-        <span>650 shots planned</span><span class="strip__sep">→</span>
-        <span>render: 14m 22s</span>
-      </div>
+      <img src="/images/Slides_Top_Fold.gif" alt="ACT 3 in action" style="width:100%;height:auto;display:block;object-fit:cover;" />
     </div>
   </div>
   <a href="#stats" class="hero__scroll" aria-label="Scroll to next section">
