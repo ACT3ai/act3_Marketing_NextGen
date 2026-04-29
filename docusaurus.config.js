@@ -61,8 +61,9 @@ var config = {
     themeConfig: {
         image: "img/act3ai-social-card.jpg",
         colorMode: {
-            defaultMode: "dark",
-            respectPrefersColorScheme: true,
+            defaultMode: "light",
+            respectPrefersColorScheme: false,
+            disableSwitch: true,
         },
         navbar: {
             title: "ACT3 AI",
