@@ -405,7 +405,6 @@ export default function About(): React.ReactNode {
             </div>
             <div className="about-cards">
               <div className="about-card">
-                <div className="about-card__icon">🎬</div>
                 <h3>Streamlined Workflow</h3>
                 <p>
                   From importing your screenplay to exporting a polished video, ACT 3 AI keeps
@@ -413,7 +412,6 @@ export default function About(): React.ReactNode {
                 </p>
               </div>
               <div className="about-card">
-                <div className="about-card__icon">⚡</div>
                 <h3>AI-Enhanced Creativity</h3>
                 <p>
                   Leverage powerful AI engines — Google Veo 3, WAN AI, Runway — to generate
@@ -421,7 +419,6 @@ export default function About(): React.ReactNode {
                 </p>
               </div>
               <div className="about-card">
-                <div className="about-card__icon">🤝</div>
                 <h3>Collaboration &amp; Control</h3>
                 <p>
                   Real-time co-editing, version history, and granular lock-down ensure your
@@ -473,17 +470,17 @@ export default function About(): React.ReactNode {
             </div>
             <div className="about-team">
               <div className="about-team-card">
-                <div className="about-team-card__icon" style={{ background: "var(--accent-soft)", color: "var(--accent)" }}>🎬</div>
+                <div className="about-team-card__icon" style={{ background: "var(--accent-soft)" }}></div>
                 <h4>Filmmakers</h4>
                 <p>Industry veterans who understand the creative process from first draft to final cut.</p>
               </div>
               <div className="about-team-card">
-                <div className="about-team-card__icon" style={{ background: "var(--bg-3)", color: "var(--ink-2)" }}>⚡</div>
+                <div className="about-team-card__icon" style={{ background: "var(--bg-3)" }}></div>
                 <h4>Technologists</h4>
                 <p>AI and software experts pushing the boundaries of what generative media can do.</p>
               </div>
               <div className="about-team-card">
-                <div className="about-team-card__icon" style={{ background: "var(--bg-2)", color: "var(--ink-2)" }}>✍️</div>
+                <div className="about-team-card__icon" style={{ background: "var(--bg-2)" }}></div>
                 <h4>Creators</h4>
                 <p>Artists and writers who live and breathe storytelling and keep us honest about what matters.</p>
               </div>
