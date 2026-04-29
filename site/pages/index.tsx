@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Head from "@docusaurus/Head";
+import SiteNavbar from "../components/SiteNavbar";
 import SiteFooter from "../components/SiteFooter";
 
 // ── Extracted CSS from the standalone marketing page ──────────────────────────
@@ -101,12 +102,6 @@ body {
 .sec-head h2 { font-size: clamp(36px, 4.6vw, 60px); font-weight: 400; letter-spacing: -0.02em; line-height: 1.05; }
 .sec-head p { color: var(--ink-2); font-size: 18px; max-width: 56ch; }
 
-/* ===== Logo ===== */
-.logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
-.logo__mark { color: var(--accent); display: inline-flex; }
-.logo__word { font-family: var(--font-display); font-size: 19px; letter-spacing: -0.01em; font-weight: 500; line-height: 1; }
-.logo__word-num { color: var(--accent); font-style: italic; margin-left: 2px; }
-
 /* ===== Stripe placeholder ===== */
 .stripes {
   position: relative; width: 100%; border-radius: var(--radius-lg);
@@ -139,39 +134,6 @@ body {
 .proof { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 15.5px; line-height: 1.5; }
 .proof:last-child { border-bottom: 1px solid var(--line); }
 .proof__dot { color: var(--accent); margin-top: 7px; flex-shrink: 0; }
-
-/* ===== NAV ===== */
-.nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
-  backdrop-filter: blur(0px);
-  transition: background .25s ease, border-color .25s ease, backdrop-filter .25s ease;
-  background: transparent; border-bottom: 1px solid transparent;
-}
-.nav--solid {
-  background: color-mix(in oklab, var(--bg) 88%, transparent);
-  border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(14px);
-}
-.nav__inner {
-  max-width: var(--maxw); margin: 0 auto; padding: 18px var(--pad-x);
-  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; position: relative;
-}
-.nav__links { display: flex; gap: 8px; justify-self: center; }
-.nav__link {
-  background: transparent; border: 0; padding: 8px 14px;
-  font-family: var(--font-body); font-size: 14px; font-weight: 500;
-  color: var(--ink-2); cursor: pointer; text-decoration: none;
-  border-radius: 6px; display: inline-flex; align-items: center;
-  transition: color .15s ease, background .15s ease;
-}
-.nav__link:hover, .nav__link.is-open { color: var(--ink); background: var(--bg-2); }
-.nav__link--quiet { color: var(--ink-2); }
-.nav__actions { display: flex; gap: 12px; align-items: center; justify-self: end; }
-
-@media (max-width: 820px) {
-  .nav__links { display: none; }
-  .nav__inner { grid-template-columns: 1fr auto; }
-}
 
 /* ===== HERO ===== */
 .hero {
@@ -455,36 +417,8 @@ body {
 
 `;
 
-// ── Static body HTML (nav, hero, stats, how-it-works, containers, cta, footer) ──
+// ── Static body HTML (hero, stats, how-it-works, containers, cta, footer) ──
 const BODY_HTML = `
-<!-- NAV -->
-<header class="nav" id="nav">
-  <div class="nav__inner">
-    <a href="#top" class="logo" aria-label="ACT 3 home">
-      <span class="logo__mark">
-        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-          <path d="M12 2.5L22 20H2L12 2.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-          <circle cx="12" cy="14.5" r="2.2" fill="currentColor"/>
-        </svg>
-      </span>
-      <span class="logo__word serif">ACT<span class="logo__word-num">3</span></span>
-    </a>
-
-    <nav class="nav__links" aria-label="Primary">
-      <a class="nav__link" href="/">Main</a>
-      <a class="nav__link" href="/about">About Us</a>
-      <a class="nav__link" href="/contact">Contact Us</a>
-      <a class="nav__link" href="#pricing">Plans</a>
-      <a class="nav__link" href="https://www.youtube.com/@ACT3AI" target="_blank" rel="noopener noreferrer">Videos</a>
-    </nav>
-
-    <div class="nav__actions">
-      <a class="nav__link nav__link--quiet" href="https://app.act3ai.com/signin/">Log In</a>
-      <a class="btn btn--accent btn--sm" href="https://app.act3ai.com/signup/">Get Started</a>
-    </div>
-  </div>
-</header>
-
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero__bg" aria-hidden="true">
@@ -970,15 +904,6 @@ export default function Home(): JSX.Element {
       if (howStage) howStage.innerHTML = buildFlipCube(howCur, howNxt);
     }, 6000);
 
-    // ── Nav scroll ────────────────────────────────────────────────────────────
-    const nav = document.getElementById("nav");
-
-    const scrollHandler = (): void => {
-      nav?.classList.toggle("nav--solid", window.scrollY > 24);
-    };
-
-    window.addEventListener("scroll", scrollHandler, { passive: true });
-
     // ── Stats intersection observer ────────────────────────────────────────────
     const statNums = document.querySelectorAll("[data-stat]");
     const io = new IntersectionObserver(
@@ -997,7 +922,6 @@ export default function Home(): JSX.Element {
     // ── Cleanup ────────────────────────────────────────────────────────────────
     return () => {
       clearInterval(flipTimer);
-      window.removeEventListener("scroll", scrollHandler);
       io.disconnect();
     };
   }, []);
@@ -1018,6 +942,7 @@ export default function Home(): JSX.Element {
         />
         <style>{PAGE_CSS}</style>
       </Head>
+      <SiteNavbar />
       <div dangerouslySetInnerHTML={{ __html: BODY_HTML }} />
       <SiteFooter />
     </>
