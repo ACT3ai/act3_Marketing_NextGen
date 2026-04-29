@@ -470,17 +470,14 @@ export default function About(): React.ReactNode {
             </div>
             <div className="about-team">
               <div className="about-team-card">
-                <div className="about-team-card__icon" style={{ background: "var(--accent-soft)" }}></div>
                 <h4>Filmmakers</h4>
                 <p>Industry veterans who understand the creative process from first draft to final cut.</p>
               </div>
               <div className="about-team-card">
-                <div className="about-team-card__icon" style={{ background: "var(--bg-3)" }}></div>
                 <h4>Technologists</h4>
                 <p>AI and software experts pushing the boundaries of what generative media can do.</p>
               </div>
               <div className="about-team-card">
-                <div className="about-team-card__icon" style={{ background: "var(--bg-2)" }}></div>
                 <h4>Creators</h4>
                 <p>Artists and writers who live and breathe storytelling and keep us honest about what matters.</p>
               </div>
