@@ -64,16 +64,9 @@
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* Navbar */
-.navbar {
-  backdrop-filter: blur(8px);
-  background: rgba(15, 15, 26, 0.9);
-  border-bottom: 1px solid rgba(124, 58, 237, 0.2);
-}
-
-[data-theme="light"] .navbar {
-  background: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid rgba(124, 58, 237, 0.15);
+/* Offset page content below the fixed custom navbar (~66px tall) */
+.main-wrapper {
+  padding-top: 66px;
 }
 
 /* CTA buttons */
