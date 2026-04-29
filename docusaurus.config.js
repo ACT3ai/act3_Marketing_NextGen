@@ -89,7 +89,7 @@ var config = {
                     position: "left",
                 },
                 {
-                    href: "/#pricing",
+                    href: "https://app.act3ai.com/settings/plans/",
                     label: "Plans",
                     position: "left",
                 },
@@ -121,15 +121,12 @@ var config = {
                         { label: "Features", to: "/features" },
                         { label: "Pricing", to: "/pricing" },
                         { label: "Roadmap", to: "/docs/roadmap" },
-                        { label: "Changelog", to: "/docs/changelog" },
                     ],
                 },
                 {
                     title: "Resources",
                     items: [
                         { label: "Documentation", to: "/docs/intro" },
-                        { label: "Blog", to: "/blog" },
-                        { label: "Tutorials", to: "/docs/tutorials/first-video" },
                     ],
                 },
                 {

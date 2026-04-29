@@ -1,12 +1,10 @@
 import React from "react";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
+import PageHero from "../components/PageHero";
 
 const SECTION_CSS = `
 .about-page { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #131625; }
-.about-hero { background: #fff8f8; padding: 80px 24px; text-align: center; border-bottom: 1px solid #e8e8e8; }
-.about-hero h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 700; margin: 0 0 24px; line-height: 1.2; }
-.about-hero p { font-size: 1.05rem; color: #384155; line-height: 1.7; max-width: 820px; margin: 0 auto; }
 .about-section { padding: 72px 24px; }
 .about-section--alt { background: #f4f6fa; }
 .about-section--white { background: #fff; }
@@ -42,18 +40,12 @@ export default function About(): React.ReactNode {
       description="Meet the team behind ACT3 AI — filmmakers, writers, and technologists dedicated to empowering creators everywhere."
     >
       <style>{SECTION_CSS}</style>
+      <PageHero
+        label="— About Us"
+        title={<>The Team Behind<br /><em>ACT 3 AI.</em></>}
+        description="We're a passionate team of filmmakers, writers, and technologists dedicated to empowering creators of all backgrounds to bring their visions to life faster and more collaboratively than ever before."
+      />
       <div className="about-page">
-
-        {/* Hero */}
-        <section className="about-hero">
-          <h1>About Us</h1>
-          <p>
-            Welcome to ACT 3 AI — where storytelling meets cutting-edge artificial intelligence.
-            We're a passionate team of filmmakers, writers, and technologists dedicated to empowering
-            creators of all backgrounds to bring their visions to life faster and more collaboratively
-            than ever before.
-          </p>
-        </section>
 
         {/* Mission */}
         <section className="about-section about-section--white">

@@ -9,6 +9,8 @@ build/
 
 # Generated files
 .cache-loader/
+site/pages/*.js
+site/components/*.js
 
 # Misc
 .DS_Store

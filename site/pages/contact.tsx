@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
+import PageHero from "../components/PageHero";
 
 const PAGE_CSS = `
 /* ===== Design Tokens ===== */
@@ -32,52 +33,6 @@ const PAGE_CSS = `
 .contact-page *, .contact-page *::before, .contact-page *::after { box-sizing: border-box; }
 .contact-page h1, .contact-page h2, .contact-page h3 { margin: 0; }
 .contact-page p { margin: 0; }
-
-/* ===== Hero ===== */
-.contact-hero {
-  background: var(--bg);
-  padding: clamp(64px, 8vw, 100px) var(--pad-x) clamp(56px, 7vw, 88px);
-  text-align: center;
-  border-bottom: 1px solid var(--line);
-  position: relative;
-  overflow: hidden;
-}
-.contact-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(900px 400px at 80% -10%, color-mix(in oklab, #c4612b 10%, transparent), transparent 60%),
-    radial-gradient(700px 350px at 0% 100%, color-mix(in oklab, #c4612b 6%, transparent), transparent 60%);
-  pointer-events: none;
-}
-.contact-hero__inner { position: relative; z-index: 1; }
-.contact-hero__label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 20px;
-}
-.contact-hero h1 {
-  font-family: var(--font-display);
-  font-size: clamp(44px, 6vw, 80px);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
-  color: var(--ink);
-  margin-bottom: 20px;
-}
-.contact-hero h1 em { font-style: italic; color: var(--accent); }
-.contact-hero p {
-  font-size: clamp(16px, 1.8vw, 19px);
-  color: var(--ink-2);
-  line-height: 1.6;
-  max-width: 56ch;
-  margin: 0 auto;
-}
 
 /* ===== Body layout ===== */
 .contact-body {
@@ -440,31 +395,15 @@ export default function Contact(): React.ReactNode {
       description="Have questions about ACT 3? Need technical support? Want to explore enterprise solutions? We're here to help."
     >
       <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400;9..144,1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-          rel="stylesheet"
-        />
         <style>{PAGE_CSS}</style>
       </Head>
+      <PageHero
+        label="— Get in Touch"
+        title={<>Let's Talk About<br /><em>Your Next Film.</em></>}
+        description="Have questions about ACT 3? Need technical support? Want to explore enterprise solutions? We're here to help you bring your creative vision to life."
+      />
 
       <div className="contact-page">
-
-        {/* Hero */}
-        <section className="contact-hero">
-          <div className="contact-hero__inner">
-            <div className="contact-hero__label">— Get in Touch</div>
-            <h1>
-              Let's Talk About<br />
-              <em>Your Next Film.</em>
-            </h1>
-            <p>
-              Have questions about ACT 3? Need technical support? Want to explore
-              enterprise solutions? We're here to help you bring your creative vision to life.
-            </p>
-          </div>
-        </section>
 
         {/* Body */}
         <section className="contact-body">
