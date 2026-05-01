@@ -334,6 +334,8 @@ const PAGE_CSS = `
 }
 `;
 
+const CONTACT_EMAIL = "contactus@act3ai.com";
+
 type FormState = {
   firstName: string;
   lastName: string;
@@ -353,7 +355,6 @@ export default function Contact(): React.ReactNode {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -361,10 +362,7 @@ export default function Contact(): React.ReactNode {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setSubmitting(true);
-
+  function buildMailto() {
     const { firstName, lastName, email, company, subject, message } = form;
     const body = [
       `Name: ${firstName} ${lastName}`,
@@ -375,18 +373,17 @@ export default function Contact(): React.ReactNode {
       `Message:`,
       message,
     ].join("\n");
-
-    const mailtoUrl =
-      `mailto:contactus@act3ai.com` +
+    return (
+      `mailto:${CONTACT_EMAIL}` +
       `?subject=${encodeURIComponent("Contact Form: " + subject)}` +
-      `&body=${encodeURIComponent(body)}`;
+      `&body=${encodeURIComponent(body)}`
+    );
+  }
 
-    window.location.href = mailtoUrl;
-
-    setTimeout(() => {
-      setSubmitted(true);
-      setSubmitting(false);
-    }, 800);
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    window.location.href = buildMailto();
+    setSubmitted(true);
   }
 
   return (
@@ -418,11 +415,12 @@ export default function Contact(): React.ReactNode {
                       <path d="M4.5 12.5l4.5 4.5L19.5 7" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
-                  <h3>Message Sent!</h3>
+                  <h3>Email Draft Opened</h3>
                   <p>
-                    Your email client should have opened with your message pre-filled.
-                    If it didn't, email us directly at{" "}
-                    <a href="mailto:contactus@act3ai.com">contactus@act3ai.com</a>.
+                    Your email client should have opened with your message
+                    pre-filled — please review and press <strong>Send</strong>{" "}
+                    to deliver it. If nothing opened, email us directly at{" "}
+                    <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
                     We'll get back to you within 24 hours.
                   </p>
                 </div>
@@ -515,12 +513,8 @@ export default function Contact(): React.ReactNode {
                       />
                     </div>
 
-                    <button
-                      type="submit"
-                      className="contact-submit"
-                      disabled={submitting}
-                    >
-                      {submitting ? "Opening email client…" : "Send Message"}
+                    <button type="submit" className="contact-submit">
+                      Open Email Draft
                       <span className="arrow">→</span>
                     </button>
 
