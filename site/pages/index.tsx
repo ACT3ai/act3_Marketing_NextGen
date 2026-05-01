@@ -607,6 +607,9 @@ const BODY_HTML = `
       <h2 class="serif">Start Free. <em style="color:var(--accent)">Scale as You Create.</em></h2>
     </div>
     <div class="pricing__grid" id="pricing-grid"></div>
+    <div style="text-align:center;margin-top:28px;font-size:14px;color:var(--ink-2)">
+      <a href="/pricing" style="color:var(--accent);text-decoration:none;font-weight:600">See all plans →</a>
+    </div>
   </div>
 </section>
 
@@ -861,9 +864,9 @@ export default function Home(): JSX.Element {
 
     // ── Pricing ────────────────────────────────────────────────────────────────
     const TIERS = [
-      { name: "Creator",    price: "$49",    per: "per month",  desc: "For individual creators and screenwriters.",      cta: "Choose Creator", href: "https://app.act3ai.com/signin/?redirectTo=%2Fsettings%2Fplans%2F", featured: false, feats: ["24,500 credits / month", "1080p export", "Script import (PDF / FDX)", "All visual styles"] },
-      { name: "Studio",     price: "$149",   per: "per month",  desc: "Full pipeline for indie films and series.",       cta: "Choose Studio",  href: "https://app.act3ai.com/signin/?redirectTo=%2Fsettings%2Fplans%2F", featured: true,  feats: ["Long-form (up to 3 hours)", "4K &amp; ProRes export", "Story Arc engine", "Up to 5 collaborators", "Priority render queue"] },
-      { name: "Enterprise", price: "Custom", per: "contact us", desc: "For studios, agencies, and teams.",               cta: "Contact Sales",  href: "mailto:ContactUs@ACT3ai.com", featured: false, feats: ["SSO &amp; role permissions", "Multi-org workspace", "Custom model routing", "Dedicated success engineer"] },
+      { name: "Starter", price: "$19",  per: "per month", desc: "Step up your output with rollover credits.",      cta: "Choose Starter", href: "https://app.act3ai.com/settings/plans/", featured: false, feats: ["9,500 credits / month", "23,750 credit rollover bank", "Cloud Storage 2 GB"] },
+      { name: "Creator", price: "$49",  per: "per month", desc: "For creators producing content regularly.",       cta: "Choose Creator", href: "https://app.act3ai.com/settings/plans/", featured: true,  feats: ["24,500 credits / month", "61,250 credit rollover bank", "Cloud Storage 50 GB"] },
+      { name: "Pro",     price: "$175", per: "per month", desc: "For serious filmmakers producing at scale.",      cta: "Choose Pro",     href: "https://app.act3ai.com/settings/plans/", featured: false, feats: ["87,500 credits / month", "218,750 credit rollover bank", "Cloud Storage 740 GB", "All AI Video Models", "Priority Rendering"] },
     ];
     const checkSVG = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color:var(--accent);flex-shrink:0"><path d="M4.5 12.5l4.5 4.5L19.5 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
     const pricingGrid = document.getElementById("pricing-grid");
