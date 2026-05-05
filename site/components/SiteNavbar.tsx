@@ -51,16 +51,11 @@ const NAV_CSS = `
   color: var(--ink);
 }
 .snav__logo:hover { text-decoration: none; }
-.snav__logo-mark { color: var(--accent); display: inline-flex; }
-.snav__logo-word {
-  font-family: var(--font-display);
-  font-size: 19px;
-  letter-spacing: -0.01em;
-  font-weight: 500;
-  line-height: 1;
-  color: var(--ink);
+.snav__logo-img {
+  height: 32px;
+  width: auto;
+  display: block;
 }
-.snav__logo-num { color: var(--accent); font-style: italic; margin-left: 2px; }
 
 /* Centre links */
 .snav__links { display: flex; gap: 8px; justify-self: center; }
@@ -166,21 +161,11 @@ export default function SiteNavbar(): React.ReactNode {
       <header className={`snav${solid ? " snav--solid" : ""}`} id="site-nav">
         <div className="snav__inner">
           <a href="/" className="snav__logo" aria-label="ACT 3 home">
-            <span className="snav__logo-mark">
-              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-                <path
-                  d="M12 2.5L22 20H2L12 2.5z"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  strokeLinejoin="round"
-                />
-                <circle cx="12" cy="14.5" r="2.2" fill="currentColor" />
-              </svg>
-            </span>
-            <span className="snav__logo-word">
-              ACT<span className="snav__logo-num">3</span>
-            </span>
+            <img
+              src="/img/act3-logo.png"
+              alt="ACT 3"
+              className="snav__logo-img"
+            />
           </a>
 
           <nav className="snav__links" aria-label="Primary">
