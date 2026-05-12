@@ -864,7 +864,7 @@ export default function Home(): JSX.Element {
 
     // ── Pricing ────────────────────────────────────────────────────────────────
     const TIERS = [
-      { name: "Starter", price: "$19",  per: "per month", desc: "Step up your output with rollover credits.",      cta: "Choose Starter", href: "https://app.act3ai.com/settings/plans/", featured: false, feats: ["9,500 credits / month", "23,750 credit rollover bank", "Cloud Storage 2 GB"] },
+      { name: "Free",    price: "$0",   per: "per month", desc: "Try ACT 3 with a generous monthly credit allowance.", cta: "Sign Up Free",   href: "https://app.act3ai.com/signup/",         featured: false, feats: ["800 credits / month", "0 credit rollover bank", "Cloud Storage 50 MB"] },
       { name: "Creator", price: "$49",  per: "per month", desc: "For creators producing content regularly.",       cta: "Choose Creator", href: "https://app.act3ai.com/settings/plans/", featured: true,  feats: ["24,500 credits / month", "61,250 credit rollover bank", "Cloud Storage 50 GB"] },
       { name: "Pro",     price: "$175", per: "per month", desc: "For serious filmmakers producing at scale.",      cta: "Choose Pro",     href: "https://app.act3ai.com/settings/plans/", featured: false, feats: ["87,500 credits / month", "218,750 credit rollover bank", "Cloud Storage 740 GB", "All AI Video Models", "Priority Rendering"] },
     ];

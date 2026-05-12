@@ -89,19 +89,19 @@ const plans: PlanProps[] = [
     cta: "Sign Up Free",
     ctaHref: SIGNUP_HREF,
   },
-  {
-    name: "Starter",
-    price: "$19",
-    period: "/ mo",
-    description: "Step up your output with rollover credits and more storage.",
-    features: [
-      "9,500 credits / month",
-      "23,750 credit rollover bank",
-      "Cloud Storage 2 GB",
-    ],
-    cta: "Get Started",
-    ctaHref: PLANS_HREF,
-  },
+  // {
+  //   name: "Starter",
+  //   price: "$19",
+  //   period: "/ mo",
+  //   description: "Step up your output with rollover credits and more storage.",
+  //   features: [
+  //     "9,500 credits / month",
+  //     "23,750 credit rollover bank",
+  //     "Cloud Storage 2 GB",
+  //   ],
+  //   cta: "Get Started",
+  //   ctaHref: PLANS_HREF,
+  // },
   {
     name: "Creator",
     price: "$49",
