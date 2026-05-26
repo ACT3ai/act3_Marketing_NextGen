@@ -5,7 +5,49 @@ import type * as Preset from "@docusaurus/preset-classic";
 const config: Config = {
   title: "ACT3 AI Marketing",
   tagline: "AI Filmmaking — From Script to Cinematic Video",
-  favicon: "img/favicon.ico",
+  favicon: "img/favicon/favicon.ico",
+
+  headTags: [
+    {
+      tagName: "link",
+      attributes: {
+        rel: "icon",
+        type: "image/svg+xml",
+        href: "/img/favicon/favicon.svg",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "icon",
+        type: "image/png",
+        sizes: "96x96",
+        href: "/img/favicon/favicon-96x96.png",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/img/favicon/apple-touch-icon.png",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "manifest",
+        href: "/img/favicon/site.webmanifest",
+      },
+    },
+    {
+      tagName: "meta",
+      attributes: {
+        name: "theme-color",
+        content: "#C0531F",
+      },
+    },
+  ],
 
   future: {
     v4: true,
