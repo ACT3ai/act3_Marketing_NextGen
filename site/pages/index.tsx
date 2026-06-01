@@ -559,7 +559,7 @@ const BODY_HTML = `
         </p>
         <div class="hero__ctas">
           <a class="btn btn--accent btn--lg" href="https://app.act3ai.com/signup/">Get Started <span class="arrow">→</span></a>
-          <a class="btn btn--ghost btn--lg" href="https://www.youtube.com/@ACT3AI">
+          <a class="btn btn--ghost btn--lg" href="https://www.youtube.com/@ACT3AI" target="_blank" rel="noopener noreferrer">
             <span class="hero__playdot" aria-hidden="true">
               <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z" fill="currentColor"/></svg>
             </span>
