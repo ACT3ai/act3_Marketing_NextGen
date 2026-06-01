@@ -555,14 +555,14 @@ const BODY_HTML = `
         poster="/images/hero-reel-poster.jpg"
         muted playsinline loop autoplay preload="metadata"></video>
       <div class="hero__overlays" aria-hidden="true">
-        <div class="hero__shot-marker">SHOT 1. EXT — MEET CUTE</div>
+        <div class="hero__shot-marker">SHOT 1. INT. WAREHOUSE — NIGHT</div>
         <div class="hero__card hero__card--alex">
-          <span class="hero__char">ALEX</span>
-          <p class="hero__line">Have you seen my dog? He ran this way.</p>
+          <span class="hero__char">KAI</span>
+          <p class="hero__line">Two on the catwalk. I see muzzle flash.</p>
         </div>
         <div class="hero__card hero__card--sally">
-          <span class="hero__char">SALLY</span>
-          <p class="hero__line">No. Can I help you look for him?</p>
+          <span class="hero__char">LEE</span>
+          <p class="hero__line">Hold position. Backup is sixty seconds out.</p>
         </div>
         <div class="hero__type-tag">Movie</div>
       </div>
