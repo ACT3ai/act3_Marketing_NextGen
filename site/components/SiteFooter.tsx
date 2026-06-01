@@ -19,8 +19,7 @@ const FOOTER_CSS = `
 .sf-footer { padding: 80px 0 40px; border-top: 1px solid var(--line); }
 .sf-footer__top { display: grid; grid-template-columns: 1.2fr 2.4fr; gap: clamp(32px,5vw,80px); }
 .sf-footer__brand .sf-logo { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--ink); }
-.sf-footer__brand .sf-logo__word { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
-.sf-footer__brand .sf-logo__num { color: var(--accent); }
+.sf-footer__brand .sf-logo__img { display: block; height: 30px; width: auto; }
 .sf-footer__tag { color: var(--ink-2); margin: 18px 0 22px; max-width: 30ch; font-size: 14px; line-height: 1.55; }
 .sf-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--accent); color: var(--accent-ink); font-weight: 600; font-size: 14px; padding: 10px 20px; border-radius: 6px; text-decoration: none; transition: background .15s ease; }
 .sf-btn:hover { background: #a85024; color: var(--accent-ink); text-decoration: none; }
@@ -48,11 +47,7 @@ export default function SiteFooter(): React.ReactNode {
           <div className="sf-footer__top">
             <div className="sf-footer__brand">
               <a href="/" className="sf-logo" aria-label="ACT 3 home">
-                <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
-                  <path d="M12 2.5L22 20H2L12 2.5z" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/>
-                  <circle cx="12" cy="14.5" r="2.2" fill="currentColor"/>
-                </svg>
-                <span className="sf-logo__word">ACT<span className="sf-logo__num">3</span></span>
+                <img src="/img/Logo%20Act%203.png" alt="ACT 3 AI" className="sf-logo__img" />
               </a>
               <p className="sf-footer__tag">Create movies at the speed of storytelling.</p>
               <a className="sf-btn" href="https://app.act3ai.com/signup/">Get Started →</a>
