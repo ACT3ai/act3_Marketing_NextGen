@@ -377,6 +377,27 @@ body {
 
 /* ===== VISUAL STYLES ===== */
 .styles__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+.style__media {
+  position: relative; width: 100%; aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg); overflow: hidden;
+  border: 1px solid var(--line); background: var(--bg-3);
+  box-shadow: 0 18px 40px -22px rgba(0,0,0,.25);
+}
+.style__img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.style__meta {
+  position: absolute; left: 12px; right: 12px; bottom: 10px;
+  display: flex; gap: 8px; align-items: center; justify-content: space-between;
+  font-size: 10px; color: var(--ink-2); pointer-events: none;
+}
+.style__tag {
+  font-family: var(--font-mono); background: var(--paper);
+  border: 1px solid var(--line); padding: 3px 7px; border-radius: 4px;
+}
+.style__cap {
+  font-family: var(--font-mono); letter-spacing: .04em;
+  background: var(--paper); border: 1px solid var(--line);
+  padding: 3px 7px; border-radius: 4px;
+}
 .style__row { display: flex; align-items: baseline; justify-content: space-between; margin-top: 14px; gap: 12px; }
 .style__name { font-family: var(--font-display); font-size: 22px; font-weight: 400; }
 .style__note { font-family: var(--font-mono); font-size: 11px; color: var(--ink-3); letter-spacing: .06em; text-transform: uppercase; }
@@ -811,7 +832,7 @@ export default function Home(): JSX.Element {
         body: "Build your set — an office, a city street, a spaceship — once. ACT 3 applies it consistently across every scene and shot. No redescribing the environment per prompt. No inconsistent backgrounds.",
         bullets: ["2D and 3D environments", "Procedural city and building generation", "Set persists across all shots in a scene or episode"],
         tag: "02.02", cap: "SET BUILDER — INT. APARTMENT",
-        mediaHtml: '<img src="/images/Sets_Marketing_ACT3.gif" alt="ACT3 Set Builder — Define Your World Once" style="width:100%;border-radius:var(--radius-lg);border:1px solid var(--line);display:block;" />' },
+        mediaHtml: videoHTML("sets", "02.02", "SET BUILDER — INT. APARTMENT") },
       { id: "screenwriters", side: "L", label: "For Screenwriters",
         h: "Write It. See It. Ship It.",
         body: "ACT 3 is the screenwriter's dream realized. Import your script, watch it visualized shot by shot, iterate in real time. You wrote the story — now see it as a film before a single dollar of production budget is spent.",
@@ -823,25 +844,25 @@ export default function Home(): JSX.Element {
         body: "From concept to polished short-form video in a fraction of the time. Format for any platform — vertical for TikTok and Reels, horizontal for YouTube, square for Instagram — in one workflow.",
         bullets: ["Auto-format exports for TikTok, Reels, YouTube Shorts", "Cinematic quality, not clip-generator quality", "Batch-produce a week of content in hours"],
         tag: "02.04", cap: "MULTI-FORMAT EXPORT",
-        mediaHtml: '<img src="/images/Social_Media_Beach.jpeg" alt="Social media cinematic video example" style="width:100%;border-radius:var(--radius-lg);display:block;object-fit:cover;" />' },
+        mediaHtml: videoHTML("social", "02.04", "MULTI-FORMAT EXPORT") },
       { id: "marketing", side: "L", label: "Marketing Video",
         h: "More Video Output. Higher Quality. Lower Budgets.",
         body: "Replace expensive video production cycles with an AI pipeline that delivers broadcast-quality marketing video on demand. Define your brand style once — every video stays on brand.",
         bullets: ["Define brand visual style; apply across all outputs", "Product demos, testimonials, brand films", "Export-ready for digital, broadcast, and social"],
         tag: "02.05", cap: "BRAND KIT — APPLIED",
-        mediaHtml: '<img src="/images/Slides_Marketing.gif" alt="ACT3 marketing video output" style="width:100%;border-radius:var(--radius-lg);display:block;object-fit:cover;" />' },
+        mediaHtml: videoHTML("marketing", "02.05", "BRAND KIT — APPLIED") },
       { id: "explainer", side: "R", label: "Explainer Video",
         h: "Explain Anything. Visually. In Minutes.",
         body: "Turn a product description or concept into a polished animated or live-action explainer. AI handles voiceover, visuals, transitions, and pacing.",
         bullets: ["Start from a script or a single paragraph", "AI voiceover with natural prosody", "Multiple visual styles available"],
         tag: "02.06", cap: "EXPLAINER — RENDER",
-        mediaHtml: '<img src="/images/Training_Car.jpeg" alt="ACT3 explainer video example" style="width:100%;border-radius:var(--radius-lg);display:block;object-fit:cover;" />' },
+        mediaHtml: videoHTML("explainer", "02.06", "EXPLAINER — RENDER") },
       { id: "corporate", side: "L", label: "Corporate Video",
         h: "Professional Corporate Video Without the Production Budget.",
         body: "Town halls, training videos, executive announcements, internal communications. ACT 3 produces them quickly, consistently, and at a fraction of traditional production cost.",
         bullets: ["Consistent on-brand presenter appearance", "Multilingual voiceover and dubbing", "Roles and approval workflows for enterprise teams"],
         tag: "02.07", cap: "PRESENTER — TAKE 03",
-        mediaHtml: '<img src="/images/Corporate_Slides.gif" alt="ACT3 corporate video example" style="width:100%;border-radius:var(--radius-lg);display:block;object-fit:cover;" />' },
+        mediaHtml: videoHTML("corporate", "02.07", "PRESENTER — TAKE 03") },
       { id: "movies", side: "R", label: "Movies &amp; Series",
         h: "Full-Length Films. Not 8-Second Clips.",
         body: "ACT 3 is purpose-built for long-form. Script a feature film, a short, a TV episode, or a web series. The Story Arc engine plans across episodes. Consistency holds across hundreds of shots.",
@@ -877,7 +898,7 @@ export default function Home(): JSX.Element {
         body: "Produce broadcast-quality ads in a fraction of the time and cost. ACT 3 gives you cinematic production values without a production crew. Run more creative, test more concepts, ship more campaigns — without blowing the budget.",
         bullets: ["TV, digital, and social ad formats from one workflow", "Brand-consistent visuals across every campaign", "Go from brief to finished ad in hours, not weeks"],
         tag: "02.13", cap: "AD — FINAL CUT",
-        mediaHtml: '<img src="/images/Ad_Beach.jpeg" alt="ACT3 advertising video example" style="width:100%;border-radius:var(--radius-lg);display:block;object-fit:cover;" />' },
+        mediaHtml: videoHTML("advertising", "02.13", "AD — FINAL CUT") },
       { id: "screens", side: "L", label: "Screens, Monitors &amp; Phone Content",
         h: "Screens Within Scenes. Fully Controlled.",
         body: "Place live video or graphics on any in-scene display — a laptop screen, a billboard, a smartphone — and control exactly what appears. Perfect for product demos, tech stories, and brand placement.",
@@ -919,19 +940,29 @@ export default function Home(): JSX.Element {
 
     // ── Visual Styles ──────────────────────────────────────────────────────────
     const STYLES = [
-      { name: "Realistic",             note: "photoreal · 35mm" },
-      { name: "Cinematic",             note: "anamorphic · color grade" },
-      { name: "Anime",                 note: "2D · cel-shaded" },
-      { name: "3D Animation",          note: "stylized · pixar-likeness" },
-      { name: "Cartoon",               note: "flat · bold linework" },
-      { name: "Stylized / Illustrated", note: "painterly · editorial" },
+      { name: "Realistic",              note: "photoreal · 35mm",          slug: "realistic"   },
+      { name: "Cinematic",              note: "anamorphic · color grade",  slug: "cinematic"   },
+      { name: "Anime",                  note: "2D · cel-shaded",           slug: "anime"       },
+      { name: "3D Animation",           note: "stylized · pixar-likeness", slug: "3d"          },
+      { name: "Cartoon",                note: "flat · bold linework",      slug: "cartoon"     },
+      { name: "Stylized / Illustrated", note: "painterly · editorial",     slug: "illustrated" },
     ];
+    function styleMediaHTML(slug: string, tag: string, caption: string): string {
+      return `<div class="style__media">
+    <img src="/images/styles/${slug}.webp" alt="${caption}" class="style__img" loading="lazy" decoding="async" />
+    <div class="style__meta">
+      <span class="style__tag">${tag}</span>
+      <span class="style__cap">${caption}</span>
+    </div>
+  </div>`;
+    }
     const stylesGrid = document.getElementById("styles-grid");
     if (stylesGrid) {
       stylesGrid.innerHTML = "";
       STYLES.forEach((s, i) => {
+        const tag = "S." + String(i + 1).padStart(2, "0");
         stylesGrid.innerHTML += `<div class="style">
-    ${stripeHTML("4/3", "S." + String(i + 1).padStart(2, "0"), s.note)}
+    ${styleMediaHTML(s.slug, tag, s.note)}
     <div class="style__row">
       <span class="style__name">${s.name}</span>
       <span class="style__note mono">${s.note}</span>
