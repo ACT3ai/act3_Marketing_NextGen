@@ -129,6 +129,32 @@ body {
 .stripes__tag { font-family: var(--font-mono); background: var(--paper); border: 1px solid var(--line); padding: 3px 7px; border-radius: 4px; }
 .stripes__caption { font-family: var(--font-mono); letter-spacing: .04em; }
 
+/* ===== Auto-playing muted loop ===== */
+.shot-video {
+  position: relative; width: 100%; aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg); overflow: hidden;
+  border: 1px solid var(--line); background: #000;
+  box-shadow: 0 24px 60px -30px rgba(0,0,0,.25);
+}
+.shot-video video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+.shot-video__meta {
+  position: absolute; left: 14px; bottom: 12px; right: 14px;
+  display: flex; gap: 10px; align-items: center; justify-content: space-between;
+  font-size: 11px; color: var(--ink-2); pointer-events: none; z-index: 2;
+}
+.shot-video__tag {
+  font-family: var(--font-mono); background: var(--paper);
+  border: 1px solid var(--line); padding: 3px 7px; border-radius: 4px;
+}
+.shot-video__caption {
+  font-family: var(--font-mono); letter-spacing: .04em;
+  background: var(--paper); border: 1px solid var(--line);
+  padding: 3px 7px; border-radius: 4px;
+}
+
 /* ===== Proof bullets ===== */
 .proof-list { list-style: none; padding: 0; margin: 28px 0 0; }
 .proof { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 15.5px; line-height: 1.5; }
@@ -184,7 +210,80 @@ body {
 .flipcube__face--front { transform: rotateY(0deg); }
 @keyframes flipcube-roll { 0%, 83% { transform: rotateX(0deg); } 100% { transform: rotateX(-90deg); } }
 
-.hero__strip { position: relative; overflow: hidden; }
+.hero__strip { position: relative; overflow: visible; }
+.hero__reel {
+  width: 100%; height: auto; display: block;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  box-shadow: 0 40px 80px -32px rgba(0,0,0,.45), 0 12px 28px -20px rgba(0,0,0,.2);
+  transform: rotate(-1.5deg);
+  background: #000;
+}
+
+/* ===== Hero overlays — production-note style ===== */
+.hero__overlays {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  transform: rotate(-1.5deg);
+}
+.hero__shot-marker {
+  position: absolute; top: 18px; left: 22px;
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: .12em;
+  color: rgba(245, 240, 232, .95);
+  background: rgba(0, 0, 0, .55);
+  padding: 6px 10px; border-radius: 3px;
+  text-transform: uppercase;
+}
+.hero__card {
+  position: absolute;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 10px 12px 12px;
+  max-width: 220px;
+  box-shadow: 0 18px 30px -16px rgba(0,0,0,.55), 0 6px 12px -6px rgba(0,0,0,.25);
+}
+.hero__card--alex {
+  top: 22%; right: -4%;
+  transform: rotate(2deg);
+}
+.hero__card--sally {
+  bottom: 18%; right: 8%;
+  transform: rotate(-1.5deg);
+}
+.hero__char {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 11px; letter-spacing: .1em;
+  padding: 4px 9px; border-radius: 3px;
+  margin-bottom: 6px;
+}
+.hero__line {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 14px; line-height: 1.35;
+  color: var(--ink);
+}
+.hero__type-tag {
+  position: absolute; bottom: 14px; right: 14px;
+  background: var(--accent);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 12px; letter-spacing: .08em;
+  padding: 5px 12px; border-radius: 3px;
+  text-transform: uppercase;
+  box-shadow: 0 6px 16px -8px rgba(0,0,0,.4);
+}
+
+@media (max-width: 920px) {
+  .hero__overlays { display: none; }
+}
 .strip__row { display: grid; grid-template-columns: 1.1fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; transform: rotate(-2deg); }
 .strip__cell:nth-child(1) { transform: translateY(-14px); }
 .strip__cell:nth-child(4) { transform: translateY(14px); }
@@ -451,7 +550,22 @@ const BODY_HTML = `
     </div>
 
     <div class="hero__strip" aria-hidden="true">
-      <img src="/images/Slides_Top_Fold.gif" alt="ACT 3 in action" style="width:100%;height:auto;display:block;object-fit:cover;" />
+      <video class="hero__reel"
+        src="/images/hero-reel.mp4"
+        poster="/images/hero-reel-poster.jpg"
+        muted playsinline loop autoplay preload="metadata"></video>
+      <div class="hero__overlays" aria-hidden="true">
+        <div class="hero__shot-marker">SHOT 1. EXT — MEET CUTE</div>
+        <div class="hero__card hero__card--alex">
+          <span class="hero__char">ALEX</span>
+          <p class="hero__line">Have you seen my dog? He ran this way.</p>
+        </div>
+        <div class="hero__card hero__card--sally">
+          <span class="hero__char">SALLY</span>
+          <p class="hero__line">No. Can I help you look for him?</p>
+        </div>
+        <div class="hero__type-tag">Movie</div>
+      </div>
     </div>
   </div>
   <a href="#stats" class="hero__scroll" aria-label="Scroll to next section">
@@ -661,6 +775,20 @@ export default function Home(): JSX.Element {
   </div>`;
     }
 
+    function videoHTML(slug: string, tag: string, caption: string): string {
+      return `<div class="shot-video">
+    <video
+      src="/images/screenshots/${slug}/loop.mp4"
+      poster="/images/screenshots/${slug}/poster.jpg"
+      muted playsinline loop preload="metadata"
+      aria-label="${caption}"></video>
+    <div class="shot-video__meta">
+      <span class="shot-video__tag">${tag}</span>
+      <span class="shot-video__caption">${caption}</span>
+    </div>
+  </div>`;
+    }
+
     function proofBullet(text: string): string {
       return `<li class="proof">
     <span class="proof__dot" aria-hidden="true">
@@ -676,7 +804,8 @@ export default function Home(): JSX.Element {
         h: "Type Your Story. Watch It Come to Life.",
         body: "Write dialogue the way you think it: \"He said this. She said that.\" ACT 3 reads your script and automates every production decision — casting, camera angles, lighting, sets. No prompt engineering. No shot-by-shot setup. Just storytelling.",
         bullets: ["Write natural-language dialogue and scene descriptions", "AI infers cinematography, staging, and set needs", "650-shot film set up in ~2 hours vs. 5,200 hours manually"],
-        tag: "02.01", cap: "SCRIPT → SHOT LIST" },
+        tag: "02.01", cap: "SCRIPT → SHOT LIST",
+        mediaHtml: videoHTML("script-speed", "02.01", "SCRIPT → SHOT LIST") },
       { id: "sets", side: "R", label: "Sets &amp; Backgrounds",
         h: "Define Your World Once. Every Shot Follows.",
         body: "Build your set — an office, a city street, a spaceship — once. ACT 3 applies it consistently across every scene and shot. No redescribing the environment per prompt. No inconsistent backgrounds.",
@@ -687,7 +816,8 @@ export default function Home(): JSX.Element {
         h: "Write It. See It. Ship It.",
         body: "ACT 3 is the screenwriter's dream realized. Import your script, watch it visualized shot by shot, iterate in real time. You wrote the story — now see it as a film before a single dollar of production budget is spent.",
         bullets: ["Import PDF, TXT, or Final Draft files", "AI expands a concept into full beats, scenes, and shots", "Human and AI script versions side by side"],
-        tag: "02.03", cap: "SCRIPT EDITOR — DRAFT 4" },
+        tag: "02.03", cap: "SCRIPT EDITOR — DRAFT 4",
+        mediaHtml: videoHTML("screenwriters", "02.03", "SCRIPT EDITOR — DRAFT 4") },
       { id: "social", side: "R", label: "Social Media Video",
         h: "Create Cinematic Content at Social Media Speed.",
         body: "From concept to polished short-form video in a fraction of the time. Format for any platform — vertical for TikTok and Reels, horizontal for YouTube, square for Instagram — in one workflow.",
@@ -716,27 +846,32 @@ export default function Home(): JSX.Element {
         h: "Full-Length Films. Not 8-Second Clips.",
         body: "ACT 3 is purpose-built for long-form. Script a feature film, a short, a TV episode, or a web series. The Story Arc engine plans across episodes. Consistency holds across hundreds of shots.",
         bullets: ["Story Arc engine for multi-episode planning", "Visual and character consistency across 600+ shots", "AI Showrunner orchestrates the full production"],
-        tag: "02.08", cap: "EP 01 — SCENE 14 OF 32" },
+        tag: "02.08", cap: "EP 01 — SCENE 14 OF 32",
+        mediaHtml: videoHTML("movies", "02.08", "EP 01 — SCENE 14 OF 32") },
       { id: "voice", side: "L", label: "Voice &amp; Dialogue",
         h: "AI Voices for Drafts. Human Voices When You're Ready.",
         body: "Every character has a voice from the first draft. High-quality AI TTS with natural cadence and emotional range. When you're ready to elevate, bring in human voice actors through the same interface.",
         bullets: ["Multilingual TTS and dubbing", "Lipsync for any character", "Human voice actor integration in the same pipeline"],
-        tag: "02.09", cap: "DIALOGUE — KIRA L." },
+        tag: "02.09", cap: "DIALOGUE — KIRA L.",
+        mediaHtml: videoHTML("voice", "02.09", "DIALOGUE — KIRA L.") },
       { id: "actors", side: "R", label: "Actor &amp; Costume Consistency",
         h: "Cast Your Characters. Keep Them Consistent.",
         body: "Define your cast from a central character directory. ACT 3 maintains physical consistency, wardrobe, and performance style across every scene. LoRA-based character consistency. No recreating characters per shot.",
         bullets: ["Character library with age, appearance, and wardrobe management", "Marker-less motion capture from iPhone or webcam", "AI casting agent suggests characters from brief descriptions"],
-        tag: "02.10", cap: "CASTING — 5 ACTORS" },
+        tag: "02.10", cap: "CASTING — 5 ACTORS",
+        mediaHtml: videoHTML("actors", "02.10", "CASTING — 5 ACTORS") },
       { id: "editor", side: "L", label: "Unified Editor",
         h: "One Editor. Full Control. Move Fast.",
         body: "The integrated editor handles everything from shot-level adjustments to full-scene assembly. Timeline, keyframes, transitions, and render controls — all without opening another application.",
         bullets: ["Three-column layout with script, visual, and timeline panels", "Persona-aware views for Writers, Directors, and Actors", "One-click AI regeneration per shot"],
-        tag: "02.11", cap: "EDITOR — TIMELINE VIEW" },
+        tag: "02.11", cap: "EDITOR — TIMELINE VIEW",
+        mediaHtml: videoHTML("editor", "02.11", "EDITOR — TIMELINE VIEW") },
       { id: "models", side: "R", label: "Powered by Best AI",
         h: "Built on Top of the Best Video AI Models.",
         body: "ACT 3 routes each shot to the right model automatically — Veo 3, Runway, FLUX, Hunyuan, Wan 2.1, and more. You get the best output for each task without managing models yourself.",
         bullets: ["Multi-model routing engine selects the best model per shot type", "New models integrated as they become available", "No prompt engineering required"],
-        tag: "02.12", cap: "MODEL ROUTER" },
+        tag: "02.12", cap: "MODEL ROUTER",
+        mediaHtml: videoHTML("models", "02.12", "MODEL ROUTER") },
       { id: "advertising", side: "L", label: "Advertising Video",
         h: "Ads That Stop the Scroll. Every Time.",
         body: "Produce broadcast-quality ads in a fraction of the time and cost. ACT 3 gives you cinematic production values without a production crew. Run more creative, test more concepts, ship more campaigns — without blowing the budget.",
@@ -747,12 +882,14 @@ export default function Home(): JSX.Element {
         h: "Screens Within Scenes. Fully Controlled.",
         body: "Place live video or graphics on any in-scene display — a laptop screen, a billboard, a smartphone — and control exactly what appears. Perfect for product demos, tech stories, and brand placement.",
         bullets: ["Place content on any in-scene display surface", "Fully controlled per shot", "Ideal for product placement and tech narratives"],
-        tag: "02.13", cap: "IN-SCENE DISPLAY" },
+        tag: "02.13", cap: "IN-SCENE DISPLAY",
+        mediaHtml: videoHTML("screens", "02.13", "IN-SCENE DISPLAY") },
       { id: "teams", side: "R", label: "Teams &amp; Collaboration",
         h: "Your Team. One Platform. Full Access Controls.",
         body: "Writers, directors, editors, and producers work on the same project simultaneously. Role-based permissions, scene locking, version history, and approval workflows keep production organized.",
         bullets: ["Role-based permissions (Writer, Director, Producer, Admin)", "Version history and visual diffing", "Multi-org support for agencies managing multiple clients"],
-        tag: "02.14", cap: "TEAM — 6 EDITING" },
+        tag: "02.14", cap: "TEAM — 6 EDITING",
+        mediaHtml: videoHTML("teams", "02.14", "TEAM — 6 EDITING") },
     ];
 
     const vrContainer = document.getElementById("value-rows");
@@ -922,10 +1059,24 @@ export default function Home(): JSX.Element {
     );
     statNums.forEach((el) => io.observe(el));
 
+    // ── Video play/pause based on viewport ─────────────────────────────────────
+    const vidIo = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          const v = e.target as HTMLVideoElement;
+          if (e.isIntersecting) v.play().catch(() => {});
+          else v.pause();
+        }
+      },
+      { threshold: 0.25 }
+    );
+    document.querySelectorAll(".shot-video video, .hero__reel").forEach((el) => vidIo.observe(el));
+
     // ── Cleanup ────────────────────────────────────────────────────────────────
     return () => {
       clearInterval(flipTimer);
       io.disconnect();
+      vidIo.disconnect();
     };
   }, []);
 
