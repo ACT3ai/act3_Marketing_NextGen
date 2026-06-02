@@ -770,7 +770,7 @@ const BODY_HTML = `
 
 `;
 
-export default function Home(): JSX.Element {
+export default function Home(): React.JSX.Element {
   useEffect(() => {
     // ── Stripe placeholder helper ──────────────────────────────────────────────
     let _spIdx = 10;
@@ -1031,10 +1031,13 @@ export default function Home(): JSX.Element {
     }
 
     // ── Pricing ────────────────────────────────────────────────────────────────
+    // Carry the chosen plan so the selection survives the login redirect and the
+    // user lands straight on checkout instead of the plan list.
+    const planHref = (name: string) => `https://app.act3ai.com/settings/plans/?plan=${encodeURIComponent(name)}`;
     const TIERS = [
-      { name: "Free",    price: "$0",   per: "per month", desc: "Try ACT 3 with a generous monthly credit allowance.", cta: "Sign Up Free",   href: "https://app.act3ai.com/signup/",         featured: false, feats: ["800 credits / month", "0 credit rollover bank", "Cloud Storage 50 MB"] },
-      { name: "Creator", price: "$49",  per: "per month", desc: "For creators producing content regularly.",       cta: "Choose Creator", href: "https://app.act3ai.com/settings/plans/", featured: true,  feats: ["24,500 credits / month", "61,250 credit rollover bank", "Cloud Storage 50 GB"] },
-      { name: "Pro",     price: "$175", per: "per month", desc: "For serious filmmakers producing at scale.",      cta: "Choose Pro",     href: "https://app.act3ai.com/settings/plans/", featured: false, feats: ["87,500 credits / month", "218,750 credit rollover bank", "Cloud Storage 740 GB", "All AI Video Models", "Priority Rendering"] },
+      { name: "Free",    price: "$0",   per: "per month", desc: "Try ACT 3 with a generous monthly credit allowance.", cta: "Sign Up Free",   href: "https://app.act3ai.com/signup/", featured: false, feats: ["800 credits / month", "0 credit rollover bank", "Cloud Storage 50 MB"] },
+      { name: "Creator", price: "$49",  per: "per month", desc: "For creators producing content regularly.",       cta: "Choose Creator", href: planHref("Creator"), featured: true,  feats: ["24,500 credits / month", "61,250 credit rollover bank", "Cloud Storage 50 GB"] },
+      { name: "Pro",     price: "$175", per: "per month", desc: "For serious filmmakers producing at scale.",      cta: "Choose Pro",     href: planHref("Pro"), featured: false, feats: ["87,500 credits / month", "218,750 credit rollover bank", "Cloud Storage 740 GB", "All AI Video Models", "Priority Rendering"] },
     ];
     const checkSVG = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color:var(--accent);flex-shrink:0"><path d="M4.5 12.5l4.5 4.5L19.5 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
     const pricingGrid = document.getElementById("pricing-grid");

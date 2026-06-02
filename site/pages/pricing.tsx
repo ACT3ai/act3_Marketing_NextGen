@@ -75,6 +75,12 @@ const PLANS_HREF = "https://app.act3ai.com/settings/plans/";
 const SIGNUP_HREF = "https://app.act3ai.com/signup/";
 const ENTERPRISE_HREF = "mailto:ContactUs@ACT3ai.com";
 
+// Carry the chosen plan to the app so the selection is remembered through the
+// login redirect and the user lands straight on checkout (not the plan list).
+function planHref(name: string): string {
+  return `${PLANS_HREF}?plan=${encodeURIComponent(name)}`;
+}
+
 const plans: PlanProps[] = [
   {
     name: "Free",
@@ -245,7 +251,11 @@ export default function Pricing(): ReactNode {
             alignItems: "stretch",
           }}>
             {visiblePlans.map((plan) => (
-              <PricingPlan key={plan.name} {...plan} />
+              <PricingPlan
+                key={plan.name}
+                {...plan}
+                ctaHref={plan.ctaHref === PLANS_HREF ? planHref(plan.name) : plan.ctaHref}
+              />
             ))}
           </div>
 
