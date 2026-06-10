@@ -59,7 +59,7 @@ var config = {
         ],
     ],
     themeConfig: {
-        image: "img/act3ai-social-card.jpg",
+        image: "img/Act3_Preview.jpg",
         colorMode: {
             defaultMode: "light",
             respectPrefersColorScheme: false,
