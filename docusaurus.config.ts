@@ -47,6 +47,51 @@ const config: Config = {
         content: "#C0531F",
       },
     },
+    // Explicit social-card image hints. themeConfig.image emits og:image /
+    // twitter:image, but crawlers (Facebook, LinkedIn) need width/height/type
+    // to render the card reliably on first scrape.
+    {
+      tagName: "meta",
+      attributes: {
+        property: "og:type",
+        content: "website",
+      },
+    },
+    {
+      tagName: "meta",
+      attributes: {
+        property: "og:image:type",
+        content: "image/jpeg",
+      },
+    },
+    {
+      tagName: "meta",
+      attributes: {
+        property: "og:image:width",
+        content: "1200",
+      },
+    },
+    {
+      tagName: "meta",
+      attributes: {
+        property: "og:image:height",
+        content: "630",
+      },
+    },
+    {
+      tagName: "meta",
+      attributes: {
+        property: "og:image:alt",
+        content: "ACT 3 — Create Movies at the Speed of Storytelling",
+      },
+    },
+    {
+      tagName: "meta",
+      attributes: {
+        name: "twitter:image:alt",
+        content: "ACT 3 — Create Movies at the Speed of Storytelling",
+      },
+    },
   ],
 
   future: {
