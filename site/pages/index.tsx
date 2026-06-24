@@ -185,7 +185,8 @@ body {
   display: flex; align-items: center;
   padding-top: clamp(72px, 8vh, 96px);
   padding-bottom: clamp(40px, 4vh, 56px);
-  padding-left: calc(max(0px, (100vw - var(--maxw)) / 2) + var(--pad-x));
+  /* Nudge text a touch further left than centered-in-maxw: 60% of the gutter + base pad */
+  padding-left: calc(max(0px, (100vw - var(--maxw)) / 2) * 0.6 + var(--pad-x));
   padding-right: clamp(20px, 3vw, 48px);
 }
 .hero__copy { max-width: 620px; }
