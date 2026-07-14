@@ -944,7 +944,7 @@ export default function Home(): React.JSX.Element {
       { name: "Realistic",              note: "photoreal · 35mm",          slug: "realistic"   },
       { name: "Cinematic",              note: "anamorphic · color grade",  slug: "cinematic"   },
       { name: "Anime",                  note: "2D · cel-shaded",           slug: "anime"       },
-      { name: "3D Animation",           note: "stylized · pixar-likeness", slug: "3d"          },
+      { name: "3D Animation",           note: "stylized · cartoon",        slug: "3d"          },
       { name: "Cartoon",                note: "flat · bold linework",      slug: "cartoon"     },
       { name: "Stylized / Illustrated", note: "painterly · editorial",     slug: "illustrated" },
     ];
