@@ -23,3 +23,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+
+# lfbridge local storage-scan state (machine-specific, not shared)
+.lfbridge/
