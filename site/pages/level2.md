@@ -2,6 +2,7 @@
 title: Your Level 2 Filmmaking Team
 description: A dedicated, week-by-week AI filmmaking team that produces your films inside ACT 3.
 hide_table_of_contents: true
+wrapperClassName: level2-page
 ---
 
 {/*

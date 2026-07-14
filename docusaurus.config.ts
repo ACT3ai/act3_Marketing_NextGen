@@ -143,7 +143,10 @@ const config: Config = {
           path: "site/pages",
         },
         theme: {
-          customCss: "./site/css/custom.css",
+          // custom.css = site-wide theme; level2.css = design overlay for the
+          // four Level 2 pages (scoped to `.level2-page`, opted in per page via
+          // the `wrapperClassName: level2-page` front matter).
+          customCss: ["./site/css/custom.css", "./site/css/level2.css"],
         },
         sitemap: {
           changefreq: "weekly",

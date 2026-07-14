@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400;9..144,1,500&amp;family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#faf8f3;color:#1a1714;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:#c4612b;text-decoration:none}
+a:hover{color:#a85024}
+</style>
+</helmet>
+<div style="background:#faf8f3;color:#1a1714;min-height:100vh">
+  <sc-if value="{{ showChrome }}" hint-placeholder-val="{{ true }}">
+    <nav data-screen-label="Nav" style="position:sticky;top:0;z-index:100;background:rgba(250,248,243,0.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid #e2dccb">
+      <div style="max-width:1200px;margin:0 auto;padding:16px clamp(20px,4vw,56px);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px">
+        <a href="https://act3ai.com/" style="display:inline-flex;align-items:center;gap:12px;color:#1a1714;justify-self:start">
+          <span style="font-weight:800;font-size:18px;letter-spacing:-0.02em;white-space:nowrap">ACT 3</span>
+          <span style="width:1px;height:16px;background:#e2dccb"></span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:500;letter-spacing:0.14em;color:#837c72;white-space:nowrap">LEVEL 2 TEAM</span>
+        </a>
+        <div style="display:flex;gap:6px;justify-self:center">
+          <a href="#packages" style="color:#4a4540;font-size:14px;font-weight:500;padding:8px 14px;border-radius:6px" style-hover="color:#1a1714;background:#f3efe5">Packages</a>
+          <a href="#how" style="color:#4a4540;font-size:14px;font-weight:500;padding:8px 14px;border-radius:6px" style-hover="color:#1a1714;background:#f3efe5">How It Works</a>
+          <a href="#quality" style="color:#4a4540;font-size:14px;font-weight:500;padding:8px 14px;border-radius:6px" style-hover="color:#1a1714;background:#f3efe5">Quality</a>
+        </div>
+        <a href="{{ ctaHref }}" style="justify-self:end;display:inline-flex;align-items:center;gap:7px;background:#c4612b;color:#fff;font-size:14px;font-weight:600;letter-spacing:-0.005em;padding:9px 20px;border-radius:999px;box-shadow:0 8px 24px -12px #c4612b;white-space:nowrap" style-hover="background:#a85024;color:#fff">Talk to ACT 3</a>
+      </div>
+    </nav>
+  </sc-if>
+
+  <section data-screen-label="Hero + Packages" id="packages" style="background:#faf8f3;padding:clamp(64px,9vw,110px) clamp(20px,4vw,56px) clamp(72px,8vw,104px)">
+    <div style="max-width:1200px;margin:0 auto">
+      <div style="max-width:820px;margin:0 auto;text-align:center">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;letter-spacing:0.16em;color:#c4612b;margin-bottom:22px">— ACT 3 · OPTIONAL SERVICE</div>
+        <h1 style="font-family:'Fraunces','Times New Roman',serif;font-optical-sizing:auto;font-weight:500;font-size:clamp(42px,6.4vw,74px);line-height:1.04;letter-spacing:-0.01em;margin:0 0 22px">Your Level 2<br><em style="font-style:italic;font-weight:400;color:#c4612b">Filmmaking Team</em></h1>
+        <p style="font-size:clamp(17px,2vw,20px);font-weight:600;letter-spacing:-0.005em;color:#1a1714;margin:0 0 14px">People who produce movies and TV shows with AI filmmaking.</p>
+        <p style="font-size:17px;line-height:1.65;color:#4a4540;max-width:640px;margin:0 auto">Beyond the ACT 3 software, you get a dedicated crew of real filmmakers who do the work for you — working inside the same ACT 3 pipeline you already use, available by the week. Not just a tool. A team.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,400px));justify-content:center;gap:22px;margin-top:clamp(44px,5vw,64px)">
+        <div style="background:#fff;border:1px solid #e2dccb;border-radius:14px;padding:32px 34px;box-shadow:0 1px 2px rgba(26,23,20,0.04);transition:transform 0.18s,box-shadow 0.18s" style-hover="transform:translateY(-3px);box-shadow:0 16px 32px -20px rgba(26,23,20,0.28)">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.14em;color:#c4612b;margin-bottom:14px">PACKAGE A</div>
+          <div style="display:flex;align-items:baseline;gap:12px">
+            <span style="font-family:'Fraunces',serif;font-optical-sizing:auto;font-weight:500;font-size:64px;line-height:1">3</span>
+            <span style="font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:20px;color:#837c72">team members</span>
+          </div>
+          <div style="height:1px;background:#e2dccb;margin:22px 0 18px"></div>
+          <p style="font-size:15.5px;line-height:1.6;color:#4a4540;margin:0">A dedicated team to take on your production, one week at a time.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #e2dccb;border-radius:14px;padding:32px 34px;box-shadow:0 1px 2px rgba(26,23,20,0.04);transition:transform 0.18s,box-shadow 0.18s" style-hover="transform:translateY(-3px);box-shadow:0 16px 32px -20px rgba(26,23,20,0.28)">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.14em;color:#c4612b;margin-bottom:14px">PACKAGE B</div>
+          <div style="display:flex;align-items:baseline;gap:12px">
+            <span style="font-family:'Fraunces',serif;font-optical-sizing:auto;font-weight:500;font-size:64px;line-height:1">5</span>
+            <span style="font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:20px;color:#837c72">team members</span>
+          </div>
+          <div style="height:1px;background:#e2dccb;margin:22px 0 18px"></div>
+          <p style="font-size:15.5px;line-height:1.6;color:#4a4540;margin:0">More hands for bigger slates, tighter deadlines, and parallel shots.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="How It Works" id="how" style="background:#f3efe5;padding:clamp(72px,8vw,110px) clamp(20px,4vw,56px)">
+    <div style="max-width:1200px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:clamp(44px,5vw,68px)">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;letter-spacing:0.16em;color:#837c72;margin-bottom:18px">— HOW IT WORKS</div>
+        <h2 style="font-family:'Fraunces',serif;font-optical-sizing:auto;font-weight:500;font-size:clamp(32px,4.2vw,50px);line-height:1.1;letter-spacing:-0.01em;margin:0">How it <em style="font-style:italic;font-weight:400;color:#c4612b">works.</em></h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0">
+        <div style="padding:8px clamp(24px,3vw,48px);border-left:1px solid #e2dccb">
+          <div style="font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(64px,7vw,92px);line-height:1;color:#e8cfb6">01</div>
+          <div style="font-family:'Fraunces',serif;font-weight:500;font-size:24px;margin:22px 0 12px">Pick a package</div>
+          <p style="font-size:15.5px;line-height:1.65;color:#4a4540;margin:0">Package A (3 members) or Package B (5 members).</p>
+        </div>
+        <div style="padding:8px clamp(24px,3vw,48px);border-left:1px solid #e2dccb">
+          <div style="font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(64px,7vw,92px);line-height:1;color:#e8cfb6">02</div>
+          <div style="font-family:'Fraunces',serif;font-weight:500;font-size:24px;margin:22px 0 12px">Book by the week</div>
+          <p style="font-size:15.5px;line-height:1.65;color:#4a4540;margin:0">A fixed weekly price — 5 working days, 8 hours a day. No per-hour metering.</p>
+        </div>
+        <div style="padding:8px clamp(24px,3vw,48px);border-left:1px solid #e2dccb">
+          <div style="font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(64px,7vw,92px);line-height:1;color:#e8cfb6">03</div>
+          <div style="font-family:'Fraunces',serif;font-weight:500;font-size:24px;margin:22px 0 12px">Get films made</div>
+          <p style="font-size:15.5px;line-height:1.65;color:#4a4540;margin:0">Your crew produces inside ACT 3; output lands straight in your project.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Save Money" style="background:#faf8f3;padding:clamp(72px,8vw,110px) clamp(20px,4vw,56px)">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(36px,5vw,72px);align-items:start">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;letter-spacing:0.16em;color:#c4612b;margin-bottom:18px">— SAVE MONEY</div>
+        <h2 style="font-family:'Fraunces',serif;font-optical-sizing:auto;font-weight:500;font-size:clamp(30px,3.6vw,44px);line-height:1.14;letter-spacing:-0.01em;margin:0;max-width:18ch">The same production, for far less — <em style="font-style:italic;font-weight:400;color:#c4612b">because a careful team wastes nothing.</em></h2>
+      </div>
+      <div>
+        <div style="border-top:1px solid #e2dccb;padding:22px 0;display:grid;grid-template-columns:18px 1fr;gap:14px">
+          <span style="width:6px;height:6px;border-radius:999px;background:#c4612b;margin-top:8px"></span>
+          <div>
+            <div style="font-size:16.5px;font-weight:600;letter-spacing:-0.005em;margin-bottom:6px">Generate less video</div>
+            <p style="font-size:15px;line-height:1.65;color:#4a4540;margin:0">Your team goes over every prompt input and output with great care, so you stop paying for wasted generations — a large saving on video-generation costs.</p>
+          </div>
+        </div>
+        <div style="border-top:1px solid #e2dccb;padding:22px 0;display:grid;grid-template-columns:18px 1fr;gap:14px">
+          <span style="width:6px;height:6px;border-radius:999px;background:#c4612b;margin-top:8px"></span>
+          <div>
+            <div style="font-size:16.5px;font-weight:600;letter-spacing:-0.005em;margin-bottom:6px">Far smaller team, far lower labor cost</div>
+            <p style="font-size:15px;line-height:1.65;color:#4a4540;margin:0">Produce full shows with a fraction of the headcount you would normally need.</p>
+          </div>
+        </div>
+        <div style="border-top:1px solid #e2dccb;padding:22px 0;display:grid;grid-template-columns:18px 1fr;gap:14px">
+          <span style="width:6px;height:6px;border-radius:999px;background:#c4612b;margin-top:8px"></span>
+          <div>
+            <div style="font-size:16.5px;font-weight:600;letter-spacing:-0.005em;margin-bottom:6px">Hit every deadline</div>
+            <p style="font-size:15px;line-height:1.65;color:#4a4540;margin:0">Get projects finished on your schedule — even a weekly TV show that has to ship a new episode every single week.</p>
+          </div>
+        </div>
+        <div style="border-top:1px solid #e2dccb;border-bottom:1px solid #e2dccb;padding:22px 0;display:grid;grid-template-columns:18px 1fr;gap:14px">
+          <span style="width:6px;height:6px;border-radius:999px;background:#c4612b;margin-top:8px"></span>
+          <div>
+            <div style="font-size:16.5px;font-weight:600;letter-spacing:-0.005em;margin-bottom:6px">Finish in a fraction of the time</div>
+            <p style="font-size:15px;line-height:1.65;color:#4a4540;margin:0">Completing productions faster cuts your cost and puts far more profit in your pocket.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Higher Quality" id="quality" style="background:#f3efe5;padding:clamp(72px,8vw,110px) clamp(20px,4vw,56px)">
+    <div style="max-width:1200px;margin:0 auto">
+      <div style="text-align:center;max-width:860px;margin:0 auto clamp(40px,5vw,60px)">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;letter-spacing:0.16em;color:#c4612b;margin-bottom:18px">— HIGHER QUALITY</div>
+        <h2 style="font-family:'Fraunces',serif;font-optical-sizing:auto;font-weight:500;font-size:clamp(30px,3.8vw,46px);line-height:1.14;letter-spacing:-0.01em;margin:0">The quality your investors, executives, and streaming partners expect — <em style="font-style:italic;font-weight:400;color:#c4612b">and the trust that you are top-tier in the industry.</em></h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+        <div style="background:#fff;border:1px solid #e2dccb;border-radius:14px;padding:28px 30px;box-shadow:0 1px 2px rgba(26,23,20,0.04)">
+          <div style="font-family:'Fraunces',serif;font-weight:500;font-size:21px;line-height:1.25;margin-bottom:10px">Highly detailed sets &amp; locations</div>
+          <p style="font-size:15px;line-height:1.65;color:#4a4540;margin:0">Chases through sprawling police stations, hospitals, or universities. Build the set to a high standard once, then reuse it across hundreds of episodes — saving many hundreds of hours of labor.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #e2dccb;border-radius:14px;padding:28px 30px;box-shadow:0 1px 2px rgba(26,23,20,0.04)">
+          <div style="font-family:'Fraunces',serif;font-weight:500;font-size:21px;line-height:1.25;margin-bottom:10px">Rooms that stay consistent</div>
+          <p style="font-size:15px;line-height:1.65;color:#4a4540;margin:0">Every room and building keeps the same size and every exact detail — even as the camera moves through different angles and transitions between rooms.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #e2dccb;border-radius:14px;padding:28px 30px;box-shadow:0 1px 2px rgba(26,23,20,0.04)">
+          <div style="font-family:'Fraunces',serif;font-weight:500;font-size:21px;line-height:1.25;margin-bottom:10px">Continuity down to the details</div>
+          <p style="font-size:15px;line-height:1.65;color:#4a4540;margin:0">Exacting control of details like clothing changes over the course of a story.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #e2dccb;border-radius:14px;padding:28px 30px;box-shadow:0 1px 2px rgba(26,23,20,0.04)">
+          <div style="font-family:'Fraunces',serif;font-weight:500;font-size:21px;line-height:1.25;margin-bottom:10px">Characters that evolve</div>
+          <p style="font-size:15px;line-height:1.65;color:#4a4540;margin:0">Experienced with characters changing across a production — aging through stages of life, moving through stages of pregnancy, and changing hairstyle and hair length.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="One Person" style="background:#faf8f3;padding:clamp(72px,8vw,110px) clamp(20px,4vw,56px)">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(36px,5vw,72px);align-items:start">
+      <div>
+        <div style="border-top:1px solid #e2dccb;padding:22px 0;display:grid;grid-template-columns:18px 1fr;gap:14px">
+          <span style="width:6px;height:6px;border-radius:999px;background:#c4612b;margin-top:8px"></span>
+          <div>
+            <div style="font-size:16.5px;font-weight:600;letter-spacing:-0.005em;margin-bottom:6px">A cost-efficient team on your side</div>
+            <p style="font-size:15px;line-height:1.65;color:#4a4540;margin:0">Your in-house side can stay small; in many cases a single director can have our team do all of the work.</p>
+          </div>
+        </div>
+        <div style="border-top:1px solid #e2dccb;border-bottom:1px solid #e2dccb;padding:22px 0;display:grid;grid-template-columns:18px 1fr;gap:14px">
+          <span style="width:6px;height:6px;border-radius:999px;background:#c4612b;margin-top:8px"></span>
+          <div>
+            <div style="font-size:16.5px;font-weight:600;letter-spacing:-0.005em;margin-bottom:6px">Bullet points in, production out</div>
+            <p style="font-size:15px;line-height:1.65;color:#4a4540;margin:0">The director hands over a simple bullet-point list, and the team turns it around overnight.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;letter-spacing:0.16em;color:#c4612b;margin-bottom:18px">— ONE PERSON, A FULL MOVIE OR TV SHOW</div>
+        <h2 style="font-family:'Fraunces',serif;font-optical-sizing:auto;font-weight:500;font-size:clamp(30px,3.6vw,44px);line-height:1.14;letter-spacing:-0.01em;margin:0;max-width:18ch">Keep your own side of the team as lean as you like — <em style="font-style:italic;font-weight:400;color:#c4612b">even a single director.</em></h2>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Overnight" style="background:#1a1714;color:#faf8f3;padding:clamp(80px,9vw,120px) clamp(20px,4vw,56px)">
+    <div style="max-width:1200px;margin:0 auto">
+      <div style="text-align:center;max-width:800px;margin:0 auto clamp(44px,5vw,64px)">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;letter-spacing:0.16em;color:#e08b52;margin-bottom:18px">— EVERY NIGHT, UPGRADING AN ENTIRE MOVIE</div>
+        <h2 style="font-family:'Fraunces',serif;font-optical-sizing:auto;font-weight:400;font-size:clamp(32px,4.4vw,52px);line-height:1.12;letter-spacing:-0.01em;margin:0;color:#faf8f3">Hand us a script and watch it come to life — <em style="font-style:italic;color:#e08b52">then refine it day after day.</em></h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0;max-width:1000px;margin:0 auto">
+        <div style="padding:10px clamp(24px,3.5vw,52px);border-left:1px solid rgba(250,248,243,0.16)">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.14em;color:rgba(250,248,243,0.55);margin-bottom:16px">OVERNIGHT</div>
+          <div style="font-family:'Fraunces',serif;font-weight:500;font-size:26px;line-height:1.2;margin-bottom:12px;color:#faf8f3">A two-hour movie, ready the next day</div>
+          <p style="font-size:15.5px;line-height:1.7;color:rgba(250,248,243,0.72);margin:0">Give us the script for a full two-hour film and have the entire movie created by the following day.</p>
+        </div>
+        <div style="padding:10px clamp(24px,3.5vw,52px);border-left:1px solid rgba(250,248,243,0.16)">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.14em;color:rgba(250,248,243,0.55);margin-bottom:16px">WEEKLY</div>
+          <div style="font-family:'Fraunces',serif;font-weight:500;font-size:26px;line-height:1.2;margin-bottom:12px;color:#faf8f3">A new episode every week</div>
+          <p style="font-size:15.5px;line-height:1.7;color:rgba(250,248,243,0.72);margin:0">Have an hour-long TV show finished with a new episode each week. Every day you watch the new version and give input on what to upgrade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Backed by ACT 3" style="background:#faf8f3;padding:clamp(72px,8vw,104px) clamp(20px,4vw,56px)">
+    <div style="max-width:660px;margin:0 auto;text-align:center">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;letter-spacing:0.16em;color:#837c72;margin-bottom:18px">— BACKED BY ACT 3</div>
+      <h2 style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(26px,3vw,34px);line-height:1.2;letter-spacing:-0.01em;margin:0 0 16px">An official, optional <em style="font-style:italic;font-weight:400;color:#c4612b">ACT 3 service.</em></h2>
+      <p style="font-size:16.5px;line-height:1.7;color:#4a4540;margin:0">The same filmmaking pipeline you already use, now with people running it for you. Everything the team makes plugs straight into your ACT 3 project.</p>
+    </div>
+  </section>
+
+  <section data-screen-label="Final CTA" style="background-color:#c4612b;background-image:repeating-linear-gradient(35deg,rgba(255,255,255,0.13) 0px,rgba(255,255,255,0.13) 1px,transparent 1px,transparent 28px);padding:clamp(88px,10vw,140px) clamp(20px,4vw,56px);text-align:center">
+    <div style="max-width:820px;margin:0 auto">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;letter-spacing:0.16em;color:rgba(255,255,255,0.8);margin-bottom:22px">— BEGIN</div>
+      <h2 style="font-family:'Fraunces',serif;font-optical-sizing:auto;font-weight:400;font-size:clamp(40px,6vw,68px);line-height:1.06;letter-spacing:-0.01em;color:#fff;margin:0 0 20px">Ready to <em style="font-style:italic">add a team?</em></h2>
+      <p style="font-size:18px;line-height:1.6;color:rgba(255,255,255,0.92);margin:0 0 36px">Start with a package this week and scale as you go.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <a href="{{ ctaHref }}" style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#c4612b;font-size:16px;font-weight:600;padding:14px 30px;border-radius:999px" style-hover="background:#faf8f3;color:#a85024">Talk to ACT 3 <span aria-hidden="true">→</span></a>
+        <a href="#packages" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;font-size:16px;font-weight:600;padding:14px 30px;border-radius:999px;border:1px solid rgba(255,255,255,0.55)" style-hover="color:#fff;border-color:#fff;background:rgba(255,255,255,0.08)">View packages</a>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showChrome }}" hint-placeholder-val="{{ true }}">
+    <footer data-screen-label="Footer" style="background:#faf8f3;border-top:1px solid #e2dccb;padding:36px clamp(20px,4vw,56px)">
+      <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+        <div style="display:inline-flex;align-items:center;gap:12px">
+          <span style="font-weight:800;font-size:16px;letter-spacing:-0.02em">ACT 3</span>
+          <span style="width:1px;height:14px;background:#e2dccb"></span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:500;letter-spacing:0.12em;color:#837c72">LEVEL 2 FILMMAKING TEAM</span>
+        </div>
+        <div style="font-size:13px;color:#837c72">© 2026 ACT 3 AI. All rights reserved.</div>
+      </div>
+    </footer>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;ctaHref&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://act3ai.com/contact&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;showSiteChrome&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      ctaHref: this.props.ctaHref ?? "https://act3ai.com/contact",
+      showChrome: this.props.showSiteChrome ?? true
+    };
+  }
+}
+</script>
+</body>
+</html>
