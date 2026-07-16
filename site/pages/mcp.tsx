@@ -81,11 +81,19 @@ const PAGE_CSS = `
   color: var(--accent);
   user-select: none;
 }
-.mcp-clone__cmd {
+/* Docusaurus/Infima styles bare <code> with a light background + border, which
+   would put this near-white text on a near-white box. Neutralise that here. */
+.mcp-page code.mcp-clone__cmd {
   font-family: var(--font-mono);
   font-size: 14px;
   color: #faf8f3;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  vertical-align: middle;
   flex: 1;
+  min-width: 0;
   overflow-x: auto;
   white-space: nowrap;
   letter-spacing: -0.01em;
