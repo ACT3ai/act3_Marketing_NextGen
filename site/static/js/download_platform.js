@@ -85,6 +85,45 @@
     return null;
   }
 
+  /*
+   * macOS arch, the hard case.
+   *
+   * Chrome on macOS reports architecture "x86" in the UA client hints EVEN ON a
+   * native arm64 build running on Apple Silicon (verified: an arm64 Chrome on an
+   * M-series Mac returns architecture:"x86"). navigator.platform is "MacIntel"
+   * there too. So on Mac the "x86" signal is worthless — trusting it hands every
+   * Apple Silicon user the Intel binary.
+   *
+   * The GPU string is the signal that actually tracks the silicon:
+   *   Apple Silicon -> "ANGLE (Apple, ANGLE Metal Renderer: Apple M2 Ultra, ...)"
+   *   Intel Mac     -> "...Intel Iris..." / "...AMD Radeon..."
+   * When the GPU is virtualised or masked we learn nothing and fall back to
+   * arm64, which is both the spec's rule and the safer miss: an Intel binary
+   * still runs on Apple Silicon under Rosetta, while an arm64 binary cannot run
+   * on an Intel Mac at all.
+   */
+  function macArchFromGpu() {
+    try {
+      var canvas = document.createElement("canvas");
+      var gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+      if (!gl) return null;
+      var dbg = gl.getExtension("WEBGL_debug_renderer_info");
+      var r = dbg ? gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) : "";
+      if (!r) return null;
+      if (/apple\s*m\d|apple\s+gpu|apple\s+silicon/i.test(r)) return "arm64";
+      if (/intel|radeon|amd|nvidia|geforce/i.test(r)) return "amd64";
+      return null;
+    } catch (err) {
+      return null;
+    }
+  }
+
+  function macArch(hints) {
+    // A positive "arm" hint is trustworthy; only "x86" on Mac is the known lie.
+    if (archFromHints(hints) === "arm64") return "arm64";
+    return macArchFromGpu() || "arm64";
+  }
+
   function archFromUA(ua, plat, os) {
     if (/arm64|aarch64/i.test(ua) || /arm/i.test(plat)) return "arm64";
     if (/x86_64|x64|win64|amd64|wow64/i.test(ua)) return "amd64";
@@ -103,7 +142,11 @@
     else if (isLinux(ua, plat)) os = "linux";
     if (!os) return null;
 
-    var arch = archFromHints(hints) || archFromUA(ua, plat, os);
+    // Mac needs its own path: see macArch(). Windows and Linux hints are honest.
+    var arch =
+      os === "mac"
+        ? macArch(hints)
+        : archFromHints(hints) || archFromUA(ua, plat, os);
     return findPlatform(os, arch) || findPlatform(os, "amd64") || null;
   }
 
