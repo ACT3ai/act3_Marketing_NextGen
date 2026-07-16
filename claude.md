@@ -96,7 +96,17 @@ AWS account manages DNS via Route53 for act3ai.com.
 
 ## Level 2 pages — content vs. design (how it works)
 
-The four "Level 2 Filmmaking Team" pages keep **words and styling completely
+### Naming — public vs. internal
+
+**"Assistant Director Team" is the public name** — it is what the four pages say
+to customers. Internally we still call this the **Level 2 team**, and the
+plumbing keeps that word everywhere: the `/level2` route, `site/pages/level2.md`,
+`site/css/level2.css`, the `level2-page` wrapper class, and the upstream
+`~/BGit/all/film/level_2/` source dir. Both names are kept in this file on
+purpose so a search for either one finds the pages. Never let "Level 2" reach the
+rendered copy.
+
+The four "Assistant Director Team" (internally: Level 2) pages keep **words and styling completely
 separate**: the markdown carries only content; a single CSS file carries the
 entire visual design. Update the words without ever touching the look, and
 vice-versa.

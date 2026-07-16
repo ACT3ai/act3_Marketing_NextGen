@@ -1,19 +1,19 @@
 ---
-title: Your Level 2 Filmmaking Team
+title: Your Assistant Director Team
 description: A dedicated, week-by-week AI filmmaking team that produces your films inside ACT 3.
 hide_table_of_contents: true
 wrapperClassName: level2-page
 ---
 
 {/*
-  Main Level 2 write-up — the price-free template. Prices live only on the
+  Main Assistant Director Team write-up — the price-free template. Prices live only on the
   per-plan pages (marketing_*.md), never here. Renders inside the Docusaurus
   theme so it inherits the site navbar, footer, and custom.css brand styles.
 */}
 
 **ACT 3 · Optional Service**
 
-# Your Level 2 Filmmaking Team
+# Your Assistant Director Team
 
 **People who produce movies and TV shows with AI filmmaking.**
 

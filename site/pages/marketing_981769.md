@@ -1,5 +1,5 @@
 ---
-title: Your Level 2 Filmmaking Team
+title: Your Assistant Director Team
 description: A dedicated, week-by-week AI filmmaking team that produces your films inside ACT 3.
 slug: /marketing_981769
 unlisted: true
@@ -18,7 +18,7 @@ wrapperClassName: level2-page
 
 **ACT 3 · Optional Service**
 
-# Your Level 2 Filmmaking Team
+# Your Assistant Director Team
 
 **People who produce movies and TV shows with AI filmmaking.**
 
