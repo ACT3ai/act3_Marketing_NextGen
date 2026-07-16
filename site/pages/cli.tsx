@@ -314,7 +314,7 @@ export default function Cli(): React.ReactNode {
 
   return (
     <Layout
-      title="Act 3 Filmmaking CLI — ACT3 AI"
+      title="ACT 3 Filmmaking CLI — ACT3 AI"
       description="The ACT 3 CLI is a command line interface for very advanced users — script your filmmaking, chain commands, and automate whole passes."
     >
       <Head>
@@ -325,7 +325,7 @@ export default function Cli(): React.ReactNode {
 
       <PageHero
         label="— Command Line Interface"
-        title={<>Act 3 Filmmaking <em>CLI.</em></>}
+        title={<>ACT 3 Filmmaking <em>CLI.</em></>}
         description="The CLI is a command line user interface for very advanced users."
       />
 

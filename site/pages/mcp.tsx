@@ -305,7 +305,7 @@ export default function Mcp(): React.ReactNode {
 
   return (
     <Layout
-      title="Act 3 Filmmaking MCP — ACT3 AI"
+      title="ACT 3 Filmmaking MCP — ACT3 AI"
       description="The ACT 3 MCP is a Model Context Protocol server that lets you drive ACT 3 filmmaking from Claude Code and other MCP clients."
     >
       <Head>
@@ -316,7 +316,7 @@ export default function Mcp(): React.ReactNode {
 
       <PageHero
         label="— Model Context Protocol"
-        title={<>Act 3 Filmmaking <em>MCP.</em></>}
+        title={<>ACT 3 Filmmaking <em>MCP.</em></>}
         description="The MCP is a Model Context Protocol server that lets you drive ACT 3 from Claude Code and other MCP clients."
       />
 
