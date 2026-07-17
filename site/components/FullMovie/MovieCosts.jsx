@@ -371,26 +371,6 @@ export default function MovieCosts() {
       {/* The mandatory pricing-code cross-reference (full file paths + in-file locations). */}
       {/* Hide the pricing-code cross-reference for now — it is a dev-only info.
       <PricingCrossReference /> */}
-
-      {/* What is still to be confirmed — the screen documents its own gaps. */}
-      <div className={styles.confirm}>
-        <p className={styles.confirmTitle}>Still to confirm</p>
-        <ul className={styles.confirmList}>
-          <li>
-            The Grok lowest (480p) and highest (1080p) per-video prices (these borrow the Seedance
-            per-resolution dollar until a Grok-specific sheet is dictated; only Grok 720p is in the
-            YAML).
-          </li>
-          <li>
-            The Script-import price (storyTotal 7,177 cr × shots/50); confirm against the
-            &apos;ai-script-import&apos; catalog literal if it differs.
-          </li>
-          <li>
-            Confirmations: column two is xAI Grok (not Veo); the resolutions/clip lengths (both now
-            15-second videos); the medium-setting Grok industry term.
-          </li>
-        </ul>
-      </div>
     </div>
   );
 }

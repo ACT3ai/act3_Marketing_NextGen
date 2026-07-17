@@ -415,28 +415,6 @@ export default function ProfitVsExpenses() {
           </>
         }
       /> */}
-
-      {/* What is still to be confirmed — the screen documents its own gaps. */}
-      <div className={styles.confirm}>
-        <p className={styles.confirmTitle}>Still to confirm (resolve live from the catalog)</p>
-        <ul className={styles.confirmList}>
-          <li>
-            The profit split for the credit-priced lines (script import, per-shot AI prompt,
-            combine/final-merge) — specified as expense = value ÷ 1.30 rounded to 0.1 credit
-            (math.mdx Addendum P3); YAML-priced lines use <em>price_without_profit</em> directly.
-          </li>
-          <li>Rounding of each half up to whole dollars (round-then-show); credits stay exact.</li>
-          <li>
-            The Script-import price basis (storyTotal 7,177 credits × shots/50) — confirm against
-            the &apos;ai-script-import&apos; catalog literal if it differs.
-          </li>
-          <li>
-            Everything Movie Costs still has open carries over (column-two Grok vs. Veo, the
-            Seedance variant spellings, the researched resolutions/clip lengths, the medium-Grok
-            term).
-          </li>
-        </ul>
-      </div>
     </div>
   );
 }
