@@ -240,6 +240,7 @@ export default function SiteNavbar(): React.ReactNode {
             <a className="snav__link" href="/about">About Us</a>
             <a className="snav__link" href="/contact">Contact Us</a>
             <a className="snav__link" href="https://app.act3ai.com/settings/plans/">Plans</a>
+            <a className="snav__link" href="/movie-pricing">Movie Pricing</a>
             <a
               className="snav__link"
               href="https://www.youtube.com/@ACT3AI"
