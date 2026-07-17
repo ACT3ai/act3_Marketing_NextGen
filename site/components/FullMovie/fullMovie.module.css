@@ -1,0 +1,364 @@
+/* Movie Profits vs. Expenses — ported from the internal Tailwind mockup to a CSS module.
+   Rendered inside the PricingDetails root, so its tokens (--text, --muted, --border, --panel)
+   are available and the screen follows the pricing page's light/dark themes. */
+
+.screen {
+  font-size: 14px;
+  color: var(--text);
+}
+
+.pageTitle {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* "How these numbers are computed" note box */
+.computeNote {
+  margin-top: 16px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel-2);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.computeNote strong {
+  color: var(--text);
+}
+
+/* ===== COST TABLES ===== */
+
+.costSection {
+  margin-top: 32px;
+}
+
+.costHeading {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.costHeadingNormal {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.tableScroll {
+  margin-top: 8px;
+  overflow-x: auto;
+}
+
+.costTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.costTable thead tr {
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.costTable thead th {
+  padding: 12px 16px;
+  font-weight: 500;
+  width: 100%;
+}
+
+.costTable thead th.num {
+  text-align: right;
+}
+
+.costTable tbody tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.costTable tbody tr:last-child {
+  border-bottom: 0;
+}
+
+.rowHead {
+  padding: 8px 16px;
+  text-align: left;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.cellNum {
+  padding: 8px 16px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Grok-tinted cells keep dark text in dark mode (light green backgrounds). */
+[data-theme='dark'] .costTable td[style*='background-color'] {
+  color: #1a1f2e;
+}
+
+.halfTag {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.colSub {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.keyLine {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+  white-space: pre-wrap;
+}
+
+.keyLine strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.footnote {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Superscript pricing-code cross-reference marker */
+.refMark {
+  margin-left: 2px;
+  vertical-align: super;
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--muted);
+  cursor: help;
+}
+
+/* ===== SECTION INTROS ===== */
+
+.blockSection {
+  margin-top: 48px;
+}
+
+.blockTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.blockIntro {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ===== NON-VIDEOS INVOICE (deliberately light card, both themes — mirrors the mockup) ===== */
+
+.invoiceSection {
+  margin-top: 32px;
+}
+
+.invoiceTitle {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.invoiceCard {
+  margin-top: 8px;
+  overflow-x: auto;
+  border-radius: 8px;
+  background-color: #fafafa;
+  border: 1px solid #9ca3af;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+}
+
+.invoiceTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: #1f2937;
+}
+
+.invoiceTable thead tr {
+  text-align: left;
+  vertical-align: bottom;
+  border-bottom: 1px solid #d1d5db;
+}
+
+.invoiceTable th {
+  padding: 10px 16px;
+  font-weight: 500;
+}
+
+.invoiceTable th.num,
+.invoiceTable td.num {
+  text-align: right;
+}
+
+.invoiceTable td {
+  padding: 10px 16px;
+  vertical-align: top;
+  font-variant-numeric: tabular-nums;
+}
+
+.invoiceRow {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.invoiceNote {
+  font-size: 12px;
+  color: #6b7280;
+  font-variant-numeric: normal;
+}
+
+.invoiceSource {
+  margin-top: 2px;
+  font-size: 11px;
+  color: #9ca3af;
+  cursor: help;
+  font-variant-numeric: normal;
+}
+
+.invoiceSource strong {
+  font-weight: 500;
+}
+
+.unitHint {
+  font-size: 12px;
+  font-weight: 400;
+  color: #6b7280;
+}
+
+.totalStrong {
+  font-weight: 600;
+}
+
+.totalDollarsSub {
+  font-size: 12px;
+  font-weight: 400;
+  color: #6b7280;
+}
+
+/* Full-width invoice grand-total bar */
+.totalBarCell {
+  padding: 12px 16px;
+}
+
+.totalBarRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  font-variant-numeric: tabular-nums;
+}
+
+.totalBarLabel {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.totalBarCredits {
+  font-weight: 400;
+  color: #4b5563;
+}
+
+.totalBarDollars {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.totalBarDollarsExpense {
+  color: #111827;
+}
+
+.totalBarDollarsProfit {
+  color: #065f46;
+}
+
+/* ===== PRICING-CODE CROSS-REFERENCE ===== */
+
+.crossRef {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.crossRefTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.crossRefIntro {
+  margin: 4px 0 0;
+  max-width: 768px;
+  line-height: 1.6;
+}
+
+.crossRefSub {
+  margin: 16px 0 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.crossRefList {
+  margin: 4px 0 0;
+  padding-left: 20px;
+}
+
+.crossRefList li {
+  margin-top: 4px;
+}
+
+.crossRefList code {
+  word-break: break-all;
+  font-size: 11px;
+}
+
+.crossRefName {
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* ===== STILL TO CONFIRM ===== */
+
+.confirm {
+  margin-top: 40px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.confirmTitle {
+  margin: 0;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.confirmList {
+  margin: 4px 0 0;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.confirmList li {
+  margin-top: 2px;
+}
