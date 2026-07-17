@@ -36,10 +36,23 @@
     mcp: { repo: "ACT3ai/mcp", binary: "act3-mcp", branch: "main" }
   };
 
-  /* ---- Platforms. Mirrors bin/<os>-<arch>/ in both repos. ---- */
+  /*
+   * Platforms.
+   *
+   * `id` is NOT a label and not ours to invent: it is the literal directory name
+   * in the public repo, and binaryUrl() pastes it straight into the download URL.
+   * If it drifts from `bin/<id>/` in ACT3ai/cli and ACT3ai/mcp, the button 404s —
+   * silently, on the marketing site, for the platform nobody on this team runs.
+   * Change one only when the repo directory is renamed in the same change.
+   *
+   * The Mac ids read Mac-Apple_Silicon / Mac-Intel_CPU because that is what the
+   * justfiles now publish: a customer picking a binary out of a directory listing
+   * knows which Mac they own, not which kernel Go names. `os`/`arch` below stay in
+   * browser/Go vocabulary — that is what detection actually reasons in.
+   */
   var PLATFORMS = [
-    { id: "darwin-arm64", os: "mac", arch: "arm64", label: "Mac (Apple Silicon)" },
-    { id: "darwin-amd64", os: "mac", arch: "amd64", label: "Mac (Intel)" },
+    { id: "Mac-Apple_Silicon", os: "mac", arch: "arm64", label: "Mac (Apple Silicon)" },
+    { id: "Mac-Intel_CPU", os: "mac", arch: "amd64", label: "Mac (Intel)" },
     { id: "windows-amd64", os: "windows", arch: "amd64", label: "Windows (x64)" },
     { id: "windows-arm64", os: "windows", arch: "arm64", label: "Windows (ARM64)" },
     { id: "linux-amd64", os: "linux", arch: "amd64", label: "Linux (x64)" },
