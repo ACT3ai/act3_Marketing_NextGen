@@ -200,12 +200,6 @@ const config: Config = {
           target: "_blank",
         },
         {
-          type: "docSidebar",
-          sidebarId: "mainSidebar",
-          label: "Docs",
-          position: "left",
-        },
-        {
           href: "https://act3ai.com/login",
           label: "Log In",
           position: "right",
