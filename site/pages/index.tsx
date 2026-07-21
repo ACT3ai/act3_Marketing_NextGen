@@ -475,7 +475,7 @@ body {
 }
 
 /* ===== PRICING ===== */
-.pricing__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; align-items: stretch; max-width: 900px; margin-left: auto; margin-right: auto; }
+.pricing__grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; align-items: stretch; max-width: 640px; margin-left: auto; margin-right: auto; }
 .tier {
   position: relative; background: var(--paper); border: 1px solid var(--line);
   border-radius: var(--radius-lg); padding: 28px 26px; display: flex; flex-direction: column;
@@ -652,7 +652,7 @@ const BODY_HTML = `
     <div class="sec-head sec-head--center">
       <div class="label">— Visual Styles</div>
       <h2 class="serif">Pick the Visual Style That <em style="color:var(--accent)">Fits Your Story.</em></h2>
-      <p>From photorealistic to anime to 3D animation — every style, one platform.</p>
+      <p>From photorealistic to anime to 3D animation. Every style, one platform.</p>
     </div>
     <div class="styles__grid" id="styles-grid"></div>
   </div>
@@ -669,50 +669,12 @@ const BODY_HTML = `
   </div>
 </section>
 
-<!-- THE MATH -->
-<section class="section math">
-  <div class="wrap">
-    <div class="sec-head sec-head--center">
-      <div class="label">— The Math</div>
-      <h2 class="serif">The Numbers <em style="color:var(--accent)">Don't Lie.</em></h2>
-    </div>
-    <div class="math__row">
-      <div class="math__block">
-        <div class="math__num serif">650<span class="math__u"> shots</span></div>
-        <div class="math__d">typical 40-minute film</div>
-      </div>
-      <div class="math__arrow" aria-hidden="true">
-        <svg width="40" height="14" viewBox="0 0 40 14" fill="none"><path d="M0 7h36m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-      </div>
-      <div class="math__block">
-        <div class="math__num serif">8<span class="math__u"> hours</span></div>
-        <div class="math__d">per shot with other AI tools</div>
-      </div>
-      <div class="math__arrow" aria-hidden="true">
-        <svg width="40" height="14" viewBox="0 0 40 14" fill="none"><path d="M0 7h36m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-      </div>
-      <div class="math__block">
-        <div class="math__num serif">5,200<span class="math__u"> hours</span></div>
-        <div class="math__d">total manual work required elsewhere</div>
-      </div>
-      <div class="math__arrow" aria-hidden="true">
-        <svg width="40" height="14" viewBox="0 0 40 14" fill="none"><path d="M0 7h36m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-      </div>
-      <div class="math__block is-accent">
-        <div class="math__num serif">~2<span class="math__u"> hours</span></div>
-        <div class="math__d">total setup time in ACT 3</div>
-      </div>
-    </div>
-    <p class="math__concl serif">The difference isn't incremental. It's the difference between a project that ships and one that gets abandoned.</p>
-  </div>
-</section>
-
 <!-- COMPARE -->
-<section class="section compare section--alt">
+<section class="section compare">
   <div class="wrap">
     <div class="sec-head sec-head--center">
       <div class="label">— How We Compare</div>
-      <h2 class="serif">Built for Films. <em style="color:var(--accent)">Not Clips. Not Corporate Avatars.</em></h2>
+      <h2 class="serif">Built for Film. Built for Quality. <em style="color:var(--accent)">Power to build any kind of video.</em></h2>
     </div>
     <div class="cmp">
       <div class="cmp__head">
@@ -736,11 +698,11 @@ const BODY_HTML = `
 </section>
 
 <!-- PRICING -->
-<section class="section pricing" id="pricing">
+<section class="section pricing section--alt" id="pricing">
   <div class="wrap">
     <div class="sec-head sec-head--center">
       <div class="label">— Simple Pricing</div>
-      <h2 class="serif">Start Free. <em style="color:var(--accent)">Scale as You Create.</em></h2>
+      <h2 class="serif">Pricing <em style="color:var(--accent)">Plans.</em></h2>
     </div>
     <div class="pricing__grid" id="pricing-grid"></div>
     <div style="text-align:center;margin-top:28px;font-size:14px;color:var(--ink-2)">
@@ -944,7 +906,7 @@ export default function Home(): React.JSX.Element {
       { name: "Realistic",              note: "photoreal · 35mm",          slug: "realistic"   },
       { name: "Cinematic",              note: "anamorphic · color grade",  slug: "cinematic"   },
       { name: "Anime",                  note: "2D · cel-shaded",           slug: "anime"       },
-      { name: "3D Animation",           note: "stylized · pixar-likeness", slug: "3d"          },
+      { name: "3D Animation",           note: "stylized · cartoon",        slug: "3d"          },
       { name: "Cartoon",                note: "flat · bold linework",      slug: "cartoon"     },
       { name: "Stylized / Illustrated", note: "painterly · editorial",     slug: "illustrated" },
     ];
@@ -1036,7 +998,6 @@ export default function Home(): React.JSX.Element {
     // user lands straight on checkout instead of the plan list.
     const planHref = (name: string) => `https://app.act3ai.com/settings/plans/?plan=${encodeURIComponent(name)}`;
     const TIERS = [
-      { name: "Free",    price: "$0",   per: "per month", desc: "Try ACT 3 with a generous monthly credit allowance.", cta: "Sign Up Free",   href: "https://app.act3ai.com/signup/", featured: false, feats: ["800 credits / month", "0 credit rollover bank", "Cloud Storage 50 MB"] },
       { name: "Creator", price: "$49",  per: "per month", desc: "For creators producing content regularly.",       cta: "Choose Creator", href: planHref("Creator"), featured: true,  feats: ["24,500 credits / month", "61,250 credit rollover bank", "Cloud Storage 50 GB"] },
       { name: "Pro",     price: "$175", per: "per month", desc: "For serious filmmakers producing at scale.",      cta: "Choose Pro",     href: planHref("Pro"), featured: false, feats: ["87,500 credits / month", "218,750 credit rollover bank", "Cloud Storage 740 GB", "All AI Video Models", "Priority Rendering"] },
     ];
@@ -1129,8 +1090,12 @@ export default function Home(): React.JSX.Element {
           href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400;9..144,1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
-        <style>{PAGE_CSS}</style>
       </Head>
+      {/* Render the page CSS in the component tree (NOT inside <Head>) so it is
+          server-rendered into the static HTML and present at first paint. When
+          placed inside <Head>, react-helmet-async only injects it client-side
+          after hydration, which caused a flash of unstyled content (FOUC). */}
+      <style dangerouslySetInnerHTML={{ __html: PAGE_CSS }} />
       <SiteNavbar />
       <div dangerouslySetInnerHTML={{ __html: BODY_HTML }} />
       <SiteFooter />

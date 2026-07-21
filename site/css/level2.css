@@ -1,0 +1,381 @@
+/**
+ * ACT 3 — Level 2 Filmmaking Team — page DESIGN OVERLAY
+ * =====================================================
+ * This file is the ENTIRE visual design for the four Level 2 pages
+ * (level2.md + the three marketing_*.md plan pages). It is a pure styling
+ * layer: the markdown files carry ONLY words — no colors, no layout, no
+ * classes. Each of those pages opts in with one front-matter line:
+ *
+ *     wrapperClassName: level2-page
+ *
+ * Docusaurus puts that class on the <html> element, so every rule below is
+ * scoped under `.level2-page` and touches nothing else on the site.
+ *
+ * Design source: c_design/level2/Level 2 Team Marketing.dc.html
+ * Because the content is flat markdown, sections are styled by their semantic
+ * shape rather than by hand-placed markers:
+ *   - the intro block  (first <p>, <h1>, next two <p>)  -> centered hero
+ *   - <table>          -> package / pricing card table
+ *   - <ol>             -> numbered "how it works" steps
+ *   - <ul>             -> feature card grid
+ *   - last <h2> + <p>  -> closing call-to-action
+ * Update the words in ~/BGit/all/film/level_2/ and re-copy; the look here
+ * never changes.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400;9..144,1,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+/* ------------------------------------------------------------------ *
+ * Design tokens (from the c_design palette)
+ * ------------------------------------------------------------------ */
+.level2-page {
+  --l2-bg: #faf8f3;        /* cream page canvas          */
+  --l2-bg-alt: #f3efe5;    /* warm beige (headers/rows)  */
+  --l2-ink: #1a1714;       /* near-black text            */
+  --l2-muted: #4a4540;     /* body copy                  */
+  --l2-faint: #837c72;     /* labels, captions           */
+  --l2-border: #e2dccb;    /* hairline borders           */
+  --l2-accent: #c4612b;    /* ACT 3 orange               */
+  --l2-accent-dark: #a85024;
+  --l2-accent-soft: #e8cfb6; /* big step numerals        */
+  --l2-card: #ffffff;
+
+  /* Push Infima's page canvas to cream while on these pages. */
+  --ifm-background-color: var(--l2-bg);
+  --ifm-background-surface-color: var(--l2-bg);
+  --ifm-link-color: var(--l2-accent);
+  --ifm-link-hover-color: var(--l2-accent-dark);
+
+  background: var(--l2-bg);
+  scroll-behavior: smooth;
+}
+
+.level2-page body,
+.level2-page .main-wrapper {
+  background: var(--l2-bg);
+}
+
+.level2-page body {
+  color: var(--l2-ink);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ------------------------------------------------------------------ *
+ * Page shell — center the article as a single elegant column
+ * ------------------------------------------------------------------ */
+.level2-page main.container {
+  max-width: 940px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 4vw, 40px);
+}
+
+.level2-page main.container .row {
+  margin: 0;
+  justify-content: center;
+}
+
+.level2-page main.container .col {
+  --ifm-col-width: 100% !important;
+  max-width: 100%;
+  flex: 0 0 100%;
+  padding: 0;
+}
+
+.level2-page article {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--l2-muted);
+}
+
+.level2-page article a {
+  color: var(--l2-accent);
+  text-decoration: none;
+}
+.level2-page article a:hover {
+  color: var(--l2-accent-dark);
+}
+
+/* ------------------------------------------------------------------ *
+ * HERO — the intro block: eyebrow, title, tagline, lead
+ * ------------------------------------------------------------------ */
+
+/* Eyebrow: the first bold-only paragraph, e.g. **ACT 3 · Optional Service** */
+.level2-page article > p:first-child {
+  text-align: center;
+  margin: clamp(24px, 5vw, 56px) 0 22px;
+}
+.level2-page article > p:first-child strong {
+  display: inline-block;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--l2-accent);
+}
+.level2-page article > p:first-child strong::before {
+  content: "— ";
+}
+
+/* Title. Docusaurus wraps the first heading in a <header>, so target through it. */
+.level2-page article > header {
+  text-align: center;
+  margin: 0;
+}
+.level2-page article > header h1 {
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: clamp(42px, 6.4vw, 74px);
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: var(--l2-ink);
+  margin: 0 auto 22px;
+  max-width: 18ch;
+}
+
+/* Tagline: the bold paragraph right after the header/title */
+.level2-page article > header + p {
+  text-align: center;
+  font-size: clamp(17px, 2vw, 20px);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--l2-ink);
+  margin: 0 auto 14px;
+  max-width: 44ch;
+}
+.level2-page article > header + p strong {
+  font-weight: 600;
+}
+
+/* Lead: the plain paragraph after the tagline */
+.level2-page article > header + p + p {
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--l2-muted);
+  max-width: 60ch;
+  margin: 0 auto clamp(40px, 6vw, 72px);
+}
+
+/* ------------------------------------------------------------------ *
+ * SECTION HEADINGS
+ * ------------------------------------------------------------------ */
+.level2-page article > h2 {
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.14;
+  letter-spacing: -0.01em;
+  color: var(--l2-ink);
+  margin: clamp(52px, 7vw, 88px) 0 20px;
+  padding-top: 4px;
+  border-top: none;
+}
+.level2-page article > h2::before {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--l2-accent);
+  margin-bottom: 22px;
+}
+.level2-page article > h2 .hash-link {
+  color: var(--l2-faint);
+}
+
+/* Section lead — a paragraph directly under an h2 */
+.level2-page article > h2 + p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--l2-muted);
+  max-width: 62ch;
+  margin: 0 0 26px;
+}
+
+/* ------------------------------------------------------------------ *
+ * TABLES — package overview + weekly pricing, rendered as a card table
+ * ------------------------------------------------------------------ */
+.level2-page article > table {
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--l2-border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--l2-card);
+  box-shadow: 0 1px 2px rgba(26, 23, 20, 0.04);
+  margin: 8px 0 4px;
+  font-size: 15px;
+}
+.level2-page article > table thead th {
+  background: var(--l2-bg-alt);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--l2-faint);
+  text-align: left;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--l2-border);
+}
+.level2-page article > table tbody td {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--l2-border);
+  color: var(--l2-muted);
+  vertical-align: middle;
+}
+.level2-page article > table tbody tr:last-child td {
+  border-bottom: none;
+}
+.level2-page article > table tbody td:first-child strong {
+  color: var(--l2-ink);
+}
+/* The price column (last cell) reads as the emphasis */
+.level2-page article > table tbody td:last-child strong {
+  color: var(--l2-accent);
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+.level2-page article > table strong {
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------------ *
+ * HOW IT WORKS — ordered list becomes numbered step columns
+ * ------------------------------------------------------------------ */
+.level2-page article > ol {
+  list-style: none;
+  counter-reset: l2step;
+  padding: 0;
+  margin: 20px 0 4px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px clamp(20px, 3vw, 40px);
+}
+.level2-page article > ol > li {
+  counter-increment: l2step;
+  position: relative;
+  list-style: none;
+  padding: 4px clamp(20px, 2.5vw, 32px);
+  border-left: 1px solid var(--l2-border);
+  color: var(--l2-muted);
+  font-size: 15.5px;
+  line-height: 1.65;
+}
+.level2-page article > ol > li::before {
+  content: "0" counter(l2step);
+  display: block;
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(56px, 6vw, 84px);
+  line-height: 1;
+  color: var(--l2-accent-soft);
+  margin-bottom: 16px;
+}
+.level2-page article > ol > li strong {
+  display: block;
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--l2-ink);
+  margin-bottom: 8px;
+}
+
+/* ------------------------------------------------------------------ *
+ * FEATURE LISTS — unordered lists become a grid of cards
+ * ------------------------------------------------------------------ */
+.level2-page article > ul {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+.level2-page article > ul > li {
+  background: var(--l2-card);
+  border: 1px solid var(--l2-border);
+  border-radius: 14px;
+  padding: 24px 26px;
+  box-shadow: 0 1px 2px rgba(26, 23, 20, 0.04);
+  color: var(--l2-muted);
+  font-size: 15px;
+  line-height: 1.65;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.level2-page article > ul > li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -20px rgba(26, 23, 20, 0.28);
+}
+.level2-page article > ul > li strong {
+  display: block;
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  font-size: 19px;
+  color: var(--l2-ink);
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+
+/* ------------------------------------------------------------------ *
+ * CLOSING CTA — the final "Ready to add a team?" heading + paragraph
+ * ------------------------------------------------------------------ */
+.level2-page article > h2:last-of-type {
+  text-align: center;
+  margin-top: clamp(64px, 8vw, 104px);
+  font-size: clamp(34px, 4.4vw, 56px);
+}
+.level2-page article > h2:last-of-type::before {
+  margin-inline: auto;
+}
+.level2-page article > p:last-child {
+  text-align: center;
+  color: var(--l2-muted);
+  font-size: 17px;
+  margin: 0 auto clamp(48px, 7vw, 96px);
+  max-width: 46ch;
+}
+.level2-page article > p:last-child a {
+  display: inline-block;
+  margin-top: 20px;
+  background: var(--l2-accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 14px 32px;
+  border-radius: 999px;
+  box-shadow: 0 10px 28px -14px var(--l2-accent);
+  transition: background 0.16s ease;
+}
+.level2-page article > p:last-child a:hover {
+  background: var(--l2-accent-dark);
+  color: #fff;
+}
+
+/* ------------------------------------------------------------------ *
+ * Small screens
+ * ------------------------------------------------------------------ */
+@media (max-width: 600px) {
+  .level2-page article > ol {
+    grid-template-columns: 1fr;
+  }
+  .level2-page article > ol > li {
+    border-left: none;
+    border-top: 1px solid var(--l2-border);
+    padding: 20px 0 8px;
+  }
+  .level2-page article > table {
+    display: block;
+    overflow-x: auto;
+  }
+}

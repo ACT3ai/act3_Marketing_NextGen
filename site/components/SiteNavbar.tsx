@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Head from "@docusaurus/Head";
 
 const NAV_CSS = `
@@ -81,6 +81,52 @@ const NAV_CSS = `
   text-decoration: none;
 }
 
+/* "More" dropdown */
+.snav__more { position: relative; }
+.snav__more-btn { gap: 5px; }
+.snav__caret {
+  width: 9px;
+  height: 9px;
+  transition: transform .15s ease;
+}
+.snav__more-btn[aria-expanded="true"] .snav__caret { transform: rotate(180deg); }
+.snav__more-btn[aria-expanded="true"] { color: var(--ink); background: var(--bg-2); }
+.snav__menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 190px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: 0 18px 40px -20px rgba(26, 23, 20, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.snav__menu-item {
+  display: block;
+  padding: 9px 12px;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: color .15s ease, background .15s ease;
+}
+.snav__menu-item:hover { color: var(--ink); background: var(--bg-2); text-decoration: none; }
+.snav__menu-item small {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 400;
+  color: var(--ink-2);
+  opacity: .7;
+  margin-top: 2px;
+}
+
 /* Right actions */
 .snav__actions { display: flex; gap: 12px; align-items: center; justify-self: end; }
 
@@ -139,6 +185,8 @@ const NAV_CSS = `
 
 export default function SiteNavbar(): React.ReactNode {
   const [solid, setSolid] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
+  const moreRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handler = (): void => setSolid(window.scrollY > 24);
@@ -146,6 +194,25 @@ export default function SiteNavbar(): React.ReactNode {
     handler();
     return () => window.removeEventListener("scroll", handler);
   }, []);
+
+  // Escape closes the More menu; so does clicking anywhere outside it.
+  useEffect(() => {
+    if (!moreOpen) return;
+    const onKey = (e: KeyboardEvent): void => {
+      if (e.key === "Escape") setMoreOpen(false);
+    };
+    const onClick = (e: MouseEvent): void => {
+      if (moreRef.current && !moreRef.current.contains(e.target as Node)) {
+        setMoreOpen(false);
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("mousedown", onClick);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("mousedown", onClick);
+    };
+  }, [moreOpen]);
 
   return (
     <div className="snav-root">
@@ -173,6 +240,7 @@ export default function SiteNavbar(): React.ReactNode {
             <a className="snav__link" href="/about">About Us</a>
             <a className="snav__link" href="/contact">Contact Us</a>
             <a className="snav__link" href="https://app.act3ai.com/settings/plans/">Plans</a>
+            <a className="snav__link" href="/movie-pricing">Movie Pricing</a>
             <a
               className="snav__link"
               href="https://www.youtube.com/@ACT3AI"
@@ -181,6 +249,49 @@ export default function SiteNavbar(): React.ReactNode {
             >
               Videos
             </a>
+
+            <div className="snav__more" ref={moreRef}>
+              <button
+                type="button"
+                className="snav__link snav__more-btn"
+                aria-expanded={moreOpen}
+                aria-haspopup="true"
+                onClick={() => setMoreOpen((v) => !v)}
+              >
+                More
+                <svg className="snav__caret" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                  <path
+                    d="M2 4l3 3 3-3"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+              {moreOpen && (
+                <div className="snav__menu" role="menu">
+                  <a
+                    className="snav__menu-item"
+                    role="menuitem"
+                    href="/mcp"
+                    onClick={() => setMoreOpen(false)}
+                  >
+                    MCP
+                    <small>Drive ACT 3 from Claude Code</small>
+                  </a>
+                  <a
+                    className="snav__menu-item"
+                    role="menuitem"
+                    href="/cli"
+                    onClick={() => setMoreOpen(false)}
+                  >
+                    CLI
+                    <small>Command line interface</small>
+                  </a>
+                </div>
+              )}
+            </div>
           </nav>
 
           <div className="snav__actions">

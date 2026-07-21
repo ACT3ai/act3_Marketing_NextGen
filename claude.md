@@ -93,3 +93,96 @@ sidebars.ts           — docs sidebar structure
 
 Google Cloud Project ID: bryan-testing-464010 (not used for this site — this site is GitHub Pages only)
 AWS account manages DNS via Route53 for act3ai.com.
+
+## Level 2 pages — content vs. design (how it works)
+
+### Naming — public vs. internal
+
+**"Assistant Director Team" is the public name** — it is what the four pages say
+to customers. Internally we still call this the **Level 2 team**, and the
+plumbing keeps that word everywhere: the `/level2` route, `site/pages/level2.md`,
+`site/css/level2.css`, the `level2-page` wrapper class, and the upstream
+`~/BGit/all/film/level_2/` source dir. Both names are kept in this file on
+purpose so a search for either one finds the pages. Never let "Level 2" reach the
+rendered copy.
+
+The four "Assistant Director Team" (internally: Level 2) pages keep **words and styling completely
+separate**: the markdown carries only content; a single CSS file carries the
+entire visual design. Update the words without ever touching the look, and
+vice-versa.
+
+### The four pages
+
+| Route (live URL)                         | File in this repo                         | Prices? | Listed?  |
+|------------------------------------------|-------------------------------------------|---------|----------|
+| `/level2`                                | `site/pages/level2.md`                    | No      | Public   |
+| `/marketing_981769`                      | `site/pages/marketing_981769.md`          | Plan 1  | unlisted |
+| `/marketing_77985269`                    | `site/pages/marketing_77985269.md`        | Plan 2  | unlisted |
+| `/marketing_69983965867`                 | `site/pages/marketing_69983965867.md`     | Plan 3  | unlisted |
+
+They live in `site/pages/` (NOT `site/docs/`) so their routes are clean and
+root-level (e.g. `act3ai.com/marketing_981769`), with no `/docs/` prefix. The
+three priced pages are `unlisted: true` — kept out of the navbar, search, and
+sitemap; reachable only by direct link. The filename digit **1–3** identifies
+the plan (ignore all other digits).
+
+### Where the WORDS come from (content source)
+
+Content is authored and maintained upstream, then copied in:
+
+* Source dir: `~/BGit/all/film/level_2/marketing/`
+  * `marketing_981769.md`, `marketing_77985269.md`, `marketing_69983965867.md`
+    — the three priced plan pages (already Docusaurus markdown).
+  * `marketing.html` / `marketing.md` — the price-free write-up that `level2.md`
+    mirrors. (`marketing.md` itself is a directory README, not page content.)
+  * `information.mdx` — the internal "points to cover" that shape the copy.
+
+To refresh content, just copy the source plan files over the ones in
+`site/pages/` — nothing else. The markdown holds pure content: headings,
+paragraphs, two markdown tables (packages + weekly price), one ordered list
+(How it works), and unordered lists (feature bullets). **No colors, classes, or
+inline styles ever go in the markdown.**
+
+### Where the DESIGN comes from (styling overlay)
+
+* Design reference (Claude Code export): `c_design/level2/Level 2 Team Marketing.dc.html`
+* Implemented as one scoped stylesheet: **`site/css/level2.css`**, registered in
+  `docusaurus.config.ts` under `theme.customCss` (an array, alongside
+  `custom.css`).
+
+Each page opts into the design with a single front-matter line — the only
+site-specific key the markdown carries:
+
+```yaml
+wrapperClassName: level2-page
+```
+
+Docusaurus puts that class on the `<html>` element, so every rule in
+`level2.css` is scoped under `.level2-page` and affects nothing else on the
+site. Because the content is flat markdown, the CSS styles sections by their
+**semantic shape**, not by hand-placed markers:
+
+* first `<p>` (bold-only) → orange mono eyebrow
+* `<header> h1` → large centered Fraunces title (Docusaurus wraps the first
+  heading in a `<header>` — selectors account for that)
+* the two `<p>` after the header → tagline + lead
+* `<h2>` → section heading with an orange accent bar
+* `<table>` → package / pricing card table (last column renders as the price
+  emphasis)
+* `<ol>` → numbered "How it works" step columns (big italic Fraunces numerals)
+* `<ul>` → feature card grid
+* last `<h2>` + last `<p>` → centered closing call-to-action with pill button
+
+Palette/typography come straight from the design: cream `#faf8f3`, ACT 3 orange
+`#c4612b`, Fraunces (headings) + Inter (body) + JetBrains Mono (labels), loaded
+via `@import` at the top of `level2.css`. The pages render inside the normal
+Docusaurus theme, so they keep the site navbar and footer.
+
+### The pipeline in one line
+
+Edit words in `~/BGit/all/film/level_2/` → copy the `.md` files into
+`site/pages/` (the `wrapperClassName: level2-page` front matter is already in the
+source, so a plain copy is enough) → `pnpm build`. Styling is never re-touched;
+it lives only in `site/css/level2.css`.
+
+To change the LOOK of all four pages, edit only `site/css/level2.css`.
