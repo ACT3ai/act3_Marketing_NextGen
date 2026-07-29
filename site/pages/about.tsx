@@ -345,14 +345,14 @@ const PAGE_CSS = `
 export default function About(): React.ReactNode {
   return (
     <Layout
-      title="About Us — ACT3 AI"
+      title="About Us | ACT3 AI"
       description="Meet the team behind ACT3 AI — filmmakers, writers, and technologists dedicated to empowering creators everywhere."
     >
       <Head>
         <style>{PAGE_CSS}</style>
       </Head>
       <PageHero
-        label="— About Us"
+        label="About Us"
         title={<>The Team Behind<br /><em>ACT 3 AI.</em></>}
         description="We're a passionate team of filmmakers, writers, and technologists dedicated to empowering creators of all backgrounds to bring their visions to life faster and more collaboratively than ever before."
       />
@@ -364,7 +364,7 @@ export default function About(): React.ReactNode {
           <div className="about-inner">
             <div className="about-mission">
               <div className="about-mission__copy">
-                <div className="about-sec-label" style={{ marginBottom: 16 }}>— Our Mission</div>
+                <div className="about-sec-label" style={{ marginBottom: 16 }}>Our Mission</div>
                 <h2>Built to <em>Empower</em><br />Every Creator</h2>
                 <p>
                   To simplify and enrich the video-making process by providing an integrated
@@ -399,7 +399,7 @@ export default function About(): React.ReactNode {
         <section className="about-section about-section--alt">
           <div className="about-inner">
             <div className="about-sec-head">
-              <div className="about-sec-label">— What We Do</div>
+              <div className="about-sec-label">What We Do</div>
               <h2>Everything You Need,<br /><em>Under One Roof</em></h2>
               <p>From screenplay import to final export, ACT 3 AI keeps your entire production workflow in one place.</p>
             </div>
@@ -433,7 +433,7 @@ export default function About(): React.ReactNode {
         <section className="about-section about-section--paper">
           <div className="about-inner">
             <div className="about-sec-head">
-              <div className="about-sec-label">— Our Values</div>
+              <div className="about-sec-label">Our Values</div>
               <h2>What We <em>Stand For</em></h2>
             </div>
             <div className="about-values">
@@ -460,7 +460,7 @@ export default function About(): React.ReactNode {
         <section className="about-section about-section--alt">
           <div className="about-inner">
             <div className="about-sec-head">
-              <div className="about-sec-label">— Our Team</div>
+              <div className="about-sec-label">Our Team</div>
               <h2>The People Behind<br /><em>the Platform</em></h2>
               <p>
                 A diverse group of filmmakers, writers, and technologists who share a common
@@ -490,7 +490,7 @@ export default function About(): React.ReactNode {
           <div className="about-inner">
             <div className="about-cta">
               <div className="about-cta__inner">
-                <div className="about-cta__label">— Get Started</div>
+                <div className="about-cta__label">Get Started</div>
                 <h3>Let's Create<br /><em>Together.</em></h3>
                 <p>
                   Thank you for choosing ACT 3 AI. Let's write the next chapter of

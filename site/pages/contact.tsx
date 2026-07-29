@@ -388,14 +388,14 @@ export default function Contact(): React.ReactNode {
 
   return (
     <Layout
-      title="Contact Us — ACT3 AI"
+      title="Contact Us | ACT3 AI"
       description="Have questions about ACT 3? Need technical support? Want to explore enterprise solutions? We're here to help."
     >
       <Head>
         <style>{PAGE_CSS}</style>
       </Head>
       <PageHero
-        label="— Get in Touch"
+        label="Get in Touch"
         title={<>Let's Talk About<br /><em>Your Next Film.</em></>}
         description="Have questions about ACT 3? Need technical support? Want to explore enterprise solutions? We're here to help you bring your creative vision to life."
       />
@@ -588,7 +588,7 @@ export default function Contact(): React.ReactNode {
 
               <div className="contact-enterprise-card">
                 <div className="contact-enterprise-card__inner">
-                  <div className="contact-enterprise-card__label">— Enterprise</div>
+                  <div className="contact-enterprise-card__label">Enterprise</div>
                   <h3>Working at a Studio or Agency?</h3>
                   <p>
                     Custom pricing, SSO, dedicated support, and multi-org workspaces

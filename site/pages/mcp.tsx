@@ -305,7 +305,7 @@ export default function Mcp(): React.ReactNode {
 
   return (
     <Layout
-      title="ACT 3 Filmmaking MCP — ACT3 AI"
+      title="ACT 3 Filmmaking MCP | ACT3 AI"
       description="The ACT 3 MCP is a Model Context Protocol server that lets you drive ACT 3 filmmaking from Claude Code and other MCP clients."
     >
       <Head>
@@ -315,7 +315,7 @@ export default function Mcp(): React.ReactNode {
       </Head>
 
       <PageHero
-        label="— Model Context Protocol"
+        label="Model Context Protocol"
         title={<>ACT 3 Filmmaking <em>MCP.</em></>}
         description="The MCP is a Model Context Protocol server that lets you drive ACT 3 from Claude Code and other MCP clients."
       />
@@ -380,7 +380,7 @@ export default function Mcp(): React.ReactNode {
           <div className="mcp-inner">
             <div className="mcp-panels">
               <div className="mcp-panel">
-                <div className="mcp-panel__label">— Automation</div>
+                <div className="mcp-panel__label">Automation</div>
                 <h3>Built for <em>Automation</em></h3>
                 <p>
                   The MCP is good for automation. You can create scripts that'll do a
@@ -389,7 +389,7 @@ export default function Mcp(): React.ReactNode {
                 </p>
               </div>
               <div className="mcp-panel mcp-panel--accent">
-                <div className="mcp-panel__label">— Recommended</div>
+                <div className="mcp-panel__label">Recommended</div>
                 <h3>Made for <em>Claude Code</em></h3>
                 <p>
                   This is the way we recommend you work. Point Claude Code at the MCP and
@@ -405,7 +405,7 @@ export default function Mcp(): React.ReactNode {
         <section className="mcp-section mcp-section--paper">
           <div className="mcp-inner">
             <div className="mcp-sec-head">
-              <div className="mcp-sec-label">— All Platforms</div>
+              <div className="mcp-sec-label">All Platforms</div>
               <h2>Download based on your <em>operating system</em></h2>
               <p>
                 The button above picks the build for the computer you're on right now.

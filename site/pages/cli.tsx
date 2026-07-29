@@ -314,7 +314,7 @@ export default function Cli(): React.ReactNode {
 
   return (
     <Layout
-      title="ACT 3 Filmmaking CLI — ACT3 AI"
+      title="ACT 3 Filmmaking CLI | ACT3 AI"
       description="The ACT 3 CLI is a command line interface for very advanced users — script your filmmaking, chain commands, and automate whole passes."
     >
       <Head>
@@ -324,7 +324,7 @@ export default function Cli(): React.ReactNode {
       </Head>
 
       <PageHero
-        label="— Command Line Interface"
+        label="Command Line Interface"
         title={<>ACT 3 Filmmaking <em>CLI.</em></>}
         description="The CLI is a command line user interface for very advanced users."
       />
@@ -389,7 +389,7 @@ export default function Cli(): React.ReactNode {
           <div className="cli-inner">
             <div className="cli-panels">
               <div className="cli-panel">
-                <div className="cli-panel__label">— Automation</div>
+                <div className="cli-panel__label">Automation</div>
                 <h3>Built for <em>Automation</em></h3>
                 <p>
                   The CLI is good for automation. You can create scripts that'll do a
@@ -398,7 +398,7 @@ export default function Cli(): React.ReactNode {
                 </p>
               </div>
               <div className="cli-panel cli-panel--accent">
-                <div className="cli-panel__label">— Recommended</div>
+                <div className="cli-panel__label">Recommended</div>
                 <h3>Most people want the <em>MCP</em></h3>
                 <p>
                   We also have an MCP, and it's what we recommend if you're working in
@@ -418,7 +418,7 @@ export default function Cli(): React.ReactNode {
         <section className="cli-section cli-section--paper">
           <div className="cli-inner">
             <div className="cli-sec-head">
-              <div className="cli-sec-label">— All Platforms</div>
+              <div className="cli-sec-label">All Platforms</div>
               <h2>Download based on your <em>operating system</em></h2>
               <p>
                 The button above picks the build for the computer you're on right now.

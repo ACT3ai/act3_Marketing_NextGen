@@ -6,7 +6,7 @@ import Heading from "@theme/Heading";
 export default function Features(): ReactNode {
   return (
     <Layout
-      title="Features — ACT3 AI"
+      title="Features | ACT3 AI"
       description="Explore all features of the ACT3 AI filmmaking platform."
     >
       <main style={{ padding: "4rem 0" }}>

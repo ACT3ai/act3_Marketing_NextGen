@@ -4,7 +4,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "ACT3 AI Marketing",
-  tagline: "AI Filmmaking — From Script to Cinematic Video",
+  tagline: "AI Filmmaking: From Script to Cinematic Video",
   favicon: "img/favicon/favicon.ico",
 
   headTags: [
@@ -82,14 +82,14 @@ const config: Config = {
       tagName: "meta",
       attributes: {
         property: "og:image:alt",
-        content: "ACT 3 — Create Movies at the Speed of Storytelling",
+        content: "ACT 3 | Create Movies at the Speed of Storytelling",
       },
     },
     {
       tagName: "meta",
       attributes: {
         name: "twitter:image:alt",
-        content: "ACT 3 — Create Movies at the Speed of Storytelling",
+        content: "ACT 3 | Create Movies at the Speed of Storytelling",
       },
     },
   ],

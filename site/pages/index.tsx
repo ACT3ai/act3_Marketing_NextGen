@@ -221,7 +221,7 @@ body {
   background: #000;
 }
 
-/* ===== Hero overlays — production-note style ===== */
+/* ===== Hero overlays - production-note style ===== */
 .hero__overlays {
   position: absolute; inset: 0;
   pointer-events: none;
@@ -550,13 +550,13 @@ const BODY_HTML = `
   <div class="hero__inner">
     <div class="hero__copy-area">
       <div class="hero__copy">
-        <div class="label label--accent">— AI Filmmaking Platform</div>
+        <div class="label label--accent">AI Filmmaking Platform</div>
         <h1 class="hero__h">
           Create <span class="flipcube" id="hero-flipcube" aria-label="Movies"><span class="flipcube__sizer" aria-hidden="true"><span class="flipcube__sizer-w">Movies</span><span class="flipcube__sizer-w">Videos</span></span><span class="flipcube__stage" aria-hidden="true"><span class="flipcube__cube"><span class="flipcube__face flipcube__face--top">Movies</span><span class="flipcube__face flipcube__face--front">Videos</span></span></span></span> at the<br>
           <em class="hero__em">Speed of Storytelling.</em>
         </h1>
         <p class="hero__sub">
-          Create 5-minute to 3-hour videos with the lowest labor in the industry. No prompt engineering. No tool switching. Write your story — ACT 3 handles everything else.
+          Create 5-minute to 3-hour videos with the lowest labor in the industry. No prompt engineering. No tool switching. Write your story. ACT 3 handles everything else.
         </p>
         <div class="hero__ctas">
           <a class="btn btn--accent btn--lg" href="https://app.act3ai.com/signup/">Get Started <span class="arrow">→</span></a>
@@ -577,7 +577,7 @@ const BODY_HTML = `
         poster="/images/hero-reel-poster.jpg"
         muted playsinline loop autoplay preload="metadata"></video>
       <div class="hero__overlays" aria-hidden="true">
-        <div class="hero__shot-marker">SHOT 1. INT. WAREHOUSE — NIGHT</div>
+        <div class="hero__shot-marker">SHOT 1. INT. WAREHOUSE - NIGHT</div>
         <div class="hero__card hero__card--alex">
           <span class="hero__char">KAI</span>
           <p class="hero__line">Two on the catwalk. I see muzzle flash.</p>
@@ -620,7 +620,7 @@ const BODY_HTML = `
 <section class="section how" id="how">
   <div class="wrap">
     <div class="sec-head sec-head--center">
-      <div class="label">— How It Works</div>
+      <div class="label">How It Works</div>
       <h2 class="serif">From Script to Finished <span class="flipcube" id="how-flipcube" aria-label="Film"><span class="flipcube__sizer" aria-hidden="true"><span class="flipcube__sizer-w">Film</span><span class="flipcube__sizer-w">Video</span></span><span class="flipcube__stage" aria-hidden="true"><span class="flipcube__cube"><span class="flipcube__face flipcube__face--top">Film</span><span class="flipcube__face flipcube__face--front">Video</span></span></span></span> <em style="color:var(--accent)">in Three Steps.</em></h2>
     </div>
     <div class="how__grid">
@@ -637,20 +637,20 @@ const BODY_HTML = `
       <div class="how__step">
         <div class="how__num">03</div>
         <div class="how__t">Edit, Refine, Export</div>
-        <p class="how__d">The integrated editor lets you adjust any shot. When you're done, export to any format — YouTube, TikTok, ProRes, 4K.</p>
+        <p class="how__d">The integrated editor lets you adjust any shot. When you're done, export to any format: YouTube, TikTok, ProRes, 4K.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- VALUE ROWS (14) — populated by JS -->
+<!-- VALUE ROWS (14) - populated by JS -->
 <div id="value-rows"></div>
 
 <!-- VISUAL STYLES -->
 <section class="section styles">
   <div class="wrap">
     <div class="sec-head sec-head--center">
-      <div class="label">— Visual Styles</div>
+      <div class="label">Visual Styles</div>
       <h2 class="serif">Pick the Visual Style That <em style="color:var(--accent)">Fits Your Story.</em></h2>
       <p>From photorealistic to anime to 3D animation. Every style, one platform.</p>
     </div>
@@ -662,7 +662,7 @@ const BODY_HTML = `
 <section class="section crew section--alt">
   <div class="wrap">
     <div class="sec-head sec-head--center">
-      <div class="label">— AI Production Crew</div>
+      <div class="label">AI Production Crew</div>
       <h2 class="serif">A Full Production Team, <em style="color:var(--accent)">Working for You.</em></h2>
     </div>
     <div class="crew__row" id="crew-row"></div>
@@ -673,7 +673,7 @@ const BODY_HTML = `
 <section class="section compare">
   <div class="wrap">
     <div class="sec-head sec-head--center">
-      <div class="label">— How We Compare</div>
+      <div class="label">How We Compare</div>
       <h2 class="serif">Built for Film. Built for Quality. <em style="color:var(--accent)">Power to build any kind of video.</em></h2>
     </div>
     <div class="cmp">
@@ -681,7 +681,7 @@ const BODY_HTML = `
         <div></div>
         <div class="cmp__col cmp__col--us">
           <div class="cmp__col-name serif">ACT 3</div>
-          <div class="cmp__col-tag">— filmmaking platform</div>
+          <div class="cmp__col-tag">filmmaking platform</div>
         </div>
         <div class="cmp__col">
           <div class="cmp__col-name">Clip Generators</div>
@@ -701,7 +701,7 @@ const BODY_HTML = `
 <section class="section pricing section--alt" id="pricing">
   <div class="wrap">
     <div class="sec-head sec-head--center">
-      <div class="label">— Simple Pricing</div>
+      <div class="label">Simple Pricing</div>
       <h2 class="serif">Pricing <em style="color:var(--accent)">Plans.</em></h2>
     </div>
     <div class="pricing__grid" id="pricing-grid"></div>
@@ -715,7 +715,7 @@ const BODY_HTML = `
     <rect width="100" height="100" fill="url(#finalstripes)"/>
   </svg>
   <div class="wrap finalcta__inner">
-    <div class="label" style="color:color-mix(in oklab, white 80%, transparent)">— Begin</div>
+    <div class="label" style="color:color-mix(in oklab, white 80%, transparent)">Begin</div>
     <h2 class="finalcta__h serif">
       Your Story Deserves<br>
       <em>to Be Seen.</em>
@@ -783,85 +783,85 @@ export default function Home(): React.JSX.Element {
     const VALUE_ROWS = [
       { id: "script-speed", side: "L", label: "Script-Speed Creation",
         h: "Type Your Story. Watch It Come to Life.",
-        body: "Write dialogue the way you think it: \"He said this. She said that.\" ACT 3 reads your script and automates every production decision — casting, camera angles, lighting, sets. No prompt engineering. No shot-by-shot setup. Just storytelling.",
+        body: "Write dialogue the way you think it: \"He said this. She said that.\" ACT 3 reads your script and automates every production decision: casting, camera angles, lighting, sets. No prompt engineering. No shot-by-shot setup. Just storytelling.",
         bullets: ["Write natural-language dialogue and scene descriptions", "AI infers cinematography, staging, and set needs", "650-shot film set up in ~2 hours vs. 5,200 hours manually"],
         tag: "02.01", cap: "SCRIPT → SHOT LIST",
         mediaHtml: videoHTML("script-speed", "02.01", "SCRIPT → SHOT LIST") },
       { id: "sets", side: "R", label: "Sets &amp; Backgrounds",
         h: "Define Your World Once. Every Shot Follows.",
-        body: "Build your set — an office, a city street, a spaceship — once. ACT 3 applies it consistently across every scene and shot. No redescribing the environment per prompt. No inconsistent backgrounds.",
+        body: "Build your set once, whether it is an office, a city street, or a spaceship. ACT 3 applies it consistently across every scene and shot. No redescribing the environment per prompt. No inconsistent backgrounds.",
         bullets: ["2D and 3D environments", "Procedural city and building generation", "Set persists across all shots in a scene or episode"],
-        tag: "02.02", cap: "SET BUILDER — INT. APARTMENT",
-        mediaHtml: videoHTML("sets", "02.02", "SET BUILDER — INT. APARTMENT") },
+        tag: "02.02", cap: "SET BUILDER · INT. APARTMENT",
+        mediaHtml: videoHTML("sets", "02.02", "SET BUILDER · INT. APARTMENT") },
       { id: "screenwriters", side: "L", label: "For Screenwriters",
         h: "Write It. See It. Ship It.",
-        body: "ACT 3 is the screenwriter's dream realized. Import your script, watch it visualized shot by shot, iterate in real time. You wrote the story — now see it as a film before a single dollar of production budget is spent.",
+        body: "ACT 3 is the screenwriter's dream realized. Import your script, watch it visualized shot by shot, iterate in real time. You wrote the story. Now see it as a film before a single dollar of production budget is spent.",
         bullets: ["Import PDF, TXT, or Final Draft files", "AI expands a concept into full beats, scenes, and shots", "Human and AI script versions side by side"],
-        tag: "02.03", cap: "SCRIPT EDITOR — DRAFT 4",
-        mediaHtml: videoHTML("screenwriters", "02.03", "SCRIPT EDITOR — DRAFT 4") },
+        tag: "02.03", cap: "SCRIPT EDITOR · DRAFT 4",
+        mediaHtml: videoHTML("screenwriters", "02.03", "SCRIPT EDITOR · DRAFT 4") },
       { id: "social", side: "R", label: "Social Media Video",
         h: "Create Cinematic Content at Social Media Speed.",
-        body: "From concept to polished short-form video in a fraction of the time. Format for any platform — vertical for TikTok and Reels, horizontal for YouTube, square for Instagram — in one workflow.",
+        body: "From concept to polished short-form video in a fraction of the time. Format for any platform in one workflow: vertical for TikTok and Reels, horizontal for YouTube, square for Instagram.",
         bullets: ["Auto-format exports for TikTok, Reels, YouTube Shorts", "Cinematic quality, not clip-generator quality", "Batch-produce a week of content in hours"],
         tag: "02.04", cap: "MULTI-FORMAT EXPORT",
         mediaHtml: videoHTML("social", "02.04", "MULTI-FORMAT EXPORT") },
       { id: "marketing", side: "L", label: "Marketing Video",
         h: "More Video Output. Higher Quality. Lower Budgets.",
-        body: "Replace expensive video production cycles with an AI pipeline that delivers broadcast-quality marketing video on demand. Define your brand style once — every video stays on brand.",
+        body: "Replace expensive video production cycles with an AI pipeline that delivers broadcast-quality marketing video on demand. Define your brand style once and every video stays on brand.",
         bullets: ["Define brand visual style; apply across all outputs", "Product demos, testimonials, brand films", "Export-ready for digital, broadcast, and social"],
-        tag: "02.05", cap: "BRAND KIT — APPLIED",
-        mediaHtml: videoHTML("marketing", "02.05", "BRAND KIT — APPLIED") },
+        tag: "02.05", cap: "BRAND KIT · APPLIED",
+        mediaHtml: videoHTML("marketing", "02.05", "BRAND KIT · APPLIED") },
       { id: "explainer", side: "R", label: "Explainer Video",
         h: "Explain Anything. Visually. In Minutes.",
         body: "Turn a product description or concept into a polished animated or live-action explainer. AI handles voiceover, visuals, transitions, and pacing.",
         bullets: ["Start from a script or a single paragraph", "AI voiceover with natural prosody", "Multiple visual styles available"],
-        tag: "02.06", cap: "EXPLAINER — RENDER",
-        mediaHtml: videoHTML("explainer", "02.06", "EXPLAINER — RENDER") },
+        tag: "02.06", cap: "EXPLAINER · RENDER",
+        mediaHtml: videoHTML("explainer", "02.06", "EXPLAINER · RENDER") },
       { id: "corporate", side: "L", label: "Corporate Video",
         h: "Professional Corporate Video Without the Production Budget.",
         body: "Town halls, training videos, executive announcements, internal communications. ACT 3 produces them quickly, consistently, and at a fraction of traditional production cost.",
         bullets: ["Consistent on-brand presenter appearance", "Multilingual voiceover and dubbing", "Roles and approval workflows for enterprise teams"],
-        tag: "02.07", cap: "PRESENTER — TAKE 03",
-        mediaHtml: videoHTML("corporate", "02.07", "PRESENTER — TAKE 03") },
+        tag: "02.07", cap: "PRESENTER · TAKE 03",
+        mediaHtml: videoHTML("corporate", "02.07", "PRESENTER · TAKE 03") },
       { id: "movies", side: "R", label: "Movies &amp; Series",
         h: "Full-Length Films. Not 8-Second Clips.",
         body: "ACT 3 is purpose-built for long-form. Script a feature film, a short, a TV episode, or a web series. The Story Arc engine plans across episodes. Consistency holds across hundreds of shots.",
         bullets: ["Story Arc engine for multi-episode planning", "Visual and character consistency across 600+ shots", "AI Showrunner orchestrates the full production"],
-        tag: "02.08", cap: "EP 01 — SCENE 14 OF 32",
-        mediaHtml: videoHTML("movies", "02.08", "EP 01 — SCENE 14 OF 32") },
+        tag: "02.08", cap: "EP 01 · SCENE 14 OF 32",
+        mediaHtml: videoHTML("movies", "02.08", "EP 01 · SCENE 14 OF 32") },
       { id: "voice", side: "L", label: "Voice &amp; Dialogue",
         h: "AI Voices for Drafts. Human Voices When You're Ready.",
         body: "Every character has a voice from the first draft. High-quality AI TTS with natural cadence and emotional range. When you're ready to elevate, bring in human voice actors through the same interface.",
         bullets: ["Multilingual TTS and dubbing", "Lipsync for any character", "Human voice actor integration in the same pipeline"],
-        tag: "02.09", cap: "DIALOGUE — KIRA L.",
-        mediaHtml: videoHTML("voice", "02.09", "DIALOGUE — KIRA L.") },
+        tag: "02.09", cap: "DIALOGUE · KIRA L.",
+        mediaHtml: videoHTML("voice", "02.09", "DIALOGUE · KIRA L.") },
       { id: "actors", side: "R", label: "Actor &amp; Costume Consistency",
         h: "Cast Your Characters. Keep Them Consistent.",
         body: "Define your cast from a central character directory. ACT 3 maintains physical consistency, wardrobe, and performance style across every scene. LoRA-based character consistency. No recreating characters per shot.",
         bullets: ["Character library with age, appearance, and wardrobe management", "Marker-less motion capture from iPhone or webcam", "AI casting agent suggests characters from brief descriptions"],
-        tag: "02.10", cap: "CASTING — 5 ACTORS",
-        mediaHtml: videoHTML("actors", "02.10", "CASTING — 5 ACTORS") },
+        tag: "02.10", cap: "CASTING · 5 ACTORS",
+        mediaHtml: videoHTML("actors", "02.10", "CASTING · 5 ACTORS") },
       { id: "editor", side: "L", label: "Unified Editor",
         h: "One Editor. Full Control. Move Fast.",
-        body: "The integrated editor handles everything from shot-level adjustments to full-scene assembly. Timeline, keyframes, transitions, and render controls — all without opening another application.",
+        body: "The integrated editor handles everything from shot-level adjustments to full-scene assembly. Timeline, keyframes, transitions, and render controls, all without opening another application.",
         bullets: ["Three-column layout with script, visual, and timeline panels", "Persona-aware views for Writers, Directors, and Actors", "One-click AI regeneration per shot"],
-        tag: "02.11", cap: "EDITOR — TIMELINE VIEW",
-        mediaHtml: videoHTML("editor", "02.11", "EDITOR — TIMELINE VIEW") },
+        tag: "02.11", cap: "EDITOR · TIMELINE VIEW",
+        mediaHtml: videoHTML("editor", "02.11", "EDITOR · TIMELINE VIEW") },
       { id: "models", side: "R", label: "Powered by Best AI",
         h: "Built on Top of the Best Video AI Models.",
-        body: "ACT 3 routes each shot to the right model automatically — Veo 3, Runway, FLUX, Hunyuan, Wan 2.1, and more. You get the best output for each task without managing models yourself.",
+        body: "ACT 3 routes each shot to the right model automatically: Veo 3, Runway, FLUX, Hunyuan, Wan 2.1, and more. You get the best output for each task without managing models yourself.",
         bullets: ["Multi-model routing engine selects the best model per shot type", "New models integrated as they become available", "No prompt engineering required"],
         tag: "02.12", cap: "MODEL ROUTER",
         mediaHtml: videoHTML("models", "02.12", "MODEL ROUTER") },
       { id: "advertising", side: "L", label: "Advertising Video",
         h: "Ads That Stop the Scroll. Every Time.",
-        body: "Produce broadcast-quality ads in a fraction of the time and cost. ACT 3 gives you cinematic production values without a production crew. Run more creative, test more concepts, ship more campaigns — without blowing the budget.",
+        body: "Produce broadcast-quality ads in a fraction of the time and cost. ACT 3 gives you cinematic production values without a production crew. Run more creative, test more concepts, ship more campaigns without blowing the budget.",
         bullets: ["TV, digital, and social ad formats from one workflow", "Brand-consistent visuals across every campaign", "Go from brief to finished ad in hours, not weeks"],
-        tag: "02.13", cap: "AD — FINAL CUT",
-        mediaHtml: videoHTML("advertising", "02.13", "AD — FINAL CUT") },
+        tag: "02.13", cap: "AD · FINAL CUT",
+        mediaHtml: videoHTML("advertising", "02.13", "AD · FINAL CUT") },
       { id: "screens", side: "L", label: "Screens, Monitors &amp; Phone Content",
         h: "Screens Within Scenes. Fully Controlled.",
-        body: "Place live video or graphics on any in-scene display — a laptop screen, a billboard, a smartphone — and control exactly what appears. Perfect for product demos, tech stories, and brand placement.",
+        body: "Place live video or graphics on any in-scene display: a laptop screen, a billboard, a smartphone. Control exactly what appears. Perfect for product demos, tech stories, and brand placement.",
         bullets: ["Place content on any in-scene display surface", "Fully controlled per shot", "Ideal for product placement and tech narratives"],
         tag: "02.13", cap: "IN-SCENE DISPLAY",
         mediaHtml: videoHTML("screens", "02.13", "IN-SCENE DISPLAY") },
@@ -869,8 +869,8 @@ export default function Home(): React.JSX.Element {
         h: "Your Team. One Platform. Full Access Controls.",
         body: "Writers, directors, editors, and producers work on the same project simultaneously. Role-based permissions, scene locking, version history, and approval workflows keep production organized.",
         bullets: ["Role-based permissions (Writer, Director, Producer, Admin)", "Version history and visual diffing", "Multi-org support for agencies managing multiple clients"],
-        tag: "02.14", cap: "TEAM — 6 EDITING",
-        mediaHtml: videoHTML("teams", "02.14", "TEAM — 6 EDITING") },
+        tag: "02.14", cap: "TEAM · 6 EDITING",
+        mediaHtml: videoHTML("teams", "02.14", "TEAM · 6 EDITING") },
     ];
 
     const vrContainer = document.getElementById("value-rows");
@@ -888,7 +888,7 @@ export default function Home(): React.JSX.Element {
         </div>
       </div>
       <div class="vrow__copy">
-        <div class="label label--accent">— ${row.label}</div>
+        <div class="label label--accent">${row.label}</div>
         <h2 class="vrow__h">${row.h}</h2>
         <p class="vrow__p">${row.body}</p>
         <ul class="proof-list">${row.bullets.map(proofBullet).join("")}</ul>
@@ -993,9 +993,11 @@ export default function Home(): React.JSX.Element {
     // ── Pricing ────────────────────────────────────────────────────────────────
     // Carry the chosen plan so the selection survives the login redirect and the
     // user lands straight on checkout instead of the plan list.
+    // The Starter tier is still called "Creator" in the app's plan records, so the
+    // link keeps that name even though the card says Starter.
     const planHref = (name: string) => `https://app.act3ai.com/settings/plans/?plan=${encodeURIComponent(name)}`;
     const TIERS = [
-      { name: "Creator", price: "$49",  per: "per month", desc: "For creators producing content regularly.",       cta: "Choose Creator", href: planHref("Creator"), featured: true,  feats: ["24,500 credits / month", "61,250 credit rollover bank", "Cloud Storage 50 GB"] },
+      { name: "Starter", price: "$49",  per: "per month", desc: "For creators producing content regularly.",       cta: "Choose Starter", href: planHref("Creator"), featured: true,  feats: ["24,500 credits / month", "61,250 credit rollover bank", "Cloud Storage 50 GB"] },
       { name: "Pro",     price: "$175", per: "per month", desc: "For serious filmmakers producing at scale.",      cta: "Choose Pro",     href: planHref("Pro"), featured: false, feats: ["87,500 credits / month", "218,750 credit rollover bank", "Cloud Storage 740 GB", "All AI Video Models", "Priority Rendering"] },
       { name: "Enterprise", price: "Custom", per: "", desc: "For agencies, studios, and teams producing professional content.", cta: "Contact Us", href: "mailto:ContactUs@ACT3ai.com", featured: false, feats: ["High Credits / month", "High rollover bank", "High Cloud Storage"] },
     ];
@@ -1077,10 +1079,10 @@ export default function Home(): React.JSX.Element {
   return (
     <>
       <Head>
-        <title>ACT 3 — Create Movies at the Speed of Storytelling</title>
+        <title>ACT 3 | Create Movies at the Speed of Storytelling</title>
         <meta
           name="description"
-          content="ACT 3 is the AI filmmaking platform for creating movies, TV, and marketing videos. Write your story — ACT 3 handles everything else."
+          content="ACT 3 is the AI filmmaking platform for creating movies, TV, and marketing videos. Write your story. ACT 3 handles everything else."
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
