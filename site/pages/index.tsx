@@ -993,11 +993,9 @@ export default function Home(): React.JSX.Element {
     // ── Pricing ────────────────────────────────────────────────────────────────
     // Carry the chosen plan so the selection survives the login redirect and the
     // user lands straight on checkout instead of the plan list.
-    // The Starter tier is still called "Creator" in the app's plan records, so the
-    // link keeps that name even though the card says Starter.
     const planHref = (name: string) => `https://app.act3ai.com/settings/plans/?plan=${encodeURIComponent(name)}`;
     const TIERS = [
-      { name: "Starter", price: "$49",  per: "per month", desc: "For creators producing content regularly.",       cta: "Choose Starter", href: planHref("Creator"), featured: true,  feats: ["24,500 credits / month", "61,250 credit rollover bank", "Cloud Storage 50 GB"] },
+      { name: "Creator", price: "$49",  per: "per month", desc: "For creators producing content regularly.",       cta: "Choose Creator", href: planHref("Creator"), featured: true,  feats: ["24,500 credits / month", "61,250 credit rollover bank", "Cloud Storage 50 GB"] },
       { name: "Pro",     price: "$175", per: "per month", desc: "For serious filmmakers producing at scale.",      cta: "Choose Pro",     href: planHref("Pro"), featured: false, feats: ["87,500 credits / month", "218,750 credit rollover bank", "Cloud Storage 740 GB", "All AI Video Models", "Priority Rendering"] },
       { name: "Enterprise", price: "Custom", per: "", desc: "For agencies, studios, and teams producing professional content.", cta: "Contact Us", href: "mailto:ContactUs@ACT3ai.com", featured: false, feats: ["High Credits / month", "High rollover bank", "High Cloud Storage"] },
     ];
