@@ -2,9 +2,8 @@ import { useState, type ReactNode } from "react";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
 import MovieCosts from "../components/FullMovie/MovieCosts";
-import ProfitVsExpenses from "../components/FullMovie/ProfitVsExpenses";
 
-const TABS = ["Movie Costs", "Movie Profits Vs Expenses"] as const;
+const TABS = ["Movie Costs"] as const;
 type Tab = (typeof TABS)[number];
 
 export default function MoviePricing(): ReactNode {
@@ -65,12 +64,6 @@ export default function MoviePricing(): ReactNode {
           {activeTab === "Movie Costs" && (
             <div role="tabpanel">
               <MovieCosts />
-            </div>
-          )}
-
-          {activeTab === "Movie Profits Vs Expenses" && (
-            <div role="tabpanel">
-              <ProfitVsExpenses />
             </div>
           )}
         </div>
