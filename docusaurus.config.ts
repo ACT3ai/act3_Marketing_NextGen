@@ -219,7 +219,6 @@ const config: Config = {
           title: "Product",
           items: [
             { label: "Features", to: "/features" },
-            { label: "Pricing", to: "/pricing" },
             { label: "Roadmap", to: "/docs/roadmap" },
           ],
         },

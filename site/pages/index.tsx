@@ -475,7 +475,7 @@ body {
 }
 
 /* ===== PRICING ===== */
-.pricing__grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; align-items: stretch; max-width: 640px; margin-left: auto; margin-right: auto; }
+.pricing__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; align-items: stretch; max-width: 980px; margin-left: auto; margin-right: auto; }
 .tier {
   position: relative; background: var(--paper); border: 1px solid var(--line);
   border-radius: var(--radius-lg); padding: 28px 26px; display: flex; flex-direction: column;
@@ -500,7 +500,7 @@ body {
 .tier__feats li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--ink-2); }
 .tier__feats li svg { flex-shrink: 0; margin-top: 1px; }
 
-@media (max-width: 760px) { .pricing__grid { grid-template-columns: 1fr; } .tier--featured { transform: none; } }
+@media (max-width: 900px) { .pricing__grid { grid-template-columns: 1fr; max-width: 420px; } .tier--featured { transform: none; } }
 
 /* ===== TESTIMONIALS ===== */
 .quotes { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
@@ -705,9 +705,6 @@ const BODY_HTML = `
       <h2 class="serif">Pricing <em style="color:var(--accent)">Plans.</em></h2>
     </div>
     <div class="pricing__grid" id="pricing-grid"></div>
-    <div style="text-align:center;margin-top:28px;font-size:14px;color:var(--ink-2)">
-      <a href="/pricing" style="color:var(--accent);text-decoration:none;font-weight:600">See all plans →</a>
-    </div>
   </div>
 </section>
 
@@ -1000,6 +997,7 @@ export default function Home(): React.JSX.Element {
     const TIERS = [
       { name: "Creator", price: "$49",  per: "per month", desc: "For creators producing content regularly.",       cta: "Choose Creator", href: planHref("Creator"), featured: true,  feats: ["24,500 credits / month", "61,250 credit rollover bank", "Cloud Storage 50 GB"] },
       { name: "Pro",     price: "$175", per: "per month", desc: "For serious filmmakers producing at scale.",      cta: "Choose Pro",     href: planHref("Pro"), featured: false, feats: ["87,500 credits / month", "218,750 credit rollover bank", "Cloud Storage 740 GB", "All AI Video Models", "Priority Rendering"] },
+      { name: "Enterprise", price: "Custom", per: "", desc: "For agencies, studios, and teams producing professional content.", cta: "Contact Us", href: "mailto:ContactUs@ACT3ai.com", featured: false, feats: ["High Credits / month", "High rollover bank", "High Cloud Storage"] },
     ];
     const checkSVG = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color:var(--accent);flex-shrink:0"><path d="M4.5 12.5l4.5 4.5L19.5 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
     const pricingGrid = document.getElementById("pricing-grid");
