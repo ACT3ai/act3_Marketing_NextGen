@@ -152,6 +152,10 @@ const config: Config = {
           changefreq: "weekly",
           priority: 0.5,
           filename: "sitemap.xml",
+          // /v/* are standalone design variations of the homepage. They are
+          // reachable by direct link only and must not compete with the real
+          // homepage in search.
+          ignorePatterns: ["/v/**"],
         },
       } satisfies Preset.Options,
     ],
