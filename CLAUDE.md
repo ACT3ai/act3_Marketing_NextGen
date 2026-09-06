@@ -39,11 +39,15 @@ Hosted zone: `act3ai.com` (Zone ID: Z068582936KKC1AS0PYW1)
 DNS record for this site:
 * `act3ai.com` (apex) → GitHub Pages, which is what `site/static/CNAME` claims.
 
-Known problem, not yet fixed: `marketing.act3ai.com` still resolves to
-`act3ai.github.io`, but the Let's Encrypt certificate GitHub issued covers
-`act3ai.com` only. The hostname is therefore live AND broken — a browser shows a
-full-page TLS warning. Either delete that Route53 record or redirect it to the
-apex. Deleting is the right call unless something still links to it.
+Retired 2026-09-06: `marketing.act3ai.com`. It resolved to `act3ai.github.io`,
+but the Let's Encrypt certificate GitHub issued covers `act3ai.com` only, so the
+hostname was live AND broken — every visitor got a full-page TLS warning. The
+CNAME was deleted from Route53. Do not recreate it; a hostname that resolves but
+fails TLS is worse than one that does not exist. If it is ever needed again it
+must be a real redirect to the apex, not a bare CNAME to GitHub Pages.
+
+The record that was removed, for the record:
+* `marketing.act3ai.com.  CNAME  act3ai.github.io`  (TTL 300)
 
 CAA records (controls which CAs may issue TLS certs for act3ai.com):
 * `0 issue "amazon.com"`          — AWS Certificate Manager (for main app)
