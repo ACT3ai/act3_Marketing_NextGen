@@ -69,6 +69,7 @@ export default function SiteFooter(): React.ReactNode {
               <div className="sf-footer__col">
                 <div className="sf-footer__col-head">Resources</div>
                 <ul>
+                  <li><a href="/articles">Articles</a></li>
                   <li><a href="https://documentation.act3ai.com/">Documentation</a></li>
                   <li><a href="/mcp">MCP (Model Context Protocol)</a></li>
                   <li><a href="/cli">CLI (command line interface)</a></li>

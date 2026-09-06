@@ -6,8 +6,8 @@ import Heading from "@theme/Heading";
 export default function Features(): ReactNode {
   return (
     <Layout
-      title="Features | ACT3 AI"
-      description="Explore all features of the ACT3 AI filmmaking platform."
+      title="Features | ACT 3 AI"
+      description="Explore all features of the ACT 3 AI filmmaking platform."
     >
       <main style={{ padding: "4rem 0" }}>
         <div className="container">
@@ -22,7 +22,7 @@ export default function Features(): ReactNode {
             {
               category: "Story & Script",
               items: [
-                { title: "Beat Parser", desc: "Import any screenplay and watch ACT3 AI break it into acts, scenes, and beats automatically." },
+                { title: "Beat Parser", desc: "Import any screenplay and watch ACT 3 AI break it into acts, scenes, and beats automatically." },
                 { title: "Scene Manager", desc: "Organize and reorder scenes. Each scene tracks its shots, characters, and location." },
                 { title: "Shot Breakdown", desc: "Auto-generate shot lists from scene descriptions. Customize camera angle, lens, and movement." },
               ],
@@ -58,7 +58,7 @@ export default function Features(): ReactNode {
               items: [
                 { title: "Video Editor", desc: "Timeline-based editor. Trim, arrange, and layer clips. Add transitions and effects." },
                 { title: "Multi-Platform Export", desc: "Export optimized for YouTube, Instagram, TikTok, X, and cinema formats." },
-                { title: "Blender Sync", desc: "Sync your ACT3 projects with Blender for 3D scene compositing and VFX." },
+                { title: "Blender Sync", desc: "Sync your ACT 3 projects with Blender for 3D scene compositing and VFX." },
               ],
             },
           ].map(({ category, items }) => (

@@ -2,19 +2,19 @@
 id: beats-scenes-shots
 sidebar_position: 1
 title: Beats, Scenes & Shots
-description: The production structure at the heart of ACT3 AI.
+description: The production structure at the heart of ACT 3 AI.
 ---
 
 # Beats, Scenes & Shots
 
-ACT3 AI structures every production around the fundamental units of filmmaking: beats, scenes, and shots.
+ACT 3 AI structures every production around the fundamental units of filmmaking: beats, scenes, and shots.
 
 ## Scenes
 
 A scene is defined by a continuous action in a single location. In your script, scenes are marked
 with sluglines like `INT. COFFEE SHOP - DAY`.
 
-ACT3 AI parses these automatically, or you can define scenes manually.
+ACT 3 AI parses these automatically, or you can define scenes manually.
 
 ### Scene Properties
 - **Location** — Interior or exterior, with a description
@@ -24,7 +24,7 @@ ACT3 AI parses these automatically, or you can define scenes manually.
 
 ## Beats
 
-Within each scene, ACT3 AI identifies **beats** — the emotional turning points. A beat is where:
+Within each scene, ACT 3 AI identifies **beats** — the emotional turning points. A beat is where:
 - A character makes a decision
 - New information is revealed
 - The emotional tone shifts
@@ -59,7 +59,7 @@ Each beat is visualized through one or more **shots** — specific camera setups
 
 ## Shot Generation
 
-Once your shots are defined, select any shot and click **Generate**. ACT3 AI:
+Once your shots are defined, select any shot and click **Generate**. ACT 3 AI:
 1. Translates your cinematography parameters into a model-optimized prompt
 2. Sends the request to your chosen AI model
 3. Returns generated video in your project

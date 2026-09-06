@@ -1096,12 +1096,7 @@ export default function HomeBackup(): React.JSX.Element {
           name="description"
           content="ACT 3 is the AI filmmaking platform for creating movies, TV, and marketing videos. Write your story. ACT 3 handles everything else."
         />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400;9..144,1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-          rel="stylesheet"
-        />
+        {/* Fonts load site-wide from docusaurus.config.ts headTags. */}
       </Head>
       {/* Render the page CSS in the component tree (NOT inside <Head>) so it is
           server-rendered into the static HTML and present at first paint. When

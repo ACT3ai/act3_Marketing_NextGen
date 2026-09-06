@@ -2,12 +2,12 @@
 id: first-video
 sidebar_position: 1
 title: Your First AI Video
-description: Step-by-step tutorial for creating your first video with ACT3 AI.
+description: Step-by-step tutorial for creating your first video with ACT 3 AI.
 ---
 
 # Your First AI Video
 
-In this tutorial, we'll create a short 30-second video from scratch using ACT3 AI.
+In this tutorial, we'll create a short 30-second video from scratch using ACT 3 AI.
 
 ## What We'll Build
 
@@ -36,7 +36,7 @@ A lone figure approaches an industrial warehouse.
 Streetlights cast long shadows. The building is dark.
 ```
 
-ACT3 AI will parse this automatically.
+ACT 3 AI will parse this automatically.
 
 ## Step 3: Define Your Shots
 

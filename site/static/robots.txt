@@ -1,0 +1,66 @@
+# https://act3ai.com/robots.txt
+#
+# Docusaurus copies site/static/ verbatim into the build, so this file is the
+# whole crawl policy for the site. Three jobs:
+#   1. point every crawler at the sitemap,
+#   2. keep the parked and variation pages out of the index,
+#   3. state, deliberately, that the AI answer engines are welcome. Our buyers
+#      ask assistants which tool makes AI video; being readable by those
+#      assistants is the point, not an accident of whatever the default is.
+
+User-agent: *
+Allow: /
+Disallow: /v/
+Disallow: /backup
+
+# ---------------------------------------------------------------------------
+# AI crawlers and answer engines: explicitly allowed.
+# ---------------------------------------------------------------------------
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google Gemini grounding and training. Allowed on purpose: our audience asks
+# assistants for tool recommendations, and being groundable is worth more to us
+# than withholding a public marketing site.
+User-agent: Google-Extended
+Allow: /
+
+# Apple, Amazon, Meta, Common Crawl
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://act3ai.com/sitemap.xml

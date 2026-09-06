@@ -23,7 +23,9 @@
  * never changes.
  */
 
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400;9..144,1,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
+/* Fonts load once for the whole site from the headTags block in
+   docusaurus.config.ts. This @import used to pull a second, near-identical
+   stylesheet on every page, because customCss is bundled site-wide. */
 
 /* ------------------------------------------------------------------ *
  * Design tokens (from the c_design palette)

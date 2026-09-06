@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import Head from "@docusaurus/Head";
 
 const NAV_CSS = `
 .snav-root {
@@ -91,12 +90,20 @@ const NAV_CSS = `
 }
 .snav__more-btn[aria-expanded="true"] .snav__caret { transform: rotate(180deg); }
 .snav__more-btn[aria-expanded="true"] { color: var(--ink); background: var(--bg-2); }
+/* Always rendered, hidden with CSS rather than unmounted. Mounting the menu
+   only while open left the served HTML with an empty More button, so /mcp,
+   /cli and /articles got no internal link from the navbar at all, and the LLM
+   crawlers that do not execute JavaScript never saw them. */
 .snav__menu {
   position: absolute;
   top: calc(100% + 8px);
   left: 50%;
-  transform: translateX(-50%);
-  min-width: 190px;
+  transform: translateX(-50%) translateY(-4px);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .15s ease, transform .15s ease, visibility .15s;
+  min-width: 210px;
   background: var(--bg);
   border: 1px solid var(--line);
   border-radius: 10px;
@@ -105,6 +112,12 @@ const NAV_CSS = `
   display: flex;
   flex-direction: column;
   gap: 2px;
+}
+.snav__menu--open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
 }
 .snav__menu-item {
   display: block;
@@ -177,15 +190,55 @@ const NAV_CSS = `
   color: var(--accent-ink);
 }
 
+/* Mobile menu */
+.snav__burger {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+  color: var(--ink);
+  align-items: center;
+  justify-content: center;
+}
+.snav__burger svg { display: block; }
+.snav__mobile {
+  display: none;
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+  padding: 10px var(--pad-x) 18px;
+}
+.snav__mobile a {
+  display: block;
+  padding: 11px 4px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink-2);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+.snav__mobile a:last-child { border-bottom: 0; }
+.snav__mobile a:hover { color: var(--accent); text-decoration: none; }
+
 @media (max-width: 820px) {
   .snav__links { display: none; }
-  .snav__inner { grid-template-columns: 1fr auto; }
+  .snav__inner { grid-template-columns: auto 1fr auto; }
+  .snav__burger { display: inline-flex; order: -1; justify-self: start; }
+  .snav__logo { justify-self: center; }
+  .snav__mobile--open { display: block; }
+  .snav--solid { background: var(--bg); }
+}
+@media (min-width: 821px) {
+  .snav__mobile { display: none !important; }
 }
 `;
 
 export default function SiteNavbar(): React.ReactNode {
   const [solid, setSolid] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const moreRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -216,18 +269,28 @@ export default function SiteNavbar(): React.ReactNode {
 
   return (
     <div className="snav-root">
-      <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,400;9..144,0,500;9..144,1,400&family=Inter:wght@400;500;600&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
       <style>{NAV_CSS}</style>
       <header className={`snav${solid ? " snav--solid" : ""}`} id="site-nav">
         <div className="snav__inner">
-          <a href="/" className="snav__logo" aria-label="ACT 3 home">
+          <button
+            type="button"
+            className="snav__burger"
+            aria-expanded={mobileOpen}
+            aria-controls="snav-mobile"
+            aria-label="Menu"
+            onClick={() => setMobileOpen((v) => !v)}
+          >
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+              <path
+                d={mobileOpen ? "M2 2l14 10M16 2L2 12" : "M1 1h16M1 7h16M1 13h16"}
+                stroke="currentColor"
+                strokeWidth="1.7"
+                strokeLinecap="round"
+              />
+            </svg>
+          </button>
+
+          <a href="/" className="snav__logo" aria-label="ACT 3 AI home">
             <img
               src="/img/act3-logo.png"
               alt="ACT 3"
@@ -268,28 +331,38 @@ export default function SiteNavbar(): React.ReactNode {
                   />
                 </svg>
               </button>
-              {moreOpen && (
-                <div className="snav__menu" role="menu">
-                  <a
-                    className="snav__menu-item"
-                    role="menuitem"
-                    href="/mcp"
-                    onClick={() => setMoreOpen(false)}
-                  >
-                    MCP
-                    <small>Drive ACT 3 from Claude Code</small>
-                  </a>
-                  <a
-                    className="snav__menu-item"
-                    role="menuitem"
-                    href="/cli"
-                    onClick={() => setMoreOpen(false)}
-                  >
-                    CLI
-                    <small>Command line interface</small>
-                  </a>
-                </div>
-              )}
+              <div
+                className={`snav__menu${moreOpen ? " snav__menu--open" : ""}`}
+                role="menu"
+              >
+                <a
+                  className="snav__menu-item"
+                  role="menuitem"
+                  href="/mcp"
+                  onClick={() => setMoreOpen(false)}
+                >
+                  MCP
+                  <small>Drive ACT 3 from Claude Code</small>
+                </a>
+                <a
+                  className="snav__menu-item"
+                  role="menuitem"
+                  href="/cli"
+                  onClick={() => setMoreOpen(false)}
+                >
+                  CLI
+                  <small>Command line interface</small>
+                </a>
+                <a
+                  className="snav__menu-item"
+                  role="menuitem"
+                  href="/articles"
+                  onClick={() => setMoreOpen(false)}
+                >
+                  Articles
+                  <small>Guides on AI filmmaking</small>
+                </a>
+              </div>
             </div>
           </nav>
 
@@ -298,6 +371,23 @@ export default function SiteNavbar(): React.ReactNode {
             <a className="snav__cta" href="https://app.act3ai.com/signup/">Get Started</a>
           </div>
         </div>
+
+        {/* Below 820px the centre nav is hidden; this panel is the only path to
+            every page on a phone, and Google indexes mobile-first. */}
+        <nav
+          id="snav-mobile"
+          className={`snav__mobile${mobileOpen ? " snav__mobile--open" : ""}`}
+          aria-label="Mobile"
+        >
+          <a href="/" onClick={() => setMobileOpen(false)}>Main</a>
+          <a href="/about" onClick={() => setMobileOpen(false)}>About Us</a>
+          <a href="/contact" onClick={() => setMobileOpen(false)}>Contact Us</a>
+          <a href="https://app.act3ai.com/settings/plans/">Plans</a>
+          <a href="https://www.youtube.com/@ACT3AI" target="_blank" rel="noopener noreferrer">Videos</a>
+          <a href="/mcp" onClick={() => setMobileOpen(false)}>MCP</a>
+          <a href="/cli" onClick={() => setMobileOpen(false)}>CLI</a>
+          <a href="/articles" onClick={() => setMobileOpen(false)}>Articles</a>
+        </nav>
       </header>
     </div>
   );

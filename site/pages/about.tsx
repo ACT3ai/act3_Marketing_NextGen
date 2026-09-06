@@ -345,8 +345,10 @@ const PAGE_CSS = `
 export default function About(): React.ReactNode {
   return (
     <Layout
-      title="About Us | ACT3 AI"
-      description="Meet the team behind ACT3 AI — filmmakers, writers, and technologists dedicated to empowering creators everywhere."
+      // No manual site-name suffix: Docusaurus appends " | ACT 3 AI" itself,
+      // and this used to render the brand twice in one title tag.
+      title="About Us"
+      description="Meet the team behind ACT 3 AI — filmmakers, writers, and technologists dedicated to empowering creators everywhere."
     >
       <Head>
         <style>{PAGE_CSS}</style>

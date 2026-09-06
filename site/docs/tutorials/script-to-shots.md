@@ -7,12 +7,12 @@ description: Import a full screenplay and auto-generate your shot list.
 
 # Script to Shots
 
-This tutorial walks through importing a screenplay and using ACT3 AI to automatically generate
+This tutorial walks through importing a screenplay and using ACT 3 AI to automatically generate
 a complete shot breakdown.
 
 ## Importing a Screenplay
 
-ACT3 AI accepts screenplays in these formats:
+ACT 3 AI accepts screenplays in these formats:
 - **Fountain** (`.fountain`) — Plain-text screenplay format
 - **Final Draft** (`.fdx`) — Final Draft native format
 - **PDF** — Scanned or exported screenplay PDFs
@@ -20,7 +20,7 @@ ACT3 AI accepts screenplays in these formats:
 
 ## Auto Shot Breakdown
 
-After importing, click **Auto-Generate Shots**. ACT3 AI will:
+After importing, click **Auto-Generate Shots**. ACT 3 AI will:
 
 1. Parse each scene slug line
 2. Identify beats within each scene
@@ -41,4 +41,4 @@ A good scene typically uses 3-5 different shot types to maintain visual interest
 ## Batch Generation
 
 Once you've approved your shots, use **Batch Generate** to send all shots to your AI model
-simultaneously. ACT3 AI queues them and returns completed shots as they finish.
+simultaneously. ACT 3 AI queues them and returns completed shots as they finish.

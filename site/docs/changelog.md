@@ -2,7 +2,7 @@
 id: changelog
 sidebar_position: 2
 title: Changelog
-description: Latest updates and releases for ACT3 AI.
+description: Latest updates and releases for ACT 3 AI.
 ---
 
 # Changelog

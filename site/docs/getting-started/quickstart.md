@@ -2,12 +2,12 @@
 id: quickstart
 sidebar_position: 1
 title: Quickstart
-description: Create your first AI video in minutes with ACT3 AI.
+description: Create your first AI video in minutes with ACT 3 AI.
 ---
 
 # Quickstart Guide
 
-This guide walks you through creating your first AI-generated video with ACT3 AI.
+This guide walks you through creating your first AI-generated video with ACT 3 AI.
 
 ## Step 1: Create an Account
 
@@ -25,11 +25,11 @@ You can either:
 - **Start from scratch** and write scene descriptions
 - **Use a template** from our library of example scripts
 
-ACT3 AI will automatically parse your script into acts, scenes, and beats.
+ACT 3 AI will automatically parse your script into acts, scenes, and beats.
 
 ## Step 4: Review Your Shot Breakdown
 
-ACT3 AI generates a shot breakdown for each scene. Each shot includes:
+ACT 3 AI generates a shot breakdown for each scene. Each shot includes:
 - Camera angle and type
 - Lens focal length
 - Camera movement
@@ -45,7 +45,7 @@ Select one or more shots and click **Generate**. Choose your AI model:
 - **Runway** — Fast, great for stylized content
 - **ComfyUI/FLUX** — Local rendering, full control
 
-ACT3 AI sends your shot descriptions to the model and returns the generated video.
+ACT 3 AI sends your shot descriptions to the model and returns the generated video.
 
 ## Step 6: Assemble and Export
 

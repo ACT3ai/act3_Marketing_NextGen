@@ -1,0 +1,194 @@
+/**
+ * Design overlay for the /articles pages.
+ *
+ * Scoped entirely under `.article-page`, which Docusaurus puts on the <html>
+ * element from the `wrapperClassName: article-page` front matter that
+ * scripts/sync-articles.js stamps on every published article. Nothing here can
+ * reach any other page on the site.
+ *
+ * Palette and type come from the same design as the rest of the marketing site
+ * (site/components/SiteNavbar.tsx, site/css/level2.css): cream #faf8f3,
+ * ACT 3 orange #c4612b, Fraunces for display, Inter for body, JetBrains Mono
+ * for labels. The fonts are already loaded once by SiteNavbar, which every page
+ * renders, so this file deliberately does not @import them again.
+ */
+
+.article-page {
+  --a3-bg: #faf8f3;
+  --a3-bg-2: #f3efe5;
+  --a3-ink: #1a1714;
+  --a3-ink-2: #33302c;
+  --a3-ink-3: #837c72;
+  --a3-line: #e2dccb;
+  --a3-accent: #c4612b;
+  --a3-font-display: "Fraunces", "Times New Roman", serif;
+  --a3-font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --a3-font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* The site-wide Infima primary is violet; on an article every accent is the
+     ACT 3 orange, including link colour and the active TOC marker. */
+  --ifm-color-primary: #c4612b;
+  --ifm-color-primary-dark: #b05727;
+  --ifm-color-primary-darker: #a85024;
+  --ifm-color-primary-darkest: #8a421e;
+  --ifm-color-primary-light: #cf7040;
+  --ifm-color-primary-lighter: #d47b4e;
+  --ifm-color-primary-lightest: #de9670;
+  --ifm-background-color: #faf8f3;
+  --ifm-font-family-base: var(--a3-font-body);
+  --ifm-heading-font-family: var(--a3-font-display);
+  --ifm-heading-font-weight: 500;
+  --ifm-line-height-base: 1.7;
+  /* The real height of the custom fixed navbar. Infima computes an anchor's
+     scroll-margin-top from this, so a TOC or FAQ link lands below the bar
+     instead of underneath it. */
+  --ifm-navbar-height: 66px;
+}
+
+.article-page body {
+  background: var(--a3-bg);
+  color: var(--a3-ink);
+}
+
+/* ── Body copy ───────────────────────────────────────────────────────────── */
+
+.article-page .markdown {
+  font-family: var(--a3-font-body);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--a3-ink-2);
+  max-width: 74ch;
+}
+
+/* Docusaurus wraps the first heading in a <header>, so this is not `> h1`. */
+.article-page .markdown h1 {
+  font-family: var(--a3-font-display);
+  font-size: clamp(30px, 4.4vw, 46px);
+  line-height: 1.12;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--a3-ink);
+  margin: 6px 0 26px;
+  max-width: 22ch;
+}
+
+.article-page .markdown h2 {
+  font-family: var(--a3-font-display);
+  font-size: clamp(23px, 2.7vw, 30px);
+  font-weight: 500;
+  line-height: 1.22;
+  color: var(--a3-ink);
+  margin-top: 2.6em;
+  margin-bottom: 0.7em;
+  padding-top: 0.55em;
+  border-top: 1px solid var(--a3-line);
+}
+
+.article-page .markdown h3 {
+  font-family: var(--a3-font-body);
+  font-size: 18.5px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--a3-ink);
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+.article-page .markdown h4 {
+  font-family: var(--a3-font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--a3-ink);
+}
+
+.article-page .markdown p { margin-bottom: 1.15em; }
+.article-page .markdown strong { color: var(--a3-ink); font-weight: 600; }
+.article-page .markdown a { color: var(--a3-accent); text-decoration: underline; text-underline-offset: 2px; }
+.article-page .markdown a:hover { color: #a85024; }
+
+.article-page .markdown ul,
+.article-page .markdown ol { padding-left: 1.3em; margin-bottom: 1.3em; }
+.article-page .markdown li { margin-bottom: 0.45em; }
+.article-page .markdown li::marker { color: var(--a3-accent); }
+
+.article-page .markdown blockquote {
+  border-left: 3px solid var(--a3-accent);
+  background: var(--a3-bg-2);
+  color: var(--a3-ink-2);
+  padding: 14px 20px;
+  border-radius: 0 8px 8px 0;
+}
+
+.article-page .markdown hr {
+  border: 0;
+  border-top: 1px solid var(--a3-line);
+  margin: 2.6em 0;
+}
+
+/* ── Comparison tables ───────────────────────────────────────────────────── */
+/* 132 of the 133 articles carry one, and it is usually the thing a reader
+   scrolled down to find. Wide tables scroll inside themselves so the page body
+   never scrolls sideways on a phone. */
+
+.article-page .markdown > table,
+.article-page .markdown .table-wrapper > table { margin-bottom: 1.6em; }
+
+.article-page .markdown table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 15px;
+  border: 1px solid var(--a3-line);
+  border-radius: 10px;
+}
+
+.article-page .markdown table thead tr { background: var(--a3-bg-2); }
+
+.article-page .markdown table th {
+  font-family: var(--a3-font-mono);
+  font-size: 11.5px;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--a3-ink-3);
+  text-align: left;
+  font-weight: 500;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--a3-line);
+}
+
+.article-page .markdown table td {
+  padding: 12px 14px;
+  border-top: 1px solid var(--a3-line);
+  vertical-align: top;
+  color: var(--a3-ink-2);
+}
+
+.article-page .markdown table tr { background: transparent; }
+.article-page .markdown table tbody tr:nth-child(even) { background: rgba(226, 220, 203, .28); }
+
+/* ── Right-hand table of contents ────────────────────────────────────────── */
+
+.article-page .table-of-contents {
+  font-size: 13.5px;
+  border-left: 1px solid var(--a3-line);
+  padding-left: 14px;
+}
+.article-page .table-of-contents__link { color: var(--a3-ink-3); }
+.article-page .table-of-contents__link:hover,
+.article-page .table-of-contents__link--active { color: var(--a3-accent); }
+
+/* ── The FAQ block ───────────────────────────────────────────────────────── */
+/* scripts/sync-articles.js splits each Q&A into two paragraphs, so a question
+   is a paragraph whose only content is bold. Giving those weight makes the
+   block scannable; it is also the block that feeds the FAQPage structured
+   data, so it is worth reading well on the page too. */
+
+.article-page .markdown p > strong:only-child {
+  display: block;
+  font-family: var(--a3-font-body);
+  font-size: 17px;
+  color: var(--a3-ink);
+}
+.article-page .markdown p:has(> strong:only-child) { margin-bottom: 0.4em; }
+.article-page .markdown p:has(> strong:only-child) + p { margin-bottom: 1.5em; }

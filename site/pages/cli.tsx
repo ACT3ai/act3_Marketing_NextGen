@@ -314,7 +314,7 @@ export default function Cli(): React.ReactNode {
 
   return (
     <Layout
-      title="ACT 3 Filmmaking CLI | ACT3 AI"
+      title="ACT 3 Filmmaking CLI | ACT 3 AI"
       description="The ACT 3 CLI is a command line interface for very advanced users — script your filmmaking, chain commands, and automate whole passes."
     >
       <Head>

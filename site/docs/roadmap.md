@@ -2,12 +2,12 @@
 id: roadmap
 sidebar_position: 1
 title: Roadmap
-description: What's coming next to ACT3 AI.
+description: What's coming next to ACT 3 AI.
 ---
 
 # Roadmap
 
-Here's what we're building next at ACT3 AI.
+Here's what we're building next at ACT 3 AI.
 
 ## In Progress
 

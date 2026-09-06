@@ -75,12 +75,9 @@ export default function PageHero({ label, title, description }: PageHeroProps): 
   return (
     <>
       <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400;9..144,1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-          rel="stylesheet"
-        />
+        {/* Fonts load once for the whole site from docusaurus.config.ts
+            headTags. Requesting them again here cost a second, redundant
+            fonts.googleapis.com stylesheet on every page with a hero. */}
         <style>{HERO_CSS}</style>
       </Head>
       <section className="page-hero">

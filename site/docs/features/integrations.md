@@ -2,12 +2,12 @@
 id: integrations
 sidebar_position: 6
 title: Integrations
-description: All the AI models and tools ACT3 AI integrates with.
+description: All the AI models and tools ACT 3 AI integrates with.
 ---
 
 # Integrations
 
-ACT3 AI integrates with the leading AI video models and creative tools.
+ACT 3 AI integrates with the leading AI video models and creative tools.
 
 ## AI Video Models
 

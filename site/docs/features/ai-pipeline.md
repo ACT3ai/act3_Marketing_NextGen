@@ -2,12 +2,12 @@
 id: ai-pipeline
 sidebar_position: 2
 title: AI Pipeline
-description: How ACT3 AI connects your story to the world's best AI video models.
+description: How ACT 3 AI connects your story to the world's best AI video models.
 ---
 
 # AI Pipeline
 
-The ACT3 AI pipeline connects your production intent to the world's leading AI video generation models.
+The ACT 3 AI pipeline connects your production intent to the world's leading AI video generation models.
 
 ## Supported Models
 
@@ -34,7 +34,7 @@ High-quality open-source model with excellent temporal consistency for long clip
 ```
 Shot Definition
     ↓
-Prompt Optimization (ACT3 AI Cinematography Layer)
+Prompt Optimization (ACT 3 AI Cinematography Layer)
     ↓
 Model Selection
     ↓
@@ -47,7 +47,7 @@ Timeline Assembly
 
 ### Prompt Optimization
 
-ACT3 AI doesn't just pass your shot description directly to the model. It runs your shot through
+ACT 3 AI doesn't just pass your shot description directly to the model. It runs your shot through
 the **Cinematography Layer** — a translation system that:
 - Converts your technical parameters into model-specific prompt syntax
 - Applies per-model style modifiers for cinematic quality
@@ -57,4 +57,4 @@ the **Cinematography Layer** — a translation system that:
 ### Multi-Take Generation
 
 For important shots, generate multiple takes simultaneously and compare them side-by-side.
-ACT3 AI's take manager keeps all generations organized and linked to their source shot.
+ACT 3 AI's take manager keeps all generations organized and linked to their source shot.

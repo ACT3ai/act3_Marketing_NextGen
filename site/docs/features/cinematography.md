@@ -7,7 +7,7 @@ description: Professional cinematography controls for every AI-generated shot.
 
 # Cinematography
 
-ACT3 AI gives every shot professional cinematography controls — the same parameters a Director
+ACT 3 AI gives every shot professional cinematography controls — the same parameters a Director
 of Photography uses on a real film set.
 
 ## Camera Work

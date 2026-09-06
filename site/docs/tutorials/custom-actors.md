@@ -36,7 +36,7 @@ When defining a shot:
 2. Select your actor from the list
 3. Define their position in frame and action
 
-ACT3 AI injects character consistency tokens into the generation prompt automatically.
+ACT 3 AI injects character consistency tokens into the generation prompt automatically.
 
 ## Dialogue Shots with Lip Sync
 

@@ -7,7 +7,7 @@ description: Built-in timeline video editor for assembling your AI-generated sho
 
 # Video Editor
 
-ACT3 AI includes a built-in timeline video editor for assembling your generated shots into
+ACT 3 AI includes a built-in timeline video editor for assembling your generated shots into
 a finished film.
 
 ## Timeline Editor
@@ -37,7 +37,7 @@ The timeline editor provides:
 
 ## Blender Integration
 
-For productions that need 3D elements, ACT3 AI syncs your shot timeline directly to Blender:
+For productions that need 3D elements, ACT 3 AI syncs your shot timeline directly to Blender:
 - Scene camera data exports as Blender camera objects
 - Shot timing syncs to Blender's timeline
 - Generated video can be used as background plates for compositing

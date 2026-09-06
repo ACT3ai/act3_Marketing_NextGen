@@ -388,7 +388,7 @@ export default function Contact(): React.ReactNode {
 
   return (
     <Layout
-      title="Contact Us | ACT3 AI"
+      title="Contact Us | ACT 3 AI"
       description="Have questions about ACT 3? Need technical support? Want to explore enterprise solutions? We're here to help."
     >
       <Head>

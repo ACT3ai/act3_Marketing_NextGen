@@ -2,16 +2,16 @@
 id: concepts
 sidebar_position: 2
 title: Core Concepts
-description: Understand the key concepts behind ACT3 AI's production pipeline.
+description: Understand the key concepts behind ACT 3 AI's production pipeline.
 ---
 
 # Core Concepts
 
-Understanding how ACT3 AI structures your production makes everything else click.
+Understanding how ACT 3 AI structures your production makes everything else click.
 
 ## The Filmmaking Hierarchy
 
-ACT3 AI mirrors the structure of professional film production:
+ACT 3 AI mirrors the structure of professional film production:
 
 ```
 Project
@@ -55,7 +55,7 @@ Each shot is defined by:
 
 ## AI Models
 
-ACT3 AI supports multiple AI video generation models. Each has different strengths:
+ACT 3 AI supports multiple AI video generation models. Each has different strengths:
 
 | Model | Best For | Speed |
 |---|---|---|
@@ -67,8 +67,8 @@ ACT3 AI supports multiple AI video generation models. Each has different strengt
 
 ## The Cinematography Layer
 
-What sets ACT3 AI apart is its **cinematography layer** — the system that translates your
+What sets ACT 3 AI apart is its **cinematography layer** — the system that translates your
 story intent into specific technical instructions for AI models.
 
-Rather than writing raw prompts, you describe your production intent. ACT3 AI translates that
+Rather than writing raw prompts, you describe your production intent. ACT 3 AI translates that
 into optimized prompts for each model, ensuring consistent cinematic quality across all your shots.

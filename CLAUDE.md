@@ -27,8 +27,9 @@ Workflow file: `.github/workflows/deploy.yml`
 * Deploy step: `actions/deploy-pages@v4`
 * Deploys the `build/` directory to GitHub Pages
 
-CNAME file: `static/CNAME` contains `marketing.act3ai.com`
-* This file must stay in `static/CNAME` — Docusaurus copies it into every build
+CNAME file: `site/static/CNAME` contains `act3ai.com`
+* `staticDirectories` is `["site/static"]`, so that is the path Docusaurus copies
+  into every build. It is NOT `static/CNAME` — there is no top-level `static/`.
 * Without it, GitHub Pages loses the custom domain mapping after each deploy
 
 ## DNS — AWS Route53
@@ -36,7 +37,13 @@ CNAME file: `static/CNAME` contains `marketing.act3ai.com`
 Hosted zone: `act3ai.com` (Zone ID: Z068582936KKC1AS0PYW1)
 
 DNS record for this site:
-* `marketing.act3ai.com.  CNAME  act3ai.github.io`
+* `act3ai.com` (apex) → GitHub Pages, which is what `site/static/CNAME` claims.
+
+Known problem, not yet fixed: `marketing.act3ai.com` still resolves to
+`act3ai.github.io`, but the Let's Encrypt certificate GitHub issued covers
+`act3ai.com` only. The hostname is therefore live AND broken — a browser shows a
+full-page TLS warning. Either delete that Route53 record or redirect it to the
+apex. Deleting is the right call unless something still links to it.
 
 CAA records (controls which CAs may issue TLS certs for act3ai.com):
 * `0 issue "amazon.com"`          — AWS Certificate Manager (for main app)
@@ -48,7 +55,7 @@ CAA records (controls which CAs may issue TLS certs for act3ai.com):
 IMPORTANT: Both amazon.com AND letsencrypt.org must remain in the CAA records.
 * amazon.com covers the main app load balancer and CloudFront certs
 * letsencrypt.org is required for GitHub Pages HTTPS cert provisioning
-* Removing letsencrypt.org will break HTTPS on marketing.act3ai.com
+* Removing letsencrypt.org will break HTTPS on act3ai.com
 
 ## SSL Certificate
 
@@ -61,7 +68,7 @@ To check cert status via GitHub API:
 Key fields:
 * `https_certificate.state` — should be "issued" when working
 * `https_enforced` — should be true when HTTPS is enforced
-* `cname` — should be "marketing.act3ai.com"
+* `cname` — should be "act3ai.com"
 
 To enable HTTPS enforcement after cert is issued:
   gh api --method PUT repos/ACT3ai/act3_Marketing_NextGen/pages --input - <<'EOF'
@@ -73,21 +80,78 @@ If cert provisioning fails or is stuck:
 2. Cycle the custom domain (remove + re-add) to re-trigger provisioning:
      gh api --method PUT ... --input - <<< '{"cname":null}'
      sleep 3
-     gh api --method PUT ... --input - <<< '{"cname":"marketing.act3ai.com"}'
+     gh api --method PUT ... --input - <<< '{"cname":"act3ai.com"}'
 3. Cert takes ~15 min to provision after CAA records propagate
 
 ## Site Structure
 
 ```
-static/CNAME          — custom domain (must stay)
-static/img/           — images, logo, favicon
-src/pages/            — custom React pages (home, features, pricing, about, contact)
-src/css/custom.css    — global CSS overrides
-docs/                 — markdown documentation pages
-blog/                 — blog posts
-docusaurus.config.ts  — main site config (URL, nav, footer)
-sidebars.ts           — docs sidebar structure
+site/static/CNAME       — custom domain (must stay)
+site/static/robots.txt  — crawl policy + sitemap pointer + AI-crawler allow list
+site/static/llms.txt    — GENERATED index of the site for AI answer engines
+site/static/img/        — images, logo, favicon
+site/pages/             — custom React pages (home, features, about, contact, articles)
+site/pages/articles/    — GENERATED: the 133 published SEO articles
+site/data/articles.json — GENERATED: the article index the site renders from
+site/components/        — SiteNavbar, SiteFooter, PageHero, ArticleCTA
+src/theme/              — swizzles: Navbar, Footer, MDXPage, MDXComponents, Unlisted
+site/css/custom.css     — global CSS overrides
+site/css/level2.css     — design overlay for the Assistant Director Team pages
+site/css/articles.css   — design overlay for /articles (scoped to .article-page)
+site/docs/              — markdown documentation pages
+site/blog/              — blog posts (news only; the SEO articles are NOT here)
+docusaurus.config.ts    — main site config (URL, nav, footer, JSON-LD, sitemap)
+sidebars.ts             — docs sidebar structure
 ```
+
+## The /articles section — where the SEO content lives
+
+The 133 SEO articles are authored OUTSIDE this repo, in
+`~/BGit/all/film/marketing/seo/pages/<slug>/<slug>.md`, and published into the
+site by `scripts/sync-articles.js` (which `pnpm build` runs first). Everything in
+`site/pages/articles/`, `site/data/articles.json` and `site/static/llms.txt` is
+**generated — never hand-edit those files.** Edit the upstream article and re-run
+`pnpm sync-articles`.
+
+The sync also rewrites the dead CTA links the corpus was written with
+(`/signup`, `/demo`, `/compare`, `/level-2`, `/enterprise`) to destinations that
+resolve. `onBrokenLinks` is `"throw"`, so anything it misses fails the build.
+
+The articles are **not** blog posts and must not move under `/blog`. They are
+evergreen reference pages; a visible post date makes a still-correct page look
+stale, and a Docusaurus blog would generate hundreds of thin tag and archive
+pages competing for crawl budget (one post already generates six URLs). `/blog`
+stays for dated company news.
+
+Reader-facing entry points, all three of which must keep working:
+* `/articles` — the hub (`site/pages/articles.tsx`), the only inbound link most
+  of the 133 have.
+* The **last** entry of the navbar "More" dropdown.
+* The **Resources** column of the footer — the load-bearing one, because the
+  footer is server-rendered on every page and mobile has no More menu.
+
+## SEO invariants — things that were broken once and must not regress
+
+* **The navbar dropdown is rendered always and hidden with CSS.** Mounting it
+  only when open left the served HTML with an empty `<button>`, so `/mcp`,
+  `/cli` and `/articles` got zero internal links from the navbar and the LLM
+  crawlers that do not run JavaScript never saw them.
+* **`site/static/robots.txt` must exist**, must point at the sitemap, and must
+  keep the explicit AI-crawler allow list.
+* **Fonts load exactly once**, from the `headTags` block in
+  `docusaurus.config.ts`. Do not add a `<link>` or a CSS `@import` for Google
+  Fonts anywhere else.
+* **The site title is `ACT 3 AI`** and that is the one public spelling of the
+  name. Docusaurus appends it to every page title, so it is also ~11 characters
+  of every search result.
+* **Do not add a manual `| ACT 3 AI` suffix to a page title** — it renders the
+  brand twice.
+* **`headTags` cannot be overridden per page.** Anything a page may need to
+  change (`og:type`) belongs in `themeConfig.metadata`, which react-helmet
+  de-duplicates.
+* **The sitemap carries `<lastmod>` and per-section `priority`.** Non-markdown
+  routes get their date from git, which is why the deploy workflow checks out
+  with `fetch-depth: 0`.
 
 ## AWS Account
 
