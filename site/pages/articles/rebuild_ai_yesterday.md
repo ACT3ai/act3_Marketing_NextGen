@@ -1,11 +1,11 @@
 ---
-title: "Rebuild Your Entire AI Movie Every Day From Yesterday's Notes"
+title: "Rebuild Your Entire AI Movie From Daily Feedback"
 description: "Rebuilding an AI movie daily means treating your film like a build artifact: you screen the current cut, write notes, feed those notes back into the..."
 keywords: ["rebuild ai movie from feedback daily", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "rebuild_ai_yesterday"
 article_target_query: "rebuild ai movie from feedback daily"

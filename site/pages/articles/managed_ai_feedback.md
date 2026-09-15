@@ -1,11 +1,11 @@
 ---
-title: "Managed AI Video Production: Your Feedback, Our Team, Your Film"
+title: "Managed AI Video Production: Our Team, Your Film"
 description: "Managed AI video production means a vendor's team operates the AI filmmaking platform on your behalf — you supply the script, the brand rules, and the..."
 keywords: ["managed ai video production for brands", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "managed_ai_feedback"
 article_target_query: "managed ai video production for brands"

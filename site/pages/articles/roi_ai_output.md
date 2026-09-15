@@ -1,11 +1,11 @@
 ---
-title: "The ROI of AI Video: Output, Speed, and Cost for Marketing Teams"
+title: "ROI of AI Video for Marketing Teams: Output and Cost"
 description: "The ROI of AI video for an in-house marketing team almost never comes from the cost of a single video. It comes from three compounding effects — output..."
 keywords: ["roi of ai video for marketing teams", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "roi_ai_output"
 article_target_query: "roi of ai video for marketing teams"
@@ -84,7 +84,7 @@ ACT 3 AI automates end to end. It takes rough copy or a script and carries it to
 
 For marketing teams specifically, the platform also carries multi-platform export (16:9 for YouTube, 9:16 for TikTok and Reels, 1:1 for Instagram), automated captioning and multi-lingual dubbing, a render queue with cost estimation so spend is approved before it is incurred, role-based collaboration so product and legal can review inside the tool, and multi-tenant security with optional SAML SSO. Three-stage content moderation scans prompts, scripts, and finished outputs before download.
 
-On plans: Business at $175/month includes commercial use and six concurrent jobs; Standard at $35 covers a smaller team with three; Enterprise is quoted for 4K output, higher concurrency, and priority support. Concurrency is the tier variable that matters most for a team running several campaigns at once.
+On plans: Pro at $175/month includes commercial use for audiences up to 100,000 and six concurrent jobs; Creator at $49 runs three but is for personal use; Enterprise is quoted for unlimited commercial use and ten concurrent jobs. Concurrency is the plan variable that matters most for a team running several campaigns at once.
 
 ## Be honest about what does not change
 
@@ -108,7 +108,7 @@ Usually not entirely. It typically absorbs volume, versioning, and repeatable fo
 
 **Can we use AI-generated video commercially?**
 
-Commercial use is included from the Business plan on ACT 3 AI, and the Organization — your team's workspace — legally owns the projects and assets created within it. Confirm specifics against the Terms of Service for your account.
+Commercial use starts at the Pro plan on ACT 3 AI, for audiences up to 100,000, and the Organization — your team's workspace — legally owns the projects and assets created within it. Confirm specifics against the Terms of Service for your account.
 
 **How do we control spend across a team?**
 
@@ -122,5 +122,5 @@ Expect the first project to be the slowest. The platform is built for storytelle
 
 ## Build the business case on your own briefs
 
-The strongest deck is one where every "after" number came from your own pilot. Take three real briefs, run them through ACT 3 AI, and record hours, credits, and cycle time. Book a walkthrough with our team to scope the pilot, or start on a Standard plan and measure it yourself.
+The strongest deck is one where every "after" number came from your own pilot. Take three real briefs, run them through ACT 3 AI, and record hours, credits, and cycle time. Book a walkthrough with our team to scope the pilot, or start on the Pro plan and measure it yourself.
 

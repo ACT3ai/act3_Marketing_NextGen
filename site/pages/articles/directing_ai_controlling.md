@@ -1,11 +1,11 @@
 ---
-title: "Directing AI: Controlling Camera, Lens, and Lighting Per Shot"
+title: "Directing AI: Control Camera, Lens and Lighting"
 description: "There are three levels of camera control in AI video, and knowing which one you are using explains most of your frustration."
 keywords: ["how to control camera angles in ai video", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "directing_ai_controlling"
 article_target_query: "how to control camera angles in ai video"

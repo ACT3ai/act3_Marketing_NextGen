@@ -5,7 +5,7 @@ keywords: ["ai music video generator", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_music_cuts"
 article_target_query: "ai music video generator"
@@ -91,13 +91,12 @@ Plan your aspect ratios before you compose shots: 16:9 for YouTube, 9:16 for Tik
 
 | Plan | Price | Monthly credits | Notes |
 |---|---|---|---|
-| Free | $0 | 800 | Personal use, watermarked |
-| Community | $8 | 8,000 | No watermark |
-| Standard | $35 | 33,000 | 3 concurrent jobs |
-| Business | $175 | 180,000 | Commercial use, 6 jobs |
-| Enterprise | Call | High volume | 4K video, 10+ jobs |
+| Free | $0 | 800 | Try it out |
+| Creator | $49 | 24,500 | Personal use, 3 concurrent jobs |
+| Pro | $175 | 87,500 | Commercial use up to 100k audience, 6 concurrent jobs |
+| Enterprise | Contact | High volume | Unlimited commercial use, 10 concurrent jobs |
 
-Every generation displays its exact credit cost before you commit. Your Organization owns all projects, content, and generated assets; commercial-use rights come with Business and above.
+Every generation displays its exact credit cost before you commit. Your Organization owns all projects, content, and generated assets; commercial use starts at Pro for audiences up to 100,000.
 
 ---
 

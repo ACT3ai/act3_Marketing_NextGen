@@ -1,11 +1,11 @@
 ---
-title: "AI Video Generator for Real Estate: Listings to Cinematic Tours"
+title: "AI Video Generator for Real Estate: Listings to Tours"
 description: "An AI video generator lets a real estate agent or brokerage turn listing copy and property photography into branded, narrated video — without a..."
 keywords: ["ai video generator for real estate", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_estate_listings"
 article_target_query: "ai video generator for real estate"
@@ -73,7 +73,7 @@ The value it brings to a small property business is **automation across the whol
 - **Multi-platform export.** One-click export for 16:9, 9:16, and 1:1, plus automated captioning and multi-lingual dubbing for multi-language markets.
 - **Repeatable structure.** Because a project is structured data rather than a flat video file, the shape you like becomes the shape you reuse for the next listing.
 
-On price, plans start at a $0 Free tier (800 credits, watermarked, personal use) so you can test a single listing before committing, then Community at $8, Standard at $35 with three concurrent jobs, and Business at $175 with commercial use and six concurrent jobs. Every generation action displays its exact credit cost before you run it, and the render queue shows predicted spend — so a brokerage can budget per listing rather than discovering the number later.
+On price, plans start at a $0 Free plan (800 credits) so you can test a single listing before committing, then Creator at $49 with three concurrent jobs, and Pro at $175 with commercial use for audiences up to 100,000 and six concurrent jobs. Every generation action displays its exact credit cost before you run it, and the render queue shows predicted spend — so a brokerage can budget per listing rather than discovering the number later.
 
 **Where a simpler tool is the better answer:** if all you want is your ten listing photos in a preset motion template with music, a photo-slideshow app will do it faster and cheaper. ACT 3 AI is the right choice when you want scripted, directed, branded video — and when one platform needs to serve listings, neighbourhood films, agent brand content, and development marketing alike.
 
@@ -120,5 +120,5 @@ Yes. Work is organised into an Organization — a shared workspace owning the pr
 
 ## Try it on one listing
 
-Take your next listing description, paste it in, and see the finished video before you commit to anything. Start free on ACT 3 AI, then move to Business when you are ready to run listings at volume with commercial rights.
+Take your next listing description, paste it in, and see the finished video before you commit to anything. Start free on ACT 3 AI, then move to Pro when you are ready to run listings at volume with commercial use.
 

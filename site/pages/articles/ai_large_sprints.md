@@ -5,7 +5,7 @@ keywords: ["ai video for large marketing teams", "AI filmmaking", "AI video gene
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_large_sprints"
 article_target_query: "ai video for large marketing teams"
@@ -78,7 +78,7 @@ Credits are the billing unit, and the platform surfaces cost at the point of dec
 - A GPU-minute billing dashboard gives real-time spend forecasts and budget alerts.
 - The progress panel lets you cancel a running job and reclaim credits instantly.
 - Unused credits roll into a Rollover Bank up to a per-plan cap, used after the monthly allocation is exhausted.
-- Concurrency and 4K output scale by tier; Enterprise covers high-volume credits, 4K video, 10+ concurrent jobs, priority support, and private 3D sets.
+- Concurrency scales by plan: 3 jobs on Creator, 6 on Pro and 10 on Enterprise. 4K upscaling starts at Pro.
 
 ## Enterprise plumbing your IT team will ask about
 
@@ -110,7 +110,7 @@ Not every marketing organization wants to staff an AI video practice. The option
 
 **Who owns the content our team creates?**
 
-The Organization legally owns all projects, created content, and generated assets per the Terms of Service. Commercial-use rights scale by plan tier, with commercial use included from the Business plan.
+The Organization legally owns all projects, created content, and generated assets per the Terms of Service. Commercial rights depend on your plan: commercial use starts at the Pro plan ($175/month) for audiences up to 100,000, and Enterprise covers unlimited commercial use.
 
 **Can multiple people work on the same production at the same time?**
 
@@ -122,7 +122,7 @@ Granular lock-down controls let project owners freeze approved pages, scenes, an
 
 **What are the enterprise-tier capabilities?**
 
-Enterprise covers high-volume credits, 4K video output, 10+ concurrent jobs, priority support, and private 3D sets, with custom pricing. Enterprise/API licensing is a committed-license arrangement rather than a self-serve plan.
+Enterprise is priced on request and covers high-volume credits, unlimited storage, unlimited commercial use and ten concurrent jobs.
 
 **Can we separate brands, divisions, or clients?**
 

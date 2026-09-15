@@ -1,11 +1,11 @@
 ---
-title: "Auto-Build Character Sheets With the Right Outfits, Every Scene"
+title: "Generate AI Character Sheets With the Right Outfits"
 description: "To generate a character sheet with outfits using AI, you need the outfits to be structured data attached to the character, not descriptions retyped into a..."
 keywords: ["generate character sheet with outfits ai", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "sheets_right_outfits"
 article_target_query: "generate character sheet with outfits ai"

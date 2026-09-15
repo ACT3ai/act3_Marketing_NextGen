@@ -1,11 +1,11 @@
 ---
-title: "ACT 3 AI vs InVideo: Template Editor vs Generative Filmmaking"
+title: "ACT 3 AI vs InVideo: Templates or Real Filmmaking"
 description: "InVideo is a template-and-stock video editor with AI assistance — you start from a layout, swap in stock footage and your copy, and publish quickly."
 keywords: ["act3 ai vs invideo", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_invideo_template"
 article_target_query: "act3 ai vs invideo"
@@ -73,7 +73,7 @@ For a deeper walkthrough of that automation layer, see our guide on cutting vide
 
 ## Small-business practicalities
 
-- **Pricing model.** ACT 3 AI is a metered SaaS subscription with credits: a free tier, then paid plans starting at $8/month (Community, 8,000 credits, no watermark), $35/month (Standard, 33,000 credits, 3 concurrent jobs), and $175/month (Business, 180,000 credits, commercial use, 6 jobs), with Enterprise on request. Unused credits roll over up to a per-plan cap.
+- **Pricing model.** ACT 3 AI is a metered SaaS subscription with credits: a free plan, then paid plans starting at $49/month (Creator, 24,500 credits, 3 concurrent jobs) and $175/month (Pro, 87,500 credits, commercial use for audiences up to 100,000, 6 jobs), with Enterprise on request. Unused credits roll over up to a per-plan cap.
 - **Cost transparency.** Every generate button shows the exact credit cost, with multiple quality options priced side by side, plus quality tiers (Draft, Medium, High, 4K) so you can rough things in cheaply.
 - **Ownership.** Your Organization owns all projects, content, and generated assets.
 - **Delivery.** One-click export at 16:9 for YouTube, 9:16 for TikTok and Reels, and 1:1 for Instagram, plus MP4/MOV and EDL handoff if you finish in Premiere Pro or DaVinci Resolve.
@@ -109,7 +109,7 @@ Style presets (cinematic realism, 3D animated, cartoon 2D, anime) with every par
 
 **What does it cost to try?**
 
-There is a free tier (watermarked, personal use), with paid plans from $8/month. Credit cost is displayed before every generation so spend is predictable.
+There is a free plan, with paid plans from $49/month. Credit cost is displayed before every generation so spend is predictable.
 
 **Can more than one person work on a project?**
 

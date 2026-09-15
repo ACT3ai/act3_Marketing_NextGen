@@ -5,7 +5,7 @@ keywords: ["fliki alternative for cinematic video", "AI filmmaking", "AI video g
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "fliki_directed_ai"
 article_target_query: "fliki alternative for cinematic video"
@@ -105,7 +105,7 @@ There's also a legitimate middle path: keep the stock tool for the weekly explai
 
 ## Getting started without the full learning curve
 
-The AI Wizard handles project kickstart — project type, title, visual style — and offers frameworks including Movie (3 acts), Short Story, and **Explainer**, so a familiar format is a supported starting point. Four style presets (Cinematic Realism, 3D Animated, Cartoon 2D, Anime) map to prompt templates, with every parameter override-able if you want to go deeper later. Persona-aware layouts open the tool into a writer, director, or actor workspace rather than showing you everything at once. And the Free plan is $0 with 800 monthly credits and watermarked output, so you can run one scene before committing.
+The AI Wizard handles project kickstart — project type, title, visual style — and offers frameworks including Movie (3 acts), Short Story, and **Explainer**, so a familiar format is a supported starting point. Four style presets (Cinematic Realism, 3D Animated, Cartoon 2D, Anime) map to prompt templates, with every parameter override-able if you want to go deeper later. Persona-aware layouts open the tool into a writer, director, or actor workspace rather than showing you everything at once. And the Free plan is $0 with 800 monthly credits, so you can run one scene before committing.
 
 ## FAQ
 
@@ -127,7 +127,7 @@ The cinematic quality comes from the shot decisions — shot type, lens, movemen
 
 **Can I use it for commercial content?**
 
-Commercial use rights come with the Business tier ($175/month). The Organization legally owns all projects, content, and generated assets per the Terms of Service.
+Commercial use starts at the Pro plan ($175/month), for audiences up to 100,000. The Organization legally owns all projects, content, and generated assets per the Terms of Service.
 
 **Does it export to my existing editor?**
 

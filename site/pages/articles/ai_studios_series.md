@@ -5,7 +5,7 @@ keywords: ["ai production software for film studios", "AI filmmaking", "AI video
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_studios_series"
 article_target_query: "ai production software for film studios"
@@ -68,7 +68,7 @@ ACT 3 AI is a hosted web app built for **serious production — TV and movies** 
 
 **Consistency at series scale.** Per-character LoRA training keeps a character visually identical across dozens of renders; wardrobe variants are managed per scene for costume continuity; digital actors are cast per character for consistency across scenes and episodes; and an AI consistency auditor and bulk re-cast tool exist for when a show changes course. Sets link explicitly to scenes for automatic continuity, and a shared set library keeps locations identical across episodes.
 
-**Team collaboration and IP custody.** Work lives in an Organization — an isolated workspace owning the projects, members, subscription, credit pool, and payment method — and the Organization legally owns all projects, content, and generated assets. Version-controlled, role-based collaboration provides full change history and concurrent work without conflicts. Permissions separate Read, Modify/Edit, Run AI, Use Credits, Billing, and Owner, so a producer holds spend authority while creatives generate. Approved pages, scenes, and shots can be locked read-only. Enterprise adds multi-tenant isolation, optional SAML SSO, invitation-only project access, private 3D sets, and 4K output.
+**Team collaboration and IP custody.** Work lives in an Organization — an isolated workspace owning the projects, members, subscription, credit pool, and payment method — and the Organization legally owns all projects, content, and generated assets. Version-controlled, role-based collaboration provides full change history and concurrent work without conflicts. Permissions separate Read, Modify/Edit, Run AI, Use Credits, Billing, and Owner, so a producer holds spend authority while creatives generate. Approved pages, scenes, and shots can be locked read-only. Multi-tenant isolation, optional SAML SSO and invitation-only project access are part of the platform, and 4K upscaling starts at Pro.
 
 **Long-form review.** Structure and assembly run to full show length: approved shots are stitched with transitions and audio into a production-ready cut, cloud rendering produces 4K ProRes masters per shot, scene, episode, or season with server-side concatenation, and shot lists export to Adobe Premiere so a showrunner can sit with the entire runtime on a unified timeline and watch the clips flow together rather than judging them in isolation. In-app, the zoomable timeline moves from full-feature overview to single-frame detail, with selection-based playback for reviewing transitions and sequences.
 
@@ -110,7 +110,7 @@ Assembled episodes render as ProRes masters with server-side concatenation, and 
 
 **What does it cost at studio scale?**
 
-Business is $175/month with commercial use and six concurrent jobs; studio-tier and Enterprise plans are quoted for higher volume, 4K output, 10+ concurrent jobs, private 3D sets, and priority support. Metered usage is estimated before each job runs.
+Pro is $175/month with commercial use for audiences up to 100,000 and six concurrent jobs; larger Editions start at $395/month, and Enterprise is quoted for unlimited commercial use and ten concurrent jobs. Metered usage is estimated before each job runs.
 
 **Can we get help staffing a production?**
 

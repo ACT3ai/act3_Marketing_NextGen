@@ -5,7 +5,7 @@ keywords: ["ai video multi platform export", "AI filmmaking", "AI video generati
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "aspect_ratio_export"
 article_target_query: "ai video multi platform export"
@@ -95,7 +95,7 @@ No — the difference is that framing lives as cinematography metadata on each s
 
 **What file formats can I get out?**
 
-The import/export bridge supports MP4/MOV, EDL, FDX, PDF, and proprietary project archives. Cloud rendering produces 4K ProRes masters per shot, scene, episode, and season; 4K output is an Enterprise-tier capability.
+The import/export bridge supports MP4/MOV, EDL, FDX, PDF, and proprietary project archives. Cloud rendering produces 4K ProRes masters per shot, scene, episode, and season; 4K upscaling is available from the Pro plan.
 
 **Can I finish in Premiere or DaVinci Resolve?**
 

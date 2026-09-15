@@ -5,7 +5,7 @@ keywords: ["ai video generator for ecommerce", "AI filmmaking", "AI video genera
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_ecommerce_product"
 article_target_query: "ai video generator for ecommerce"
@@ -78,7 +78,7 @@ That distinction is the whole argument. A tool that generates a beautiful clip s
 - **One-click regeneration.** Review a shot, request a change to lighting, pacing, or mood, and regenerate — the mechanism that makes variant production cheap.
 - **Multi-platform export.** 16:9 for YouTube, 9:16 for TikTok and Reels, 1:1 for Instagram, with automated captioning and multi-lingual dubbing for international storefronts.
 
-On spend: plans run from a $0 Free tier (800 credits, watermarked, personal use) through Community at $8, Standard at $35 with three concurrent jobs, and Business at $175 with commercial use and six concurrent jobs; Enterprise is quoted for 4K and higher concurrency. Every generation action shows its exact credit cost before you commit, and the render queue displays predicted spend — which is how you keep a per-SKU cost target. Three-stage content moderation scans prompts, scripts, and finished outputs, which matters when a catalogue team is generating at volume.
+On spend: plans run from a $0 Free plan (800 credits) through Creator at $49 with three concurrent jobs, and Pro at $175 with commercial use for audiences up to 100,000 and six concurrent jobs; Enterprise is quoted for unlimited commercial use and ten concurrent jobs. Every generation action shows its exact credit cost before you commit, and the render queue displays predicted spend — which is how you keep a per-SKU cost target. Three-stage content moderation scans prompts, scripts, and finished outputs, which matters when a catalogue team is generating at volume.
 
 **When something simpler is right:** if you want your five product photos in a preset motion template with music, a slideshow app is faster and cheaper. ACT 3 AI is the right choice when you want scripted, directed, branded video, produced at catalogue scale, from one pipeline.
 
@@ -113,7 +113,7 @@ Use the style-preset system with uploaded style images as a visual reference, an
 
 **Can I use the videos in paid advertising?**
 
-Commercial use is included from the Business plan on ACT 3 AI, and the Organization — your workspace — legally owns the projects and assets created within it. Confirm specifics against the Terms of Service for your account.
+Commercial use starts at the Pro plan on ACT 3 AI, for audiences up to 100,000, and the Organization — your workspace — legally owns the projects and assets created within it. Confirm specifics against the Terms of Service for your account.
 
 **How do I control costs across a catalogue?**
 
@@ -123,5 +123,5 @@ Generate at draft quality while iterating and finish at high quality only on app
 
 ## Start with one SKU
 
-Take a single product, paste its copy in, and produce the ad before you commit to anything. Start free on ACT 3 AI, then step up to Business when you are ready to run the catalogue with commercial rights and six concurrent jobs.
+Take a single product, paste its copy in, and produce the ad before you commit to anything. Start free on ACT 3 AI, then step up to Pro when you are ready to run the catalogue with commercial use and six concurrent jobs.
 

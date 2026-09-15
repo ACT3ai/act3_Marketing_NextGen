@@ -5,7 +5,7 @@ keywords: ["best ai video generator for marketing", "AI filmmaking", "AI video g
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_generators_compared"
 article_target_query: "best ai video generator for marketing"
@@ -115,12 +115,11 @@ Publicly positioned around AI storyboarding and pre-visualization. Genuinely use
 ACT 3 AI is a SaaS subscription with metered credits — consumed by script generation, video shots, 3D set rendering, and TTS — with monthly allocations and a rollover bank for unused credits.
 
 | Plan | Price | Monthly credits | Notable |
-| --- | --- | --- | --- |
-| Free | $0 | 800 | Watermarked, personal use |
-| Community | $8 | 8,000 | No watermark |
-| Standard | $35 | 33,000 | 3 concurrent jobs |
-| Business | $175 | 180,000 | Commercial use, 6 concurrent jobs |
-| Enterprise | Contact | High volume | 4K, 10+ concurrent jobs, priority support |
+|---|---|---|---|
+| Free | $0 | 800 | Try it out |
+| Creator | $49 | 24,500 | Personal use, 3 concurrent jobs |
+| Pro | $175 | 87,500 | Commercial use up to 100k audience, 6 concurrent jobs |
+| Enterprise | Contact | High volume | Unlimited commercial use, 10 concurrent jobs |
 
 For a marketing team the practical gates are commercial-use rights and job concurrency — running six renders at once is what makes a weekly cadence viable.
 
@@ -136,7 +135,7 @@ Partially, and only if the tool has structure for it. ACT 3 AI holds character a
 
 **Do we get commercial rights to the output?**
 
-In ACT 3 AI, commercial use comes with the Business tier and above, and the Organization legally owns the projects and generated assets.
+In ACT 3 AI, commercial use starts at Pro for audiences up to 100,000 (Enterprise has no limit), and the Organization legally owns the projects and generated assets.
 
 **How do we control spend?**
 

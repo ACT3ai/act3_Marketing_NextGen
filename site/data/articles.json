@@ -87,8 +87,8 @@
     "searchIntent": "Informational",
     "contentType": "How_To",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1527,
+    "updated": "2026-09-15",
+    "words": 1537,
     "faq": [
       {
         "q": "How long does a 30-second ad actually take?",
@@ -108,11 +108,11 @@
       },
       {
         "q": "What does it cost?",
-        "a": "ACT 3 AI is a subscription with metered credits; plans start free and run through Community ($8), Standard ($35), Business ($175), and Enterprise. Every generate action shows its credit cost before you click, and the render queue shows predicted spend so a team can approve or postpone jobs."
+        "a": "ACT 3 AI is a subscription with metered credits. Plans start with Free ($0), then Creator ($49/month), Pro ($175/month) and Enterprise, with larger Editions from $395/month. Every generate action shows its credit cost before you click, and the render queue shows predicted spend so a team can approve or postpone jobs."
       },
       {
         "q": "Can I use the output commercially?",
-        "a": "Commercial-use rights are tied to plan tier — the Business tier includes commercial use. Check your plan before shipping paid media."
+        "a": "Commercial use depends on your plan: Pro ($175/month) includes it for audiences up to 100,000, and Enterprise covers unlimited commercial use. Check your plan before shipping paid media."
       }
     ]
   },
@@ -126,12 +126,12 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1455,
+    "updated": "2026-09-15",
+    "words": 1367,
     "faq": [
       {
         "q": "What is the cheapest way to try ACT 3 AI?",
-        "a": "The Free plan at $0 with 800 monthly credits. Output is watermarked and it's for personal use, but it's enough to run a real scene and judge quality before paying."
+        "a": "The Free plan: $0 with 800 monthly credits. It's enough to run a real scene and judge quality before paying."
       },
       {
         "q": "How much does an AI video actually cost to generate?",
@@ -139,15 +139,15 @@
       },
       {
         "q": "Do I get commercial rights on the cheap plans?",
-        "a": "Commercial use is a Business-tier ($175/mo) feature. If you're running ads or delivering client work, budget for that tier rather than assuming rights carry down."
+        "a": "No. Creator ($49/month) is for personal use. Commercial use starts at Pro ($175/month) for audiences up to 100,000, and Enterprise covers unlimited commercial use. If you're running ads or delivering client work, budget for Pro or above."
       },
       {
         "q": "What happens to credits I don't use?",
-        "a": "They move into a Rollover Bank at month end, up to your plan's cap (1,000 on Community, 100,000 on Standard, 500,000 on Business). Current-month credits are used first, then the bank. Credits above the cap are forfeited."
+        "a": "They move into a rollover bank, up to your plan's cap: 61,250 credits on Creator and 218,750 on Pro. Credits above the cap are forfeited."
       },
       {
-        "q": "Is there a catch with the Free and Community tiers?",
-        "a": "Two documented ones: they authenticate with LinkedIn, and they're positioned as trial/hobbyist tiers — after six months of active use an upgrade to Standard or higher is required. Lower tiers also delete dormant assets after four months."
+        "q": "Is there a catch with the Free plan?",
+        "a": "Free is for trying the product: 800 credits a month and no rollover. For regular publishing, Creator at $49/month is the first paid plan, and Pro at $175/month adds commercial use."
       },
       {
         "q": "Can a non-technical person on my team actually run this?",
@@ -165,12 +165,12 @@
     "searchIntent": "Transactional",
     "contentType": "Guide",
     "keyValue": "General",
-    "updated": "2026-07-21",
-    "words": 1717,
+    "updated": "2026-09-15",
+    "words": 1718,
     "faq": [
       {
         "q": "How much does AI video production cost compared to an agency?",
-        "a": "Software cost is a small fixed subscription plus metered credits per video; agency cost is a fixed retainer plus change orders. Published ACT 3 AI tiers run $0–$175/month, with studio-scale plans from $395/month. The comparison only means something once you add your internal hours to both sides."
+        "a": "Software cost is a small fixed subscription plus metered credits per video; agency cost is a fixed retainer plus change orders. Published ACT 3 AI plans run $0–$175/month, with larger Editions from $395/month. The comparison only means something once you add your internal hours to both sides."
       },
       {
         "q": "At what volume does in-house AI production become cheaper?",
@@ -190,7 +190,7 @@
       },
       {
         "q": "Who owns the videos we make?",
-        "a": "The Organization — your workspace — legally owns the projects, content, and generated assets, per the Terms of Service. Commercial-use rights come with the Business tier and above."
+        "a": "The Organization — your workspace — legally owns the projects, content, and generated assets, per the Terms of Service. Commercial use starts at Pro for audiences up to 100,000, and Enterprise covers unlimited commercial use."
       },
       {
         "q": "How fast is a video, realistically?",
@@ -200,7 +200,7 @@
   },
   {
     "slug": "ai_animated_episodes",
-    "title": "AI Animated Series Generator: Full Episodes, Consistent Characters",
+    "title": "AI Animated Series Generator: Full, Consistent Episodes",
     "description": "An AI animated series generator is only useful if it can do two things that clip tools cannot — hold a full episode as one structured project, and keep...",
     "targetQuery": "ai animated series generator full episodes",
     "persona": "Animator",
@@ -208,7 +208,7 @@
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1322,
     "faq": [
       {
@@ -286,8 +286,8 @@
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1456,
+    "updated": "2026-09-15",
+    "words": 1466,
     "faq": [
       {
         "q": "Can I lock brand colors, logo, and typography?",
@@ -303,7 +303,7 @@
       },
       {
         "q": "Who owns the video we make?",
-        "a": "The Organization legally owns all projects, created content, and generated assets, as stated in the Terms of Service. Commercial-use rights scale with plan tier — commercial use is included from the Business plan."
+        "a": "The Organization legally owns all projects, created content, and generated assets, as stated in the Terms of Service. Commercial rights depend on your plan: commercial use starts at the Pro plan ($175/month) for audiences up to 100,000, and Enterprise covers unlimited commercial use."
       },
       {
         "q": "Is there a way to control cost before we commit?",
@@ -317,7 +317,7 @@
   },
   {
     "slug": "ai_building_movies",
-    "title": "How Long Can AI Video Really Be? Building 2-Hour Movies in One Project",
+    "title": "How Long Can AI Video Be? Building 2-Hour Movies",
     "description": "Every current generative video model produces short clips — typically a handful of seconds per generation. No model today generates a two-hour movie in...",
     "targetQuery": "how long can ai generate video",
     "persona": "Studio Production",
@@ -325,7 +325,7 @@
     "searchIntent": "Informational",
     "contentType": "Guide",
     "keyValue": "FullLength_Preview",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1390,
     "faq": [
       {
@@ -395,7 +395,7 @@
   },
   {
     "slug": "ai_built_editor",
-    "title": "AI Production With a Built-In Editor and Full-Length Timeline",
+    "title": "AI Video Editor With a Built-In Full-Length Timeline",
     "description": "An AI video tool with a built-in timeline lets you generate, assemble, and watch your production in one place — no exporting a folder of clips to an NLE...",
     "targetQuery": "ai video editor built in timeline",
     "persona": "Studio Production",
@@ -403,7 +403,7 @@
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "FullLength_Preview",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1384,
     "faq": [
       {
@@ -477,7 +477,7 @@
   },
   {
     "slug": "ai_changes_everything",
-    "title": "Full-Movie AI vs Short-Clip Generators: Why Runtime Changes Everything",
+    "title": "Full-Movie AI vs Short-Clip Generators: Why Runtime Wins",
     "description": "The difference between an AI movie generator and a short-clip generator is not output quality — it is whether the system manages runtime.",
     "targetQuery": "ai movie generator vs short clip tools",
     "persona": "Studio Production",
@@ -485,7 +485,7 @@
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "Movie_In_3_Hours",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1404,
     "faq": [
       {
@@ -516,7 +516,7 @@
   },
   {
     "slug": "ai_cinematography_lens",
-    "title": "AI Video With Real Cinematography: Camera, Lens, and Lighting",
+    "title": "AI Video With Real Cinematography Control",
     "description": "\"real cinematography control\" in AI video means the tool exposes the same decisions a director and DP make on set — shot type, camera position and height...",
     "targetQuery": "ai video with real cinematography control",
     "persona": "Indie Filmmaker",
@@ -524,7 +524,7 @@
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "General",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1494,
     "faq": [
       {
@@ -567,8 +567,8 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
-    "words": 1444,
+    "updated": "2026-09-15",
+    "words": 1443,
     "faq": [
       {
         "q": "Can multiple people work on the same production?",
@@ -576,7 +576,7 @@
       },
       {
         "q": "How do we keep client projects separate?",
-        "a": "Each Organization is an isolated workspace owning its own projects, members, credit pool, and payment method, and a user can belong to several. Multi-tenant security with optional SAML SSO and invitation-only project access is available at the enterprise level."
+        "a": "Each Organization is an isolated workspace owning its own projects, members, credit pool, and payment method, and a user can belong to several. Multi-tenant security, optional SAML SSO and invitation-only project access are part of the platform."
       },
       {
         "q": "Who owns the work we produce for a client?",
@@ -584,7 +584,7 @@
       },
       {
         "q": "How many client jobs can we run at once?",
-        "a": "Concurrency scales by plan: three concurrent jobs on Standard, six on Business, and 10+ on Enterprise. This is usually the deciding factor for an agency rather than credit volume."
+        "a": "Concurrency scales by plan: three concurrent jobs on Creator, six on Pro, and ten on Enterprise. This is usually the deciding factor for an agency rather than credit volume."
       },
       {
         "q": "How do we stop creatives from burning the budget?",
@@ -596,13 +596,13 @@
       },
       {
         "q": "Is commercial use included?",
-        "a": "Commercial-use rights are included from the Business plan. Confirm the specifics for your engagement against the Terms of Service."
+        "a": "It starts at the Pro plan, for audiences up to 100,000, and Enterprise covers unlimited commercial use. Confirm the specifics for your engagement against the Terms of Service."
       }
     ]
   },
   {
     "slug": "ai_clip_pipeline",
-    "title": "ACT 3 AI vs Runway: Clip Generator or Full Production Pipeline?",
+    "title": "ACT 3 AI vs Runway: Clips or Full Production Pipeline?",
     "description": "These two tools sit in different categories, and that is the whole comparison. Runway is a prompt-to-video generator: you describe a shot, it renders a...",
     "targetQuery": "act3 ai vs runway",
     "persona": "Studio Production",
@@ -610,8 +610,8 @@
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "General",
-    "updated": "2026-07-21",
-    "words": 1533,
+    "updated": "2026-09-15",
+    "words": 1532,
     "faq": [
       {
         "q": "Is ACT 3 AI a Runway competitor?",
@@ -635,7 +635,7 @@
       },
       {
         "q": "What about ownership and rights?",
-        "a": "In ACT 3 AI, the Organization legally owns the projects and generated assets, stated in the Terms of Service, with ownership transfer requiring confirmation from both parties. Commercial-use rights come with the Business tier and above."
+        "a": "In ACT 3 AI, the Organization legally owns the projects and generated assets, stated in the Terms of Service, with ownership transfer requiring confirmation from both parties. Commercial use starts at Pro for audiences up to 100,000, and Enterprise covers unlimited commercial use."
       }
     ]
   },
@@ -649,8 +649,8 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1356,
+    "updated": "2026-09-15",
+    "words": 1357,
     "faq": [
       {
         "q": "What is the best AI commercial generator for agencies?",
@@ -670,7 +670,7 @@
       },
       {
         "q": "Can I control cost before committing?",
-        "a": "Yes. Every generate button displays its exact credit cost up front, quality tiers are priced separately, and the render queue shows predicted spend so it can be approved or deferred. Plans run from a free tier through Community, Standard and Business to Enterprise."
+        "a": "Yes. Every generate button displays its exact credit cost up front, quality tiers are priced separately, and the render queue shows predicted spend so it can be approved or deferred. Plans run from a free plan through Creator ($49) and Pro ($175) to Enterprise."
       },
       {
         "q": "Who owns the finished commercial?",
@@ -680,7 +680,7 @@
   },
   {
     "slug": "ai_commercial_breakdown",
-    "title": "AI Commercial Cost vs a Traditional Shoot: The Full Breakdown",
+    "title": "AI Commercial Cost vs a Traditional Shoot",
     "description": "A traditional commercial shoot spends most of its budget on things that never appear on screen — crew day rates, location and permits, equipment rental...",
     "targetQuery": "cost of ai commercial vs traditional shoot",
     "persona": "Agency Commercials",
@@ -688,8 +688,8 @@
     "searchIntent": "Commercial",
     "contentType": "Guide",
     "keyValue": "General",
-    "updated": "2026-07-21",
-    "words": 1455,
+    "updated": "2026-09-15",
+    "words": 1464,
     "faq": [
       {
         "q": "Is an AI commercial always cheaper than a traditional shoot?",
@@ -709,7 +709,7 @@
       },
       {
         "q": "Can we hold commercial rights to AI-generated work?",
-        "a": "On ACT 3 AI, the Organization — your agency workspace — legally owns the projects and generated assets created within it, and commercial use is included from the Business tier. Confirm the specifics against the Terms of Service for your engagement."
+        "a": "On ACT 3 AI, the Organization — your agency workspace — legally owns the projects and generated assets created within it, and commercial use starts at the Pro plan for audiences up to 100,000. Confirm the specifics against the Terms of Service for your engagement."
       },
       {
         "q": "How many people does an AI commercial take?",
@@ -770,8 +770,8 @@
     "searchIntent": "Informational",
     "contentType": "Glossary",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1441,
+    "updated": "2026-09-15",
+    "words": 1448,
     "faq": [
       {
         "q": "What is the difference between script-to-video AI and text-to-video AI?",
@@ -791,11 +791,11 @@
       },
       {
         "q": "How much does script-to-video AI cost?",
-        "a": "ACT 3 AI runs on a metered credit model: a free tier, plans from $8/month, and higher tiers for studio and enterprise use, with the exact credit cost shown before each generation and a render queue that shows predicted spend."
+        "a": "ACT 3 AI runs on a metered credit model: a free plan, paid plans from $49/month, and larger Editions and Enterprise for studio and enterprise use, with the exact credit cost shown before each generation and a render queue that shows predicted spend."
       },
       {
         "q": "Can I use the output commercially?",
-        "a": "On ACT 3 AI, commercial-use rights come with the Business tier and above, and your Organization legally owns the projects and generated assets created in it under the Terms of Service."
+        "a": "On ACT 3 AI, commercial use starts at the Pro plan ($175/month) for audiences up to 100,000, and your Organization legally owns the projects and generated assets created in it under the Terms of Service."
       },
       {
         "q": "What if the automated result is not what I wanted?",
@@ -813,8 +813,8 @@
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "FullLength_Preview",
-    "updated": "2026-07-21",
-    "words": 1522,
+    "updated": "2026-09-15",
+    "words": 1524,
     "faq": [
       {
         "q": "Can AI make a full-length documentary, or only short clips?",
@@ -838,7 +838,7 @@
       },
       {
         "q": "Who owns the finished documentary?",
-        "a": "Your Organization legally owns all projects, content, and generated assets. Commercial-use rights come with the Business plan and above."
+        "a": "Your Organization legally owns all projects, content, and generated assets. Commercial use starts at the Pro plan for audiences up to 100,000."
       }
     ]
   },
@@ -852,8 +852,8 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1448,
+    "updated": "2026-09-15",
+    "words": 1454,
     "faq": [
       {
         "q": "Can AI generate a video of my actual product?",
@@ -873,7 +873,7 @@
       },
       {
         "q": "Can I use the videos in paid advertising?",
-        "a": "Commercial use is included from the Business plan on ACT 3 AI, and the Organization — your workspace — legally owns the projects and assets created within it. Confirm specifics against the Terms of Service for your account."
+        "a": "Commercial use starts at the Pro plan on ACT 3 AI, for audiences up to 100,000, and the Organization — your workspace — legally owns the projects and assets created within it. Confirm specifics against the Terms of Service for your account."
       },
       {
         "q": "How do I control costs across a catalogue?",
@@ -883,7 +883,7 @@
   },
   {
     "slug": "ai_enterprise_ready",
-    "title": "Is AI Film Production Enterprise-Ready? Teams, IP, and Runtime",
+    "title": "Is AI Film Production Enterprise-Ready? Teams and IP",
     "description": "For most enterprise video work, yes — with conditions. AI film production is enterprise-ready where the requirement is structured, repeatable, long-form...",
     "targetQuery": "is ai film production ready for enterprise",
     "persona": "Enterprise",
@@ -891,8 +891,8 @@
     "searchIntent": "Informational",
     "contentType": "Guide",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
-    "words": 1790,
+    "updated": "2026-09-15",
+    "words": 1795,
     "faq": [
       {
         "q": "Is AI film production secure enough for enterprise use?",
@@ -922,7 +922,7 @@
   },
   {
     "slug": "ai_estate_listings",
-    "title": "AI Video Generator for Real Estate: Listings to Cinematic Tours",
+    "title": "AI Video Generator for Real Estate: Listings to Tours",
     "description": "An AI video generator lets a real estate agent or brokerage turn listing copy and property photography into branded, narrated video — without a...",
     "targetQuery": "ai video generator for real estate",
     "persona": "Small Business",
@@ -930,8 +930,8 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1396,
+    "updated": "2026-09-15",
+    "words": 1395,
     "faq": [
       {
         "q": "Can AI make a video tour of a real property?",
@@ -1000,7 +1000,7 @@
   },
   {
     "slug": "ai_films_second",
-    "title": "Best AI Tool for Long-Form Video: Full Films, Not 8-Second Clips",
+    "title": "Best AI Tool for Long-Form Video: Films, Not Clips",
     "description": "The best AI tool for long-form video is whichever one lets you watch the whole thing. That sounds glib, but it is the actual differentiator.",
     "targetQuery": "best ai tool for long form video",
     "persona": "Indie Filmmaker",
@@ -1008,7 +1008,7 @@
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "FullLength_Preview",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1408,
     "faq": [
       {
@@ -1047,8 +1047,8 @@
     "searchIntent": "Commercial",
     "contentType": "Guide",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
-    "words": 1484,
+    "updated": "2026-09-15",
+    "words": 1488,
     "faq": [
       {
         "q": "Can I copyright a movie made with AI video tools?",
@@ -1060,7 +1060,7 @@
       },
       {
         "q": "Can I use the output commercially?",
-        "a": "Commercial-use rights are a plan-tier feature; commercial use is included from the Business plan, while the Free tier is personal use and watermarked. Verify your tier's rights before you release."
+        "a": "It depends on your plan: Pro includes commercial use for audiences up to 100,000, Enterprise without that limit, and Creator is for personal use. Verify your plan's rights before you release."
       },
       {
         "q": "Are my sets and assets visible to other users?",
@@ -1086,8 +1086,8 @@
     "searchIntent": "Commercial",
     "contentType": "Listicle",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1503,
+    "updated": "2026-09-15",
+    "words": 1496,
     "faq": [
       {
         "q": "What is the best AI video generator for marketing teams?",
@@ -1099,7 +1099,7 @@
       },
       {
         "q": "Do we get commercial rights to the output?",
-        "a": "In ACT 3 AI, commercial use comes with the Business tier and above, and the Organization legally owns the projects and generated assets."
+        "a": "In ACT 3 AI, commercial use starts at Pro for audiences up to 100,000 (Enterprise has no limit), and the Organization legally owns the projects and generated assets."
       },
       {
         "q": "How do we control spend?",
@@ -1117,7 +1117,7 @@
   },
   {
     "slug": "ai_generators_ranked",
-    "title": "10 Best AI Video Generators for Filmmakers (Full-Length Ranked)",
+    "title": "10 Best AI Video Generators for Filmmakers, Ranked",
     "description": "Most \"best AI video generator\" lists rank tools on how good a four-second clip looks. That is the wrong test for a filmmaker.",
     "targetQuery": "best ai video generators for filmmakers",
     "persona": "Indie Filmmaker",
@@ -1125,7 +1125,7 @@
     "searchIntent": "Commercial",
     "contentType": "Listicle",
     "keyValue": "FullLength_Preview",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1565,
     "faq": [
       {
@@ -1164,8 +1164,8 @@
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "General",
-    "updated": "2026-07-21",
-    "words": 1478,
+    "updated": "2026-09-15",
+    "words": 1477,
     "faq": [
       {
         "q": "Is ACT 3 AI a replacement for Veo 3?",
@@ -1189,7 +1189,7 @@
       },
       {
         "q": "Who owns the output?",
-        "a": "In ACT 3 AI, the Organization — your workspace — legally owns projects, content, and generated assets, with versioning and a change history. Commercial-use rights come with the Business tier and above."
+        "a": "In ACT 3 AI, the Organization — your workspace — legally owns projects, content, and generated assets, with versioning and a change history. Commercial use starts at Pro for audiences up to 100,000, and Enterprise covers unlimited commercial use."
       }
     ]
   },
@@ -1281,7 +1281,7 @@
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "General",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1406,
     "faq": [
       {
@@ -1302,7 +1302,7 @@
       },
       {
         "q": "Can I use the output commercially?",
-        "a": "Commercial-use rights come with the Business plan and above. The Free tier is personal use and watermarked."
+        "a": "Commercial use starts at the Pro plan ($175/month) for audiences up to 100,000. Creator is for personal use."
       },
       {
         "q": "Will content moderation block horror?",
@@ -1320,7 +1320,7 @@
     "searchIntent": "Informational",
     "contentType": "How_To",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1546,
     "faq": [
       {
@@ -1345,7 +1345,7 @@
       },
       {
         "q": "What does it cost?",
-        "a": "ACT 3 AI is a metered subscription: a free tier to start, paid plans from $8/month, and credits consumed per generation with the exact credit cost shown before you commit. A render queue shows predicted spend so you can approve or postpone a job."
+        "a": "ACT 3 AI is a metered subscription: a free plan to start, paid plans from $49/month, and credits consumed per generation with the exact credit cost shown before you commit. A render queue shows predicted spend so you can approve or postpone a job."
       },
       {
         "q": "Can I get help actually finishing it?",
@@ -1355,7 +1355,7 @@
   },
   {
     "slug": "ai_invideo_template",
-    "title": "ACT 3 AI vs InVideo: Template Editor vs Generative Filmmaking",
+    "title": "ACT 3 AI vs InVideo: Templates or Real Filmmaking",
     "description": "InVideo is a template-and-stock video editor with AI assistance — you start from a layout, swap in stock footage and your copy, and publish quickly.",
     "targetQuery": "act3 ai vs invideo",
     "persona": "Small Business",
@@ -1363,8 +1363,8 @@
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1236,
+    "updated": "2026-09-15",
+    "words": 1232,
     "faq": [
       {
         "q": "Is ACT 3 AI harder to learn than a template editor?",
@@ -1384,7 +1384,7 @@
       },
       {
         "q": "What does it cost to try?",
-        "a": "There is a free tier (watermarked, personal use), with paid plans from $8/month. Credit cost is displayed before every generation so spend is predictable."
+        "a": "There is a free plan, with paid plans from $49/month. Credit cost is displayed before every generation so spend is predictable."
       },
       {
         "q": "Can more than one person work on a project?",
@@ -1394,7 +1394,7 @@
   },
   {
     "slug": "ai_kling_photoreal",
-    "title": "ACT 3 AI vs Kling: Photoreal Clips vs Full-Length Storytelling",
+    "title": "ACT 3 AI vs Kling: Clips vs Full-Length Storytelling",
     "description": "Kling is a generative video model — you give it a prompt or an image and it returns a short, often strikingly photoreal clip.",
     "targetQuery": "act3 ai vs kling",
     "persona": "Content Creator",
@@ -1402,7 +1402,7 @@
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "Movie_In_3_Hours",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1252,
     "faq": [
       {
@@ -1441,8 +1441,8 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
-    "words": 1476,
+    "updated": "2026-09-15",
+    "words": 1473,
     "faq": [
       {
         "q": "How do we stop uncontrolled spending across a big team?",
@@ -1450,7 +1450,7 @@
       },
       {
         "q": "Who owns the content our team creates?",
-        "a": "The Organization legally owns all projects, created content, and generated assets per the Terms of Service. Commercial-use rights scale by plan tier, with commercial use included from the Business plan."
+        "a": "The Organization legally owns all projects, created content, and generated assets per the Terms of Service. Commercial rights depend on your plan: commercial use starts at the Pro plan ($175/month) for audiences up to 100,000, and Enterprise covers unlimited commercial use."
       },
       {
         "q": "Can multiple people work on the same production at the same time?",
@@ -1462,7 +1462,7 @@
       },
       {
         "q": "What are the enterprise-tier capabilities?",
-        "a": "Enterprise covers high-volume credits, 4K video output, 10+ concurrent jobs, priority support, and private 3D sets, with custom pricing. Enterprise/API licensing is a committed-license arrangement rather than a self-serve plan."
+        "a": "Enterprise is priced on request and covers high-volume credits, unlimited storage, unlimited commercial use and ten concurrent jobs."
       },
       {
         "q": "Can we separate brands, divisions, or clients?",
@@ -1523,8 +1523,8 @@
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "General",
-    "updated": "2026-07-21",
-    "words": 1335,
+    "updated": "2026-09-15",
+    "words": 1337,
     "faq": [
       {
         "q": "Does ACT 3 generate the music too?",
@@ -1562,8 +1562,8 @@
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "General",
-    "updated": "2026-07-21",
-    "words": 1505,
+    "updated": "2026-09-15",
+    "words": 1504,
     "faq": [
       {
         "q": "Is ACT 3 AI a replacement for Pika?",
@@ -1587,7 +1587,7 @@
       },
       {
         "q": "Is there a free way to compare them myself?",
-        "a": "Yes — ACT 3 AI's Free plan is $0 with 800 monthly credits and watermarked output. Run one scene through it and compare the experience against generating the same scene as individual clips."
+        "a": "Yes — ACT 3 AI's Free plan is $0 with 800 monthly credits. Run one scene through it and compare the experience against generating the same scene as individual clips."
       }
     ]
   },
@@ -1601,8 +1601,8 @@
     "searchIntent": "Informational",
     "contentType": "Guide",
     "keyValue": "General",
-    "updated": "2026-07-21",
-    "words": 1585,
+    "updated": "2026-09-15",
+    "words": 1589,
     "faq": [
       {
         "q": "Do I need to know filmmaking to do AI filmmaking?",
@@ -1610,11 +1610,11 @@
       },
       {
         "q": "How much does AI filmmaking cost?",
-        "a": "Far less than traditional production. ACT 3 AI is a metered subscription with a free tier, plans starting at $8/month, higher tiers for studio use, and credits consumed per generation with the exact cost shown before you commit."
+        "a": "Far less than traditional production. ACT 3 AI is a metered subscription with a free plan, paid plans starting at $49/month, larger Editions for studio use, and credits consumed per generation with the exact cost shown before you commit."
       },
       {
         "q": "Can I sell or publish what I make?",
-        "a": "Commercial-use rights come with the Business tier and above on ACT 3 AI, and your Organization legally owns the projects, content and generated assets created in it under the Terms of Service."
+        "a": "Commercial use starts at the Pro plan on ACT 3 AI, for audiences up to 100,000, and your Organization legally owns the projects, content and generated assets created in it under the Terms of Service."
       },
       {
         "q": "How long does it take to make something?",
@@ -1640,12 +1640,12 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
-    "words": 1394,
+    "updated": "2026-09-15",
+    "words": 1364,
     "faq": [
       {
         "q": "What does enterprise AI video pricing typically include?",
-        "a": "A committed monthly license, a high-volume credit allowance with unlimited rollover, 4K output, 10+ concurrent jobs, private 3D sets, priority support, and multi-tenant security with optional SSO."
+        "a": "A committed monthly license and a high-volume credit allowance. On ACT 3 AI, Enterprise adds unlimited storage, unlimited commercial use and ten concurrent jobs."
       },
       {
         "q": "Is pricing per seat or per workspace?",
@@ -1683,8 +1683,8 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
-    "words": 1370,
+    "updated": "2026-09-15",
+    "words": 1318,
     "faq": [
       {
         "q": "Is there a per-minute or per-movie price?",
@@ -1696,11 +1696,11 @@
       },
       {
         "q": "Which plan do we need for commercial work?",
-        "a": "Business ($175/month) and above include commercial use. Free is personal use and watermarked."
+        "a": "Pro ($175/month) includes commercial use for audiences up to 100,000, and Enterprise covers unlimited commercial use. Creator is for personal use."
       },
       {
         "q": "What does Enterprise add?",
-        "a": "Custom high-volume credits, unlimited rollover, 4K video, 10+ concurrent jobs, private 3D sets, priority support, and multi-tenant security with optional SAML SSO."
+        "a": "Custom high-volume credits, unlimited storage, unlimited commercial use and ten concurrent jobs."
       },
       {
         "q": "Who owns the footage and the project?",
@@ -1718,7 +1718,7 @@
   },
   {
     "slug": "ai_professionals_productions",
-    "title": "Best AI Video Generator for Professionals and Full Productions",
+    "title": "Best AI Video Generator for Professionals",
     "description": "Professionals need two different things from AI video, and no single product is best at both. For a shot — a striking few seconds with high fidelity — a...",
     "targetQuery": "best ai video generator for professionals",
     "persona": "Studio Production",
@@ -1726,7 +1726,7 @@
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1317,
     "faq": [
       {
@@ -1765,8 +1765,8 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1389,
+    "updated": "2026-09-15",
+    "words": 1392,
     "faq": [
       {
         "q": "Can AI create a video tour from my listing photos?",
@@ -1778,7 +1778,7 @@
       },
       {
         "q": "How many listings can I do in one session?",
-        "a": "The pipeline steps are automated, so throughput is limited mainly by review time and your plan's concurrent job count — 3 on Standard, 6 on Business."
+        "a": "The pipeline steps are automated, so throughput is limited mainly by review time and your plan's concurrent job count — 3 on Creator, 6 on Pro."
       },
       {
         "q": "Can I keep a consistent brand look across every listing?",
@@ -1790,7 +1790,7 @@
       },
       {
         "q": "Can I use these in paid ads?",
-        "a": "Commercial-use rights start at the Business plan. The free tier is personal use and watermarked."
+        "a": "Commercial use starts at the Pro plan, for audiences up to 100,000. Creator is for personal use."
       },
       {
         "q": "What if a listing changes — price drop, new photos?",
@@ -1808,8 +1808,8 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1523,
+    "updated": "2026-09-15",
+    "words": 1519,
     "faq": [
       {
         "q": "Can AI generate video of my actual restaurant and my actual food?",
@@ -1829,7 +1829,7 @@
       },
       {
         "q": "Is this legal to use in paid ads?",
-        "a": "Commercial-use rights are included from the Business plan upward. Free is personal use and watermarked. A three-stage content scanner also checks prompts, scripts, and finished output before download."
+        "a": "Commercial use starts at the Pro plan, for audiences up to 100,000. A three-stage content scanner also checks prompts, scripts, and finished output before download."
       },
       {
         "q": "What if I only have a rough idea, not a script?",
@@ -1843,7 +1843,7 @@
   },
   {
     "slug": "ai_reviews_ships",
-    "title": "AI Filmmaking Software Reviews: What Actually Ships Full Videos",
+    "title": "AI Filmmaking Software Reviews: What Actually Ships",
     "description": "Nearly every AI filmmaking software review you will read is a review of clip generation — someone types a prompt, gets eight seconds of footage, and rates...",
     "targetQuery": "ai filmmaking software reviews",
     "persona": "Marketing Team",
@@ -1851,7 +1851,7 @@
     "searchIntent": "Commercial",
     "contentType": "Guide",
     "keyValue": "FullLength_Preview",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1461,
     "faq": [
       {
@@ -1925,7 +1925,7 @@
   },
   {
     "slug": "ai_running_many",
-    "title": "Best AI Video Tools for Agencies Running Many Client Projects",
+    "title": "Best AI Video Tools for Agencies With Many Clients",
     "description": "An agency's problem with AI video is never one video. It is fourteen of them, for six clients, in parallel, with different brand rules, different...",
     "targetQuery": "best ai video tools for agencies",
     "persona": "Agency Commercials",
@@ -1933,8 +1933,8 @@
     "searchIntent": "Commercial",
     "contentType": "Listicle",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
-    "words": 1508,
+    "updated": "2026-09-15",
+    "words": 1505,
     "faq": [
       {
         "q": "What is the best AI video tool for an agency running many clients at once?",
@@ -1972,8 +1972,8 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1474,
+    "updated": "2026-09-15",
+    "words": 1468,
     "faq": [
       {
         "q": "Can it generate a demo of our actual product UI?",
@@ -2015,8 +2015,8 @@
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "General",
-    "updated": "2026-07-21",
-    "words": 1425,
+    "updated": "2026-09-15",
+    "words": 1421,
     "faq": [
       {
         "q": "Can an AI sci-fi movie generator keep the same ship or city across a whole film?",
@@ -2046,7 +2046,7 @@
   },
   {
     "slug": "ai_service_only",
-    "title": "AI Production Service vs Software-Only: When to Let a Team Drive",
+    "title": "AI Production Service vs Software-Only: Which to Pick",
     "description": "Buy software-only when you have people who will operate it, a slate that justifies building the skill, and enough runway to absorb a learning curve.",
     "targetQuery": "ai production service vs software only",
     "persona": "Studio Production",
@@ -2054,7 +2054,7 @@
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "Level_2_Team",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1340,
     "faq": [
       {
@@ -2093,8 +2093,8 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
-    "words": 1447,
+    "updated": "2026-09-15",
+    "words": 1444,
     "faq": [
       {
         "q": "Can ACT 3 produce full-length TV episodes, not just clips?",
@@ -2132,8 +2132,8 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1488,
+    "updated": "2026-09-15",
+    "words": 1480,
     "faq": [
       {
         "q": "Is this a replacement for our clip generator?",
@@ -2175,8 +2175,8 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
-    "words": 1627,
+    "updated": "2026-09-15",
+    "words": 1626,
     "faq": [
       {
         "q": "What is the best AI filmmaking software for a full-length movie?",
@@ -2196,7 +2196,7 @@
       },
       {
         "q": "How much does AI filmmaking software cost?",
-        "a": "ACT 3 AI is a monthly SaaS subscription with metered credit usage, from a free tier through Community, Standard and Business plans up to Enterprise. Costs scale with how much video you actually generate, and every credit-consuming action shows its price before you run it."
+        "a": "ACT 3 AI is a monthly SaaS subscription with metered credit usage, from a free plan through Creator and Pro, larger Editions, and Enterprise. Costs scale with how much video you actually generate, and every credit-consuming action shows its price before you run it."
       },
       {
         "q": "Does it work with Adobe Premiere?",
@@ -2214,8 +2214,8 @@
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
-    "words": 1773,
+    "updated": "2026-09-15",
+    "words": 1739,
     "faq": [
       {
         "q": "Does ACT 3 AI support single sign-on?",
@@ -2239,7 +2239,7 @@
       },
       {
         "q": "What if IT wants us off the free tier for compliance reasons?",
-        "a": "That is the normal outcome. LinkedIn authentication applies to Free and Community tiers; higher tiers are exempt, and Enterprise adds 4K output, private 3D sets, priority support, and custom terms. Enterprise pricing is quoted rather than listed."
+        "a": "That is the normal outcome. Paid plans start at Creator ($49/month), and Enterprise adds unlimited commercial use, unlimited storage, ten concurrent jobs and custom terms. Enterprise pricing is quoted rather than listed."
       }
     ]
   },
@@ -2253,8 +2253,8 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1358,
+    "updated": "2026-09-15",
+    "words": 1320,
     "faq": [
       {
         "q": "Can a one-person marketing team really ship weekly video?",
@@ -2288,7 +2288,7 @@
   },
   {
     "slug": "ai_storing_protecting",
-    "title": "Who Owns Your AI Film? Storing and Protecting Full-Production IP",
+    "title": "Who Owns Your AI Film? Keeping Full Production IP",
     "description": "If you are evaluating an AI video tool and ownership matters, the question to ask is narrower than \"do I own the output?\" Most platforms will tell you the...",
     "targetQuery": "ai video tool that keeps ip ownership",
     "persona": "Studio Production",
@@ -2296,8 +2296,8 @@
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
-    "words": 1417,
+    "updated": "2026-09-15",
+    "words": 1393,
     "faq": [
       {
         "q": "Do I own videos generated by AI on ACT 3 AI?",
@@ -2309,7 +2309,7 @@
       },
       {
         "q": "Can I keep my sets and characters private?",
-        "a": "Yes. Sets can be kept private within your organization instead of published to the community feed, and Enterprise plans include private 3D sets. Project discovery in the community feed is opt-in."
+        "a": "Yes. Sets can be kept private within your organization instead of published to the community feed. Project discovery in the community feed is opt-in."
       },
       {
         "q": "Can I move a finished production into Premiere or Resolve?",
@@ -2335,8 +2335,8 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
-    "words": 1505,
+    "updated": "2026-09-15",
+    "words": 1511,
     "faq": [
       {
         "q": "Can AI production software handle a full TV series?",
@@ -2360,7 +2360,7 @@
       },
       {
         "q": "What does it cost at studio scale?",
-        "a": "Business is $175/month with commercial use and six concurrent jobs; studio-tier and Enterprise plans are quoted for higher volume, 4K output, 10+ concurrent jobs, private 3D sets, and priority support. Metered usage is estimated before each job runs."
+        "a": "Pro is $175/month with commercial use for audiences up to 100,000 and six concurrent jobs; larger Editions start at $395/month, and Enterprise is quoted for unlimited commercial use and ten concurrent jobs. Metered usage is estimated before each job runs."
       },
       {
         "q": "Can we get help staffing a production?",
@@ -2456,8 +2456,8 @@
     "searchIntent": "Informational",
     "contentType": "Guide",
     "keyValue": "General",
-    "updated": "2026-07-21",
-    "words": 1651,
+    "updated": "2026-09-15",
+    "words": 1649,
     "faq": [
       {
         "q": "Is AI video actually cheaper than traditional production?",
@@ -2487,7 +2487,7 @@
   },
   {
     "slug": "ai_universities_courses",
-    "title": "AI Video for Universities: Courses, Recruiting, and Explainers",
+    "title": "AI Video for Universities: Courses and Recruiting",
     "description": "Universities need AI video for three distinct jobs — course content (lectures, modules, lab explainers), recruiting and marketing (campus stories, program...",
     "targetQuery": "ai video generator for universities",
     "persona": "Enterprise",
@@ -2495,8 +2495,8 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1546,
+    "updated": "2026-09-15",
+    "words": 1532,
     "faq": [
       {
         "q": "Can we use existing course material as the source?",
@@ -2504,7 +2504,7 @@
       },
       {
         "q": "Does it support SSO and institutional security requirements?",
-        "a": "Multi-tenant security with isolated workspaces, optional SAML SSO, invitation-only project access, and six granular permission levels are part of the platform; SSO and priority support sit at the Enterprise tier."
+        "a": "Multi-tenant security with isolated workspaces, optional SAML SSO, invitation-only project access, and six granular permission levels are part of the platform."
       },
       {
         "q": "Who owns the videos we produce?",
@@ -2690,8 +2690,8 @@
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1314,
+    "updated": "2026-09-15",
+    "words": 1316,
     "faq": [
       {
         "q": "Which aspect ratios does ACT 3 AI export?",
@@ -2703,7 +2703,7 @@
       },
       {
         "q": "What file formats can I get out?",
-        "a": "The import/export bridge supports MP4/MOV, EDL, FDX, PDF, and proprietary project archives. Cloud rendering produces 4K ProRes masters per shot, scene, episode, and season; 4K output is an Enterprise-tier capability."
+        "a": "The import/export bridge supports MP4/MOV, EDL, FDX, PDF, and proprietary project archives. Cloud rendering produces 4K ProRes masters per shot, scene, episode, and season; 4K upscaling is available from the Pro plan."
       },
       {
         "q": "Can I finish in Premiere or DaVinci Resolve?",
@@ -2838,7 +2838,7 @@
   },
   {
     "slug": "brief_spot_ai",
-    "title": "From Client Brief to Finished Spot: AI Commercials for Agencies",
+    "title": "AI Commercials for Agencies: Brief to Finished Spot",
     "description": "AI commercial production works for an agency when the platform automates the whole path from brief to spot — script, shot breakdown, character sheets...",
     "targetQuery": "ai commercial production for agencies",
     "persona": "Agency Commercials",
@@ -2846,7 +2846,7 @@
     "searchIntent": "Commercial",
     "contentType": "Use_Case",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1566,
     "faq": [
       {
@@ -2881,7 +2881,7 @@
   },
   {
     "slug": "busywork_ai_automate",
-    "title": "Cut Video Busywork: Let AI Automate Frames, Prompts, and Sheets",
+    "title": "Make Videos Faster: AI Automates Frames and Prompts",
     "description": "The fastest way to make videos with AI is to automate the setup work — first frames, prompts, and character/wardrobe references — instead of speeding up...",
     "targetQuery": "how to make videos faster with ai automation",
     "persona": "Small Business",
@@ -2889,7 +2889,7 @@
     "searchIntent": "Informational",
     "contentType": "How_To",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1346,
     "faq": [
       {
@@ -2920,7 +2920,7 @@
   },
   {
     "slug": "cheapest_way_still",
-    "title": "The Cheapest Way to Make Cinematic Video That Still Looks Directed",
+    "title": "Cheapest Way to Make Cinematic Video That Looks Directed",
     "description": "The cheapest cinematic video is the one you do not shoot. Location fees, permits, crew days, and gear rental are the expensive part of \"cinematic\" — not...",
     "targetQuery": "cheapest way to make cinematic video",
     "persona": "Content Creator",
@@ -2928,8 +2928,8 @@
     "searchIntent": "Commercial",
     "contentType": "Guide",
     "keyValue": "General",
-    "updated": "2026-07-21",
-    "words": 1426,
+    "updated": "2026-09-15",
+    "words": 1420,
     "faq": [
       {
         "q": "What is genuinely the cheapest way to make cinematic video?",
@@ -2953,7 +2953,7 @@
       },
       {
         "q": "Can I use the output commercially?",
-        "a": "Commercial-use rights come with the Business tier and above. The free tier is personal use and watermarked."
+        "a": "Commercial use starts at the Pro plan, for audiences up to 100,000. Creator is for personal use."
       }
     ]
   },
@@ -2967,8 +2967,8 @@
     "searchIntent": "Commercial",
     "contentType": "Guide",
     "keyValue": "General",
-    "updated": "2026-07-21",
-    "words": 1526,
+    "updated": "2026-09-15",
+    "words": 1532,
     "faq": [
       {
         "q": "What's the single most important criterion?",
@@ -2998,7 +2998,7 @@
   },
   {
     "slug": "collaborate_ai_handoffs",
-    "title": "Collaborate on One AI Production: Roles, Permissions, and Handoffs",
+    "title": "AI Film Production Teams: Roles, Permissions, Handoffs",
     "description": "AI film production team collaboration works when the entire crew operates inside one production project with role-based permissions and clean handoffs...",
     "targetQuery": "ai film production team collaboration",
     "persona": "Studio Production",
@@ -3006,7 +3006,7 @@
     "searchIntent": "Commercial",
     "contentType": "Use_Case",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1421,
     "faq": [
       {
@@ -3076,7 +3076,7 @@
   },
   {
     "slug": "consistency_ai_means",
-    "title": "Character Consistency in AI Video: What It Means and How to Get It",
+    "title": "Character Consistency in AI Video: What It Means",
     "description": "Character consistency in AI video means that the same character looks like the same person in every shot — same face, same hair, same build, same wardrobe...",
     "targetQuery": "what is character consistency ai",
     "persona": "Animator",
@@ -3084,7 +3084,7 @@
     "searchIntent": "Informational",
     "contentType": "Glossary",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1753,
     "faq": [
       {
@@ -3115,7 +3115,7 @@
   },
   {
     "slug": "daily_rebuilds_iterate",
-    "title": "Daily Movie Rebuilds: How Teams Iterate a Whole Film Overnight",
+    "title": "Daily Movie Rebuilds: Iterate a Whole Film Overnight",
     "description": "A daily movie rebuild is a production loop in which the entire film — not a handful of flagged shots — is regenerated every day from the previous day's notes.",
     "targetQuery": "ai for daily movie iteration production",
     "persona": "Enterprise",
@@ -3123,7 +3123,7 @@
     "searchIntent": "Informational",
     "contentType": "Use_Case",
     "keyValue": "Movie_In_3_Hours",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1379,
     "faq": [
       {
@@ -3193,7 +3193,7 @@
   },
   {
     "slug": "delivery_hands_off",
-    "title": "Automated Video Production: From Script to Delivery, Hands-Off",
+    "title": "Automated Video Production: Script to Delivery",
     "description": "Automated video production software turns a written script into finished video without a human hand-building every intermediate step — no manual...",
     "targetQuery": "automated video production software",
     "persona": "Marketing Team",
@@ -3201,8 +3201,8 @@
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1628,
+    "updated": "2026-09-15",
+    "words": 1624,
     "faq": [
       {
         "q": "What is automated video production software?",
@@ -3226,13 +3226,13 @@
       },
       {
         "q": "Does the team own the output?",
-        "a": "The Organization — your workspace — owns the projects, content, and generated assets, with ownership transfer available between members. Commercial-use rights come with the Business tier and above."
+        "a": "The Organization — your workspace — owns the projects, content, and generated assets, with ownership transfer available between members. Commercial use starts at Pro for audiences up to 100,000, and Enterprise covers unlimited commercial use."
       }
     ]
   },
   {
     "slug": "directing_ai_controlling",
-    "title": "Directing AI: Controlling Camera, Lens, and Lighting Per Shot",
+    "title": "Directing AI: Control Camera, Lens and Lighting",
     "description": "There are three levels of camera control in AI video, and knowing which one you are using explains most of your frustration.",
     "targetQuery": "how to control camera angles in ai video",
     "persona": "Indie Filmmaker",
@@ -3240,7 +3240,7 @@
     "searchIntent": "Informational",
     "contentType": "Guide",
     "keyValue": "General",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1606,
     "faq": [
       {
@@ -3349,7 +3349,7 @@
   },
   {
     "slug": "enterprise_ai_owned",
-    "title": "Enterprise AI Film Production: Full Runtime, Teams, and Owned IP",
+    "title": "Enterprise AI Film Production: Teams and Owned IP",
     "description": "Enterprise AI film production software has to clear a bar that consumer AI video tools never face: it must produce full-length deliverables (a 40-minute...",
     "targetQuery": "enterprise ai film production software",
     "persona": "Enterprise",
@@ -3357,8 +3357,8 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
-    "words": 1422,
+    "updated": "2026-09-15",
+    "words": 1407,
     "faq": [
       {
         "q": "Does ACT 3 support enterprise SSO and tenancy isolation?",
@@ -3382,7 +3382,7 @@
       },
       {
         "q": "What does Enterprise pricing include?",
-        "a": "Enterprise is priced on request and includes high-volume credits, 4K video output, 10+ concurrent jobs, private 3D sets, and priority support, alongside unlimited credit rollover."
+        "a": "Enterprise is priced on request and includes high-volume credits, unlimited storage, unlimited commercial use and ten concurrent jobs."
       }
     ]
   },
@@ -3396,7 +3396,7 @@
     "searchIntent": "Informational",
     "contentType": "How_To",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1552,
     "faq": [
       {
@@ -3421,13 +3421,13 @@
       },
       {
         "q": "What does it cost?",
-        "a": "ACT 3 AI is a metered SaaS subscription — a free tier to try it, paid plans starting at $8/month, and credits consumed per generation with the exact cost shown before you commit. Commercial-use rights come with the Business tier."
+        "a": "ACT 3 AI is a metered SaaS subscription — a free plan to try it, paid plans starting at $49/month, and credits consumed per generation with the exact cost shown before you commit. Commercial use starts at the Pro plan."
       }
     ]
   },
   {
     "slug": "finished_ai_step",
-    "title": "How to Turn a Script Into a Finished Video With AI, Step by Step",
+    "title": "How to Turn a Script Into a Video With AI",
     "description": "Turning a script into a finished video with AI is a nine-step pipeline, and the generation step is only one of them.",
     "targetQuery": "how to turn a script into a video with ai",
     "persona": "Indie Filmmaker",
@@ -3435,7 +3435,7 @@
     "searchIntent": "Informational",
     "contentType": "How_To",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1535,
     "faq": [
       {
@@ -3513,8 +3513,8 @@
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "General",
-    "updated": "2026-07-21",
-    "words": 1440,
+    "updated": "2026-09-15",
+    "words": 1441,
     "faq": [
       {
         "q": "What's the main difference between Fliki-style tools and ACT 3 AI?",
@@ -3534,7 +3534,7 @@
       },
       {
         "q": "Can I use it for commercial content?",
-        "a": "Commercial use rights come with the Business tier ($175/month). The Organization legally owns all projects, content, and generated assets per the Terms of Service."
+        "a": "Commercial use starts at the Pro plan ($175/month), for audiences up to 100,000. The Organization legally owns all projects, content, and generated assets per the Terms of Service."
       },
       {
         "q": "Does it export to my existing editor?",
@@ -3544,7 +3544,7 @@
   },
   {
     "slug": "free_paid_ai",
-    "title": "Free vs Paid AI Video: Where Free Tools Stop and Real Work Begins",
+    "title": "Free vs Paid AI Video: Where Free Tools Stop",
     "description": "Free AI video generators are genuinely useful — for testing an idea, learning the medium, and making short clips you do not need to own commercially.",
     "targetQuery": "free vs paid ai video generator",
     "persona": "Content Creator",
@@ -3552,20 +3552,20 @@
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "General",
-    "updated": "2026-07-21",
-    "words": 1369,
+    "updated": "2026-09-15",
+    "words": 1282,
     "faq": [
       {
         "q": "Do free AI video generators watermark everything?",
-        "a": "Free tiers generally watermark output. In ACT 3 AI's tiers, the Free plan is watermarked and personal use; watermark removal begins at the $8 Community plan."
+        "a": "Many free tiers watermark output, so check the plan page of the tool you're using before you publish."
       },
       {
         "q": "Can I use free AI video output commercially?",
-        "a": "Usually not, and you should check the specific terms rather than assume. In ACT 3 AI's published tiers, commercial use is a Business-plan ($175/month) feature. Plan features scale by commercial-use rights, watermark removal, storage, concurrency, and 4K output."
+        "a": "Usually not, and you should check the specific terms rather than assume. In ACT 3 AI's published plans, commercial use starts at Pro ($175/month) for audiences up to 100,000. Plans also differ in storage, concurrency and model access."
       },
       {
-        "q": "What is the cheapest paid tier that removes the watermark?",
-        "a": "Community, at $8/month with 8,000 monthly credits and a 1,000-credit rollover cap."
+        "q": "What is the cheapest paid ACT 3 AI plan?",
+        "a": "Creator, at $49/month with 24,500 monthly credits and a 61,250-credit rollover bank."
       },
       {
         "q": "Do unused credits carry over?",
@@ -3573,11 +3573,11 @@
       },
       {
         "q": "Is there any free way to test a real production workflow?",
-        "a": "Yes — the Free tier exists for exactly that, and the first three \"AI Script & Shots & Scenes\" generations are offered at cost so you can see a full script-to-shot-list run without a large credit outlay."
+        "a": "Yes — the Free plan exists for exactly that: 800 credits a month, enough to see a script turn into a shot list before you pay."
       },
       {
         "q": "How long can I stay on a free plan?",
-        "a": "Free and Community are positioned as trial and hobbyist tiers; after six months of active use an upgrade to Standard ($35/month) or higher is required. Lower tiers also delete dormant assets after four months."
+        "a": "Free plans are meant for trying a product. ACT 3 AI's Free plan gives 800 credits a month with no rollover; for regular work, the first paid plan is Creator at $49/month."
       },
       {
         "q": "When is a free tool genuinely the right answer?",
@@ -3626,7 +3626,7 @@
   },
   {
     "slug": "get_screenplay_produced",
-    "title": "How to Get Your Screenplay Produced Without Building a Studio",
+    "title": "How to Get Your Screenplay Produced With AI",
     "description": "You can now get a finished screenplay produced as watchable video without raising money, attaching talent, or assembling a crew — by moving it through an...",
     "targetQuery": "get my screenplay produced with ai",
     "persona": "Indie Filmmaker",
@@ -3634,7 +3634,7 @@
     "searchIntent": "Informational",
     "contentType": "Use_Case",
     "keyValue": "Level_2_Team",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1434,
     "faq": [
       {
@@ -3673,8 +3673,8 @@
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "Level_2_Team",
-    "updated": "2026-07-21",
-    "words": 1293,
+    "updated": "2026-09-15",
+    "words": 1284,
     "faq": [
       {
         "q": "Can I hire someone to turn my script into a video?",
@@ -3821,7 +3821,7 @@
   },
   {
     "slug": "keeping_continuity_ai",
-    "title": "Keeping Continuity Across a Full AI Film: Scenes, Sets, and Cast",
+    "title": "How to Keep Continuity Across a Full AI Film",
     "description": "Continuity across an AI film is kept by making it data, not diligence. Define each character, wardrobe variant, set and visual style once as a reusable...",
     "targetQuery": "how to keep continuity across ai film",
     "persona": "Studio Production",
@@ -3829,7 +3829,7 @@
     "searchIntent": "Informational",
     "contentType": "Guide",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1508,
     "faq": [
       {
@@ -3907,8 +3907,8 @@
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "General",
-    "updated": "2026-07-21",
-    "words": 1304,
+    "updated": "2026-09-15",
+    "words": 1318,
     "faq": [
       {
         "q": "Is there one tool that includes Veo, Runway, and Flux together?",
@@ -3932,7 +3932,7 @@
       },
       {
         "q": "Can my team share one account?",
-        "a": "Use an Organization: shared projects, shared credit pool, shared payment method, with granular per-member permissions and optional SAML SSO on enterprise deployments."
+        "a": "Use an Organization: shared projects, shared credit pool, shared payment method, with granular per-member permissions and optional SAML SSO."
       },
       {
         "q": "Do I lose control by letting it choose the model?",
@@ -3989,7 +3989,7 @@
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "General",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1291,
     "faq": [
       {
@@ -4014,13 +4014,13 @@
       },
       {
         "q": "What does it cost to try?",
-        "a": "ACT 3 AI is a metered SaaS subscription with a free tier and paid plans from $8/month, with the exact credit cost shown before every generation."
+        "a": "ACT 3 AI is a metered SaaS subscription with a free plan and paid plans from $49/month, with the exact credit cost shown before every generation."
       }
     ]
   },
   {
     "slug": "make_ai_clips",
-    "title": "How to Make a Full-Length AI Movie From a Script, Not Just Clips",
+    "title": "How to Make a Full-Length AI Movie From a Script",
     "description": "To make a full-length AI movie you have to stop thinking in clips and start thinking in structure. A 90-minute feature is not one long generation — it is...",
     "targetQuery": "how to make a full length ai movie",
     "persona": "Indie Filmmaker",
@@ -4028,7 +4028,7 @@
     "searchIntent": "Informational",
     "contentType": "Guide",
     "keyValue": "Movie_In_3_Hours",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1706,
     "faq": [
       {
@@ -4059,7 +4059,7 @@
   },
   {
     "slug": "managed_ai_feedback",
-    "title": "Managed AI Video Production: Your Feedback, Our Team, Your Film",
+    "title": "Managed AI Video Production: Our Team, Your Film",
     "description": "Managed AI video production means a vendor's team operates the AI filmmaking platform on your behalf — you supply the script, the brand rules, and the...",
     "targetQuery": "managed ai video production for brands",
     "persona": "Enterprise",
@@ -4067,7 +4067,7 @@
     "searchIntent": "Transactional",
     "contentType": "Use_Case",
     "keyValue": "Level_2_Team",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1617,
     "faq": [
       {
@@ -4137,7 +4137,7 @@
   },
   {
     "slug": "micro_budget_ai",
-    "title": "Make a Feature on a Micro-Budget: Full-Length AI, Real Numbers",
+    "title": "Make a Movie on a Micro-Budget With AI: Real Numbers",
     "description": "A micro-budget AI feature is possible today, but only if you attack the right constraint. The constraint is not the cost of a shot — generative video is...",
     "targetQuery": "make a movie on a micro budget with ai",
     "persona": "Indie Filmmaker",
@@ -4145,8 +4145,8 @@
     "searchIntent": "Commercial",
     "contentType": "Guide",
     "keyValue": "Movie_In_3_Hours",
-    "updated": "2026-07-21",
-    "words": 1600,
+    "updated": "2026-09-15",
+    "words": 1602,
     "faq": [
       {
         "q": "Can you really make a feature-length film with AI?",
@@ -4176,7 +4176,7 @@
   },
   {
     "slug": "much_ai_minute",
-    "title": "How Much Does AI Video Cost? Real Per-Minute and Per-Project Math",
+    "title": "How Much Does AI Video Cost? Per-Minute Math",
     "description": "AI video is priced in one of three ways — a flat monthly subscription, a per-second or per-clip generation fee, or a credit system where each render draws...",
     "targetQuery": "how much does ai video cost",
     "persona": "Small Business",
@@ -4184,8 +4184,8 @@
     "searchIntent": "Commercial",
     "contentType": "Guide",
     "keyValue": "General",
-    "updated": "2026-07-21",
-    "words": 1522,
+    "updated": "2026-09-15",
+    "words": 1489,
     "faq": [
       {
         "q": "How much does one minute of AI video cost?",
@@ -4201,7 +4201,7 @@
       },
       {
         "q": "Can I try AI video before paying?",
-        "a": "Yes. ACT 3 AI has a Free tier at $0 with 800 monthly credits, intended for personal use with watermarked output. It is enough to learn the pipeline and calibrate your own cost per minute before choosing a plan."
+        "a": "Yes. ACT 3 AI has a Free plan at $0 with 800 monthly credits. It is enough to learn the pipeline and calibrate your own cost per minute before choosing a plan."
       },
       {
         "q": "Do unused credits expire?",
@@ -4254,7 +4254,7 @@
   },
   {
     "slug": "pictory_alternative_slideshows",
-    "title": "Pictory Alternative: Real Script-to-Cinematic, Not Slideshows",
+    "title": "Pictory Alternative: Script to Cinematic, Not Slides",
     "description": "The best Pictory alternative depends on what \"script to video\" means to you. Pictory and tools like it turn a script or article into a captioned montage...",
     "targetQuery": "pictory alternative script to video",
     "persona": "Small Business",
@@ -4262,8 +4262,8 @@
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1421,
+    "updated": "2026-09-15",
+    "words": 1417,
     "faq": [
       {
         "q": "Is ACT 3 AI a direct Pictory replacement?",
@@ -4287,7 +4287,7 @@
       },
       {
         "q": "What's the cheapest way to compare them?",
-        "a": "Run the same script through both. ACT 3 AI's Free plan is $0 with 800 credits and watermarked output — enough to generate a scene and see the difference between authored shots and matched stock."
+        "a": "Run the same script through both. ACT 3 AI's Free plan is $0 with 800 credits — enough to generate a scene and see the difference between authored shots and matched stock."
       }
     ]
   },
@@ -4301,8 +4301,8 @@
     "searchIntent": "Informational",
     "contentType": "Guide",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
-    "words": 1698,
+    "updated": "2026-09-15",
+    "words": 1705,
     "faq": [
       {
         "q": "Can AI really produce a full 22-minute pilot, not just a trailer?",
@@ -4322,7 +4322,7 @@
       },
       {
         "q": "Who owns the pilot I produce?",
-        "a": "Your Organization legally owns all projects, content and generated assets created in it, as stated in the Terms of Service, with ownership transfer available between members. Commercial-use rights come with the Business tier and above."
+        "a": "Your Organization legally owns all projects, content and generated assets created in it, as stated in the Terms of Service, with ownership transfer available between members. Commercial use starts at Pro for audiences up to 100,000, and Enterprise covers unlimited commercial use."
       },
       {
         "q": "What if I have the script but not the capacity to produce it?",
@@ -4336,7 +4336,7 @@
   },
   {
     "slug": "preview_unified_ai",
-    "title": "Preview the Whole Video, Not Clip by Clip: Unified AI Timeline",
+    "title": "Preview the Whole Video, Not Clip by Clip",
     "description": "To preview a whole AI video edit rather than clip by clip, you need a tool that assembles every generated shot onto one continuous timeline at full...",
     "targetQuery": "ai tool to preview whole video edit",
     "persona": "Content Creator",
@@ -4344,7 +4344,7 @@
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "FullLength_Preview",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1376,
     "faq": [
       {
@@ -4422,8 +4422,8 @@
     "searchIntent": "Commercial",
     "contentType": "Use_Case",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1539,
+    "updated": "2026-09-15",
+    "words": 1557,
     "faq": [
       {
         "q": "Is 100 videos a month realistic for a small team?",
@@ -4447,7 +4447,7 @@
       },
       {
         "q": "Do we get commercial-use rights?",
-        "a": "Commercial use is included from the Business tier. Confirm your plan before running paid media."
+        "a": "Commercial use starts at the Pro plan, for audiences up to 100,000, and Enterprise covers unlimited commercial use. Confirm your plan before running paid media."
       },
       {
         "q": "Where does this approach not fit?",
@@ -4496,7 +4496,7 @@
   },
   {
     "slug": "rebuild_ai_yesterday",
-    "title": "Rebuild Your Entire AI Movie Every Day From Yesterday's Notes",
+    "title": "Rebuild Your Entire AI Movie From Daily Feedback",
     "description": "Rebuilding an AI movie daily means treating your film like a build artifact: you screen the current cut, write notes, feed those notes back into the...",
     "targetQuery": "rebuild ai movie from feedback daily",
     "persona": "Indie Filmmaker",
@@ -4504,7 +4504,7 @@
     "searchIntent": "Informational",
     "contentType": "How_To",
     "keyValue": "Movie_In_3_Hours",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1419,
     "faq": [
       {
@@ -4535,7 +4535,7 @@
   },
   {
     "slug": "roi_ai_output",
-    "title": "The ROI of AI Video: Output, Speed, and Cost for Marketing Teams",
+    "title": "ROI of AI Video for Marketing Teams: Output and Cost",
     "description": "The ROI of AI video for an in-house marketing team almost never comes from the cost of a single video. It comes from three compounding effects — output...",
     "targetQuery": "roi of ai video for marketing teams",
     "persona": "Marketing Team",
@@ -4543,8 +4543,8 @@
     "searchIntent": "Commercial",
     "contentType": "Guide",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1422,
+    "updated": "2026-09-15",
+    "words": 1432,
     "faq": [
       {
         "q": "How do you calculate ROI on AI video?",
@@ -4560,7 +4560,7 @@
       },
       {
         "q": "Can we use AI-generated video commercially?",
-        "a": "Commercial use is included from the Business plan on ACT 3 AI, and the Organization — your team's workspace — legally owns the projects and assets created within it. Confirm specifics against the Terms of Service for your account."
+        "a": "Commercial use starts at the Pro plan on ACT 3 AI, for audiences up to 100,000, and the Organization — your team's workspace — legally owns the projects and assets created within it. Confirm specifics against the Terms of Service for your account."
       },
       {
         "q": "How do we control spend across a team?",
@@ -4574,7 +4574,7 @@
   },
   {
     "slug": "roll_ai_matches",
-    "title": "How to Generate Cinematic B-Roll With AI That Matches Your Story",
+    "title": "How to Make B-Roll With AI That Matches Your Story",
     "description": "To make B-roll with AI, you write a shot spec — not a vibe. A usable AI B-roll shot needs five things stated explicitly: subject and action, shot type...",
     "targetQuery": "how to make b roll with ai",
     "persona": "Content Creator",
@@ -4582,7 +4582,7 @@
     "searchIntent": "Informational",
     "contentType": "How_To",
     "keyValue": "General",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1384,
     "faq": [
       {
@@ -4613,7 +4613,7 @@
   },
   {
     "slug": "run_faceless_ai",
-    "title": "Run a Faceless YouTube Channel With Full-Length AI Storytelling",
+    "title": "Run a Faceless YouTube Channel With AI Video",
     "description": "A faceless YouTube channel built on AI video works by producing narrative or documentary content where you never appear on camera — the visuals are...",
     "targetQuery": "faceless youtube channel with ai video",
     "persona": "Content Creator",
@@ -4621,7 +4621,7 @@
     "searchIntent": "Commercial",
     "contentType": "Use_Case",
     "keyValue": "FullLength_Preview",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1712,
     "faq": [
       {
@@ -4699,8 +4699,8 @@
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1398,
+    "updated": "2026-09-15",
+    "words": 1399,
     "faq": [
       {
         "q": "Is ACT 3 AI a replacement for Runway, or does it use it?",
@@ -4720,7 +4720,7 @@
       },
       {
         "q": "What about commercial-use rights?",
-        "a": "Commercial use is a plan-level feature; the Business tier and above include it. Confirm your tier before delivering client work."
+        "a": "Commercial use is a plan-level feature; it starts at Pro for audiences up to 100,000. Confirm your tier before delivering client work."
       },
       {
         "q": "Do we lose creative control by automating the prompts?",
@@ -4738,8 +4738,8 @@
     "searchIntent": "Commercial",
     "contentType": "Use_Case",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1873,
+    "updated": "2026-09-15",
+    "words": 1874,
     "faq": [
       {
         "q": "How many training videos can we realistically produce this way?",
@@ -4773,7 +4773,7 @@
   },
   {
     "slug": "scaling_without_headcount",
-    "title": "Scaling Video Production for Agencies Without Scaling Headcount",
+    "title": "Scale Video Production for Agencies, Not Headcount",
     "description": "Agencies scale video output by removing the two constraints that force hiring — sequential handoffs and per-project setup.",
     "targetQuery": "scale video production for agencies",
     "persona": "Marketing Team",
@@ -4781,12 +4781,12 @@
     "searchIntent": "Commercial",
     "contentType": "Guide",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
-    "words": 1633,
+    "updated": "2026-09-15",
+    "words": 1640,
     "faq": [
       {
         "q": "How many videos can a small agency team realistically produce?",
-        "a": "It depends on complexity, but the constraint moves from headcount to concurrency and credits. Concurrent job limits are 3 on Standard ($35/mo), 6 on Business ($175/mo), and 10+ on Enterprise — that's the ceiling to plan against, not team size."
+        "a": "It depends on complexity, but the constraint moves from headcount to concurrency and credits. Concurrent job limits are 3 on Creator ($49/mo), 6 on Pro ($175/mo), and 10 on Enterprise — that's the ceiling to plan against, not team size."
       },
       {
         "q": "Can multiple people work on the same production at once?",
@@ -4798,7 +4798,7 @@
       },
       {
         "q": "Who owns the work we produce for clients?",
-        "a": "The Organization legally owns all projects, content, and generated assets per the Terms of Service, and ownership can be transferred to another member with confirmation from both parties. Commercial-use rights come with the Business tier and above."
+        "a": "The Organization legally owns all projects, content, and generated assets per the Terms of Service, and ownership can be transferred to another member with confirmation from both parties. Commercial use starts at Pro for audiences up to 100,000, and Enterprise covers unlimited commercial use."
       },
       {
         "q": "How do we control spend across many concurrent projects?",
@@ -4812,7 +4812,7 @@
   },
   {
     "slug": "sheets_right_outfits",
-    "title": "Auto-Build Character Sheets With the Right Outfits, Every Scene",
+    "title": "Generate AI Character Sheets With the Right Outfits",
     "description": "To generate a character sheet with outfits using AI, you need the outfits to be structured data attached to the character, not descriptions retyped into a...",
     "targetQuery": "generate character sheet with outfits ai",
     "persona": "Animator",
@@ -4820,7 +4820,7 @@
     "searchIntent": "Informational",
     "contentType": "How_To",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1317,
     "faq": [
       {
@@ -4859,8 +4859,8 @@
     "searchIntent": "Commercial",
     "contentType": "Use_Case",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1677,
+    "updated": "2026-09-15",
+    "words": 1669,
     "faq": [
       {
         "q": "How fast can I actually make a product launch video with AI?",
@@ -4880,7 +4880,7 @@
       },
       {
         "q": "Can I use AI-generated launch video commercially?",
-        "a": "Commercial-use rights come with the Business tier and above. Confirm your plan's terms before publishing a paid campaign — the free and lowest tiers are scoped to personal use, and the free tier watermarks output."
+        "a": "Commercial use starts at the Pro plan, for audiences up to 100,000. Confirm your plan's terms before publishing a paid campaign — Creator is for personal use."
       },
       {
         "q": "What happens when my CEO wants changes the day before launch?",
@@ -4898,8 +4898,8 @@
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
-    "words": 1401,
+    "updated": "2026-09-15",
+    "words": 1387,
     "faq": [
       {
         "q": "Can it work from an idea instead of a finished script?",
@@ -4919,7 +4919,7 @@
       },
       {
         "q": "How much does a generation run cost?",
-        "a": "The platform runs on metered credits, and cost is shown before you act: buttons display the exact credit cost, wizard Continue buttons carry a credit badge, and the \"Run AI\" summary view shows cost estimates per task. The first three \"AI Script & Shots & Scenes\" generations are offered at cost."
+        "a": "The platform runs on metered credits, and cost is shown before you act: buttons display the exact credit cost, wizard Continue buttons carry a credit badge, and the \"Run AI\" summary view shows cost estimates per task."
       },
       {
         "q": "Can I export the shot list to my existing workflow?",
@@ -5015,8 +5015,8 @@
     "searchIntent": "Commercial",
     "contentType": "Use_Case",
     "keyValue": "Movie_In_3_Hours",
-    "updated": "2026-07-21",
-    "words": 1741,
+    "updated": "2026-09-15",
+    "words": 1744,
     "faq": [
       {
         "q": "How many video ad variants can I realistically test?",
@@ -5093,12 +5093,12 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
-    "words": 1421,
+    "updated": "2026-09-15",
+    "words": 1377,
     "faq": [
       {
         "q": "Does ACT 3 offer a white-label AI video platform?",
-        "a": "ACT 3 offers Enterprise-tier licensing with multi-tenant isolation, SAML SSO, granular roles, private assets, 4K output, and high job concurrency, and arranges Enterprise/API and embedded arrangements as custom contracts. There is no self-serve white-label SDK available on a public plan."
+        "a": "ACT 3 offers Enterprise licensing, quoted per contract, with unlimited commercial use, unlimited storage and ten concurrent jobs. There is no self-serve white-label SDK available on a public plan."
       },
       {
         "q": "Is there an API?",
@@ -5163,7 +5163,7 @@
   },
   {
     "slug": "write_ai_shoot",
-    "title": "How to Write a Script an AI Video Pipeline Can Actually Shoot",
+    "title": "How to Write a Script an AI Video Pipeline Can Shoot",
     "description": "To write a script for AI video, write a normal screenplay — but make three things explicit that a human crew would have inferred: who is on screen, where...",
     "targetQuery": "how to write a script for ai video",
     "persona": "Content Creator",
@@ -5171,7 +5171,7 @@
     "searchIntent": "Informational",
     "contentType": "How_To",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1779,
     "faq": [
       {
@@ -5202,7 +5202,7 @@
   },
   {
     "slug": "write_prompts_ones",
-    "title": "Ad Tools That Auto-Write the Prompts vs Ones That Make You Do It",
+    "title": "AI Ad Tools That Auto-Write Prompts vs Ones That Don't",
     "description": "Only a subset of AI video tools auto-generate prompts; most give you a text box and expect the agency to fill it, shot by shot.",
     "targetQuery": "ai ad tool that auto generates prompts",
     "persona": "Agency Commercials",
@@ -5210,7 +5210,7 @@
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1339,
     "faq": [
       {
@@ -5241,7 +5241,7 @@
   },
   {
     "slug": "writing_claude_straight",
-    "title": "Auto-Writing Veo and Claude Prompts Straight From Your Script",
+    "title": "Auto-Write Veo and Claude Prompts From Your Script",
     "description": "Automatically writing Veo prompts from a script means turning screenplay text into one fully specified generation prompt per shot, without typing any of them.",
     "targetQuery": "automatically write veo prompts from script",
     "persona": "Indie Filmmaker",
@@ -5249,7 +5249,7 @@
     "searchIntent": "Informational",
     "contentType": "Guide",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
+    "updated": "2026-09-15",
     "words": 1323,
     "faq": [
       {

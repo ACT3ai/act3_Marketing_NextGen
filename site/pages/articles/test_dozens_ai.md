@@ -5,7 +5,7 @@ keywords: ["ab test video ad variants with ai", "AI filmmaking", "AI video gener
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "test_dozens_ai"
 article_target_query: "ab test video ad variants with ai"
@@ -127,7 +127,7 @@ For agencies running this across clients, a few things matter beyond the creativ
 - **Tagging for bulk operations**, applying custom tags to scenes and shots and rendering everything tagged in one action — the natural mechanism for managing variant sets.
 - **Version history** with accepted-versus-proposed versions, so you can show a client exactly what changed between rounds.
 - **Full change history and rollback**, which matters when a client asks for round two's version back.
-- **Commercial-use rights**, available on the Business tier and above.
+- **Commercial use**, starting at the Pro plan for audiences up to 100,000.
 
 ---
 

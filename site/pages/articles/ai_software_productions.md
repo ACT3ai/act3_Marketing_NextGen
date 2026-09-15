@@ -5,7 +5,7 @@ keywords: ["best ai filmmaking software", "AI filmmaking", "AI video generation"
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_software_productions"
 article_target_query: "best ai filmmaking software"
@@ -119,7 +119,7 @@ The Organization — your workspace — owns the projects and the generated asse
 
 **How much does AI filmmaking software cost?**
 
-ACT 3 AI is a monthly SaaS subscription with metered credit usage, from a free tier through Community, Standard and Business plans up to Enterprise. Costs scale with how much video you actually generate, and every credit-consuming action shows its price before you run it.
+ACT 3 AI is a monthly SaaS subscription with metered credit usage, from a free plan through Creator and Pro, larger Editions, and Enterprise. Costs scale with how much video you actually generate, and every credit-consuming action shows its price before you run it.
 
 **Does it work with Adobe Premiere?**
 

@@ -1,11 +1,11 @@
 ---
-title: "How to Get Your Screenplay Produced Without Building a Studio"
+title: "How to Get Your Screenplay Produced With AI"
 description: "You can now get a finished screenplay produced as watchable video without raising money, attaching talent, or assembling a crew — by moving it through an..."
 keywords: ["get my screenplay produced with ai", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "get_screenplay_produced"
 article_target_query: "get my screenplay produced with ai"

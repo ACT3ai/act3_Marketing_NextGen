@@ -5,7 +5,7 @@ keywords: ["how to make a short film with ai", "AI filmmaking", "AI video genera
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_idea_final"
 article_target_query: "how to make a short film with ai"
@@ -151,7 +151,7 @@ Yes. Export goes through standard formats — FDX, PDF, EDL, MP4/MOV — with in
 
 **What does it cost?**
 
-ACT 3 AI is a metered subscription: a free tier to start, paid plans from $8/month, and credits consumed per generation with the exact credit cost shown before you commit. A render queue shows predicted spend so you can approve or postpone a job.
+ACT 3 AI is a metered subscription: a free plan to start, paid plans from $49/month, and credits consumed per generation with the exact credit cost shown before you commit. A render queue shows predicted spend so you can approve or postpone a job.
 
 **Can I get help actually finishing it?**
 

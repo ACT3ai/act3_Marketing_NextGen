@@ -1,11 +1,11 @@
 ---
-title: "Preview the Whole Video, Not Clip by Clip: Unified AI Timeline"
+title: "Preview the Whole Video, Not Clip by Clip"
 description: "To preview a whole AI video edit rather than clip by clip, you need a tool that assembles every generated shot onto one continuous timeline at full..."
 keywords: ["ai tool to preview whole video edit", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "preview_unified_ai"
 article_target_query: "ai tool to preview whole video edit"

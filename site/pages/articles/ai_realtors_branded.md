@@ -5,7 +5,7 @@ keywords: ["ai video generator for realtors", "AI filmmaking", "AI video generat
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_realtors_branded"
 article_target_query: "ai video generator for realtors"
@@ -90,12 +90,11 @@ One afternoon, a week of branded listing packages, and a consistent brand across
 
 | Plan | Price | Monthly credits | Notes |
 |---|---|---|---|
-| Free | $0 | 800 | Watermarked, personal use |
-| Community | $8 | 8,000 | No watermark |
-| Standard | $35 | 33,000 | 3 concurrent jobs |
-| Business | $175 | 180,000 | Commercial use, 6 concurrent jobs |
+| Free | $0 | 800 | Try it out |
+| Creator | $49 | 24,500 | Personal use, 3 concurrent jobs |
+| Pro | $175 | 87,500 | Commercial use up to 100k audience, 6 concurrent jobs |
 
-Commercial use — which is what promoting listings is — starts at the Business tier. Credits are consumed by generation, not by planning, so script and structure work is effectively free; every generate button shows its exact credit cost before you commit, and quality tiers are priced separately. Draft the whole package cheaply, finish selectively, and your per-listing cost stays predictable.
+Commercial use — which is what promoting listings is — starts at the Pro plan, for audiences up to 100,000. Credits are consumed by generation, not by planning, so script and structure work is effectively free; every generate button shows its exact credit cost before you commit, and quality tiers are priced separately. Draft the whole package cheaply, finish selectively, and your per-listing cost stays predictable.
 
 ## Staying on the right side of accuracy
 
@@ -117,7 +116,7 @@ Yes — the script is generated from your brief, and built-in text-to-speech pro
 
 **How many listings can I do in one session?**
 
-The pipeline steps are automated, so throughput is limited mainly by review time and your plan's concurrent job count — 3 on Standard, 6 on Business.
+The pipeline steps are automated, so throughput is limited mainly by review time and your plan's concurrent job count — 3 on Creator, 6 on Pro.
 
 **Can I keep a consistent brand look across every listing?**
 
@@ -129,7 +128,7 @@ No. The system proposes structure, shots, and prompts and you approve or overrid
 
 **Can I use these in paid ads?**
 
-Commercial-use rights start at the Business plan. The free tier is personal use and watermarked.
+Commercial use starts at the Pro plan, for audiences up to 100,000. Creator is for personal use.
 
 **What if a listing changes — price drop, new photos?**
 

@@ -5,7 +5,7 @@ keywords: ["ai video generator for startups", "AI filmmaking", "AI video generat
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_startups_shipping"
 article_target_query: "ai video generator for startups"
@@ -23,7 +23,7 @@ article_key_value: "Automation"
 
 **Short answer:** a startup marketing team does not have a video quality problem. It has a **cadence** problem. One person owns content, video is the highest-effort format, and so video becomes the thing that ships once a quarter instead of once a week. An AI video generator fixes this only if it automates the whole pipeline — script structure, shot planning, prompt writing, first frames, narration, and assembly — not just the render. If you still hand-write a prompt per shot, you have replaced a video editor with a prompt engineer and your cadence has not moved.
 
-The setup that actually produces weekly output: paste a rough idea or a blog post, get a structured script and shot list back, review and fix the story, render a draft of the whole thing, finish the parts that work, and export every aspect ratio at once. On ACT 3 AI that pipeline is automated end to end, on plans starting at $0 free, $8/month Community, $35/month Standard, and $175/month Business, which is where commercial-use rights begin.
+The setup that actually produces weekly output: paste a rough idea or a blog post, get a structured script and shot list back, review and fix the story, render a draft of the whole thing, finish the parts that work, and export every aspect ratio at once. On ACT 3 AI that pipeline is automated end to end, on plans starting at $0 free, $49/month Creator, and $175/month Pro, which is where commercial use begins.
 
 ## Why weekly video breaks small teams
 
@@ -80,20 +80,18 @@ Two batch days a month produces a weekly cadence with room for one reactive vide
 
 | Plan | Price | Monthly credits | Notes |
 |---|---|---|---|
-| Free | $0 | 800 | Watermarked, personal use |
-| Community | $8 | 8,000 | No watermark |
-| Standard | $35 | 33,000 | 3 concurrent jobs |
-| Business | $175 | 180,000 | Commercial use, 6 concurrent jobs |
-| Studio | from $395 | 600,000+ | Higher-volume teams |
+| Free | $0 | 800 | Try it out |
+| Creator | $49 | 24,500 | Personal use, 3 concurrent jobs |
+| Pro | $175 | 87,500 | Commercial use up to 100k audience, 6 concurrent jobs |
+| Editions | from $395 | 197,500+ | Higher-volume teams |
 
 Startup-specific budgeting notes:
 
-- **Commercial use starts at Business.** If the video promotes your company, plan on that tier.
+- **Commercial use starts at Pro.** If the video promotes your company, plan on Pro.
 - **Planning is nearly free; rendering is not.** Script expansion, structuring, and storyboarding consume negligible credits. Iterate the story as much as you want.
 - **Quality tiers are priced openly** — `Generate: [Q=1 C=80]`, `[Q=2 C=200]`, `[Q=3 C=400]`. Draft everything, finish selectively. This single habit is worth more than any plan upgrade.
 - **Unused credits roll over** up to a per-plan cap, which suits lumpy startup content calendars.
 - **Cancel reclaims credits** instantly from the progress panel.
-- Note that Free and Community are trial/hobbyist tiers and require an upgrade to Standard or higher after six months of activity, and lower tiers delete dormant assets after four months.
 
 ## Keeping quality up while volume goes up
 

@@ -5,7 +5,7 @@ keywords: ["ai training and onboarding videos at scale", "AI filmmaking", "AI vi
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "scale_training_ai"
 article_target_query: "ai training and onboarding videos at scale"
@@ -107,7 +107,7 @@ Training content touches legal, HR, and compliance, so the platform controls mat
 - **Version control.** Full change history with accepted-versus-proposed versions and rollback — which is exactly what an auditor asks for when they want to know what the module said in Q2.
 - **Cost governance.** Exact credit cost displayed before every action, render queue with predicted spend, real-time forecasts, and budget alerts.
 
-Enterprise plans add 4K output, high job concurrency, private 3D sets, and priority support, with pricing quoted individually; the published tiers run free, Community at $8/month, Standard at $35/month, and Business at $175/month with commercial-use rights.
+Enterprise plans add unlimited commercial use, unlimited storage and ten concurrent jobs, with pricing quoted individually; the published plans run Free, Creator at $49/month and Pro at $175/month, which adds commercial use for audiences up to 100,000.
 
 ---
 

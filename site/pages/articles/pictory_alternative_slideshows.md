@@ -1,11 +1,11 @@
 ---
-title: "Pictory Alternative: Real Script-to-Cinematic, Not Slideshows"
+title: "Pictory Alternative: Script to Cinematic, Not Slides"
 description: "The best Pictory alternative depends on what \"script to video\" means to you. Pictory and tools like it turn a script or article into a captioned montage..."
 keywords: ["pictory alternative script to video", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "pictory_alternative_slideshows"
 article_target_query: "pictory alternative script to video"
@@ -83,7 +83,7 @@ Where ACT 3 AI wins is anything with a character, a location, a story, or a runt
 
 ## Cost, and what it's fair to compare
 
-ACT 3 AI's published plans: Free ($0, 800 monthly credits, watermarked, personal use), Community ($8, 8,000 credits, no watermark), Standard ($35, 33,000 credits, 3 concurrent jobs), Business ($175, 180,000 credits, commercial use rights, 6 concurrent jobs), Enterprise on request with 4K and 10+ concurrent jobs.
+ACT 3 AI's published plans: Free ($0, 800 monthly credits), Creator ($49, 24,500 credits, 3 concurrent jobs), Pro ($175, 87,500 credits, commercial use for audiences up to 100,000, 6 concurrent jobs), larger Editions from $395, and Enterprise on request with unlimited commercial use and 10 concurrent jobs.
 
 Credits meter the resource-intensive actions — AI script generation, video shot creation, 3D set rendering, text-to-speech — with cost factors being quality level, resolution, and length for video, and complexity and length for script work. Exact credit cost appears on the button before you commit (for example "Generate [40 Credits]"), multiple quality/price options are offered per generation, unused credits roll over up to a per-plan cap, jobs queue with predicted spend for approval, and canceling reclaims credits instantly.
 
@@ -95,7 +95,7 @@ Compare on cost per finished deliverable including your hours — that's where a
 2. **Paste or import the existing script.** The freeform paste box and drag-and-drop upload accept raw text and files directly.
 3. **Set a target duration** and let the AI shape the structure to fit.
 4. **Review the auto-computed shot list** before generating anything. This is the moment the difference becomes obvious.
-5. **Generate on the free tier first**, accept the watermark, and judge the output.
+5. **Generate on the Free plan first** and judge the output.
 6. **Keep the stock tool** for high-volume informational content. A two-tool stack is a perfectly good answer.
 
 ## FAQ
@@ -122,7 +122,7 @@ One-click export covers 16:9 for YouTube, 9:16 for TikTok and Reels, and 1:1 for
 
 **What's the cheapest way to compare them?**
 
-Run the same script through both. ACT 3 AI's Free plan is $0 with 800 credits and watermarked output — enough to generate a scene and see the difference between authored shots and matched stock.
+Run the same script through both. ACT 3 AI's Free plan is $0 with 800 credits — enough to generate a scene and see the difference between authored shots and matched stock.
 
 ## Run your script through a real shot list
 

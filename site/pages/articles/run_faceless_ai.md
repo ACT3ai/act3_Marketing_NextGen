@@ -1,11 +1,11 @@
 ---
-title: "Run a Faceless YouTube Channel With Full-Length AI Storytelling"
+title: "Run a Faceless YouTube Channel With AI Video"
 description: "A faceless YouTube channel built on AI video works by producing narrative or documentary content where you never appear on camera — the visuals are..."
 keywords: ["faceless youtube channel with ai video", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "run_faceless_ai"
 article_target_query: "faceless youtube channel with ai video"

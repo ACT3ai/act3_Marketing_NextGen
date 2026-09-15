@@ -5,7 +5,7 @@ keywords: ["ai video generator for social media agencies", "AI filmmaking", "AI 
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_social_reels"
 article_target_query: "ai video generator for social media agencies"
@@ -77,14 +77,13 @@ Volume is only half the agency problem; the other half is separation.
 
 | Plan | Price | Monthly credits | Rollover cap | Concurrent jobs |
 |---|---|---|---|---|
-| Free | $0 | 800 | 0 | 1 |
-| Community | $8 | 8,000 | 1,000 | — |
-| Standard | $35 | 33,000 | 100,000 | 3 |
-| Business | $175 | 180,000 | 500,000 | 6 |
-| Studio | from $395 | 600,000+ | — | Higher |
-| Enterprise | Custom | High volume | Unlimited | 10+ |
+| Free | $0 | 800 | 0 | — |
+| Creator | $49 | 24,500 | 61,250 | 3 |
+| Pro | $175 | 87,500 | 218,750 | 6 |
+| Editions | from $395 | 197,500+ | 2.5 months of credits | — |
+| Enterprise | Custom | High volume | High | 10 |
 
-Agency notes: commercial use starts at Business; concurrency is throughput, so size on jobs as much as on credits; planning and scripting consume negligible credits while generation does not, so draft everything at the cheapest tier and finish selectively; and rollover smooths the lumpy month where three clients launch at once.
+Agency notes: commercial use starts at Pro; concurrency is throughput, so size on jobs as much as on credits; planning and scripting consume negligible credits while generation does not, so draft everything at the cheapest tier and finish selectively; and rollover smooths the lumpy month where three clients launch at once.
 
 ## A volume workflow that holds up
 

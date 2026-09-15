@@ -5,7 +5,7 @@ keywords: ["ai video generator for restaurants", "AI filmmaking", "AI video gene
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_restaurants_local"
 article_target_query: "ai video generator for restaurants"
@@ -21,7 +21,7 @@ article_key_value: "Automation"
     Regenerate with: node scripts/sync-articles.js */}
 # AI Video Generator for Restaurants and Local Business
 
-**Short answer:** an AI video generator lets a restaurant or local business produce a steady stream of short vertical videos — specials, new menu items, seasonal promos, staff intros, "what's happening this weekend" — without a videographer, a shoot day, or an editor. You write a few sentences about the promotion, the system turns it into a scripted sequence of shots, generates the visuals and the voiceover, assembles the cut, and exports it in the aspect ratios Instagram, TikTok, and YouTube want. The realistic cost is a software subscription in the $8–$175/month range plus metered generation, versus a few hundred to a few thousand dollars per commissioned video.
+**Short answer:** an AI video generator lets a restaurant or local business produce a steady stream of short vertical videos — specials, new menu items, seasonal promos, staff intros, "what's happening this weekend" — without a videographer, a shoot day, or an editor. You write a few sentences about the promotion, the system turns it into a scripted sequence of shots, generates the visuals and the voiceover, assembles the cut, and exports it in the aspect ratios Instagram, TikTok, and YouTube want. The realistic cost is a software subscription in the $49–$175/month range plus metered generation, versus a few hundred to a few thousand dollars per commissioned video.
 
 One important caveat up front, because it decides whether this is right for you: **AI generation is for the videos you cannot shoot, not the ones you can.** Nothing beats a real ten-second clip of your actual dish coming out of the pass. Use your phone for that. Use AI for everything around it — the branded intro, the seasonal story, the ad concept, the announcement you need by Friday.
 
@@ -86,12 +86,11 @@ That is a month of content in two sittings, which is the only cadence a restaura
 
 | Plan | Price | Monthly credits | Notes |
 |---|---|---|---|
-| Free | $0 | 800 | Watermarked, personal use |
-| Community | $8 | 8,000 | No watermark |
-| Standard | $35 | 33,000 | 3 concurrent jobs |
-| Business | $175 | 180,000 | Commercial use, 6 concurrent jobs |
+| Free | $0 | 800 | Try it out |
+| Creator | $49 | 24,500 | Personal use, 3 concurrent jobs |
+| Pro | $175 | 87,500 | Commercial use up to 100k audience, 6 concurrent jobs |
 
-Two things to know before you budget. First, **commercial use comes with the Business tier and above** — for a business promoting itself, that is the tier to plan on. Second, credits are consumed by generation, not by planning: writing, structuring, and storyboarding are negligible, and every generate button shows its exact credit cost before you commit, with quality tiers priced separately. Draft your whole piece cheaply, spend on the finish.
+Two things to know before you budget. First, **commercial use starts at the Pro plan** (for audiences up to 100,000) — for a business promoting itself, that is the plan to budget for. Second, credits are consumed by generation, not by planning: writing, structuring, and storyboarding are negligible, and every generate button shows its exact credit cost before you commit, with quality tiers priced separately. Draft your whole piece cheaply, spend on the finish.
 
 ## Getting good results instead of generic ones
 
@@ -121,7 +120,7 @@ Yes — one-click export to 16:9, 9:16, and 1:1 from the same piece.
 
 **Is this legal to use in paid ads?**
 
-Commercial-use rights are included from the Business plan upward. Free is personal use and watermarked. A three-stage content scanner also checks prompts, scripts, and finished output before download.
+Commercial use starts at the Pro plan, for audiences up to 100,000. A three-stage content scanner also checks prompts, scripts, and finished output before download.
 
 **What if I only have a rough idea, not a script?**
 

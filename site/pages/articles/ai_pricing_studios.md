@@ -5,7 +5,7 @@ keywords: ["ai film production pricing", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_pricing_studios"
 article_target_query: "ai film production pricing"
@@ -21,7 +21,7 @@ article_key_value: "Serious_Production"
     Regenerate with: node scripts/sync-articles.js */}
 # AI Film Production Pricing for Studios and Full Productions
 
-**Short answer:** AI film production is not priced per movie — it is priced as a software subscription plus metered compute. On ACT 3 AI, published plans run from a free tier through Community at $8/month, Standard at $35/month, and Business at $175/month, with studio-class plans starting at $395/month and running to $1,950/month, and enterprise/API agreements from $8,900 to $49,000/month. Each plan carries a monthly credit allotment; credits are consumed by the resource-intensive actions — AI script and story generation, video shot generation, 3D set rendering, text-to-speech, upscaling — while planning, structuring, and editing are effectively free. Every action shows its exact credit cost before you commit.
+**Short answer:** AI film production is not priced per movie — it is priced as a software subscription plus metered compute. On ACT 3 AI, published plans run from a free plan through Creator at $49/month and Pro at $175/month, with larger Editions from $395/month up to $49,000/month, and Enterprise on request. Each plan carries a monthly credit allotment; credits are consumed by the resource-intensive actions — AI script and story generation, video shot generation, 3D set rendering, text-to-speech, upscaling — while planning, structuring, and editing are effectively free. Every action shows its exact credit cost before you commit.
 
 For a studio, the number that matters is not the seat price. It is **cost per delivered minute of finished footage**, plus whether the platform can hold an entire production — a real 2-hour movie or a full season — without falling apart. This page covers both.
 
@@ -29,9 +29,9 @@ For a studio, the number that matters is not the seat price. It is **cost per de
 
 Three layers stack:
 
-1. **The subscription.** Buys seats, concurrency, storage, watermark removal, commercial-use rights, and output ceilings like 4K.
-2. **The credits.** An internal currency spent on generation. Allotted monthly per plan; unused credits roll into a Rollover Bank up to a per-plan cap, and the current month's allotment is spent before the bank.
-3. **Overages.** Metered usage beyond the bundle, for productions that run hot in a given month.
+1. **The subscription.** Buys concurrency, storage, model access, commercial-use rights, and features like 4K upscaling.
+2. **The credits.** An internal currency spent on generation ($1 buys 500 credits). Allotted monthly per plan; unused credits roll into a rollover bank up to the plan's cap.
+3. **Upgrades.** When a production outgrows its plan, you move up to a larger plan or Edition.
 
 The consequence for budgeting: your fixed cost is predictable, and your variable cost tracks finished minutes. That is a very different shape from traditional production, where the fixed cost is the crew day.
 
@@ -41,21 +41,21 @@ The consequence for budgeting: your fixed cost is predictable, and your variable
 
 | Plan | Price | Monthly credits | Rollover cap | Notable |
 |---|---|---|---|---|
-| Free | $0 | 800 | 0 | Personal use, watermarked, LinkedIn auth |
-| Community | $8 | 8,000 | 1,000 | No watermark |
-| Standard | $35 | 33,000 | 100,000 | 3 concurrent jobs |
-| Business | $175 | 180,000 | 500,000 | Commercial use, 6 concurrent jobs |
-| Studio | from $395 | 600,000+ | — | Agencies, film schools, VFX shops |
-| Enterprise | Custom (CALL) | High volume | Unlimited | 4K video, 10+ concurrent jobs, private 3D sets, priority support |
+| Free | $0 | 800 | 0 | Try it out |
+| Creator | $49 | 24,500 | 61,250 | Personal use, 3 concurrent jobs |
+| Pro | $175 | 87,500 | 218,750 | Commercial use up to 100k audience, 6 concurrent jobs |
+| Advanced Edition | $395 | 197,500 | 493,750 | Higher-volume teams |
+| Premiere to Iconic Editions | $795–$49,000 | 397,500–24,500,000 | 2.5 months of credits | Studios, agencies, film schools |
+| Enterprise | Custom (CALL) | High volume | High | Unlimited commercial use, 10 concurrent jobs |
 
-Two rules worth knowing before you plan a rollout: Free and Community are trial/hobbyist tiers and require an upgrade to Standard or higher after six months of activity, and lower tiers delete dormant assets after four months. Neither is a problem for a funded production, but both matter if you are parking a project between greenlights.
+One rule worth knowing before you plan a rollout: Free is for trying the product, with 800 credits a month and no rollover, so a funded production should start on a paid plan.
 
 ## Where the credits go
 
 Credit consumption is driven by what you generate, not by how long you sit in the editor:
 
 - **Generative video** — the dominant line item. Scales with quality tier (Draft / Standard / Highest), resolution, and length. The UI exposes the tradeoff directly: `Generate: [Q=1 C=80]`, `[Q=2 C=200]`, `[Q=3 C=400]`.
-- **AI script and story generation** — scales with script length and depth of development. The first three "AI Script & Shots & Scenes" generations are offered at cost.
+- **AI script and story generation** — scales with script length and depth of development.
 - **Blender and 3D assets** — set and prop generation.
 - **Ancillary services** — text-to-speech, AI upscaling, B-roll.
 
@@ -80,11 +80,11 @@ Price is only half the decision. The upper tiers exist because serious productio
 
 **2-to-3-hour production sprints.** Work is organized so a team sits down and moves a whole production forward in a session, rather than chasing individual clips.
 
-**All the IP in one place.** The Organization legally owns the projects, content, and generated assets, per the Terms of Service, with ownership transferable to another member on mutual confirmation. Multi-tenant isolation and optional SAML SSO keep a production walled off; Enterprise adds private 3D sets.
+**All the IP in one place.** The Organization legally owns the projects, content, and generated assets, per the Terms of Service, with ownership transferable to another member on mutual confirmation. Multi-tenant isolation and optional SAML SSO keep a production walled off.
 
 **Full teams on one production.** Version-controlled, role-based collaboration with a complete change history, concurrent work without conflicts, time-stamped feedback, and comment threads.
 
-**Concurrency.** Standard runs 3 concurrent jobs, Business 6, Enterprise 10+. On a dailies schedule, concurrency is throughput.
+**Concurrency.** Creator runs 3 concurrent jobs, Pro 6, Enterprise 10. On a dailies schedule, concurrency is throughput.
 
 **Studio-grade output.** 4K on Enterprise, ProRes masters, EDL and MP4/MOV export, and a clean handoff to Premiere Pro and DaVinci Resolve.
 
@@ -99,7 +99,7 @@ Work it in this order:
 3. **Assume iteration.** Budget re-renders for the sequences you know are hard — dialogue-heavy scenes and anything with complex motion.
 4. **Add ancillary.** TTS for every line, upscaling for finals, B-roll for coverage.
 5. **Pick the plan by concurrency and rights**, then use the credit allotment and Rollover Bank to smooth month-to-month.
-6. **Talk to sales before enterprise commitments.** Enterprise pricing is quoted, and it is where 4K, private sets, priority support, and high concurrency live.
+6. **Talk to sales before enterprise commitments.** Enterprise pricing is quoted, and it is where unlimited commercial use, unlimited storage and the highest concurrency live.
 
 For teams who would rather buy the outcome than build the workflow, ACT 3 AI also offers the **Level 2 team** package — our team takes your feedback and makes the movie happen, for part or all of your production. That is quoted per production, not per seat.
 
@@ -115,11 +115,11 @@ They roll into a Rollover Bank up to your plan's cap; anything above the cap is 
 
 **Which plan do we need for commercial work?**
 
-Business ($175/month) and above include commercial use. Free is personal use and watermarked.
+Pro ($175/month) includes commercial use for audiences up to 100,000, and Enterprise covers unlimited commercial use. Creator is for personal use.
 
 **What does Enterprise add?**
 
-Custom high-volume credits, unlimited rollover, 4K video, 10+ concurrent jobs, private 3D sets, priority support, and multi-tenant security with optional SAML SSO.
+Custom high-volume credits, unlimited storage, unlimited commercial use and ten concurrent jobs.
 
 **Who owns the footage and the project?**
 

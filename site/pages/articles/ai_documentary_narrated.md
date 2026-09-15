@@ -5,7 +5,7 @@ keywords: ["ai documentary maker from script", "AI filmmaking", "AI video genera
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_documentary_narrated"
 article_target_query: "ai documentary maker from script"
@@ -100,11 +100,10 @@ Teams work in one shared Organization workspace with role-based permissions — 
 
 | Plan | Price | Monthly credits | Notes |
 |---|---|---|---|
-| Free | $0 | 800 | Personal use, watermarked |
-| Community | $8 | 8,000 | No watermark |
-| Standard | $35 | 33,000 | 3 concurrent jobs |
-| Business | $175 | 180,000 | Commercial use, 6 jobs |
-| Enterprise | Call | High volume | 4K video, 10+ jobs |
+| Free | $0 | 800 | Try it out |
+| Creator | $49 | 24,500 | Personal use, 3 concurrent jobs |
+| Pro | $175 | 87,500 | Commercial use up to 100k audience, 6 concurrent jobs |
+| Enterprise | Contact | High volume | Unlimited commercial use, 10 concurrent jobs |
 
 Every generation shows its exact credit cost before you commit, and a render queue displays predicted spend so a long film's budget stays visible.
 
@@ -134,7 +133,7 @@ No, and you should be sceptical of any tool that claims to. ACT 3 builds the fil
 
 **Who owns the finished documentary?**
 
-Your Organization legally owns all projects, content, and generated assets. Commercial-use rights come with the Business plan and above.
+Your Organization legally owns all projects, content, and generated assets. Commercial use starts at the Pro plan for audiences up to 100,000.
 
 ---
 

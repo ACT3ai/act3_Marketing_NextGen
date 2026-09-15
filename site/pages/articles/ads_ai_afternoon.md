@@ -5,7 +5,7 @@ keywords: ["how to make video ads from a script with ai", "AI filmmaking", "AI v
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ads_ai_afternoon"
 article_target_query: "how to make video ads from a script with ai"
@@ -134,11 +134,11 @@ Yes — export 16:9, 9:16, and 1:1 from the same production, plus captions and d
 
 **What does it cost?**
 
-ACT 3 AI is a subscription with metered credits; plans start free and run through Community ($8), Standard ($35), Business ($175), and Enterprise. Every generate action shows its credit cost before you click, and the render queue shows predicted spend so a team can approve or postpone jobs.
+ACT 3 AI is a subscription with metered credits. Plans start with Free ($0), then Creator ($49/month), Pro ($175/month) and Enterprise, with larger Editions from $395/month. Every generate action shows its credit cost before you click, and the render queue shows predicted spend so a team can approve or postpone jobs.
 
 **Can I use the output commercially?**
 
-Commercial-use rights are tied to plan tier — the Business tier includes commercial use. Check your plan before shipping paid media.
+Commercial use depends on your plan: Pro ($175/month) includes it for audiences up to 100,000, and Enterprise covers unlimited commercial use. Check your plan before shipping paid media.
 
 ## Try it on your next script
 

@@ -5,7 +5,7 @@ keywords: ["act3 ai vs pika", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_pika_shots"
 article_target_query: "act3 ai vs pika"
@@ -89,7 +89,7 @@ The generation quality in both paths comes from broadly the same class of models
 
 ## Cost framing
 
-Don't compare monthly prices — compare cost per finished deliverable, including your hours. ACT 3 AI's published plans are Free ($0, 800 credits, watermarked), Community ($8, 8,000 credits), Standard ($35, 33,000 credits, 3 concurrent jobs), Business ($175, 180,000 credits, commercial use, 6 concurrent jobs), and Enterprise on request with 4K and 10+ jobs. Credits meter the resource-intensive actions, exact cost shows on the button before you commit, quality tiers give you cheaper and more expensive options per generation, unused credits roll over up to a per-plan cap, and canceling a running job reclaims credits instantly.
+Don't compare monthly prices — compare cost per finished deliverable, including your hours. ACT 3 AI's published plans are Free ($0, 800 credits), Creator ($49, 24,500 credits, 3 concurrent jobs), Pro ($175, 87,500 credits, commercial use for audiences up to 100,000, 6 concurrent jobs), and Enterprise on request with unlimited commercial use and 10 jobs. Credits meter the resource-intensive actions, exact cost shows on the button before you commit, quality tiers give you cheaper and more expensive options per generation, unused credits roll over up to a per-plan cap, and canceling a running job reclaims credits instantly.
 
 For a single clip, a clip tool is cheaper. For a 90-shot short, the manual coordination is where the money goes.
 
@@ -117,7 +117,7 @@ Built-in text-to-speech generates spoken lines directly from the script and embe
 
 **Is there a free way to compare them myself?**
 
-Yes — ACT 3 AI's Free plan is $0 with 800 monthly credits and watermarked output. Run one scene through it and compare the experience against generating the same scene as individual clips.
+Yes — ACT 3 AI's Free plan is $0 with 800 monthly credits. Run one scene through it and compare the experience against generating the same scene as individual clips.
 
 ## Try a whole scene, not a clip
 

@@ -5,7 +5,7 @@ keywords: ["ai horror movie generator", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_horror_tension"
 article_target_query: "ai horror movie generator"
@@ -101,11 +101,10 @@ ACT 3 is a subscription platform with metered credits. Every generation shows it
 
 | Plan | Price | Monthly credits | Notes |
 |---|---|---|---|
-| Free | $0 | 800 | Personal use, watermarked |
-| Community | $8 | 8,000 | No watermark |
-| Standard | $35 | 33,000 | 3 concurrent jobs |
-| Business | $175 | 180,000 | Commercial use, 6 jobs |
-| Enterprise | Call | High volume | 4K video, 10+ jobs |
+| Free | $0 | 800 | Try it out |
+| Creator | $49 | 24,500 | Personal use, 3 concurrent jobs |
+| Pro | $175 | 87,500 | Commercial use up to 100k audience, 6 concurrent jobs |
+| Enterprise | Contact | High volume | Unlimited commercial use, 10 concurrent jobs |
 
 Your Organization workspace owns the projects, the content, and the generated assets.
 
@@ -133,7 +132,7 @@ Timeline rows for beats, camera, motion, and audio let you line a cut up against
 
 **Can I use the output commercially?**
 
-Commercial-use rights come with the Business plan and above. The Free tier is personal use and watermarked.
+Commercial use starts at the Pro plan ($175/month) for audiences up to 100,000. Creator is for personal use.
 
 **Will content moderation block horror?**
 

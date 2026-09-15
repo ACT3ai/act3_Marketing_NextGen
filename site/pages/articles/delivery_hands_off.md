@@ -1,11 +1,11 @@
 ---
-title: "Automated Video Production: From Script to Delivery, Hands-Off"
+title: "Automated Video Production: Script to Delivery"
 description: "Automated video production software turns a written script into finished video without a human hand-building every intermediate step — no manual..."
 keywords: ["automated video production software", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "delivery_hands_off"
 article_target_query: "automated video production software"
@@ -83,12 +83,11 @@ Use this as your evaluation checklist for any automated video production softwar
 ACT 3 AI is a SaaS subscription with metered usage. Credits are consumed by resource-intensive actions — script generation, video shots, 3D set rendering, text-to-speech — and each plan carries a monthly credit allocation plus a rollover bank for unused credits.
 
 | Plan | Price | Monthly credits | Notes |
-| --- | --- | --- | --- |
-| Free | $0 | 800 | Personal use, watermarked |
-| Community | $8 | 8,000 | No watermark |
-| Standard | $35 | 33,000 | 3 concurrent jobs |
-| Business | $175 | 180,000 | Commercial use, 6 concurrent jobs |
-| Enterprise | Contact | High volume | 4K video, 10+ concurrent jobs |
+|---|---|---|---|
+| Free | $0 | 800 | Try it out |
+| Creator | $49 | 24,500 | Personal use, 3 concurrent jobs |
+| Pro | $175 | 87,500 | Commercial use up to 100k audience, 6 concurrent jobs |
+| Enterprise | Contact | High volume | Unlimited commercial use, 10 concurrent jobs |
 
 For a marketing team, the practical variable is concurrency and commercial-use rights, not the sticker price — being able to run six jobs at once is what makes a weekly cadence work.
 
@@ -116,11 +115,11 @@ Export supports 16:9 for YouTube, 9:16 for TikTok and Reels, and 1:1 for Instagr
 
 **Does the team own the output?**
 
-The Organization — your workspace — owns the projects, content, and generated assets, with ownership transfer available between members. Commercial-use rights come with the Business tier and above.
+The Organization — your workspace — owns the projects, content, and generated assets, with ownership transfer available between members. Commercial use starts at Pro for audiences up to 100,000, and Enterprise covers unlimited commercial use.
 
 ---
 
 ## Start producing on a pipeline instead of a prompt box
 
-If your team is capped by production hours rather than ideas, the fix is automating the twelve steps between the script and the cut — not finding a better clip generator. **[Start a production in ACT 3 AI](https://app.act3ai.com/signup/)** and run one real script through the pipeline, or **[talk to the ACT 3 team](/contact)** about a Business-tier walkthrough with your own brief.
+If your team is capped by production hours rather than ideas, the fix is automating the twelve steps between the script and the cut — not finding a better clip generator. **[Start a production in ACT 3 AI](https://app.act3ai.com/signup/)** and run one real script through the pipeline, or **[talk to the ACT 3 team](/contact)** about a Pro walkthrough with your own brief.
 

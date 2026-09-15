@@ -1,11 +1,11 @@
 ---
-title: "AI Filmmaking Software Reviews: What Actually Ships Full Videos"
+title: "AI Filmmaking Software Reviews: What Actually Ships"
 description: "Nearly every AI filmmaking software review you will read is a review of clip generation — someone types a prompt, gets eight seconds of footage, and rates..."
 keywords: ["ai filmmaking software reviews", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_reviews_ships"
 article_target_query: "ai filmmaking software reviews"

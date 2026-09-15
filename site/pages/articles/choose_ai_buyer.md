@@ -5,7 +5,7 @@ keywords: ["how to choose an ai video platform", "AI filmmaking", "AI video gene
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "choose_ai_buyer"
 article_target_query: "how to choose an ai video platform"
@@ -71,12 +71,12 @@ Marketing teams don't buy single-seat tools. Check for real multi-user structure
 ### 5. Cost transparency
 Metered AI spend goes sideways fast if the meter is invisible.
 
-*Look for:* cost shown before the job runs, a render queue with estimates, live spend visibility, and cancel-to-refund. ACT 3 AI displays exact credit cost on the button (for example "Generate [40 Credits]"), offers multiple quality/price options per generation, queues every job with predicted spend for approval, and its progress panel lets you cancel and reclaim credits instantly. Published plans: Free $0, Community $8, Standard $35, Business $175, Enterprise on request.
+*Look for:* cost shown before the job runs, a render queue with estimates, live spend visibility, and cancel-to-refund. ACT 3 AI displays exact credit cost on the button (for example "Generate [40 Credits]"), offers multiple quality/price options per generation, queues every job with predicted spend for approval, and its progress panel lets you cancel and reclaim credits instantly. Published plans: Free $0, Creator $49, Pro $175, larger Editions from $395, Enterprise on request.
 
 ### 6. Rights and ownership
 Get this in writing before the pilot, not after the campaign.
 
-*Ask three questions:* Who owns the generated assets? Is commercial use included at my tier? What's the moderation/compliance posture? For ACT 3 AI: the Organization legally owns all projects, created content, and generated assets, stated in the Terms of Service, with owner-initiated ownership transfer requiring confirmation from both parties. Commercial use is a Business-tier feature. Content moderation runs in three stages — prompts before generation, scripts before production, and finished outputs before download.
+*Ask three questions:* Who owns the generated assets? Is commercial use included at my tier? What's the moderation/compliance posture? For ACT 3 AI: the Organization legally owns all projects, created content, and generated assets, stated in the Terms of Service, with owner-initiated ownership transfer requiring confirmation from both parties. Commercial use starts at Pro for audiences up to 100,000. Content moderation runs in three stages — prompts before generation, scripts before production, and finished outputs before download.
 
 ### 7. Export and integration
 Your video doesn't live in the platform. It lives in Premiere, in an ad account, in a CMS.

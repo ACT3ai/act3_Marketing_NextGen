@@ -1,11 +1,11 @@
 ---
-title: "AI Production Service vs Software-Only: When to Let a Team Drive"
+title: "AI Production Service vs Software-Only: Which to Pick"
 description: "Buy software-only when you have people who will operate it, a slate that justifies building the skill, and enough runway to absorb a learning curve."
 keywords: ["ai production service vs software only", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_service_only"
 article_target_query: "ai production service vs software only"

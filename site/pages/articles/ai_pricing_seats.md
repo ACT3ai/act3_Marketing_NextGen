@@ -5,7 +5,7 @@ keywords: ["enterprise ai video platform pricing", "AI filmmaking", "AI video ge
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_pricing_seats"
 article_target_query: "enterprise ai video platform pricing"
@@ -21,7 +21,7 @@ article_key_value: "Serious_Production"
     Regenerate with: node scripts/sync-articles.js */}
 # Enterprise AI Video Platform Pricing, Seats, and Owned IP
 
-**Short answer:** enterprise AI video platforms are priced on three axes at once — a committed subscription, a metered compute allowance, and seat/workspace structure. On ACT 3 AI, the published ladder runs Free ($0), Community ($8/mo), Standard ($35/mo), and Business ($175/mo), with studio plans from $395 to $1,950/month and **enterprise/API committed licenses from $8,900 to $49,000/month**. Enterprise agreements are quoted, and they buy high-volume credits with unlimited rollover, 4K output, 10+ concurrent render jobs, private 3D sets, priority support, multi-tenant isolation with optional SAML SSO, and commercial-use rights.
+**Short answer:** enterprise AI video platforms are priced on three axes at once — a committed subscription, a metered compute allowance, and seat/workspace structure. On ACT 3 AI, the published ladder runs Free ($0), Creator ($49/mo) and Pro ($175/mo), then five larger Editions from $395 to $49,000/month (Advanced, Premiere, Blockbuster, Visionary and Iconic). Enterprise agreements are quoted and add high-volume credits, unlimited storage, unlimited commercial use and ten concurrent render jobs.
 
 The two questions procurement always asks after price are **"how do seats work?"** and **"who owns what we make?"** Both have clean answers here: seats are members of an Organization with granular permissions, and the Organization legally owns all projects, content, and generated assets per the Terms of Service. Details below, in the order a buying committee actually works through them.
 
@@ -30,17 +30,17 @@ The two questions procurement always asks after price are **"how do seats work?"
 | Layer | What it is | How it scales |
 |---|---|---|
 | Subscription | Committed monthly license | Seats, concurrency, storage, output ceiling, support tier |
-| Credits | Internal currency for generation | Monthly allotment per plan; unlimited rollover at Enterprise |
+| Credits | Internal currency for generation | Monthly allotment per plan; unused credits roll over up to each plan's cap |
 | Metered overage | Usage beyond the bundle | Billed on consumption |
 
 | Plan | Price | Credits | Rollover | Key entitlements |
 |---|---|---|---|---|
-| Free | $0 | 800/mo | None | Personal use, watermarked |
-| Community | $8/mo | 8,000/mo | 1,000 | No watermark |
-| Standard | $35/mo | 33,000/mo | 100,000 | 3 concurrent jobs |
-| Business | $175/mo | 180,000/mo | 500,000 | Commercial use, 6 concurrent jobs |
-| Studio | $395–$1,950/mo | 600,000+ | — | Agencies, VFX shops, film schools |
-| Enterprise / API | $8,900–$49,000/mo | High volume, custom | Unlimited | 4K, 10+ jobs, private 3D sets, priority support, SSO |
+| Free | $0 | 800/mo | None | Try it out |
+| Creator | $49/mo | 24,500/mo | 61,250 | Personal use, 3 concurrent jobs |
+| Pro | $175/mo | 87,500/mo | 218,750 | Commercial use up to 100k audience, 6 concurrent jobs, 4K upscale |
+| Advanced – Premiere Editions | $395–$795/mo | 197,500–397,500/mo | 2.5 months of credits | Higher-volume teams |
+| Blockbuster – Iconic Editions | $1,950–$49,000/mo | 975,000–24,500,000/mo | 2.5 months of credits | Studio and enterprise volume |
+| Enterprise | Contact | High volume, custom | High | Unlimited commercial use, unlimited storage, 10 concurrent jobs |
 
 Credits are consumed by resource-intensive actions — AI script and story generation, video shot generation, 3D set rendering, text-to-speech, upscaling, B-roll — and cost is displayed before every action. Planning, structuring, and editing are negligible. Practically, that means an enterprise can put many reviewers and stakeholders into the workspace cheaply and gate only the generation.
 
@@ -81,15 +81,13 @@ The separation of **Use Credits** from **Run AI** and **Modify/Edit** is the mec
 
 **Ownership.** The Organization legally owns all projects, created content, and generated assets, stated explicitly in the Terms of Service. An Owner can transfer ownership to another member; the transfer requires confirmation from both parties, so it cannot happen unilaterally.
 
-**Isolation.** Multi-tenant security gives each company an isolated workspace with walled-off datasets and invitation-only project access. Optional SAML SSO is available. Enterprise adds private 3D sets so proprietary environments are not shared to the community library.
+**Isolation.** Multi-tenant security gives each company an isolated workspace with walled-off datasets and invitation-only project access. Optional SAML SSO is available.
 
 **Content safety.** A three-stage moderation system scans prompts before generation, scripts before production, and finished output before download, with auto-redaction or admin review. That is the control most enterprise brand-safety reviews are looking for.
 
 **Change control.** Version-controlled collaboration with a full change history, revision history and rollback on characters, and granular lock-down that freezes approved pages, scenes, and shots read-only.
 
 **Audit and spend.** Invoices are viewable and downloadable by anyone with Billing permission. The render queue estimates GPU spend per job; the billing dashboard is metered by video minutes, storage, and concurrent renders with real-time forecasts and budget alerts.
-
-**Authentication note.** LinkedIn authentication is required on the Free and Community tiers; higher tiers are exempt — relevant if your identity policy prohibits third-party social login.
 
 ## Why enterprises buy the committed tier
 
@@ -99,10 +97,10 @@ The honest case for a committed license is not the credit discount. It is that e
 - **2-to-3-hour production sprints.** Teams move a whole production forward in a working session rather than babysitting individual renders.
 - **All the IP stored in one place.** Scripts, characters, sets, mocap, prompts, versions, and masters live in the Organization, not scattered across individual accounts and drives.
 - **Full teams collaborating on one production.** Role-based, concurrent, versioned, with time-stamped feedback and comment threads.
-- **Concurrency as throughput.** 10+ concurrent jobs is what turns a two-week turnaround into a two-day one.
+- **Concurrency as throughput.** Ten concurrent jobs on Enterprise is what turns a two-week turnaround into a two-day one.
 - **Studio-grade delivery.** 4K, ProRes masters, EDL/MP4/MOV export, and clean handoff to Premiere Pro and DaVinci Resolve.
 
-If your requirement is a few dozen short marketing clips a year, Business is very likely the right tier and you should not overbuy. Enterprise earns its price when you are producing at length, at volume, with a team, under governance. See also our guide to AI film production pricing for studios for the cost-per-delivered-minute view.
+If your requirement is a few dozen short marketing clips a year, Pro is very likely the right plan and you should not overbuy. Enterprise earns its price when you are producing at length, at volume, with a team, under governance. See also our guide to AI film production pricing for studios for the cost-per-delivered-minute view.
 
 ## Building the business case
 
@@ -111,7 +109,7 @@ If your requirement is a few dozen short marketing clips a year, Business is ver
 3. **Set quality tiers per class.** Draft-quality blocking passes cost a fraction of highest-quality finals; this decision moves the budget more than the plan choice.
 4. **Size seats by role, not headcount.** Reviewers are cheap; credit-spenders are the constrained set.
 5. **Price concurrency against your calendar.** Simultaneous campaigns need simultaneous jobs.
-6. **Get the quote.** Enterprise is CALL pricing between $8,900 and $49,000/month depending on volume and entitlements.
+6. **Get the quote.** Enterprise is priced per contract. If you'd rather not sign one, the self-serve Visionary and Iconic Editions cost $8,900 and $49,000/month.
 
 For organizations that would rather buy the outcome than staff the workflow, the **ACT 3 Level 2 team** package is available: our team takes your feedback and makes the production happen, for part or all of the work.
 
@@ -119,7 +117,7 @@ For organizations that would rather buy the outcome than staff the workflow, the
 
 **What does enterprise AI video pricing typically include?**
 
-A committed monthly license, a high-volume credit allowance with unlimited rollover, 4K output, 10+ concurrent jobs, private 3D sets, priority support, and multi-tenant security with optional SSO.
+A committed monthly license and a high-volume credit allowance. On ACT 3 AI, Enterprise adds unlimited storage, unlimited commercial use and ten concurrent jobs.
 
 **Is pricing per seat or per workspace?**
 

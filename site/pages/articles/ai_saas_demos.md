@@ -5,7 +5,7 @@ keywords: ["ai video generator for saas companies", "AI filmmaking", "AI video g
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_saas_demos"
 article_target_query: "ai video generator for saas companies"
@@ -78,14 +78,13 @@ The single value here: **the script is the source of truth, and everything downs
 
 | Plan | Price | Monthly credits | Notes |
 |---|---|---|---|
-| Free | $0 | 800 | Watermarked, personal use |
-| Community | $8 | 8,000 | No watermark |
-| Standard | $35 | 33,000 | 3 concurrent jobs |
-| Business | $175 | 180,000 | Commercial use, 6 concurrent jobs |
-| Studio | from $395 | 600,000+ | Higher-volume teams |
-| Enterprise | Custom | High volume | 4K, 10+ jobs, private sets, SSO, priority support |
+| Free | $0 | 800 | Try it out |
+| Creator | $49 | 24,500 | Personal use, 3 concurrent jobs |
+| Pro | $175 | 87,500 | Commercial use up to 100k audience, 6 concurrent jobs |
+| Editions | from $395 | 197,500+ | Higher-volume teams |
+| Enterprise | Custom | High volume | Unlimited commercial use, 10 concurrent jobs |
 
-Commercial use starts at Business. Planning, structuring, and script work consume negligible credits — generation is the cost — so the efficient pattern is to iterate the narrative freely, render the whole piece at draft quality, watch it, then finish only the surviving shots.
+Commercial use starts at Pro. Planning, structuring, and script work consume negligible credits — generation is the cost — so the efficient pattern is to iterate the narrative freely, render the whole piece at draft quality, watch it, then finish only the surviving shots.
 
 ## A launch-week workflow
 

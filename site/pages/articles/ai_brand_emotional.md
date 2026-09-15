@@ -5,7 +5,7 @@ keywords: ["ai brand story video maker", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_brand_emotional"
 article_target_query: "ai brand story video maker"
@@ -98,7 +98,7 @@ Yes. Collaboration is role-based and version-controlled with full change history
 
 **Who owns the video we make?**
 
-The Organization legally owns all projects, created content, and generated assets, as stated in the Terms of Service. Commercial-use rights scale with plan tier — commercial use is included from the Business plan.
+The Organization legally owns all projects, created content, and generated assets, as stated in the Terms of Service. Commercial rights depend on your plan: commercial use starts at the Pro plan ($175/month) for audiences up to 100,000, and Enterprise covers unlimited commercial use.
 
 **Is there a way to control cost before we commit?**
 

@@ -5,7 +5,7 @@ keywords: ["produce 100 marketing videos a month with ai", "AI filmmaking", "AI 
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "produce_month_ai"
 article_target_query: "produce 100 marketing videos a month with ai"
@@ -94,11 +94,11 @@ You keep the decisions that matter — shot type, camera direction and height, l
 ## Step 4: Render concurrently and control spend
 
 * Jobs queue asynchronously on dedicated GPU nodes; the interface stays responsive while high-volume renders run.
-* **Concurrency scales with plan tier** — this is the lever that converts your monthly volume into wall-clock time. Standard supports 3 concurrent jobs, Business 6, Enterprise 10+.
+* **Concurrency scales with plan tier** — this is the lever that converts your monthly volume into wall-clock time. Creator supports 3 concurrent jobs, Pro 6, Enterprise 10.
 * Every generation shows its exact credit cost before you commit, and the render queue displays predicted spend, so a team lead can approve or postpone based on budget.
 * Unused credits roll into a rollover bank up to a per-plan cap, which absorbs uneven month-to-month volume.
 
-For a 100-video program, budget planning is straightforward: estimate credits per video from a pilot batch, multiply, and pick the tier whose monthly credits and concurrency match. ACT 3 AI plans run Free ($0), Community ($8), Standard ($35), Business ($175, includes commercial use and 6 concurrent jobs), and Enterprise (custom, 4K video and 10+ jobs).
+For a 100-video program, budget planning is straightforward: estimate credits per video from a pilot batch, multiply, and pick the tier whose monthly credits and concurrency match. ACT 3 AI plans run Free ($0), Creator ($49), Pro ($175, includes commercial use for audiences up to 100,000 and 6 concurrent jobs), larger Editions from $395, and Enterprise (custom, unlimited commercial use and 10 jobs).
 
 ## Step 5: Review in batches, on timelines
 
@@ -153,7 +153,7 @@ Yes — export 16:9, 9:16, and 1:1 from the same production, plus captions and d
 
 **Do we get commercial-use rights?**
 
-Commercial use is included from the Business tier. Confirm your plan before running paid media.
+Commercial use starts at the Pro plan, for audiences up to 100,000, and Enterprise covers unlimited commercial use. Confirm your plan before running paid media.
 
 **Where does this approach not fit?**
 

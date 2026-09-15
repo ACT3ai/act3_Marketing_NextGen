@@ -1,11 +1,11 @@
 ---
-title: "AI Commercial Cost vs a Traditional Shoot: The Full Breakdown"
+title: "AI Commercial Cost vs a Traditional Shoot"
 description: "A traditional commercial shoot spends most of its budget on things that never appear on screen — crew day rates, location and permits, equipment rental..."
 keywords: ["cost of ai commercial vs traditional shoot", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_commercial_breakdown"
 article_target_query: "cost of ai commercial vs traditional shoot"
@@ -86,7 +86,7 @@ For agency work specifically, four capabilities carry the cost argument:
 - **Character consistency across shots.** Per-character LoRA training keeps a face identical across dozens of renders, and wardrobe variants are managed per scene. Inconsistency is the classic reason AI ad footage gets thrown away.
 - **Cost transparency before you spend.** Every generation action displays its exact credit cost before you commit, and a render queue shows predicted spend so a producer can approve or postpone. Multiple quality levels — draft through 4K — let you iterate cheap and finish expensive.
 
-Plans run from a $0 Free tier through Community at $8, Standard at $35, and Business at $175 with commercial-use rights and six concurrent jobs, with Enterprise pricing on request for 4K and higher concurrency. For an agency running several client projects at once, concurrency and commercial rights are the tier-deciding features, not the credit count.
+Plans run from a $0 Free plan through Creator at $49 and Pro at $175, which adds commercial use for audiences up to 100,000 and six concurrent jobs, with Enterprise on request for unlimited commercial use and ten concurrent jobs. For an agency running several client projects at once, concurrency and commercial rights are the plan-deciding features, not the credit count.
 
 Be straightforward with clients about scope: AI production is not the answer when the brief requires a real, identifiable person, a real product photographed in real light for a substantiated claim, or documentary capture of an actual event. It is a strong answer for narrative and concept spots, product and lifestyle scenarios, campaign variants, and anything that needs many versions.
 
@@ -120,7 +120,7 @@ Count shots rather than minutes, apply a realistic retry multiplier, and use a p
 
 **Can we hold commercial rights to AI-generated work?**
 
-On ACT 3 AI, the Organization — your agency workspace — legally owns the projects and generated assets created within it, and commercial use is included from the Business tier. Confirm the specifics against the Terms of Service for your engagement.
+On ACT 3 AI, the Organization — your agency workspace — legally owns the projects and generated assets created within it, and commercial use starts at the Pro plan for audiences up to 100,000. Confirm the specifics against the Terms of Service for your engagement.
 
 **How many people does an AI commercial take?**
 

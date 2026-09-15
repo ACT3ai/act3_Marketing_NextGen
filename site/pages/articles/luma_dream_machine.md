@@ -5,7 +5,7 @@ keywords: ["luma dream machine alternative", "AI filmmaking", "AI video generati
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "luma_dream_machine"
 article_target_query: "luma dream machine alternative"
@@ -119,7 +119,7 @@ For a single post, yes. For a serialized channel with recurring characters and a
 
 **What does it cost to try?**
 
-ACT 3 AI is a metered SaaS subscription with a free tier and paid plans from $8/month, with the exact credit cost shown before every generation.
+ACT 3 AI is a metered SaaS subscription with a free plan and paid plans from $49/month, with the exact credit cost shown before every generation.
 
 ---
 

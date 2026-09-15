@@ -5,7 +5,7 @@ keywords: ["ai video generator with sso and security", "AI filmmaking", "AI vide
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_sso_multi"
 article_target_query: "ai video generator with sso and security"
@@ -77,7 +77,7 @@ ACT 3 AI is a hosted web app for AI filmmaking that takes a script or an idea th
 
 ### Multi-tenant workspaces with optional SSO
 
-The platform provides multi-tenant security with **optional SAML SSO**, an isolated workspace per company, granular roles, and invitation-only project access. Free and Community tiers authenticate with LinkedIn; higher tiers are exempt from that requirement, which is the tier most enterprise buyers will be on.
+The platform provides multi-tenant security with **optional SAML SSO**, an isolated workspace per company, granular roles, and invitation-only project access.
 
 ### The Organization is the unit of control
 
@@ -100,7 +100,7 @@ Note the deliberate split: **Run AI** and **Use Credits** are separate from **Mo
 
 ### IP ownership and transfer
 
-The Organization legally owns all IP created in its projects, and that is stated in the Terms of Service. Ownership can be transferred to another member, but it requires confirmation from both parties — a deliberate guard against unauthorized transfers. For studios and agencies, this is the clause that makes a chain-of-title conversation short. If you are also thinking about long-term asset retention, note that lower tiers delete dormant assets after four months, so retention is itself a tier decision.
+The Organization legally owns all IP created in its projects, and that is stated in the Terms of Service. Ownership can be transferred to another member, but it requires confirmation from both parties — a deliberate guard against unauthorized transfers. For studios and agencies, this is the clause that makes a chain-of-title conversation short. If you are also thinking about long-term asset retention, storage is set by plan, so retention is itself a plan decision.
 
 ### Compliance surfaces you can point at
 
@@ -110,7 +110,7 @@ The Organization legally owns all IP created in its projects, and that is stated
 - **Version-controlled collaboration** with full change history and role-based real-time editing, so you can show who changed what.
 - **Cost transparency.** Every generation job shows its credit cost before you commit, and the render queue shows predicted spend so teams can approve or postpone.
 
-Enterprise plans add 4K output, private 3D sets, higher job concurrency, and priority support, and are quoted directly rather than sold self-serve.
+Enterprise plans add high-volume credits, unlimited storage, unlimited commercial use and ten concurrent jobs, and are quoted directly rather than sold self-serve.
 
 ## Questions to put in your security questionnaire
 
@@ -149,7 +149,7 @@ The platform provides version-controlled collaboration with full change history,
 
 **What if IT wants us off the free tier for compliance reasons?**
 
-That is the normal outcome. LinkedIn authentication applies to Free and Community tiers; higher tiers are exempt, and Enterprise adds 4K output, private 3D sets, priority support, and custom terms. Enterprise pricing is quoted rather than listed.
+That is the normal outcome. Paid plans start at Creator ($49/month), and Enterprise adds unlimited commercial use, unlimited storage, ten concurrent jobs and custom terms. Enterprise pricing is quoted rather than listed.
 
 ## Next step
 
