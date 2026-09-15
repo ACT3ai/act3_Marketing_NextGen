@@ -19,11 +19,23 @@
 //   2. Derives a meta `description` from the article's own lead paragraph --
 //      Docusaurus emits no description without one, and Google then writes the
 //      snippet for us on 133 commercial-intent pages.
-//   3. Stamps `last_update.date` from the source file so the sitemap can carry
-//      a real <lastmod> without needing git history in CI.
+//   3. Stamps `last_update.date` so the sitemap can carry a real <lastmod>
+//      without needing git history in CI. The date only moves when the
+//      published page actually changes: an unchanged page keeps the date it
+//      already carries, a new or edited page gets the date of this run. (The
+//      source file's mtime was used before, but a fresh checkout sets every
+//      mtime to "now", which re-dated every live article on each run.)
 //   4. Drops one inline CTA after the opening section (readers convert from
 //      buttons, not from closing prose most of them never reach).
 //   5. Extracts the "## FAQ" block into structured data for FAQPage JSON-LD.
+//
+// Only the slugs listed in scripts/published-articles.txt are published. The
+// corpus holds far more articles than are ready to go live, and this script
+// deletes and regenerates site/pages/articles/ on every run, so an explicit
+// list is the only thing standing between "publish 80 this week" and
+// "publish everything in the folder". A cross-link to an article that exists
+// upstream but is not on the list is flattened to plain text rather than left
+// as a link the build would reject.
 //
 // Run:  node scripts/sync-articles.js        (also runs as part of `pnpm build`)
 // Source override:  ACT3_SEO_PAGES=/some/dir node scripts/sync-articles.js
@@ -37,6 +49,7 @@ const SRC =
   process.env.ACT3_SEO_PAGES ||
   path.join(os.homedir(), "BGit/all/film/marketing/seo/pages");
 const OUT_DIR = path.join(REPO, "site/pages/articles");
+const PUBLISH_LIST = path.join(__dirname, "published-articles.txt");
 const DATA_FILE = path.join(REPO, "site/data/articles.json");
 
 const SOCIAL_IMAGE = "https://act3ai.com/img/Act3_Preview.jpg";
@@ -215,7 +228,17 @@ function splitFaqParagraphs(body) {
 }
 
 /** Rewrite every dead or filesystem-relative link target. */
-function rewriteLinks(body, knownSlugs, slug, report) {
+function rewriteLinks(body, knownSlugs, slug, report, heldBackSlugs) {
+  // A link to an article that exists upstream but is not published would be a
+  // broken link (and onBrokenLinks is "throw"). Keep the words, drop the link.
+  body = body.replace(
+    /\[([^\]]+)\]\(\.\.\/([A-Za-z0-9_-]+)\/\2\.md(\s+"[^"]*")?\)/g,
+    (whole, text, target) => {
+      if (knownSlugs.has(target) || !heldBackSlugs.has(target)) return whole;
+      report.flattenedCrossLinks.push(slug + " -> " + target);
+      return text;
+    },
+  );
   return body.replace(
     /\]\(([^)\s]+)(\s+"[^"]*")?\)/g,
     (whole, target, title) => {
@@ -289,15 +312,69 @@ if (!fs.existsSync(SRC)) {
   process.exit(0);
 }
 
-const slugs = fs
+const corpusSlugs = fs
   .readdirSync(SRC, { withFileTypes: true })
   .filter((e) => e.isDirectory())
   .map((e) => e.name)
   .filter((name) => fs.existsSync(path.join(SRC, name, name + ".md")))
   .sort();
 
+// The publish list. A missing list, or a listed slug with no article behind it,
+// stops the run: either would silently change what is live.
+if (!fs.existsSync(PUBLISH_LIST)) {
+  console.error(
+    "[articles] missing " + PUBLISH_LIST + " -- refusing to publish the whole corpus",
+  );
+  process.exit(1);
+}
+const listed = [
+  ...new Set(
+    fs
+      .readFileSync(PUBLISH_LIST, "utf8")
+      .split(/\r?\n/)
+      .map((l) => l.trim())
+      .filter((l) => l && !l.startsWith("#")),
+  ),
+];
+const corpusSet = new Set(corpusSlugs);
+const notInCorpus = listed.filter((s) => !corpusSet.has(s));
+if (notInCorpus.length) {
+  console.error(
+    "[articles] published-articles.txt lists " +
+      notInCorpus.length +
+      " slug(s) with no article in the corpus: " +
+      notInCorpus.join(", "),
+  );
+  process.exit(1);
+}
+
+const listedSet = new Set(listed);
+const slugs = corpusSlugs.filter((s) => listedSet.has(s));
+const heldBackSlugs = new Set(corpusSlugs.filter((s) => !listedSet.has(s)));
+
 const knownSlugs = new Set(slugs);
-const report = { rewritten: 0, unknownCrossLinks: [], noDescription: [] };
+const report = {
+  rewritten: 0,
+  unknownCrossLinks: [],
+  flattenedCrossLinks: [],
+  noDescription: [],
+};
+
+// Remember what is live before the folder is wiped, so an unchanged page keeps
+// its date. Compared with line endings normalised and the date masked out.
+const DATE_LINE = /^  date: (\d{4}-\d{2}-\d{2})$/m;
+const DATE_MASK = "  date: __DATE__";
+const previous = new Map();
+if (fs.existsSync(OUT_DIR)) {
+  for (const f of fs.readdirSync(OUT_DIR)) {
+    if (!f.endsWith(".md")) continue;
+    const text = fs.readFileSync(path.join(OUT_DIR, f), "utf8").replace(/\r\n/g, "\n");
+    const m = DATE_LINE.exec(text);
+    if (m) previous.set(f.slice(0, -3), { date: m[1], masked: text.replace(DATE_LINE, DATE_MASK) });
+  }
+}
+const TODAY = new Date().toISOString().slice(0, 10);
+report.redated = [];
 
 fs.rmSync(OUT_DIR, { recursive: true, force: true });
 fs.mkdirSync(OUT_DIR, { recursive: true });
@@ -314,14 +391,16 @@ for (const slug of slugs) {
   const title = normalizeBrand(fm.title || slug.replace(/_/g, " "));
   const targetQuery = fm.target_query || "";
 
-  let body = normalizeBrand(rewriteLinks(bodyRaw, knownSlugs, slug, report));
+  let body = normalizeBrand(
+    rewriteLinks(bodyRaw, knownSlugs, slug, report, heldBackSlugs),
+  );
   const faq = extractFaq(body);
   body = splitFaqParagraphs(body);
   const description = buildDescription(body);
   if (!description || description.length < 60) report.noDescription.push(slug);
   body = insertInlineCta(body);
 
-  const updated = fs.statSync(srcFile).mtime.toISOString().slice(0, 10);
+  let updated = "__DATE__";
   const words = stripMarkdown(bodyRaw.replace(/^#.*$/gm, "")).split(
     /\s+/,
   ).length;
@@ -355,9 +434,19 @@ for (const slug of slugs) {
     "",
   ].join("\n");
 
+  const masked = frontMatter + body.trimStart() + "\n";
+  const prev = previous.get(slug);
+  // The corpus checkout may use CRLF; compare with line endings normalised on
+  // both sides, or every page looks "changed" on Windows.
+  if (prev && prev.masked === masked.replace(/\r\n/g, "\n")) {
+    updated = prev.date;
+  } else {
+    updated = TODAY;
+    report.redated.push(slug);
+  }
   fs.writeFileSync(
     path.join(OUT_DIR, slug + ".md"),
-    frontMatter + body.trimStart() + "\n",
+    masked.replace("  date: __DATE__", "  date: " + updated),
     "utf8",
   );
 
@@ -470,7 +559,24 @@ console.log("[articles] wrote site/static/llms.txt");
 console.log(
   "[articles] published " + index.length + " articles to site/pages/articles/",
 );
+console.log(
+  "[articles] held back " +
+    heldBackSlugs.size +
+    " corpus articles not listed in scripts/published-articles.txt",
+);
+if (report.flattenedCrossLinks.length) {
+  console.log(
+    "[articles] " +
+      report.flattenedCrossLinks.length +
+      " cross-links to held-back articles kept as plain text",
+  );
+}
 console.log("[articles] rewrote " + report.rewritten + " link targets");
+console.log(
+  "[articles] dated today (new or changed): " +
+    report.redated.length +
+    (report.redated.length ? " -> " + report.redated.join(", ") : ""),
+);
 console.log(
   "[articles] FAQ blocks parsed: " +
     index.filter((a) => a.faq.length).length +
