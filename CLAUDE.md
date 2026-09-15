@@ -117,6 +117,15 @@ site by `scripts/sync-articles.js` (which `pnpm build` runs first). Everything i
 **generated — never hand-edit those files.** Edit the upstream article and re-run
 `pnpm sync-articles`.
 
+**What goes live is decided by `scripts/published-articles.txt`**, one slug per
+line. The corpus holds more articles than are ready (464 written, 133 live on
+15 Sept 2026), and the sync deletes and regenerates `site/pages/articles/` on
+every run, so it publishes ONLY the listed slugs. To publish an article, add its
+slug and re-run `pnpm sync-articles`; to take one down, remove it. The sync
+refuses to run if the list is missing or names a slug with no article upstream.
+A cross-link to an article that exists upstream but is not listed is kept as
+plain text, not left as a link the build would reject.
+
 The sync also rewrites the dead CTA links the corpus was written with
 (`/signup`, `/demo`, `/compare`, `/level-2`, `/enterprise`) to destinations that
 resolve. `onBrokenLinks` is `"throw"`, so anything it misses fails the build.
