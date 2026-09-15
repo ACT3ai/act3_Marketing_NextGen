@@ -1,11 +1,11 @@
 ---
-title: "How to Make a Full-Length AI Movie From a Script, Not Just Clips"
+title: "How to Make a Full-Length AI Movie From a Script"
 description: "To make a full-length AI movie you have to stop thinking in clips and start thinking in structure. A 90-minute feature is not one long generation — it is..."
 keywords: ["how to make a full length ai movie", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "make_ai_clips"
 article_target_query: "how to make a full length ai movie"

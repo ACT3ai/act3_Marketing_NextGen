@@ -5,7 +5,7 @@ keywords: ["what is script to video ai", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_definition_uses"
 article_target_query: "what is script to video ai"
@@ -125,11 +125,11 @@ In a full pipeline, yes. ACT 3 AI has built-in text-to-speech that generates spo
 
 **How much does script-to-video AI cost?**
 
-ACT 3 AI runs on a metered credit model: a free tier, plans from $8/month, and higher tiers for studio and enterprise use, with the exact credit cost shown before each generation and a render queue that shows predicted spend.
+ACT 3 AI runs on a metered credit model: a free plan, paid plans from $49/month, and larger Editions and Enterprise for studio and enterprise use, with the exact credit cost shown before each generation and a render queue that shows predicted spend.
 
 **Can I use the output commercially?**
 
-On ACT 3 AI, commercial-use rights come with the Business tier and above, and your Organization legally owns the projects and generated assets created in it under the Terms of Service.
+On ACT 3 AI, commercial use starts at the Pro plan ($175/month) for audiences up to 100,000, and your Organization legally owns the projects and generated assets created in it under the Terms of Service.
 
 **What if the automated result is not what I wanted?**
 

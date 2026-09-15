@@ -1,11 +1,11 @@
 ---
-title: "From Client Brief to Finished Spot: AI Commercials for Agencies"
+title: "AI Commercials for Agencies: Brief to Finished Spot"
 description: "AI commercial production works for an agency when the platform automates the whole path from brief to spot — script, shot breakdown, character sheets..."
 keywords: ["ai commercial production for agencies", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "brief_spot_ai"
 article_target_query: "ai commercial production for agencies"

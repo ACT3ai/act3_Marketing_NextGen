@@ -5,7 +5,7 @@ keywords: ["product launch video with ai", "AI filmmaking", "AI video generation
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ship_launch_ai"
 article_target_query: "product launch video with ai"
@@ -105,7 +105,7 @@ Be clear-eyed, because launch videos are public.
 | Stock footage edit | 3–7 days | Licensing, editor time | Cheap, but limited by what exists |
 | AI production pipeline | Days | Subscription plus metered generation credits | Regenerate affected shots |
 
-ACT 3 AI runs on a free tier plus paid plans — Community at $8/month, Standard at $35/month, Business at $175/month, and Enterprise quoted individually — with monthly credits and rollover, and commercial-use rights on the Business tier. For a small business shipping launch and campaign video regularly, the plan choice is driven by how many delivered minutes you produce per month, not by feature gates on the creative work.
+ACT 3 AI runs on a free plan plus paid plans — Creator at $49/month, Pro at $175/month, larger Editions from $395/month, and Enterprise quoted individually — with monthly credits and rollover, and commercial use starting at Pro. For a small business shipping launch and campaign video regularly, the plan choice is driven by how many delivered minutes you produce per month, not by feature gates on the creative work.
 
 ---
 
@@ -140,7 +140,7 @@ One-click export covers 16:9, vertical 9:16, and 1:1 from the same production, s
 
 **Can I use AI-generated launch video commercially?**
 
-Commercial-use rights come with the Business tier and above. Confirm your plan's terms before publishing a paid campaign — the free and lowest tiers are scoped to personal use, and the free tier watermarks output.
+Commercial use starts at the Pro plan, for audiences up to 100,000. Confirm your plan's terms before publishing a paid campaign — Creator is for personal use.
 
 **What happens when my CEO wants changes the day before launch?**
 

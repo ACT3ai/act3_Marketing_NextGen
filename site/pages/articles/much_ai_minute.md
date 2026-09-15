@@ -1,11 +1,11 @@
 ---
-title: "How Much Does AI Video Cost? Real Per-Minute and Per-Project Math"
+title: "How Much Does AI Video Cost? Per-Minute Math"
 description: "AI video is priced in one of three ways — a flat monthly subscription, a per-second or per-clip generation fee, or a credit system where each render draws..."
 keywords: ["how much does ai video cost", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "much_ai_minute"
 article_target_query: "how much does ai video cost"
@@ -78,11 +78,10 @@ Published plan tiers:
 
 | Plan | Price | Monthly credits | Rollover cap | Notes |
 |---|---|---|---|---|
-| Free | $0 | 800 | 0 | Personal use, watermarked |
-| Community | $8 | 8,000 | 1,000 | No watermark |
-| Standard | $35 | 33,000 | 100,000 | 3 concurrent jobs |
-| Business | $175 | 180,000 | 500,000 | Commercial use, 6 concurrent jobs |
-| Enterprise | Contact | High volume | Unlimited | 4K video, 10+ concurrent jobs |
+| Free | $0 | 800 | 0 | Try it out |
+| Creator | $49 | 24,500 | 61,250 | Personal use, 3 concurrent jobs |
+| Pro | $175 | 87,500 | 218,750 | Commercial use up to 100k audience, 6 concurrent jobs |
+| Enterprise | Contact | High volume | High | Unlimited commercial use, 10 concurrent jobs |
 
 Credits are consumed by resource-intensive actions: AI script and story generation, generative video shots, 3D set rendering, and text-to-speech. Cheaper actions — planning, editing, restructuring — do not carry the weight that rendering does.
 
@@ -92,7 +91,7 @@ Three things in the product exist specifically to keep spend predictable:
 - **A render queue with cost estimation.** Every generation job is queued with its predicted spend, so a team can approve or postpone based on budget rather than discovering the bill later.
 - **Cancel and reclaim.** The progress panel shows live logs and percentage complete, with a cancel button that reclaims credits.
 
-Unused credits roll into a Rollover Bank up to each plan's cap; the current month's allocation is spent first, and the bank is drawn on after that. Free and Community are positioned as trial and hobbyist tiers — after six months of activity they require an upgrade to Standard or higher.
+Unused credits roll into a rollover bank up to each plan's cap, about two and a half months of that plan's credits. Anything above the cap is forfeited.
 
 The structural cost argument is the one to weigh: ACT 3 AI is built to collapse a pre-production pipeline that traditionally runs 80–200 hours into roughly two hours, and to keep script, cinematography, rendering, assembly, and export in one tool. Every step you do not hand to a separate vendor or a separate subscription is a line item that leaves your per-minute number.
 
@@ -118,7 +117,7 @@ On ACT 3 AI, credits are spent on the compute-heavy actions: script and story ge
 
 **Can I try AI video before paying?**
 
-Yes. ACT 3 AI has a Free tier at $0 with 800 monthly credits, intended for personal use with watermarked output. It is enough to learn the pipeline and calibrate your own cost per minute before choosing a plan.
+Yes. ACT 3 AI has a Free plan at $0 with 800 monthly credits. It is enough to learn the pipeline and calibrate your own cost per minute before choosing a plan.
 
 **Do unused credits expire?**
 
@@ -132,5 +131,5 @@ Retries, almost always. A tool with weak control over camera, character consiste
 
 ## Run the math on your own project
 
-The fastest way to get a real number is to build one real project. Start on the ACT 3 AI Free plan, import a script or a rough idea, generate a handful of shots at each quality level, and read the credit costs directly off the buttons. You will have a defensible per-minute figure for your own content in an afternoon — and if the numbers point toward a larger production, the Business and Enterprise tiers are built for exactly that volume.
+The fastest way to get a real number is to build one real project. Start on the ACT 3 AI Free plan, import a script or a rough idea, generate a handful of shots at each quality level, and read the credit costs directly off the buttons. You will have a defensible per-minute figure for your own content in an afternoon — and if the numbers point toward a larger production, the Pro plan, the Editions and Enterprise are built for exactly that volume.
 

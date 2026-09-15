@@ -1,11 +1,11 @@
 ---
-title: "Auto-Writing Veo and Claude Prompts Straight From Your Script"
+title: "Auto-Write Veo and Claude Prompts From Your Script"
 description: "Automatically writing Veo prompts from a script means turning screenplay text into one fully specified generation prompt per shot, without typing any of them."
 keywords: ["automatically write veo prompts from script", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "writing_claude_straight"
 article_target_query: "automatically write veo prompts from script"

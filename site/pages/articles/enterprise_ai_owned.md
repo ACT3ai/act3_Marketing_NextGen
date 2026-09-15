@@ -1,11 +1,11 @@
 ---
-title: "Enterprise AI Film Production: Full Runtime, Teams, and Owned IP"
+title: "Enterprise AI Film Production: Teams and Owned IP"
 description: "Enterprise AI film production software has to clear a bar that consumer AI video tools never face: it must produce full-length deliverables (a 40-minute..."
 keywords: ["enterprise ai film production software", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "enterprise_ai_owned"
 article_target_query: "enterprise ai film production software"
@@ -23,7 +23,7 @@ article_key_value: "Serious_Production"
 
 Enterprise AI film production software has to clear a bar that consumer AI video tools never face: it must produce **full-length deliverables** (a 40-minute episode is roughly 650 shots; a feature is well over a thousand), support **many people working in one production** with real permissions and audit trails, and keep **all of the intellectual property** — scripts, characters, digital actors, sets, prompts, and masters — inside a workspace your company owns and controls.
 
-**ACT 3 AI is built for serious production.** Projects run at real 1-to-2-hour runtimes in 2–3 hour work sprints. All IP is stored in an Organization that legally owns every project and generated asset. Full teams collaborate in one production with six granular permission levels, multi-tenant isolation, optional SAML SSO, real-time version-controlled editing, and lock-down controls on approved material. Enterprise plans add high-volume credits, 4K output, priority support, private 3D sets, and 10+ concurrent jobs.
+**ACT 3 AI is built for serious production.** Projects run at real 1-to-2-hour runtimes in 2–3 hour work sprints. All IP is stored in an Organization that legally owns every project and generated asset. Full teams collaborate in one production with six granular permission levels, multi-tenant isolation, optional SAML SSO, real-time version-controlled editing, and lock-down controls on approved material. Enterprise plans add high-volume credits, unlimited storage, unlimited commercial use and ten concurrent jobs.
 
 This page covers what enterprise buyers evaluate: security and tenancy, IP ownership, collaboration model, cost governance, deliverables, and integration with existing pipelines.
 
@@ -76,9 +76,9 @@ For an enterprise, this is often the deciding criterion.
 
 - The **Organization legally owns** all projects, created content, and generated assets, stated in the Terms of Service.
 - **Ownership transfer** is possible but requires confirmation from both parties, preventing unauthorized moves.
-- **Private assets**: sets and characters can be kept private within your organization rather than exposed to any community library. Enterprise plans include private 3D sets.
+- **Private assets**: sets and characters can be kept private within your organization rather than exposed to any community library.
 - **Everything in one place**: scripts, story arcs, characters, digital actors, wardrobe, sets, prompts, renders, and masters live in the production, not scattered across individual users' tool accounts.
-- **Commercial-use rights** scale with plan tier; Business and above include commercial use.
+- **Commercial-use rights** scale with plan; Pro includes commercial use for audiences up to 100,000, and Enterprise without that limit.
 - **Content safety** is enforced at three stages — prompts before generation, scripts before production, and finished outputs before download — with auto-redaction or admin review.
 
 That combination is what "we store all the intellectual property" means in practice: your company's production assets consolidate into a workspace you control, with per-member permissions and an audit trail.
@@ -95,7 +95,7 @@ Enterprise buyers need spend to be predictable and attributable:
 - **Progress panels** show live logs and percentage complete, with cancel to reclaim credits instantly.
 - Unused credits move to a **rollover bank** up to a per-plan cap.
 
-Plans run from free through Community ($8), Standard ($35), and Business ($175), with studio tiers starting at $395/month and Enterprise priced on request for high-volume credits, 4K video, 10+ concurrent jobs, priority support, and private 3D sets.
+Plans run from Free through Creator ($49) and Pro ($175), with larger Editions from $395/month and Enterprise priced on request for high-volume credits, unlimited commercial use and ten concurrent jobs.
 
 ## Fitting your existing pipeline
 
@@ -137,7 +137,7 @@ ACT 3's architecture is modular and engine-agnostic, integrating multiple provid
 
 **What does Enterprise pricing include?**
 
-Enterprise is priced on request and includes high-volume credits, 4K video output, 10+ concurrent jobs, private 3D sets, and priority support, alongside unlimited credit rollover.
+Enterprise is priced on request and includes high-volume credits, unlimited storage, unlimited commercial use and ten concurrent jobs.
 
 ## Talk to us about your slate
 

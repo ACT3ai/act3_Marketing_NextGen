@@ -1,11 +1,11 @@
 ---
-title: "How to Write a Script an AI Video Pipeline Can Actually Shoot"
+title: "How to Write a Script an AI Video Pipeline Can Shoot"
 description: "To write a script for AI video, write a normal screenplay — but make three things explicit that a human crew would have inferred: who is on screen, where..."
 keywords: ["how to write a script for ai video", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "write_ai_shoot"
 article_target_query: "how to write a script for ai video"

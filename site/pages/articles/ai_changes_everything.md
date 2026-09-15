@@ -1,11 +1,11 @@
 ---
-title: "Full-Movie AI vs Short-Clip Generators: Why Runtime Changes Everything"
+title: "Full-Movie AI vs Short-Clip Generators: Why Runtime Wins"
 description: "The difference between an AI movie generator and a short-clip generator is not output quality — it is whether the system manages runtime."
 keywords: ["ai movie generator vs short clip tools", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_changes_everything"
 article_target_query: "ai movie generator vs short clip tools"

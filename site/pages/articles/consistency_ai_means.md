@@ -1,11 +1,11 @@
 ---
-title: "Character Consistency in AI Video: What It Means and How to Get It"
+title: "Character Consistency in AI Video: What It Means"
 description: "Character consistency in AI video means that the same character looks like the same person in every shot — same face, same hair, same build, same wardrobe..."
 keywords: ["what is character consistency ai", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "consistency_ai_means"
 article_target_query: "what is character consistency ai"

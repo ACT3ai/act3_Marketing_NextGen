@@ -5,7 +5,7 @@ keywords: ["best ai commercial generator", "AI filmmaking", "AI video generation
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_commercial_brands"
 article_target_query: "best ai commercial generator"
@@ -117,7 +117,7 @@ No. Prompts for both the videos and the first frames are auto-written. You can o
 
 **Can I control cost before committing?**
 
-Yes. Every generate button displays its exact credit cost up front, quality tiers are priced separately, and the render queue shows predicted spend so it can be approved or deferred. Plans run from a free tier through Community, Standard and Business to Enterprise.
+Yes. Every generate button displays its exact credit cost up front, quality tiers are priced separately, and the render queue shows predicted spend so it can be approved or deferred. Plans run from a free plan through Creator ($49) and Pro ($175) to Enterprise.
 
 **Who owns the finished commercial?**
 

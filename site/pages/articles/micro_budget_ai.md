@@ -1,11 +1,11 @@
 ---
-title: "Make a Feature on a Micro-Budget: Full-Length AI, Real Numbers"
+title: "Make a Movie on a Micro-Budget With AI: Real Numbers"
 description: "A micro-budget AI feature is possible today, but only if you attack the right constraint. The constraint is not the cost of a shot — generative video is..."
 keywords: ["make a movie on a micro budget with ai", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "micro_budget_ai"
 article_target_query: "make a movie on a micro budget with ai"
@@ -91,7 +91,7 @@ That is supported by the parts of the platform that make mass generation surviva
 - **Dialogue and performance.** Built-in text-to-speech generates spoken lines from the script and drives lipsync; markerless motion capture pulls full-body performance from ordinary video with no suit or specialist hardware.
 - **Festival-facing output.** Cloud rendering produces ProRes masters per shot, scene, or episode, with export bridges to Premiere and DaVinci Resolve.
 
-On cost, plans start at a $0 Free tier (800 credits, watermarked, personal use), through Community at $8, Standard at $35 with three concurrent jobs, and Business at $175 with commercial use and six concurrent jobs; Enterprise is quoted for 4K and higher concurrency. Every generation action shows its exact credit cost before you commit, and the render queue shows predicted spend — which is how you keep a feature inside a fixed budget instead of discovering the number afterwards.
+On cost, plans start at a $0 Free plan (800 credits), through Creator at $49 with three concurrent jobs, and Pro at $175 with commercial use for audiences up to 100,000 and six concurrent jobs; Enterprise is quoted for unlimited commercial use and ten concurrent jobs. Every generation action shows its exact credit cost before you commit, and the render queue shows predicted spend — which is how you keep a feature inside a fixed budget instead of discovering the number afterwards.
 
 **If your bottleneck is your own time rather than money**, ACT 3 offers an optional "Level 2 team" package: our team takes your feedback and makes the movie happen, for part or all of the production. That is the route for a writer who has a script and no intention of becoming a full-time operator.
 

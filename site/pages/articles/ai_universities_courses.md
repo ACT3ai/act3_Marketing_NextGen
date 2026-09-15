@@ -1,11 +1,11 @@
 ---
-title: "AI Video for Universities: Courses, Recruiting, and Explainers"
+title: "AI Video for Universities: Courses and Recruiting"
 description: "Universities need AI video for three distinct jobs — course content (lectures, modules, lab explainers), recruiting and marketing (campus stories, program..."
 keywords: ["ai video generator for universities", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_universities_courses"
 article_target_query: "ai video generator for universities"
@@ -66,13 +66,13 @@ Universities buy differently from agencies. The relevant capabilities:
 
 ## Plans and how to size a deployment
 
-Published pricing: Free ($0, 800 credits, watermarked, personal use), Community ($8, 8,000 credits), Standard ($35, 33,000 credits, 3 concurrent jobs), Business ($175, 180,000 credits, commercial use, 6 concurrent jobs), and Enterprise on request — high volume credits, unlimited rollover, 4K video, and 10+ concurrent jobs.
+Published pricing: Free ($0, 800 credits), Creator ($49, 24,500 credits, 3 concurrent jobs), Pro ($175, 87,500 credits, commercial use for audiences up to 100,000, 6 concurrent jobs), larger Editions from $395/month, and Enterprise on request — high-volume credits, unlimited commercial use, and 10 concurrent jobs.
 
 Practical sizing guidance:
 
-1. **Pilot on Free or Standard with one department.** Take a course that already has written material and produce three modules end to end. You learn the real credit consumption for your content type, which no vendor estimate can give you.
-2. **Concurrency is the throughput lever, not seats.** Three concurrent jobs on Standard, six on Business, 10+ on Enterprise. If your semester schedule means 40 modules in three weeks, concurrency is what you're buying.
-3. **Enterprise is the tier that carries SSO, 4K, and priority support** — the three things institutional IT usually makes non-negotiable.
+1. **Pilot on Free or Creator with one department.** Take a course that already has written material and produce three modules end to end. You learn the real credit consumption for your content type, which no vendor estimate can give you.
+2. **Concurrency is the throughput lever, not seats.** Three concurrent jobs on Creator, six on Pro, ten on Enterprise. If your semester schedule means 40 modules in three weeks, concurrency is what you're buying.
+3. **Enterprise is the plan for institution-wide volume** — unlimited commercial use, unlimited storage and ten concurrent jobs.
 4. **Separate Organizations per school or department** if budgets are separate; a single user can belong to several.
 
 ## A realistic production model
@@ -102,7 +102,7 @@ Yes. Import formal scripts, articles, books, or Wikipedia pages, or paste raw te
 
 **Does it support SSO and institutional security requirements?**
 
-Multi-tenant security with isolated workspaces, optional SAML SSO, invitation-only project access, and six granular permission levels are part of the platform; SSO and priority support sit at the Enterprise tier.
+Multi-tenant security with isolated workspaces, optional SAML SSO, invitation-only project access, and six granular permission levels are part of the platform.
 
 **Who owns the videos we produce?**
 
@@ -122,5 +122,5 @@ One department, one course, three modules, on Free or Standard. Measure credits 
 
 ## Start a campus pilot
 
-Pick one course with material already written and produce three modules end to end. Talk to our team about an Enterprise deployment with SSO and departmental Organizations — or about the Level 2 package, where we take your feedback and produce the semester's content alongside your media team.
+Pick one course with material already written and produce three modules end to end. Talk to our team about an Enterprise deployment with departmental Organizations — or about the Level 2 package, where we take your feedback and produce the semester's content alongside your media team.
 

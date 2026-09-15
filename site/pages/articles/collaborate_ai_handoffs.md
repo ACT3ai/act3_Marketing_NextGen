@@ -1,11 +1,11 @@
 ---
-title: "Collaborate on One AI Production: Roles, Permissions, and Handoffs"
+title: "AI Film Production Teams: Roles, Permissions, Handoffs"
 description: "AI film production team collaboration works when the entire crew operates inside one production project with role-based permissions and clean handoffs..."
 keywords: ["ai film production team collaboration", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "collaborate_ai_handoffs"
 article_target_query: "ai film production team collaboration"

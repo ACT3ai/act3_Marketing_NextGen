@@ -1,11 +1,11 @@
 ---
-title: "Best AI Video Generator for Professionals and Full Productions"
+title: "Best AI Video Generator for Professionals"
 description: "Professionals need two different things from AI video, and no single product is best at both. For a shot — a striking few seconds with high fidelity — a..."
 keywords: ["best ai video generator for professionals", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_professionals_productions"
 article_target_query: "best ai video generator for professionals"

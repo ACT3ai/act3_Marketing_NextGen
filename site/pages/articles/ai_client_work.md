@@ -5,7 +5,7 @@ keywords: ["ai video generator for ad agencies", "AI filmmaking", "AI video gene
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_client_work"
 article_target_query: "ai video generator for ad agencies"
@@ -85,7 +85,7 @@ ACT 3 AI is a hosted web app for AI filmmaking that takes a script or a rough id
 
 A producer can hold Billing and Use Credits while creatives hold Run AI, and a client contact can hold Read. That is budget control by design.
 
-**Concurrency and rights by tier.** Standard at $35/month runs three concurrent jobs. Business at $175/month includes commercial use and six concurrent jobs. Enterprise is quoted for 4K output, 10+ concurrent jobs, priority support, private 3D sets, and optional SAML SSO with multi-tenant isolation. For an agency, concurrency and commercial rights are the tier-deciding variables, not the raw credit count.
+**Concurrency and rights by plan.** Creator at $49/month runs three concurrent jobs. Pro at $175/month runs six and includes commercial use for audiences up to 100,000. Enterprise runs ten concurrent jobs with unlimited commercial use. For an agency, concurrency and commercial rights are the plan-deciding variables, not the raw credit count.
 
 **Collaboration in the work itself.** Version-controlled, role-based collaboration with full change history lets people work concurrently without conflicts. Approved pages, scenes, and shots can be locked read-only so a signed-off sequence cannot be changed by accident. Real-time co-editing with presence cursors and comment threads keep review inside the tool rather than in email.
 
@@ -107,7 +107,7 @@ Yes. ACT 3 AI supports version-controlled, role-based collaboration with full ch
 
 **How do we keep client projects separate?**
 
-Each Organization is an isolated workspace owning its own projects, members, credit pool, and payment method, and a user can belong to several. Multi-tenant security with optional SAML SSO and invitation-only project access is available at the enterprise level.
+Each Organization is an isolated workspace owning its own projects, members, credit pool, and payment method, and a user can belong to several. Multi-tenant security, optional SAML SSO and invitation-only project access are part of the platform.
 
 **Who owns the work we produce for a client?**
 
@@ -115,7 +115,7 @@ The Organization legally owns all projects, created content, and generated asset
 
 **How many client jobs can we run at once?**
 
-Concurrency scales by plan: three concurrent jobs on Standard, six on Business, and 10+ on Enterprise. This is usually the deciding factor for an agency rather than credit volume.
+Concurrency scales by plan: three concurrent jobs on Creator, six on Pro, and ten on Enterprise. This is usually the deciding factor for an agency rather than credit volume.
 
 **How do we stop creatives from burning the budget?**
 
@@ -127,7 +127,7 @@ Yes. Shot lists export to Adobe Premiere, cloud rendering produces ProRes master
 
 **Is commercial use included?**
 
-Commercial-use rights are included from the Business plan. Confirm the specifics for your engagement against the Terms of Service.
+It starts at the Pro plan, for audiences up to 100,000, and Enterprise covers unlimited commercial use. Confirm the specifics for your engagement against the Terms of Service.
 
 ---
 

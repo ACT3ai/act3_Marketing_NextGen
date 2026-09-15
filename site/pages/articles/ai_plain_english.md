@@ -5,7 +5,7 @@ keywords: ["what is ai filmmaking", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_plain_english"
 article_target_query: "what is ai filmmaking"
@@ -114,11 +114,11 @@ It helps enormously, and it is the part AI does not do for you. The tools handle
 
 **How much does AI filmmaking cost?**
 
-Far less than traditional production. ACT 3 AI is a metered subscription with a free tier, plans starting at $8/month, higher tiers for studio use, and credits consumed per generation with the exact cost shown before you commit.
+Far less than traditional production. ACT 3 AI is a metered subscription with a free plan, paid plans starting at $49/month, larger Editions for studio use, and credits consumed per generation with the exact cost shown before you commit.
 
 **Can I sell or publish what I make?**
 
-Commercial-use rights come with the Business tier and above on ACT 3 AI, and your Organization legally owns the projects, content and generated assets created in it under the Terms of Service.
+Commercial use starts at the Pro plan on ACT 3 AI, for audiences up to 100,000, and your Organization legally owns the projects, content and generated assets created in it under the Terms of Service.
 
 **How long does it take to make something?**
 

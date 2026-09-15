@@ -1,11 +1,11 @@
 ---
-title: "10 Best AI Video Generators for Filmmakers (Full-Length Ranked)"
+title: "10 Best AI Video Generators for Filmmakers, Ranked"
 description: "Most \"best AI video generator\" lists rank tools on how good a four-second clip looks. That is the wrong test for a filmmaker."
 keywords: ["best ai video generators for filmmakers", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_generators_ranked"
 article_target_query: "best ai video generators for filmmakers"

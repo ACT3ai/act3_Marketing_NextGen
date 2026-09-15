@@ -1,11 +1,11 @@
 ---
-title: "Scaling Video Production for Agencies Without Scaling Headcount"
+title: "Scale Video Production for Agencies, Not Headcount"
 description: "Agencies scale video output by removing the two constraints that force hiring — sequential handoffs and per-project setup."
 keywords: ["scale video production for agencies", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "scaling_without_headcount"
 article_target_query: "scale video production for agencies"
@@ -111,7 +111,7 @@ Track these, not "videos produced":
 1. **Deliverables per person per month** — the actual capacity number.
 2. **Revision cycle time** — hours from client note to revised cut. This is the one that predicts margin.
 3. **Setup hours per new project** — should fall every quarter as the library grows.
-4. **Concurrent active productions** — capped by concurrency limits (3 jobs on Standard, 6 on Business, 10+ on Enterprise), not by people.
+4. **Concurrent active productions** — capped by concurrency limits (3 jobs on Creator, 6 on Pro, 10 on Enterprise), not by people.
 5. **Cost per delivered minute** — visible up front, since every job is queued with a predicted credit spend and every generate button shows exact cost.
 6. **Senior-hours share** — the percentage of total hours spent by senior staff on judgment rather than assembly.
 
@@ -128,7 +128,7 @@ Automation isn't a substitute for everything, and pretending otherwise costs cre
 
 **How many videos can a small agency team realistically produce?**
 
-It depends on complexity, but the constraint moves from headcount to concurrency and credits. Concurrent job limits are 3 on Standard ($35/mo), 6 on Business ($175/mo), and 10+ on Enterprise — that's the ceiling to plan against, not team size.
+It depends on complexity, but the constraint moves from headcount to concurrency and credits. Concurrent job limits are 3 on Creator ($49/mo), 6 on Pro ($175/mo), and 10 on Enterprise — that's the ceiling to plan against, not team size.
 
 **Can multiple people work on the same production at once?**
 
@@ -140,7 +140,7 @@ Through Organizations. Each is an isolated workspace owning its own projects, me
 
 **Who owns the work we produce for clients?**
 
-The Organization legally owns all projects, content, and generated assets per the Terms of Service, and ownership can be transferred to another member with confirmation from both parties. Commercial-use rights come with the Business tier and above.
+The Organization legally owns all projects, content, and generated assets per the Terms of Service, and ownership can be transferred to another member with confirmation from both parties. Commercial use starts at Pro for audiences up to 100,000, and Enterprise covers unlimited commercial use.
 
 **How do we control spend across many concurrent projects?**
 

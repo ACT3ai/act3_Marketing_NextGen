@@ -1,11 +1,11 @@
 ---
-title: "Free vs Paid AI Video: Where Free Tools Stop and Real Work Begins"
+title: "Free vs Paid AI Video: Where Free Tools Stop"
 description: "Free AI video generators are genuinely useful — for testing an idea, learning the medium, and making short clips you do not need to own commercially."
 keywords: ["free vs paid ai video generator", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "free_paid_ai"
 article_target_query: "free vs paid ai video generator"
@@ -29,11 +29,11 @@ This page maps exactly where the free/paid line falls, what you get for the mone
 
 ### 1. Watermarks
 
-Free tiers watermark. In ACT 3 AI's own pricing, the Free plan is watermarked and personal-use; watermark removal starts at the $8 Community plan. This is the cheapest boundary to cross and usually the first one you hit.
+Free tiers usually watermark output. Check each tool's plan page to see which plan removes it. This is the cheapest boundary to cross and usually the first one you hit.
 
 ### 2. Commercial-use rights
 
-This is the one that bites people after they have already shipped. Free and low tiers are hobbyist tiers. Commercial use is included from the **Business** plan ($175/month) in ACT 3 AI's published tiers. Check this before a client campaign, not after.
+This is the one that bites people after they have already shipped. Low tiers are usually for personal use. On ACT 3 AI, commercial use starts at the **Pro** plan ($175/month) for audiences up to 100,000. Check this before a client campaign, not after.
 
 ### 3. Length, consistency, and structure
 
@@ -51,13 +51,12 @@ ACT 3 AI's published subscription tiers, as an example of how the ladder is usua
 
 | Plan | Price | Monthly credits | Rollover cap | Key features |
 |---|---|---|---|---|
-| Free | $0 | 800 | 0 | Personal use, watermarked |
-| Community | $8 | 8,000 | 1,000 | No watermark |
-| Standard | $35 | 33,000 | 100,000 | 3 concurrent jobs |
-| Business | $175 | 180,000 | 500,000 | Commercial use, 6 concurrent jobs |
-| Enterprise | Call | High volume | Unlimited | 4K video, 10+ jobs, priority support, private 3D sets |
+| Free | $0 | 800 | 0 | Try it out |
+| Creator | $49 | 24,500 | 61,250 | Personal use, 3 concurrent jobs |
+| Pro | $175 | 87,500 | 218,750 | Commercial use up to 100k audience, 6 concurrent jobs, all AI video models, 4K upscale |
+| Enterprise | Call | High volume | High | Unlimited commercial use, 10 concurrent jobs |
 
-Higher studio tiers start at $395/month with 600,000+ credits. A few mechanics worth knowing: unused credits roll into a Rollover Bank up to your plan's cap and are spent after the monthly allocation runs out; the first three "AI Script & Shots & Scenes" generations are offered at cost; Free and Community accounts authenticate with LinkedIn; lower tiers delete dormant assets after four months; and Free and Community are treated as trial/hobbyist tiers with an upgrade to Standard or higher required after six months of active use.
+Larger Editions start at $395/month with 197,500 credits. One mechanic worth knowing: unused credits roll into a rollover bank up to your plan's cap, so a light month funds a heavy one.
 
 That dormancy rule matters more than it looks. If your project sits idle for a season on a free tier, the assets may not be there when you come back.
 
@@ -92,21 +91,21 @@ Be fair about the other side: for a single clip, a free prompt-to-video tool is 
 3. **Watch the cost display.** Every credit-consuming action shows its exact price before you commit, and the render queue shows predicted spend.
 4. **Cancel bad jobs.** The progress panel lets you cancel a running job and reclaim credits.
 5. **Match the tier to the constraint that is actually blocking you** — watermark, rights, concurrency, or volume — not to the feature list.
-6. **Do not let a project go dormant on a low tier** if you care about the assets.
+6. **Keep projects you care about on a paid plan**, where you get rollover and more storage.
 
 ## FAQ
 
 **Do free AI video generators watermark everything?**
 
-Free tiers generally watermark output. In ACT 3 AI's tiers, the Free plan is watermarked and personal use; watermark removal begins at the $8 Community plan.
+Many free tiers watermark output, so check the plan page of the tool you're using before you publish.
 
 **Can I use free AI video output commercially?**
 
-Usually not, and you should check the specific terms rather than assume. In ACT 3 AI's published tiers, commercial use is a Business-plan ($175/month) feature. Plan features scale by commercial-use rights, watermark removal, storage, concurrency, and 4K output.
+Usually not, and you should check the specific terms rather than assume. In ACT 3 AI's published plans, commercial use starts at Pro ($175/month) for audiences up to 100,000. Plans also differ in storage, concurrency and model access.
 
-**What is the cheapest paid tier that removes the watermark?**
+**What is the cheapest paid ACT 3 AI plan?**
 
-Community, at $8/month with 8,000 monthly credits and a 1,000-credit rollover cap.
+Creator, at $49/month with 24,500 monthly credits and a 61,250-credit rollover bank.
 
 **Do unused credits carry over?**
 
@@ -114,11 +113,11 @@ Yes, up to a per-plan cap. Unused credits move into a Rollover Bank at month end
 
 **Is there any free way to test a real production workflow?**
 
-Yes — the Free tier exists for exactly that, and the first three "AI Script & Shots & Scenes" generations are offered at cost so you can see a full script-to-shot-list run without a large credit outlay.
+Yes — the Free plan exists for exactly that: 800 credits a month, enough to see a script turn into a shot list before you pay.
 
 **How long can I stay on a free plan?**
 
-Free and Community are positioned as trial and hobbyist tiers; after six months of active use an upgrade to Standard ($35/month) or higher is required. Lower tiers also delete dormant assets after four months.
+Free plans are meant for trying a product. ACT 3 AI's Free plan gives 800 credits a month with no rollover; for regular work, the first paid plan is Creator at $49/month.
 
 **When is a free tool genuinely the right answer?**
 

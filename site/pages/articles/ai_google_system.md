@@ -5,7 +5,7 @@ keywords: ["act3 ai vs veo 3", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_google_system"
 article_target_query: "act3 ai vs veo 3"
@@ -100,10 +100,9 @@ Model access is typically priced per generation. ACT 3 AI is a SaaS subscription
 | Plan | Price | Monthly credits |
 | --- | --- | --- |
 | Free | $0 | 800 |
-| Community | $8 | 8,000 |
-| Standard | $35 | 33,000 |
-| Business | $175 | 180,000 |
-| Enterprise | Contact | High volume, 4K, 10+ concurrent jobs |
+| Creator | $49 | 24,500 |
+| Pro | $175 | 87,500 |
+| Enterprise | Contact | High volume, 10 concurrent jobs |
 
 Every generate action shows its exact credit cost before you commit, with quality levels priced separately (draft through 4K), a render queue showing predicted spend, and a cancel that reclaims credits instantly.
 
@@ -131,7 +130,7 @@ Built-in text-to-speech generates spoken lines from your script and embeds them 
 
 **Who owns the output?**
 
-In ACT 3 AI, the Organization — your workspace — legally owns projects, content, and generated assets, with versioning and a change history. Commercial-use rights come with the Business tier and above.
+In ACT 3 AI, the Organization — your workspace — legally owns projects, content, and generated assets, with versioning and a change history. Commercial use starts at Pro for audiences up to 100,000, and Enterprise covers unlimited commercial use.
 
 ---
 

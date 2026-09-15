@@ -1,11 +1,11 @@
 ---
-title: "AI Video With Real Cinematography: Camera, Lens, and Lighting"
+title: "AI Video With Real Cinematography Control"
 description: "\"real cinematography control\" in AI video means the tool exposes the same decisions a director and DP make on set — shot type, camera position and height..."
 keywords: ["ai video with real cinematography control", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_cinematography_lens"
 article_target_query: "ai video with real cinematography control"

@@ -5,7 +5,7 @@ keywords: ["ai storyboard and shot list generator", "AI filmmaking", "AI video g
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "shot_lists_storyboards"
 article_target_query: "ai storyboard and shot list generator"
@@ -105,7 +105,7 @@ Per-character LoRA models are trained behind the scenes so a character's appeara
 
 **How much does a generation run cost?**
 
-The platform runs on metered credits, and cost is shown before you act: buttons display the exact credit cost, wizard Continue buttons carry a credit badge, and the "Run AI" summary view shows cost estimates per task. The first three "AI Script & Shots & Scenes" generations are offered at cost.
+The platform runs on metered credits, and cost is shown before you act: buttons display the exact credit cost, wizard Continue buttons carry a credit badge, and the "Run AI" summary view shows cost estimates per task.
 
 **Can I export the shot list to my existing workflow?**
 

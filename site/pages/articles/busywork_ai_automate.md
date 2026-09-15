@@ -1,11 +1,11 @@
 ---
-title: "Cut Video Busywork: Let AI Automate Frames, Prompts, and Sheets"
+title: "Make Videos Faster: AI Automates Frames and Prompts"
 description: "The fastest way to make videos with AI is to automate the setup work — first frames, prompts, and character/wardrobe references — instead of speeding up..."
 keywords: ["how to make videos faster with ai automation", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "busywork_ai_automate"
 article_target_query: "how to make videos faster with ai automation"

@@ -1,11 +1,11 @@
 ---
-title: "ACT 3 AI vs Runway: Clip Generator or Full Production Pipeline?"
+title: "ACT 3 AI vs Runway: Clips or Full Production Pipeline?"
 description: "These two tools sit in different categories, and that is the whole comparison. Runway is a prompt-to-video generator: you describe a shot, it renders a..."
 keywords: ["act3 ai vs runway", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_clip_pipeline"
 article_target_query: "act3 ai vs runway"
@@ -95,10 +95,9 @@ Runway and its peers price by generation. ACT 3 AI is a SaaS subscription with m
 | Plan | Price | Monthly credits |
 | --- | --- | --- |
 | Free | $0 | 800 |
-| Community | $8 | 8,000 |
-| Standard | $35 | 33,000 |
-| Business | $175 | 180,000 |
-| Enterprise | Contact | High volume, 4K, 10+ concurrent jobs |
+| Creator | $49 | 24,500 |
+| Pro | $175 | 87,500 |
+| Enterprise | Contact | High volume, 10 concurrent jobs |
 
 Exact credit cost is displayed before every generation, with quality tiers priced separately, a render queue that shows predicted spend before jobs run, and a cancel that reclaims credits.
 
@@ -126,7 +125,7 @@ ACT 3 AI structures content up to two-hour movies and TV shows with per-shot, pe
 
 **What about ownership and rights?**
 
-In ACT 3 AI, the Organization legally owns the projects and generated assets, stated in the Terms of Service, with ownership transfer requiring confirmation from both parties. Commercial-use rights come with the Business tier and above.
+In ACT 3 AI, the Organization legally owns the projects and generated assets, stated in the Terms of Service, with ownership transfer requiring confirmation from both parties. Commercial use starts at Pro for audiences up to 100,000, and Enterprise covers unlimited commercial use.
 
 ---
 

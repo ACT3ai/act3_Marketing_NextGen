@@ -5,7 +5,7 @@ keywords: ["one tool for all ai video models", "AI filmmaking", "AI video genera
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "login_model_flux"
 article_target_query: "one tool for all ai video models"
@@ -61,7 +61,7 @@ That is the practical answer to "tired of many logins": the logins were never th
 
 Multi-tool stacks make cost invisible. A single platform makes it explicit:
 
-* **One subscription** with metered credits. ACT 3 AI plans run Free ($0), Community ($8), Standard ($35), Business ($175, commercial use and 6 concurrent jobs), and Enterprise (custom, 4K video, 10+ concurrent jobs).
+* **One subscription** with metered credits. ACT 3 AI plans run Free ($0), Creator ($49), Pro ($175, commercial use for audiences up to 100,000 and 6 concurrent jobs), larger Editions from $395, and Enterprise (custom, unlimited commercial use and 10 concurrent jobs).
 * **Cost shown before you commit.** Generate buttons display the exact credit cost, with quality tiers priced separately so you can choose deliberately.
 * **A render queue with cost estimation** showing predicted spend, so a team can approve or postpone jobs on budget.
 * **Rollover bank.** Unused credits carry over up to a per-plan cap, absorbing uneven months.
@@ -88,7 +88,7 @@ The test to apply to any tool: *if the model you use today disappeared next quar
 * **This is a production platform, not a model playground.** If you want to benchmark raw model outputs side by side with no story structure, a bare API or a model aggregator is a simpler fit.
 * **Model availability evolves.** The integration list reflects the platform's supported engines; the point of the adapter layer is that it changes without changing your project.
 * **Local ComfyUI work is for advanced users.** Node graphs, ControlNets, and regional masking are powerful and are not the low-learning-curve path.
-* **Commercial rights depend on tier.** Business and above include commercial use; check before running paid media.
+* **Commercial rights depend on plan.** Pro includes commercial use for audiences up to 100,000, and Enterprise without that limit; check before running paid media.
 
 ## FAQ
 
@@ -114,7 +114,7 @@ It replaces multiple subscriptions with one plan plus metered credits, and auto-
 
 **Can my team share one account?**
 
-Use an Organization: shared projects, shared credit pool, shared payment method, with granular per-member permissions and optional SAML SSO on enterprise deployments.
+Use an Organization: shared projects, shared credit pool, shared payment method, with granular per-member permissions and optional SAML SSO.
 
 **Do I lose control by letting it choose the model?**
 

@@ -1,11 +1,11 @@
 ---
-title: "Who Owns Your AI Film? Storing and Protecting Full-Production IP"
+title: "Who Owns Your AI Film? Keeping Full Production IP"
 description: "If you are evaluating an AI video tool and ownership matters, the question to ask is narrower than \"do I own the output?\" Most platforms will tell you the..."
 keywords: ["ai video tool that keeps ip ownership", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_storing_protecting"
 article_target_query: "ai video tool that keeps ip ownership"
@@ -59,7 +59,7 @@ Ownership without portability is a lease. Check for real export paths:
 - **Open-standard character imports** — MetaHuman, Reallusion and Daz files in FBX/USD — so your cast is not locked to one vendor's format.
 - **Casting sheet export** to PDF/CSV.
 
-Also check the unglamorous storage terms. On ACT 3 AI, storage quotas scale by plan, and lower tiers delete dormant assets after four months — a real consideration if you are archiving a finished production on a hobbyist plan rather than a studio one.
+Also check the unglamorous storage terms. On ACT 3 AI, storage quotas scale by plan — a real consideration if you are archiving a finished production on a small plan rather than a larger one.
 
 ### 4. Can you control access inside your own team?
 
@@ -85,7 +85,7 @@ The ownership argument becomes a production argument once you look at what havin
 - **Version-controlled collaboration.** Full change history, role-based real-time editing, concurrent work without conflicts, and revision history with rollback. You can prove what changed, when, and by whom.
 - **Reuse across a slate.** Digital actors, sets, wardrobe and style presets live in a shared library your organization owns. A second season starts from your own assets, not from scratch.
 - **Continuity as data.** Because every renderable unit is defined in machine-readable YAML and a dependency graph cascades edits, continuity is a property of the stored project — not a note in someone's inbox.
-- **Sets stay private by choice.** Sets can be published to the community or kept private within your organization; Enterprise plans include private 3D sets.
+- **Sets stay private by choice.** Sets can be published to the community or kept private within your organization.
 - **Human review of the record.** Three-stage content moderation scans prompts, scripts and finished outputs, with admin review options — useful when compliance needs an audit trail before delivery.
 
 Introduce this into your evaluation the same way you would evaluate an asset management system, because that is half of what it is.
@@ -97,7 +97,7 @@ Before you commit a production to any AI video platform, get written answers to:
 1. Which legal entity owns the generated assets, and where is that stated?
 2. Does the platform store the script and structure, or only renders?
 3. What formats can I export, and can I reconstruct the production elsewhere?
-4. Are there commercial-use rights on my plan tier? (On ACT 3 AI, commercial use comes with the Business tier and above; free-tier output is watermarked and for personal use.)
+4. Are there commercial-use rights on my plan tier? (On ACT 3 AI, commercial use starts at Pro for audiences up to 100,000; Creator is for personal use.)
 5. How long are dormant assets retained on my tier?
 6. Can I isolate my workspace, enforce SSO, and revoke a member instantly?
 7. Can ownership of the Organization be transferred cleanly if the production changes hands?
@@ -116,7 +116,7 @@ Because the Organization is the owner rather than the individual, removing a mem
 
 **Can I keep my sets and characters private?**
 
-Yes. Sets can be kept private within your organization instead of published to the community feed, and Enterprise plans include private 3D sets. Project discovery in the community feed is opt-in.
+Yes. Sets can be kept private within your organization instead of published to the community feed. Project discovery in the community feed is opt-in.
 
 **Can I move a finished production into Premiere or Resolve?**
 

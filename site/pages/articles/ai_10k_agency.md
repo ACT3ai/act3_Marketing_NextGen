@@ -5,7 +5,7 @@ keywords: ["ai video production cost vs agency", "AI filmmaking", "AI video gene
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_10k_agency"
 article_target_query: "ai video production cost vs agency"
@@ -25,7 +25,7 @@ article_key_value: "General"
 
 The structural answer: **an agency retainer is a fixed monthly cost with a roughly fixed output ceiling. AI video production software is a small fixed cost plus a variable cost that scales with how much video you actually make.** Below a few videos a month, the retainer often wins on total effort. Above that, the economics invert hard, because the marginal cost of your fifth video in-house is a few dollars of compute and a few hours of review, while the marginal cost of your fifth video at an agency is a change order.
 
-ACT 3 AI's subscription tiers run from $0 to $175/month publicly, with agency- and studio-scale plans starting at $395/month, plus metered credits for generation. This guide shows how to compare that against a retainer using your own numbers — and where the comparison genuinely favors the agency.
+ACT 3 AI's plans run from $0 (Free) through $49 (Creator) and $175/month (Pro), with larger Editions from $395/month and Enterprise on request, plus metered credits for generation. This guide shows how to compare that against a retainer using your own numbers — and where the comparison genuinely favors the agency.
 
 ## Build the two totals properly
 
@@ -80,14 +80,13 @@ That automation is what makes the in-house column of the table realistic rather 
 ACT 3 AI is a SaaS subscription with metered usage. Credits are the internal currency for resource-intensive actions — AI script generation, video shot creation, 3D set rendering, text-to-speech — and each plan carries a monthly allocation plus a rollover bank for unused credits.
 
 | Plan | Price | Monthly credits | Rollover cap | Notable |
-| --- | --- | --- | --- | --- |
-| Free | $0 | 800 | 0 | Watermarked, personal use |
-| Community | $8 | 8,000 | 1,000 | No watermark |
-| Standard | $35 | 33,000 | 100,000 | 3 concurrent jobs |
-| Business | $175 | 180,000 | 500,000 | Commercial use, 6 concurrent jobs |
-| Enterprise | Contact | High volume | Unlimited | 4K video, 10+ concurrent jobs |
+|---|---|---|---|---|
+| Free | $0 | 800 | 0 | Try it out |
+| Creator | $49 | 24,500 | 61,250 | Personal use, 3 concurrent jobs |
+| Pro | $175 | 87,500 | 218,750 | Commercial use up to 100k audience, 6 concurrent jobs |
+| Enterprise | Contact | High volume | High | Unlimited commercial use, 10 concurrent jobs |
 
-Studio- and agency-scale plans start at $395/month with 600,000+ credits.
+Larger Editions start at $395/month (Advanced, 197,500 credits) and run to $49,000/month (Iconic, 24,500,000 credits).
 
 Cost visibility is built into the workflow rather than arriving on an invoice: the exact credit cost is shown on the generate button before you commit (with separate pricing per quality level), the render queue shows predicted spend so a team can approve or postpone a job on budget grounds, a dashboard gives real-time spend forecasts and budget alerts, and canceling a running job reclaims credits instantly. The Use Credits permission is separate from editing rights, so only designated people can spend.
 
@@ -115,7 +114,7 @@ The most common good outcome is not "fire the agency." It is: bring the high-vol
 
 **How much does AI video production cost compared to an agency?**
 
-Software cost is a small fixed subscription plus metered credits per video; agency cost is a fixed retainer plus change orders. Published ACT 3 AI tiers run $0–$175/month, with studio-scale plans from $395/month. The comparison only means something once you add your internal hours to both sides.
+Software cost is a small fixed subscription plus metered credits per video; agency cost is a fixed retainer plus change orders. Published ACT 3 AI plans run $0–$175/month, with larger Editions from $395/month. The comparison only means something once you add your internal hours to both sides.
 
 **At what volume does in-house AI production become cheaper?**
 
@@ -135,7 +134,7 @@ Costs are shown before the spend: exact credit cost on the generate button, pred
 
 **Who owns the videos we make?**
 
-The Organization — your workspace — legally owns the projects, content, and generated assets, per the Terms of Service. Commercial-use rights come with the Business tier and above.
+The Organization — your workspace — legally owns the projects, content, and generated assets, per the Terms of Service. Commercial use starts at Pro for audiences up to 100,000, and Enterprise covers unlimited commercial use.
 
 **How fast is a video, realistically?**
 

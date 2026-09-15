@@ -5,7 +5,7 @@ keywords: ["hire team to make video from my script", "AI filmmaking", "AI video 
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "hand_produces_ai"
 article_target_query: "hire team to make video from my script"
@@ -83,7 +83,7 @@ A common and sensible hybrid: we produce the first videos while your team learns
 - **Commercial use.** Commercial-use rights are a plan-level feature; business tiers include them. Make sure the plan your production runs on matches your intended use.
 - **Content safety.** Three-stage moderation scans prompts before generation, scripts before production and finished outputs before download, with redaction or admin review options.
 - **Access control.** Isolated multi-tenant workspaces, optional SAML SSO, invitation-only project access, and per-role permissions from Read up to Owner. Reviewers can watch without being able to change anything.
-- **Retention.** Storage quotas scale by plan and lower tiers remove dormant assets after four months — worth checking if you plan to archive rather than export.
+- **Retention.** Storage quotas scale by plan — worth checking if you plan to archive rather than export.
 
 ## What we will tell you honestly
 

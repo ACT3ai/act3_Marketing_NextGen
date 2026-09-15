@@ -5,7 +5,7 @@ keywords: ["how to make explainer video with ai", "AI filmmaking", "AI video gen
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "explainer_ai_rough"
 article_target_query: "how to make explainer video with ai"
@@ -152,7 +152,7 @@ You can guide the look with uploaded style images that act as a visual mood boar
 
 **What does it cost?**
 
-ACT 3 AI is a metered SaaS subscription — a free tier to try it, paid plans starting at $8/month, and credits consumed per generation with the exact cost shown before you commit. Commercial-use rights come with the Business tier.
+ACT 3 AI is a metered SaaS subscription — a free plan to try it, paid plans starting at $49/month, and credits consumed per generation with the exact cost shown before you commit. Commercial use starts at the Pro plan.
 
 ---
 

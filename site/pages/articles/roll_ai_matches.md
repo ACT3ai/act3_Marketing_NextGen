@@ -1,11 +1,11 @@
 ---
-title: "How to Generate Cinematic B-Roll With AI That Matches Your Story"
+title: "How to Make B-Roll With AI That Matches Your Story"
 description: "To make B-roll with AI, you write a shot spec — not a vibe. A usable AI B-roll shot needs five things stated explicitly: subject and action, shot type..."
 keywords: ["how to make b roll with ai", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "roll_ai_matches"
 article_target_query: "how to make b roll with ai"

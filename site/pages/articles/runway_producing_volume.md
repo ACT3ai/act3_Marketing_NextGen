@@ -5,7 +5,7 @@ keywords: ["best runway alternative for agencies", "AI filmmaking", "AI video ge
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "runway_producing_volume"
 article_target_query: "best runway alternative for agencies"
@@ -89,7 +89,7 @@ Runway-class tools are excellent at the thing they do. The argument for moving i
 3. **Run the same job** through the end-to-end platform, and time only the human hours.
 4. **Count re-rolls per approved shot.** Continuity failures show up here first.
 5. **Check the handoff.** Does the output land cleanly in Premiere or Resolve, or does someone rebuild the timeline?
-6. **Model the credits.** Plans run from a free tier through Community ($8), Standard ($35), Business ($175), and higher studio and enterprise tiers; agencies should size against Business or above for commercial-use rights and higher concurrency.
+6. **Model the credits.** Plans run from a free plan through Creator ($49) and Pro ($175), with larger Editions and Enterprise above; agencies should size against Pro or above for commercial use and higher concurrency.
 
 If human hours per finished minute do not drop meaningfully, keep your current stack. If they halve, the switch pays for itself in the first campaign.
 
@@ -113,7 +113,7 @@ It is built for structure up to 2-hour movies and TV episodes — show, season, 
 
 **What about commercial-use rights?**
 
-Commercial use is a plan-level feature; the Business tier and above include it. Confirm your tier before delivering client work.
+Commercial use is a plan-level feature; it starts at Pro for audiences up to 100,000. Confirm your tier before delivering client work.
 
 **Do we lose creative control by automating the prompts?**
 

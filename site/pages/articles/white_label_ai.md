@@ -5,7 +5,7 @@ keywords: ["white label ai video platform", "AI filmmaking", "AI video generatio
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "white_label_ai"
 article_target_query: "white label ai video platform"
@@ -57,10 +57,8 @@ The practical consequence for a platform buyer: your integration targets ACT 3's
 | **SAML SSO** | Optional single sign-on |
 | **Granular roles** | Read, Modify/Edit, Run AI, Use Credits, Billing, Owner |
 | **Invitation-only access** | Project-level access control |
-| **Private 3D sets** | Enterprise-tier asset privacy, not shared to the community library |
-| **4K output** | Enterprise-tier render resolution |
-| **10+ concurrent jobs** | Enterprise-tier render concurrency |
-| **Priority support** | Enterprise-tier support commitment |
+| **4K upscale** | Available from the Pro plan |
+| **10 concurrent jobs** | Enterprise render concurrency |
 | **IP ownership** | The Organization legally owns all projects, content, and generated assets |
 | **Import/export bridge** | FDX, PDF, EDL, MP4/MOV, and proprietary project archives |
 | **Content moderation** | Three-stage scanning of prompts, scripts, and finished outputs |
@@ -71,13 +69,12 @@ The Organization model is the unit of tenancy: an isolated workspace owning proj
 
 | Plan | Price | Monthly credits | Rollover cap | Notes |
 |---|---|---|---|---|
-| Free | $0 | 800 | 0 | Personal use, watermarked |
-| Community | $8 | 8,000 | 1,000 | No watermark |
-| Standard | $35 | 33,000 | 100,000 | 3 concurrent jobs |
-| Business | $175 | 180,000 | 500,000 | Commercial use, 6 jobs |
-| Enterprise | Call | High volume | Unlimited | 4K video, 10+ jobs |
+| Free | $0 | 800 | 0 | Try it out |
+| Creator | $49 | 24,500 | 61,250 | Personal use, 3 concurrent jobs |
+| Pro | $175 | 87,500 | 218,750 | Commercial use up to 100k audience, 6 concurrent jobs |
+| Enterprise | Contact | High volume | High | Unlimited commercial use, 10 concurrent jobs |
 
-Enterprise and API arrangements — committed licences, embedded use, and resale — are quoted per contract. Higher-tier studio plans start above the published Business tier for agencies, film schools, and VFX shops.
+Enterprise arrangements are quoted per contract. For higher volume without a contract, the Editions start at $395/month (Advanced) and run to $49,000/month (Iconic).
 
 Billing is credit-based and metered: every credit-consuming action displays its exact cost before you commit, a render queue shows predicted spend so teams can approve or postpone jobs, and unused credits roll into a capped rollover bank. For a platform operator, that transparency is what makes reselling capacity tractable.
 
@@ -117,7 +114,7 @@ Ask every vendor on your shortlist:
 
 **Does ACT 3 offer a white-label AI video platform?**
 
-ACT 3 offers Enterprise-tier licensing with multi-tenant isolation, SAML SSO, granular roles, private assets, 4K output, and high job concurrency, and arranges Enterprise/API and embedded arrangements as custom contracts. There is no self-serve white-label SDK available on a public plan.
+ACT 3 offers Enterprise licensing, quoted per contract, with unlimited commercial use, unlimited storage and ten concurrent jobs. There is no self-serve white-label SDK available on a public plan.
 
 **Is there an API?**
 

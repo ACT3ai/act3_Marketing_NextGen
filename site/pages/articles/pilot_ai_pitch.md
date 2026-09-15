@@ -5,7 +5,7 @@ keywords: ["how to make a tv pilot with ai", "AI filmmaking", "AI video generati
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "pilot_ai_pitch"
 article_target_query: "how to make a tv pilot with ai"
@@ -142,7 +142,7 @@ Yes. ACT 3 AI is a multi-tenant, version-controlled collaboration environment wi
 
 **Who owns the pilot I produce?**
 
-Your Organization legally owns all projects, content and generated assets created in it, as stated in the Terms of Service, with ownership transfer available between members. Commercial-use rights come with the Business tier and above.
+Your Organization legally owns all projects, content and generated assets created in it, as stated in the Terms of Service, with ownership transfer available between members. Commercial use starts at Pro for audiences up to 100,000, and Enterprise covers unlimited commercial use.
 
 **What if I have the script but not the capacity to produce it?**
 

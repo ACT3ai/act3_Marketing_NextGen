@@ -5,7 +5,7 @@ keywords: ["ai video vs traditional video production", "AI filmmaking", "AI vide
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_traditional_speed"
 article_target_query: "ai video vs traditional video production"
@@ -41,7 +41,7 @@ The rest of this guide breaks each dimension down so you can decide per project 
 | Camera, lighting, grip rental | Major line item | Replaced by virtual camera and lighting |
 | Studio or stage rental | Major line item | Eliminated |
 | Post-production labor | Major line item | Reduced; assembly is largely automated |
-| Software / platform | Small | Subscription — ACT 3 AI runs $0 (Free), $8 (Community), $35 (Standard), $175 (Business), Enterprise on request |
+| Software / platform | Small | Subscription — ACT 3 AI runs $0 (Free), $49 (Creator), $175 (Pro), Enterprise on request |
 | Compute / rendering | N/A | Metered credits per generation |
 | Reshoots | Very expensive; often impossible | Regeneration, priced in credits |
 | Additional aspect ratios and language versions | Additional edit and dub cost | Exports and dubbing from the same production |

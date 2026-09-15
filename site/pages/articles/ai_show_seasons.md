@@ -5,7 +5,7 @@ keywords: ["ai tv show production platform", "AI filmmaking", "AI video generati
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_show_seasons"
 article_target_query: "ai tv show production platform"
@@ -101,7 +101,7 @@ Approved shots stitch into scenes and episodes automatically with transitions an
 
 ## Commercial model
 
-ACT 3 is a SaaS subscription with credit-metered generation. Plans scale by monthly credits, concurrent jobs, storage, watermark removal, commercial-use rights, and 4K output, from a free tier through Community ($8), Standard ($35), Business ($175), higher studio tiers starting at $395/month, and Enterprise pricing on request with high-volume credits, 4K video, and 10+ concurrent jobs. Every generation shows its credit cost before you commit, and the render queue shows predicted spend so producers can approve or postpone.
+ACT 3 is a SaaS subscription with credit-metered generation. Plans scale by monthly credits, concurrent jobs, storage, model access and commercial-use rights, from a free plan through Creator ($49) and Pro ($175), larger Editions starting at $395/month, and Enterprise pricing on request with high-volume credits, unlimited commercial use and ten concurrent jobs. Every generation shows its credit cost before you commit, and the render queue shows predicted spend so producers can approve or postpone.
 
 **Want production help, not just software?** The optional ACT 3 "Level 2 team" package puts our team on your show — you provide the script and the feedback, and we make the episodes happen, for part or all of the production.
 

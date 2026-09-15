@@ -5,7 +5,7 @@ keywords: ["who owns ai generated film copyright", "AI filmmaking", "AI video ge
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_generated_rights"
 article_target_query: "who owns ai generated film copyright"
@@ -63,7 +63,7 @@ That is the "store all the IP" principle behind building for serious production:
 
 **The Organization owns the work.** Legal ownership of all projects, content, and generated assets sits with the Organization per the Terms of Service, with a confirmed two-party ownership transfer process.
 
-**Commercial rights scale by tier — visibly.** Plan features scale by commercial-use rights, watermark removal, storage, concurrency, and 4K output. Commercial use is a Business-plan feature; the Free tier is personal use and watermarked. Know your tier before you ship.
+**Commercial rights scale by plan — visibly.** Plans differ in commercial-use rights, storage, concurrency and model access. Creator is for personal use, Pro adds commercial use for audiences up to 100,000, and Enterprise covers unlimited commercial use. Know your plan before you ship.
 
 **Access is granular and revocable.** Six permission levels — Read, Modify/Edit, Run AI, Use Credits, Billing, Owner — mean a contractor or reviewer can be given exactly what they need. Removing a member revokes access to the Organization's projects and resources immediately. Multi-tenant security isolates each company's workspace, with optional SAML SSO and invitation-only project access, and per-character permissions extend control to the asset level.
 
@@ -96,7 +96,7 @@ The Organization legally owns all projects, created content, and generated asset
 
 **Can I use the output commercially?**
 
-Commercial-use rights are a plan-tier feature; commercial use is included from the Business plan, while the Free tier is personal use and watermarked. Verify your tier's rights before you release.
+It depends on your plan: Pro includes commercial use for audiences up to 100,000, Enterprise without that limit, and Creator is for personal use. Verify your plan's rights before you release.
 
 **Are my sets and assets visible to other users?**
 

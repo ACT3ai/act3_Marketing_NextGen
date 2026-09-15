@@ -1,11 +1,11 @@
 ---
-title: "The Cheapest Way to Make Cinematic Video That Still Looks Directed"
+title: "Cheapest Way to Make Cinematic Video That Looks Directed"
 description: "The cheapest cinematic video is the one you do not shoot. Location fees, permits, crew days, and gear rental are the expensive part of \"cinematic\" — not..."
 keywords: ["cheapest way to make cinematic video", "AI filmmaking", "AI video generation"]
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-09-15
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "cheapest_way_still"
 article_target_query: "cheapest way to make cinematic video"
@@ -21,7 +21,7 @@ article_key_value: "General"
     Regenerate with: node scripts/sync-articles.js */}
 # The Cheapest Way to Make Cinematic Video That Still Looks Directed
 
-**Short answer:** the cheapest cinematic video is the one you do not shoot. Location fees, permits, crew days, and gear rental are the expensive part of "cinematic" — not the camera and not the color. Today the lowest-cost route that still looks *directed* is generative AI video driven by real cinematography decisions: you choose the shot type, lens, camera move, lighting, and blocking, and a generation engine renders it. Cost lands in the range of a software subscription plus metered compute rather than a shoot day, and on ACT 3 AI the entry tiers start at $0 for a watermarked free tier, $8/month for Community, and $35/month for Standard.
+**Short answer:** the cheapest cinematic video is the one you do not shoot. Location fees, permits, crew days, and gear rental are the expensive part of "cinematic" — not the camera and not the color. Today the lowest-cost route that still looks *directed* is generative AI video driven by real cinematography decisions: you choose the shot type, lens, camera move, lighting, and blocking, and a generation engine renders it. Cost lands in the range of a software subscription plus metered compute rather than a shoot day, and on ACT 3 AI plans start at $0 on the Free plan, then $49/month for Creator and $175/month for Pro.
 
 The catch, and the reason most cheap AI video looks cheap: **prompting is not directing.** A prompt-only clip has no lens, no deliberate coverage, and no continuity. This guide covers how to get cinematic quality at the bottom of the budget — the free and near-free moves first, then where paying a little buys the "directed" look.
 
@@ -88,10 +88,9 @@ Pricing is a subscription plus credits, where credits are spent on generation an
 
 | Plan | Price | Monthly credits | Notes |
 |---|---|---|---|
-| Free | $0 | 800 | Watermarked, personal use |
-| Community | $8 | 8,000 | No watermark |
-| Standard | $35 | 33,000 | 3 concurrent jobs |
-| Business | $175 | 180,000 | Commercial use, 6 concurrent jobs |
+| Free | $0 | 800 | Try it out |
+| Creator | $49 | 24,500 | Personal use, 3 concurrent jobs |
+| Pro | $175 | 87,500 | Commercial use up to 100k audience, 6 concurrent jobs |
 
 Two budget levers matter more than the plan you pick:
 
@@ -137,7 +136,7 @@ Use a system that trains a per-character model and tracks wardrobe as named outf
 
 **Can I use the output commercially?**
 
-Commercial-use rights come with the Business tier and above. The free tier is personal use and watermarked.
+Commercial use starts at the Pro plan, for audiences up to 100,000. Creator is for personal use.
 
 ---
 
