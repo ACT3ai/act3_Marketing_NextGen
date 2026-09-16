@@ -1514,6 +1514,49 @@
     ]
   },
   {
+    "slug": "ai_movie_cost",
+    "title": "How Much Does an AI Movie Cost to Make in 2026?",
+    "description": "In 2026 a 3-minute AI short costs roughly $45 to $300 to generate and finish, a 40-minute film roughly $630 to $4,400, and a 90-minute feature roughly...",
+    "targetQuery": "how much does an ai movie cost 2026",
+    "persona": "Indie Filmmaker",
+    "funnelStage": "Buy",
+    "searchIntent": "Commercial",
+    "contentType": "Guide",
+    "keyValue": "Movie_In_3_Hours",
+    "updated": "2026-09-16",
+    "words": 1997,
+    "faq": [
+      {
+        "q": "How much does it cost to make an AI movie in 2026?",
+        "a": "For generation and finishing, roughly $45 to $300 for a 3-minute short, $630 to $4,400 for a 40-minute film, and $1,400 to $9,500 for a 90-minute feature. Where you land depends on how many attempts each shot takes and what you pay per second."
+      },
+      {
+        "q": "How many shots are in a feature-length AI film?",
+        "a": "About 1,400 for a 90-minute film cut at 3 to 4 seconds a shot, and about 650 for 40 minutes. Divide your runtime in seconds by your average shot length to get your own number."
+      },
+      {
+        "q": "What is the biggest driver of AI film cost?",
+        "a": "Attempts per shot and your per-second rate, together. At a fixed rate, halving attempts halves the generation bill — and unlike moving to a cheaper model, it costs you nothing on screen."
+      },
+      {
+        "q": "How much should I add on top of generation?",
+        "a": "Add 30 to 50 percent for first frames, voice, music, upscaling and the 10 to 20 percent of shots you will regenerate after the first assembly."
+      },
+      {
+        "q": "Can I make a feature on a consumer subscription?",
+        "a": "Rarely without running dry partway through. Consumer tiers are sized for clips. Check whether unused credits expire at month end, because expiring credits make a months-long production much more expensive than the headline rate."
+      },
+      {
+        "q": "Is an AI movie cheaper than shooting live action?",
+        "a": "For most independent narrative projects, dramatically, because there is no crew, cast, location or equipment line. The costs that remain are generation, finishing and your time."
+      },
+      {
+        "q": "How do I get a reliable budget before committing?",
+        "a": "Produce one complete scene, finished and assembled, then divide the total spend by that scene's runtime and multiply by your film's runtime. That number includes your real retry ratio, so it beats any rate card."
+      }
+    ]
+  },
+  {
     "slug": "ai_music_cuts",
     "title": "AI Music Video Maker With Directed Camera and Cuts",
     "description": "A music video is edited to the track, not to a prompt. That is the whole craft: the cut lands on the beat, the camera move resolves on the downbeat, the...",

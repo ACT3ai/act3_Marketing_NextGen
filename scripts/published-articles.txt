@@ -48,6 +48,7 @@ ai_invideo_template
 ai_kling_photoreal
 ai_large_sprints
 ai_ltx_handles
+ai_movie_cost
 ai_music_cuts
 ai_pika_shots
 ai_plain_english
