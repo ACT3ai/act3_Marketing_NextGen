@@ -38,6 +38,8 @@
 // as a link the build would reject.
 //
 // Run:  node scripts/sync-articles.js        (also runs as part of `pnpm build`)
+// Corpus path:      found automatically -- ACT3_SEO_PAGES if set, else the corpus
+//                   checked out beside this repo (../all or ../../all).
 // Source override:  ACT3_SEO_PAGES=/some/dir node scripts/sync-articles.js
 // ---------------------------------------------------------------------------
 const fs = require("fs");
@@ -45,9 +47,28 @@ const os = require("os");
 const path = require("path");
 
 const REPO = path.join(__dirname, "..");
+
+// The article corpus lives in a SEPARATE, private repository, so where it sits
+// depends on how the two repos were checked out. This used to be one hardcoded
+// absolute path under a particular home directory, which meant the sync silently
+// published nothing on every machine laid out differently.
+//
+// Resolve it instead, in order: an explicit override, then the corpus's position
+// RELATIVE to this repo, which is what actually stays true across checkouts:
+//   <parent>/all/...      the two repos checked out side by side
+//   <parent>/../all/...   BGit, where this repo sits one level deeper in act3/
+// The last entry is kept only so the warning below names a sensible path when
+// nothing is found at all.
+const SEO_PAGES = "film/marketing/seo/pages";
+const SRC_CANDIDATES = [
+  process.env.ACT3_SEO_PAGES,
+  path.join(REPO, "..", "all", SEO_PAGES),
+  path.join(REPO, "..", "..", "all", SEO_PAGES),
+  path.join(os.homedir(), "BGit/all", SEO_PAGES),
+].filter(Boolean);
 const SRC =
-  process.env.ACT3_SEO_PAGES ||
-  path.join(os.homedir(), "BGit/all/film/marketing/seo/pages");
+  SRC_CANDIDATES.find((dir) => fs.existsSync(dir)) ||
+  SRC_CANDIDATES[SRC_CANDIDATES.length - 1];
 const OUT_DIR = path.join(REPO, "site/pages/articles");
 const PUBLISH_LIST = path.join(__dirname, "published-articles.txt");
 const DATA_FILE = path.join(REPO, "site/data/articles.json");
@@ -305,9 +326,17 @@ function yamlStr(s) {
 // -- Main --------------------------------------------------------------------
 
 if (!fs.existsSync(SRC)) {
-  console.warn("[articles] source corpus not found at " + SRC);
+  // Exiting 0 here is deliberate: CI checks out only this repo, so the corpus is
+  // legitimately absent there and the committed pages are what ship. Failing
+  // would break every deploy. But the same silence is wrong when a person ran
+  // this meaning to publish, so list every path tried instead of just one.
+  console.warn("[articles] source corpus not found. Looked in:");
+  for (const dir of SRC_CANDIDATES) console.warn("[articles]     " + dir);
   console.warn(
-    "[articles] keeping the committed site/pages/articles/*.md as-is",
+    "[articles] keeping the committed site/pages/articles/*.md as-is.",
+  );
+  console.warn(
+    "[articles] if you meant to publish, point ACT3_SEO_PAGES at your corpus.",
   );
   process.exit(0);
 }
