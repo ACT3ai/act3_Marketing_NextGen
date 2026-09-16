@@ -16,7 +16,7 @@ Everything below is a public page on https://act3ai.com. The articles are evergr
 
 ## Articles
 
-- [All 133 articles](https://act3ai.com/articles): the full index, grouped by reader.
+- [All 134 articles](https://act3ai.com/articles): the full index, grouped by reader.
 
 ### For indie filmmakers
 
@@ -34,6 +34,7 @@ Everything below is a public page on https://act3ai.com. The articles are evergr
 - [Directing AI: Control Camera, Lens and Lighting](https://act3ai.com/articles/directing_ai_controlling): There are three levels of camera control in AI video, and knowing which one you are using explains most of your frustration.
 - [Done-for-You AI Movie Production: We Make Your Script Happen](https://act3ai.com/articles/done_ai_happen): A done-for-you AI movie production service is one where you hand over a script and creative direction, and someone else runs the production — the shot...
 - [How AI Filmmaking Actually Works: Beats, Shots, and Renders](https://act3ai.com/articles/ai_works_beats): AI filmmaking works by turning a story into structured data, and then turning that data into video one shot at a time.
+- [How Much Does an AI Movie Cost to Make in 2026?](https://act3ai.com/articles/ai_movie_cost): In 2026 a 3-minute AI short costs roughly $45 to $300 to generate and finish, a 40-minute film roughly $630 to $4,400, and a 90-minute feature roughly...
 - [How to Get Your Screenplay Produced With AI](https://act3ai.com/articles/get_screenplay_produced): You can now get a finished screenplay produced as watchable video without raising money, attaching talent, or assembling a crew — by moving it through an...
 - [How to Make a Full-Length AI Movie From a Script](https://act3ai.com/articles/make_ai_clips): To make a full-length AI movie you have to stop thinking in clips and start thinking in structure. A 90-minute feature is not one long generation — it is...
 - [How to Produce a TV Pilot With AI to Pitch a Series](https://act3ai.com/articles/pilot_ai_pitch): To make a TV pilot with AI, you produce it the way a series is produced — as a structured, full-length production, not as a stack of clips.
