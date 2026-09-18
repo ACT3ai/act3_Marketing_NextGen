@@ -15,6 +15,7 @@ adding_voiceover_ai
 ads_ai_afternoon
 affordable_ai_small
 ai_10k_agency
+ai_ads_production
 ai_animated_episodes
 ai_animation_go
 ai_brand_emotional
@@ -89,6 +90,8 @@ choose_ai_buyer
 collaborate_ai_handoffs
 combining_ai_footage
 consistency_ai_means
+cost_locking_references
+cost_run_faceless
 daily_rebuilds_iterate
 day_mass_ai
 delivery_hands_off
@@ -99,6 +102,7 @@ enterprise_ai_owned
 explainer_ai_rough
 finished_ai_step
 first_ai_automatically
+five_tools_cost
 fliki_directed_ai
 free_paid_ai
 generative_ai_used
