@@ -3867,6 +3867,45 @@
     ]
   },
   {
+    "slug": "grok_imagine_video",
+    "title": "Grok Imagine vs Seedance vs Wan: Cost and Specs",
+    "description": "In ACT 3 AI an 8-second shot costs 364 credits on Grok Imagine (720p), 780 on Wan 2.6 (1080p) and 73 to 4,044 on Seedance (480p to 4K).",
+    "targetQuery": "grok imagine vs seedance vs wan",
+    "persona": "Content Creator",
+    "funnelStage": "Compare",
+    "searchIntent": "Commercial",
+    "contentType": "Comparison",
+    "keyValue": "General",
+    "updated": "2026-09-18",
+    "words": 1691,
+    "faq": [
+      {
+        "q": "Is Grok Imagine cheaper than Seedance?",
+        "a": "It depends on the Seedance tier. For one 8-second shot in ACT 3 AI, Grok Imagine 720p is 364 credits; Seedance 2.0 Mini 720p (157) and Seedance 2.0 Fast 720p (314) cost less, while Seedance 2.0 720p (786) and Seedance 2.5 720p (1,202) cost more."
+      },
+      {
+        "q": "Which is cheapest at 1080p: Wan or Seedance?",
+        "a": "Wan 2.6. In ACT 3 AI, at the 8-second rate, Wan 2.6 1080p is 780 credits against 1,946 for Seedance 2.0 1080p and 2,128 for Seedance 2.5 1080p. Wan 2.6 only renders 5, 10 or 15-second shots."
+      },
+      {
+        "q": "Which of the three makes the longest shot?",
+        "a": "Seedance 2.5, at up to 30 seconds in one shot. Seedance 2.0, Grok Imagine and Wan 2.6 all stop at 15 seconds."
+      },
+      {
+        "q": "Can Grok Imagine make 1080p video?",
+        "a": "Not in ACT 3 AI. Grok Imagine is offered at 720p only. For 1080p, the options among these three are Wan 2.6, Seedance 2.0 and Seedance 2.5; Seedance 2.0 also offers 4K."
+      },
+      {
+        "q": "Which one has the best quality?",
+        "a": "There is no verified answer for every shot. Run the same shot with the same first frame on all three; at Grok Imagine 8 s, Seedance 2.0 Fast 720p 8 s and Wan 2.6 10 s, that test costs about 1,653 credits in ACT 3 AI, with the Wan figure a straight-line estimate."
+      },
+      {
+        "q": "Do I need a paid plan to use these models?",
+        "a": "Yes. In ACT 3 AI, Grok Imagine, Seedance and Wan 2.6 need Pro or higher. Free and Creator include Google Veo 3 only."
+      }
+    ]
+  },
+  {
     "slug": "hand_produces_ai",
     "title": "Hand Us the Script: A Team That Produces Your Video With AI",
     "description": "If you have a script and no one in the building who can shoot it, you have three ways to get a video made: hire a production company, hire freelancers and...",
@@ -4144,6 +4183,45 @@
     ]
   },
   {
+    "slug": "long_single_take",
+    "title": "Which AI Video Model for a Long Single Take?",
+    "description": "Seedance 2.5 makes the longest single take in ACT 3 AI, up to 30 seconds; Seedance 2.0, Grok Imagine and Wan 2.6 reach 15 and Veo 3.1 stops at 8.",
+    "targetQuery": "which ai video model for long single take",
+    "persona": "Content Creator",
+    "funnelStage": "Compare",
+    "searchIntent": "Commercial",
+    "contentType": "Comparison",
+    "keyValue": "FullLength_Preview",
+    "updated": "2026-09-18",
+    "words": 1715,
+    "faq": [
+      {
+        "q": "Which AI video model makes the longest single take?",
+        "a": "In ACT 3 AI, Seedance 2.5, at up to 30 seconds per shot. Seedance 2.0, Grok Imagine and Wan 2.6 reach 15 seconds, and Veo 3.1 and Veo 3.1 Fast reach 8."
+      },
+      {
+        "q": "How much does a 30-second AI shot cost?",
+        "a": "Exact prices are published for 8 seconds only. A straight-line estimate for Seedance 2.5 at 1080p, 16:9, is 2,128 ÷ 8 × 30 ≈ 7,980 credits ($15.96); the generate button shows the exact figure before you run."
+      },
+      {
+        "q": "Can I fix one bad moment in a long take?",
+        "a": "No. Generation is all-or-nothing, so a rejection costs the full take. Building the moment from shorter shots means a failure costs one shot, at the price of visible cuts."
+      },
+      {
+        "q": "Is a long take cheaper than several short shots?",
+        "a": "Not once rejections count, if failures are local. Assuming two failures in both routes, each confined to one moment, 30 seconds of Seedance 2.5 1080p is about 23,940 credits as one take versus 12,768 as four 8-second shots plus two retakes."
+      },
+      {
+        "q": "Which model has the best motion for long takes?",
+        "a": "None that holds for every shot. Run the same 8-second test shot once on each candidate. Across six models (Seedance 2.5, Seedance 2.0, Wan 2.6 and Veo 3.1 at 1080p, Grok Imagine at 720p, and Veo 3.1 Fast) that costs 8,078 credits ($16.16)."
+      },
+      {
+        "q": "Do I need a paid plan for Seedance 2.5?",
+        "a": "Yes. Free and Creator include Google Veo 3 only; Seedance 2.5, Wan 2.6, Grok Imagine and the other models need Pro or higher."
+      }
+    ]
+  },
+  {
     "slug": "ltx_studio_built",
     "title": "LTX Studio Alternative Built for Full-Length TV and Film",
     "description": "If you are looking for an LTX Studio alternative for TV production, the question to ask is not \"which tool has better shots\" — it is which platform is...",
@@ -4413,6 +4491,45 @@
       {
         "q": "What makes AI video cost more than expected?",
         "a": "Retries, almost always. A tool with weak control over camera, character consistency, and shot composition forces you to regenerate until you get lucky. Directorial control is a cost feature, not just a creative one."
+      }
+    ]
+  },
+  {
+    "slug": "nano_banana_gpt",
+    "title": "Nano Banana vs GPT Image 2 for AI First Frames",
+    "description": "A first frame in ACT 3 AI costs 13 to 98 credits, and one rejected Seedance 2.0 1080p shot buys 19 to 149 of them, so test image models on your own shots.",
+    "targetQuery": "nano banana vs gpt image 2 vs grok imagine first frame",
+    "persona": "Indie Filmmaker",
+    "funnelStage": "Compare",
+    "searchIntent": "Commercial",
+    "contentType": "Comparison",
+    "keyValue": "Automation",
+    "updated": "2026-09-18",
+    "words": 1838,
+    "faq": [
+      {
+        "q": "Is Nano Banana or GPT Image 2 better for AI video first frames?",
+        "a": "Neither is better as a fact. They cost different amounts in ACT 3 AI: Nano Banana 2 is 25 credits and Nano Banana Pro 98 per 1K image, while GPT Image 2.0 is 85. Test them on five of your own briefs and count which obeys more of your instructions."
+      },
+      {
+        "q": "Can Grok Imagine make first frames?",
+        "a": "In ACT 3 AI, Grok Imagine is a video model, priced at 364 credits for an 8-second 720p shot. First frames come from the image models: Imagin Fast, Nano Banana 2, Imagin Preview, Imagin Ultra, GPT Image 2.0 and Nano Banana Pro."
+      },
+      {
+        "q": "How much do first frames cost for a 100-shot film?",
+        "a": "Assuming one approved frame per shot at 1K, 1,300 credits ($2.60) on Imagin Fast up to 9,800 ($19.60) on Nano Banana Pro. At three attempts per shot, 3,900 to 29,400 credits. 4K doubles each figure."
+      },
+      {
+        "q": "How many stills does one rejected video shot pay for?",
+        "a": "One rejected 8-second Seedance 2.0 1080p shot (1,946 credits) pays for 19 Nano Banana Pro stills, 22 GPT Image 2.0 stills or 77 Nano Banana 2 stills at 1K."
+      },
+      {
+        "q": "What does it cost to compare image models on my own shots?",
+        "a": "Five briefs on Nano Banana 2, GPT Image 2.0 and Nano Banana Pro cost 5 × (25 + 85 + 98) = 1,040 credits ($2.08) at 1K. All six image models on the same five briefs cost 1,430 credits ($2.86)."
+      },
+      {
+        "q": "Should storyboard panels double as first frames?",
+        "a": "Yes, where you can. The approved panel then becomes the still the video starts from, so the approval carries into motion instead of being translated into a new prompt."
       }
     ]
   },
@@ -4824,8 +4941,8 @@
     "searchIntent": "Commercial",
     "contentType": "Use_Case",
     "keyValue": "FullLength_Preview",
-    "updated": "2026-09-15",
-    "words": 1712,
+    "updated": "2026-09-18",
+    "words": 1727,
     "faq": [
       {
         "q": "What is a faceless YouTube channel?",
@@ -5010,6 +5127,45 @@
       {
         "q": "Does this work with our existing post pipeline?",
         "a": "Yes. Export covers FDX, PDF, EDL, and MP4/MOV plus 4K ProRes masters, with Premiere Pro and DaVinci Resolve compatibility and full round-trip Blender Sync for 3D work."
+      }
+    ]
+  },
+  {
+    "slug": "seedance_fast_mini",
+    "title": "Seedance 2.5 vs 2.0 vs Fast vs Mini: Tier Costs",
+    "description": "Draft on Seedance 2.0 Mini 480p at 73 credits per 8-second shot, then finish on Seedance 2.0 1080p (1,946) or Seedance 2.5 1080p (2,128).",
+    "targetQuery": "seedance 2.5 vs 2.0 vs 2.0 fast vs mini",
+    "persona": "Content Creator",
+    "funnelStage": "Compare",
+    "searchIntent": "Commercial",
+    "contentType": "Comparison",
+    "keyValue": "Automation",
+    "updated": "2026-09-18",
+    "words": 1694,
+    "faq": [
+      {
+        "q": "What is the difference between Seedance 2.5, 2.0, 2.0 Fast and Mini?",
+        "a": "Price, resolution and maximum length. Per 8-second shot at 16:9 in ACT 3 AI: Mini 73 to 157 credits (480p–720p), Fast 146 to 314, Seedance 2.0 366 to 4,044 (480p–4K), Seedance 2.5 535 to 2,128 (480p–1080p). The 2.0 family allows 4 to 15 seconds; 2.5 allows 4 to 30."
+      },
+      {
+        "q": "What is the cheapest Seedance tier per second?",
+        "a": "Seedance 2.0 Mini 480p: 73 credits per 8-second shot, which is 9.125 credits (about $0.018) per second at $1 = 500 credits."
+      },
+      {
+        "q": "Is Seedance 2.5 worth it over Seedance 2.0 at 1080p?",
+        "a": "On price the gap is 9%: 2,128 against 1,946 credits per 8-second shot at 16:9, 182 credits ($0.364) more. Seedance 2.5 also allows shots up to 30 seconds against 15. Whether it looks better for your film is something to test, not a published fact."
+      },
+      {
+        "q": "Is Mini good enough for drafts?",
+        "a": "It is the cheapest way to check timing and camera moves, at 73 credits per 8-second 480p shot. Judge detail, faces and the final look on the tier you ship."
+      },
+      {
+        "q": "How much does drafting save?",
+        "a": "In an illustrative 20-shot sequence at 8 seconds a shot, 3 Mini 480p drafts plus 1 Seedance 2.0 1080p final per shot cost 43,300 credits ($86.60), against 155,680 ($311.36) for 4 final-tier attempts per shot, a 72% saving."
+      },
+      {
+        "q": "Can I use Seedance on the Free or Creator plan?",
+        "a": "No. Free and Creator include Google Veo 3 only. Seedance and the other video models start at Pro, $175 a month with 87,500 credits."
       }
     ]
   },
@@ -5244,6 +5400,45 @@
       {
         "q": "How do I control spend across dozens of variants?",
         "a": "Run test rounds at lower render quality, with exact credit costs shown before each job, a render queue displaying predicted spend for approve-or-postpone decisions, budget alerts, and a separate permission controlling who may spend credits. Reserve high-quality renders for the winning variant."
+      }
+    ]
+  },
+  {
+    "slug": "veo_seedance_dialogue",
+    "title": "Veo 3.1 vs Seedance 2.5 Dialogue: Costs Compared",
+    "description": "Veo 3.1 1080p costs 2,080 credits per 8-second shot and Seedance 2.5 1080p costs 2,128, but of the two only Seedance 2.5 holds one take past 8 seconds.",
+    "targetQuery": "veo 3.1 vs seedance 2.5 dialogue",
+    "persona": "Indie Filmmaker",
+    "funnelStage": "Compare",
+    "searchIntent": "Commercial",
+    "contentType": "Comparison",
+    "keyValue": "Serious_Production",
+    "updated": "2026-09-18",
+    "words": 1842,
+    "faq": [
+      {
+        "q": "Is Veo 3.1 or Seedance 2.5 better for dialogue?",
+        "a": "Neither is proven better on lip-sync or delivery; test both on your own line. On price and length, Veo 3.1 1080p costs 2,080 credits per 8-second shot and caps shots at 8 seconds, while Seedance 2.5 1080p costs 2,128 and allows up to 30 seconds."
+      },
+      {
+        "q": "Does Veo 3.1 have native audio?",
+        "a": "ACT 3 AI's public pricing docs say Veo 3.1 Fast comes with native audio. They do not state it for Veo 3.1 at full price or for Seedance 2.5, so hear it on your own line before relying on it."
+      },
+      {
+        "q": "How do I add dialogue to a Veo or Seedance shot?",
+        "a": "With text-to-speech, lip-sync and speech replace, which work with any model. Text-to-speech is 225 credits per 1,000 characters, lip-sync is 38 per clip of about 5 seconds, and auto-trim + speech replace is 50 per shot."
+      },
+      {
+        "q": "How much does a one-minute dialogue scene cost?",
+        "a": "Assuming 10 shots each generated at 8 seconds, 1,000 characters of lines, 12 lip-sync clips and one speech replace per shot: 21,981 credits ($43.96) on Veo 3.1 1080p or 22,461 ($44.92) on Seedance 2.5 1080p, before retakes and final render."
+      },
+      {
+        "q": "Can a long line fit in one Veo 3.1 shot?",
+        "a": "Only if it plays in 8 seconds or less. A 20-second speech needs at least three Veo 3.1 shots; Seedance 2.5 can hold it in one shot of up to 30 seconds."
+      },
+      {
+        "q": "Which plan do I need for Seedance 2.5?",
+        "a": "Pro or higher. Free and Creator include Google Veo 3 only. Pro is $175 a month for 87,500 credits."
       }
     ]
   },

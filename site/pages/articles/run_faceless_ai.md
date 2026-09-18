@@ -5,7 +5,7 @@ keywords: ["faceless youtube channel with ai video", "AI filmmaking", "AI video 
 image: "https://act3ai.com/img/Act3_Preview.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-09-18
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "run_faceless_ai"
 article_target_query: "faceless youtube channel with ai video"
@@ -112,7 +112,7 @@ Step 6 is a compounding advantage: the clips you cut for Shorts drive discovery 
 
 ## Honest Trade-Offs
 
-- **Generative video is metered.** Long-form costs more than short-form because it is more minutes. Credit-based pricing with cost shown before each job makes it predictable, but it is a real line item.
+- **Generative video is metered.** Long-form costs more than short-form because it is more minutes. Credit-based pricing with cost shown before each job makes it predictable, but it is a real line item. For a worked monthly budget, see [what a faceless AI YouTube channel costs to run](/articles/cost_run_faceless).
 - **Quality varies by content type.** Stylized, animated, and atmospheric content holds up better at length than photoreal human drama.
 - **A faceless channel still needs a voice.** The writing and the narrative point of view are the product. AI removes production labor, not authorship.
 - **First episodes take longest.** Establishing cast, sets, and style is front-loaded; episodes 2 through 20 are dramatically faster because the assets already exist.
