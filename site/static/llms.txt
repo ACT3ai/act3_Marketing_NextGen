@@ -16,7 +16,7 @@ Everything below is a public page on https://act3ai.com. The articles are evergr
 
 ## Articles
 
-- [All 138 articles](https://act3ai.com/articles): the full index, grouped by reader.
+- [All 143 articles](https://act3ai.com/articles): the full index, grouped by reader.
 
 ### For indie filmmakers
 
@@ -41,9 +41,11 @@ Everything below is a public page on https://act3ai.com. The articles are evergr
 - [How to Turn a Script Into a Video With AI](https://act3ai.com/articles/finished_ai_step): Turning a script into a finished video with AI is a nine-step pipeline, and the generation step is only one of them.
 - [Make a Movie on a Micro-Budget With AI: Real Numbers](https://act3ai.com/articles/micro_budget_ai): A micro-budget AI feature is possible today, but only if you attack the right constraint. The constraint is not the cost of a shot — generative video is...
 - [Make a Proof-of-Concept Trailer to Raise Money With AI](https://act3ai.com/articles/proof_concept_ai): A proof-of-concept trailer made with AI is a 2–4 minute piece that shows financiers what your film looks and feels like — tone, world, cast...
+- [Nano Banana vs GPT Image 2 for AI First Frames](https://act3ai.com/articles/nano_banana_gpt): A first frame in ACT 3 AI costs 13 to 98 credits, and one rejected Seedance 2.0 1080p shot buys 19 to 149 of them, so test image models on your own shots.
 - [Rebuild Your Entire AI Movie From Daily Feedback](https://act3ai.com/articles/rebuild_ai_yesterday): Rebuilding an AI movie daily means treating your film like a build artifact: you screen the current cut, write notes, feed those notes back into the...
 - [Talking-Avatar Tools vs Cinematic AI: Which Fits Your Story](https://act3ai.com/articles/avatar_ai_fits): AI avatar tools and cinematic AI tools solve two different problems, and picking the wrong one is the single most common reason an indie project stalls.
 - [The Best AI Filmmaking Software for Full Productions](https://act3ai.com/articles/ai_software_productions): The best AI filmmaking software for you depends on whether you are making clips or making a film. If you need a 30-second hero shot, a prompt-to-video...
+- [Veo 3.1 vs Seedance 2.5 Dialogue: Costs Compared](https://act3ai.com/articles/veo_seedance_dialogue): Veo 3.1 1080p costs 2,080 credits per 8-second shot and Seedance 2.5 1080p costs 2,128, but of the two only Seedance 2.5 holds one take past 8 seconds.
 - [What Is Previs? AI Previsualization for Indie Filmmakers](https://act3ai.com/articles/previs_ai_previsualization): Previsualization — "previs" — is the practice of building a rough, moving version of a sequence before you shoot it.
 - [Working in 2-3 Hour Sprints to Build a Feature With AI](https://act3ai.com/articles/working_sprints_ai): The way to actually finish an AI feature is to stop working in five-minute prompt bursts and start working in 2–3 hour sprints with a single defined...
 
@@ -66,6 +68,7 @@ Everything below is a public page on https://act3ai.com. The articles are evergr
 - [End-to-End Automation vs One-Step AI Video Tools](https://act3ai.com/articles/end_automation_ai): Most AI video tools automate one step extremely well. A prompt-to-video generator turns text into a clip. An image generator turns text into a still.
 - [Fliki Alternative for Cinematic, Directed AI Video](https://act3ai.com/articles/fliki_directed_ai): If you're searching for a Fliki alternative for cinematic video, you've almost certainly hit the ceiling of the text-to-speech-plus-stock category.
 - [Free vs Paid AI Video: Where Free Tools Stop](https://act3ai.com/articles/free_paid_ai): Free AI video generators are genuinely useful — for testing an idea, learning the medium, and making short clips you do not need to own commercially.
+- [Grok Imagine vs Seedance vs Wan: Cost and Specs](https://act3ai.com/articles/grok_imagine_video): In ACT 3 AI an 8-second shot costs 364 credits on Grok Imagine (720p), 780 on Wan 2.6 (1080p) and 73 to 4,044 on Seedance (480p to 4K).
 - [How to Keep a Character Consistent Across Every AI Scene](https://act3ai.com/articles/keep_character_ai): You keep a character consistent in AI video by taking the description out of the prompt and putting it into a fixed, reusable record that every shot draws...
 - [How to Make a Short Film With AI From Idea to Final Cut](https://act3ai.com/articles/ai_idea_final): Making a short film with AI takes seven steps, and only one of them is generating video.
 - [How to Make B-Roll With AI That Matches Your Story](https://act3ai.com/articles/roll_ai_matches): To make B-roll with AI, you write a shot spec — not a vibe. A usable AI B-roll shot needs five things stated explicitly: subject and action, shot type...
@@ -75,9 +78,11 @@ Everything below is a public page on https://act3ai.com. The articles are evergr
 - [Preview the Whole Video, Not Clip by Clip](https://act3ai.com/articles/preview_unified_ai): To preview a whole AI video edit rather than clip by clip, you need a tool that assembles every generated shot onto one continuous timeline at full...
 - [Run a Faceless YouTube Channel With AI Video](https://act3ai.com/articles/run_faceless_ai): A faceless YouTube channel built on AI video works by producing narrative or documentary content where you never appear on camera — the visuals are...
 - [Runway Alternative for Long-Form and Full-Length Video](https://act3ai.com/articles/runway_long_form): Runway is a clip generator, and the wall you hit on long videos is structural, not a settings problem. Prompt-to-video tools in Runway's category produce...
+- [Seedance 2.5 vs 2.0 vs Fast vs Mini: Tier Costs](https://act3ai.com/articles/seedance_fast_mini): Draft on Seedance 2.0 Mini 480p at 73 credits per 8-second shot, then finish on Seedance 2.0 1080p (1,946) or Seedance 2.5 1080p (2,128).
 - [Turn a Blog Post Into a Cinematic Video With AI](https://act3ai.com/articles/blog_post_ai): To turn a blog post into a video with AI, you import the article, let the system restructure it into a script with a defined runtime, break that script...
 - [What Is a Mega Prompt? Bundling Story, Camera, and Light](https://act3ai.com/articles/mega_prompt_bundling): A mega prompt is a single, assembled instruction for one shot that bundles everything a video model needs to know: the narrative action, the visual style...
 - [What Is AI Filmmaking? A Plain-English Guide for Creators](https://act3ai.com/articles/ai_plain_english): AI filmmaking is making films where the images, and often the story structure and the voices, are generated by AI models instead of captured by a camera.
+- [Which AI Video Model for a Long Single Take?](https://act3ai.com/articles/long_single_take): Seedance 2.5 makes the longest single take in ACT 3 AI, up to 30 seconds; Seedance 2.0, Grok Imagine and Wan 2.6 reach 15 and Veo 3.1 stops at 8.
 
 ### For studios and production companies
 

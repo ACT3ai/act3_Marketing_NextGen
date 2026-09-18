@@ -107,6 +107,7 @@ fliki_directed_ai
 free_paid_ai
 generative_ai_used
 get_screenplay_produced
+grok_imagine_video
 hand_produces_ai
 integrating_ai_davinci
 iphone_motion_ai
@@ -114,6 +115,7 @@ keep_character_ai
 keeping_continuity_ai
 localize_ten_ai
 login_model_flux
+long_single_take
 ltx_studio_built
 luma_dream_machine
 make_ai_clips
@@ -121,6 +123,7 @@ managed_ai_feedback
 mega_prompt_bundling
 micro_budget_ai
 much_ai_minute
+nano_banana_gpt
 outsource_ai_level
 pictory_alternative_slideshows
 pilot_ai_pitch
@@ -136,12 +139,14 @@ runway_long_form
 runway_producing_volume
 scale_training_ai
 scaling_without_headcount
+seedance_fast_mini
 sheets_right_outfits
 ship_launch_ai
 shot_lists_storyboards
 sora_after_shutdown
 storyboarding_list_ai
 test_dozens_ai
+veo_seedance_dialogue
 watch_entire_ai
 white_label_ai
 working_sprints_ai
