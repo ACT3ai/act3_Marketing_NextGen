@@ -293,7 +293,7 @@ export default function SiteNavbar(): React.ReactNode {
           <a href="/" className="snav__logo" aria-label="ACT 3 AI home">
             <img
               src="/img/act3-logo.png"
-              alt="ACT 3"
+              alt="ACT 3 AI"
               className="snav__logo-img"
             />
           </a>
