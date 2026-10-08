@@ -6,7 +6,9 @@
 // /v/4 is assembled top to bottom from the ONE approved variation of every row in
 //   ~/BGit/all/film/marketing/ACT3_marketing_Home/act3/summary_sections.csv
 // (columns: row,title,directory,variation_approved). Each approved row lives in
-//   ~/BGit/all/film/marketing/ACT3_marketing_Home/act3/rows/{directory}/{variation}/
+//   ~/BGit/all/film/marketing/ACT3_marketing_Home/act3/rows/{directory}/v/{variation}/
+// (variations sit under the row's v/ directory since 2026-10-05; row-level assets such as
+// videos/, demos/ and in/ stay directly in the row directory, two levels up from a variation)
 // as a hand-built standalone row.html (or real.html) + row.css + row.js.
 //
 // This script:
@@ -376,7 +378,7 @@ for (const e of entries) {
     notApproved.push(e); log(`row ${e.row} (${e.title}): not approved yet, left off`); continue;
   }
   e.rowDir = path.join(ROWS_DIR, e.directory);
-  e.varDir = path.join(e.rowDir, e.variation);
+  e.varDir = path.join(e.rowDir, "v", e.variation);
   if (!fs.existsSync(e.varDir) || !fs.statSync(e.varDir).isDirectory()) {
     errored.push(e); warn(e.row, `VARIATION_DIR does not exist: ${e.varDir} — row left off`); continue;
   }
