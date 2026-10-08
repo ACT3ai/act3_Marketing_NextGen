@@ -36,6 +36,11 @@
 //   * wraps every row script in a small lifecycle harness (window.__v4ctx) so the
 //     page can stop its rAF loops, timers, observers and document/window
 //     listeners when the SPA navigates away (row engines have no teardown),
+//   * FAILS before touching site/static/v4/ if any referenced asset is missing. The
+//     upstream repo git-ignores *.mp4, so a machine without the clips used to ship
+//     the posters and silently drop every video (the hero 404s of 2026-10-08),
+//   * re-encodes every video that is not already web-ready (H.264 <= 720p, no audio,
+//     faststart) with ffmpeg, the settings measured in SPEED_ADVICE,
 //   * writes the rewritten scripts to site/static/v4/row_{N}/...,
 //   * writes site/pages/v/4/_rows.generated.ts.
 //
@@ -59,6 +64,9 @@ const V4_STATIC_URL = "/v4";
 const V4_ROWS_DATA_FILE = path.join(REPO_DIR, "site/pages/v/4/_rows.generated.ts");
 const DOCUSAURUS_CONFIG = path.join(REPO_DIR, "docusaurus.config.ts");
 const VIDEO_BUDGET_MB = 40;
+// Re-encodes are cached by (source bytes, ffmpeg version, settings) so re-runs are fast and byte-identical.
+const VIDEO_CACHE_DIR = path.join(REPO_DIR, "node_modules/.cache/build-v4-rows/videos");
+const SPEED_ADVICE = "~/BGit/all/film/marketing/ACT3_marketing_Home/video/streaming/speed_advise.mdx";
 
 // Same link targets as site/pages/v/3/index.tsx and site/pages/v/4/index.tsx.
 const SIGNUP = "https://app.act3ai.com/signup/";
@@ -170,7 +178,8 @@ const sha = (s) => crypto.createHash("sha1").update(s).digest("hex");
 const isInside = (p, dir) => p === dir || p.startsWith(dir + path.sep);
 const ASSET_EXT = /\.(jpe?g|png|webp|gif|svg|avif|mp4|webm|mov|m4v|mp3|wav|ogg|vtt|json|js|css|woff2?|ttf|otf)$/i;
 const VIDEO_EXT = /\.(mp4|webm|mov|m4v)$/i;
-const isExternal = (u) => /^(?:[a-z][a-z0-9+.-]*:|\/\/|#|\/)/i.test(u) || u === "";
+// "%23" is an encoded "#": url(%23n) inside an SVG data URI points at an element id, never a file.
+const isExternal = (u) => /^(?:[a-z][a-z0-9+.-]*:|\/\/|#|%23|\/)/i.test(u) || u === "";
 
 // ── HTML helpers ─────────────────────────────────────────────────────────────
 function attr(tag, name) {
@@ -650,10 +659,11 @@ for (const e of rows) {
     if (bare && !ASSET_EXT.test(val.split(/[?#]/)[0])) { warn(e.row, `relative ${name}="${val}" is not an asset; left as-is`); return m; }
     return `${sp}${name}${eq}${q}${resolveRef(e, val, htmlDir, `markup ${name}`)}${q}`;
   });
-  html = html.replace(/(\s)(srcset)(\s*=\s*)(["'])([^"']*)\4/gi, (m, sp, name, eq, q, val) => {
+  // data-srcset too: row 2 fills srcset from it at runtime (a relative one 404'd as /images/... on 2026-10-08).
+  html = html.replace(/(\s)(srcset|data-srcset)(\s*=\s*)(["'])([^"']*)\4/gi, (m, sp, name, eq, q, val) => {
     const rewritten = val.split(",").map((c) => {
       const [u, ...d] = c.trim().split(/\s+/);
-      return [isExternal(u) ? u : resolveRef(e, u, htmlDir, "markup srcset"), ...d].join(" ");
+      return [isExternal(u) ? u : resolveRef(e, u, htmlDir, `markup ${name}`), ...d].join(" ");
     }).join(", ");
     return `${sp}${name}${eq}${q}${rewritten}${q}`;
   });
@@ -691,7 +701,7 @@ for (const e of rows) {
     for (const need of ["muted", "playsinline", "poster"]) if (!new RegExp(`\\s${need}\\b`, "i").test(v)) warn(e.row, `<video> without ${need}: ${v}`);
   }
   // leftover relative refs in markup
-  for (const m of html.matchAll(/\s(?:src|href|poster|data-src|srcset)\s*=\s*["']([^"']*)["']/gi)) {
+  for (const m of html.matchAll(/\s(?:src|href|poster|data-src|srcset|data-srcset)\s*=\s*["']([^"']*)["']/gi)) {
     for (const u of m[1].split(",").map((c) => c.trim().split(/\s+/)[0])) {
       if (/^\.\.?\//.test(u) || (!isExternal(u) && ASSET_EXT.test(u.split(/[?#]/)[0]))) fail(`row ${e.row}: relative reference left in markup: ${u}`);
     }
@@ -765,17 +775,111 @@ for (const e of rows) for (const g of e.windowGlobals) {
 const prefixes = rows.map((e) => e.prefix);
 if (new Set(prefixes).size !== prefixes.length) fail("prefix collision remains after renaming");
 
+// ── missing assets: stop before site/static/v4/ is wiped ─────────────────────
+const missingAll = rows.flatMap((e) => e.missing.map((m) => `row ${e.row}: ${m}`));
+if (missingAll.length) {
+  const videos = missingAll.some((m) => VIDEO_EXT.test(m.split(" (")[0]));
+  console.log(`
+=====================================================
+  ${missingAll.length} referenced asset(s) do not exist on this machine:
+${missingAll.map((l) => "  " + l).join("\n")}
+${videos ? `  ~/BGit/all git-ignores *.mp4, so the clips exist only where they were made.
+  Copy them onto this machine (or build where they are) and re-run.
+` : ""}  Nothing was changed: the live /v/4 would 404 on every missing file.
+=====================================================
+`);
+  if (LOG_FILE) fs.appendFileSync(LOG_FILE, `[build-v4-rows] ERROR: ${missingAll.length} missing asset(s)\n`);
+  process.exit(1);
+}
+
+// ── videos: web-ready encodes ────────────────────────────────────────────────
+// Every <video> on /v/4 is a muted loop. Generator-native masters (Veo) arrive at 3–19 Mbps with an audio
+// track and the moov atom at the END, so Chrome needs three Range requests before the first frame
+// (measured: 4.5 s to playing on Fast 4G instead of 0.36 s). A video that is not already web-ready is
+// re-encoded on its way into site/static: H.264 High, yuv420p, short side at most 720, CRF 26, no audio,
+// keyframe every 2 s, faststart. Measurements and the rejected options (HLS/DASH, AV1): SPEED_ADVICE.
+const WEB_VIDEO = {
+  maxShortSide: 720,
+  maxKbps: 8000,
+  args: ["-map", "0:v:0", "-an", "-sn", "-dn", "-map_metadata", "-1", "-map_chapters", "-1",
+    "-vf", "scale='if(gt(iw,ih),-2,min(720,iw))':'if(gt(iw,ih),min(720,ih),-2)'",
+    "-c:v", "libx264", "-preset", "slow", "-crf", "26", "-profile:v", "high", "-pix_fmt", "yuv420p",
+    "-force_key_frames", "expr:gte(t,n_forced*2)", "-movflags", "+faststart",
+    "-fflags", "+bitexact", "-flags:v", "+bitexact"],
+};
+const { execFileSync } = require("child_process");
+function tool(name) {
+  try { return execFileSync(name, ["-version"], { encoding: "utf8" }).split("\n")[0]; }
+  catch { fail(`${name} is needed to check and re-encode the /v/4 videos: brew install ffmpeg`); }
+}
+// Top-level MP4 boxes in file order: faststart means moov comes before mdat.
+function moovFirst(file) {
+  const fd = fs.openSync(file, "r");
+  const size = fs.fstatSync(fd).size;
+  const h = Buffer.alloc(16);
+  try {
+    for (let pos = 0; pos + 8 <= size;) {
+      fs.readSync(fd, h, 0, 16, pos);
+      let len = h.readUInt32BE(0);
+      const type = h.toString("latin1", 4, 8);
+      if (type === "moov") return true;
+      if (type === "mdat") return false;
+      if (len === 1) len = Number(h.readBigUInt64BE(8));
+      else if (len === 0) len = size - pos;
+      if (len < 8) return false;
+      pos += len;
+    }
+  } finally { fs.closeSync(fd); }
+  return false;
+}
+// Why a video needs a re-encode, or [] when it can ship as it is.
+function webProblems(file) {
+  const info = JSON.parse(execFileSync("ffprobe", ["-v", "error", "-print_format", "json", "-show_streams", "-show_format", file], { encoding: "utf8" }));
+  const v = info.streams.find((s) => s.codec_type === "video");
+  const why = [];
+  if (!v) return ["no video stream"];
+  if (v.codec_name !== "h264") why.push(`codec ${v.codec_name}`);
+  if (!["yuv420p", "yuvj420p"].includes(v.pix_fmt)) why.push(`pixel format ${v.pix_fmt}`);
+  if (Math.min(v.width, v.height) > WEB_VIDEO.maxShortSide) why.push(`${v.width}x${v.height}`);
+  if (info.streams.some((s) => s.codec_type === "audio")) why.push("audio track");
+  const kbps = Math.round(Number(info.format.bit_rate || 0) / 1000);
+  if (kbps > WEB_VIDEO.maxKbps) why.push(`${kbps} kbps`);
+  if (/\.(mp4|m4v|mov)$/i.test(file) && !moovFirst(file)) why.push("moov at the end (no faststart)");
+  return why;
+}
+const videoSources = [...new Set(rows.flatMap((e) => [...e.assets.keys()].filter((abs) => VIDEO_EXT.test(abs))))];
+const webVideo = new Map(); // source abs -> file to publish
+if (videoSources.length) {
+  tool("ffprobe");
+  let ffmpegVersion = null;
+  for (const abs of videoSources) {
+    const why = webProblems(abs);
+    if (!why.length) { webVideo.set(abs, abs); continue; }
+    ffmpegVersion = ffmpegVersion || tool("ffmpeg");
+    const key = sha(Buffer.concat([fs.readFileSync(abs), Buffer.from(ffmpegVersion + JSON.stringify(WEB_VIDEO))]));
+    const out = path.join(VIDEO_CACHE_DIR, `${key}.mp4`);
+    if (!fs.existsSync(out)) {
+      fs.mkdirSync(VIDEO_CACHE_DIR, { recursive: true });
+      const tmp = `${out}.part.mp4`;
+      execFileSync("ffmpeg", ["-nostdin", "-v", "error", "-y", "-i", abs, ...WEB_VIDEO.args, tmp], { stdio: "inherit" });
+      fs.renameSync(tmp, out);
+    }
+    webVideo.set(abs, out);
+    log(`video re-encoded (${why.join(", ")}): ${(fs.statSync(abs).size / 1048576).toFixed(2)} -> ${(fs.statSync(out).size / 1048576).toFixed(2)} MB  ${path.relative(MARKETING_HOME_DIR, abs)}`);
+  }
+}
+const published = (abs) => webVideo.get(abs) || abs;
+
 // ── video budget ─────────────────────────────────────────────────────────────
 let videoBytes = 0;
 const videoList = [];
-for (const e of rows) for (const abs of e.assets.keys()) if (VIDEO_EXT.test(abs)) { const b = fs.statSync(abs).size; videoBytes += b; videoList.push(`${(b / 1048576).toFixed(1)} MB  ${abs}`); }
+for (const abs of videoSources) { const b = fs.statSync(published(abs)).size; videoBytes += b; videoList.push(`${(b / 1048576).toFixed(1)} MB  ${abs}`); }
 if (videoBytes > VIDEO_BUDGET_MB * 1048576) {
   console.log(`
 =====================================================
-  Videos total ${(videoBytes / 1048576).toFixed(1)} MB, over the ${VIDEO_BUDGET_MB} MB budget.
+  Videos total ${(videoBytes / 1048576).toFixed(1)} MB after re-encoding, over the ${VIDEO_BUDGET_MB} MB budget.
 ${videoList.map((l) => "  " + l).join("\n")}
-  Choose: re-encode (H.264 MP4, AAC, yuv420p, never AV1) or move them to IPFS
-  (https://ipfs.io/ipfs/<CID>/<file>, fallback https://<CID>.ipfs.dweb.link/<file>).
+  Shorten or drop clips, or move /v4/**/*.mp4 to a CDN bucket (see ${SPEED_ADVICE}, Hosting).
   Nothing was copied.
 =====================================================
 `);
@@ -838,8 +942,8 @@ for (const e of rows) {
     if (e.scriptFiles.includes(abs)) continue; // written rewritten below
     const dest = path.join(REPO_DIR, "site/static", url);
     fs.mkdirSync(path.dirname(dest), { recursive: true });
-    fs.copyFileSync(abs, dest);
-    const b = fs.statSync(abs).size;
+    fs.copyFileSync(published(abs), dest);
+    const b = fs.statSync(dest).size;
     e.bytes += b;
     e.copied.push(`${url} (${b} B)`);
   }

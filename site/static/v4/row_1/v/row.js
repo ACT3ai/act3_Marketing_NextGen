@@ -127,28 +127,47 @@ var window = __v4.window, self = __v4.window, document = __v4.document,
     m1: root.querySelector('[data-n="m1"]'), m2: root.querySelector('[data-n="m2"]'), status: root.querySelector('[data-n="status"]')
   };
 
-  // ---- media: one layer per slot, all preloaded at start, src never swapped ----
-  var layers = slots.map(function (s) {
+  // ---- media: one layer per slot; a slot's poster and clip are set once and never swapped ----
+  // Slots load ONE AHEAD: slot 1 at start, slot N+1 (poster + clip) once the clip on screen is FULLY buffered
+  // (or has ended, or failed), so the clip being watched never shares the connection, and a visitor who
+  // leaves early downloads two clips, not seven. Not canplaythrough: Chrome fires it early, and starting the
+  // next download there stalled clip 1 twice on Fast 4G; so did fetching all seven posters (1.3 MB) with it.
+  // Save-Data and 2G get the posters only, one ahead (the clock still runs).
+  var conn = navigator.connection || {};
+  var posterOnly = reduce || conn.saveData === true || /(^|-)2g$/.test(conn.effectiveType || '');
+  var layers = slots.map(function (s, i) {
     var wrap = document.createElement('div');
     wrap.className = P + 'layer';
     var im = document.createElement('img');
-    im.className = P + 'poster'; im.alt = ''; im.src = s.poster; im.decoding = 'async';
+    im.className = P + 'poster'; im.alt = ''; im.decoding = 'async';
     im.setAttribute('aria-hidden', 'true');
     wrap.appendChild(im);
     var vd = null;
-    if (!reduce) {
+    if (!posterOnly) {
       vd = document.createElement('video');
       vd.className = P + 'clip';
       vd.muted = true; vd.defaultMuted = true; vd.playsInline = true;
       vd.setAttribute('muted', ''); vd.setAttribute('playsinline', ''); vd.setAttribute('aria-hidden', 'true');
-      vd.preload = 'auto'; vd.poster = s.poster; vd.src = s.clip;
+      vd.preload = 'none';
       vd.addEventListener('playing', function () { vd.classList.add(P + 'live'); });
-      vd.addEventListener('error', function () { vd.classList.remove(P + 'live'); vd.dataset.bad = '1'; });
+      vd.addEventListener('error', function () { vd.classList.remove(P + 'live'); vd.dataset.bad = '1'; ahead(i); });
+      vd.addEventListener('progress', function () { if (loaded(vd)) ahead(i); });
+      vd.addEventListener('suspend', function () { if (loaded(vd)) ahead(i); });
+      vd.addEventListener('ended', function () { ahead(i); });
       wrap.appendChild(vd);
     }
     media.appendChild(wrap);
-    return { wrap: wrap, img: im, v: vd };
+    return { wrap: wrap, img: im, v: vd, poster: s.poster, clip: s.clip, armed: false };
   });
+  function arm(i) {
+    var L = layers[i % N];
+    if (L.armed) return;
+    L.armed = true;
+    L.img.src = L.poster;
+    if (L.v) { L.v.poster = L.poster; L.v.preload = 'auto'; L.v.src = L.clip; }
+  }
+  function ahead(i) { if (i === cur) arm(i + 1); }   // only the clip on screen pulls the next slot
+  function loaded(v) { var b = v.buffered; return v.duration > 0 && b.length > 0 && b.end(b.length - 1) >= v.duration - 0.1; }
   var still = media.querySelector('.' + P + 'still');
   if (still) still.style.visibility = 'hidden';   // the per-slot layers take over from the no-JS still
 
@@ -193,6 +212,8 @@ var window = __v4.window, self = __v4.window, document = __v4.document,
       if (L.v && j !== i) { L.v.pause(); try { L.v.currentTime = 0; } catch (e) {} }
     });
     var L = layers[i];
+    arm(i);   // a scene tick or seek can land on a clip that is not loaded yet
+    if (!L.v || loaded(L.v) || L.v.dataset.bad) arm(i + 1);   // poster-only, or it finished loading before it was on screen
     if (L.v && frozenAt === null && !L.v.dataset.bad) {
       L.v.pause();
       try { L.v.currentTime = 0; } catch (e) {}        // FORCE the clip back to frame 0
