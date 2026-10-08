@@ -263,12 +263,12 @@ var window = __v4.window, self = __v4.window, document = __v4.document,
       }
     } else if (kind === 'petals') {
       // cherry blossom petals: drift down and right on the breeze, tumbling (the flattened ellipse turns over)
-      for (i = 0; i < 70; i++) {
+      for (i = 0; i < 90; i++) {
         var px = (((rnd(i) * w) + Math.sin(t * 0.8 + i) * 30 + t * (30 + rnd(i + 6) * 30)) % w + w) % w;
         var py = ((rnd(i + 3) * h) + t * (35 + rnd(i + 5) * 40)) % h;
-        var pr = 3 + rnd(i + 9) * 4, flip = 0.2 + 0.8 * Math.abs(Math.cos(t * (1.5 + rnd(i + 4) * 2) + i));
+        var pr = 4.5 + rnd(i + 9) * 5, flip = 0.2 + 0.8 * Math.abs(Math.cos(t * (1.5 + rnd(i + 4) * 2) + i));
         fctx.save(); fctx.translate(px, py); fctx.rotate(i + t * (0.6 + rnd(i + 8)));
-        fctx.fillStyle = 'rgba(255,' + Math.round(190 + rnd(i + 2) * 30) + ',' + Math.round(205 + rnd(i + 7) * 25) + ',' + (0.6 + rnd(i + 1) * 0.35).toFixed(2) + ')';
+        fctx.fillStyle = 'rgba(255,' + Math.round(190 + rnd(i + 2) * 30) + ',' + Math.round(205 + rnd(i + 7) * 25) + ',' + (0.7 + rnd(i + 1) * 0.28).toFixed(2) + ')';
         fctx.beginPath(); fctx.ellipse(0, 0, pr, pr * 0.6 * flip, 0, 0, 6.283); fctx.fill();
         fctx.restore();
       }
