@@ -25,7 +25,7 @@ var window = __v4.window, self = __v4.window, document = __v4.document,
 
   var CFG = {
     dur: 10,          // real seconds per slot
-    rate: 0.6,        // a 4.0 s Veo clip plays over 6.7 s, then holds its last frame
+    rate: 0.6,        // a slot shows the first 6.0 s of its clip; the 5.0 s clips (3, 5, 7) hold their last frame
     T: { type: 0.9, enter: 3.0, reply: 3.55, render: 3.9, change: 5.0, done: 5.9 },
     shutter: { close: 0.34, hold: 0.16, open: 0.5 },   // the blades meet exactly at T.change, then open
     status: { idle: 'Scene {scene} · Take 1', render: 'Rendering scene {scene}', done: 'Scene {scene} · New cut' },
@@ -37,70 +37,73 @@ var window = __v4.window, self = __v4.window, document = __v4.document,
     // the square cards light (yellow edge) while the sparkle trail passes them
     nodes: { crew: [3.7, 4.2], prompt: [4.05, 4.5], m1: [4.35, 4.75], m2: [4.55, 4.95], status: [4.75, 5.9] },
     // the voice: a MICRO-DRAMA showrunner shipping vertical episodes, chasing the hook; the AI answers "Locked for ep. N:"
+    // The slots are the seven ACT 3 category clips (2026-10-08), in categories.yaml order. Each slot's slug, who, line
+    // and action are that clip's beat in video/script/script_marketing.fdx (slug shortened to fit the page; action
+    // trimmed to what the clip actually shows: slot 4's Leo never reaches the shelf, so the page stops at the look).
     slots: [
-      { scene: 1, title: 'Whale ride', poster: '/v4/row_1/videos/1/poster.jpg', clip: '/v4/row_1/videos/1/video.mp4',
-        slug: 'EXT. OPEN OCEAN - DAY', who: 'MAYA', line: 'Watch this, guys!',
-        action: 'A humpback breaches beside the boat. Maya leaps onto its back and rides it out to sea.',
-        opener: 'Ep. 1 cold open is cut: Maya rides the whale. Notes?',
+      { scene: 1, title: 'Windsurfer', poster: '/v4/row_1/videos/1/poster.jpg', clip: '/v4/row_1/videos/1/video.mp4',
+        slug: 'EXT. SANDY COASTLINE, OPEN WATER - MIDDAY', who: 'WINDSURFER', line: 'Hello, little friend.',
+        action: 'A windsurfer races the coast, eyes on a butterfly. Behind him, an alien ship hovers over the water.',
+        opener: 'Ep. 1 cold open is cut: the windsurfer meets the butterfly. Notes?',
         prompt: 'Hook harder. Golden hour, so the water glows.',
-        reply: 'Locked for ep. 1: scene 1 at golden hour, backlit spray. Same ride, same beat.',
-        pbase: 'Open ocean, woman in a wetsuit leaps from a small boat onto a breaching humpback and rides it forward, spray',
-        padd: 'golden hour, warm low sun, backlit spray',
+        reply: 'Locked for ep. 1: scene 1 at golden hour, the water glowing. Same ride, same butterfly.',
+        pbase: 'Sunny coast, windsurfer sails past the dunes, a small blue butterfly at his face, an alien ship hovers low behind him',
+        padd: 'golden hour, warm low sun, glints on the water',
         fx: { filter: 'sepia(0.25) saturate(1.5) brightness(1.05) contrast(1.06)', tint: 'rgba(255,160,50,0.28)', blend: 'soft-light', particles: 'glints' } },
-      { scene: 2, title: 'Alien ride', poster: '/v4/row_1/videos/2/poster.jpg', clip: '/v4/row_1/videos/2/video.mp4',
-        slug: 'EXT. SMALL-TOWN MAIN STREET - DAY', who: 'JACK', line: 'Nice ride.',
-        action: 'Jack opens the door of a pearl-white coupe. The window rolls down: a friendly alien, ray gun rising.',
-        opener: 'Ep. 2 is cut: Jack meets the alien. Notes?',
-        prompt: 'The cliffhanger needs menace. Make it night.',
-        reply: 'Locked for ep. 2: scene 2 at night, under the streetlights. Same alien, same line.',
-        pbase: 'Sunny small-town main street, man in flannel with coffee opens the door of a pearl-white coupe, alien in the passenger seat',
-        padd: 'night, sodium streetlights, glossy reflections',
+      { scene: 2, title: 'Folding city', poster: '/v4/row_1/videos/2/poster.jpg', clip: '/v4/row_1/videos/2/video.mp4',
+        slug: 'EXT. DOWNTOWN CITY STREET - SUNNY MORNING', who: 'GRANDMA', line: 'What lovely weather.',
+        action: 'Grandma pedals along, all smiles. Behind her the street folds up into the sky, a boy skating the swell.',
+        opener: 'Ep. 2 is cut: Grandma and the folding city. Notes?',
+        prompt: 'Make it spring. Cherry blossoms on the breeze.',
+        reply: 'Locked for ep. 2: spring light, blossoms drifting down the street. Same ride, same line.',
+        pbase: 'Sunny city street, grandma on a bicycle with a basket of flowers rides toward us, the street folds up into the sky behind her',
+        padd: 'spring, soft light, cherry blossoms drifting',
+        fx: { filter: 'saturate(1.25) brightness(1.06) contrast(0.95)', tint: 'rgba(255,182,206,0.22)', blend: 'soft-light', particles: 'petals' } },
+      { scene: 3, title: 'SUV roll-up', poster: '/v4/row_1/videos/3/poster.jpg', clip: '/v4/row_1/videos/3/video.mp4',
+        slug: 'EXT. SMALL-TOWN MAIN STREET - LATE MORNING', who: 'OPERATOR', line: 'Two minutes out.',
+        action: 'A black SUV rolls down main street. The rear window is down: two bearded operators, eyes on the town.',
+        opener: 'Ep. 3 is cut: the SUV rolls into town.',
+        prompt: 'Needs menace. Make it night.',
+        reply: 'Locked for ep. 3: main street at night, sodium light on the black paint. Same roll-up.',
+        pbase: 'Small-town main street, an unbadged black SUV catches up to us, rear window down, a bearded operator in a flak jacket',
+        padd: 'night, sodium streetlights, glossy black paint',
         fx: { filter: 'brightness(0.55) contrast(1.2) saturate(1.15)', tint: 'rgba(255,135,40,0.26)', blend: 'soft-light', particles: 'sparks' } },
-      { scene: 3, title: 'Harbor chase', poster: '/v4/row_1/videos/3/poster.jpg', clip: '/v4/row_1/videos/3/video.mp4',
-        slug: 'EXT. AVALON HARBOR, CATALINA - DAY', who: 'SALLY', line: "Let's go, go!",
-        action: 'Sally waves Jack forward. They hit the gas as red lasers streak past the Casino.',
-        opener: 'Ep. 3 is cut: Jack and Sally on the jet skis.',
-        prompt: 'Raise the stakes. Roll a storm in. Rain.',
-        reply: 'Locked for ep. 3: a squall over the harbor, rain on the water. Same chase.',
-        pbase: 'Avalon Harbor on a sunny day, clear water, Sally and Jack on separate jet skis, she waves him forward, they race off',
-        padd: 'sudden squall, driving rain, dark sea',
-        fx: { filter: 'contrast(1.35) saturate(0.55) brightness(0.68)', tint: 'rgba(40,46,52,0.38)', blend: 'multiply', particles: 'rain' } },
-      { scene: 4, title: 'Hoverboard', poster: '/v4/row_1/videos/4/poster.jpg', clip: '/v4/row_1/videos/4/video.mp4',
-        slug: 'EXT. OPEN-AIR MALL, GRAND STAIRS - DAY', who: 'WALT', line: 'Not today, stairs.',
-        action: 'Walt drops his hoverboard. It glows, lifts, and he glides down the stairs over the shoppers.',
-        opener: 'Ep. 4 is cut: Walt and the hoverboard.',
-        prompt: 'Ep. 4 drops in December. Add falling snow.',
-        reply: 'Locked for ep. 4: winter light and snowfall on the stairs. Same glide.',
-        pbase: 'Open-air mall, wide stairs with glass railing, man of 60 with white beard and cap drops a glowing hoverboard and glides down',
-        padd: 'winter light, light snow falling, cold breath',
-        fx: { filter: 'saturate(0.7) brightness(1.06) contrast(1.02)', tint: 'rgba(225,232,238,0.22)', blend: 'screen', particles: 'snow' } },
-      { scene: 5, title: 'Clay race', poster: '/v4/row_1/videos/5/poster.jpg', clip: '/v4/row_1/videos/5/video.mp4',
-        slug: 'EXT. FELT HILL - DAY', who: 'KIT', line: 'Ready, set, go!',
-        action: 'Kit and a furious Badger race soapbox carts downhill. Badger rams, misses, and lands in the hay.',
-        opener: 'Ep. 5 is cut: Kit races Badger.',
-        prompt: 'Spooky episode. Dusk, long shadows.',
-        reply: 'Locked for ep. 5: dusk on Felt Hill, long clay shadows. Same race.',
-        pbase: 'Stop-motion claymation, clay fox kid and a grumpy clay badger race soapbox carts down a felt hill',
-        padd: 'dusk, long shadows, low red sun on the clay',
-        fx: { filter: 'sepia(0.35) saturate(1.2) brightness(0.72) contrast(1.15)', tint: 'rgba(200,70,30,0.26)', blend: 'soft-light', particles: 'glints' } },
-      { scene: 6, title: 'Bomb rider', poster: '/v4/row_1/videos/6/poster.jpg', clip: '/v4/row_1/videos/6/video.mp4',
-        slug: 'INT. B-17 BOMB BAY - DAY', who: 'GUNNER', line: 'Giddy up, baby!',
-        action: 'The rack releases. Gunner rides the bomb down through flak like a rodeo bull.',
-        opener: 'Ep. 6 is cut: the bomb ride.',
-        prompt: 'Make it the flashback. Black and white, 1944.',
-        reply: 'Locked for ep. 6: a 1944 newsreel look, grain and flicker. Same ride.',
-        pbase: 'WWII heavy bomber, open bomb bay above the clouds, airman jumps onto the bomb and rides it down, tracking shot',
-        padd: '1944 newsreel, black and white, film grain, flicker',
+      { scene: 4, title: 'Bookshelf', poster: '/v4/row_1/videos/4/poster.jpg', clip: '/v4/row_1/videos/4/video.mp4',
+        slug: 'INT. CORNER COFFEE SHOP - SUNNY MORNING', who: 'WOMAN (O.S.)', line: 'Not again, Leo.',
+        action: 'Coffee steams on the table. By the window, Leo eyes the tall bookshelf. She knows that look.',
+        opener: 'Ep. 4 is cut: Leo and the bookshelf.',
+        prompt: 'Make it the flashback. Black and white, 16mm.',
+        reply: 'Locked for ep. 4: black-and-white 16mm, grain and flicker. Same table, same Leo.',
+        pbase: 'Coffee shop POV, a cup of coffee steaming on the table, her hand beside it, a boy stands by the tall bookshelf, slow pan left',
+        padd: 'black and white, 16mm film grain, flicker',
         fx: { filter: 'grayscale(1) contrast(1.3) brightness(1.05)', particles: 'grain' } },
-      { scene: 7, title: 'River rescue', poster: '/v4/row_1/videos/7/poster.jpg', clip: '/v4/row_1/videos/7/video.mp4',
-        slug: 'EXT. COLORADO RIVER - DAY', who: 'MOM', line: 'Grab the rope!',
-        action: 'The raft slides toward the falls. Mom throws the rope; Lily grabs it and swings clear.',
-        opener: 'Season finale is cut: the river rescue.',
-        prompt: 'Finale needs awe. Mist off the falls, sunbeams.',
-        reply: 'Locked for the finale: mist off the falls, sunbeams through it. Same rescue.',
-        pbase: 'Sunny Colorado river, mom on the rocks throws a rope to her daughter in a raft sliding toward a steep waterfall',
-        padd: 'heavy mist off the falls, sunbeams through it',
-        fx: { filter: 'sepia(0.18) saturate(1.1) brightness(1.08) contrast(0.9)', tint: 'rgba(255,224,180,0.26)', blend: 'screen', particles: 'mist' } }
+      { scene: 5, title: 'Train duel', poster: '/v4/row_1/videos/5/poster.jpg', clip: '/v4/row_1/videos/5/video.mp4',
+        slug: 'EXT. ELEVATED RAILWAY, TOKYO - DAY (ANIME)', who: 'HERO', line: 'Next stop: you.',
+        action: 'The hero rides the train roof, sword drawn, as a spaceship roars past, the villain in its door.',
+        opener: 'Ep. 5 is cut: the duel on the train.',
+        prompt: 'Winter arc. Make it snow over Tokyo.',
+        reply: 'Locked for ep. 5: winter light, snow over Tokyo. Same duel, same line.',
+        pbase: '2D anime, commuter train on a Tokyo viaduct, hero with a red scarf and a sword on the roof, a spaceship flying alongside',
+        padd: 'winter, snow falling over the city',
+        fx: { filter: 'saturate(0.7) brightness(1.06) contrast(1.02)', tint: 'rgba(225,232,238,0.22)', blend: 'screen', particles: 'snow' } },
+      { scene: 6, title: 'Mammoth herd', poster: '/v4/row_1/videos/6/poster.jpg', clip: '/v4/row_1/videos/6/video.mp4',
+        slug: 'EXT. HILLTOP ABOVE A VALLEY - GOLDEN HOUR', who: 'SHEPHERD BOY', line: 'Come on, girls.',
+        action: 'A shepherd boy whistles from the hilltop. Below, a herd of woolly mammoths thunders through golden dust.',
+        opener: 'Ep. 6 is cut: the boy calls the herd.',
+        prompt: 'Make it dawn. Mist in the valley.',
+        reply: 'Locked for ep. 6: dawn mist rolling through the valley. Same herd, same whistle.',
+        pbase: 'Grassy hilltop, shepherd boy with a crook and two sheep whistles, woolly mammoths gallop across the valley in golden dust',
+        padd: 'dawn, low mist rolling through the valley',
+        fx: { filter: 'sepia(0.18) saturate(1.1) brightness(1.08) contrast(0.9)', tint: 'rgba(255,224,180,0.26)', blend: 'screen', particles: 'mist' } },
+      { scene: 7, title: 'Dragon run', poster: '/v4/row_1/videos/7/poster.jpg', clip: '/v4/row_1/videos/7/video.mp4',
+        slug: 'EXT. FARM FIELD, EUROPE, YEAR 950 - DAY', who: 'NEAR WARRIOR', line: 'Get down, brother!',
+        action: 'Two warriors sprint across the field. A dragon dives behind them, fire building in its throat.',
+        opener: 'Season finale is cut: the dragon run.',
+        prompt: 'Finale needs fire. Dusk, embers in the air.',
+        reply: 'Locked for the finale: a red dusk, embers on the wind. Same run, same dragon.',
+        pbase: 'Sunny farm field, year 950, two warriors sprint toward frame right, a dragon dives behind them, fire in its throat',
+        padd: 'red dusk, embers drifting on the wind',
+        fx: { filter: 'sepia(0.35) saturate(1.25) brightness(0.72) contrast(1.15)', tint: 'rgba(200,70,30,0.26)', blend: 'soft-light', particles: 'sparks' } }
     ]
   };
 
@@ -257,6 +260,17 @@ var window = __v4.window, self = __v4.window, document = __v4.document,
         var rr = 1 + rnd(i + 9) * 2.4;
         fctx.fillStyle = 'rgba(255,255,255,' + (0.45 + rnd(i + 2) * 0.45) + ')';
         fctx.beginPath(); fctx.arc(sxx, syy, rr, 0, 6.283); fctx.fill();
+      }
+    } else if (kind === 'petals') {
+      // cherry blossom petals: drift down and right on the breeze, tumbling (the flattened ellipse turns over)
+      for (i = 0; i < 70; i++) {
+        var px = (((rnd(i) * w) + Math.sin(t * 0.8 + i) * 30 + t * (30 + rnd(i + 6) * 30)) % w + w) % w;
+        var py = ((rnd(i + 3) * h) + t * (35 + rnd(i + 5) * 40)) % h;
+        var pr = 3 + rnd(i + 9) * 4, flip = 0.2 + 0.8 * Math.abs(Math.cos(t * (1.5 + rnd(i + 4) * 2) + i));
+        fctx.save(); fctx.translate(px, py); fctx.rotate(i + t * (0.6 + rnd(i + 8)));
+        fctx.fillStyle = 'rgba(255,' + Math.round(190 + rnd(i + 2) * 30) + ',' + Math.round(205 + rnd(i + 7) * 25) + ',' + (0.6 + rnd(i + 1) * 0.35).toFixed(2) + ')';
+        fctx.beginPath(); fctx.ellipse(0, 0, pr, pr * 0.6 * flip, 0, 0, 6.283); fctx.fill();
+        fctx.restore();
       }
     } else if (kind === 'grain') {
       var f = Math.floor(t * 24);
