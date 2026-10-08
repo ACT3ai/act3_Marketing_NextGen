@@ -115,6 +115,11 @@ const CHROME = {
 const CHROME_KEEP = {
   "row_1_hero/27": "the hero's top bar IS the page top bar",
   "row_23_mcp_ai/6": "the last row's approved design includes the site footer (and its footer <nav>)",
+  "row_5_consistency/73": "<nav> is the row's own demonstration tabs",
+  "row_6_for_movies/55": "<nav> is the row's own demonstration points",
+  "row_7_for_tv/35": "<nav> is the row's own demonstration tabs",
+  "row_8_script/37": "<nav> is the row's own tabs",
+  "row_16_mcp_ai/38": "the last row's approved design includes the site footer (and its footer <nav>)",
 };
 
 // ── args / log ───────────────────────────────────────────────────────────────
@@ -446,11 +451,14 @@ for (const e of approved) {
 
   // scripts
   const scripts = [];
+  const externalScripts = [];
   const scriptRe = /<script\b([^>]*)>([\s\S]*?)<\/script>/gi;
   for (const sm of [...headPart.matchAll(scriptRe), ...html.matchAll(scriptRe)]) {
     const s = attr(`<x ${sm[1]}>`, "src");
     if (s) {
-      if (isExternal(s)) warn(e.row, `external script ignored: ${s}`);
+      // A version-pinned library from cdnjs (e.g. three.js r128) is loaded as-is, before the row's own scripts.
+      if (/^https:\/\/cdnjs\.cloudflare\.com\/ajax\/libs\/[^/]+\/[^/]*\d[^/]*\//.test(s)) { externalScripts.push(s); e.notes.push(`external library loaded first: ${s}`); }
+      else if (isExternal(s)) warn(e.row, `external script ignored: ${s}`);
       else scripts.push(path.resolve(htmlDir, s));
     } else if (sm[2].trim()) fail(`row ${e.row}: inline <script> without src is not supported (${e.markupSource})`);
   }
@@ -463,6 +471,7 @@ for (const e of approved) {
   for (const f of [...cssFiles, ...scripts]) if (!fs.existsSync(f)) fail(`row ${e.row}: referenced file missing: ${f}`);
   e.cssFiles = cssFiles;
   e.scriptFiles = scripts;
+  e.externalScripts = externalScripts;
   e.html = html.replace(/\n\s*\n+/g, "\n").trim();
 
   const pm = e.html.match(/class="[^"]*\b(r\d+v\d+)-row\b/);
@@ -834,7 +843,7 @@ for (const e of rows) {
     e.bytes += b;
     e.copied.push(`${url} (${b} B)`);
   }
-  e.scriptUrls = [];
+  e.scriptUrls = [...e.externalScripts];
   for (const s of e.scripts) {
     const dest = path.join(REPO_DIR, "site/static", s.url);
     fs.mkdirSync(path.dirname(dest), { recursive: true });

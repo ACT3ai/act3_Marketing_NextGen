@@ -12,7 +12,7 @@ import { V4_FONT_HREF, V4_ROWS } from "./_rows.generated";
  *
  *   Row list + approvals: ~/BGit/all/film/marketing/ACT3_marketing_Home/act3/summary_sections.csv
  *                         (columns row,title,directory,variation_approved)
- *   Row sources:          ~/BGit/all/film/marketing/ACT3_marketing_Home/act3/rows/{directory}/{variation}/
+ *   Row sources:          ~/BGit/all/film/marketing/ACT3_marketing_Home/act3/rows/{directory}/v/{variation}/
  *   Generator:            scripts/build-v4-rows.js  (run by hand: node scripts/build-v4-rows.js)
  *   Generated data:       ./_rows.generated.ts      (markup, scoped CSS, script URLs, fonts)
  *   Generated assets:     site/static/v4/row_{N}/   (served at /v4/row_{N}/...)
@@ -62,6 +62,10 @@ const SIGNIN = "https://app.act3ai.com/signin/";
 const PLANS = "https://app.act3ai.com/settings/plans/";
 const YOUTUBE = "https://www.youtube.com/@ACT3AI";
 
+// A [Get Started] band goes after every CTA_EVERY-th row, never after the last row
+// (Bryan, 2026-10-07: "Have [Get Started] call to action buttons between every 3rd row").
+const CTA_EVERY = 3;
+
 // The hero's ground colour, so overscroll and the area under a short page match it.
 const GROUND = "#060b18";
 
@@ -97,6 +101,23 @@ html, body { background: ${GROUND}; }
 :where(.v4) img { max-width: revert; }
 :where(.v4) strong { font-weight: revert; }
 :where(.v4) :is(code, pre, kbd, blockquote, hr) { all: revert; }
+
+/* [Get Started] call-to-action band between every CTA_EVERY rows (not after the last row).
+   Solid CTA yellow with dark text, the primary-button look from design_input.md. */
+.v4-cta { display: flex; justify-content: center; padding: 56px 16px; }
+.v4 .v4-cta__btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 40px; border-radius: 999px;
+  background: #eebc3c; color: #14100a;
+  font: 700 18px/1 Inter, system-ui, sans-serif; letter-spacing: 0.01em;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(238, 188, 60, 0.22);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.v4 .v4-cta__btn:hover { background: #f2c756; color: #14100a; text-decoration: none; transform: translateY(-1px); box-shadow: 0 14px 36px rgba(238, 188, 60, 0.32); }
+.v4 .v4-cta__btn:focus-visible { outline: 3px solid #f2c756; outline-offset: 4px; }
+.v4 .v4-cta__arrow { font-size: 20px; line-height: 1; }
+@media (prefers-reduced-motion: reduce) { .v4 .v4-cta__btn { transition: none; } .v4 .v4-cta__btn:hover { transform: none; } }
 
 /* Fallback footer, only rendered when no approved row includes the footer. */
 .v4-foot { padding: 72px 24px 48px; color: #93a1bf; font: 14px/1.6 Inter, system-ui, sans-serif; }
@@ -344,7 +365,16 @@ export default function V4Homepage(): React.JSX.Element {
 
       <div className="v4" data-v4-theme="dark" ref={rootRef}>
         {V4_ROWS.map((r, i) => (
-          <div key={r.row} className="v4-row" data-row={r.row} data-prefix={r.prefix} dangerouslySetInnerHTML={ROW_HTML[i]} />
+          <React.Fragment key={r.row}>
+            <div className="v4-row" data-row={r.row} data-prefix={r.prefix} dangerouslySetInnerHTML={ROW_HTML[i]} />
+            {(i + 1) % CTA_EVERY === 0 && i < V4_ROWS.length - 1 ? (
+              <div className="v4-cta">
+                <a className="v4-cta__btn" href={SIGNUP}>
+                  Get Started <span className="v4-cta__arrow" aria-hidden="true">›</span>
+                </a>
+              </div>
+            ) : null}
+          </React.Fragment>
         ))}
 
         {HAS_FOOTER ? null : (
