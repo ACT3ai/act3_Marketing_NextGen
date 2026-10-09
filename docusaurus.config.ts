@@ -2,6 +2,7 @@ import { execFileSync } from "node:child_process";
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import { isExternal, MORE_NAV, PRIMARY_NAV, SIGNIN } from "./site/data/siteNav";
 
 // The one canonical public spelling of the company. Docusaurus appends this to
 // every page title ("<page> | ACT 3 AI"), so it is also 11 characters of every
@@ -16,8 +17,14 @@ const SOCIAL_CARD_ALT = "ACT 3 AI | Create Movies at the Speed of Storytelling";
 // Google Fonts, requested exactly once for the whole site. Three components
 // (SiteNavbar, PageHero, level2.css) each used to request an overlapping
 // stylesheet, so most pages made two round trips for the same faces.
+//   Fraunces / Inter / JetBrains Mono — the OLD template (cream pages, level2.css,
+//     articles.css) and the homepage's "Get Started" pill (Inter).
+//   Barlow / Barlow Condensed / Figtree — the v4 template (site/css/v4-template.css):
+//     the hero top bar's faces and row 16's footer face, same weights the homepage
+//     rows request, so scripts/build-v4-rows.js dedupes them out of the rows' link
+//     (it reads this literal; keep it ONE string) and V4RowsPage drops them too.
 const GOOGLE_FONTS_HREF =
-  "https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400;9..144,1,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap";
+  "https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700;800&family=Figtree:wght@300;400;500;600;700;800;900&family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400;9..144,1,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap";
 
 // Site-wide structured data. This is the machine-readable statement of who we
 // are: the sameAs list is what ties four separate social profiles into one
@@ -76,6 +83,40 @@ const SOFTWARE_LD = {
       "Free tier plus monthly subscription plans with metered generation credits.",
   },
 };
+
+// Code-block colours. Prism writes them as inline styles, so CSS cannot restyle
+// them per template; instead every colour is a CSS variable whose fallback is
+// the GitHub light palette (the old template, and the cream pages that keep
+// their own design: level2, the articles). html.v4t-skin redefines the
+// --v4t-pr-* variables in site/css/v4-template.css with a warm dark palette.
+const prismVar = (name: string, light: string): string => `var(--v4t-pr-${name}, ${light})`;
+const V4_PRISM_THEME = {
+  plain: { color: prismVar("plain", "#393A34"), backgroundColor: prismVar("bg", "#f6f8fa") },
+  styles: [
+    { types: ["comment", "prolog", "doctype", "cdata"], style: { color: prismVar("comment", "#999988"), fontStyle: "italic" as const } },
+    { types: ["namespace"], style: { opacity: 0.7 } },
+    { types: ["string", "attr-value"], style: { color: prismVar("string", "#e3116c") } },
+    { types: ["punctuation", "operator"], style: { color: prismVar("punct", "#393A34") } },
+    {
+      types: ["entity", "url", "symbol", "number", "boolean", "variable", "constant", "property", "regex", "inserted"],
+      style: { color: prismVar("number", "#36acaa") },
+    },
+    { types: ["atrule", "keyword", "attr-name", "selector"], style: { color: prismVar("attr", "#00a4db") } },
+    { types: ["function", "deleted", "tag"], style: { color: prismVar("function", "#d73a49") } },
+    { types: ["function-variable"], style: { color: prismVar("fnvar", "#6f42c1") } },
+    { types: ["tag", "selector", "keyword"], style: { color: prismVar("keyword", "#00009f") } },
+  ],
+};
+
+// themeConfig.navbar.items is never drawn as a desktop navbar (src/theme/Navbar
+// renders V4Header), but the stock phone/tablet drawer that V4Header opens on
+// docs and blog routes (V4DocsDrawer) lists these as its main menu. Built from
+// site/data/siteNav.ts so that drawer matches the top bar.
+const NAVBAR_ITEMS = [...PRIMARY_NAV, ...MORE_NAV, { label: "Sign in", href: SIGNIN }].map((item) =>
+  isExternal(item.href)
+    ? { href: item.href, label: item.label, position: "left" as const, target: "newTab" in item && item.newTab ? "_blank" : "_self" }
+    : { to: item.href, label: item.label, position: "left" as const, ...(item.href === "/" ? { activeBaseRegex: "^/$" } : {}) },
+);
 
 type SitemapRoute = {
   path: string;
@@ -164,13 +205,6 @@ const config: Config = {
         href: "/img/favicon/site.webmanifest",
       },
     },
-    {
-      tagName: "meta",
-      attributes: {
-        name: "theme-color",
-        content: "#C0531F",
-      },
-    },
     // Explicit social-card image hints. themeConfig.image emits og:image /
     // twitter:image, but crawlers (Facebook, LinkedIn) need width/height/type
     // to render the card reliably on first scrape.
@@ -213,6 +247,17 @@ const config: Config = {
 
   future: {
     v4: true,
+  },
+
+  customFields: {
+    // The year in the template footer's copyright line (V4Footer). Fixed at
+    // build time: computing it while rendering made the server HTML (build
+    // year) and the browser (visitor's year) disagree every New Year, and React
+    // then re-rendered the whole page (hydration error #418).
+    buildYear: new Date().getFullYear(),
+    // V4RowsPage drops a row font family from its own link only when this
+    // site-wide link already loads every weight it asks for.
+    googleFontsHref: GOOGLE_FONTS_HREF,
   },
 
   url: SITE_URL,
@@ -266,11 +311,15 @@ const config: Config = {
           showLastUpdateTime: true,
         },
         theme: {
-          // custom.css = site-wide theme; level2.css = design overlay for the
-          // four Level 2 pages (scoped to `.level2-page`, opted in per page via
-          // the `wrapperClassName: level2-page` front matter).
+          // custom.css = site-wide theme; v4-template.css = the v4 site template
+          // (default for every page; scoped to html.v4t / html.v4t-skin / .v4t-*
+          // classes — it must stay BEFORE the overlays below so a page's own
+          // design overlay wins); level2.css = design overlay for the four
+          // Level 2 pages (scoped to `.level2-page`, opted in per page via the
+          // `wrapperClassName: level2-page` front matter).
           customCss: [
             "./site/css/custom.css",
+            "./site/css/v4-template.css",
             "./site/css/level2.css",
             "./site/css/articles.css",
           ],
@@ -283,10 +332,11 @@ const config: Config = {
           // Google actually reads out of a sitemap. Articles carry an explicit
           // `last_update` date; everything else falls back to git.
           lastmod: "date",
-          // /v/* are standalone design variations of the homepage, and /backup
-          // is a parked copy of it. All are noindex and reachable by direct
-          // link only; none of them may compete with the real homepage.
-          ignorePatterns: ["/v/**", "/backup"],
+          // /v/* are standalone design variations of the homepage, /backup is a
+          // parked copy of the old homepage, and /backup/* are the old-template
+          // copies of the pages that moved to the new template. All are noindex
+          // and reachable by direct link only; none may compete with the live pages.
+          ignorePatterns: ["/v/**", "/backup", "/backup/**"],
           // One priority for every URL says nothing about what matters. This
           // ranks the homepage and the article hub above the articles, and the
           // blog's index machinery below all of it.
@@ -344,8 +394,9 @@ const config: Config = {
     },
     navbar: {
       // This site renders its own navbar (src/theme/Navbar swizzles to
-      // site/components/SiteNavbar), so nothing below is drawn -- but the
-      // theme still READS this config. `hideOnScroll: true` is load-bearing:
+      // site/components/v4/V4Header, or SiteNavbar on /backup/*). Only `items`
+      // is drawn, in the docs/blog phone drawer (see NAVBAR_ITEMS) -- but the
+      // theme still READS the rest of this config. `hideOnScroll: true` is load-bearing:
       // with it false, Docusaurus's table-of-contents highlighter measures
       // `document.querySelector(".navbar").clientHeight`, finds no element with
       // that class on this site, and throws during hydration -- which crashed
@@ -359,46 +410,7 @@ const config: Config = {
         src: "img/logo.svg",
         srcDark: "img/logo-dark.svg",
       },
-      items: [
-        {
-          to: "/",
-          label: "Main",
-          position: "left",
-          activeBaseRegex: "^/$",
-        },
-        {
-          to: "/about",
-          label: "About Us",
-          position: "left",
-        },
-        {
-          to: "/contact",
-          label: "Contact Us",
-          position: "left",
-        },
-        {
-          href: "https://app.act3ai.com/settings/plans/",
-          label: "Plans",
-          position: "left",
-        },
-        {
-          href: "https://www.youtube.com/@ACT3AI",
-          label: "Videos",
-          position: "left",
-          target: "_blank",
-        },
-        {
-          href: "https://act3ai.com/login",
-          label: "Log In",
-          position: "right",
-        },
-        {
-          href: "https://act3ai.com",
-          label: "Start Free",
-          position: "right",
-          className: "button button--primary navbar__button",
-        },
-      ],
+      items: NAVBAR_ITEMS,
     },
     footer: {
       style: "dark",
@@ -429,7 +441,9 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} ACT 3 AI, Inc. All rights reserved.`,
     },
     prism: {
-      theme: prismThemes.github,
+      // Light GitHub colours by default, warm dark ones on the v4 skin: see
+      // V4_PRISM_THEME above (the colour mode itself stays forced to light).
+      theme: V4_PRISM_THEME,
       darkTheme: prismThemes.dracula,
     },
     metadata: [
@@ -443,6 +457,11 @@ const config: Config = {
       // react-helmet de-duplicates by property and the last declaration wins,
       // which is how article routes become og:type=article.
       { property: "og:type", content: "website" },
+      // The browser UI tint (mobile address bar, Safari's tab bar): the v4
+      // template's ground, so it continues the dark top bar. Here, not in
+      // headTags, so a page can override it (the homepage's navy, the
+      // /backup copies' old orange) without a second tag.
+      { name: "theme-color", content: "#0f0e0c" },
     ],
   } satisfies Preset.ThemeConfig,
 };

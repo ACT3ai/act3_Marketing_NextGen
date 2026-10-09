@@ -1,0 +1,74 @@
+---
+title: Style Test
+unlisted: true
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Style test page
+
+Lead paragraph with `inline code`, a [link](/docs/intro), **bold** and *italic*.
+
+## Admonitions
+
+:::note
+A note with a [link](/docs/intro) and `code`.
+:::
+
+:::tip[Custom title]
+A tip.
+:::
+
+:::info
+Info.
+:::
+
+:::warning
+Warning.
+:::
+
+:::danger
+Danger.
+:::
+
+## Code
+
+```js title="pipeline.js" {2}
+const shot = { lens: "35mm" };
+render(shot); // highlighted
+```
+
+```bash
+pnpm start
+```
+
+## Tabs
+
+<Tabs>
+  <TabItem value="a" label="Veo 3">Veo text.</TabItem>
+  <TabItem value="b" label="Runway">Runway text.</TabItem>
+</Tabs>
+
+<details>
+<summary>Details summary</summary>
+
+Hidden body text.
+
+</details>
+
+> A blockquote line.
+
+### H3 heading
+
+#### H4 heading
+
+1. One
+   * nested
+2. Two
+
+![logo](/img/logo.svg)
+
+| A | B | C |
+|---|---|---|
+| a very long cell value that wraps | b | c |

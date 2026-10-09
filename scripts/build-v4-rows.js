@@ -40,7 +40,8 @@
 //     upstream repo git-ignores *.mp4, so a machine without the clips used to ship
 //     the posters and silently drop every video (the hero 404s of 2026-10-08),
 //   * re-encodes every video that is not already web-ready (H.264 <= 720p, no audio,
-//     faststart) with ffmpeg, the settings measured in SPEED_ADVICE,
+//     faststart) with ffmpeg, the settings measured in SPEED_ADVICE; the hero's clips
+//     (WEB_VIDEO.keepResolutionDirs) keep their own resolution, up to 4K,
 //   * writes the rewritten scripts to site/static/v4/row_{N}/...,
 //   * writes site/pages/_rows.generated.ts.
 //
@@ -801,12 +802,30 @@ ${videos ? `  ~/BGit/all git-ignores *.mp4, so the clips exist only where they w
 const WEB_VIDEO = {
   maxShortSide: 720,
   maxKbps: 8000,
+  // Videos under these directories (relative to MARKETING_HOME_DIR) KEEP THEIR RESOLUTION: never scaled down,
+  // up to 4K. Bryan, 2026-10-08: "It's very important to keep 4K. Compressing is good, but not getting them down
+  // to lower pixel resolution." The hero's seven clips are prepared at their own size (4K stays 3840x2160) by
+  // video/final_video/p_final_video_build.md, so they arrive web-ready and are copied byte for byte; a 4K clip
+  // at VMAF 95 runs about 10 Mbps, hence the higher bitrate ceiling. Anything here that is NOT web-ready is
+  // re-encoded with the args below minus the scale.
+  keepResolutionDirs: ["act3/rows/row_1_hero/videos"],
+  keepMaxShortSide: 2160,
+  keepMaxKbps: 40000,
   args: ["-map", "0:v:0", "-an", "-sn", "-dn", "-map_metadata", "-1", "-map_chapters", "-1",
     "-vf", "scale='if(gt(iw,ih),-2,min(720,iw))':'if(gt(iw,ih),min(720,ih),-2)'",
     "-c:v", "libx264", "-preset", "slow", "-crf", "26", "-profile:v", "high", "-pix_fmt", "yuv420p",
     "-force_key_frames", "expr:gte(t,n_forced*2)", "-movflags", "+faststart",
     "-fflags", "+bitexact", "-flags:v", "+bitexact"],
 };
+function keepsResolution(file) {
+  const rel = path.relative(MARKETING_HOME_DIR, file);
+  return WEB_VIDEO.keepResolutionDirs.some((d) => rel === d || rel.startsWith(d + path.sep));
+}
+function webArgs(file) {
+  if (!keepsResolution(file)) return WEB_VIDEO.args;
+  const i = WEB_VIDEO.args.indexOf("-vf");
+  return [...WEB_VIDEO.args.slice(0, i), ...WEB_VIDEO.args.slice(i + 2)];
+}
 const { execFileSync } = require("child_process");
 function tool(name) {
   try { return execFileSync(name, ["-version"], { encoding: "utf8" }).split("\n")[0]; }
@@ -840,10 +859,11 @@ function webProblems(file) {
   if (!v) return ["no video stream"];
   if (v.codec_name !== "h264") why.push(`codec ${v.codec_name}`);
   if (!["yuv420p", "yuvj420p"].includes(v.pix_fmt)) why.push(`pixel format ${v.pix_fmt}`);
-  if (Math.min(v.width, v.height) > WEB_VIDEO.maxShortSide) why.push(`${v.width}x${v.height}`);
+  const keep = keepsResolution(file);
+  if (Math.min(v.width, v.height) > (keep ? WEB_VIDEO.keepMaxShortSide : WEB_VIDEO.maxShortSide)) why.push(`${v.width}x${v.height}`);
   if (info.streams.some((s) => s.codec_type === "audio")) why.push("audio track");
   const kbps = Math.round(Number(info.format.bit_rate || 0) / 1000);
-  if (kbps > WEB_VIDEO.maxKbps) why.push(`${kbps} kbps`);
+  if (kbps > (keep ? WEB_VIDEO.keepMaxKbps : WEB_VIDEO.maxKbps)) why.push(`${kbps} kbps`);
   if (/\.(mp4|m4v|mov)$/i.test(file) && !moovFirst(file)) why.push("moov at the end (no faststart)");
   return why;
 }
@@ -856,12 +876,12 @@ if (videoSources.length) {
     const why = webProblems(abs);
     if (!why.length) { webVideo.set(abs, abs); continue; }
     ffmpegVersion = ffmpegVersion || tool("ffmpeg");
-    const key = sha(Buffer.concat([fs.readFileSync(abs), Buffer.from(ffmpegVersion + JSON.stringify(WEB_VIDEO))]));
+    const key = sha(Buffer.concat([fs.readFileSync(abs), Buffer.from(ffmpegVersion + JSON.stringify(webArgs(abs)))]));
     const out = path.join(VIDEO_CACHE_DIR, `${key}.mp4`);
     if (!fs.existsSync(out)) {
       fs.mkdirSync(VIDEO_CACHE_DIR, { recursive: true });
       const tmp = `${out}.part.mp4`;
-      execFileSync("ffmpeg", ["-nostdin", "-v", "error", "-y", "-i", abs, ...WEB_VIDEO.args, tmp], { stdio: "inherit" });
+      execFileSync("ffmpeg", ["-nostdin", "-v", "error", "-y", "-i", abs, ...webArgs(abs), tmp], { stdio: "inherit" });
       fs.renameSync(tmp, out);
     }
     webVideo.set(abs, out);

@@ -1,0 +1,951 @@
+/*
+ * v4-template.css — the v4 site template (the DEFAULT look of every page).
+ *
+ * Learned from the homepage (site/pages/index.tsx): the hero's top bar, row 16's
+ * footer, the hero ground with its 48px rule lines, charcoal rows, the yellow
+ * accent, the navy "Get Started" bands. Registered in docusaurus.config.ts
+ * theme.customCss right after custom.css and BEFORE level2.css / articles.css,
+ * so a page's own design overlay still wins over the skin's variables.
+ *
+ * Scoping (nothing here may touch the OLD template or the homepage rows):
+ *   .v4t-*        classes of the template pieces (V4Header, V4Footer, V4Blocks).
+ *                 Self-contained: every block root also declares the --v4t-*
+ *                 tokens below, so they render the same outside a v4t page
+ *                 (e.g. inside a V4RowsPage, whose <html> has no v4t class).
+ *   html.v4t      template geometry on Docusaurus <Layout> pages (navbar height,
+ *                 sticky offsets). Set by src/theme/Layout on every non-/backup route.
+ *   html.v4t-skin the dark Infima skin: page ground, text, links, docs, blog, TOC,
+ *                 tables, code, admonitions, 404. Pages with their own design
+ *                 overlay (level2-page, article-page) opt out via <V4OwnDesign>.
+ *
+ * Infima and the theme-classic modules sit in CSS cascade layers (future.v4), so
+ * every unlayered rule below beats them regardless of specificity.
+ *
+ * Fonts (loaded once, by GOOGLE_FONTS_HREF in docusaurus.config.ts):
+ *   Barlow Condensed 700/800 — logo, page H1, CTA buttons (the hero's display face)
+ *   Barlow 500/600            — top bar nav and "Sign in" (the hero's UI face)
+ *   Figtree 400-800           — section headings, body, footer (row 16's face)
+ * Breakpoints: 1080px (top bar nav → MENU), 900px (splits stack), 860px
+ * (footer stacks), 760px (top bar 64px, no "Sign in").
+ */
+
+/* ── tokens ─────────────────────────────────────────────────────────────── */
+/* Declared on <html class="v4t"> AND on every template piece's root, so a piece
+   used on a page without the html class (V4RowsPage) still has its tokens. */
+.v4t,
+.v4t-top,
+.v4t-drawer,
+.v4t-foot,
+.v4t-hero,
+.v4t-section,
+.v4t-cta-band,
+.v4t-cards,
+.v4t-card,
+.v4t-prose,
+.v4t-split {
+  --v4t-ground: #0f0e0c;        /* hero ground, page ground, footer */
+  --v4t-raised: #151419;        /* raised section, dropdown panels */
+  --v4t-panel: #1b1a1f;         /* cards */
+  --v4t-tray: #1f1e23;          /* cards on a raised section */
+  --v4t-navy: #060b18;          /* "Get Started" bands, homepage ground */
+  --v4t-ink: #f5f4f1;           /* headings */
+  --v4t-body: #dcdbd7;          /* body text */
+  --v4t-muted: #c0beb7;         /* secondary text, footer links */
+  --v4t-quiet: #8f8e8a;         /* tertiary text */
+  --v4t-rule: rgba(255, 255, 255, 0.055);       /* the hero's 48px rule lines */
+  --v4t-rule-strong: rgba(255, 255, 255, 0.16); /* the top bar's bottom border */
+  --v4t-line: rgba(255, 255, 255, 0.12);        /* dividers, card borders */
+  --v4t-edge: rgba(255, 255, 255, 0.2);         /* pop panel border */
+  --v4t-yellow: #eebc3c;
+  --v4t-yellow-hi: #fcd648;
+  --v4t-yellow-ink: #1a1405;
+  --v4t-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+  --v4t-ui: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --v4t-sans: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --v4t-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --v4t-gutter: clamp(16px, 3.4vw, 52px);
+  --v4t-maxw: 1280px;
+}
+
+/* ══ V4Header — copy of the hero top bar (row 1, .r1v42-top) ════════════════ */
+.v4t-top {
+  position: sticky;
+  top: 0;
+  /* Docusaurus's own navbar layer (200): above the page, below the "Skip to
+     main content" link (201), which must stay visible when it gets focus. */
+  z-index: var(--ifm-z-index-fixed, 200);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+  height: 84px;
+  padding: 0 clamp(16px, 3.4vw, 52px);
+  /* Solid: a translucent bar tints brown over the cream overlay pages. */
+  background: var(--v4t-ground);
+  border-bottom: 1px solid var(--v4t-rule-strong);
+  color: var(--v4t-ink);
+  font-family: var(--v4t-ui);
+  font-size: 16px;
+  line-height: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+.v4t-top *,
+.v4t-top *::before,
+.v4t-top *::after { box-sizing: border-box; }
+.v4t-top a,
+.v4t-top a:hover { text-decoration: none; }
+.v4t-top :focus-visible { outline: 2px solid var(--v4t-yellow-hi); outline-offset: 4px; }
+
+.v4t-logo {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--v4t-ink);
+  font-family: var(--v4t-display);
+  font-weight: 800;
+  font-size: 27px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.v4t-logo:hover { color: var(--v4t-ink); }
+.v4t-logo-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  background: var(--v4t-yellow);
+  color: var(--v4t-yellow-ink);
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.v4t-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 1.5vw, 26px);
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.v4t-nav-link {
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+.v4t-nav-link:hover { color: var(--v4t-yellow-hi); }
+/* The current route ("page") or its section ("true"): yellow, underlined in yellow. */
+.v4t-nav-link[aria-current],
+.v4t-more-btn[data-active] { color: var(--v4t-yellow-hi); }
+.v4t-nav > .v4t-nav-link[aria-current] {
+  text-decoration: underline 2px;
+  text-underline-offset: 8px;
+}
+.v4t-top .v4t-nav > .v4t-nav-link[aria-current]:hover { text-decoration: underline 2px; }
+.v4t-chev { display: inline-block; font-size: 14px; transform: translateY(-3px); }
+
+/* "More" dropdown. ALWAYS rendered, hidden with CSS (SEO invariant). Revealed on
+   hover, while keyboard focus is inside the panel, and by the click toggle;
+   data-open="false" (closed by a click or Escape) beats hover until the pointer
+   leaves. Hidden with opacity, not visibility, so its links stay focusable and
+   Tab / Shift+Tab both walk into the panel (which then shows itself). */
+.v4t-more { position: relative; display: inline-flex; }
+.v4t-more-btn {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font: inherit;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+.v4t-more-btn:hover,
+.v4t-more[data-open="true"] .v4t-more-btn { color: var(--v4t-yellow-hi); }
+.v4t-more-pop {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 18px);
+  z-index: 40;
+  min-width: 230px;
+  display: grid;
+  padding: 6px 0;
+  background: var(--v4t-raised);
+  border: 1px solid var(--v4t-edge);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+/* Bridges the gap between the button and the panel so hover is not lost. */
+.v4t-more-pop::before { content: ""; position: absolute; left: 0; right: 0; top: -19px; height: 19px; }
+.v4t-more:is(:hover, [data-open="true"]):not([data-open="false"]) .v4t-more-pop,
+.v4t-more:not([data-open="false"]) .v4t-more-pop:focus-within {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+.v4t-more-item,
+.v4t-menu-item {
+  display: block;
+  padding: 10px 16px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #f5f5f3;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  white-space: nowrap;
+}
+.v4t-more-item:last-child,
+.v4t-menu-item:last-child { border-bottom: 0; }
+.v4t-more-item:hover,
+.v4t-menu-item:hover { background: rgba(255, 255, 255, 0.07); color: #f5f5f3; }
+.v4t-more-item[aria-current],
+.v4t-menu-item[aria-current] { color: var(--v4t-yellow-hi); box-shadow: inset 3px 0 0 var(--v4t-yellow); }
+
+.v4t-actions { justify-self: end; display: flex; align-items: center; gap: 18px; }
+.v4t-signin { font-weight: 600; font-size: 15px; color: #fff; white-space: nowrap; }
+.v4t-signin:hover { color: var(--v4t-yellow-hi); }
+
+/* The square yellow CTA (the hero's .r1v42-cta). Also used by V4Hero. */
+.v4t-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  white-space: nowrap;
+  background: var(--v4t-yellow);
+  color: var(--v4t-yellow-ink) !important;
+  font-family: var(--v4t-display);
+  font-weight: 700;
+  font-size: 21px;
+  line-height: normal;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  padding: 13px 30px;
+  border-radius: 0;
+  text-shadow: none;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 160ms ease;
+}
+.v4t-cta span { font-size: 1.3em; line-height: 0.6; position: relative; top: -1px; }
+.v4t-cta:hover { background: var(--v4t-yellow-hi); }
+.v4t-cta-sm { font-size: 17px; padding: 9px 20px; }
+
+/* MENU (<=1080px): a <details>, so it works without JavaScript and its links are
+   always in the served HTML. */
+.v4t-menu { display: none; position: relative; }
+.v4t-menu summary {
+  list-style: none;
+  cursor: pointer;
+  font-family: var(--v4t-display);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  /* 8px (the hero uses 6px): a 40px touch target. */
+  padding: 8px 14px;
+  background: rgba(0, 0, 0, 0.25);
+  user-select: none;
+}
+.v4t-menu summary::-webkit-details-marker { display: none; }
+.v4t-menu[open] summary { border-color: var(--v4t-yellow); color: var(--v4t-yellow-hi); }
+.v4t-menu-pop {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 40;
+  min-width: 230px;
+  max-height: calc(100vh - 96px);
+  overflow-y: auto;
+  display: grid;
+  padding: 6px 0;
+  background: var(--v4t-raised);
+  border: 1px solid var(--v4t-edge);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+}
+
+/* The docs/blog drawer entry (V4DocsDrawer), first in the MENU panel on <=996px. */
+.v4t-menu-docs {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  padding: 10px 16px;
+  font-family: var(--v4t-ui);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--v4t-yellow-hi);
+  border-bottom: 1px solid var(--v4t-edge);
+}
+.v4t-menu-docs:hover { background: rgba(255, 255, 255, 0.07); }
+.v4t-menu-docs:focus-visible { outline: 2px solid var(--v4t-yellow-hi); outline-offset: -2px; }
+
+@media (max-width: 1080px) {
+  .v4t-top { grid-template-columns: 1fr auto; }
+  .v4t-nav { display: none; }
+  .v4t-menu { display: block; }
+  .v4t-cta-sm { padding-block: 10px; } /* a 40px touch target */
+}
+@media (max-width: 760px) {
+  .v4t-top { gap: 10px; padding: 0 16px; height: 64px; }
+  .v4t-signin { display: none; }
+  .v4t-logo { font-size: 23px; }
+  .v4t-cta-sm { padding: 7px 14px; font-size: 16px; }
+  /* The hero's own <=760px rule for .r1v42-cta comes after its -sm rule and wins
+     for the top-bar button too; reproduced so the bar matches the homepage. */
+  .v4t-cta { padding: 11px 22px; font-size: 19px; }
+}
+/* Narrow phones: the bar must fit 320-400px without a sideways scroll. */
+@media (max-width: 400px) {
+  .v4t-actions { gap: 8px; }
+  .v4t-top .v4t-cta-sm { padding: 9px 10px; font-size: 15px; letter-spacing: 0.04em; }
+}
+@media (max-width: 359px) {
+  /* MENU still reaches every page; sign-up is in the page's own CTAs. */
+  .v4t-top .v4t-cta-sm { display: none; }
+}
+
+/* ══ V4Footer — copy of row 16's footer (.r16v38-foot) ══════════════════════ */
+.v4t-foot {
+  background: var(--v4t-ground);
+  border-top: 1px solid var(--v4t-line);
+  color: var(--v4t-muted);
+  font-family: var(--v4t-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  text-rendering: auto;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+.v4t-foot *,
+.v4t-foot *::before,
+.v4t-foot *::after { box-sizing: border-box; }
+.v4t-foot :focus-visible { outline: 2px solid var(--v4t-yellow-hi); outline-offset: 3px; }
+.v4t-foot-in { max-width: var(--v4t-maxw); margin: 0 auto; padding: 56px 32px 28px; }
+.v4t-foot-top { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 2fr); gap: 48px; }
+.v4t-foot-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--v4t-ink);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.01em;
+}
+.v4t-foot-logo:hover { color: var(--v4t-ink); text-decoration: none; }
+.v4t-foot-logo svg { color: var(--v4t-yellow); }
+.v4t-foot-brand p { margin: 14px 0 20px; font-size: 16px; line-height: 1.5; color: var(--v4t-muted); }
+.v4t-foot-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--v4t-yellow);
+  color: #17140a;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 12px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.15s;
+}
+.v4t-foot-cta:hover { background: var(--v4t-yellow-hi); color: #17140a; text-decoration: none; transform: translateY(-1px); }
+.v4t-fnav { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.v4t-fnav h3 {
+  margin: 0 0 12px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--v4t-ink);
+}
+.v4t-fnav a {
+  display: block;
+  padding: 5px 0;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--v4t-muted);
+  text-decoration: none;
+}
+.v4t-fnav a:hover { color: var(--v4t-ink); text-decoration: none; }
+.v4t-foot-base {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--v4t-line);
+}
+.v4t-foot-base p { margin: 0; font-size: 14px; color: var(--v4t-muted); }
+.v4t-social { display: flex; gap: 16px; }
+/* 18px icons with a 34px hit area (padding cancelled by margin: same spacing). */
+.v4t-social a { color: var(--v4t-muted); display: inline-flex; padding: 8px; margin: -8px; }
+.v4t-social a:hover { color: var(--v4t-ink); }
+@media (max-width: 860px) {
+  .v4t-foot-in { padding: 40px 20px 24px; }
+  .v4t-foot-top { grid-template-columns: 1fr; gap: 32px; }
+  .v4t-fnav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .v4t-foot-base { flex-direction: column; align-items: flex-start; }
+  .v4t-fnav a { padding: 9px 0; } /* a 40px touch target once the columns stack */
+}
+
+/* ══ html.v4t — template geometry on Docusaurus <Layout> pages ══════════════ */
+/* html.v4t (not .v4t) so it beats the 66px the cream overlays still declare. */
+html.v4t {
+  /* The page ground on EVERY template page, so a rubber-band overscroll above
+     the dark top bar or below the dark footer is dark, never the white canvas. */
+  background-color: var(--v4t-ground);
+  --ifm-navbar-height: 84px;
+  /* Anchor jumps land below the sticky top bar. */
+  scroll-padding-top: calc(var(--ifm-navbar-height) + 12px);
+}
+@media (max-width: 760px) {
+  html.v4t { --ifm-navbar-height: 64px; }
+}
+/* Pages that keep their own (light) design overlay paint their body white, as
+   before; :where() keeps this at element specificity so level2.css and
+   articles.css still paint theirs cream. */
+:where(html.v4t:not(.v4t-skin)) body { background-color: #fff; }
+/* theme-classic sets html, body { height: 100% }, so body is one viewport tall and
+   its (white or cream) background no longer spreads to the canvas once html is
+   dark. #__docusaurus grows with the content: it repaints body's colour all the
+   way down, so long own-design pages (the articles) never fall onto the dark ground. */
+:where(html.v4t:not(.v4t-skin)) #__docusaurus { background-color: inherit; }
+/* custom.css pads every page for the old FIXED navbar; the v4 bar is sticky (in flow). */
+.v4t .main-wrapper { padding-top: 0; }
+/* Docs sidebar: theme-classic pulls it up under a fixed navbar and pins it at top 0.
+   Here it starts below the sticky bar and sticks just under it. */
+.v4t .theme-doc-sidebar-container { margin-top: 0; }
+.v4t .theme-doc-sidebar-container [class*="sidebarViewport_"] {
+  top: var(--ifm-navbar-height);
+  max-height: calc(100vh - var(--ifm-navbar-height));
+}
+/* hideOnScroll (load-bearing, see docusaurus.config.ts) makes the docs sidebar
+   repeat the stock navbar logo; the v4 bar already carries the brand. Its
+   display is !important inside a cascade layer, so it is hidden another way. */
+.v4t [class*="sidebarLogo_"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  min-height: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  visibility: hidden;
+}
+
+/* ══ html.v4t-skin — the dark Infima skin ═══════════════════════════════════ */
+.v4t-skin {
+  color-scheme: dark;
+
+  --ifm-color-primary: #eebc3c;
+  --ifm-color-primary-dark: #e9af1b;
+  --ifm-color-primary-darker: #dca516;
+  --ifm-color-primary-darkest: #b58712;
+  --ifm-color-primary-light: #f1c65a;
+  --ifm-color-primary-lighter: #f2cb69;
+  --ifm-color-primary-lightest: #f6da95;
+
+  --ifm-background-color: var(--v4t-ground);
+  --ifm-background-surface-color: var(--v4t-raised);
+  --ifm-font-color-base: var(--v4t-body);
+  --ifm-font-color-secondary: var(--v4t-quiet);
+  --ifm-color-content: var(--v4t-body);
+  --ifm-color-content-secondary: var(--v4t-muted);
+  --ifm-heading-color: var(--v4t-ink);
+  --ifm-link-color: var(--v4t-yellow);
+  --ifm-link-hover-color: var(--v4t-yellow-hi);
+  --ifm-link-hover-decoration: underline;
+
+  --ifm-font-family-base: var(--v4t-sans);
+  --ifm-heading-font-family: var(--v4t-sans);
+  --ifm-font-family-monospace: var(--v4t-mono);
+  --ifm-heading-font-weight: 800;
+  --ifm-line-height-base: 1.65;
+
+  /* Infima's grey ramp, dark-mode order (0 = page, 1000 = brightest), warm. */
+  --ifm-color-emphasis-0: #0f0e0c;
+  --ifm-color-emphasis-100: #1b1a1f;
+  --ifm-color-emphasis-200: #29282d;
+  --ifm-color-emphasis-300: #3a393f;
+  --ifm-color-emphasis-400: #5f5e64;
+  --ifm-color-emphasis-500: #8f8e8a;
+  --ifm-color-emphasis-600: #a9a8a4;
+  --ifm-color-emphasis-700: #c0beb7;
+  --ifm-color-emphasis-800: #dcdbd7;
+  --ifm-color-emphasis-900: #f5f4f1;
+  --ifm-color-emphasis-1000: #ffffff;
+
+  --ifm-toc-border-color: var(--v4t-line);
+  --ifm-hr-background-color: var(--v4t-rule-strong);
+  --ifm-hr-height: 1px;
+  --ifm-code-background: rgba(255, 255, 255, 0.07);
+  --ifm-pre-background: var(--v4t-raised);
+  --ifm-table-border-color: var(--v4t-line);
+  --ifm-table-head-background: var(--v4t-raised);
+  --ifm-table-head-color: var(--v4t-ink);
+  --ifm-table-stripe-background: rgba(255, 255, 255, 0.025);
+  --ifm-blockquote-border-color: var(--v4t-yellow);
+  --ifm-blockquote-color: var(--v4t-muted);
+  --ifm-menu-color: var(--v4t-muted);
+  --ifm-menu-color-active: var(--v4t-yellow);
+  --ifm-menu-color-background-active: rgba(238, 188, 60, 0.1);
+  --ifm-menu-color-background-hover: rgba(255, 255, 255, 0.05);
+  --ifm-menu-link-sublist-icon-filter: invert(100%) sepia(94%) saturate(17%) hue-rotate(223deg) brightness(104%) contrast(98%);
+  --ifm-breadcrumb-color-active: var(--v4t-yellow);
+  --ifm-breadcrumb-item-background-active: rgba(238, 188, 60, 0.12);
+  --ifm-breadcrumb-separator-filter: invert(64%) sepia(11%) saturate(0%) hue-rotate(149deg) brightness(99%) contrast(95%);
+  --ifm-card-background-color: var(--v4t-panel);
+  --ifm-dropdown-background-color: var(--v4t-raised);
+  --ifm-scrollbar-track-background-color: var(--v4t-ground);
+  --ifm-scrollbar-thumb-background-color: #3a393f;
+  --ifm-scrollbar-thumb-hover-background-color: #5f5e64;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.08);
+  --docusaurus-collapse-button-bg: transparent;
+  --docusaurus-collapse-button-bg-hover: rgba(255, 255, 255, 0.08);
+
+  /* Admonitions / alerts: dark fills, light text (Infima's dark-mode recipe). */
+  --ifm-color-primary-contrast-background: #2a2210;
+  --ifm-color-primary-contrast-foreground: #f6e7bd;
+  --ifm-color-secondary-contrast-background: #1f1e23;
+  --ifm-color-secondary-contrast-foreground: #dcdbd7;
+  --ifm-color-success-contrast-background: #0f2a1b;
+  --ifm-color-success-contrast-foreground: #c9f1da;
+  --ifm-color-info-contrast-background: #10213f;
+  --ifm-color-info-contrast-foreground: #cfe0ff;
+  --ifm-color-warning-contrast-background: #2e2410;
+  --ifm-color-warning-contrast-foreground: #f8e3b0;
+  --ifm-color-danger-contrast-background: #32150f;
+  --ifm-color-danger-contrast-foreground: #ffd2c4;
+}
+
+/* Page ground: <html> and <body>, so overscroll and short pages match. */
+html.v4t-skin,
+.v4t-skin body {
+  background-color: var(--v4t-ground);
+  color: var(--v4t-body);
+}
+.v4t-skin body {
+  font-family: var(--v4t-sans);
+  text-rendering: auto;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+.v4t-skin .main-wrapper { background-color: var(--v4t-ground); }
+.v4t-skin ::selection { background: rgba(238, 188, 60, 0.35); color: #fff; }
+
+/* ── long-form prose (docs, blog, plain markdown pages) ── */
+.v4t-skin .markdown {
+  font-size: 17px;
+  line-height: 1.7;
+  --ifm-h1-font-size: clamp(2.5rem, 5vw, 4rem);
+  --ifm-h2-font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+  --ifm-h3-font-size: 1.35rem;
+  --ifm-h4-font-size: 1.1rem;
+}
+.v4t-skin .markdown > :is(p, ul, ol, blockquote, h2, h3, h4) { max-width: 72ch; }
+/* A plain markdown page (no docs/blog chrome): one centred reading column. */
+.v4t-skin.mdx-page main .markdown { max-width: 76ch; margin: 0 auto; padding-top: clamp(16px, 3vw, 40px); }
+/* Every page title on the skin: docs, blog post, blog list/archive/tags, 404,
+   plain markdown pages. (V4Hero's .v4t-h1 has its own, larger rule.) */
+.v4t-skin .markdown h1,
+.v4t-skin article header h1,
+.v4t-skin .main-wrapper h1:not(.v4t-h1) {
+  font-family: var(--v4t-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.005em;
+  line-height: 0.95;
+  color: #fff;
+}
+.v4t-skin .markdown :is(h2, h3, h4) { color: var(--v4t-ink); letter-spacing: -0.02em; line-height: 1.2; }
+.v4t-skin .markdown h2 { font-weight: 800; margin-top: 2.6rem; }
+.v4t-skin .markdown :is(h3, h4) { font-weight: 700; }
+.v4t-skin .markdown strong { color: var(--v4t-ink); }
+.v4t-skin .markdown a { text-decoration: underline; text-decoration-color: rgba(238, 188, 60, 0.45); text-underline-offset: 3px; }
+.v4t-skin .markdown a:hover { text-decoration-color: currentColor; }
+.v4t-skin .markdown li::marker { color: var(--v4t-yellow); }
+.v4t-skin .markdown blockquote {
+  border-left: 3px solid var(--v4t-yellow);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.9rem 1.2rem;
+}
+.v4t-skin .markdown hr { background: var(--v4t-rule-strong); height: 1px; border: 0; }
+.v4t-skin :not(pre) > code {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--v4t-ink);
+  padding: 0.1rem 0.35rem;
+}
+.v4t-skin .markdown table { display: table; width: 100%; border-collapse: collapse; font-size: 0.95em; }
+.v4t-skin .markdown table th { text-align: left; font-weight: 700; color: var(--v4t-ink); }
+.v4t-skin .markdown table :is(th, td) { border: 1px solid var(--v4t-line); padding: 0.6rem 0.85rem; }
+.v4t-skin .markdown table tr { background: transparent; border: 0; }
+.v4t-skin .markdown table tr:nth-child(2n) { background: var(--ifm-table-stripe-background); }
+.v4t-skin .markdown img { border-radius: 10px; }
+
+/* One size for every such title (the docs H1 size; blog archive/tags would otherwise be 32-56px). */
+.v4t-skin .main-wrapper h1:not(.v4t-h1) { font-size: clamp(2.5rem, 5vw, 4rem); }
+
+/* Code blocks. The prism theme (V4_PRISM_THEME in docusaurus.config.ts) writes
+   every colour as var(--v4t-pr-*, <light default>): pages without the skin keep
+   the light GitHub palette, and the skin swaps in this warm dark one. */
+.v4t-skin {
+  --v4t-pr-plain: #dcdbd7;
+  --v4t-pr-bg: #151419;
+  --v4t-pr-comment: #8f8e8a;
+  --v4t-pr-string: #a9d18e;
+  --v4t-pr-punct: #a9a8a4;
+  --v4t-pr-number: #f2a65a;
+  --v4t-pr-keyword: #fcd648;
+  --v4t-pr-function: #f5c46b;
+  --v4t-pr-tag: #f2762b;
+  --v4t-pr-variable: #e8b4a0;
+}
+.v4t-skin .theme-code-block {
+  --prism-background-color: var(--v4t-raised) !important;
+  border: 1px solid var(--v4t-line);
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+/* Admonitions: dark panel, coloured left edge. */
+.v4t-skin .theme-admonition {
+  border: 1px solid var(--v4t-line);
+  border-left-width: 4px;
+  border-radius: 10px;
+}
+.v4t-skin .theme-admonition.alert--secondary { border-left-color: #8f8e8a; }
+.v4t-skin .theme-admonition.alert--success { border-left-color: #46d483; }
+.v4t-skin .theme-admonition.alert--info { border-left-color: #5b8ff0; }
+.v4t-skin .theme-admonition.alert--warning { border-left-color: var(--v4t-yellow); }
+.v4t-skin .theme-admonition.alert--danger { border-left-color: #f2762b; }
+.v4t-skin .theme-admonition a { color: inherit; text-decoration-color: currentColor; }
+
+/* ── docs: sidebar, breadcrumbs, TOC, pagination, tags ── */
+.v4t-skin .theme-doc-sidebar-container { border-right-color: var(--v4t-line); }
+.v4t-skin .theme-doc-sidebar-menu { font-size: 15px; }
+.v4t-skin .menu__link { border-radius: 6px; }
+.v4t-skin .menu__link--active:not(.menu__link--sublist) { box-shadow: inset 3px 0 0 var(--v4t-yellow); }
+.v4t-skin .breadcrumbs__link { color: var(--v4t-muted); }
+.v4t-skin .breadcrumbs__item--active .breadcrumbs__link { color: var(--v4t-yellow); }
+.v4t-skin .table-of-contents { font-size: 14px; }
+.v4t-skin .table-of-contents__link { color: var(--v4t-quiet); }
+.v4t-skin .table-of-contents__link:hover,
+.v4t-skin .table-of-contents__link--active { color: var(--v4t-yellow); }
+.v4t-skin .pagination-nav__link {
+  border: 1px solid var(--v4t-line);
+  border-radius: 10px;
+  background: var(--v4t-raised);
+  transition: border-color 0.15s ease;
+}
+.v4t-skin .pagination-nav__link:hover { border-color: rgba(238, 188, 60, 0.6); }
+.v4t-skin .pagination-nav__sublabel { color: var(--v4t-quiet); }
+.v4t-skin .pagination-nav__label { color: var(--v4t-ink); }
+.v4t-skin .theme-doc-toc-mobile { background: var(--v4t-raised); border-radius: 10px; }
+
+/* ── blog: list, post, tags, sidebar ── */
+.v4t-skin .theme-blog-sidebar-container { font-size: 14px; }
+.v4t-skin article header :is(h1, h2) a { color: var(--v4t-ink); }
+.v4t-skin article header :is(h1, h2) a:hover { color: var(--v4t-yellow); text-decoration: none; }
+.v4t-skin article .avatar__name a { color: var(--v4t-ink); }
+.v4t-skin article .avatar__subtitle,
+.v4t-skin article time { color: var(--v4t-quiet); }
+.v4t-skin [class*="tag_"] { border-color: var(--v4t-line); color: var(--v4t-muted); }
+.v4t-skin [class*="tag_"]:hover { border-color: var(--v4t-yellow); color: var(--v4t-yellow); text-decoration: none; }
+
+/* ── Infima .hero bands (blog archive, any page using them): custom.css paints
+   them in the old purple gradient; here they are the v4 hero ground with its
+   48px rule lines (the same look as V4Hero). ── */
+.v4t-skin .hero--primary {
+  background-color: var(--v4t-ground);
+  background-image:
+    radial-gradient(ellipse 70% 60% at 50% 0%, rgba(238, 188, 60, 0.07), transparent 70%),
+    repeating-linear-gradient(180deg, transparent 0, transparent 47px, var(--v4t-rule) 47px, var(--v4t-rule) 48px);
+  color: var(--v4t-ink);
+  border-bottom: 1px solid var(--v4t-line);
+}
+.v4t-skin .hero__subtitle { color: var(--v4t-body); }
+
+/* ── buttons (custom.css paints them in the old purple gradient) ── */
+.v4t-skin .button--primary {
+  background: var(--v4t-yellow);
+  color: var(--v4t-yellow-ink);
+  border: 0;
+  border-radius: 0;
+  font-family: var(--v4t-display);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.v4t-skin .button--primary:hover { background: var(--v4t-yellow-hi); color: var(--v4t-yellow-ink); opacity: 1; }
+.v4t-skin .button--secondary { background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, 0.5); }
+
+/* ══ V4DocsDrawer — the stock docs/blog drawer, dark ══════════════════════════ */
+.v4t-drawer {
+  --ifm-navbar-background-color: var(--v4t-raised);
+  --ifm-navbar-sidebar-width: min(83vw, 360px);
+  --ifm-navbar-height: 64px;
+  --ifm-navbar-padding-horizontal: 16px;
+  --ifm-navbar-padding-vertical: 0;
+  --ifm-navbar-shadow: inset 0 -1px 0 var(--v4t-line);
+  --ifm-menu-color: var(--v4t-muted);
+  --ifm-menu-color-active: var(--v4t-yellow);
+  --ifm-menu-color-background-active: rgba(238, 188, 60, 0.1);
+  --ifm-menu-color-background-hover: rgba(255, 255, 255, 0.05);
+  position: relative;
+  z-index: calc(var(--ifm-z-index-fixed, 200) + 10);
+  font-family: var(--v4t-sans);
+}
+.v4t-drawer .navbar-sidebar { border-right: 1px solid var(--v4t-edge); }
+.v4t-drawer .navbar-sidebar__brand .navbar__brand { color: var(--v4t-ink); font-family: var(--v4t-display); font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; }
+.v4t-drawer .navbar-sidebar__brand .navbar__logo { display: none; }
+.v4t-drawer .navbar-sidebar__back { color: var(--v4t-ink); }
+.v4t-drawer .menu__link { color: var(--v4t-body); }
+.v4t-drawer .menu__link--active { color: var(--v4t-yellow); }
+
+/* ══ V4Blocks ═══════════════════════════════════════════════════════════════ */
+.v4t-hero,
+.v4t-section,
+.v4t-cta-band {
+  box-sizing: border-box;
+  font-family: var(--v4t-sans);
+  color: var(--v4t-body);
+}
+.v4t-hero *,
+.v4t-section *,
+.v4t-cta-band * { box-sizing: border-box; }
+.v4t-wrap { max-width: var(--v4t-maxw); margin: 0 auto; padding: 0 var(--v4t-gutter); }
+
+/* Small yellow label over a title. */
+.v4t-eyebrow {
+  margin: 0 0 16px;
+  font-family: var(--v4t-display);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--v4t-yellow);
+}
+/* The yellow phrase in a title ("Direct your whole movie"). */
+.v4t-hl { color: var(--v4t-yellow); }
+
+/* V4Hero: the hero ground with its signature 48px horizontal rule lines. */
+.v4t-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: clamp(72px, 9vw, 136px) var(--v4t-gutter) clamp(64px, 8vw, 112px);
+  text-align: center;
+  background-color: var(--v4t-ground);
+  background-image:
+    radial-gradient(ellipse 70% 60% at 50% 0%, rgba(238, 188, 60, 0.07), transparent 70%),
+    repeating-linear-gradient(180deg, transparent 0, transparent 47px, var(--v4t-rule) 47px, var(--v4t-rule) 48px);
+  border-bottom: 1px solid var(--v4t-line);
+}
+.v4t-hero-in { max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+.v4t-h1 {
+  margin: 0;
+  font-family: var(--v4t-display);
+  font-weight: 800;
+  font-size: clamp(52px, 8vw, 112px);
+  line-height: 0.9;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  color: #fff;
+  text-wrap: balance;
+}
+.v4t-hero-sub {
+  margin: 22px 0 0;
+  max-width: 46ch;
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--v4t-body);
+  text-wrap: balance;
+}
+.v4t-ctas { margin-top: 32px; display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.v4t-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  padding: 12px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-family: var(--v4t-display);
+  font-weight: 700;
+  font-size: 21px;
+  line-height: normal;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+.v4t-ghost:hover { border-color: var(--v4t-yellow); color: var(--v4t-yellow-hi); text-decoration: none; }
+.v4t-cta:focus-visible,
+.v4t-ghost:focus-visible { outline: 3px solid var(--v4t-yellow-hi); outline-offset: 4px; }
+
+/* V4Section: alternate tone="ground" / tone="raised". */
+.v4t-section { padding: clamp(64px, 8vw, 112px) 0; background: var(--v4t-ground); }
+.v4t-section--raised { background: var(--v4t-raised); }
+/* Two sections of the same tone in a row are split by a hairline. */
+.v4t-section:not(.v4t-section--raised) + .v4t-section:not(.v4t-section--raised),
+.v4t-section--raised + .v4t-section--raised { border-top: 1px solid var(--v4t-line); }
+.v4t-section-head { max-width: 780px; margin-bottom: clamp(32px, 4vw, 52px); }
+.v4t-section-head:last-child { margin-bottom: 0; }
+.v4t-section--center .v4t-section-head { margin-left: auto; margin-right: auto; text-align: center; }
+.v4t-h2 {
+  margin: 0;
+  font-family: var(--v4t-sans);
+  font-weight: 800;
+  font-size: clamp(30px, 3.6vw, 52px);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  color: var(--v4t-ink);
+  text-wrap: balance;
+}
+.v4t-intro {
+  margin: 16px 0 0;
+  max-width: 62ch;
+  font-size: clamp(17px, 1.3vw, 19px);
+  line-height: 1.55;
+  color: var(--v4t-body);
+}
+.v4t-section--center .v4t-intro { margin-left: auto; margin-right: auto; }
+
+/* V4CtaBand: the homepage's .v4-cta band, exactly. */
+.v4t-cta-band { display: flex; justify-content: center; padding: 56px 16px; background: var(--v4t-navy); }
+.v4t-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 40px;
+  border-radius: 999px;
+  background: #eebc3c;
+  color: #14100a;
+  font: 700 18px/1 Inter, system-ui, sans-serif;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(238, 188, 60, 0.22);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.v4t-pill:hover { background: #f2c756; color: #14100a; text-decoration: none; transform: translateY(-1px); box-shadow: 0 14px 36px rgba(238, 188, 60, 0.32); }
+.v4t-pill:focus-visible { outline: 3px solid #f2c756; outline-offset: 4px; }
+.v4t-pill-arrow { font-size: 20px; line-height: 1; }
+
+/* V4CardGrid + V4Card */
+.v4t-cards {
+  display: grid;
+  /* auto-fit: empty tracks collapse, so 2-3 cards fill the row instead of
+     leaving an empty column on the right. */
+  grid-template-columns: repeat(auto-fit, minmax(min(var(--v4t-card-min, 260px), 100%), 1fr));
+  gap: 20px;
+}
+/* A fixed column count (V4CardGrid columns={n}); collapses to one column on phones. */
+.v4t-cards[data-cols] { grid-template-columns: repeat(var(--v4t-cols), minmax(0, 1fr)); }
+@media (max-width: 760px) {
+  .v4t-cards[data-cols] { grid-template-columns: 1fr; }
+}
+.v4t-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 26px 24px;
+  background: var(--v4t-panel);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  color: var(--v4t-body);
+  text-decoration: none;
+}
+.v4t-section--raised .v4t-card { background: var(--v4t-tray); }
+.v4t-card--link { transition: border-color 0.15s ease, transform 0.15s ease; }
+.v4t-card--link:hover { border-color: rgba(238, 188, 60, 0.6); color: var(--v4t-body); text-decoration: none; transform: translateY(-2px); }
+.v4t-card--link:focus-visible { outline: 3px solid var(--v4t-yellow-hi); outline-offset: 3px; }
+.v4t-card-icon { display: inline-flex; width: 36px; height: 36px; color: var(--v4t-yellow); font-size: 28px; line-height: 1; }
+.v4t-card-icon svg { width: 100%; height: 100%; }
+.v4t-card-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--v4t-yellow);
+}
+.v4t-card-title {
+  margin: 0;
+  font-family: var(--v4t-sans);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--v4t-ink);
+}
+.v4t-card-arrow { margin-left: 0.3em; color: var(--v4t-yellow); display: inline-block; transition: transform 0.15s ease; }
+.v4t-card--link:hover .v4t-card-arrow { transform: translateX(3px); }
+.v4t-card-text { margin: 0; font-size: 16px; line-height: 1.55; color: var(--v4t-muted); }
+
+/* V4Prose: long-form text. */
+.v4t-prose {
+  max-width: 72ch;
+  font-family: var(--v4t-sans);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--v4t-body);
+}
+.v4t-section--center .v4t-prose { margin-left: auto; margin-right: auto; }
+.v4t-prose > :first-child { margin-top: 0; }
+.v4t-prose h2 { margin: 2em 0 0.6em; font-size: clamp(26px, 2.6vw, 32px); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; color: var(--v4t-ink); }
+.v4t-prose h3 { margin: 1.6em 0 0.5em; font-size: 22px; font-weight: 700; line-height: 1.25; color: var(--v4t-ink); }
+.v4t-prose p { margin: 0 0 1.1em; }
+.v4t-prose a { color: var(--v4t-yellow); text-decoration: underline; text-decoration-color: rgba(238, 188, 60, 0.45); text-underline-offset: 3px; }
+.v4t-prose a:hover { color: var(--v4t-yellow-hi); text-decoration-color: currentColor; }
+.v4t-prose :is(ul, ol) { margin: 0 0 1.2em; padding-left: 1.3em; }
+.v4t-prose li { margin-bottom: 0.4em; }
+.v4t-prose li::marker { color: var(--v4t-yellow); }
+.v4t-prose strong { color: var(--v4t-ink); font-weight: 700; }
+.v4t-prose blockquote { margin: 1.4em 0; padding: 0.9em 1.2em; border-left: 3px solid var(--v4t-yellow); background: rgba(255, 255, 255, 0.03); color: var(--v4t-muted); }
+.v4t-prose hr { border: 0; height: 1px; background: var(--v4t-rule-strong); margin: 2.4em 0; }
+.v4t-prose code { font-family: var(--v4t-mono); font-size: 0.88em; padding: 0.1em 0.35em; border-radius: 4px; background: rgba(255, 255, 255, 0.07); color: var(--v4t-ink); }
+
+/* V4Split: copy + media. */
+.v4t-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+.v4t-split--reverse .v4t-split-media { order: -1; }
+.v4t-split-copy > :first-child { margin-top: 0; }
+.v4t-split-media :is(img, video) {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid var(--v4t-line);
+}
+@media (max-width: 900px) {
+  .v4t-split { grid-template-columns: 1fr; }
+  .v4t-split--reverse .v4t-split-media { order: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v4t-more-pop,
+  .v4t-pill,
+  .v4t-card--link,
+  .v4t-card-arrow,
+  .v4t-foot-cta { transition: none; }
+  .v4t-pill:hover,
+  .v4t-card--link:hover,
+  .v4t-foot-cta:hover { transform: none; }
+}

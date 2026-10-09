@@ -97,14 +97,19 @@ site/static/img/        — images, logo, favicon
 site/pages/             — custom React pages (home, features, about, contact, articles)
 site/pages/index.tsx    — the homepage (/): the "/v/4" design, moved here 2026-10-08
 site/pages/_rows.generated.ts — GENERATED homepage rows (scripts/build-v4-rows.js); never hand-edit
-site/pages/backup.tsx   — /backup: frozen copy of the homepage the v4 design replaced (noindex)
+site/pages/backup/      — /backup (index.tsx: the homepage the v4 design replaced) and
+                          /backup/{about,contact,features,mcp,cli,articles}: frozen
+                          old-template copies (all noindex)
 site/pages/v/4/         — redirect stub only: /v/4 → /
 site/static/v4/         — GENERATED homepage row assets, served at /v4/row_N/
 site/pages/articles/    — GENERATED: the 133 published SEO articles
 site/data/articles.json — GENERATED: the article index the site renders from
-site/components/        — SiteNavbar, SiteFooter, PageHero, ArticleCTA
-src/theme/              — swizzles: Navbar, Footer, MDXPage, MDXComponents, Unlisted
+site/components/        — SiteNavbar, SiteFooter, PageHero, ArticleCTA (old template + articles)
+site/components/v4/     — the v4 template pieces (see "Site templates")
+site/data/siteNav.ts    — the ONE source of site navigation (header, footer, menus)
+src/theme/              — swizzles: Layout, Navbar, Footer, MDXPage, MDXComponents, Unlisted
 site/css/custom.css     — global CSS overrides
+site/css/v4-template.css — the v4 site template (scoped: .v4t-*, html.v4t, html.v4t-skin)
 site/css/level2.css     — design overlay for the Assistant Director Team pages
 site/css/articles.css   — design overlay for /articles (scoped to .article-page)
 site/docs/              — markdown documentation pages
@@ -112,6 +117,56 @@ site/blog/              — blog posts (news only; the SEO articles are NOT here
 docusaurus.config.ts    — main site config (URL, nav, footer, JSON-LD, sitemap)
 sidebars.ts             — docs sidebar structure
 ```
+
+## Site templates
+
+Two templates live side by side. Pick by route, never by hand.
+
+* **v4 template — the DEFAULT for every page.** Learned from the homepage: the
+  hero's top bar, row 16's footer, the hero ground (#0f0e0c) with its 48px rule
+  lines, charcoal sections, yellow #eebc3c, navy "Get Started" bands.
+  * `site/data/siteNav.ts` — the ONE source of navigation: LINKS, PRIMARY_NAV,
+    MORE_NAV (Articles stays LAST), FOOTER_COLUMNS (Resources keeps Articles),
+    SOCIAL, plus the /backup route helpers. Edit links there and nowhere else.
+    Routes not built yet carry `pending: true` (skips the broken-link check);
+    remove the flag in the change that adds the page.
+  * `site/components/v4/V4Header.tsx` / `V4Footer.tsx` — top bar and footer.
+    `V4DocsDrawer.tsx` gives docs/blog pages their sidebar on phones (MENU →
+    "Docs menu"); its main panel lists `themeConfig.navbar.items`, which
+    docusaurus.config.ts builds from siteNav.ts.
+  * `site/components/v4/V4Blocks.tsx` — V4Hero, V4Section, V4CtaBand,
+    V4CardGrid + V4Card, V4Prose, V4Split. Keep the copy short.
+  * `site/components/v4/V4RowsPage.tsx` (+ `rowHarness.ts`, `rowTransforms.ts`)
+    — pages made of generated homepage rows: `pickRows([...]).map(applySiteNav)`,
+    `replaceCopy(row, [[from, to]])`. The homepage is one of these.
+  * `site/css/v4-template.css` — all of the styling, scoped to `.v4t-*`
+    classes, `html.v4t` (geometry, page ground) and `html.v4t-skin` (the dark
+    Infima skin). The `--v4t-*` tokens are declared on every block root too,
+    so the blocks also work on a V4RowsPage (no html class there).
+  * `src/theme/Layout` puts `v4t v4t-skin` on `<html>`; `src/theme/Navbar` and
+    `src/theme/Footer` render V4Header / V4Footer.
+  * Code blocks: the prism theme (V4_PRISM_THEME in docusaurus.config.ts) is
+    light GitHub colours by default and warm dark ones under `html.v4t-skin`
+    (CSS variables `--v4t-pr-*`), so cream pages keep light code blocks.
+  * The footer year is `customFields.buildYear` (fixed at build time; never
+    `new Date()` in render — it breaks hydration every New Year).
+* **OLD template (cream) — `/backup` and `/backup/*` only.** SiteNavbar,
+  SiteFooter, PageHero, untouched. `/backup/*` render through Layout with
+  `<html class="old-template">`; `/backup` itself (the old homepage) renders
+  SiteNavbar / SiteFooter directly, without Layout, so it has no html class.
+  On /backup routes their internal links point at the /backup copies.
+* Every live page is on the v4 template, dark skin included — the Assistant
+  Director Team pages and the 133 articles too (Bryan, 2026-10-09: "switch all
+  other pages to the new template ... articles, and all those"). Their own
+  overlays (level2.css, articles.css) are written for the dark skin.
+  `<V4OwnDesign>` (`site/components/v4/templateContext.tsx`) still exists for a
+  page that must keep a light design inside the v4 header/footer; nothing live
+  uses it.
+* **New pages: use V4Blocks inside `<Layout>` (wrapped in one `<main>`), or
+  V4RowsPage for row-based pages.** Do not copy the old cream CSS into a new page.
+* The `<style>` of a page or component: put it in `<Head>` or use
+  `dangerouslySetInnerHTML` — never `<style>{CSS}</style>` in the body (the
+  HTML minifier rewrites the CSS and React's hydration check then fails, #418).
 
 ## The /articles section — where the SEO content lives
 

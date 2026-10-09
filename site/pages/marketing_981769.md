@@ -88,4 +88,4 @@ One fixed weekly price — 5 working days, 8 hours a day. No per-hour metering.
 
 ## Ready to add a team?
 
-Start with a package this week and scale as you go. [Talk to ACT 3](#).
+Start with a package this week and scale as you go. [Talk to ACT 3](/contact).

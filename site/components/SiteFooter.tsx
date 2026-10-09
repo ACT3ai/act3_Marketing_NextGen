@@ -1,4 +1,6 @@
 import React from "react";
+import { useLocation } from "@docusaurus/router";
+import { oldTemplateHref } from "../data/siteNav";
 
 const FOOTER_CSS = `
 .sf-root {
@@ -39,14 +41,19 @@ const FOOTER_CSS = `
 `;
 
 export default function SiteFooter(): React.ReactNode {
+  // On /backup routes, internal links that have a frozen copy point at that
+  // copy, so the old template stays browsable as a set. Elsewhere: unchanged.
+  const { pathname } = useLocation();
+  const h = (href: string): string => oldTemplateHref(href, pathname);
   return (
     <div className="sf-root">
-      <style>{FOOTER_CSS}</style>
+      {/* Not a text child: the HTML minifier rewrites inline CSS and a text child then fails hydration (#418). */}
+      <style dangerouslySetInnerHTML={{ __html: FOOTER_CSS }} />
       <footer className="sf-footer">
         <div className="sf-wrap">
           <div className="sf-footer__top">
             <div className="sf-footer__brand">
-              <a href="/" className="sf-logo" aria-label="ACT 3 AI home">
+              <a href={h("/")} className="sf-logo" aria-label="ACT 3 AI home">
                 <span className="sf-logo__word">ACT 3 AI</span>
               </a>
               <p className="sf-footer__tag">Create movies at the speed of storytelling.</p>
@@ -62,17 +69,17 @@ export default function SiteFooter(): React.ReactNode {
               <div className="sf-footer__col">
                 <div className="sf-footer__col-head">Company</div>
                 <ul>
-                  <li><a href="/about">About</a></li>
-                  <li><a href="/contact">Contact</a></li>
+                  <li><a href={h("/about")}>About</a></li>
+                  <li><a href={h("/contact")}>Contact</a></li>
                 </ul>
               </div>
               <div className="sf-footer__col">
                 <div className="sf-footer__col-head">Resources</div>
                 <ul>
-                  <li><a href="/articles">Articles</a></li>
+                  <li><a href={h("/articles")}>Articles</a></li>
                   <li><a href="https://documentation.act3ai.com/">Documentation</a></li>
-                  <li><a href="/mcp">MCP (Model Context Protocol)</a></li>
-                  <li><a href="/cli">CLI (command line interface)</a></li>
+                  <li><a href={h("/mcp")}>MCP (Model Context Protocol)</a></li>
+                  <li><a href={h("/cli")}>CLI (command line interface)</a></li>
                 </ul>
               </div>
               <div className="sf-footer__col">

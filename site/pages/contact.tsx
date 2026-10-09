@@ -1,340 +1,156 @@
+// /contact — on the v4 template (V4Blocks inside Docusaurus <Layout>).
+// The old cream version is frozen at site/pages/backup/contact.tsx (/backup/contact).
+//
+// The form sends nothing itself: on submit it opens the visitor's email app with a
+// pre-filled draft to CONTACT_EMAIL (buildMailto below). Validation is the
+// browser's own (required + type="email"); the page CSS only styles it.
 import React, { useState } from "react";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
-import PageHero from "../components/PageHero";
-
-const PAGE_CSS = `
-/* ===== Design Tokens ===== */
-.contact-page {
-  --bg: #faf8f3;
-  --bg-2: #f3efe5;
-  --bg-3: #ebe5d6;
-  --ink: #1a1714;
-  --ink-2: #4a4540;
-  --ink-3: #837c72;
-  --line: #e2dccb;
-  --line-2: #d4ccb6;
-  --accent: #c4612b;
-  --accent-ink: #ffffff;
-  --accent-soft: #f3e2d2;
-  --paper: #ffffff;
-  --maxw: 1100px;
-  --pad-x: clamp(20px, 4vw, 56px);
-  --radius: 8px;
-  --radius-lg: 14px;
-  --font-display: "Fraunces", "Times New Roman", serif;
-  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  font-family: var(--font-body);
-  color: var(--ink);
-  background: var(--bg);
-}
-
-.contact-page *, .contact-page *::before, .contact-page *::after { box-sizing: border-box; }
-.contact-page h1, .contact-page h2, .contact-page h3 { margin: 0; }
-.contact-page p { margin: 0; }
-
-/* ===== Body layout ===== */
-.contact-body {
-  padding: clamp(56px, 7vw, 96px) var(--pad-x);
-  background: var(--bg);
-}
-.contact-body__inner {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: clamp(40px, 5vw, 72px);
-  align-items: start;
-}
-@media (max-width: 900px) {
-  .contact-body__inner {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ===== Form section ===== */
-.contact-form-wrap {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  padding: clamp(28px, 4vw, 48px);
-}
-.contact-form-wrap h2 {
-  font-family: var(--font-display);
-  font-size: clamp(24px, 3vw, 34px);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  margin-bottom: 28px;
-  color: var(--ink);
-}
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.contact-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-@media (max-width: 560px) {
-  .contact-row { grid-template-columns: 1fr; }
-}
-.contact-field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.contact-field label {
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--ink);
-  letter-spacing: 0.01em;
-  font-family: var(--font-mono);
-  text-transform: uppercase;
-}
-.contact-field input,
-.contact-field textarea,
-.contact-field select {
-  width: 100%;
-  padding: 11px 14px;
-  border: 1.5px solid var(--line-2);
-  border-radius: var(--radius);
-  font-size: 15px;
-  font-family: var(--font-body);
-  background: var(--bg);
-  color: var(--ink);
-  outline: none;
-  transition: border-color 0.15s, box-shadow 0.15s;
-}
-.contact-field input:focus,
-.contact-field textarea:focus,
-.contact-field select:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px color-mix(in oklab, #c4612b 15%, transparent);
-  background: var(--paper);
-}
-.contact-field textarea {
-  resize: vertical;
-  min-height: 140px;
-  line-height: 1.6;
-}
-.contact-field select {
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6 9l6 6 6-6' stroke='%23837c72' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  padding-right: 38px;
-  cursor: pointer;
-}
-
-.contact-submit {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--ink);
-  color: var(--bg);
-  font-weight: 500;
-  font-size: 15px;
-  padding: 14px 28px;
-  border: 1px solid transparent;
-  border-radius: 999px;
-  cursor: pointer;
-  font-family: var(--font-body);
-  letter-spacing: -0.005em;
-  transition: background 0.15s, transform 0.15s, box-shadow 0.2s;
-  align-self: flex-start;
-  box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 8px 24px -12px rgba(0,0,0,.4);
-}
-.contact-submit:hover:not(:disabled) {
-  background: var(--accent);
-  transform: translateY(-1px);
-}
-.contact-submit:disabled {
-  background: var(--ink-3);
-  cursor: not-allowed;
-  transform: none;
-}
-.contact-submit .arrow {
-  display: inline-block;
-  transition: transform 0.2s;
-}
-.contact-submit:hover:not(:disabled) .arrow {
-  transform: translateX(3px);
-}
-
-/* ===== Success state ===== */
-.contact-success {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  padding: 48px 36px;
-  text-align: center;
-}
-.contact-success__icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-}
-.contact-success h3 {
-  font-family: var(--font-display);
-  font-size: 28px;
-  font-weight: 400;
-  color: var(--ink);
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
-}
-.contact-success p {
-  color: var(--ink-2);
-  font-size: 15.5px;
-  line-height: 1.6;
-  max-width: 44ch;
-  margin: 0 auto;
-}
-.contact-success a {
-  color: var(--accent);
-  text-decoration: underline;
-}
-
-/* ===== Sidebar info ===== */
-.contact-sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.contact-info-card {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  padding: 28px 24px;
-}
-.contact-info-card h3 {
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  margin-bottom: 20px;
-}
-.contact-info-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 14px 0;
-  border-top: 1px solid var(--line);
-}
-.contact-info-row:first-of-type {
-  border-top: none;
-  padding-top: 0;
-}
-.contact-info-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-size: 16px;
-}
-.contact-info-label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  margin-bottom: 4px;
-}
-.contact-info-value {
-  font-size: 14.5px;
-  color: var(--ink-2);
-  line-height: 1.5;
-}
-.contact-info-value a {
-  color: var(--accent);
-  text-decoration: underline;
-}
-.contact-info-value a:hover {
-  color: var(--ink);
-}
-
-/* ===== Enterprise card ===== */
-.contact-enterprise-card {
-  background: var(--ink);
-  color: var(--bg);
-  border-radius: var(--radius-lg);
-  padding: 28px 24px;
-  position: relative;
-  overflow: hidden;
-}
-.contact-enterprise-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(600px 300px at 100% 100%, color-mix(in oklab, #c4612b 25%, transparent), transparent 60%);
-  pointer-events: none;
-}
-.contact-enterprise-card__inner { position: relative; z-index: 1; }
-.contact-enterprise-card__label {
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: color-mix(in oklab, var(--bg) 60%, transparent);
-  margin-bottom: 12px;
-}
-.contact-enterprise-card h3 {
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  color: var(--bg);
-  margin-bottom: 10px;
-}
-.contact-enterprise-card p {
-  font-size: 14px;
-  color: color-mix(in oklab, var(--bg) 75%, transparent);
-  line-height: 1.55;
-  margin-bottom: 20px;
-}
-.contact-enterprise-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--accent);
-  color: white;
-  font-weight: 500;
-  font-size: 13.5px;
-  padding: 10px 20px;
-  border-radius: 999px;
-  text-decoration: none;
-  transition: filter 0.15s, transform 0.15s;
-}
-.contact-enterprise-btn:hover {
-  filter: brightness(1.1);
-  transform: translateY(-1px);
-  color: white;
-  text-decoration: none;
-}
-.contact-enterprise-btn .arrow {
-  display: inline-block;
-  transition: transform 0.2s;
-}
-.contact-enterprise-btn:hover .arrow {
-  transform: translateX(3px);
-}
-`;
+import { V4Hero, V4Section, V4CtaBand } from "../components/v4/V4Blocks";
+import { LINKS } from "../data/siteNav";
 
 const CONTACT_EMAIL = "contactus@act3ai.com";
+const ENTERPRISE_MAILTO = "mailto:ContactUs@ACT3ai.com?subject=Enterprise%20Inquiry";
+
+const SUBJECTS = [
+  "General Question",
+  "Technical Support",
+  "Sales & Partnerships",
+  "Enterprise Inquiry",
+  "Press & Media",
+  "Other",
+];
+
+// Page-scoped styling for the form and the side cards. Every rule sits under
+// .ct-grid; the colours, fonts and the square yellow button come from the
+// --v4t-* tokens and .v4t-cta of site/css/v4-template.css.
+const PAGE_CSS = `
+.v4t-section.ct-section { padding-top: clamp(48px, 6vw, 80px); }
+.ct-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: clamp(28px, 4vw, 56px);
+  align-items: start;
+}
+@media (max-width: 900px) { .ct-grid { grid-template-columns: minmax(0, 1fr); } }
+
+.ct-grid .ct-panel {
+  background: var(--v4t-panel);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: clamp(24px, 3.4vw, 44px);
+}
+.ct-grid .ct-title {
+  margin: 0 0 24px;
+  font-family: var(--v4t-sans);
+  font-weight: 800;
+  font-size: clamp(26px, 2.6vw, 34px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--v4t-ink);
+}
+
+/* form */
+.ct-grid .ct-form { display: flex; flex-direction: column; gap: 20px; color-scheme: dark; }
+.ct-grid .ct-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 560px) { .ct-grid .ct-row { grid-template-columns: 1fr; } }
+.ct-grid .ct-field { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.ct-grid .ct-field label {
+  font-family: var(--v4t-display);
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--v4t-muted);
+}
+.ct-grid .ct-req { color: var(--v4t-yellow); margin-left: 3px; }
+.ct-grid .ct-field :is(input, select, textarea) {
+  width: 100%;
+  margin: 0;
+  padding: 12px 14px;
+  font: 400 16px/1.4 var(--v4t-sans);
+  color: var(--v4t-ink);
+  background: var(--v4t-ground);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.ct-grid .ct-field :is(input, textarea)::placeholder { color: var(--v4t-quiet); opacity: 1; }
+.ct-grid .ct-field :is(input, select, textarea):hover { border-color: rgba(255, 255, 255, 0.3); }
+.ct-grid .ct-field :is(input, select, textarea):focus-visible {
+  border-color: var(--v4t-yellow);
+  box-shadow: 0 0 0 3px rgba(238, 188, 60, 0.28);
+}
+.ct-grid .ct-field textarea { min-height: 150px; resize: vertical; line-height: 1.6; }
+.ct-grid .ct-field select {
+  appearance: none;
+  padding-right: 40px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6 9l6 6 6-6' stroke='%23eebc3c' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+.ct-grid .ct-field select:has(option[value=""]:checked) { color: var(--v4t-quiet); }
+.ct-grid .ct-field option { color: var(--v4t-ink); background: var(--v4t-raised); }
+
+/* errors: only after the visitor has touched a field (or tried to send) */
+.ct-grid .ct-err { display: none; margin: 0; font-size: 14px; line-height: 1.3; color: #ff8f7a; }
+.ct-grid .ct-field :is(input, select, textarea):user-invalid { border-color: #ff8f7a; }
+.ct-grid .ct-field :is(input, select, textarea):user-invalid:focus-visible { box-shadow: 0 0 0 3px rgba(255, 143, 122, 0.25); }
+.ct-grid .ct-field:has(:user-invalid) .ct-err { display: block; }
+
+.ct-grid .ct-send { align-self: flex-start; margin-top: 4px; border: 0; cursor: pointer; }
+.ct-grid .ct-send:focus-visible { outline: 3px solid var(--v4t-yellow-hi); outline-offset: 4px; }
+
+/* after sending */
+.ct-grid .ct-done { text-align: center; }
+.ct-grid .ct-done-mark {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  background: var(--v4t-yellow);
+  color: var(--v4t-yellow-ink);
+}
+.ct-grid .ct-done .ct-title { margin-bottom: 12px; }
+.ct-grid .ct-done p { margin: 0 auto; max-width: 42ch; font-size: 17px; line-height: 1.55; color: var(--v4t-body); }
+
+/* side cards */
+.ct-grid .ct-side { display: flex; flex-direction: column; gap: 20px; }
+.ct-grid .ct-side .ct-panel { padding: 26px 24px; }
+.ct-grid .ct-list { margin: 0; padding: 0; list-style: none; }
+.ct-grid .ct-list li { padding: 16px 0; border-top: 1px solid var(--v4t-line); }
+.ct-grid .ct-list li:first-child { padding-top: 0; border-top: 0; }
+.ct-grid .ct-list li:last-child { padding-bottom: 0; }
+.ct-grid .ct-k {
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--v4t-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--v4t-quiet);
+}
+.ct-grid .ct-v { font-size: 17px; line-height: 1.45; color: var(--v4t-body); overflow-wrap: anywhere; }
+.ct-grid a.ct-link {
+  color: var(--v4t-yellow);
+  text-decoration: underline;
+  text-decoration-color: rgba(238, 188, 60, 0.45);
+  text-underline-offset: 3px;
+}
+.ct-grid a.ct-link:hover { color: var(--v4t-yellow-hi); text-decoration-color: currentColor; }
+.ct-grid a.ct-link:focus-visible { outline: 2px solid var(--v4t-yellow-hi); outline-offset: 3px; }
+
+.ct-grid .ct-ent { border-color: rgba(238, 188, 60, 0.45); background: linear-gradient(160deg, #1d1a12, var(--v4t-panel) 60%); }
+.ct-grid .ct-ent .v4t-eyebrow { margin-bottom: 12px; font-size: 14px; }
+.ct-grid .ct-ent h3 { margin: 0 0 10px; font: 800 22px/1.2 var(--v4t-sans); letter-spacing: -0.01em; color: var(--v4t-ink); }
+.ct-grid .ct-ent p { margin: 0 0 20px; font-size: 16px; line-height: 1.55; color: var(--v4t-muted); }
+`;
 
 type FormState = {
   firstName: string;
@@ -362,6 +178,7 @@ export default function Contact(): React.ReactNode {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
+  // Unchanged from the cream page: same subject line, same body, same address.
   function buildMailto() {
     const { firstName, lastName, email, company, subject, message } = form;
     const body = [
@@ -386,228 +203,183 @@ export default function Contact(): React.ReactNode {
     setSubmitted(true);
   }
 
+  const req = <span className="ct-req" aria-hidden="true">*</span>;
+
   return (
+    // No manual site-name suffix: Docusaurus appends " | ACT 3 AI" itself.
     <Layout
-      title="Contact Us | ACT 3 AI"
-      description="Have questions about ACT 3? Need technical support? Want to explore enterprise solutions? We're here to help."
+      title="Contact Us"
+      description="Questions, support or enterprise plans? Email ACT 3 at contactus@act3ai.com. We reply within 24 hours on business days."
     >
       <Head>
         <style>{PAGE_CSS}</style>
       </Head>
-      <PageHero
-        label="Get in Touch"
-        title={<>Let's Talk About<br /><em>Your Next Film.</em></>}
-        description="Have questions about ACT 3? Need technical support? Want to explore enterprise solutions? We're here to help you bring your creative vision to life."
-      />
+      <main>
+        <V4Hero
+          eyebrow="Contact"
+          title="Let's talk about"
+          highlight="your next film."
+          sub={<>Questions, support or enterprise plans.<br />We reply within 24 hours on business days.</>}
+          cta={false}
+        />
 
-      <div className="contact-page">
-
-        {/* Body */}
-        <section className="contact-body">
-          <div className="contact-body__inner">
-
-            {/* Form column */}
+        <V4Section tone="raised" className="ct-section">
+          <div className="ct-grid">
             <div>
               {submitted ? (
-                <div className="contact-success">
-                  <div className="contact-success__icon" aria-hidden="true">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                      <path d="M4.5 12.5l4.5 4.5L19.5 7" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                <div className="ct-panel ct-done" role="status">
+                  <div className="ct-done-mark" aria-hidden="true">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                      <path d="M4.5 12.5l4.5 4.5L19.5 7" stroke="currentColor" strokeWidth="2.4" strokeLinecap="square" />
                     </svg>
                   </div>
-                  <h3>Email Draft Opened</h3>
+                  <h2 className="ct-title">Email draft opened</h2>
                   <p>
-                    Your email client should have opened with your message
-                    pre-filled — please review and press <strong>Send</strong>{" "}
-                    to deliver it. If nothing opened, email us directly at{" "}
-                    <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
-                    We'll get back to you within 24 hours.
+                    Review it and press <strong>Send</strong>. Nothing opened? Write to{" "}
+                    <a className="ct-link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
                   </p>
                 </div>
               ) : (
-                <div className="contact-form-wrap">
-                  <h2>Send Us a Message</h2>
-                  <form className="contact-form" onSubmit={handleSubmit}>
-
-                    <div className="contact-row">
-                      <div className="contact-field">
-                        <label htmlFor="firstName">First Name *</label>
+                <div className="ct-panel">
+                  <h2 className="ct-title" id="ct-form-title">Send a message</h2>
+                  <form className="ct-form" onSubmit={handleSubmit} aria-labelledby="ct-form-title">
+                    <div className="ct-row">
+                      <div className="ct-field">
+                        <label htmlFor="firstName">First name{req}</label>
                         <input
                           id="firstName"
                           name="firstName"
                           type="text"
+                          autoComplete="given-name"
                           required
                           placeholder="Jane"
+                          aria-describedby="firstName-err"
                           value={form.firstName}
                           onChange={handleChange}
                         />
+                        <p className="ct-err" id="firstName-err">Enter your first name.</p>
                       </div>
-                      <div className="contact-field">
-                        <label htmlFor="lastName">Last Name *</label>
+                      <div className="ct-field">
+                        <label htmlFor="lastName">Last name{req}</label>
                         <input
                           id="lastName"
                           name="lastName"
                           type="text"
+                          autoComplete="family-name"
                           required
                           placeholder="Smith"
+                          aria-describedby="lastName-err"
                           value={form.lastName}
                           onChange={handleChange}
                         />
+                        <p className="ct-err" id="lastName-err">Enter your last name.</p>
                       </div>
                     </div>
 
-                    <div className="contact-row">
-                      <div className="contact-field">
-                        <label htmlFor="email">Email Address *</label>
+                    <div className="ct-row">
+                      <div className="ct-field">
+                        <label htmlFor="email">Email{req}</label>
                         <input
                           id="email"
                           name="email"
                           type="email"
+                          autoComplete="email"
                           required
                           placeholder="jane@studio.com"
+                          aria-describedby="email-err"
                           value={form.email}
                           onChange={handleChange}
                         />
+                        <p className="ct-err" id="email-err">Enter a valid email address.</p>
                       </div>
-                      <div className="contact-field">
+                      <div className="ct-field">
                         <label htmlFor="company">Company</label>
                         <input
                           id="company"
                           name="company"
                           type="text"
-                          placeholder="Studio Name (optional)"
+                          autoComplete="organization"
+                          placeholder="Optional"
                           value={form.company}
                           onChange={handleChange}
                         />
                       </div>
                     </div>
 
-                    <div className="contact-field">
-                      <label htmlFor="subject">Subject *</label>
+                    <div className="ct-field">
+                      <label htmlFor="subject">Subject{req}</label>
                       <select
                         id="subject"
                         name="subject"
                         required
+                        aria-describedby="subject-err"
                         value={form.subject}
                         onChange={handleChange}
                       >
-                        <option value="">Select a subject…</option>
-                        <option value="General Question">General Question</option>
-                        <option value="Technical Support">Technical Support</option>
-                        <option value="Sales & Partnerships">Sales &amp; Partnerships</option>
-                        <option value="Enterprise Inquiry">Enterprise Inquiry</option>
-                        <option value="Press & Media">Press &amp; Media</option>
-                        <option value="Other">Other</option>
+                        <option value="">Choose one…</option>
+                        {SUBJECTS.map((s) => (
+                          <option key={s} value={s}>{s}</option>
+                        ))}
                       </select>
+                      <p className="ct-err" id="subject-err">Choose a subject.</p>
                     </div>
 
-                    <div className="contact-field">
-                      <label htmlFor="message">Message *</label>
+                    <div className="ct-field">
+                      <label htmlFor="message">Message{req}</label>
                       <textarea
                         id="message"
                         name="message"
                         required
-                        placeholder="Tell us how we can help…"
+                        placeholder="How can we help?"
+                        aria-describedby="message-err"
                         value={form.message}
                         onChange={handleChange}
                       />
+                      <p className="ct-err" id="message-err">Write a message.</p>
                     </div>
 
-                    <button type="submit" className="contact-submit">
-                      Open Email Draft
-                      <span className="arrow">→</span>
+                    <button type="submit" className="v4t-cta ct-send">
+                      Open email draft <span aria-hidden="true">›</span>
                     </button>
-
                   </form>
                 </div>
               )}
             </div>
 
-            {/* Sidebar column */}
-            <div className="contact-sidebar">
-
-              <div className="contact-info-card">
-                <h3>Contact Information</h3>
-
-                <div className="contact-info-row">
-                  <div
-                    className="contact-info-icon"
-                    style={{ background: "var(--accent-soft)", color: "var(--accent)" }}
-                    aria-hidden="true"
-                  >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                      <path d="M3 8l9 6 9-6M3 8v10a1 1 0 001 1h16a1 1 0 001-1V8M3 8a1 1 0 011-1h16a1 1 0 011 1" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="contact-info-label">Email</div>
-                    <div className="contact-info-value">
-                      <a href="mailto:contactus@act3ai.com">contactus@act3ai.com</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="contact-info-row">
-                  <div
-                    className="contact-info-icon"
-                    style={{ background: "var(--bg-2)", color: "var(--ink-2)" }}
-                    aria-hidden="true"
-                  >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" />
-                      <path d="M12 7v5l3 3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="contact-info-label">Response Time</div>
-                    <div className="contact-info-value">Within 24 hours on business days</div>
-                  </div>
-                </div>
-
-                <div className="contact-info-row">
-                  <div
-                    className="contact-info-icon"
-                    style={{ background: "var(--bg-2)", color: "var(--ink-2)" }}
-                    aria-hidden="true"
-                  >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                      <path d="M15 10l4.553-2.069A1 1 0 0121 8.82V17a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1h11v4z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="contact-info-label">Video Demos</div>
-                    <div className="contact-info-value">
-                      <a href="https://www.youtube.com/@ACT3AI" target="_blank" rel="noopener noreferrer">
-                        Watch on YouTube →
+            <aside className="ct-side" aria-label="Other ways to reach us">
+              <div className="ct-panel">
+                <ul className="ct-list">
+                  <li>
+                    <span className="ct-k">Email</span>
+                    <span className="ct-v">
+                      <a className="ct-link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+                    </span>
+                  </li>
+                  <li>
+                    <span className="ct-k">Video demos</span>
+                    <span className="ct-v">
+                      <a className="ct-link" href={LINKS.youtube} target="_blank" rel="noopener noreferrer">
+                        Watch on YouTube
                       </a>
-                    </div>
-                  </div>
-                </div>
-
+                    </span>
+                  </li>
+                </ul>
               </div>
 
-              <div className="contact-enterprise-card">
-                <div className="contact-enterprise-card__inner">
-                  <div className="contact-enterprise-card__label">Enterprise</div>
-                  <h3>Working at a Studio or Agency?</h3>
-                  <p>
-                    Custom pricing, SSO, dedicated support, and multi-org workspaces
-                    for teams that need to produce at scale.
-                  </p>
-                  <a
-                    href="mailto:ContactUs@ACT3ai.com?subject=Enterprise%20Inquiry"
-                    className="contact-enterprise-btn"
-                  >
-                    Talk to Sales <span className="arrow">→</span>
-                  </a>
-                </div>
+              <div className="ct-panel ct-ent">
+                <p className="v4t-eyebrow">Enterprise</p>
+                <h3>Studio or agency?</h3>
+                <p>Custom pricing, SSO, dedicated support and multi-org workspaces.</p>
+                <a className="v4t-cta v4t-cta-sm" href={ENTERPRISE_MAILTO}>
+                  Talk to sales <span aria-hidden="true">›</span>
+                </a>
               </div>
-
-            </div>
+            </aside>
           </div>
-        </section>
+        </V4Section>
 
-      </div>
+        <V4CtaBand />
+      </main>
     </Layout>
   );
 }

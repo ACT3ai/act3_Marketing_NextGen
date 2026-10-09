@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useLocation } from "@docusaurus/router";
+import { oldTemplateHref } from "../data/siteNav";
 
 const NAV_CSS = `
 .snav-root {
@@ -236,6 +238,10 @@ const NAV_CSS = `
 `;
 
 export default function SiteNavbar(): React.ReactNode {
+  // On /backup routes, internal links that have a frozen copy point at that
+  // copy, so the old template stays browsable as a set. Elsewhere: unchanged.
+  const { pathname } = useLocation();
+  const h = (href: string): string => oldTemplateHref(href, pathname);
   const [solid, setSolid] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -269,7 +275,8 @@ export default function SiteNavbar(): React.ReactNode {
 
   return (
     <div className="snav-root">
-      <style>{NAV_CSS}</style>
+      {/* Not a text child: the HTML minifier rewrites inline CSS and a text child then fails hydration (#418). */}
+      <style dangerouslySetInnerHTML={{ __html: NAV_CSS }} />
       <header className={`snav${solid ? " snav--solid" : ""}`} id="site-nav">
         <div className="snav__inner">
           <button
@@ -290,7 +297,7 @@ export default function SiteNavbar(): React.ReactNode {
             </svg>
           </button>
 
-          <a href="/" className="snav__logo" aria-label="ACT 3 AI home">
+          <a href={h("/")} className="snav__logo" aria-label="ACT 3 AI home">
             <img
               src="/img/act3-logo.png"
               alt="ACT 3 AI"
@@ -299,9 +306,9 @@ export default function SiteNavbar(): React.ReactNode {
           </a>
 
           <nav className="snav__links" aria-label="Primary">
-            <a className="snav__link" href="/">Main</a>
-            <a className="snav__link" href="/about">About Us</a>
-            <a className="snav__link" href="/contact">Contact Us</a>
+            <a className="snav__link" href={h("/")}>Main</a>
+            <a className="snav__link" href={h("/about")}>About Us</a>
+            <a className="snav__link" href={h("/contact")}>Contact Us</a>
             <a className="snav__link" href="https://app.act3ai.com/settings/plans/">Plans</a>
             <a
               className="snav__link"
@@ -338,7 +345,7 @@ export default function SiteNavbar(): React.ReactNode {
                 <a
                   className="snav__menu-item"
                   role="menuitem"
-                  href="/mcp"
+                  href={h("/mcp")}
                   onClick={() => setMoreOpen(false)}
                 >
                   MCP
@@ -347,7 +354,7 @@ export default function SiteNavbar(): React.ReactNode {
                 <a
                   className="snav__menu-item"
                   role="menuitem"
-                  href="/cli"
+                  href={h("/cli")}
                   onClick={() => setMoreOpen(false)}
                 >
                   CLI
@@ -356,7 +363,7 @@ export default function SiteNavbar(): React.ReactNode {
                 <a
                   className="snav__menu-item"
                   role="menuitem"
-                  href="/articles"
+                  href={h("/articles")}
                   onClick={() => setMoreOpen(false)}
                 >
                   Articles
@@ -379,14 +386,14 @@ export default function SiteNavbar(): React.ReactNode {
           className={`snav__mobile${mobileOpen ? " snav__mobile--open" : ""}`}
           aria-label="Mobile"
         >
-          <a href="/" onClick={() => setMobileOpen(false)}>Main</a>
-          <a href="/about" onClick={() => setMobileOpen(false)}>About Us</a>
-          <a href="/contact" onClick={() => setMobileOpen(false)}>Contact Us</a>
+          <a href={h("/")} onClick={() => setMobileOpen(false)}>Main</a>
+          <a href={h("/about")} onClick={() => setMobileOpen(false)}>About Us</a>
+          <a href={h("/contact")} onClick={() => setMobileOpen(false)}>Contact Us</a>
           <a href="https://app.act3ai.com/settings/plans/">Plans</a>
           <a href="https://www.youtube.com/@ACT3AI" target="_blank" rel="noopener noreferrer">Videos</a>
-          <a href="/mcp" onClick={() => setMobileOpen(false)}>MCP</a>
-          <a href="/cli" onClick={() => setMobileOpen(false)}>CLI</a>
-          <a href="/articles" onClick={() => setMobileOpen(false)}>Articles</a>
+          <a href={h("/mcp")} onClick={() => setMobileOpen(false)}>MCP</a>
+          <a href={h("/cli")} onClick={() => setMobileOpen(false)}>CLI</a>
+          <a href={h("/articles")} onClick={() => setMobileOpen(false)}>Articles</a>
         </nav>
       </header>
     </div>

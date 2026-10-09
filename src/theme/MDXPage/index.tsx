@@ -13,6 +13,10 @@
  *    scripts/sync-articles.js) get the full article treatment: a breadcrumb, a
  *    freshness + reading-time line, a closing CTA, a related-articles rail, and
  *    Article / BreadcrumbList / FAQPage JSON-LD built from site/data/articles.json.
+ *    They are on the v4 template's dark skin: a ~72ch reading column with a
+ *    sticky "On this page" TOC (a collapsible one on phones), the navy
+ *    ArticleCTA band, then a raised "Related articles" card grid (V4Card).
+ *    All of their styling is in site/css/articles.css.
  *
  * Doing the structured data here rather than in the markdown means all 133
  * articles are covered by one file, and an article stays pure prose.
@@ -30,10 +34,12 @@ import {
 import Layout from "@theme/Layout";
 import MDXContent from "@theme/MDXContent";
 import TOC from "@theme/TOC";
+import TOCCollapsible from "@theme/TOCCollapsible";
 import ContentVisibility from "@theme/ContentVisibility";
 import type { Props } from "@theme/MDXPage";
 
 import ArticleCTA from "@site/site/components/ArticleCTA";
+import { V4CardGrid, V4Card } from "@site/site/components/v4/V4Blocks";
 import articleIndex from "@site/site/data/articles.json";
 
 type ArticleRecord = {
@@ -90,32 +96,9 @@ function formatDate(iso: string): string {
   });
 }
 
-const ARTICLE_CSS = `
-.a3art { max-width: 1180px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px); }
-.a3art__grid { display: grid; grid-template-columns: minmax(0, 1fr) 250px; gap: clamp(28px, 4vw, 64px); align-items: start; }
-.a3art__crumbs { font-size: 13px; color: #837c72; margin: 28px 0 10px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-.a3art__crumbs a { color: #837c72; text-decoration: none; }
-.a3art__crumbs a:hover { color: #c4612b; text-decoration: underline; }
-.a3art__crumbs span[aria-hidden] { opacity: .5; }
-.a3art__meta { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: #837c72; margin: 0 0 8px; }
-.a3art__toc { position: sticky; top: 96px; }
-.a3art__related { border-top: 1px solid #e2dccb; margin-top: 48px; padding-top: 32px; }
-.a3art__related h2 { font-family: "Fraunces", "Times New Roman", serif; font-size: 22px; font-weight: 500; margin: 0 0 18px; }
-.a3art__related ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 32px; }
-.a3art__related li { position: relative; padding-left: 18px; line-height: 1.45; }
-.a3art__related li::before { content: ""; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; border-radius: 999px; background: #c4612b; }
-.a3art__related a { font-weight: 500; color: #1a1714; text-decoration: none; }
-.a3art__related a:hover { color: #c4612b; text-decoration: underline; }
-.a3art__related small { display: block; color: #837c72; font-size: 12.5px; margin-top: 2px; }
-.a3art__all { margin-top: 26px; font-size: 14px; }
-.a3art__all a { color: #c4612b; font-weight: 500; text-decoration: none; }
-.a3art__all a:hover { text-decoration: underline; }
-@media (max-width: 996px) {
-  .a3art__grid { grid-template-columns: minmax(0, 1fr); }
-  .a3art__toc { display: none; }
-  .a3art__related ul { grid-template-columns: minmax(0, 1fr); }
-}
-`;
+/* All article styling lives in site/css/articles.css (scoped to html.article-page,
+   on top of the v4 template's dark skin). No <style> element in this file: CSS
+   rendered in the body is what broke hydration (#418). */
 
 function ArticlePage(props: Props): React.ReactNode {
   const { content: MDXPageContent } = props;
@@ -191,6 +174,7 @@ function ArticlePage(props: Props): React.ReactNode {
   }
 
   const related = record ? relatedArticles(record) : [];
+  const hasToc = MDXPageContent.toc.length > 0;
 
   return (
     <Layout>
@@ -215,64 +199,80 @@ function ArticlePage(props: Props): React.ReactNode {
         )}
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Head>
-      <style>{ARTICLE_CSS}</style>
       <main className="a3art">
-        <nav className="a3art__crumbs" aria-label="Breadcrumb">
-          <Link to="/">Home</Link>
-          <span aria-hidden="true">/</span>
-          <Link to="/articles">Articles</Link>
-          <span aria-hidden="true">/</span>
-          <span>{title}</span>
-        </nav>
-
-        <div className="a3art__grid">
-          <div>
+        <div className="a3art__wrap a3art__grid">
+          <div className="a3art__body">
+            <nav className="a3art__crumbs" aria-label="Breadcrumb">
+              <Link to="/">Home</Link>
+              <span aria-hidden="true">/</span>
+              <Link to="/articles">Articles</Link>
+              <span aria-hidden="true">/</span>
+              <span aria-current="page">{title}</span>
+            </nav>
             <ContentVisibility metadata={metadata} />
             {record && (
               <p className="a3art__meta">
-                Updated {formatDate(record.updated)} &middot;{" "}
+                Updated {formatDate(record.updated)} <span aria-hidden="true">&middot;</span>{" "}
                 {readingMinutes(record.words)} min read
               </p>
             )}
-            {/* `markdown` is what Infima and site/css/articles.css both hang
-                their content styles on. The stock MDXPage does not add it, so
-                an MDX page rendered with no typographic styling at all. */}
+            {hasToc && (
+              <TOCCollapsible
+                className="a3art__toc-mobile"
+                toc={MDXPageContent.toc}
+                minHeadingLevel={frontMatter.toc_min_heading_level}
+                maxHeadingLevel={frontMatter.toc_max_heading_level}
+              />
+            )}
+            {/* `markdown` is what Infima, the v4 skin and site/css/articles.css
+                all hang their content styles on. The stock MDXPage does not add
+                it, so an MDX page rendered with no typographic styling at all. */}
             <article className="markdown">
               <MDXContent>
                 <MDXPageContent />
               </MDXContent>
             </article>
-
-            <ArticleCTA variant="footer" />
-
-            {related.length > 0 && (
-              <section className="a3art__related">
-                <h2>Keep reading</h2>
-                <ul>
-                  {related.map((a) => (
-                    <li key={a.slug}>
-                      <Link to={`/articles/${a.slug}`}>{a.title}</Link>
-                      <small>{a.targetQuery || a.persona}</small>
-                    </li>
-                  ))}
-                </ul>
-                <p className="a3art__all">
-                  <Link to="/articles">Browse all {ARTICLES.length} articles &rarr;</Link>
-                </p>
-              </section>
-            )}
           </div>
 
-          {MDXPageContent.toc.length > 0 && (
-            <div className="a3art__toc">
+          {hasToc && (
+            <aside className="a3art__toc" aria-label="On this page">
+              <p className="a3art__toc-label">On this page</p>
               <TOC
                 toc={MDXPageContent.toc}
                 minHeadingLevel={frontMatter.toc_min_heading_level}
                 maxHeadingLevel={frontMatter.toc_max_heading_level}
               />
-            </div>
+            </aside>
           )}
         </div>
+
+        <ArticleCTA variant="footer" />
+
+        {related.length > 0 && (
+          <section className="a3art__related" aria-labelledby="a3art-related">
+            <div className="a3art__wrap">
+              <p className="v4t-eyebrow">Keep reading</p>
+              <h2 className="a3art__related-title" id="a3art-related">
+                Related articles
+              </h2>
+              <V4CardGrid columns={3}>
+                {related.map((a) => (
+                  <V4Card
+                    key={a.slug}
+                    href={`/articles/${a.slug}`}
+                    eyebrow={a.persona}
+                    title={a.title}
+                  />
+                ))}
+              </V4CardGrid>
+              <p className="a3art__all">
+                <Link to="/articles">
+                  Browse all {ARTICLES.length} articles <span aria-hidden="true">&rarr;</span>
+                </Link>
+              </p>
+            </div>
+          </section>
+        )}
       </main>
     </Layout>
   );
@@ -325,6 +325,7 @@ export default function MDXPage(props: Props): React.ReactNode {
   const { frontMatter } = props.content.metadata;
   const wrapperClassName = frontMatter.wrapperClassName;
   const isArticle = wrapperClassName === "article-page";
+  const page = isArticle ? <ArticlePage {...props} /> : <PlainPage {...props} />;
 
   return (
     <HtmlClassNameProvider
@@ -333,7 +334,12 @@ export default function MDXPage(props: Props): React.ReactNode {
         ThemeClassNames.page.mdxPage,
       )}
     >
-      {isArticle ? <ArticlePage {...props} /> : <PlainPage {...props} />}
+      {/* Every markdown page is on the v4 template, dark skin included
+          (Bryan, 2026-10-09: "switch all other pages to the new template ...
+          articles, and all those"). A wrapperClassName still scopes the page's
+          own overlay (level2.css, articles.css), which is written for the dark
+          skin. */}
+      {page}
     </HtmlClassNameProvider>
   );
 }

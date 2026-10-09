@@ -3,212 +3,130 @@ import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import PageHero from "../components/PageHero";
+import { V4Hero, V4Section, V4CtaBand } from "../components/v4/V4Blocks";
 import articleIndex from "../data/articles.json";
 
 /*
- * The /articles hub.
+ * The /articles hub, on the v4 template.
  *
- * This page is the only reason the 133 published articles are not orphans. Every
+ * This page is the only reason the published articles are not orphans. Every
  * one of them is linked from here, in plain server-rendered <a> markup, grouped
- * by who the article is written for. It is reached from the last entry of the
- * navbar's More menu and from the Resources column of the footer.
+ * by who the article is written for (SEO invariant: keep every article linked).
+ * It is reached from the last entry of the navbar's More menu and from the
+ * Resources column of the footer.
  *
- * The list is two columns of bullets per group, on purpose: it is a directory,
- * not a feed. These are evergreen reference pages, so nothing here is ordered by
- * date and nothing is buried by newer material.
+ * A directory, not a feed: no dates, nothing ordered by recency. Each group is
+ * a dense grid of title + description, the description clamped to two lines on
+ * screen (the full text stays in the HTML).
  */
 
 type ArticleRecord = {
   slug: string;
   title: string;
   description: string;
-  targetQuery: string;
   persona: string;
-  funnelStage: string;
-  searchIntent: string;
-  contentType: string;
-  keyValue: string;
-  updated: string;
-  words: number;
-  faq: { q: string; a: string }[];
 };
 
-const ARTICLES = articleIndex as ArticleRecord[];
+/** "Level 2" is internal; the public name is the Assistant Director Team. The
+ *  upstream corpus still uses it in one title, so the hub renders the public name. */
+const publicName = (s: string): string => s.replace(/\bLevel[- ]?2 Team\b/gi, "Assistant Director Team");
+
+const ARTICLES = (articleIndex as ArticleRecord[]).map((a) => ({
+  ...a,
+  title: publicName(a.title),
+  description: publicName(a.description),
+}));
 
 /** Group order and copy. A persona missing from here still renders, at the end. */
-const GROUPS: { persona: string; heading: string; blurb: string }[] = [
-  {
-    persona: "Indie Filmmaker",
-    heading: "For indie filmmakers",
-    blurb:
-      "Getting a screenplay to a watchable full-length film without a crew, a budget, or a green light.",
-  },
-  {
-    persona: "Content Creator",
-    heading: "For content creators",
-    blurb:
-      "Holding characters, style, and pace together across episodes instead of one-off clips.",
-  },
-  {
-    persona: "Studio Production",
-    heading: "For studios and production companies",
-    blurb:
-      "Series, seasons, teams, review cycles, ownership, and the things that break at scale.",
-  },
-  {
-    persona: "Marketing Team",
-    heading: "For in-house marketing teams",
-    blurb:
-      "Volume, cadence, brand consistency, and the ROI maths behind AI video for a marketing calendar.",
-  },
-  {
-    persona: "Agency Commercials",
-    heading: "For agencies and commercial work",
-    blurb:
-      "Many clients, parallel projects, brand rules, approvals, and clean separation between accounts.",
-  },
-  {
-    persona: "Enterprise",
-    heading: "For enterprise buyers",
-    blurb:
-      "Security review, SSO, data residency, procurement, and what an enterprise rollout actually requires.",
-  },
-  {
-    persona: "Small Business",
-    heading: "For small businesses",
-    blurb:
-      "The cheapest honest path to video that does not look cheap, and what it really costs per month.",
-  },
-  {
-    persona: "Animator",
-    heading: "For animators",
-    blurb:
-      "2D and 3D pipelines, motion capture, lipsync, and where AI fits beside the tools you already use.",
-  },
+const GROUPS: { persona: string; who: string; blurb: string }[] = [
+  { persona: "Indie Filmmaker", who: "indie filmmakers", blurb: "A full-length film from a screenplay, without a crew, a budget, or a green light." },
+  { persona: "Content Creator", who: "content creators", blurb: "Characters, style, and pace that hold across episodes, not one-off clips." },
+  { persona: "Studio Production", who: "studios", blurb: "Series, seasons, teams, review cycles, and what breaks at scale." },
+  { persona: "Marketing Team", who: "marketing teams", blurb: "Volume, cadence, brand consistency, and the ROI of AI video." },
+  { persona: "Agency Commercials", who: "agencies", blurb: "Many clients, parallel projects, brand rules, and approvals." },
+  { persona: "Enterprise", who: "enterprise", blurb: "Security review, SSO, data residency, and procurement." },
+  { persona: "Small Business", who: "small businesses", blurb: "Video that does not look cheap, and what it costs per month." },
+  { persona: "Animator", who: "animators", blurb: "2D and 3D pipelines, motion capture, lipsync, and where AI fits." },
 ];
 
 const PAGE_CSS = `
-.a3hub {
-  --bg: #faf8f3;
-  --bg-2: #f3efe5;
-  --ink: #1a1714;
-  --ink-2: #4a4540;
-  --ink-3: #837c72;
-  --line: #e2dccb;
-  --accent: #c4612b;
-  --font-display: "Fraunces", "Times New Roman", serif;
-  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--font-body);
+.a3hub-jump {
+  margin: 36px 0 0; padding: 0; list-style: none;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+  max-width: 900px;
 }
-.a3hub__inner { max-width: 1140px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px); }
+.a3hub-jump a {
+  display: inline-flex; align-items: baseline; gap: 8px;
+  padding: 9px 16px; border: 1px solid var(--v4t-line); border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--v4t-body); font-family: var(--v4t-ui); font-size: 15px; font-weight: 600;
+  text-decoration: none; white-space: nowrap;
+  transition: border-color .15s ease, color .15s ease;
+}
+.a3hub-jump a:hover { border-color: var(--v4t-yellow); color: var(--v4t-yellow-hi); text-decoration: none; }
+.a3hub-jump a:focus-visible { outline: 3px solid var(--v4t-yellow-hi); outline-offset: 3px; }
+.a3hub-jump b { color: var(--v4t-yellow); font-weight: 700; font-size: 13px; }
 
-.a3hub__jump {
-  display: flex; flex-wrap: wrap; gap: 8px;
-  padding: 28px 0 4px;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 8px;
+.a3hub-list {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: clamp(28px, 3vw, 48px);
 }
-.a3hub__jump a {
-  font-size: 13px; font-weight: 500; color: var(--ink-2);
-  text-decoration: none; padding: 7px 13px; border-radius: 999px;
-  border: 1px solid var(--line); background: #fff;
-  transition: color .15s ease, border-color .15s ease;
-  margin-bottom: 10px;
+.a3hub-list li { margin: 0; border-top: 1px solid var(--v4t-line); }
+.a3hub-item {
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 18px 0 20px; color: var(--v4t-body); text-decoration: none;
 }
-.a3hub__jump a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
-
-.a3hub__group { padding: 42px 0 8px; border-bottom: 1px solid var(--line); }
-.a3hub__group:last-of-type { border-bottom: 0; }
-.a3hub__group-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
-.a3hub__group h2 {
-  font-family: var(--font-display);
-  font-size: clamp(24px, 3vw, 32px);
-  font-weight: 500; line-height: 1.15; margin: 0;
-  scroll-margin-top: 90px;
+.a3hub-item:hover { text-decoration: none; color: var(--v4t-body); }
+.a3hub-item:focus-visible { outline: 3px solid var(--v4t-yellow-hi); outline-offset: 4px; }
+.a3hub-title {
+  font-family: var(--v4t-sans); font-weight: 700; font-size: 17px; line-height: 1.3;
+  letter-spacing: -0.005em; color: var(--v4t-ink);
+  transition: color .15s ease;
 }
-.a3hub__count {
-  font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .08em;
-  text-transform: uppercase; color: var(--accent);
-}
-.a3hub__blurb { color: var(--ink-2); font-size: 15px; line-height: 1.6; margin: 10px 0 24px; max-width: 68ch; }
-
-.a3hub__list {
-  list-style: none; padding: 0; margin: 0;
-  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px clamp(28px, 4vw, 64px);
-}
-.a3hub__list li { position: relative; padding-left: 18px; }
-.a3hub__list li::before {
-  content: ""; position: absolute; left: 0; top: .58em;
-  width: 6px; height: 6px; border-radius: 999px; background: var(--accent);
-}
-.a3hub__list a {
-  display: block; font-size: 15.5px; font-weight: 500; line-height: 1.4;
-  color: var(--ink); text-decoration: none;
-}
-.a3hub__list a:hover { color: var(--accent); text-decoration: underline; }
-.a3hub__list small {
-  display: block; color: var(--ink-3); font-size: 13px; line-height: 1.5;
-  margin-top: 3px; font-weight: 400;
+.a3hub-item:hover .a3hub-title { color: var(--v4t-yellow-hi); }
+.a3hub-desc {
+  font-size: 15px; line-height: 1.5; color: var(--v4t-quiet);
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2;
+  overflow: hidden;
 }
 
-.a3hub__foot {
-  margin: 56px 0 0; padding: 32px; border: 1px solid var(--line);
-  border-radius: 14px; background: var(--bg-2);
-  display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: space-between;
+@media (max-width: 1080px) { .a3hub-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 680px) {
+  .a3hub-list { grid-template-columns: minmax(0, 1fr); }
+  .a3hub-jump { gap: 8px; }
+  .a3hub-jump a { padding: 8px 13px; font-size: 14px; }
 }
-.a3hub__foot p { margin: 0; max-width: 58ch; color: var(--ink-2); font-size: 15px; line-height: 1.6; }
-.a3hub__foot strong { color: var(--ink); }
-.a3hub__btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--accent); color: #fff; font-weight: 600; font-size: 15px;
-  padding: 12px 22px; border-radius: 999px; text-decoration: none;
-  transition: filter .15s ease, transform .15s ease; white-space: nowrap;
-}
-.a3hub__btn:hover { color: #fff; text-decoration: none; filter: brightness(1.06); transform: translateY(-1px); }
-.a3hub__bottom { padding-bottom: 72px; }
-
-@media (max-width: 820px) {
-  .a3hub__list { grid-template-columns: minmax(0, 1fr); }
+@media (prefers-reduced-motion: reduce) {
+  .a3hub-jump a, .a3hub-title { transition: none; }
 }
 `;
 
-function anchorFor(persona: string): string {
-  return persona.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-}
+type Group = { who: string; blurb: string; anchor: string; items: ArticleRecord[] };
 
-function grouped(): { heading: string; blurb: string; anchor: string; items: ArticleRecord[] }[] {
+const byTitle = (a: ArticleRecord, b: ArticleRecord): number => a.title.localeCompare(b.title);
+const anchorFor = (persona: string): string => persona.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+
+function grouped(): Group[] {
   const seen = new Set<string>();
-  const out = GROUPS.map((g) => {
-    const items = ARTICLES.filter((a) => a.persona === g.persona).sort((a, b) =>
-      a.title.localeCompare(b.title),
-    );
+  const out: Group[] = GROUPS.map((g) => {
+    const items = ARTICLES.filter((a) => a.persona === g.persona).sort(byTitle);
     items.forEach((a) => seen.add(a.slug));
-    return { heading: g.heading, blurb: g.blurb, anchor: anchorFor(g.persona), items };
+    return { who: g.who, blurb: g.blurb, anchor: anchorFor(g.persona), items };
   }).filter((g) => g.items.length > 0);
 
-  const rest = ARTICLES.filter((a) => !seen.has(a.slug)).sort((a, b) =>
-    a.title.localeCompare(b.title),
-  );
-  if (rest.length) {
-    out.push({
-      heading: "More on AI filmmaking",
-      blurb: "Everything else in the library.",
-      anchor: "more",
-      items: rest,
-    });
-  }
+  const rest = ARTICLES.filter((a) => !seen.has(a.slug)).sort(byTitle);
+  if (rest.length) out.push({ who: "everyone", blurb: "Everything else in the library.", anchor: "more", items: rest });
   return out;
 }
+
+const cap = (s: string): string => s.charAt(0).toUpperCase() + s.slice(1);
 
 export default function Articles(): React.ReactNode {
   const { siteConfig } = useDocusaurusContext();
   const groups = grouped();
   const total = ARTICLES.length;
+  const midBand = Math.ceil(groups.length / 2);
 
   const collectionLd = {
     "@context": "https://schema.org",
@@ -234,81 +152,67 @@ export default function Articles(): React.ReactNode {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: `${siteConfig.url}/` },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Articles",
-        item: `${siteConfig.url}/articles`,
-      },
+      { "@type": "ListItem", position: 2, name: "Articles", item: `${siteConfig.url}/articles` },
     ],
   };
 
   return (
     <Layout
       title="Articles"
-      description={`${total} practical guides on AI filmmaking — making full-length films from a script, keeping characters consistent, comparing tools, and what it all costs.`}
+      description={`${total} guides to AI filmmaking: full-length films from a script, consistent characters, cost, and honest tool comparisons.`}
     >
       <Head>
         <style>{PAGE_CSS}</style>
-        <script type="application/ld+json">
-          {JSON.stringify([collectionLd, breadcrumbLd])}
-        </script>
+        <script type="application/ld+json">{JSON.stringify([collectionLd, breadcrumbLd])}</script>
       </Head>
-
-      <PageHero
-        label="Articles"
-        title={
-          <>
-            Guides to <em>AI Filmmaking.</em>
-          </>
-        }
-        description={`${total} plain-spoken articles on making real films with AI — full-length structure, character consistency, cinematography, cost, and honest comparisons against every other tool in the category.`}
-      />
-
-      <div className="a3hub">
-        <div className="a3hub__inner">
-          <nav className="a3hub__jump" aria-label="Article categories">
-            {groups.map((g) => (
-              <a key={g.anchor} href={`#${g.anchor}`}>
-                {g.heading.replace(/^For /, "")} ({g.items.length})
-              </a>
-            ))}
+      <main>
+        <V4Hero
+          eyebrow="Articles"
+          title="Guides to"
+          highlight="AI filmmaking"
+          sub={`${total} guides: full-length films, consistent characters, cost, and honest tool comparisons.`}
+          cta={false}
+        >
+          <nav aria-label="Article groups">
+            <ul className="a3hub-jump">
+              {groups.map((g) => (
+                <li key={g.anchor}>
+                  <a href={`#${g.anchor}`}>
+                    {cap(g.who)} <b>{g.items.length}</b>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </nav>
+        </V4Hero>
 
-          {groups.map((g) => (
-            <section className="a3hub__group" key={g.anchor}>
-              <div className="a3hub__group-head">
-                <h2 id={g.anchor}>{g.heading}</h2>
-                <span className="a3hub__count">{g.items.length} articles</span>
-              </div>
-              <p className="a3hub__blurb">{g.blurb}</p>
-              <ul className="a3hub__list">
+        {groups.map((g, i) => (
+          <React.Fragment key={g.anchor}>
+            {i === midBand ? <V4CtaBand /> : null}
+            <V4Section
+              id={g.anchor}
+              tone={i % 2 === 0 ? "raised" : "ground"}
+              eyebrow={`${g.items.length} articles`}
+              heading="For"
+              highlight={g.who}
+              intro={g.blurb}
+            >
+              <ul className="a3hub-list">
                 {g.items.map((a) => (
                   <li key={a.slug}>
-                    <Link to={`/articles/${a.slug}`}>
-                      {a.title}
-                      <small>{a.description}</small>
+                    <Link className="a3hub-item" to={`/articles/${a.slug}`}>
+                      <span className="a3hub-title">{a.title}</span>
+                      <span className="a3hub-desc">{a.description}</span>
                     </Link>
                   </li>
                 ))}
               </ul>
-            </section>
-          ))}
+            </V4Section>
+          </React.Fragment>
+        ))}
 
-          <div className="a3hub__bottom">
-            <div className="a3hub__foot">
-              <p>
-                <strong>Every article here is written against one real question.</strong>{" "}
-                When you are done reading, the only test that settles it is your own
-                script, your own characters, and a scene long enough for problems to show.
-              </p>
-              <a className="a3hub__btn" href="https://app.act3ai.com/signup/">
-                Start a free project <span aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+        <V4CtaBand />
+      </main>
     </Layout>
   );
 }

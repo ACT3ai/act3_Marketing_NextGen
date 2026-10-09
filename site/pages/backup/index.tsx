@@ -1,5 +1,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // /backup — FROZEN SNAPSHOT of the homepage (site/pages/index.tsx)
+// Moved from site/pages/backup.tsx to site/pages/backup/index.tsx on 2026-10-09,
+// when the other old-template pages were frozen beside it under /backup/.
 //
 // Copied verbatim from site/pages/index.tsx on 2026-10-08, just before the /v/4 design
 // replaced it as the homepage.
@@ -14,8 +16,8 @@
 // ─────────────────────────────────────────────────────────────────────────────
 import React, { useEffect } from "react";
 import Head from "@docusaurus/Head";
-import SiteNavbar from "../components/SiteNavbar";
-import SiteFooter from "../components/SiteFooter";
+import SiteNavbar from "../../components/SiteNavbar";
+import SiteFooter from "../../components/SiteFooter";
 
 // ── Extracted CSS from the standalone marketing page ──────────────────────────
 const PAGE_CSS = `
@@ -1093,6 +1095,8 @@ export default function HomeBackup(): React.JSX.Element {
       <Head>
         <title>ACT 3 | Create Movies at the Speed of Storytelling (Backup)</title>
         <meta name="robots" content="noindex, nofollow" />
+        {/* The old template's browser tint (site-wide it is now the v4 ground). */}
+        <meta name="theme-color" content="#C0531F" />
         <meta
           name="description"
           content="ACT 3 AI is the AI filmmaking platform for creating movies, TV, and marketing videos. Write your story. ACT 3 AI handles everything else."

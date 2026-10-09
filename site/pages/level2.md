@@ -74,4 +74,4 @@ straight into your ACT 3 project.
 
 ## Ready to add a team?
 
-Start with a package this week and scale as you go. [Talk to ACT 3](#).
+Start with a package this week and scale as you go. [Talk to ACT 3](/contact).
