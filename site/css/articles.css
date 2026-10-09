@@ -80,13 +80,6 @@
 .article-page .a3art__crumbs a { color: var(--v4t-muted); text-decoration: none; white-space: nowrap; }
 .article-page .a3art__crumbs a:hover { color: var(--v4t-yellow-hi); text-decoration: underline; text-underline-offset: 3px; }
 .article-page .a3art__crumbs span[aria-hidden] { opacity: 0.5; }
-.article-page .a3art__crumbs span[aria-current] {
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: var(--v4t-quiet);
-}
 
 .article-page .a3art__meta {
   margin: 20px 0 0;
@@ -124,6 +117,8 @@
   line-height: 1.45;
 }
 .article-page .a3art__toc .table-of-contents li { margin: 0 0 10px; }
+/* Nested (h3) entries: a gap under the parent, a clear indent, a smaller size. */
+.article-page .a3art__toc .table-of-contents ul { margin-top: 10px; padding-left: 14px; font-size: 13.5px; }
 .article-page .a3art__toc .table-of-contents__link { color: var(--v4t-quiet); text-decoration: none; }
 .article-page .a3art__toc .table-of-contents__link:hover { color: var(--v4t-ink); }
 .article-page .a3art__toc .table-of-contents__link--active { color: var(--v4t-yellow); font-weight: 600; }
@@ -199,6 +194,9 @@ html.article-page .a3art .markdown > * { max-width: none; }
   margin-bottom: 18px;
   background: var(--v4t-yellow);
 }
+/* The corpus often puts a `---` right before a section; the bar is the divider
+   there, so the rule would only stack a second one above it. */
+.article-page .markdown hr:has(+ h2) { display: none; }
 
 .article-page .markdown h3 {
   margin: 1.8em 0 0.5em;
@@ -321,16 +319,18 @@ html.article-page .a3art .markdown > * { max-width: none; }
    exactly one "## FAQ" (id "faq"), and the rules are held to the paragraphs
    between it and the next h2: :only-child ignores text nodes, so the same
    selector also matches lead-ins like "**Short answer:** in 2026 ..." anywhere
-   else. This block feeds the FAQPage structured data, so it should read well. */
+   else. Ten articles close the FAQ with a `---` and a "**Get started:** ..."
+   lead-in, so the rules also stop at an hr. This block feeds the FAQPage
+   structured data, so it should read well. */
 
-.article-page .markdown #faq ~ p:has(> strong:only-child):not(#faq ~ h2 ~ p) {
+.article-page .markdown #faq ~ p:has(> strong:only-child):not(#faq ~ h2 ~ p):not(#faq ~ hr ~ p) {
   margin: 1.4em 0 0.35em;
   padding-top: 1.1em;
   border-top: 1px solid var(--v4t-line);
   font-size: 19px;
   line-height: 1.4;
 }
-.article-page .markdown #faq + p:has(> strong:only-child):not(#faq ~ h2 ~ p) { margin-top: 0; padding-top: 0; border-top: 0; }
+.article-page .markdown #faq + p:has(> strong:only-child) { margin-top: 0; padding-top: 0; border-top: 0; }
 
 /* ── ArticleCTA, inline (inside the body) ────────────────────────────────── */
 
@@ -359,8 +359,9 @@ html.article-page .a3art .markdown > * { max-width: none; }
 }
 .article-page .a3cta p.a3cta__body {
   margin: 0;
-  max-width: 56ch;
+  max-width: 62ch;
   font-size: 16.5px;
+  text-wrap: pretty;
   line-height: 1.55;
   color: var(--v4t-muted);
 }
@@ -423,7 +424,11 @@ html.article-page .a3art .markdown > * { max-width: none; }
   background: var(--v4t-raised);
   border-top: 1px solid var(--v4t-line);
 }
-.article-page .a3art__related .v4t-eyebrow { margin: 0 0 14px; }
+.article-page .a3art__related .a3art__wrap {
+  /* The article grid's own width (both tracks + gap), so the band's edges line
+     up with the article text on the left and the TOC on the right. */
+  max-width: calc(760px + 232px + clamp(40px, 5vw, 88px) + 2 * var(--v4t-gutter));
+}
 .article-page .a3art__related-title {
   margin: 0 0 clamp(26px, 3vw, 40px);
   font-family: var(--v4t-sans);
@@ -452,11 +457,42 @@ html.article-page .a3art .markdown > * { max-width: none; }
   html.article-page .a3art .markdown { font-size: 17px; }
   .article-page .markdown > header + p { padding-left: 16px; font-size: 18px; }
   .article-page .markdown h1 { margin-bottom: 24px; }
-  /* A wide table scrolls inside itself; the page never scrolls sideways. */
-  .article-page .markdown table { display: block; overflow-x: auto; font-size: 14.5px; }
+  /* A wide table scrolls inside itself; the page never scrolls sideways. A
+     visible thin scrollbar and (below) a fade on the cut edge say so, so a
+     clipped figure never reads as the real value. */
+  .article-page .markdown table {
+    display: block;
+    overflow-x: auto;
+    font-size: 14.5px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(238, 188, 60, 0.55) transparent;
+  }
   .article-page .markdown table :is(th, td) { padding: 10px 12px; }
   .article-page .markdown table thead th { font-size: 12.5px; letter-spacing: 0.08em; }
   .article-page .a3cta--inline { padding: 22px 20px 24px; }
+}
+
+/* The fade on a scrolling table's right edge, driven by its own scroll: full at
+   the start, gone once the last column is in view. A table that fits has an
+   inactive scroll timeline, so it gets no fade at all. */
+@property --a3-fade {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@keyframes a3-table-fade {
+  from { --a3-fade: 44px; }
+  to { --a3-fade: 0px; }
+}
+@supports (animation-timeline: scroll(self inline)) {
+  @media (max-width: 760px) {
+    .article-page .markdown table {
+      animation: a3-table-fade linear both;
+      animation-timeline: scroll(self inline);
+      -webkit-mask-image: linear-gradient(to left, transparent 0, #000 var(--a3-fade));
+      mask-image: linear-gradient(to left, transparent 0, #000 var(--a3-fade));
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

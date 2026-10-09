@@ -19,7 +19,7 @@ A dramatic 30-second opening sequence: a lone figure walks into an abandoned war
 
 ## Step 1: Create the Project
 
-1. Log in at [act3ai.com](https://act3ai.com)
+1. [Sign in](https://app.act3ai.com/signin/) to ACT 3 AI
 2. Click **New Project**
 3. Name it "Warehouse Scene Tutorial"
 4. Select **16:9 widescreen**
@@ -88,4 +88,4 @@ Export at 1080p for web delivery.
 ## Next Steps
 
 - Try the [Script to Shots Tutorial](script-to-shots) for a longer production
-- Learn about [Custom Actors](../features/actors-characters) for consistent characters
+- Learn about [Custom Actors](custom-actors) for consistent characters

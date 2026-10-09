@@ -18,8 +18,8 @@
  *    ArticleCTA band, then a raised "Related articles" card grid (V4Card).
  *    All of their styling is in site/css/articles.css.
  *
- * Doing the structured data here rather than in the markdown means all 133
- * articles are covered by one file, and an article stays pure prose.
+ * Doing the structured data here rather than in the markdown means every
+ * article is covered by one file, and an article stays pure prose.
  */
 import React from "react";
 import clsx from "clsx";
@@ -65,6 +65,7 @@ const ORGANIZATION_ID = "https://act3ai.com/#organization";
 /** What Google renders of a <title> before it truncates, in characters. */
 const SERP_TITLE_BUDGET = 60;
 const BRAND_SUFFIX = " | ACT 3 AI";
+const BRAND = "ACT 3 AI";
 
 /** Related reading. A published article with no inbound link is an orphan. */
 function relatedArticles(current: ArticleRecord, limit = 6): ArticleRecord[] {
@@ -174,6 +175,15 @@ function ArticlePage(props: Props): React.ReactNode {
   }
 
   const related = record ? relatedArticles(record) : [];
+  // Docusaurus appends " | ACT 3 AI" to every title. These headlines put the
+  // specific promise at the END ("...Building 2-Hour Movies in One Project"),
+  // so a suffix that pushes the tag past what a search result renders costs the
+  // promise, not the brand: keep the suffix only when the whole title still
+  // fits. A title that already names the brand ("ACT 3 AI vs InVideo: ...")
+  // never gets it, or the brand renders twice.
+  const ownTitle =
+    title.includes(BRAND) ||
+    title.length + BRAND_SUFFIX.length > SERP_TITLE_BUDGET;
   const hasToc = MDXPageContent.toc.length > 0;
 
   return (
@@ -185,14 +195,8 @@ function ArticlePage(props: Props): React.ReactNode {
         image={imageUrl}
       />
       <Head>
-        {/* Docusaurus appends " | ACT 3 AI" to every title. These headlines put
-            the specific promise at the END ("...Building 2-Hour Movies in One
-            Project"), so a suffix that pushes the tag past what a search result
-            renders costs the promise, not the brand. Keep the brand only when
-            the whole title still fits; otherwise the page keeps its own. */}
-        {title.length + BRAND_SUFFIX.length > SERP_TITLE_BUDGET && (
-          <title>{title}</title>
-        )}
+        {ownTitle && <title>{title}</title>}
+        {ownTitle && <meta property="og:title" content={title} />}
         <meta property="og:type" content="article" />
         {updated && (
           <meta property="article:modified_time" content={updated} />
@@ -206,8 +210,8 @@ function ArticlePage(props: Props): React.ReactNode {
               <Link to="/">Home</Link>
               <span aria-hidden="true">/</span>
               <Link to="/articles">Articles</Link>
-              <span aria-hidden="true">/</span>
-              <span aria-current="page">{title}</span>
+              {/* The trail stops at "Articles": the H1 right below names the
+                  page. Position 3 stays in the BreadcrumbList JSON-LD. */}
             </nav>
             <ContentVisibility metadata={metadata} />
             {record && (
@@ -251,7 +255,6 @@ function ArticlePage(props: Props): React.ReactNode {
         {related.length > 0 && (
           <section className="a3art__related" aria-labelledby="a3art-related">
             <div className="a3art__wrap">
-              <p className="v4t-eyebrow">Keep reading</p>
               <h2 className="a3art__related-title" id="a3art-related">
                 Related articles
               </h2>
@@ -260,7 +263,6 @@ function ArticlePage(props: Props): React.ReactNode {
                   <V4Card
                     key={a.slug}
                     href={`/articles/${a.slug}`}
-                    eyebrow={a.persona}
                     title={a.title}
                   />
                 ))}

@@ -11,7 +11,7 @@ This guide walks you through creating your first AI-generated video with ACT 3 A
 
 ## Step 1: Create an Account
 
-Visit [act3ai.com](https://act3ai.com) and sign up for a free account. No credit card required.
+[Sign up](https://app.act3ai.com/signup/) for a free account. No credit card required.
 
 ## Step 2: Create a New Project
 

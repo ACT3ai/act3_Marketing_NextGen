@@ -18,14 +18,15 @@ import { LINKS, SIGNUP } from "../data/siteNav";
  * console warning and the row keeps its homepage copy). Rows 1-15 carry no
  * footer, so V4RowsPage renders V4Footer after the last row.
  *
- *   1  hero        retitled for ads, social and marketing
- *   3  who it's for  the Filmmaking panel dropped (3-up wall + 3 rails to the hub)
+ *   1  hero        retitled for ads, social and marketing (bullets as on the homepage)
+ *   3  who it's for  eyebrow and the Filmmaking panel dropped (3-up wall + 3 rails
+ *                  to the hub on desktop; 2 + 1 full-width panel on tablets)
  *   2  chat        "change the background, same actor" (as on the homepage)
  *   5  consistency character, set and outfit
- *   10 storyboards only the Ad / Social video / Marketing video tabs
+ *   10 storyboards "every ad / social video / marketing video"; only those tabs
  *   13 save money  as on the homepage
  *   15 voice       as on the homepage
- *   14 teams       "one movie" → "one project"
+ *   14 teams       retold for a campaign ("one project", scene 1, the last scene)
  *   +  closing band (page-local row below): Get Started + Watch ACT 3 on YouTube
  */
 
@@ -47,8 +48,7 @@ const CLOSING: V4Row = {
   html:
     `<section class="v4t-section v4t-section--center vid-close" aria-labelledby="vid-close-title"><div class="v4t-wrap">` +
     `<div class="v4t-section-head">` +
-    `<h2 class="v4t-h2" id="vid-close-title">Your next ad, <span class="v4t-hl">one chat away.</span></h2>` +
-    `<p class="v4t-intro">See what ACT 3 makes, then make your own.</p>` +
+    `<h2 class="v4t-h2" id="vid-close-title">Your next video, <span class="v4t-hl">one chat away.</span></h2>` +
     `</div>` +
     `<div class="v4t-ctas">` +
     `<a class="v4t-cta" href="${SIGNUP}">Get Started <span aria-hidden="true">›</span></a>` +
@@ -58,11 +58,20 @@ const CLOSING: V4Row = {
   css: `
 /* The closing band sits on the page's navy ground, like the "Get Started" bands. */
 .v4 .vid-close { background: ${V4_PAGE_GROUND}; border-top: 1px solid rgba(255, 255, 255, 0.08); }
-/* Row 3 without its Filmmaking panel: three panels, so three columns down to
-   the row's own one-column phone layout (it would leave a hole at 4 or 2 columns).
-   Suffix selector, so a regeneration that renumbers the prefix still matches. */
-@media (min-width: 561px) {
+/* Row 3 without its Filmmaking panel: three panels. Suffix selectors, so a
+   regeneration that renumbers the prefix still matches.
+   Desktop (where the row has its rails): three columns, and every caption box
+   two lines tall so the three yellow labels share one baseline.
+   Tablet (the row's own two columns): the third panel spans the row, as tall
+   as the other two, instead of leaving a hole; the two panels above it get the
+   same two-line caption box. Phones keep one column. */
+@media (min-width: 1001px) {
   .v4 [data-row="3"] ol[class$="-wall"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .v4 [data-row="3"] p[class$="-line"] { min-height: calc(2 * 1.38em + 21px); }
+}
+@media (min-width: 561px) and (max-width: 1000px) {
+  .v4 [data-row="3"] ol[class$="-wall"] > li:last-child { grid-column: 1 / -1; aspect-ratio: 2 / 1.08; }
+  .v4 [data-row="3"] ol[class$="-wall"] > li:not(:last-child) p[class$="-line"] { min-height: calc(2 * 1.38em + 21px); }
 }
 `,
   scripts: [],
@@ -85,10 +94,10 @@ const ROWS: V4Row[] = [
     [`aria-label="ACT 3: AI filmmaking at the speed of storytelling"`, `aria-label="ACT 3: AI video for ads, social and marketing"`],
     [`<span class="${HERO}-h1a">AI Filmmaking</span>`, `<span class="${HERO}-h1a">AI Video</span>`],
     [`<span class="${HERO}-h1b">at the speed of storytelling.</span>`, `<span class="${HERO}-h1b">for ads, social and marketing.</span>`],
-    [`<li>Your input, and AI Filmmaker does all of the work</li>`, `<li>Same characters, every shot</li>`],
   ]),
   row(3, [
-    [`For filmmaking, advertising, social media, marketing`, `For advertising, social media, marketing`],
+    // The panels name the audiences, and the hero just did: no eyebrow.
+    [`<p class="r3v34-eyebrow">For filmmaking, advertising, social media, marketing</p>`, ``],
     [
       `Describe a character, a set or a look once and it carries through every shot. The time you get back is yours, whichever of these you make.`,
       `Describe a character, a set or a look once. It carries through every shot.`,
@@ -106,6 +115,7 @@ const ROWS: V4Row[] = [
   row(2),
   row(5, [[`into every scene of a two-hour movie:`, `into every scene:`]]),
   row(10, [
+    [`Storyboards for your entire`, `Storyboards for every`],
     [`<span class="r10v48-word">movie or video</span>`, `<span class="r10v48-word">ad</span>`],
     [`Whatever you are making, every shot gets its panel.`, `Every shot gets its panel.`],
     [`<li class="r10v48-tab" data-r10v48-word="movie">Movie</li>`, ``],
@@ -117,13 +127,19 @@ const ROWS: V4Row[] = [
   row(14, [
     [`One movie that keeps moving.`, `One project that keeps moving.`],
     [`Movies and series get done far faster`, `Campaigns get done far faster`],
+    [`in the same movie"`, `in the same project"`],
+    [`I'm working on Act 1 and a reusable set.`, `I'm working on scene 1 and a reusable set.`],
+    [`I'm working on Act 3.`, `I'm working on the last scene.`],
+    [`for different days in the movie.`, `for the campaign.`],
+    [`Her screen shows the film's last scene:`, `Her screen shows the last scene:`],
+    [`Her screen shows the film's astronaut`, `Her screen shows the astronaut`],
   ]),
   CLOSING,
 ].filter((r): r is V4Row => r !== null);
 
 const TITLE = "AI Video for Ads, Social & Marketing | ACT 3 AI";
 const DESCRIPTION =
-  "Make ads, social media and marketing videos with ACT 3 AI. Chat with your AI filmmaker, keep characters, sets and outfits consistent, and approve each shot before you pay for video.";
+  "Ads, social and marketing videos with ACT 3 AI: chat with your AI filmmaker, keep characters consistent, approve each shot before you pay for video.";
 const URL = "https://act3ai.com/videos";
 
 export default function Videos(): React.JSX.Element {

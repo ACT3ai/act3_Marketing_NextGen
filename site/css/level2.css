@@ -67,6 +67,7 @@ html.level2-page {
   --l2-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
   --l2-sans: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
   --l2-gutter: clamp(16px, 3.4vw, 52px);
+  --l2-hero-tail: clamp(44px, 6vw, 88px);  /* lead -> hero's bottom line   */
   scroll-behavior: smooth;
 }
 
@@ -86,18 +87,18 @@ html.level2-page main.container {
   padding: 0;
 }
 /* The hero ground: the template's 48px rule lines + yellow glow behind the
-   intro block, fading out into the plain ground below it. */
+   intro block. It is drawn deliberately too tall; the lead paragraph's ::after
+   (HERO, below) cuts it off where the hero copy ends, with V4Hero's 1px bottom
+   line — so the ground always ends with the copy, at every width. */
 html.level2-page main.container::before {
   content: "";
   position: absolute;
   z-index: -1;
   inset: calc(-1 * var(--l2-main-gap)) 0 auto 0;
-  height: calc(clamp(640px, 60vw, 760px) + var(--l2-main-gap));
+  height: 1600px;
   background-image:
-    radial-gradient(ellipse 70% 60% at 50% 0%, rgba(238, 188, 60, 0.08), transparent 70%),
+    radial-gradient(70% 480px at 50% 0%, rgba(238, 188, 60, 0.08), transparent 70%),
     repeating-linear-gradient(180deg, transparent 0, transparent 47px, var(--l2-rule) 47px, var(--l2-rule) 48px);
-  -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent);
-  mask-image: linear-gradient(180deg, #000 72%, transparent);
   pointer-events: none;
 }
 html.level2-page main.container > .row { margin: 0; justify-content: center; }
@@ -187,6 +188,24 @@ html.level2-page article.markdown > header + p + p {
   color: var(--l2-muted);
   text-wrap: pretty;
 }
+/* The hero's end: an opaque plain-ground block that starts --l2-hero-tail below
+   the lead and covers the rest of the ruled ground, topped by V4Hero's 1px line.
+   display:block makes its static position the line BELOW the lead's text; with
+   only left/right set it spans <main> (the positioned, full-width ancestor).
+   z-index -1 + later tree order: above the ground, below all the content. */
+html.level2-page article.markdown > header + p + p::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  height: 1600px;
+  margin-top: var(--l2-hero-tail);
+  background: var(--l2-ground);
+  border-top: 1px solid var(--l2-line);
+  pointer-events: none;
+}
 
 /* ------------------------------------------------------------------ *
  * SECTION HEADINGS (the template's .v4t-h2) + section lead
@@ -219,6 +238,8 @@ html.level2-page article.markdown > h2 + p {
   line-height: 1.55;
   color: var(--l2-body);
 }
+/* The first section opens the same distance below the hero's line. */
+html.level2-page article.markdown > header + p + p + h2 { margin-top: calc(2 * var(--l2-hero-tail)); }
 /* Whatever block follows a heading or its lead sits a fixed gap below it. */
 html.level2-page article.markdown > :is(h2, h2 + p) + :is(table, ol, ul) { margin-top: clamp(28px, 3.4vw, 44px); }
 
@@ -259,6 +280,11 @@ html.level2-page article.markdown > table tbody td {
 }
 html.level2-page article.markdown > table tbody tr:last-child td { border-bottom: 0; }
 html.level2-page article.markdown > table tbody td:first-child { white-space: nowrap; }
+/* The short TEAM column ("3 team members") stays on one line; the wide
+   description column takes the wrapping. (Phones stack the rows instead.) */
+@media (min-width: 601px) {
+  html.level2-page article.markdown > table tbody td:nth-child(2) { white-space: nowrap; }
+}
 html.level2-page article.markdown > table tbody td:first-child strong {
   font-family: var(--l2-display);
   font-weight: 700;
@@ -296,8 +322,16 @@ html.level2-page article.markdown > ol {
   margin-bottom: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 20px;
+}
+/* One column, or every step side by side in one row — never 2 + 1. */
+@media (min-width: 720px) {
+  html.level2-page article.markdown > ol {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+  }
 }
 html.level2-page article.markdown > ol > li {
   counter-increment: l2step;
@@ -322,14 +356,11 @@ html.level2-page article.markdown > ol > li::before {
   line-height: 0.85;
   color: var(--l2-yellow);
 }
-html.level2-page article.markdown > ol > li strong {
-  display: block;
-  margin-bottom: 6px;
-  font-family: var(--l2-sans);
+/* Card titles run in ("Pick a package — Package A or B"): the markdown writes
+   every item as `**Title** — text`, so a title on its own line would leave the
+   body starting with a stray dash. */
+html.level2-page article.markdown > :is(ol, ul) > li strong {
   font-weight: 700;
-  font-size: 20px;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
   color: var(--l2-ink);
 }
 
@@ -353,19 +384,17 @@ html.level2-page article.markdown > ul > li {
   font-size: 16px;
   line-height: 1.55;
   color: var(--l2-muted);
-  transition: border-color 0.15s ease;
 }
 html.level2-page article.markdown > ul > li::marker { content: none; }
-html.level2-page article.markdown > ul > li:hover { border-color: rgba(238, 188, 60, 0.45); }
-html.level2-page article.markdown > ul > li strong {
+/* Not links, so no hover state (like a plain V4Card). A short yellow bar marks
+   each card, echoing the section headings. */
+html.level2-page article.markdown > ul > li::before {
+  content: "";
   display: block;
-  margin-bottom: 8px;
-  font-family: var(--l2-sans);
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
-  color: var(--l2-ink);
+  width: 28px;
+  height: 3px;
+  margin-bottom: 16px;
+  background: var(--l2-yellow);
 }
 
 /* ------------------------------------------------------------------ *
@@ -471,6 +500,5 @@ html.level2-page article.markdown > p:last-child a:focus-visible {
 }
 @media (prefers-reduced-motion: reduce) {
   html.level2-page { scroll-behavior: auto; }
-  html.level2-page article.markdown > ul > li,
   html.level2-page article.markdown > p:last-child a { transition: none; }
 }

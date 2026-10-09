@@ -575,6 +575,8 @@ html.v4t-skin,
 .v4t-skin .markdown strong { color: var(--v4t-ink); }
 .v4t-skin .markdown a { text-decoration: underline; text-decoration-color: rgba(238, 188, 60, 0.45); text-underline-offset: 3px; }
 .v4t-skin .markdown a:hover { text-decoration-color: currentColor; }
+/* The '#' anchor beside each heading: no prose underline. */
+.v4t-skin .markdown .hash-link { text-decoration: none; }
 .v4t-skin .markdown li::marker { color: var(--v4t-yellow); }
 .v4t-skin .markdown blockquote {
   border-left: 3px solid var(--v4t-yellow);
@@ -637,6 +639,12 @@ html.v4t-skin,
 .v4t-skin .theme-doc-sidebar-menu { font-size: 15px; }
 .v4t-skin .menu__link { border-radius: 6px; }
 .v4t-skin .menu__link--active:not(.menu__link--sublist) { box-shadow: inset 3px 0 0 var(--v4t-yellow); }
+/* Desktop sidebar: Infima zeroes the menu's right padding and leaves room for a
+   scrollbar, which macOS overlay scrollbars never take — so the active item ran
+   into the sidebar's hairline. Even padding on both sides instead. */
+@media (min-width: 997px) {
+  .v4t-skin .theme-doc-sidebar-container nav.menu { padding: 12px 14px 12px 20px; }
+}
 .v4t-skin .breadcrumbs__link { color: var(--v4t-muted); }
 .v4t-skin .breadcrumbs__item--active .breadcrumbs__link { color: var(--v4t-yellow); }
 .v4t-skin .table-of-contents { font-size: 14px; }
@@ -701,7 +709,9 @@ html.v4t-skin,
 /* Date · reading time: one quiet line (the reading time is a bare text node). */
 .v4t-skin.plugin-blog article header [class*="container_"] { color: var(--v4t-quiet); font-size: 14px; }
 .v4t-skin.plugin-blog article [class*="authorTitle_"] { color: var(--v4t-quiet); }
-.v4t-skin.plugin-blog article footer .col--9 > b { color: var(--v4t-quiet); font-weight: 600; }
+.v4t-skin.plugin-blog article footer :is(.col, .col--9) > b { color: var(--v4t-quiet); font-weight: 600; }
+/* Per-post tag chips: the same pill shape as the tags index. */
+.v4t-skin.plugin-blog article footer [class*="tag_"] { border-radius: 999px; }
 /* Blog sidebar ("Recent posts", year groups). */
 .v4t-skin [class*="sidebarItemTitle_"] {
   font-family: var(--v4t-display);
@@ -759,6 +769,17 @@ html.v4t-skin,
 .v4t-skin.plugin-blog .hero--primary + main .col > h3 ~ ul li { padding: 0.35rem 0; border-bottom: 1px solid var(--v4t-line); }
 .v4t-skin.plugin-blog .hero--primary + main .col > h3 ~ ul a { color: var(--v4t-ink); }
 .v4t-skin.plugin-blog .hero--primary + main .col > h3 ~ ul a:hover { color: var(--v4t-yellow); text-decoration: none; }
+/* A V4CtaBand closing a markdown page: full-bleed like the homepage band, and
+   the pill keeps its own look (no prose underline). */
+/* As the last thing on the page, a solid shadow paints the band on down over the
+   page <main>'s bottom margin (margin-vert--lg, a layered !important that no
+   unlayered rule can cancel), so the band meets the footer. */
+.v4t-skin .markdown .v4t-cta-band {
+  width: 100vw;
+  margin: clamp(40px, 6vw, 72px) calc(50% - 50vw) 0;
+}
+.v4t-skin .markdown > .v4t-cta-band:last-child { box-shadow: 0 calc(var(--ifm-spacing-vertical) * 2) 0 0 var(--v4t-navy); }
+.v4t-skin .markdown .v4t-cta-band a { text-decoration: none; }
 /* 404: same reading size as the docs. */
 .v4t-skin.plugin-native main .hero__title + p,
 .v4t-skin.plugin-native main .hero__title ~ p { font-size: 17px; color: var(--v4t-body); }
@@ -809,6 +830,20 @@ html.v4t-skin,
 .v4t-drawer .navbar-sidebar { border-right: 1px solid var(--v4t-edge); }
 .v4t-drawer .navbar-sidebar__brand .navbar__brand { color: var(--v4t-ink); font-family: var(--v4t-display); font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; }
 .v4t-drawer .navbar-sidebar__brand .navbar__logo { display: none; }
+/* The top bar's yellow "3" mark in front of the drawer brand (.v4t-logo-mark). */
+.v4t-drawer .navbar-sidebar__brand .navbar__brand { display: inline-flex; align-items: center; gap: 10px; }
+.v4t-drawer .navbar-sidebar__brand .navbar__brand::before {
+  content: "3";
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 30px;
+  height: 30px;
+  background: var(--v4t-yellow);
+  color: var(--v4t-yellow-ink);
+  font-size: 20px;
+  font-weight: 800;
+}
 .v4t-drawer .navbar-sidebar__back { color: var(--v4t-ink); }
 .v4t-drawer .menu__link { color: var(--v4t-body); }
 .v4t-drawer .menu__link--active { color: var(--v4t-yellow); }

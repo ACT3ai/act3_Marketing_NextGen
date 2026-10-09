@@ -9,7 +9,7 @@ import { LINKS, SIGNUP } from "../data/siteNav";
  * project" with nothing clickable behind it, and the few links that existed
  * pointed at /signup, which is a 404 on this host. This component is the one
  * place that knows where a reader actually goes next, so fixing a destination
- * is a one-file change rather than 133. The URLs come from site/data/siteNav.ts.
+ * is a one-file change rather than one per article. The URLs come from site/data/siteNav.ts.
  *
  * Two variants:
  *   "inline"  - dropped once inside the body by scripts/sync-articles.js, after
@@ -23,7 +23,7 @@ import { LINKS, SIGNUP } from "../data/siteNav";
  * an article writes <ArticleCTA /> with no import.
  *
  * All styling is in site/css/articles.css (.a3cta*), plus the template's own
- * .v4t-cta / .v4t-pill / .v4t-ghost / .v4t-eyebrow from v4-template.css. No
+ * .v4t-cta / .v4t-pill from v4-template.css. No
  * <style> element here: CSS in the body is what broke hydration (#418).
  */
 
@@ -43,13 +43,12 @@ export default function ArticleCTA({
 }: ArticleCTAProps): React.ReactNode {
   if (variant === "footer") {
     return (
-      <aside className="a3cta a3cta--footer" aria-label="Start a free project">
+      <aside className="a3cta a3cta--footer" aria-label="Get started">
         <div className="a3cta__in">
-          <p className="v4t-eyebrow">Try it on your own script</p>
           <p className="a3cta__title">{title ?? "Turn your script into a film"}</p>
           <p className="a3cta__body">
             {body ??
-              "ACT 3 AI builds the scenes, shots, characters and a full-length cut on one timeline."}
+              "ACT 3 AI builds the scenes, shots, characters, cinematography and a full-length cut on one timeline."}
           </p>
           <div className="a3cta__row">
             <V4Link className="v4t-pill" href={SIGNUP_URL}>
@@ -65,12 +64,11 @@ export default function ArticleCTA({
   }
 
   return (
-    <aside className="a3cta a3cta--inline" aria-label="Start a free project">
-      <p className="v4t-eyebrow">See it on your own work</p>
+    <aside className="a3cta a3cta--inline" aria-label="Try ACT 3">
       <p className="a3cta__title">{title ?? "Stop reading. Build one scene."}</p>
       <p className="a3cta__body">
         {body ??
-          "Import a page of your script. ACT 3 AI builds the shots, characters and first frames."}
+          "Import one page of your script. Get its shot list and first frames."}
       </p>
       <div className="a3cta__row">
         <V4Link className="v4t-cta v4t-cta-sm" href={SIGNUP_URL}>
