@@ -1,194 +1,465 @@
 /**
- * Design overlay for the /articles pages.
+ * Design overlay for the /articles pages, on the v4 template's dark skin.
  *
  * Scoped entirely under `.article-page`, which Docusaurus puts on the <html>
  * element from the `wrapperClassName: article-page` front matter that
  * scripts/sync-articles.js stamps on every published article. Nothing here can
  * reach any other page on the site.
  *
- * Palette and type come from the same design as the rest of the marketing site
- * (site/components/SiteNavbar.tsx, site/css/level2.css): cream #faf8f3,
- * ACT 3 orange #c4612b, Fraunces for display, Inter for body, JetBrains Mono
- * for labels. The fonts are already loaded once by SiteNavbar, which every page
- * renders, so this file deliberately does not @import them again.
+ * The page is <html class="article-page ... v4t v4t-skin">: the skin
+ * (site/css/v4-template.css, registered BEFORE this file) already paints the
+ * ground, Infima's variables, code blocks and admonitions dark. This file only
+ * adds the article's own shape. Colours and fonts are the template's --v4t-*
+ * tokens (declared on html.v4t): ground #0f0e0c, yellow #eebc3c, navy bands,
+ * Barlow Condensed for the H1 / labels, Figtree for headings and body.
+ *
+ * Markup (src/theme/MDXPage/index.tsx, ArticlePage; site/components/ArticleCTA.tsx):
+ *   main.a3art
+ *     .a3art__wrap.a3art__grid
+ *       .a3art__body   breadcrumb, freshness line, phone TOC, article.markdown
+ *       aside.a3art__toc   sticky "On this page" (desktop)
+ *     aside.a3cta.a3cta--footer   navy band + yellow pill (V4CtaBand's look)
+ *     section.a3art__related      raised band of V4Cards
+ *   aside.a3cta.a3cta--inline sits inside article.markdown (one per article).
+ *
+ * Prose links are written `a:not([class])`: markdown links never carry a class,
+ * and the CTA's buttons always do, so the two can never paint each other.
  */
 
-.article-page {
-  --a3-bg: #faf8f3;
-  --a3-bg-2: #f3efe5;
-  --a3-ink: #1a1714;
-  --a3-ink-2: #33302c;
-  --a3-ink-3: #837c72;
-  --a3-line: #e2dccb;
-  --a3-accent: #c4612b;
-  --a3-font-display: "Fraunces", "Times New Roman", serif;
-  --a3-font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --a3-font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+/* ── Page frame ──────────────────────────────────────────────────────────── */
 
-  /* The site-wide Infima primary is violet; on an article every accent is the
-     ACT 3 orange, including link colour and the active TOC marker. */
-  --ifm-color-primary: #c4612b;
-  --ifm-color-primary-dark: #b05727;
-  --ifm-color-primary-darker: #a85024;
-  --ifm-color-primary-darkest: #8a421e;
-  --ifm-color-primary-light: #cf7040;
-  --ifm-color-primary-lighter: #d47b4e;
-  --ifm-color-primary-lightest: #de9670;
-  --ifm-background-color: #faf8f3;
-  --ifm-font-family-base: var(--a3-font-body);
-  --ifm-heading-font-family: var(--a3-font-display);
-  --ifm-heading-font-weight: 500;
-  --ifm-line-height-base: 1.7;
-  /* The real height of the custom fixed navbar. Infima computes an anchor's
-     scroll-margin-top from this, so a TOC or FAQ link lands below the bar
-     instead of underneath it. */
-  --ifm-navbar-height: 66px;
+/* The hero ground: the template's 48px rule lines and a faint yellow glow
+   behind the title, fading out into the plain ground as the article starts. */
+.article-page .a3art {
+  position: relative;
+  isolation: isolate;
+  background: var(--v4t-ground);
+}
+.article-page .a3art::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 620px;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(ellipse 60% 70% at 30% 0%, rgba(238, 188, 60, 0.07), transparent 70%),
+    repeating-linear-gradient(180deg, transparent 0, transparent 47px, var(--v4t-rule) 47px, var(--v4t-rule) 48px);
+  -webkit-mask-image: linear-gradient(#000 35%, transparent);
+  mask-image: linear-gradient(#000 35%, transparent);
 }
 
-.article-page body {
-  background: var(--a3-bg);
-  color: var(--a3-ink);
+.article-page .a3art__wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 var(--v4t-gutter);
 }
+
+.article-page .a3art__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 760px) 232px;
+  justify-content: center;
+  gap: clamp(40px, 5vw, 88px);
+  align-items: start;
+  padding-bottom: clamp(56px, 7vw, 96px);
+}
+
+/* ── Breadcrumb + freshness line ─────────────────────────────────────────── */
+
+.article-page .a3art__crumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding-top: clamp(28px, 4vw, 52px);
+  font-family: var(--v4t-sans);
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--v4t-quiet);
+}
+.article-page .a3art__crumbs a { color: var(--v4t-muted); text-decoration: none; white-space: nowrap; }
+.article-page .a3art__crumbs a:hover { color: var(--v4t-yellow-hi); text-decoration: underline; text-underline-offset: 3px; }
+.article-page .a3art__crumbs span[aria-hidden] { opacity: 0.5; }
+.article-page .a3art__crumbs span[aria-current] {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--v4t-quiet);
+}
+
+.article-page .a3art__meta {
+  margin: 20px 0 0;
+  font-family: var(--v4t-display);
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--v4t-yellow);
+}
+
+/* ── Table of contents ───────────────────────────────────────────────────── */
+
+.article-page .a3art__toc {
+  position: sticky;
+  top: calc(var(--ifm-navbar-height) + 36px);
+  max-height: calc(100vh - var(--ifm-navbar-height) - 72px);
+  overflow-y: auto;
+  margin-top: clamp(28px, 4vw, 52px);
+}
+.article-page .a3art__toc-label {
+  margin: 0 0 12px;
+  font-family: var(--v4t-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--v4t-quiet);
+}
+.article-page .a3art__toc .table-of-contents {
+  padding: 2px 0 2px 14px;
+  border-left: 1px solid var(--v4t-line);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.article-page .a3art__toc .table-of-contents li { margin: 0 0 10px; }
+.article-page .a3art__toc .table-of-contents__link { color: var(--v4t-quiet); text-decoration: none; }
+.article-page .a3art__toc .table-of-contents__link:hover { color: var(--v4t-ink); }
+.article-page .a3art__toc .table-of-contents__link--active { color: var(--v4t-yellow); font-weight: 600; }
+
+/* Phones and tablets: the stock collapsible "On this page" instead. */
+.article-page .a3art__toc-mobile {
+  display: none;
+  margin: 22px 0 0;
+  background: var(--v4t-raised);
+  border: 1px solid var(--v4t-line);
+  border-radius: 10px;
+}
+.article-page .a3art__toc-mobile button {
+  color: var(--v4t-ink);
+  font-family: var(--v4t-sans);
+  font-weight: 600;
+  font-size: 15px;
+}
+.article-page .a3art__toc-mobile .table-of-contents { font-size: 15px; }
+.article-page .a3art__toc-mobile .table-of-contents__link { color: var(--v4t-muted); }
 
 /* ── Body copy ───────────────────────────────────────────────────────────── */
 
-.article-page .markdown {
-  font-family: var(--a3-font-body);
-  font-size: 17px;
-  line-height: 1.72;
-  color: var(--a3-ink-2);
-  max-width: 74ch;
+/* (0,3,1): beats the skin's ".v4t-skin.mdx-page main .markdown" centring. */
+html.article-page .a3art .markdown {
+  max-width: 72ch;
+  margin: 0;
+  padding-top: 0;
+  font-family: var(--v4t-sans);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--v4t-body);
 }
+html.article-page .a3art .markdown > * { max-width: none; }
 
 /* Docusaurus wraps the first heading in a <header>, so this is not `> h1`. */
 .article-page .markdown h1 {
-  font-family: var(--a3-font-display);
-  font-size: clamp(30px, 4.4vw, 46px);
-  line-height: 1.12;
-  font-weight: 500;
-  letter-spacing: -0.015em;
-  color: var(--a3-ink);
-  margin: 6px 0 26px;
-  max-width: 22ch;
+  margin: 14px 0 30px;
+  font-family: var(--v4t-display);
+  font-weight: 800;
+  font-size: clamp(40px, 5.4vw, 70px);
+  line-height: 0.95;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  color: #fff;
+  text-wrap: balance;
+}
+
+/* The opening answer (every article leads with it): larger, brighter, a yellow rule. */
+.article-page .markdown > header + p {
+  padding-left: 20px;
+  border-left: 3px solid var(--v4t-yellow);
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--v4t-ink);
 }
 
 .article-page .markdown h2 {
-  font-family: var(--a3-font-display);
-  font-size: clamp(23px, 2.7vw, 30px);
-  font-weight: 500;
-  line-height: 1.22;
-  color: var(--a3-ink);
-  margin-top: 2.6em;
-  margin-bottom: 0.7em;
-  padding-top: 0.55em;
-  border-top: 1px solid var(--a3-line);
+  margin: 2.4em 0 0.7em;
+  font-family: var(--v4t-sans);
+  font-weight: 800;
+  font-size: clamp(26px, 2.6vw, 32px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--v4t-ink);
+}
+/* A short yellow bar over every section heading. */
+.article-page .markdown h2::before {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 3px;
+  margin-bottom: 18px;
+  background: var(--v4t-yellow);
 }
 
 .article-page .markdown h3 {
-  font-family: var(--a3-font-body);
-  font-size: 18.5px;
-  font-weight: 600;
-  letter-spacing: -0.005em;
-  color: var(--a3-ink);
-  margin-top: 2em;
-  margin-bottom: 0.5em;
+  margin: 1.8em 0 0.5em;
+  font-family: var(--v4t-sans);
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--v4t-ink);
 }
-
 .article-page .markdown h4 {
-  font-family: var(--a3-font-body);
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--a3-ink);
+  margin: 1.6em 0 0.4em;
+  font-family: var(--v4t-sans);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--v4t-ink);
+}
+.article-page .markdown .hash-link { color: var(--v4t-quiet); text-decoration: none; }
+.article-page .markdown .hash-link:hover { color: var(--v4t-yellow); }
+
+.article-page .markdown p { margin: 0 0 1.2em; }
+.article-page .markdown strong { color: var(--v4t-ink); font-weight: 700; }
+
+.article-page .markdown a:not([class]) {
+  color: var(--v4t-yellow);
+  text-decoration: underline;
+  text-decoration-color: rgba(238, 188, 60, 0.45);
+  text-underline-offset: 3px;
+}
+.article-page .markdown a:not([class]):hover {
+  color: var(--v4t-yellow-hi);
+  text-decoration-color: currentColor;
 }
 
-.article-page .markdown p { margin-bottom: 1.15em; }
-.article-page .markdown strong { color: var(--a3-ink); font-weight: 600; }
-.article-page .markdown a { color: var(--a3-accent); text-decoration: underline; text-underline-offset: 2px; }
-.article-page .markdown a:hover { color: #a85024; }
-
-.article-page .markdown ul,
-.article-page .markdown ol { padding-left: 1.3em; margin-bottom: 1.3em; }
-.article-page .markdown li { margin-bottom: 0.45em; }
-.article-page .markdown li::marker { color: var(--a3-accent); }
+.article-page .markdown :is(ul, ol) { margin: 0 0 1.3em; padding-left: 1.3em; }
+.article-page .markdown li { margin-bottom: 0.5em; }
+.article-page .markdown li::marker { color: var(--v4t-yellow); }
+.article-page .markdown ol > li::marker { font-weight: 700; }
 
 .article-page .markdown blockquote {
-  border-left: 3px solid var(--a3-accent);
-  background: var(--a3-bg-2);
-  color: var(--a3-ink-2);
-  padding: 14px 20px;
-  border-radius: 0 8px 8px 0;
+  margin: 1.6em 0;
+  padding: 0.9em 1.2em;
+  border-left: 3px solid var(--v4t-yellow);
+  border-radius: 0 10px 10px 0;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--v4t-muted);
 }
+.article-page .markdown blockquote > :last-child { margin-bottom: 0; }
 
 .article-page .markdown hr {
-  border: 0;
-  border-top: 1px solid var(--a3-line);
+  height: 1px;
   margin: 2.6em 0;
+  border: 0;
+  background: var(--v4t-rule-strong);
 }
 
-/* ── Comparison tables ───────────────────────────────────────────────────── */
-/* 132 of the 133 articles carry one, and it is usually the thing a reader
-   scrolled down to find. Wide tables scroll inside themselves so the page body
-   never scrolls sideways on a phone. */
+.article-page .markdown :not(pre) > code {
+  padding: 0.1em 0.35em;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.07);
+  font-family: var(--v4t-mono);
+  font-size: 0.86em;
+  color: var(--v4t-ink);
+}
+/* Code blocks: the skin paints them (dark prism theme); only spacing here. */
+.article-page .markdown .theme-code-block { margin: 0 0 1.6em; font-size: 15px; }
 
-.article-page .markdown > table,
-.article-page .markdown .table-wrapper > table { margin-bottom: 1.6em; }
+.article-page .markdown img { max-width: 100%; height: auto; border-radius: 10px; }
+
+/* ── Tables ──────────────────────────────────────────────────────────────── */
+/* Nearly every article carries one, and it is usually the thing a reader
+   scrolled down to find. Separate borders so the outer box can be rounded. */
 
 .article-page .markdown table {
-  display: block;
+  display: table;
   width: 100%;
-  overflow-x: auto;
-  border-collapse: collapse;
-  font-size: 15px;
-  border: 1px solid var(--a3-line);
-  border-radius: 10px;
+  margin: 0 0 1.8em;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--v4t-line);
+  border-radius: 12px;
+  font-size: 15.5px;
+  line-height: 1.5;
 }
-
-.article-page .markdown table thead tr { background: var(--a3-bg-2); }
-
-.article-page .markdown table th {
-  font-family: var(--a3-font-mono);
-  font-size: 11.5px;
-  letter-spacing: .07em;
+.article-page .markdown table thead th {
+  padding: 12px 16px;
+  background: var(--v4t-raised);
+  border: 0;
+  border-bottom: 1px solid var(--v4t-line);
+  font-family: var(--v4t-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--a3-ink-3);
   text-align: left;
-  font-weight: 500;
-  padding: 12px 14px;
-  border-bottom: 1px solid var(--a3-line);
+  vertical-align: bottom;
+  color: var(--v4t-muted);
 }
-
+.article-page .markdown table thead th:first-child { border-top-left-radius: 11px; }
+.article-page .markdown table thead th:last-child { border-top-right-radius: 11px; }
 .article-page .markdown table td {
-  padding: 12px 14px;
-  border-top: 1px solid var(--a3-line);
+  padding: 12px 16px;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
   vertical-align: top;
-  color: var(--a3-ink-2);
+  color: var(--v4t-body);
 }
+.article-page .markdown table tbody tr:first-child td { border-top: 0; }
+.article-page .markdown table td:first-child { color: var(--v4t-ink); font-weight: 600; }
+.article-page .markdown table tr { background: transparent; border: 0; }
+.article-page .markdown table tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.025); }
+.article-page .markdown table tbody tr:last-child td:first-child { border-bottom-left-radius: 11px; }
+.article-page .markdown table tbody tr:last-child td:last-child { border-bottom-right-radius: 11px; }
+.article-page .markdown table strong { color: var(--v4t-yellow); }
 
-.article-page .markdown table tr { background: transparent; }
-.article-page .markdown table tbody tr:nth-child(even) { background: rgba(226, 220, 203, .28); }
-
-/* ── Right-hand table of contents ────────────────────────────────────────── */
-
-.article-page .table-of-contents {
-  font-size: 13.5px;
-  border-left: 1px solid var(--a3-line);
-  padding-left: 14px;
-}
-.article-page .table-of-contents__link { color: var(--a3-ink-3); }
-.article-page .table-of-contents__link:hover,
-.article-page .table-of-contents__link--active { color: var(--a3-accent); }
-
-/* ── The FAQ block ───────────────────────────────────────────────────────── */
+/* ── FAQ ─────────────────────────────────────────────────────────────────── */
 /* scripts/sync-articles.js splits each Q&A into two paragraphs, so a question
-   is a paragraph whose only content is bold. Giving those weight makes the
-   block scannable; it is also the block that feeds the FAQPage structured
-   data, so it is worth reading well on the page too. */
+   is a paragraph whose only element is a <strong>. Every published article has
+   exactly one "## FAQ" (id "faq"), and the rules are held to the paragraphs
+   between it and the next h2: :only-child ignores text nodes, so the same
+   selector also matches lead-ins like "**Short answer:** in 2026 ..." anywhere
+   else. This block feeds the FAQPage structured data, so it should read well. */
 
-.article-page .markdown p > strong:only-child {
-  display: block;
-  font-family: var(--a3-font-body);
-  font-size: 17px;
-  color: var(--a3-ink);
+.article-page .markdown #faq ~ p:has(> strong:only-child):not(#faq ~ h2 ~ p) {
+  margin: 1.4em 0 0.35em;
+  padding-top: 1.1em;
+  border-top: 1px solid var(--v4t-line);
+  font-size: 19px;
+  line-height: 1.4;
 }
-.article-page .markdown p:has(> strong:only-child) { margin-bottom: 0.4em; }
-.article-page .markdown p:has(> strong:only-child) + p { margin-bottom: 1.5em; }
+.article-page .markdown #faq + p:has(> strong:only-child):not(#faq ~ h2 ~ p) { margin-top: 0; padding-top: 0; border-top: 0; }
+
+/* ── ArticleCTA, inline (inside the body) ────────────────────────────────── */
+
+.article-page .a3cta--inline {
+  margin: 2.2em 0 2.4em;
+  padding: 28px 30px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  background:
+    radial-gradient(ellipse 55% 90% at 100% 0%, rgba(238, 188, 60, 0.1), transparent 70%),
+    var(--v4t-panel);
+  font-family: var(--v4t-sans);
+}
+/* (0,3,0)+: beats ".article-page .markdown p" and the FAQ rules above. */
+.article-page .a3cta p.v4t-eyebrow { margin: 0 0 12px; padding: 0; border: 0; font-size: 14px; }
+.article-page .a3cta p.a3cta__title {
+  margin: 0 0 8px;
+  padding: 0;
+  border: 0;
+  font-family: var(--v4t-sans);
+  font-weight: 800;
+  font-size: clamp(22px, 2.2vw, 26px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--v4t-ink);
+}
+.article-page .a3cta p.a3cta__body {
+  margin: 0;
+  max-width: 56ch;
+  font-size: 16.5px;
+  line-height: 1.55;
+  color: var(--v4t-muted);
+}
+.article-page .a3cta .a3cta__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 24px;
+  margin-top: 22px;
+}
+.article-page .a3cta a.a3cta__alt {
+  color: var(--v4t-yellow);
+  font-family: var(--v4t-sans);
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+}
+.article-page .a3cta a.a3cta__alt:hover {
+  color: var(--v4t-yellow-hi);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── ArticleCTA, footer: the navy "Get Started" band (V4CtaBand) ─────────── */
+
+.article-page .a3cta--footer {
+  padding: clamp(56px, 7vw, 96px) var(--v4t-gutter);
+  background: var(--v4t-navy);
+  border-top: 1px solid var(--v4t-line);
+  text-align: center;
+  font-family: var(--v4t-sans);
+}
+.article-page .a3cta__in { max-width: 760px; margin: 0 auto; }
+.article-page .a3cta--footer p.a3cta__title {
+  margin: 0 0 16px;
+  font-family: var(--v4t-display);
+  font-weight: 800;
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 0.95;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  color: #fff;
+  text-wrap: balance;
+}
+.article-page .a3cta--footer p.a3cta__body {
+  margin: 0 auto;
+  max-width: 50ch;
+  font-size: clamp(17px, 1.4vw, 19px);
+  color: var(--v4t-body);
+  text-wrap: balance;
+}
+.article-page .a3cta--footer .a3cta__row { justify-content: center; margin-top: 30px; gap: 16px 28px; }
+.article-page .a3cta--footer a.a3cta__alt { color: #fff; font-size: 17px; }
+.article-page .a3cta--footer a.a3cta__alt:hover { color: var(--v4t-yellow-hi); }
+
+/* ── Related articles: a raised band of V4Cards ──────────────────────────── */
+
+.article-page .a3art__related {
+  padding: clamp(56px, 7vw, 96px) 0;
+  background: var(--v4t-raised);
+  border-top: 1px solid var(--v4t-line);
+}
+.article-page .a3art__related .v4t-eyebrow { margin: 0 0 14px; }
+.article-page .a3art__related-title {
+  margin: 0 0 clamp(26px, 3vw, 40px);
+  font-family: var(--v4t-sans);
+  font-weight: 800;
+  font-size: clamp(30px, 3.4vw, 44px);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  color: var(--v4t-ink);
+}
+.article-page .a3art__related .v4t-card { background: var(--v4t-tray); }
+.article-page .a3art__related .v4t-card-title { font-size: 19px; line-height: 1.3; }
+.article-page .a3art__all { margin: 30px 0 0; font-family: var(--v4t-sans); font-size: 16px; }
+.article-page .a3art__all a { color: var(--v4t-yellow); font-weight: 600; text-decoration: none; }
+.article-page .a3art__all a:hover { color: var(--v4t-yellow-hi); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 996px) {
+  .article-page .a3art__grid { grid-template-columns: minmax(0, 1fr); }
+  .article-page .a3art__toc { display: none; }
+  .article-page .a3art__toc-mobile { display: block; }
+  html.article-page .a3art .markdown { max-width: none; }
+}
+
+@media (max-width: 760px) {
+  html.article-page .a3art .markdown { font-size: 17px; }
+  .article-page .markdown > header + p { padding-left: 16px; font-size: 18px; }
+  .article-page .markdown h1 { margin-bottom: 24px; }
+  /* A wide table scrolls inside itself; the page never scrolls sideways. */
+  .article-page .markdown table { display: block; overflow-x: auto; font-size: 14.5px; }
+  .article-page .markdown table :is(th, td) { padding: 10px 12px; }
+  .article-page .markdown table thead th { font-size: 12.5px; letter-spacing: 0.08em; }
+  .article-page .a3cta--inline { padding: 22px 20px 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .article-page .a3cta a,
+  .article-page .a3art__related .v4t-card { transition: none; }
+}

@@ -21,43 +21,45 @@ import { V4Hero, V4Section, V4CardGrid, V4Card, V4CtaBand } from "../components/
  */
 
 const CLONE_COMMAND = "git clone https://github.com/ACT3ai/mcp.git";
+// <wbr> break points (after "github.com/" and "ACT3ai/") for phones. textContent,
+// which the shared script copies, stays exactly CLONE_COMMAND.
+const CLONE_PARTS = CLONE_COMMAND.replace(/\/(?=ACT3ai\/|mcp\.git)/g, "/\n").split("\n");
 const JS_URL = "/js/download_platform.js";
 
 /* Page-scoped: the clone box, the copy button and the per-OS list. The rest is V4Blocks. */
 const PAGE_CSS = `
-.mcp-get { width: 100%; max-width: 680px; margin-top: 36px; }
-.mcp-get-label {
-  margin: 0 0 12px;
-  font-family: var(--v4t-display);
-  font-weight: 700;
-  font-size: 15px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--v4t-muted);
-}
+.mcp-get { width: 100%; max-width: 720px; margin: 36px auto 0; }
+/* Same lead, clone box and ghost download as /cli, so the two pages match. */
+.mcp-get__lead { margin: 0 0 16px; font-size: 17px; line-height: 1.5; color: var(--v4t-muted); text-wrap: balance; }
+.mcp-get__lead strong { color: var(--v4t-ink); font-weight: 700; }
+/* The clone command: the preferred path, so it carries the visual weight. */
 .mcp-clone {
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 14px 14px 14px 20px;
-  background: var(--v4t-panel);
-  border: 1px solid var(--v4t-edge);
   text-align: left;
+  background: var(--v4t-raised);
+  border: 1px solid var(--v4t-edge);
+  border-left: 3px solid var(--v4t-yellow);
+  box-shadow: 0 18px 40px -24px rgba(0, 0, 0, 0.8);
 }
-.mcp-clone__prompt { font-family: var(--v4t-mono); font-size: 15px; color: var(--v4t-yellow); user-select: none; }
+.mcp-clone__prompt { font-family: var(--v4t-mono); font-size: 15px; line-height: 1.5; padding: 2px 0; color: var(--v4t-yellow); user-select: none; }
 html code.mcp-clone__cmd {
   flex: 1;
   min-width: 0;
   overflow-x: auto;
   white-space: nowrap;
-  padding: 0;
+  padding: 2px 0;
   border: 0;
   border-radius: 0;
   background: transparent;
   font-family: var(--v4t-mono);
   font-size: 15px;
+  line-height: 1.5;
   color: var(--v4t-ink);
   vertical-align: middle;
+  user-select: all;
 }
 .mcp-clone__copy {
   position: relative;
@@ -71,11 +73,11 @@ html code.mcp-clone__cmd {
   background: transparent;
   color: var(--v4t-muted);
   cursor: pointer;
-  transition: color .15s ease, border-color .15s ease;
+  transition: color .15s ease, border-color .15s ease, background .15s ease;
 }
-.mcp-clone__copy:hover { color: var(--v4t-yellow-hi); border-color: var(--v4t-yellow); }
-.mcp-clone__copy:focus-visible { outline: 2px solid var(--v4t-yellow-hi); outline-offset: 3px; }
-.mcp-clone__copy[data-copied="true"] { color: var(--v4t-yellow); border-color: var(--v4t-yellow); }
+.mcp-clone__copy:hover { color: var(--v4t-yellow-hi); border-color: var(--v4t-yellow); background: rgba(238, 188, 60, 0.1); }
+.mcp-clone__copy:focus-visible { outline: 3px solid var(--v4t-yellow-hi); outline-offset: 3px; }
+.mcp-clone__copy[data-copied="true"] { color: var(--v4t-yellow-hi); border-color: var(--v4t-yellow); }
 .mcp-clone__tip {
   position: absolute;
   bottom: calc(100% + 8px);
@@ -85,7 +87,7 @@ html code.mcp-clone__cmd {
   font-family: var(--v4t-sans);
   font-size: 12px;
   font-weight: 600;
-  background: var(--v4t-ground);
+  background: var(--v4t-panel);
   color: var(--v4t-ink);
   border: 1px solid var(--v4t-edge);
   opacity: 0;
@@ -95,9 +97,10 @@ html code.mcp-clone__cmd {
 .mcp-clone__copy:hover .mcp-clone__tip,
 .mcp-clone__copy:focus-visible .mcp-clone__tip,
 .mcp-clone__copy[data-copied="true"] .mcp-clone__tip { opacity: 1; }
-.mcp-dl { margin-top: 24px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
-.mcp-dl .v4t-cta { white-space: normal; text-align: center; }
-.mcp-dl__note { margin: 0; font-size: 15px; color: var(--v4t-quiet); }
+/* Download: the less-preferred path, so a ghost button below the clone box. */
+.mcp-dl { margin-top: 24px; }
+.mcp-dl .v4t-ghost { white-space: normal; text-align: center; }
+.mcp-dl__note { margin: 12px 0 0; font-size: 14px; color: var(--v4t-quiet); }
 
 .mcp-tools { margin-top: auto; padding-top: 6px; display: flex; flex-wrap: wrap; gap: 6px; }
 html .mcp-tools code {
@@ -109,8 +112,6 @@ html .mcp-tools code {
   font-size: 12.5px;
   color: var(--v4t-body);
 }
-.mcp-clients { margin: 28px 0 0; font-size: 16px; color: var(--v4t-muted); }
-.mcp-clients strong { color: var(--v4t-ink); font-weight: 600; }
 
 .mcp-os { max-width: 640px; margin: 0 auto; border: 1px solid var(--v4t-line); background: var(--v4t-tray); }
 .mcp-os ul { list-style: none; margin: 0; padding: 0; }
@@ -134,11 +135,18 @@ html .mcp-tools code {
 .mcp-os a:focus-visible { outline: 2px solid var(--v4t-yellow-hi); outline-offset: -2px; }
 
 @media (max-width: 760px) {
-  .mcp-clone { padding: 10px 10px 10px 14px; gap: 10px; }
+  /* The command wraps here, so pin the "$" to its first line, not the middle. */
+  .mcp-clone { align-items: flex-start; padding: 10px 10px 10px 14px; gap: 10px; }
+  .mcp-clone__copy { align-self: center; }
   .mcp-clone__prompt, html code.mcp-clone__cmd { font-size: 13px; }
+  /* Break only at the <wbr> points (after the slashes), never mid-word. */
+  html code.mcp-clone__cmd { white-space: normal; overflow-wrap: break-word; }
+  /* Open the tooltip to the left, over the command, not over the lead line above. */
+  .mcp-clone__tip { bottom: auto; top: 50%; right: calc(100% + 8px); transform: translateY(-50%); }
+  .mcp-dl .v4t-ghost { font-size: 18px; padding: 12px 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .mcp-os a::after { transition: none; }
+  .mcp-clone__copy, .mcp-clone__tip, .mcp-os a, .mcp-os a::after { transition: none; }
   .mcp-os a:hover::after { transform: none; }
 }
 `;
@@ -147,17 +155,17 @@ html .mcp-tools code {
 const POWERS: { title: string; text: string; tools: string[] }[] = [
   {
     title: "Update one act from Final Draft",
-    text: "Update Act 2A from your Final Draft file. Only Act 2A is touched.",
+    text: "Only that act is touched.",
     tools: ["preview_script_import", "import_screenplay"],
   },
   {
     title: "Bring first frames to your disk",
-    text: "Every first frame of an act, in one request, named and ready to use.",
+    text: "Every first frame of an act, named and ready to use.",
     tools: ["list_shots", "get_download_urls"],
   },
   {
     title: "Cast a whole movie",
-    text: "Every photo in your folder, mapped to the right character, in one request.",
+    text: "Every photo in your folder, mapped to the right character.",
     tools: ["list_characters", "add_character_reference_images"],
   },
   {
@@ -167,7 +175,7 @@ const POWERS: { title: string; text: string; tools: string[] }[] = [
   },
   {
     title: "Dress every story day",
-    text: "From one CSV. The new first frames come back as files on your disk.",
+    text: "From one CSV. New first frames come back as files.",
     tools: ["create_outfit", "generate_firstframes"],
   },
 ];
@@ -212,15 +220,22 @@ export default function Mcp(): React.ReactNode {
           eyebrow="Model Context Protocol"
           title="ACT 3 Filmmaking"
           highlight="MCP"
-          sub="Drive ACT 3 from Claude Code: import scripts, storyboard scenes, render shots."
+          sub="Drive ACT 3 from Claude Code: import scripts, storyboard, estimate and render shots."
           cta={false}
         >
           <div className="mcp-get">
-            <p className="mcp-get-label">Git clone it (recommended)</p>
+            <p className="mcp-get__lead">
+              <strong>We recommend git clone.</strong> Download works too.
+            </p>
             <div className="mcp-clone">
               <span className="mcp-clone__prompt" aria-hidden="true">$</span>
               <code className="mcp-clone__cmd" id="act3-clone-cmd">
-                {CLONE_COMMAND}
+                {CLONE_PARTS.map((part, i) => (
+                  <React.Fragment key={part}>
+                    {i > 0 && <wbr />}
+                    {part}
+                  </React.Fragment>
+                ))}
               </code>
               <button type="button" className="mcp-clone__copy" id="act3-copy-btn" aria-label="Copy to clipboard">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -235,10 +250,10 @@ export default function Mcp(): React.ReactNode {
 
             <div className="mcp-dl">
               {/* The shared script rewrites the label and href on load. */}
-              <a className="v4t-cta" id="act3-download-btn" data-act3-download-page="mcp" href="#act3-os-list">
+              <a className="v4t-ghost" id="act3-download-btn" data-act3-download-page="mcp" href="#act3-os-list">
                 <span id="act3-download-label">Download</span>
               </a>
-              <p className="mcp-dl__note">Or download the prebuilt binary. No build step.</p>
+              <p className="mcp-dl__note">Just the binary, from the same public repo.</p>
             </div>
           </div>
         </V4Hero>
@@ -246,9 +261,9 @@ export default function Mcp(): React.ReactNode {
         <V4Section
           tone="raised"
           eyebrow="One request"
-          heading="Ask in plain language."
-          highlight="ACT 3 does the rest."
-          intro="Scripts, first frames, outfits and sets go up to ACT 3 or come down to your disk."
+          heading="Ask in"
+          highlight="plain language."
+          intro="Scripts, first frames, videos, outfits and costumes go up to ACT 3 or come down to your disk."
         >
           <V4CardGrid min={300}>
             {POWERS.map((p) => (
@@ -260,22 +275,14 @@ export default function Mcp(): React.ReactNode {
                 </div>
               </V4Card>
             ))}
+            <V4Card eyebrow="You ask in" title="Claude Code, Codex, Claude Desktop" text="Or any other MCP client." />
           </V4CardGrid>
-          <p className="mcp-clients">
-            Works with <strong>Claude Code</strong>, <strong>Codex</strong>, <strong>Claude Desktop</strong> and
-            other MCP clients.
-          </p>
         </V4Section>
 
-        <V4Section eyebrow="How to work" heading="Made for" highlight="Claude Code.">
-          <V4CardGrid min={280}>
+        <V4Section eyebrow="Automation" heading="Script it." highlight="Or use the CLI.">
+          <V4CardGrid columns={2}>
             <V4Card
-              eyebrow="Recommended"
-              title="Direct ACT 3 from Claude Code"
-              text="Your script, your shots, your cut, driven from the conversation."
-            />
-            <V4Card
-              eyebrow="Automation"
+              eyebrow="One pass"
               title="Script repeatable runs"
               text="Chain shots, scenes and renders into one pass instead of clicking through them."
             />
@@ -289,7 +296,7 @@ export default function Mcp(): React.ReactNode {
           eyebrow="All platforms"
           heading="Download for"
           highlight="another machine."
-          intro="The button above picks your computer. Pick any build here."
+          intro="The button above matches this computer."
         >
           {/* The shared script fills this list in on load. */}
           <div className="mcp-os">

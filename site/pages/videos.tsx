@@ -19,7 +19,7 @@ import { LINKS, SIGNUP } from "../data/siteNav";
  * footer, so V4RowsPage renders V4Footer after the last row.
  *
  *   1  hero        retitled for ads, social and marketing
- *   3  who it's for  the Filmmaking panel dropped (CSS below makes the wall 3-up)
+ *   3  who it's for  the Filmmaking panel dropped (3-up wall + 3 rails to the hub)
  *   2  chat        "change the background, same actor" (as on the homepage)
  *   5  consistency character, set and outfit
  *   10 storyboards only the Ad / Social video / Marketing video tabs
@@ -97,6 +97,11 @@ const ROWS: V4Row[] = [
       `<li class="r3v34-panel">\n      <img class="r3v34-img" src="/v4/row_3/v/air_film.jpg" alt="A dark movie theater, Jack and Sally on the big screen" width="1000" height="1000" loading="lazy">\n      <div class="r3v34-third"><h3 class="r3v34-name">Filmmaking</h3><p class="r3v34-line">Your hours go to the story, not the setup.</p></div>\n    </li>`,
       ``,
     ],
+    // The rails from the panels to the hub: four curves for four panels → three for three.
+    [`<path class="r3v34-rail" d="M125 0 C125 70 500 40 500 110"/>`, `<path class="r3v34-rail" d="M167 0 C167 70 500 40 500 110"/>`],
+    [`<path class="r3v34-rail" d="M375 0 C375 60 500 50 500 110"/>`, `<path class="r3v34-rail" d="M500 0 L500 110"/>`],
+    [`<path class="r3v34-rail" d="M625 0 C625 60 500 50 500 110"/>`, ``],
+    [`<path class="r3v34-rail" d="M875 0 C875 70 500 40 500 110"/>`, `<path class="r3v34-rail" d="M833 0 C833 70 500 40 500 110"/>`],
   ]),
   row(2),
   row(5, [[`into every scene of a two-hour movie:`, `into every scene:`]]),

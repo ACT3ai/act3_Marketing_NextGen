@@ -26,7 +26,10 @@ const SUBJECTS = [
 // .ct-grid; the colours, fonts and the square yellow button come from the
 // --v4t-* tokens and .v4t-cta of site/css/v4-template.css.
 const PAGE_CSS = `
-.v4t-section.ct-section { padding-top: clamp(48px, 6vw, 80px); }
+/* The form is the page's only action: a shorter hero and section top keep the
+   first row of inputs above the fold at 1440x900. */
+.ct-main .v4t-hero { padding-top: clamp(56px, 6vw, 88px); padding-bottom: clamp(40px, 4.5vw, 64px); }
+.v4t-section.ct-section { padding-top: clamp(32px, 3.5vw, 48px); }
 .ct-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 360px;
@@ -96,11 +99,13 @@ const PAGE_CSS = `
 .ct-grid .ct-field select:has(option[value=""]:checked) { color: var(--v4t-quiet); }
 .ct-grid .ct-field option { color: var(--v4t-ink); background: var(--v4t-raised); }
 
-/* errors: only after the visitor has touched a field (or tried to send) */
+/* errors: only after the visitor has touched a field (or tried to send). The
+   focused field is skipped so the inline line never sits under the browser's own
+   validation bubble; it appears once focus moves on. */
 .ct-grid .ct-err { display: none; margin: 0; font-size: 14px; line-height: 1.3; color: #ff8f7a; }
 .ct-grid .ct-field :is(input, select, textarea):user-invalid { border-color: #ff8f7a; }
 .ct-grid .ct-field :is(input, select, textarea):user-invalid:focus-visible { box-shadow: 0 0 0 3px rgba(255, 143, 122, 0.25); }
-.ct-grid .ct-field:has(:user-invalid) .ct-err { display: block; }
+.ct-grid .ct-field:has(:user-invalid:not(:focus)) .ct-err { display: block; }
 
 .ct-grid .ct-send { align-self: flex-start; margin-top: 4px; border: 0; cursor: pointer; }
 .ct-grid .ct-send:focus-visible { outline: 3px solid var(--v4t-yellow-hi); outline-offset: 4px; }
@@ -149,7 +154,7 @@ const PAGE_CSS = `
 .ct-grid .ct-ent { border-color: rgba(238, 188, 60, 0.45); background: linear-gradient(160deg, #1d1a12, var(--v4t-panel) 60%); }
 .ct-grid .ct-ent .v4t-eyebrow { margin-bottom: 12px; font-size: 14px; }
 .ct-grid .ct-ent h3 { margin: 0 0 10px; font: 800 22px/1.2 var(--v4t-sans); letter-spacing: -0.01em; color: var(--v4t-ink); }
-.ct-grid .ct-ent p { margin: 0 0 20px; font-size: 16px; line-height: 1.55; color: var(--v4t-muted); }
+.ct-grid .ct-ent p:not(.v4t-eyebrow) { margin: 0 0 20px; font-size: 16px; line-height: 1.55; color: var(--v4t-muted); }
 `;
 
 type FormState = {
@@ -214,12 +219,12 @@ export default function Contact(): React.ReactNode {
       <Head>
         <style>{PAGE_CSS}</style>
       </Head>
-      <main>
+      <main className="ct-main">
         <V4Hero
           eyebrow="Contact"
           title="Let's talk about"
           highlight="your next film."
-          sub={<>Questions, support or enterprise plans.<br />We reply within 24 hours on business days.</>}
+          sub="We reply within 24 hours on business days."
           cta={false}
         />
 

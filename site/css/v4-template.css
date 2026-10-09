@@ -652,7 +652,32 @@ html.v4t-skin,
 .v4t-skin .pagination-nav__link:hover { border-color: rgba(238, 188, 60, 0.6); }
 .v4t-skin .pagination-nav__sublabel { color: var(--v4t-quiet); }
 .v4t-skin .pagination-nav__label { color: var(--v4t-ink); }
-.v4t-skin .theme-doc-toc-mobile { background: var(--v4t-raised); border-radius: 10px; }
+.v4t-skin .theme-doc-toc-mobile { background: var(--v4t-raised); border-radius: 10px; margin-bottom: 1.25rem; }
+/* Docs column: breathing room off the sidebar's hairline on desktop. */
+@media (min-width: 997px) {
+  .v4t-skin main[class*="docMainContainer_"] > .container {
+    padding: 1.5rem clamp(24px, 3vw, 48px) 2.5rem;
+  }
+}
+/* <details> (MDX): Infima paints it as a blue info alert; here a neutral panel. */
+.v4t-skin .markdown details.alert {
+  --ifm-alert-background-color: var(--v4t-raised);
+  --ifm-alert-background-color-highlight: rgba(255, 255, 255, 0.04);
+  --ifm-alert-foreground-color: var(--v4t-body);
+  --ifm-alert-border-color: var(--v4t-line);
+  border: 1px solid var(--v4t-line);
+  border-left: 4px solid var(--v4t-yellow);
+  border-radius: 10px;
+  box-shadow: none;
+}
+.v4t-skin .markdown details.alert > summary { color: var(--v4t-ink); font-weight: 600; }
+.v4t-skin .markdown details.alert > summary::before { border-left-color: var(--v4t-yellow); }
+/* Phones: tables keep their columns readable without a sideways scroll. */
+@media (max-width: 600px) {
+  .v4t-skin .markdown { font-size: 16px; }
+  .v4t-skin .markdown table { font-size: 14px; line-height: 1.5; }
+  .v4t-skin .markdown table :is(th, td) { padding: 0.5rem 0.6rem; }
+}
 
 /* ── blog: list, post, tags, sidebar ── */
 .v4t-skin .theme-blog-sidebar-container { font-size: 14px; }
@@ -663,6 +688,80 @@ html.v4t-skin,
 .v4t-skin article time { color: var(--v4t-quiet); }
 .v4t-skin [class*="tag_"] { border-color: var(--v4t-line); color: var(--v4t-muted); }
 .v4t-skin [class*="tag_"]:hover { border-color: var(--v4t-yellow); color: var(--v4t-yellow); text-decoration: none; }
+/* Post titles on the list pages (/blog, /blog/tags/x) are h2 links: the same
+   display face as the post page's h1, one step smaller. */
+.v4t-skin.plugin-blog article header h2 {
+  font-family: var(--v4t-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 3.6vw, 2.9rem);
+  line-height: 0.98;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+}
+/* Date · reading time: one quiet line (the reading time is a bare text node). */
+.v4t-skin.plugin-blog article header [class*="container_"] { color: var(--v4t-quiet); font-size: 14px; }
+.v4t-skin.plugin-blog article [class*="authorTitle_"] { color: var(--v4t-quiet); }
+.v4t-skin.plugin-blog article footer .col--9 > b { color: var(--v4t-quiet); font-weight: 600; }
+/* Blog sidebar ("Recent posts", year groups). */
+.v4t-skin [class*="sidebarItemTitle_"] {
+  font-family: var(--v4t-display);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--v4t-yellow);
+}
+.v4t-skin [class*="yearGroupHeading_"] {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--v4t-quiet);
+  margin: 1.25rem 0 0.5rem;
+}
+.v4t-skin [class*="sidebarItemLink_"] { color: var(--v4t-muted); }
+.v4t-skin [class*="sidebarItemLink_"]:hover { color: var(--v4t-ink); text-decoration: none; }
+.v4t-skin [class*="sidebarItemLinkActive_"] { color: var(--v4t-yellow) !important; }
+/* Tags index (/blog/tags): a plain pill with a quiet count, not the stock
+   price-tag shape (its pointed edge and hole are pseudo-elements). */
+.v4t-skin [class*="tagWithCount_"] {
+  border: 1px solid var(--v4t-line);
+  border-radius: 999px;
+  margin-left: 0;
+  padding: 0.2rem 0.4rem 0.2rem 0.85rem;
+  gap: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+}
+.v4t-skin [class*="tagWithCount_"]::before,
+.v4t-skin [class*="tagWithCount_"]::after { display: none; }
+.v4t-skin [class*="tagWithCount_"] span {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--v4t-ink);
+  border-radius: 999px;
+  min-width: 1.5rem;
+  padding: 0 0.45rem;
+  margin-left: 0;
+  font-size: 12px;
+  line-height: 1.5rem;
+  text-align: center;
+}
+.v4t-skin [class*="tagWithCount_"]:hover span { background: var(--v4t-yellow); color: var(--v4t-yellow-ink); }
+.v4t-skin.blog-tags-list-page main h2 { font-size: 1rem; color: var(--v4t-yellow); font-family: var(--v4t-display); letter-spacing: 0.1em; }
+.v4t-skin.blog-tags-list-page main hr { background: var(--v4t-line); }
+.v4t-skin.blog-tags-list-page main li[class*="tag_"] { margin: 0.5rem 0.5rem 0 0; }
+/* Blog archive: the stock hero repeats "Archive" as its subtitle; the band is
+   also tighter than a marketing hero. The archive is the blog's only .hero. */
+.v4t-skin.plugin-blog .hero--primary { padding: clamp(40px, 6vw, 72px) 0 clamp(28px, 4vw, 48px); }
+.v4t-skin.plugin-blog .hero--primary .hero__subtitle { display: none; }
+.v4t-skin.plugin-blog .hero--primary + main > section.margin-vert--lg { margin-top: clamp(20px, 3vw, 40px) !important; }
+.v4t-skin.plugin-blog .hero--primary + main .col > h3 { font-size: 1rem; color: var(--v4t-yellow); font-family: var(--v4t-display); letter-spacing: 0.1em; }
+.v4t-skin.plugin-blog .hero--primary + main .col > h3 ~ ul { padding-left: 0; list-style: none; }
+.v4t-skin.plugin-blog .hero--primary + main .col > h3 ~ ul li { padding: 0.35rem 0; border-bottom: 1px solid var(--v4t-line); }
+.v4t-skin.plugin-blog .hero--primary + main .col > h3 ~ ul a { color: var(--v4t-ink); }
+.v4t-skin.plugin-blog .hero--primary + main .col > h3 ~ ul a:hover { color: var(--v4t-yellow); text-decoration: none; }
+/* 404: same reading size as the docs. */
+.v4t-skin.plugin-native main .hero__title + p,
+.v4t-skin.plugin-native main .hero__title ~ p { font-size: 17px; color: var(--v4t-body); }
 
 /* ── Infima .hero bands (blog archive, any page using them): custom.css paints
    them in the old purple gradient; here they are the v4 hero ground with its

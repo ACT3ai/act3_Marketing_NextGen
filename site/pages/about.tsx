@@ -1,13 +1,18 @@
 // /about — on the v4 template (V4Blocks inside Docusaurus <Layout>).
 // The old cream version is frozen at site/pages/backup/about.tsx (/backup/about).
+// Facts come from the homepage rows (newer) and the old page; invent none.
 import React from "react";
 import Layout from "@theme/Layout";
-import { V4Hero, V4Section, V4CtaBand, V4CardGrid, V4Card } from "../components/v4/V4Blocks";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import { V4Hero, V4Section, V4CtaBand, V4CardGrid, V4Card, V4Prose, V4Split } from "../components/v4/V4Blocks";
 import { LINKS } from "../data/siteNav";
 
-const EMAIL = LINKS.email.replace(/^mailto:/, "");
+// Shown lowercase, the way /contact spells it.
+const EMAIL = LINKS.email.replace(/^mailto:/, "").toLowerCase();
 
 export default function About(): React.ReactNode {
+  // A homepage hero still (row 1, scene 6). Referenced only; site/static/v4 is generated.
+  const still = useBaseUrl("/v4/row_1/videos/6/poster.jpg");
   return (
     // No manual site-name suffix: Docusaurus appends " | ACT 3 AI" itself.
     <Layout
@@ -16,30 +21,47 @@ export default function About(): React.ReactNode {
     >
       <main>
         <V4Hero
-          eyebrow="About ACT 3"
+          eyebrow="About us"
           title="The team behind"
           highlight="ACT 3 AI"
-          sub="Filmmakers, writers and technologists, building for every creator."
+          sub="Filmmakers, writers and technologists with decades in entertainment and tech."
           secondary={{ label: "Contact us", href: "/contact" }}
         />
 
-        <V4Section
-          tone="raised"
-          eyebrow="Our mission"
-          heading="Script to screen,"
-          highlight="in one workspace."
-          intro="Scriptwriting, storyboards, characters and video in one AI platform, from solo creators to major studios."
-        >
-          <V4CardGrid columns={3}>
-            <V4Card title="One workflow" text="Import your screenplay, export a finished video. No tool switching." />
-            <V4Card title="AI does the first pass" text="Voice, motion, visuals and effects from plain-language direction." />
-            <V4Card title="Built for teams" text="One shared project, version history and access controls." />
-          </V4CardGrid>
+        <V4Section tone="raised" eyebrow="Our mission" heading="Script to screen," highlight="in one workspace.">
+          <V4Split
+            media={
+              <img
+                src={still}
+                width={3840}
+                height={2160}
+                loading="lazy"
+                decoding="async"
+                alt="Scene 6 of the homepage hero: a shepherd boy and a mammoth herd on a hillside."
+              />
+            }
+          >
+            <V4Prose>
+              <p>Scriptwriting, storyboards, characters and video.</p>
+              <ul>
+                <li>
+                  <strong>One workflow</strong>: Final Draft in, Final Draft out.
+                </li>
+                <li>
+                  <strong>AI takes the first pass</strong>: voice, images and video on leading models like Nano Banana
+                  Pro and Seedance 2.5.
+                </li>
+                <li>
+                  <strong>Built for teams</strong>: one shared project, version history and access controls.
+                </li>
+              </ul>
+            </V4Prose>
+          </V4Split>
         </V4Section>
 
         <V4Section eyebrow="Our values" heading="What we" highlight="stand for.">
           <V4CardGrid columns={3}>
-            <V4Card eyebrow="01" title="Story first" text="AI should unlock imagination, not replace it." />
+            <V4Card eyebrow="01" title="Story first" text="You're a creative, not a prompt engineer." />
             <V4Card eyebrow="02" title="Every scale" text="Solo creator or studio, the platform grows with you." />
             <V4Card eyebrow="03" title="No surprises" text="Clear credit estimates and open pricing." href={LINKS.plans} />
           </V4CardGrid>
@@ -47,24 +69,10 @@ export default function About(): React.ReactNode {
 
         <V4CtaBand />
 
-        <V4Section
-          tone="raised"
-          eyebrow="Our team"
-          heading="The people behind"
-          highlight="the platform."
-          intro="Decades of experience in entertainment, technology and the creative arts."
-        >
-          <V4CardGrid columns={3}>
-            <V4Card title="Filmmakers" text="We know the work from first draft to final cut." />
-            <V4Card title="Technologists" text="AI and software experts pushing generative media." />
-            <V4Card title="Creators" text="Artists and writers who keep us honest about the story." />
-          </V4CardGrid>
-        </V4Section>
-
-        <V4Section eyebrow="Reach us" heading="Let's create" highlight="together." center>
+        <V4Section tone="raised" eyebrow="Reach us" heading="Get in" highlight="touch.">
           <V4CardGrid columns={2}>
             <V4Card title="Email" text={EMAIL} href={LINKS.email} />
-            <V4Card title="Contact form" text="Questions, support, partnerships, press." href="/contact" />
+            <V4Card title="Contact form" text="Support, sales, enterprise, press." href="/contact" />
           </V4CardGrid>
         </V4Section>
 

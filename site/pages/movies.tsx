@@ -41,7 +41,9 @@ const ROWS = [
   replaceCopy(HERO, [
     ['aria-label="ACT 3: AI filmmaking at the speed of storytelling"', 'aria-label="ACT 3: feature films at the speed of storytelling"'],
     ['<span class="r1v42-h1a">AI Filmmaking</span>', '<span class="r1v42-h1a">Feature Films</span>'],
-    ["<li>Chat to AI Filmmaker</li>", "<li>Bring your 2- or 3-hour script</li>"],
+    // Order matters: replaceCopy runs the pairs in turn, so the old first point is
+    // replaced before the second pair writes "Chat to AI Filmmaker" into slot two.
+    ["<li>Chat to AI Filmmaker</li>", "<li>Bring your whole screenplay</li>"],
     ["<li>Your input, and AI Filmmaker does all of the work</li>", "<li>Chat to AI Filmmaker</li>"],
     ["<li>AI Storyboarding</li>", "<li>AI storyboards, every shot</li>"],
     ["<li>Sets &amp; locations created by AI</li>", "<li>Same actors, sets &amp; outfits all movie</li>"],
@@ -60,7 +62,7 @@ const ROWS = [
     ],
     ["Whatever you are making, every shot gets its panel.", "Every shot in your movie gets its panel."],
   ]),
-  replaceCopy(SAVE_MONEY, [["That saves you money and time.", "Across a whole movie, that saves you money and time."]]),
+  replaceCopy(SAVE_MONEY, [["That saves you money and time.", "Over a whole movie, that saves you money and time."]]),
   TEAMS,
 ];
 

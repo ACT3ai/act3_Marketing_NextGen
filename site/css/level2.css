@@ -1,383 +1,476 @@
 /**
- * ACT 3 — Level 2 Filmmaking Team — page DESIGN OVERLAY
- * =====================================================
- * This file is the ENTIRE visual design for the four Level 2 pages
- * (level2.md + the three marketing_*.md plan pages). It is a pure styling
- * layer: the markdown files carry ONLY words — no colors, no layout, no
- * classes. Each of those pages opts in with one front-matter line:
+ * ACT 3 — Assistant Director Team pages — page DESIGN OVERLAY
+ * ===========================================================
+ * (Internally the "Level 2 team"; that name never reaches rendered copy.)
+ *
+ * This file is the ENTIRE visual design for the four Assistant Director Team
+ * pages (level2.md + the three marketing_*.md plan pages). It is a pure
+ * styling layer: the markdown carries ONLY words — no colors, no layout, no
+ * classes. Each page opts in with one front-matter line:
  *
  *     wrapperClassName: level2-page
  *
- * Docusaurus puts that class on the <html> element, so every rule below is
- * scoped under `.level2-page` and touches nothing else on the site.
+ * Docusaurus puts that class on <html>, so every rule below is scoped under
+ * `html.level2-page` and touches nothing else on the site.
  *
- * Design source: c_design/level2/Level 2 Team Marketing.dc.html
+ * Look: the v4 site template (site/css/v4-template.css), dark skin. These pages
+ * render under html.v4t-skin with the v4 header/footer; this overlay draws the
+ * article in the template's language — the hero ground with its 48px rule
+ * lines, Barlow Condensed uppercase H1, Figtree 800 section headings, dark
+ * cards, yellow #eebc3c accents, the square yellow CTA on a navy closing band.
+ *
  * Because the content is flat markdown, sections are styled by their semantic
  * shape rather than by hand-placed markers:
- *   - the intro block  (first <p>, <h1>, next two <p>)  -> centered hero
- *   - <table>          -> package / pricing card table
- *   - <ol>             -> numbered "how it works" steps
- *   - <ul>             -> feature card grid
- *   - last <h2> + <p>  -> closing call-to-action
+ *   - first <p> (bold-only)         -> yellow condensed eyebrow
+ *   - <header> h1                   -> display title (Docusaurus wraps the first
+ *                                      heading in a <header>)
+ *   - the two <p> after the header  -> tagline + lead
+ *   - <h2> (+ the <p> under it)     -> section heading + section lead
+ *   - <table>                       -> package / pricing card table (a bold last
+ *                                      cell is the price, drawn in yellow)
+ *   - <table> + <p>                 -> the small note under the price table
+ *   - <ol>                          -> numbered "How it works" step cards
+ *   - <ul>                          -> feature card grid
+ *   - last <h2> + last <p>          -> closing call-to-action band
  * Update the words in ~/BGit/all/film/level_2/ and re-copy; the look here
  * never changes.
+ *
+ * Specificity: the article is `.markdown`, so the skin's long-form rules
+ * (`.v4t-skin .markdown > :is(p, ul, ...)`, `.v4t-skin .markdown table ...`,
+ * `.v4t-skin.mdx-page main .markdown`) also match it. Every selector here starts
+ * with `html.level2-page article.markdown` (0,2,2) so it beats them without
+ * !important.
+ *
+ * Fonts load once for the whole site from the headTags block in
+ * docusaurus.config.ts (Barlow Condensed, Barlow, Figtree, JetBrains Mono). No
+ * @import here — customCss is bundled site-wide.
  */
 
-/* Fonts load once for the whole site from the headTags block in
-   docusaurus.config.ts. This @import used to pull a second, near-identical
-   stylesheet on every page, because customCss is bundled site-wide. */
-
 /* ------------------------------------------------------------------ *
- * Design tokens (from the c_design palette)
+ * Tokens — the v4 template's palette (same values as --v4t-*)
  * ------------------------------------------------------------------ */
-.level2-page {
-  --l2-bg: #faf8f3;        /* cream page canvas          */
-  --l2-bg-alt: #f3efe5;    /* warm beige (headers/rows)  */
-  --l2-ink: #1a1714;       /* near-black text            */
-  --l2-muted: #4a4540;     /* body copy                  */
-  --l2-faint: #837c72;     /* labels, captions           */
-  --l2-border: #e2dccb;    /* hairline borders           */
-  --l2-accent: #c4612b;    /* ACT 3 orange               */
-  --l2-accent-dark: #a85024;
-  --l2-accent-soft: #e8cfb6; /* big step numerals        */
-  --l2-card: #ffffff;
-
-  /* Push Infima's page canvas to cream while on these pages. */
-  --ifm-background-color: var(--l2-bg);
-  --ifm-background-surface-color: var(--l2-bg);
-  --ifm-link-color: var(--l2-accent);
-  --ifm-link-hover-color: var(--l2-accent-dark);
-
-  background: var(--l2-bg);
+html.level2-page {
+  --l2-ground: #0f0e0c;      /* hero ground, page ground                */
+  --l2-raised: #151419;      /* table header strip                      */
+  --l2-panel: #1b1a1f;       /* cards                                   */
+  --l2-navy: #060b18;        /* the homepage's "Get Started" bands      */
+  --l2-ink: #f5f4f1;         /* headings                                */
+  --l2-body: #dcdbd7;        /* body text                               */
+  --l2-muted: #c0beb7;       /* card text, secondary text               */
+  --l2-quiet: #8f8e8a;       /* labels                                  */
+  --l2-rule: rgba(255, 255, 255, 0.055);  /* the hero's 48px rule lines  */
+  --l2-line: rgba(255, 255, 255, 0.12);   /* dividers                    */
+  --l2-card-edge: rgba(255, 255, 255, 0.08);
+  --l2-yellow: #eebc3c;
+  --l2-yellow-hi: #fcd648;
+  --l2-yellow-ink: #1a1405;
+  --l2-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+  --l2-sans: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --l2-gutter: clamp(16px, 3.4vw, 52px);
   scroll-behavior: smooth;
 }
 
-.level2-page body,
-.level2-page .main-wrapper {
-  background: var(--l2-bg);
-}
-
-.level2-page body {
-  color: var(--l2-ink);
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
 /* ------------------------------------------------------------------ *
- * Page shell — center the article as a single elegant column
+ * Page shell — full-width <main> (it carries the hero ground), the
+ * article as one centred column
  * ------------------------------------------------------------------ */
-.level2-page main.container {
-  max-width: 940px;
-  margin-inline: auto;
-  padding-inline: clamp(20px, 4vw, 40px);
+html.level2-page main.container {
+  /* <main> also carries Infima's `margin-vert--lg` (2rem top and bottom,
+     !important inside a cascade layer, so it cannot be overridden from here).
+     The hero ground and the closing band reach over it instead
+     (--l2-main-gap). */
+  --l2-main-gap: 2rem;
+  position: relative;
+  isolation: isolate;
+  max-width: none;
+  padding: 0;
 }
-
-.level2-page main.container .row {
-  margin: 0;
-  justify-content: center;
+/* The hero ground: the template's 48px rule lines + yellow glow behind the
+   intro block, fading out into the plain ground below it. */
+html.level2-page main.container::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: calc(-1 * var(--l2-main-gap)) 0 auto 0;
+  height: calc(clamp(640px, 60vw, 760px) + var(--l2-main-gap));
+  background-image:
+    radial-gradient(ellipse 70% 60% at 50% 0%, rgba(238, 188, 60, 0.08), transparent 70%),
+    repeating-linear-gradient(180deg, transparent 0, transparent 47px, var(--l2-rule) 47px, var(--l2-rule) 48px);
+  -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent);
+  mask-image: linear-gradient(180deg, #000 72%, transparent);
+  pointer-events: none;
 }
-
-.level2-page main.container .col {
-  --ifm-col-width: 100% !important;
-  max-width: 100%;
+html.level2-page main.container > .row { margin: 0; justify-content: center; }
+html.level2-page main.container > .row > .col {
+  --ifm-col-width: 100%;
   flex: 0 0 100%;
+  max-width: 100%;
+  margin: 0;
   padding: 0;
 }
 
-.level2-page article {
-  font-size: 16px;
-  line-height: 1.65;
-  color: var(--l2-muted);
+html.level2-page.mdx-page main article.markdown,
+html.level2-page article.markdown {
+  box-sizing: border-box;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 var(--l2-gutter);
+  font-family: var(--l2-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--l2-body);
 }
-
-.level2-page article a {
-  color: var(--l2-accent);
-  text-decoration: none;
+/* The skin caps prose at 72ch; these pages lay out their own widths. */
+html.level2-page article.markdown > :is(p, ul, ol, h2, table) { max-width: none; }
+html.level2-page article.markdown strong { color: var(--l2-ink); }
+html.level2-page article.markdown a {
+  color: var(--l2-yellow);
+  text-decoration: underline;
+  text-decoration-color: rgba(238, 188, 60, 0.45);
+  text-underline-offset: 3px;
 }
-.level2-page article a:hover {
-  color: var(--l2-accent-dark);
-}
+html.level2-page article.markdown a:hover { color: var(--l2-yellow-hi); text-decoration-color: currentColor; }
 
 /* ------------------------------------------------------------------ *
- * HERO — the intro block: eyebrow, title, tagline, lead
+ * HERO — eyebrow, title, tagline, lead
  * ------------------------------------------------------------------ */
 
 /* Eyebrow: the first bold-only paragraph, e.g. **ACT 3 · Optional Service** */
-.level2-page article > p:first-child {
+html.level2-page article.markdown > p:first-child {
+  margin: clamp(72px, 9vw, 128px) 0 18px;
   text-align: center;
-  margin: clamp(24px, 5vw, 56px) 0 22px;
+  line-height: 1;
 }
-.level2-page article > p:first-child strong {
-  display: inline-block;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 12px;
-  font-weight: 600;
+html.level2-page article.markdown > p:first-child strong {
+  font-family: var(--l2-display);
+  font-weight: 700;
+  font-size: 16px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--l2-accent);
-}
-.level2-page article > p:first-child strong::before {
-  content: "— ";
+  color: var(--l2-yellow);
 }
 
-/* Title. Docusaurus wraps the first heading in a <header>, so target through it. */
-.level2-page article > header {
+/* Title. Docusaurus wraps the first heading in a <header>. */
+html.level2-page article.markdown > header { margin: 0; text-align: center; }
+html.level2-page article.markdown > header h1 {
+  margin: 0 auto;
+  max-width: 14ch;
+  font-family: var(--l2-display);
+  font-weight: 800;
+  font-size: clamp(52px, 8vw, 112px);
+  line-height: 0.9;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
   text-align: center;
-  margin: 0;
-}
-.level2-page article > header h1 {
-  font-family: "Fraunces", "Times New Roman", serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-size: clamp(42px, 6.4vw, 74px);
-  line-height: 1.04;
-  letter-spacing: -0.01em;
-  text-align: center;
-  color: var(--l2-ink);
-  margin: 0 auto 22px;
-  max-width: 18ch;
+  color: #fff;
+  text-wrap: balance;
 }
 
-/* Tagline: the bold paragraph right after the header/title */
-.level2-page article > header + p {
+/* Tagline: the bold paragraph right after the title */
+html.level2-page article.markdown > header + p {
+  margin: 22px auto 0;
+  max-width: 46ch;
   text-align: center;
-  font-size: clamp(17px, 2vw, 20px);
-  font-weight: 600;
-  letter-spacing: -0.005em;
-  color: var(--l2-ink);
-  margin: 0 auto 14px;
-  max-width: 44ch;
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.45;
+  text-wrap: balance;
 }
-.level2-page article > header + p strong {
-  font-weight: 600;
-}
+html.level2-page article.markdown > header + p strong { font-weight: 600; color: var(--l2-ink); }
 
 /* Lead: the plain paragraph after the tagline */
-.level2-page article > header + p + p {
+html.level2-page article.markdown > header + p + p {
+  margin: 14px auto 0;
+  max-width: 60ch;
   text-align: center;
   font-size: 17px;
-  line-height: 1.65;
-  color: var(--l2-muted);
-  max-width: 60ch;
-  margin: 0 auto clamp(40px, 6vw, 72px);
-}
-
-/* ------------------------------------------------------------------ *
- * SECTION HEADINGS
- * ------------------------------------------------------------------ */
-.level2-page article > h2 {
-  font-family: "Fraunces", "Times New Roman", serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-size: clamp(28px, 3.6vw, 44px);
-  line-height: 1.14;
-  letter-spacing: -0.01em;
-  color: var(--l2-ink);
-  margin: clamp(52px, 7vw, 88px) 0 20px;
-  padding-top: 4px;
-  border-top: none;
-}
-.level2-page article > h2::before {
-  content: "";
-  display: block;
-  width: 34px;
-  height: 3px;
-  border-radius: 999px;
-  background: var(--l2-accent);
-  margin-bottom: 22px;
-}
-.level2-page article > h2 .hash-link {
-  color: var(--l2-faint);
-}
-
-/* Section lead — a paragraph directly under an h2 */
-.level2-page article > h2 + p {
-  font-size: 18px;
   line-height: 1.6;
   color: var(--l2-muted);
-  max-width: 62ch;
-  margin: 0 0 26px;
+  text-wrap: pretty;
 }
 
 /* ------------------------------------------------------------------ *
- * TABLES — package overview + weekly pricing, rendered as a card table
+ * SECTION HEADINGS (the template's .v4t-h2) + section lead
  * ------------------------------------------------------------------ */
-.level2-page article > table {
+html.level2-page article.markdown > h2 {
+  margin: clamp(72px, 8vw, 112px) 0 0;
+  font-family: var(--l2-sans);
+  font-weight: 800;
+  font-size: clamp(30px, 3.6vw, 48px);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  color: var(--l2-ink);
+  text-wrap: balance;
+}
+/* A short yellow bar over every section heading. */
+html.level2-page article.markdown > h2::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 4px;
+  margin-bottom: 20px;
+  background: var(--l2-yellow);
+}
+html.level2-page article.markdown > h2 .hash-link { color: var(--l2-quiet); }
+
+html.level2-page article.markdown > h2 + p {
+  margin: 16px 0 0;
+  max-width: 62ch;
+  font-size: clamp(17px, 1.3vw, 19px);
+  line-height: 1.55;
+  color: var(--l2-body);
+}
+/* Whatever block follows a heading or its lead sits a fixed gap below it. */
+html.level2-page article.markdown > :is(h2, h2 + p) + :is(table, ol, ul) { margin-top: clamp(28px, 3.4vw, 44px); }
+
+/* ------------------------------------------------------------------ *
+ * TABLES — package overview + weekly pricing, as dark card tables
+ * ------------------------------------------------------------------ */
+html.level2-page article.markdown > table {
   display: table;
   width: 100%;
+  margin-bottom: 0;
   border-collapse: separate;
   border-spacing: 0;
-  border: 1px solid var(--l2-border);
+  border: 1px solid var(--l2-card-edge);
   border-radius: 14px;
   overflow: hidden;
-  background: var(--l2-card);
-  box-shadow: 0 1px 2px rgba(26, 23, 20, 0.04);
-  margin: 8px 0 4px;
+  background: var(--l2-panel);
+  font-size: 16px;
+}
+html.level2-page article.markdown > table tr { background: transparent; border: 0; }
+html.level2-page article.markdown > table :is(th, td) { border: 0; }
+html.level2-page article.markdown > table thead th {
+  padding: 14px 24px;
+  background: var(--l2-raised);
+  border-bottom: 1px solid var(--l2-line);
+  font-family: var(--l2-display);
+  font-weight: 700;
   font-size: 15px;
-}
-.level2-page article > table thead th {
-  background: var(--l2-bg-alt);
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--l2-faint);
   text-align: left;
-  padding: 14px 20px;
-  border-bottom: 1px solid var(--l2-border);
+  color: var(--l2-quiet);
 }
-.level2-page article > table tbody td {
-  padding: 18px 20px;
-  border-bottom: 1px solid var(--l2-border);
+html.level2-page article.markdown > table tbody td {
+  padding: 22px 24px;
+  border-bottom: 1px solid var(--l2-line);
   color: var(--l2-muted);
   vertical-align: middle;
 }
-.level2-page article > table tbody tr:last-child td {
-  border-bottom: none;
-}
-.level2-page article > table tbody td:first-child strong {
-  color: var(--l2-ink);
-}
-/* The price column (last cell) reads as the emphasis */
-.level2-page article > table tbody td:last-child strong {
-  color: var(--l2-accent);
-  font-family: "Fraunces", serif;
-  font-weight: 500;
-  font-size: 20px;
-}
-.level2-page article > table strong {
+html.level2-page article.markdown > table tbody tr:last-child td { border-bottom: 0; }
+html.level2-page article.markdown > table tbody td:first-child { white-space: nowrap; }
+html.level2-page article.markdown > table tbody td:first-child strong {
+  font-family: var(--l2-display);
   font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+}
+html.level2-page article.markdown > table tbody td strong { font-weight: 700; color: var(--l2-ink); }
+/* The price: a bold LAST cell (the package table's last cell is plain text). */
+html.level2-page article.markdown > table tbody td:last-child:not(:first-child) strong {
+  font-family: var(--l2-display);
+  font-weight: 800;
+  font-size: clamp(26px, 2.4vw, 32px);
+  letter-spacing: 0.01em;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--l2-yellow);
+}
+html.level2-page article.markdown > table th:last-child:not(:first-child) { text-align: left; }
+
+/* The note under the price table ("One fixed weekly price — ...") */
+html.level2-page article.markdown > table + p {
+  margin: 14px 0 0;
+  font-size: 15px;
+  color: var(--l2-quiet);
 }
 
 /* ------------------------------------------------------------------ *
- * HOW IT WORKS — ordered list becomes numbered step columns
+ * HOW IT WORKS — the ordered list as numbered step cards
  * ------------------------------------------------------------------ */
-.level2-page article > ol {
+html.level2-page article.markdown > ol {
   list-style: none;
   counter-reset: l2step;
+  margin-bottom: 0;
   padding: 0;
-  margin: 20px 0 4px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 8px clamp(20px, 3vw, 40px);
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: 20px;
 }
-.level2-page article > ol > li {
+html.level2-page article.markdown > ol > li {
   counter-increment: l2step;
-  position: relative;
-  list-style: none;
-  padding: 4px clamp(20px, 2.5vw, 32px);
-  border-left: 1px solid var(--l2-border);
+  margin: 0;
+  padding: 26px 24px 28px;
+  background: var(--l2-panel);
+  border: 1px solid var(--l2-card-edge);
+  border-top: 3px solid var(--l2-yellow);
+  border-radius: 0 0 14px 14px;
+  font-size: 16px;
+  line-height: 1.55;
   color: var(--l2-muted);
-  font-size: 15.5px;
-  line-height: 1.65;
 }
-.level2-page article > ol > li::before {
-  content: "0" counter(l2step);
+html.level2-page article.markdown > ol > li::marker { content: none; }
+html.level2-page article.markdown > ol > li::before {
+  content: counter(l2step, decimal-leading-zero);
   display: block;
-  font-family: "Fraunces", serif;
-  font-style: italic;
-  font-weight: 300;
-  font-size: clamp(56px, 6vw, 84px);
-  line-height: 1;
-  color: var(--l2-accent-soft);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+  font-family: var(--l2-display);
+  font-weight: 800;
+  font-size: clamp(56px, 5vw, 72px);
+  line-height: 0.85;
+  color: var(--l2-yellow);
 }
-.level2-page article > ol > li strong {
+html.level2-page article.markdown > ol > li strong {
   display: block;
-  font-family: "Fraunces", serif;
-  font-weight: 500;
-  font-size: 22px;
-  color: var(--l2-ink);
-  margin-bottom: 8px;
-}
-
-/* ------------------------------------------------------------------ *
- * FEATURE LISTS — unordered lists become a grid of cards
- * ------------------------------------------------------------------ */
-.level2-page article > ul {
-  list-style: none;
-  padding: 0;
-  margin: 4px 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 18px;
-}
-.level2-page article > ul > li {
-  background: var(--l2-card);
-  border: 1px solid var(--l2-border);
-  border-radius: 14px;
-  padding: 24px 26px;
-  box-shadow: 0 1px 2px rgba(26, 23, 20, 0.04);
-  color: var(--l2-muted);
-  font-size: 15px;
-  line-height: 1.65;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-}
-.level2-page article > ul > li:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 32px -20px rgba(26, 23, 20, 0.28);
-}
-.level2-page article > ul > li strong {
-  display: block;
-  font-family: "Fraunces", serif;
-  font-weight: 500;
-  font-size: 19px;
-  color: var(--l2-ink);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  font-family: var(--l2-sans);
+  font-weight: 700;
+  font-size: 20px;
   line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--l2-ink);
 }
 
 /* ------------------------------------------------------------------ *
- * CLOSING CTA — the final "Ready to add a team?" heading + paragraph
+ * FEATURE LISTS — unordered lists as a grid of dark cards (V4Card)
  * ------------------------------------------------------------------ */
-.level2-page article > h2:last-of-type {
+html.level2-page article.markdown > ul {
+  list-style: none;
+  margin-bottom: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr));
+  gap: 20px;
+}
+html.level2-page article.markdown > ul > li {
+  margin: 0;
+  padding: 26px 24px;
+  background: var(--l2-panel);
+  border: 1px solid var(--l2-card-edge);
+  border-radius: 14px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--l2-muted);
+  transition: border-color 0.15s ease;
+}
+html.level2-page article.markdown > ul > li::marker { content: none; }
+html.level2-page article.markdown > ul > li:hover { border-color: rgba(238, 188, 60, 0.45); }
+html.level2-page article.markdown > ul > li strong {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--l2-sans);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--l2-ink);
+}
+
+/* ------------------------------------------------------------------ *
+ * CLOSING CTA — the final heading + paragraph on a full-width navy band
+ * (the homepage's "Get Started" band) with the square yellow CTA.
+ * Full bleed via box-shadow + clip-path: no wrapper, no horizontal scroll.
+ * ------------------------------------------------------------------ */
+html.level2-page article.markdown > h2:last-of-type,
+html.level2-page article.markdown > p:last-child {
+  background: var(--l2-navy);
+  box-shadow: 0 0 0 100vmax var(--l2-navy);
+  clip-path: inset(0 -100vmax);
   text-align: center;
-  margin-top: clamp(64px, 8vw, 104px);
+}
+/* The paragraph's band also covers <main>'s bottom margin, down to the footer. */
+html.level2-page article.markdown > p:last-child { clip-path: inset(0 -100vmax calc(-1 * var(--l2-main-gap))); }
+html.level2-page article.markdown > h2:last-of-type {
+  margin-top: clamp(96px, 10vw, 144px);
+  padding-top: clamp(64px, 7vw, 96px);
   font-size: clamp(34px, 4.4vw, 56px);
 }
-.level2-page article > h2:last-of-type::before {
+html.level2-page article.markdown > h2:last-of-type::before { margin-inline: auto; }
+/* Out of flow, so the (hidden until hover) "#" link does not push the centred title left. */
+html.level2-page article.markdown > h2:last-of-type .hash-link { position: absolute; }
+html.level2-page article.markdown > p:last-child {
+  margin: 0;
+  padding: 16px 0 clamp(64px, 7vw, 96px);
+  max-width: none;
+  font-size: clamp(17px, 1.3vw, 19px);
+  color: var(--l2-body);
+}
+/* The link becomes the template's square yellow CTA (.v4t-cta), on its own line.
+   The markdown ends "[Talk to ACT 3](/contact)." — the trailing period would sit
+   alone on a line under the button, so the negative bottom margin pulls that
+   line up behind the (opaque, stacked-above) button. */
+html.level2-page article.markdown > p:last-child a {
+  position: relative;
+  z-index: 1;
+  margin-bottom: -1.6em;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
   margin-inline: auto;
+  padding: 13px 30px;
+  background: var(--l2-yellow);
+  color: var(--l2-yellow-ink);
+  font-family: var(--l2-display);
+  font-weight: 700;
+  font-size: 21px;
+  line-height: normal;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 160ms ease;
 }
-.level2-page article > p:last-child {
-  text-align: center;
-  color: var(--l2-muted);
-  font-size: 17px;
-  margin: 0 auto clamp(48px, 7vw, 96px);
-  max-width: 46ch;
+html.level2-page article.markdown > p:last-child a::after {
+  content: "\203A";
+  font-size: 1.3em;
+  line-height: 0.6;
+  position: relative;
+  top: -1px;
 }
-.level2-page article > p:last-child a {
-  display: inline-block;
-  margin-top: 20px;
-  background: var(--l2-accent);
-  color: #fff;
-  font-weight: 600;
-  font-size: 16px;
-  padding: 14px 32px;
-  border-radius: 999px;
-  box-shadow: 0 10px 28px -14px var(--l2-accent);
-  transition: background 0.16s ease;
+html.level2-page article.markdown > p:last-child a:hover {
+  background: var(--l2-yellow-hi);
+  color: var(--l2-yellow-ink);
+  text-decoration: none;
 }
-.level2-page article > p:last-child a:hover {
-  background: var(--l2-accent-dark);
-  color: #fff;
+html.level2-page article.markdown > p:last-child a:focus-visible {
+  outline: 3px solid var(--l2-yellow-hi);
+  outline-offset: 4px;
 }
 
 /* ------------------------------------------------------------------ *
- * Small screens
+ * Phones
  * ------------------------------------------------------------------ */
+@media (max-width: 760px) {
+  html.level2-page article.markdown > p:last-child a { padding: 11px 22px; font-size: 19px; }
+}
 @media (max-width: 600px) {
-  .level2-page article > ol {
-    grid-template-columns: 1fr;
+  /* Tables: each row becomes its own block (title, then the cells under it),
+     so nothing scrolls sideways. The header row is kept for screen readers. */
+  html.level2-page article.markdown > table,
+  html.level2-page article.markdown > table :is(tbody, tr, td) { display: block; }
+  html.level2-page article.markdown > table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
-  .level2-page article > ol > li {
-    border-left: none;
-    border-top: 1px solid var(--l2-border);
-    padding: 20px 0 8px;
+  html.level2-page article.markdown > table tbody tr {
+    padding: 20px;
+    border-bottom: 1px solid var(--l2-line);
   }
-  .level2-page article > table {
-    display: block;
-    overflow-x: auto;
-  }
+  html.level2-page article.markdown > table tbody tr:last-child { border-bottom: 0; }
+  html.level2-page article.markdown > table tbody td { padding: 0; border: 0; }
+  html.level2-page article.markdown > table tbody td + td { margin-top: 6px; }
+  html.level2-page article.markdown > table tbody td:last-child:not(:first-child) strong { font-size: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html.level2-page { scroll-behavior: auto; }
+  html.level2-page article.markdown > ul > li,
+  html.level2-page article.markdown > p:last-child a { transition: none; }
 }

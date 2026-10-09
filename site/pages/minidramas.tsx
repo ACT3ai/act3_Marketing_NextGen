@@ -22,22 +22,21 @@ import { applySiteNav, pickRows, replaceCopy } from "../components/v4/rowTransfo
  *   10 Storyboards — opens on the "Minidrama" tab
  *   12 Sets — a set you keep for the whole series
  *   15 Voice — one voice per character, every episode
- *   13 Save money — settle the shot before paying for video
+ *   13 Save money — settle the shot before paying for video (copy unchanged)
  *   14 Teams — one series, many hands
  * No MCP row (16), so V4RowsPage renders the template footer (V4Footer).
  */
 
 const p = (r: V4Row): string => r.prefix;
 
-/** The hero: the headline, the four points and the section label, for minidramas. */
+/** The hero: the headline and two of the four points, for minidramas ("AI Storyboarding" stays). */
 function hero(r: V4Row): V4Row {
   return replaceCopy(r, [
     ['aria-label="ACT 3: AI filmmaking at the speed of storytelling"', 'aria-label="ACT 3: AI minidramas, hook to cliffhanger"'],
     [`<span class="${p(r)}-h1a">AI Filmmaking</span>`, `<span class="${p(r)}-h1a">AI Minidramas</span>`],
-    [`<span class="${p(r)}-h1b">at the speed of storytelling.</span>`, `<span class="${p(r)}-h1b">Hook. Cliffhanger. Next episode.</span>`],
+    [`<span class="${p(r)}-h1b">at the speed of storytelling.</span>`, `<span class="${p(r)}-h1b">Hook. Cliffhanger. Next&nbsp;episode.</span>`],
     ["<li>Your input, and AI Filmmaker does all of the work</li>", "<li>The same lead in every episode</li>"],
-    ["<li>AI Storyboarding</li>", "<li>AI storyboards for every episode</li>"],
-    ["<li>Sets &amp; locations created by AI</li>", "<li>Sets you keep all series</li>"],
+    ["<li>Sets &amp; locations created by AI</li>", "<li>Sets &amp; locations you keep</li>"],
   ]);
 }
 
@@ -56,10 +55,9 @@ function storyboards(r: V4Row): V4Row {
 
 const EDITS: Record<number, (r: V4Row) => V4Row> = {
   1: hero,
-  5: (r) => replaceCopy(r, [["every scene of a two-hour movie", "every episode of your minidrama"]]),
+  5: (r) => replaceCopy(r, [["every scene of a two-hour movie", "every scene of your minidrama"]]),
   10: storyboards,
   12: (r) => replaceCopy(r, [["come back to it whenever the story does.", "come back to it every episode."]]),
-  13: (r) => replaceCopy(r, [["That saves you money and time.", "That saves you money and time on every episode."]]),
   14: (r) =>
     replaceCopy(r, [
       ["One movie that keeps moving.", "One series that keeps moving."],
@@ -74,10 +72,22 @@ const ROWS = pickRows([1, 2, 5, 10, 12, 15, 13, 14])
   .map(applySiteNav)
   .map((r) => (EDITS[r.row] ? EDITS[r.row](r) : r));
 
+/*
+ * Row 5's clapper tab strip has no top padding: on the homepage it sits under
+ * row 4's #0f0e0c ground, so there is no edge. Here it follows row 2, whose
+ * lighter charcoal ground (#262626 at its foot) would end right on the strip.
+ * Give row 5 the same dark lead-in it gets on the homepage.
+ */
+const PAGE_CSS = `
+.v4 .v4-row[data-row="5"] { background: #0f0e0c; padding-top: 48px; }
+@media (max-width: 640px) { .v4 .v4-row[data-row="5"] { padding-top: 28px; } }
+.v4[data-v4-theme="light"] .v4-row[data-row="5"] { background: #ecebe8; } /* ?theme=light review aid: row 5's light ground */
+`;
+
 const URL = "https://act3ai.com/minidramas";
 const TITLE = "AI Minidramas | ACT 3 AI";
 const DESCRIPTION =
-  "Make minidramas with ACT 3 AI: micro-drama episodes with the same lead, sets and voices every episode. Give a note in one sentence and the scene is re-shot.";
+  "Make minidramas (micro-dramas) with ACT 3 AI: the same lead, sets and voices in every episode. Give a note in one sentence and see the change.";
 
 export default function Minidramas(): React.JSX.Element {
   return (
@@ -96,6 +106,8 @@ export default function Minidramas(): React.JSX.Element {
         <meta name="theme-color" content={V4_PAGE_GROUND} />
       </Head>
 
+      {/* In the tree, not <Head>: the static build drops a <style> in <Head> until hydration. */}
+      <style dangerouslySetInnerHTML={{ __html: PAGE_CSS }} />
       <V4RowsPage rows={ROWS} ctaEvery={3} />
     </>
   );
