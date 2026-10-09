@@ -1,7 +1,8 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // /backup — FROZEN SNAPSHOT of the homepage (site/pages/index.tsx)
 //
-// Copied verbatim from site/pages/index.tsx on 2026-09-03.
+// Copied verbatim from site/pages/index.tsx on 2026-10-08, just before the /v/4 design
+// replaced it as the homepage.
 // Purpose: keep a known-good copy of the homepage as it looked on that date, so
 // the homepage can be changed freely and this version is always reachable at
 // https://act3ai.com/backup for comparison or rollback.
@@ -1094,7 +1095,7 @@ export default function HomeBackup(): React.JSX.Element {
         <meta name="robots" content="noindex, nofollow" />
         <meta
           name="description"
-          content="ACT 3 is the AI filmmaking platform for creating movies, TV, and marketing videos. Write your story. ACT 3 handles everything else."
+          content="ACT 3 AI is the AI filmmaking platform for creating movies, TV, and marketing videos. Write your story. ACT 3 AI handles everything else."
         />
         {/* Fonts load site-wide from docusaurus.config.ts headTags. */}
       </Head>

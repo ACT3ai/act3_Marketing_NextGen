@@ -95,6 +95,11 @@ site/static/robots.txt  — crawl policy + sitemap pointer + AI-crawler allow li
 site/static/llms.txt    — GENERATED index of the site for AI answer engines
 site/static/img/        — images, logo, favicon
 site/pages/             — custom React pages (home, features, about, contact, articles)
+site/pages/index.tsx    — the homepage (/): the "/v/4" design, moved here 2026-10-08
+site/pages/_rows.generated.ts — GENERATED homepage rows (scripts/build-v4-rows.js); never hand-edit
+site/pages/backup.tsx   — /backup: frozen copy of the homepage the v4 design replaced (noindex)
+site/pages/v/4/         — redirect stub only: /v/4 → /
+site/static/v4/         — GENERATED homepage row assets, served at /v4/row_N/
 site/pages/articles/    — GENERATED: the 133 published SEO articles
 site/data/articles.json — GENERATED: the article index the site renders from
 site/components/        — SiteNavbar, SiteFooter, PageHero, ArticleCTA
