@@ -1,11 +1,11 @@
 ---
 title: "AI Horror Film Maker: Full Scenes With Directed Tension"
-description: "An AI horror movie generator that actually works is not a prompt box — it is a cinematography system. Horror is the genre where prompt-only tools fail..."
+description: "An AI horror movie generator that actually works is not a prompt box — it is a cinematography system."
 keywords: ["ai horror movie generator", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_horror_tension"
 article_target_query: "ai horror movie generator"
@@ -144,5 +144,5 @@ Suspense, atmosphere, supernatural, and psychological horror are well within sco
 
 Bring a script, or a premise. Break it into beats, scenes, and shots, direct the coverage, and generate the first scene today.
 
-**[Start a production](https://app.act3ai.com/signup/)** — or, if you want the film made for you, **[talk to the ACT 3 Level 2 team](/level2)** about taking your script and your feedback all the way to a finished cut.
+**[Start a production](https://app.act3ai.com/signup/)** — or, if you want the film made for you, **[talk to the ACT 3 Assistant Director Team](/level2)** about taking your script and your feedback all the way to a finished cut.
 

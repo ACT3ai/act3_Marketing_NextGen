@@ -191,15 +191,47 @@ export interface V4CardProps {
   children?: React.ReactNode;
 }
 
+/**
+ * A linked card's title with its → arrow glued to the last word, so a long
+ * title never leaves the arrow alone on a line of its own. Pure string work (no
+ * window / layout reads), so the server and client render the same markup.
+ * A non-string title (JSX) keeps the arrow after it as before.
+ */
+function TitleWithArrow({ title }: { title: React.ReactNode }): React.JSX.Element {
+  const arrow = (
+    <span className="v4t-card-arrow" aria-hidden="true">
+      →
+    </span>
+  );
+  if (typeof title !== "string") {
+    return (
+      <>
+        {title}
+        {arrow}
+      </>
+    );
+  }
+  const trimmed = title.trimEnd();
+  const cut = trimmed.lastIndexOf(" ");
+  const head = cut >= 0 ? trimmed.slice(0, cut + 1) : "";
+  const last = cut >= 0 ? trimmed.slice(cut + 1) : trimmed;
+  return (
+    <>
+      {head}
+      <span className="v4t-card-tail">
+        {last}
+        {arrow}
+      </span>
+    </>
+  );
+}
+
 export function V4Card({ title, text, href, eyebrow, icon, children }: V4CardProps): React.JSX.Element {
   const body = (
     <>
       {icon ? <span className="v4t-card-icon" aria-hidden="true">{icon}</span> : null}
       {eyebrow ? <span className="v4t-card-eyebrow">{eyebrow}</span> : null}
-      <h3 className="v4t-card-title">
-        {title}
-        {href ? <span className="v4t-card-arrow" aria-hidden="true">→</span> : null}
-      </h3>
+      <h3 className="v4t-card-title">{href ? <TitleWithArrow title={title} /> : title}</h3>
       {text ? <p className="v4t-card-text">{text}</p> : null}
       {children}
     </>

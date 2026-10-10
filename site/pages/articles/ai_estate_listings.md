@@ -1,11 +1,11 @@
 ---
 title: "AI Video Generator for Real Estate: Listings to Tours"
-description: "An AI video generator lets a real estate agent or brokerage turn listing copy and property photography into branded, narrated video — without a..."
+description: "An AI video generator lets a real estate agent or brokerage turn listing copy and property photography into branded, narrated video."
 keywords: ["ai video generator for real estate", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_estate_listings"
 article_target_query: "ai video generator for real estate"

@@ -2,7 +2,7 @@
 title: "Working in 2-3 Hour Sprints to Build a Feature With AI"
 description: "The way to actually finish an AI feature is to stop working in five-minute prompt bursts and start working in 2–3 hour sprints with a single defined..."
 keywords: ["work in long sprints on ai film", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-07-21

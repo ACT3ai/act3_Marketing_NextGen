@@ -1,11 +1,11 @@
 ---
 title: "AI Music Video Maker With Directed Camera and Cuts"
-description: "A music video is edited to the track, not to a prompt. That is the whole craft: the cut lands on the beat, the camera move resolves on the downbeat, the..."
+description: "A music video is edited to the track, not to a prompt. That is the whole craft."
 keywords: ["ai music video generator", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_music_cuts"
 article_target_query: "ai music video generator"
@@ -132,5 +132,5 @@ Yes. Decide your aspect ratios before composing shots so framing is right for ea
 
 Bring the track and a shot idea for the first sixteen bars. Build the shot list, direct the camera, and cut it to the beat.
 
-**[Start a production](https://app.act3ai.com/signup/)** — or **[talk to the ACT 3 Level 2 team](/level2)** about having our team take your track, your concept, and your feedback all the way to a finished video.
+**[Start a production](https://app.act3ai.com/signup/)** — or **[talk to the ACT 3 Assistant Director Team](/level2)** about having our team take your track, your concept, and your feedback all the way to a finished video.
 

@@ -1,11 +1,11 @@
 ---
 title: "AI Video for Large Marketing Teams: Sprints, Seats, and IP"
-description: "Rolling AI video out to a large marketing team is not a tooling decision, it is an operations decision. You need one workspace that owns every project and..."
+description: "Rolling AI video out to a large marketing team is not a tooling decision, it is an operations decision."
 keywords: ["ai video for large marketing teams", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_large_sprints"
 article_target_query: "ai video for large marketing teams"
@@ -100,7 +100,7 @@ Credits are the billing unit, and the platform surfaces cost at the point of dec
 
 ## If you would rather not build the muscle in-house
 
-Not every marketing organization wants to staff an AI video practice. The optional **ACT 3 "Level 2 team"** package puts our team on your production: you bring the script and all the feedback you want, and our team takes that feedback into the movie and makes it happen. You can use us for part of your team or all of it. It is a reasonable answer when the campaign calendar arrives before the internal capability does.
+Not every marketing organization wants to staff an AI video practice. The optional **ACT 3 Assistant Director Team** package puts our team on your production: you bring the script and all the feedback you want, and our team takes that feedback into the movie and makes it happen. You can use us for part of your team or all of it. It is a reasonable answer when the campaign calendar arrives before the internal capability does.
 
 ## FAQ
 
@@ -136,5 +136,5 @@ No. Export supports EDL, MP4/MOV, ProRes masters, FDX, and PDF, with Premiere Pr
 
 The teams that succeed with AI video at scale do the boring part first: one organization, clear seats, a short list of people who can spend, and one real pilot production run as a sprint.
 
-**Talk to our team about an enterprise rollout — or bring us in as your Level 2 team and we will make the production happen.**
+**Talk to our team about an enterprise rollout — or bring us in as your Assistant Director Team and we will make the production happen.**
 

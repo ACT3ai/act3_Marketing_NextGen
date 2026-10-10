@@ -1,11 +1,11 @@
 ---
 title: "AI Cartoon and 2D Animation From Script to Full Episode"
-description: "An AI cartoon generator from script should do more than turn a paragraph into a pretty clip. To make an actual episode you need four things in one place..."
+description: "An AI cartoon generator from script should do more than turn a paragraph into a pretty clip. To make an actual episode you need four things in one place."
 keywords: ["ai cartoon generator from script", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_cartoon_2d"
 article_target_query: "ai cartoon generator from script"
@@ -125,9 +125,9 @@ Yes. Projects live in an Organization with granular roles — Read, Modify/Edit,
 
 **What if I want the episode made for me?**
 
-That is the optional ACT 3 "Level 2 team" package: our team takes your script and your feedback and makes the movie or episode happen, covering part or all of the production work. You keep giving notes; we get it produced.
+That is the optional ACT 3 Assistant Director Team package: our team takes your script and your feedback and makes the movie or episode happen, covering part or all of the production work. You keep giving notes; we get it produced.
 
 ## Start your first episode
 
-Bring a script — or a paragraph — and build the pilot. **Start a production in ACT 3 AI**, or talk to the Level 2 team about having us produce the episode from your script and your notes. If you want to see the pipeline end to end first, read our walkthrough of going from idea to final cut.
+Bring a script — or a paragraph — and build the pilot. **Start a production in ACT 3 AI**, or talk to the Assistant Director Team about having us produce the episode from your script and your notes. If you want to see the pipeline end to end first, read our walkthrough of going from idea to final cut.
 

@@ -1,4 +1,6 @@
 import { execFileSync } from "node:child_process";
+import { readdirSync, readFileSync, statSync } from "node:fs";
+import { join } from "node:path";
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
@@ -12,7 +14,11 @@ import { isExternal, MORE_NAV, PRIMARY_NAV, SIGNIN } from "./site/data/siteNav";
 const BRAND = "ACT 3 AI";
 const SITE_URL = "https://act3ai.com";
 const TAGLINE = "AI Filmmaking: From Script to Cinematic Video";
-const SOCIAL_CARD_ALT = "ACT 3 AI | Create Movies at the Speed of Storytelling";
+// The social card (themeConfig.image) is the v4 homepage hero: the ACT 3 mark
+// and "AI Filmmaking at the speed of storytelling." over the hero still. It
+// replaced img/Act3_Preview.jpg (a screenshot of the retired cream homepage) on
+// 2026-10-09; made from the hero at 1200x630 with the nav, bullets and CTA hidden.
+const SOCIAL_CARD_ALT = "ACT 3 AI | AI Filmmaking at the Speed of Storytelling";
 
 // Google Fonts, requested exactly once for the whole site. Three components
 // (SiteNavbar, PageHero, level2.css) each used to request an overlapping
@@ -74,10 +80,13 @@ const SOFTWARE_LD = {
   description:
     "Import a script and produce a full-length film: beats, scenes, and shots; characters with per-character identity models, wardrobe, and voice; cinematography, lipsync, motion capture, and a unified timeline you can watch end to end.",
   publisher: { "@id": `${SITE_URL}/#organization` },
+  // A single Offer with an explicit price: Google's SoftwareApplication rich
+  // result requires offers.price, which an AggregateOffer (lowPrice) lacks.
+  // The free tier is the entry price; paid plans are described below.
   offers: {
-    "@type": "AggregateOffer",
+    "@type": "Offer",
+    price: "0",
     priceCurrency: "USD",
-    lowPrice: "0",
     url: "https://app.act3ai.com/settings/plans/",
     description:
       "Free tier plus monthly subscription plans with metered generation credits.",
@@ -142,6 +151,51 @@ function gitLastCommitDate(file: string | undefined): string | undefined {
   }
   gitDateCache.set(file, out);
   return out;
+}
+
+/**
+ * Date (YYYY-MM-DD) of the newest blog post, from each post's `date:` front
+ * matter or, failing that, its YYYY-MM-DD- filename prefix. Gives the /blog
+ * index a <lastmod> that moves exactly when a post is published.
+ */
+function newestBlogPostDate(dir = "site/blog"): string | undefined {
+  let newest: string | undefined;
+  let entries: string[] = [];
+  try {
+    entries = readdirSync(dir);
+  } catch {
+    return undefined;
+  }
+  for (const name of entries) {
+    const full = join(dir, name);
+    let file: string | undefined;
+    try {
+      if (statSync(full).isDirectory()) {
+        file = ["index.md", "index.mdx"].map((f) => join(full, f)).find((f) => {
+          try {
+            return statSync(f).isFile();
+          } catch {
+            return false;
+          }
+        });
+      } else if (/\.mdx?$/.test(name)) {
+        file = full;
+      }
+    } catch {
+      continue;
+    }
+    if (!file) continue;
+    let date = name.match(/^(\d{4}-\d{2}-\d{2})/)?.[1];
+    try {
+      const fm = readFileSync(file, "utf8").match(/^---\n([\s\S]*?)\n---/)?.[1];
+      const fmDate = fm?.match(/^date:\s*["']?(\d{4}-\d{2}-\d{2})/m)?.[1];
+      if (fmDate) date = fmDate;
+    } catch {
+      // keep the filename date
+    }
+    if (date && (!newest || date > newest)) newest = date;
+  }
+  return newest;
 }
 
 const config: Config = {
@@ -296,8 +350,9 @@ const config: Config = {
           path: "site/blog",
           showReadingTime: true,
           editUrl: undefined,
-          blogTitle: "ACT 3 AI Blog",
-          blogDescription: "Product news and release notes from ACT 3 AI",
+          blogTitle: "Blog",
+          blogDescription:
+            "Product news, launches and release notes from ACT 3 AI, the AI filmmaking platform that takes you from script to finished film.",
           postsPerPage: 10,
           onInlineAuthors: "ignore",
         },
@@ -336,7 +391,21 @@ const config: Config = {
           // parked copy of the old homepage, and /backup/* are the old-template
           // copies of the pages that moved to the new template. All are noindex
           // and reachable by direct link only; none may compete with the live pages.
-          ignorePatterns: ["/v/**", "/backup", "/backup/**"],
+          // /docs/** is a stale local copy of the documentation: the live docs are
+          // https://documentation.act3ai.com/ (LINKS.docs), nothing on the site
+          // links here, and these pages contradict the live docs. They stay
+          // reachable but are noindex (src/theme/Layout) and out of the sitemap.
+          // The blog's tag and archive pages are thin index machinery (a list of
+          // links, no description of their own); /blog itself covers them.
+          ignorePatterns: [
+            "/v/**",
+            "/backup",
+            "/backup/**",
+            "/docs/**",
+            "/blog/tags",
+            "/blog/tags/**",
+            "/blog/archive",
+          ],
           // One priority for every URL says nothing about what matters. This
           // ranks the homepage and the article hub above the articles, and the
           // blog's index machinery below all of it.
@@ -359,11 +428,16 @@ const config: Config = {
               }
             };
             walk(params.routes as SitemapRoute[]);
+            // The blog index has no source file of its own; it changes when a
+            // post is published, so its <lastmod> is the newest post's date.
+            const blogIndexDate = newestBlogPostDate();
 
             return items.map((item) => {
               const path = item.url.replace(SITE_URL, "") || "/";
               const lastmod =
-                item.lastmod ?? gitLastCommitDate(sourceByRoute.get(path));
+                item.lastmod ??
+                (path === "/blog" ? blogIndexDate : undefined) ??
+                gitLastCommitDate(sourceByRoute.get(path));
               const route = path;
               const rule =
                 route === "/"
@@ -372,7 +446,7 @@ const config: Config = {
                     ? { priority: 0.9, changefreq: "weekly" as const }
                     : route.startsWith("/articles/")
                       ? { priority: 0.7, changefreq: "monthly" as const }
-                      : /^\/(features|level2|about|contact|mcp|cli)$/.test(route)
+                      : /^\/(features|level2|about|contact|mcp|cli|movies|tv|minidramas|videos)$/.test(route)
                         ? { priority: 0.8, changefreq: "monthly" as const }
                         : route.startsWith("/blog")
                           ? { priority: 0.3, changefreq: "monthly" as const }
@@ -386,7 +460,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: "img/Act3_Preview.jpg",
+    image: "img/act3-social-card.jpg",
     colorMode: {
       defaultMode: "light",
       respectPrefersColorScheme: false,

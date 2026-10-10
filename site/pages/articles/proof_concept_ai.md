@@ -1,11 +1,11 @@
 ---
 title: "Make a Proof-of-Concept Trailer to Raise Money With AI"
-description: "A proof-of-concept trailer made with AI is a 2–4 minute piece that shows financiers what your film looks and feels like — tone, world, cast..."
+description: "A proof-of-concept trailer made with AI is a 2–4 minute piece that shows financiers what your film looks and feels like — tone, world, cast, cinematography."
 keywords: ["make a proof of concept trailer with ai", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "proof_concept_ai"
 article_target_query: "make a proof of concept trailer with ai"
@@ -13,7 +13,7 @@ article_persona: "Indie Filmmaker"
 article_funnel_stage: "Compare"
 article_search_intent: "Commercial"
 article_content_type: "Use_Case"
-article_key_value: "Level_2_Team"
+article_key_value: "Assistant_Director_Team"
 ---
 
 {/* GENERATED FILE -- do not edit here.
@@ -87,7 +87,7 @@ That list is the difference between a trailer that looks AI-generated and one th
 
 Here is the honest constraint. A POC trailer is usually being made by a writer-director who has a script, a deadline, an investor meeting on the calendar, and no crew. Learning a full production pipeline *and* directing the trailer *and* preparing the raise is three jobs.
 
-ACT 3 AI offers an optional **Level 2 team** package for exactly this: our team takes your feedback and makes the movie happen. You can use us for part or all of your production team. You bring the script and the creative direction; you give notes as many times as you want; we execute them. For a proof-of-concept trailer this is often the right shape — you stay the director, you do not have to become the crew, and you get to the investor meeting with a finished piece.
+ACT 3 AI offers an optional **Assistant Director Team** package for exactly this: our team takes your feedback and makes the movie happen. You can use us for part or all of your production team. You bring the script and the creative direction; you give notes as many times as you want; we execute them. For a proof-of-concept trailer this is often the right shape — you stay the director, you do not have to become the crew, and you get to the investor meeting with a finished piece.
 
 It scales the same way afterward. If the raise works and you go to full production, the same arrangement covers part or all of the production team, on the same script, in the same platform, with all your IP already stored in it.
 
@@ -141,7 +141,7 @@ Yes — that is the main structural advantage over a live-action POC. Characters
 
 **What if I don't know how to use AI production tools?**
 
-Use the Level 2 team option. ACT 3's team takes your feedback and makes the production happen, for part or all of the work. You direct; we execute. That is specifically designed for filmmakers with a script and a deadline rather than a pipeline skillset.
+Use the Assistant Director Team option. ACT 3's team takes your feedback and makes the production happen, for part or all of the work. You direct; we execute. That is specifically designed for filmmakers with a script and a deadline rather than a pipeline skillset.
 
 **What formats can I deliver for festivals and investor screenings?**
 
@@ -153,5 +153,5 @@ Use the Level 2 team option. ACT 3's team takes your feedback and makes the prod
 
 If the meeting is on the calendar, the fastest route is not learning a new pipeline — it is handing the script to people who already run one.
 
-**[Talk to the ACT 3 Level 2 team](/)** about your proof-of-concept trailer. Bring the script and your creative direction; we will take your feedback and make it happen.
+**[Talk to the ACT 3 Assistant Director Team](/level2)** about your proof-of-concept trailer. Bring the script and your creative direction; we will take your feedback and make it happen.
 

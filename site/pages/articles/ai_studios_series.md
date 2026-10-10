@@ -1,11 +1,11 @@
 ---
 title: "AI Production Software for Film Studios and Series Teams"
-description: "Studio-grade AI production software is a different category from consumer AI video generators. A studio does not need a tool that makes a nine-second..."
+description: "Studio-grade AI production software is a different category from consumer AI video generators."
 keywords: ["ai production software for film studios", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_studios_series"
 article_target_query: "ai production software for film studios"
@@ -78,7 +78,7 @@ ACT 3 AI is a hosted web app built for **serious production — TV and movies** 
 
 **Cost governance.** Every generation job is queued with predicted spend so a team can approve or postpone against budget, every action displays its exact credit cost before commit, and a metered billing dashboard tracks video minutes, storage, and concurrent renders with real-time forecasts and budget alerts. Enterprise plans are quoted for committed volume.
 
-**If capacity, not software, is the constraint**, ACT 3 offers an optional "Level 2 team" package — our team takes your feedback and makes the movie happen, for part or all of the production. Studios use it to absorb a peak without hiring.
+**If capacity, not software, is the constraint**, ACT 3 offers an optional Assistant Director Team package — our team takes your feedback and makes the movie happen, for part or all of the production. Studios use it to absorb a peak without hiring.
 
 ## What it does not replace
 
@@ -114,11 +114,11 @@ Pro is $175/month with commercial use for audiences up to 100,000 and six concur
 
 **Can we get help staffing a production?**
 
-Yes. The optional ACT 3 "Level 2 team" package puts our team on your production — for part or all of it — taking your feedback and making the movie happen.
+Yes. The optional ACT 3 Assistant Director Team package puts our team on your production — for part or all of it — taking your feedback and making the movie happen.
 
 ---
 
 ## Talk to the team about your slate
 
-Studio evaluations are specific. Book a walkthrough and bring a real episode or a real slate — we will map it to the project hierarchy, show how consistency and permissions are configured for your departments, and cover how the output lands in your existing post pipeline. If capacity is the issue, ask about the Level 2 team.
+Studio evaluations are specific. Book a walkthrough and bring a real episode or a real slate — we will map it to the project hierarchy, show how consistency and permissions are configured for your departments, and cover how the output lands in your existing post pipeline. If capacity is the issue, ask about the Assistant Director Team.
 

@@ -1,11 +1,11 @@
 ---
 title: "How Long Can AI Video Be? Building 2-Hour Movies"
-description: "Every current generative video model produces short clips — typically a handful of seconds per generation. No model today generates a two-hour movie in..."
+description: "Every current generative video model produces short clips — typically a handful of seconds per generation."
 keywords: ["how long can ai generate video", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_building_movies"
 article_target_query: "how long can ai generate video"

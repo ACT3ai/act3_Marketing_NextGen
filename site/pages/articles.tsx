@@ -16,8 +16,8 @@ import articleIndex from "../data/articles.json";
  * Resources column of the footer.
  *
  * A directory, not a feed: no dates, nothing ordered by recency. Each group is
- * a dense grid of title + one line (CSS-clamped to three lines as a fallback for
- * the few long ones). The link text is the title alone; the line
+ * a dense grid of title + one line (hubLine keeps it within four lines; the CSS
+ * clamp is only a safety net). The link text is the title alone; the line
  * is a sibling paragraph and a stretched ::after keeps the whole cell clickable.
  *
  * The page CSS is rendered in the tree (dangerouslySetInnerHTML), NOT in <Head>:
@@ -32,57 +32,113 @@ type ArticleRecord = {
   persona: string;
 };
 
-/** "Level 2" is internal; the public name is the Assistant Director Team. The
- *  upstream corpus still uses it in one title, so the hub renders the public name. */
-const publicName = (s: string): string => s.replace(/\bLevel[- ]?2 Team\b/gi, "Assistant Director Team");
+/**
+ * Line budgets, in characters. The narrowest description column is about 300px
+ * (the 2-column layout just above the 680px breakpoint), where 15px Figtree wraps
+ * at roughly 40 characters, so 160 is the most that fits the 4-line clamp there.
+ * A whole sentence or a clean clause may use all of it; a shortened line aims for
+ * LINE_MAX so it reads as deliberately short rather than as overflow.
+ */
+const LINE_MAX = 140;
+const SENTENCE_MAX = 160;
 
-/** Longest line the hub shows before trying a clause cut (about two lines). */
-const LINE_MAX = 120;
+/** A negation in the clause right before a cut: cutting there keeps only the "not" half. */
+const NEGATED = /\bnot\b|n't\b|\bnever\b/i;
+/** A tail that carries the point (a contrast, a qualifier, the affirmative half): never cut before it. */
+const CONTRAST_TAIL = /^(?:but|though|although|yet|instead|rather|it is|it's|they are|they're|that is|for)\b/i;
+const DASH = /\s[—–]\s/;
+
+/** Sentences of at least 40 characters (so "Veo 3 is a model." rides with the next one). */
+function sentences(s: string): string[] {
+  const out: string[] = [];
+  const end = /[.?!](["”’)]?)\s+(?=["“A-Z0-9])/g;
+  let start = 0;
+  for (let m = end.exec(s); m; m = end.exec(s)) {
+    const stop = m.index + 1 + m[1].length;
+    if (stop - start < 40) continue;
+    out.push(s.slice(start, stop).trim());
+    start = m.index + m[0].length;
+  }
+  if (start < s.length) out.push(s.slice(start).trim());
+  return out;
+}
+
+/**
+ * "X is not A — it is B", or the same across two sentences, becomes "X is B":
+ * the affirmative half is the claim, and the negative half alone reads as the
+ * opposite of the article.
+ */
+function affirm(first: string, next: string | undefined): string {
+  const inner = first.match(/^(.*?\b(?:is|are))\s+not\s+.+?\s[—–]\s+(?:it|they)\s+(?:is|are)\s+(.+)$/i);
+  if (inner) return `${inner[1]} ${inner[2]}`;
+  if (next && /\b(?:is not|isn't|are not|aren't)\b/i.test(first) && /^(?:It is|It's|They are)\s/.test(next)) {
+    const subject = first.match(/^(.*?\b(?:is|are))(?:\s+not|n't)\s/i);
+    const rest = next.replace(/^(?:It is|It's|They are)\s+/, "");
+    return subject ? `${subject[1]} ${rest}` : next;
+  }
+  return first;
+}
 
 /**
  * The hub's one line for an article, cut from its description (the article's
- * lead paragraph) without rewording it: the first sentence, and, when that is
- * still long, the main clause before a " — " or ": " (never a negated clause,
- * which would read as the opposite, and never inside a "— aside —" pair). An
- * answer-first opening ("Yes, ...") loses the "Yes", since the hub shows no
- * question. Anything still long is clamped by CSS.
+ * lead paragraph) without rewording it. An answer-first opening ("Yes, ...")
+ * loses the "Yes", since the hub shows no question. Then, in order of
+ * preference:
+ *   1. the whole first sentence (with a "not A — it is B" folded to its claim);
+ *   2. the same sentence without a "— aside —" pair;
+ *   3. the main clause before a dash, colon or semicolon: never before a
+ *      contrast or qualifier ("— but", "— for"), never after a negated clause,
+ *      never at the close of an aside, never at "the following:";
+ *   4. a cut at a comma or word boundary, ending on a full word plus an ellipsis.
+ * A description that arrives already cut off ("...") skips 1 and 2.
+ * Every result fits the 4-line clamp; the clamp is only a safety net.
  */
 function hubLine(description: string): string {
-  let s = description.replace(/^Yes(?:,| —)\s+/, "").replace(/^(["“]?)([a-z])/, (_, q: string, c: string) => q + c.toUpperCase());
+  const lead = description
+    .replace(/^Yes(?:,| —)\s+/, "")
+    .replace(/^(["“]?)([a-z])/, (_, q: string, c: string) => q + c.toUpperCase());
+  const [first = lead, next] = sentences(lead);
+  const whole = affirm(first, next);
+  // A few corpus descriptions arrive already cut off ("virtual set..."): never show that cut.
+  const cutOff = /(?:\.\.\.|…)$/.test(whole);
+  const s = whole.replace(/\s*(?:\.\.\.|…)$/, "");
+  if (!cutOff && s.length <= SENTENCE_MAX) return s;
 
-  const sentenceEnd = /[.?!](["”’)]?)\s+(?=["“A-Z0-9])/g;
-  for (let m = sentenceEnd.exec(s); m; m = sentenceEnd.exec(s)) {
-    if (m.index >= 40) {
-      s = s.slice(0, m.index + 1 + m[1].length);
-      break;
-    }
-  }
+  const noAside = s.replace(/\s[—–]\s[^—–]+?\s[—–]\s/, " ");
+  if (!cutOff && noAside !== s && noAside.length <= SENTENCE_MAX) return noAside;
 
-  if (s.length > LINE_MAX) {
-    const clause = /\s[—–]\s|:\s/g;
-    for (let m = clause.exec(s); m; m = clause.exec(s)) {
-      const head = s.slice(0, m.index);
-      if (head.length < 45) continue;
-      const isDash = m[0].trim() !== ":";
-      if (
-        head.length > LINE_MAX ||
-        /\bnot\b|n't\b|\bno\b/i.test(head) ||
-        (isDash && /\s[—–]\s/.test(s.slice(m.index + m[0].length))) ||
-        (!isDash && /\b(this|these|following)$/i.test(head))
-      ) {
-        break;
-      }
-      s = head.replace(/[,;]$/, "") + ".";
-      break;
-    }
+  let clause = "";
+  const brk = /\s[—–]\s|[:;]\s/g;
+  for (let m = brk.exec(s); m; m = brk.exec(s)) {
+    const head = s.slice(0, m.index);
+    const tail = s.slice(m.index + m[0].length);
+    if (head.length < 45) continue;
+    if (head.length > SENTENCE_MAX) break;
+    if (CONTRAST_TAIL.test(tail)) continue;
+    if (NEGATED.test(head.slice(head.lastIndexOf(",") + 1)) && !/^(?:and|because|so)\b/i.test(tail)) continue;
+    if (DASH.test(m[0]) && (head.match(/\s[—–]\s/g) ?? []).length % 2 === 1) continue; // closes an aside
+    if (!DASH.test(m[0]) && /\b(this|these|following)$/i.test(head)) continue;
+    clause = head;
   }
-  return s;
+  if (clause) return clause.replace(/[\s,;:—–-]+$/, "").replace(/[.?!]?$/, ".");
+
+  const room = s.slice(0, LINE_MAX);
+  const comma = room.lastIndexOf(", ");
+  let cut = comma >= 90 ? room.slice(0, comma) : room.slice(0, room.lastIndexOf(" "));
+  for (let prev = ""; prev !== cut; ) {
+    prev = cut;
+    cut = cut
+      .replace(/\s+(?:a|an|the|and|or|but|of|to|in|on|for|with|by|from|as|at|that|which|who|your|its|their|is|are)$/i, "")
+      .replace(/[\s,;:—–-]+$/, "");
+  }
+  return `${cut}…`;
 }
 
 const ARTICLES = (articleIndex as ArticleRecord[]).map((a) => ({
   ...a,
-  title: publicName(a.title),
-  description: hubLine(publicName(a.description)),
+  // Titles and descriptions already carry the public "Assistant Director Team"
+  // name: scripts/sync-articles.js rewrites the corpus's "Level 2 team".
+  description: hubLine(a.description),
 }));
 
 /** Group order and copy. A persona missing from here still renders, at the end. */
@@ -136,7 +192,7 @@ const PAGE_CSS = `
 .a3hub-title:focus-visible::after { outline: 3px solid var(--v4t-yellow-hi); outline-offset: 2px; }
 .a3hub-desc {
   margin: 0; font-size: 15px; line-height: 1.5; color: var(--v4t-quiet);
-  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; line-clamp: 4;
   overflow: hidden;
 }
 
@@ -258,8 +314,7 @@ export default function Articles(): React.ReactNode {
             </V4Section>
           </React.Fragment>
         ))}
-
-        <V4CtaBand />
+        {/* No closing band: the footer right below already carries Get Started. */}
       </main>
     </Layout>
   );

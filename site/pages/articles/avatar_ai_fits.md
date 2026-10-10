@@ -2,7 +2,7 @@
 title: "Talking-Avatar Tools vs Cinematic AI: Which Fits Your Story"
 description: "AI avatar tools and cinematic AI tools solve two different problems, and picking the wrong one is the single most common reason an indie project stalls."
 keywords: ["ai avatar tools vs cinematic ai", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-07-21

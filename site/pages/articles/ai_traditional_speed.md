@@ -2,7 +2,7 @@
 title: "AI Video vs Traditional Production: Cost, Speed, and Control"
 description: "AI video and traditional production differ most in where the money and time go, not simply in how much they cost."
 keywords: ["ai video vs traditional video production", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

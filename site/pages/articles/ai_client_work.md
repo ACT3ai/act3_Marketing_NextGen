@@ -1,11 +1,11 @@
 ---
 title: "AI Video Generator for Ad Agencies and Client Work"
-description: "Most AI video tools are built for one person making one clip. An agency needs the opposite — several client productions running at once, a team..."
+description: "Most AI video tools are built for one person making one clip. An agency needs the opposite."
 keywords: ["ai video generator for ad agencies", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_client_work"
 article_target_query: "ai video generator for ad agencies"

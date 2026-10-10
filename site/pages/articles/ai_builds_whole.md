@@ -1,11 +1,11 @@
 ---
 title: "Best AI Movie Generator That Builds a Whole Film"
-description: "Most tools marketed as an \"AI movie generator\" generate a shot, not a movie. You type a prompt, you get 5–10 seconds, and assembling those seconds into..."
+description: "Most tools marketed as an \"AI movie generator\" generate a shot, not a movie."
 keywords: ["best ai movie generator", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_builds_whole"
 article_target_query: "best ai movie generator"

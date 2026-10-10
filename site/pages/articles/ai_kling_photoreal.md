@@ -2,7 +2,7 @@
 title: "ACT 3 AI vs Kling: Clips vs Full-Length Storytelling"
 description: "Kling is a generative video model — you give it a prompt or an image and it returns a short, often strikingly photoreal clip."
 keywords: ["act3 ai vs kling", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

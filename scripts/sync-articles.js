@@ -18,7 +18,8 @@
 //      onBrokenLinks is "throw", so anything missed fails the build loudly.
 //   2. Derives a meta `description` from the article's own lead paragraph --
 //      Docusaurus emits no description without one, and Google then writes the
-//      snippet for us on 133 commercial-intent pages.
+//      snippet for us on 133 commercial-intent pages. It ends on a sentence or
+//      clause boundary, not mid-sentence with "..." (see buildDescription).
 //   3. Stamps `last_update.date` so the sitemap can carry a real <lastmod>
 //      without needing git history in CI. The date only moves when the
 //      published page actually changes: an unchanged page keeps the date it
@@ -28,6 +29,12 @@
 //   4. Drops one inline CTA after the opening section (readers convert from
 //      buttons, not from closing prose most of them never reach).
 //   5. Extracts the "## FAQ" block into structured data for FAQPage JSON-LD.
+//   6. Rewrites the internal name of the done-for-you service ("Level 2 team",
+//      "Level-2 Team", "Level 2 package", ...) to its public name, "Assistant
+//      Director Team", in the title, headings, body, tables, FAQ and index.
+//      Only references to the TEAM / service are touched (see publicTeamName);
+//      "Level 2 is image conditioning" and other uses of "level" stay, and links
+//      to /level2 keep their target.
 //
 // Only the slugs listed in scripts/published-articles.txt are published. The
 // corpus holds far more articles than are ready to go live, and this script
@@ -73,9 +80,14 @@ const OUT_DIR = path.join(REPO, "site/pages/articles");
 const PUBLISH_LIST = path.join(__dirname, "published-articles.txt");
 const DATA_FILE = path.join(REPO, "site/data/articles.json");
 
-const SOCIAL_IMAGE = "https://act3ai.com/img/Act3_Preview.jpg";
+const SOCIAL_IMAGE = "https://act3ai.com/img/act3-social-card.jpg";
+// Descriptions end on a sentence boundary: whole sentences up to MAX_DESC
+// (about what Google renders), a single long lead sentence up to HARD_MAX_DESC
+// for the index and llms.txt only (the meta tag stays within MAX_DESC), and
+// only past that a cut at a clause break (see buildDescription).
 const MAX_DESC = 158;
 const MIN_DESC = 110;
+const HARD_MAX_DESC = 240;
 
 // -- Link rewrites -----------------------------------------------------------
 // Every one of these was a 404 in the corpus as written. The right-hand side is
@@ -83,14 +95,40 @@ const MIN_DESC = 110;
 const LINK_REWRITES = new Map([
   ["/signup", "https://app.act3ai.com/signup/"],
   ["/sign-up", "https://app.act3ai.com/signup/"],
-  ["/demo", "/level2"],
   ["/compare", "/features"],
   ["/level-2", "/level2"],
   ["/enterprise", "/contact"],
   ["/pages/ai_builds_whole", "/articles/ai_builds_whole"],
+]);
+
+// These targets are placeholders the writer used for "the CTA", whatever it
+// was: /demo is a 404, and the bare homepage drops the action the words
+// promise. So the destination is chosen from the link's LABEL, matched both as
+// written and after publicTeamName ("Level 2 team" / "Assistant Director
+// Team"). First rule that matches wins; the value is the fallback when none do.
+//   * "... Assistant Director Team" / "... Level 2 team"  -> /level2
+//   * "Book a walkthrough", "... demo"                    -> /contact
+//   * "See how ACT 3 AI compares ..."                     -> /features
+// /level2 is the package page -- no booking, no comparison -- so a walkthrough
+// or a comparison link must never land there. Every destination is an existing
+// route: onBrokenLinks is "throw".
+const LABEL_AWARE_REWRITES = new Map([
+  ["/demo", "/contact"],
   ["https://act3ai.com", "/"],
   ["https://act3ai.com/", "/"],
 ]);
+const LABEL_RULES = [
+  [/assistant director team|level[ -]?2 team/i, "/level2"],
+  [/walkthrough|book a|demo/i, "/contact"],
+  [/compar/i, "/features"],
+];
+function labelAwareTarget(label, target) {
+  const forms = [label, publicTeamName(label)].map(stripMarkdown);
+  for (const [re, dest] of LABEL_RULES) {
+    if (forms.some((f) => re.test(f))) return dest;
+  }
+  return LABEL_AWARE_REWRITES.get(target);
+}
 
 // -- Small helpers -----------------------------------------------------------
 
@@ -145,20 +183,65 @@ function clamp(s, max) {
   return kept.replace(/[\s,;:\u2014\u2013-]+$/, "") + "...";
 }
 
-/** Split a paragraph into sentences, leaving decimals like "2.5" intact. */
+/** Split a paragraph into sentences, leaving decimals like "2.5" intact. A
+ *  sentence may end inside a closing quote or bracket ('... price." It is'). */
 function sentences(p) {
   return p
-    .split(/(?<=[.!?])\s+(?=["'(A-Z])/)
+    .split(/(?<=[.!?]["\u201d\u2019)]?)\s+(?=["'(\u201cA-Z])/)
     .map((s) => s.trim())
     .filter(Boolean);
 }
 
 /**
- * The meta description. Built from the article's own opening paragraph, which
- * in this corpus is consistently the sharpest statement of what the page
- * answers -- the "Short answer:" lead where the writer used one.
+ * End a too-long sentence at a clause break (" — ", "; ", ": ") instead of
+ * mid-word: the longest head of at least `min` characters that fits in `max`,
+ * preferring one that fits in `prefer`. A head is skipped when its last clause
+ * is negated ("... is not the one with the prettiest clip" -- the point is in
+ * the half that would be cut; "is not X — it is Y" is fine) or ends on a word
+ * that introduces what follows ("the short answer is this"). Returns null when
+ * no break qualifies.
  */
-function buildDescription(body) {
+const COUNT_INTRO =
+  /\b(two|three|four|five|six|seven|eight|nine|ten|\d+)\s+(\w+\s+){0,3}(jobs|places|ways|things|reasons|steps|parts|areas|stages|kinds|types|uses)$/i;
+function clauseCut(sentence, max, prefer, min) {
+  const BREAK = /\s[\u2014\u2013]\s|;\s|:\s/g;
+  const heads = [];
+  for (let m = BREAK.exec(sentence); m; m = BREAK.exec(sentence)) {
+    const head = sentence.slice(0, m.index).replace(/[\s,;:]+$/, "");
+    if (head.length < min || head.length + 1 > max) continue;
+    const lastClause = head.split(/\s[\u2014\u2013]\s|;\s|:\s/).pop();
+    if (/\bnot\b|n't\b|\bno\b/i.test(lastClause)) continue;
+    if (/\b(this|these|following|as follows|in this order)$/i.test(head)) continue;
+    // "... for three distinct jobs" -- a count that introduces the list the cut
+    // would drop; the head alone is a teaser that names nothing.
+    if (COUNT_INTRO.test(lastClause.trim())) continue;
+    if (/^\(?\d+\)/.test(lastClause.trim())) continue; // "(1) the scope": one item of a list
+    heads.push(head + ".");
+  }
+  if (!heads.length) return null;
+  const fit = heads.filter((h) => h.length <= prefer);
+  return fit.length ? fit[fit.length - 1] : heads[heads.length - 1];
+}
+
+/**
+ * A description, built from the article's own opening paragraph, which in this
+ * corpus is consistently the sharpest statement of what the page answers --
+ * the "Short answer:" lead where the writer used one.
+ *
+ * It ends on a sentence boundary, never mid-sentence with "...": whole
+ * sentences while they fit in MAX_DESC; a first sentence longer than that is
+ * kept whole up to `hardMax`; past that, clauseCut (heads of at least
+ * `minHead`); and only when no clause break qualifies, the old word-boundary
+ * cut to MAX_DESC with "...".
+ *
+ * Two callers, two limits:
+ *   * hardMax = HARD_MAX_DESC -- the index (articles.json: the /articles hub)
+ *     and llms.txt, where a complete statement is worth more than brevity.
+ *   * hardMax = MAX_DESC -- the page front matter, which Docusaurus emits as
+ *     <meta name="description"> AND og:description. Google cuts a longer one
+ *     mid-sentence in the result, so it is held to MAX_DESC.
+ */
+function buildDescription(body, hardMax = HARD_MAX_DESC, minHead = 45) {
   const paras = body
     .split(/\r?\n\r?\n/)
     .map((p) => p.trim())
@@ -170,18 +253,40 @@ function buildDescription(body) {
   // A lead that ends in a colon is introducing a list; make it a statement.
   text = text.replace(/:$/, ".");
 
-  // Grow by whole sentences until the snippet is long enough to be worth a
-  // click, then cut to what Google will actually render.
   const parts = sentences(text);
-  let desc = parts[0] || text;
-  for (let i = 1; i < parts.length && desc.length < MIN_DESC; i++) {
-    desc = desc + " " + parts[i];
+  const first = parts[0] || text;
+  let desc = first;
+  if (first.length > hardMax) {
+    // One very long lead sentence: end it at a clause break. Nothing is
+    // appended after a cut sentence -- the next one would read out of context.
+    desc = clauseCut(first, hardMax, MAX_DESC, minHead) || clamp(first, MAX_DESC);
+  } else {
+    // Grow by whole sentences until the snippet is long enough to be worth a
+    // click: within MAX_DESC while it fits, or one last sentence up to
+    // hardMax, or the next sentence up to a clause break.
+    for (let i = 1; i < parts.length && desc.length < MIN_DESC; i++) {
+      const next = desc + " " + parts[i];
+      if (next.length <= MAX_DESC) {
+        desc = next;
+        continue;
+      }
+      if (next.length <= hardMax) {
+        desc = next;
+        break;
+      }
+      const room = hardMax - desc.length - 1;
+      const cut = clauseCut(parts[i], room, MAX_DESC - desc.length - 1, 20);
+      if (cut) desc = desc + " " + cut;
+      // A hook too short to stand alone ("... never one video.") is a teaser
+      // that names nothing: carry the next sentence to MAX_DESC instead.
+      else if (desc.length < 60) desc = clamp(next, MAX_DESC);
+      break;
+    }
   }
-  desc = clamp(desc, MAX_DESC);
   // Leads that open mid-sentence ("**Short answer:** most tools...") lose their
-  // capital when the label is stripped.
-  desc = desc.charAt(0).toUpperCase() + desc.slice(1);
-  if (!/[.!?]$/.test(desc)) desc += ".";
+  // capital when the label is stripped (also behind an opening quote).
+  desc = desc.replace(/^(["\u201c]?)([a-z])/, (_, q, c) => q + c.toUpperCase());
+  if (!/[.!?]["\u201d\u2019)]?$/.test(desc)) desc += ".";
   return desc;
 }
 
@@ -260,6 +365,16 @@ function rewriteLinks(body, knownSlugs, slug, report, heldBackSlugs) {
       return text;
     },
   );
+  // Placeholder CTA targets: the label decides where they go.
+  body = body.replace(
+    /\[([^\]]+)\]\(([^)\s]+)(\s+"[^"]*")?\)/g,
+    (whole, label, target, title) => {
+      const t = target.trim();
+      if (!LABEL_AWARE_REWRITES.has(t)) return whole;
+      report.rewritten++;
+      return "[" + label + "](" + labelAwareTarget(label, t) + (title || "") + ")";
+    },
+  );
   return body.replace(
     /\]\(([^)\s]+)(\s+"[^"]*")?\)/g,
     (whole, target, title) => {
@@ -272,6 +387,9 @@ function rewriteLinks(body, knownSlugs, slug, report, heldBackSlugs) {
         else report.unknownCrossLinks.push(slug + " -> " + t);
       } else if (LINK_REWRITES.has(t)) {
         next = LINK_REWRITES.get(t);
+      } else if (LABEL_AWARE_REWRITES.has(t)) {
+        // A label the pass above could not parse (nested brackets): fallback.
+        next = LABEL_AWARE_REWRITES.get(t);
       }
 
       if (next && next !== t) report.rewritten++;
@@ -317,6 +435,40 @@ function insertInlineCta(body) {
  */
 function normalizeBrand(text) {
   return text.replace(/\bACT3 AI\b/g, "ACT 3 AI").replace(/\bACT3\b/g, "ACT 3");
+}
+
+/**
+ * The public name of the done-for-you service.
+ *
+ * Internally (and throughout the upstream corpus) it is the "Level 2 team";
+ * the public name is the "Assistant Director Team", and CLAUDE.md forbids
+ * "Level 2" in rendered copy. Like the brand spelling, it is rewritten on the
+ * published copy only, so the upstream articles stay as their authors wrote
+ * them.
+ *
+ * Every form in the published corpus refers to the team when followed by
+ * "team", "package" or "option": "Level 2 team", "Level-2 Team", "the Level 2
+ * package", "a Level 2 option". Each becomes "Assistant Director Team"
+ * ("Assistant Director Team package", ...). The quotation marks the corpus
+ * puts around the coined label ("Level 2 team") are dropped, since the public
+ * name is a capitalised proper name; a preceding "a" becomes "an". Anything
+ * else -- "Level 2 is image conditioning", heading levels, the /level2 and
+ * /level-2 link targets -- does not match. key_value's Level_2_Team tag is
+ * renamed so the published data carries one name too (it is only compared
+ * for equality, by the related-article rail).
+ */
+const PUBLIC_TEAM = "Assistant Director Team";
+const TEAM_REF = /\bLevel[- ]2(?:[- ]team\b|(?= (?:package|option)\b))/gi;
+function publicTeamName(text, report) {
+  const out = text
+    .replace(/["\u201c](Level[- ]2[- ]team)["\u201d]/gi, "$1")
+    .replace(TEAM_REF, () => {
+      if (report) report.teamRenamed++;
+      return PUBLIC_TEAM;
+    })
+    .replace(/\b([Aa]) ((?:\*\*|\*|_)?)(?=Assistant Director Team\b)/g, "$1n $2")
+    .replace(/\bLevel_2_Team\b/g, "Assistant_Director_Team");
+  return out;
 }
 
 function yamlStr(s) {
@@ -387,19 +539,27 @@ const report = {
   unknownCrossLinks: [],
   flattenedCrossLinks: [],
   noDescription: [],
+  longMeta: [],
+  metaEllipsis: 0,
+  teamRenamed: 0,
 };
 
 // Remember what is live before the folder is wiped, so an unchanged page keeps
 // its date. Compared with line endings normalised and the date masked out.
 const DATE_LINE = /^  date: (\d{4}-\d{2}-\d{2})$/m;
 const DATE_MASK = "  date: __DATE__";
+// The social image is page chrome, not content: swapping the site-wide card must
+// not re-date every article (it did once, 2026-10-09), so it is masked too.
+const IMAGE_LINE = /^image: .*$/m;
+const IMAGE_MASK = "image: __IMAGE__";
+const comparable = (text) => text.replace(DATE_LINE, DATE_MASK).replace(IMAGE_LINE, IMAGE_MASK);
 const previous = new Map();
 if (fs.existsSync(OUT_DIR)) {
   for (const f of fs.readdirSync(OUT_DIR)) {
     if (!f.endsWith(".md")) continue;
     const text = fs.readFileSync(path.join(OUT_DIR, f), "utf8").replace(/\r\n/g, "\n");
     const m = DATE_LINE.exec(text);
-    if (m) previous.set(f.slice(0, -3), { date: m[1], masked: text.replace(DATE_LINE, DATE_MASK) });
+    if (m) previous.set(f.slice(0, -3), { date: m[1], masked: comparable(text) });
   }
 }
 const TODAY = new Date().toISOString().slice(0, 10);
@@ -417,16 +577,25 @@ for (const slug of slugs) {
   const [fmText, bodyRaw] = splitFrontMatter(raw);
   const fm = parseFrontMatter(fmText);
 
-  const title = normalizeBrand(fm.title || slug.replace(/_/g, " "));
+  const title = publicTeamName(normalizeBrand(fm.title || slug.replace(/_/g, " ")), report);
   const targetQuery = fm.target_query || "";
 
-  let body = normalizeBrand(
-    rewriteLinks(bodyRaw, knownSlugs, slug, report, heldBackSlugs),
+  let body = publicTeamName(
+    normalizeBrand(rewriteLinks(bodyRaw, knownSlugs, slug, report, heldBackSlugs)),
+    report,
   );
+  const keyValue = publicTeamName(fm.key_value || "");
   const faq = extractFaq(body);
   body = splitFaqParagraphs(body);
+  // The index/llms.txt statement and the (shorter) meta tag; see buildDescription.
   const description = buildDescription(body);
+  const metaDescription = buildDescription(body, MAX_DESC, 90);
   if (!description || description.length < 60) report.noDescription.push(slug);
+  if (metaDescription.length < 60 && !report.noDescription.includes(slug)) {
+    report.noDescription.push(slug);
+  }
+  if (metaDescription.length > MAX_DESC) report.longMeta.push(slug);
+  if (metaDescription.endsWith("...")) report.metaEllipsis++;
   body = insertInlineCta(body);
 
   let updated = "__DATE__";
@@ -441,7 +610,7 @@ for (const slug of slugs) {
   const frontMatter = [
     "---",
     "title: " + yamlStr(title),
-    "description: " + yamlStr(description),
+    "description: " + yamlStr(metaDescription),
     "keywords: [" + keywords.map(yamlStr).join(", ") + "]",
     "image: " + yamlStr(SOCIAL_IMAGE),
     "wrapperClassName: article-page",
@@ -454,7 +623,7 @@ for (const slug of slugs) {
     "article_funnel_stage: " + yamlStr(fm.funnel_stage || ""),
     "article_search_intent: " + yamlStr(fm.search_intent || ""),
     "article_content_type: " + yamlStr(fm.content_type || ""),
-    "article_key_value: " + yamlStr(fm.key_value || ""),
+    "article_key_value: " + yamlStr(keyValue),
     "---",
     "",
     "{/* GENERATED FILE -- do not edit here.",
@@ -467,7 +636,7 @@ for (const slug of slugs) {
   const prev = previous.get(slug);
   // The corpus checkout may use CRLF; compare with line endings normalised on
   // both sides, or every page looks "changed" on Windows.
-  if (prev && prev.masked === masked.replace(/\r\n/g, "\n")) {
+  if (prev && prev.masked === comparable(masked.replace(/\r\n/g, "\n"))) {
     updated = prev.date;
   } else {
     updated = TODAY;
@@ -488,7 +657,7 @@ for (const slug of slugs) {
     funnelStage: fm.funnel_stage || "",
     searchIntent: fm.search_intent || "",
     contentType: fm.content_type || "",
-    keyValue: fm.key_value || "",
+    keyValue,
     updated,
     words,
     faq,
@@ -540,6 +709,18 @@ llms.push(
 );
 llms.push("- [MCP server](https://act3ai.com/mcp): drive ACT 3 AI from Claude Code.");
 llms.push("- [CLI](https://act3ai.com/cli): the command line interface.");
+llms.push(
+  "- [Movies](https://act3ai.com/movies): feature films. Import your script, direct the movie by chat, keep the same actors, sets and outfits in every scene.",
+);
+llms.push(
+  "- [TV](https://act3ai.com/tv): TV series. An hour-long episode in three days; series regulars, wardrobe and standing sets carry over all season.",
+);
+llms.push(
+  "- [Minidramas](https://act3ai.com/minidramas): minidramas (micro-dramas). The same lead, sets and voices in every short episode.",
+);
+llms.push(
+  "- [Videos](https://act3ai.com/videos): ads, social media and marketing videos. Consistent characters; approve each shot before you pay for video.",
+);
 llms.push("- [Pricing](https://app.act3ai.com/settings/plans/): plans and credits.");
 llms.push("- [About](https://act3ai.com/about) / [Contact](https://act3ai.com/contact)");
 llms.push("");
@@ -602,6 +783,22 @@ if (report.flattenedCrossLinks.length) {
 }
 console.log("[articles] rewrote " + report.rewritten + " link targets");
 console.log(
+  "[articles] renamed " + report.teamRenamed + ' "Level 2 team" references to "' + PUBLIC_TEAM + '"',
+);
+console.log(
+  "[articles] descriptions ending in \"...\": " +
+    index.filter((a) => a.description.endsWith("...")).length +
+    "/" +
+    index.length +
+    " in the index, " +
+    report.metaEllipsis +
+    "/" +
+    index.length +
+    " in the meta tag (held to " +
+    MAX_DESC +
+    " characters)",
+);
+console.log(
   "[articles] dated today (new or changed): " +
     report.redated.length +
     (report.redated.length ? " -> " + report.redated.join(", ") : ""),
@@ -623,5 +820,10 @@ if (report.unknownCrossLinks.length) {
 if (report.noDescription.length) {
   console.warn(
     "[articles] weak description on: " + report.noDescription.join(", "),
+  );
+}
+if (report.longMeta.length) {
+  console.warn(
+    "[articles] meta description over " + MAX_DESC + " characters on: " + report.longMeta.join(", "),
   );
 }

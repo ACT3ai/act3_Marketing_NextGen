@@ -2,7 +2,7 @@
 title: "Batch-Produce Videos From One Script With Full Automation"
 description: "To batch generate AI videos from a script, you need a pipeline that parses the script into individual shots, auto-writes the prompt and first frame for..."
 keywords: ["batch generate ai videos from script", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-07-21

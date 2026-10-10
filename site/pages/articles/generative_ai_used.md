@@ -2,10 +2,10 @@
 title: "How Generative AI Is Used in Real Film and TV Production"
 description: "Generative AI is used in film and TV production in five main places: development and script expansion, pre-visualization and storyboarding, virtual set..."
 keywords: ["how is generative ai used in film production", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "generative_ai_used"
 article_target_query: "how is generative ai used in film production"
@@ -123,7 +123,7 @@ ACT 3 AI is built for the serious-production end of this list rather than the cl
 
 The specific claim worth evaluating is that it is designed for **real productions rather than demos**: structure up to full 2-hour features, work sessions measured in two- to three-hour sprints, the Organization owning all the intellectual property created inside it, and whole teams collaborating on one production with role-based permissions and full version history. Editing review happens against the complete runtime on a unified Adobe Premiere timeline, so a showrunner can zoom around a two-hour cut and watch the clips flow together rather than approving shots in isolation.
 
-For studios that want the pipeline but not the staffing, there is an optional **Level 2 team** package: ACT 3's own team takes the production's feedback and executes it, for part or all of the production.
+For studios that want the pipeline but not the staffing, there is an optional **Assistant Director Team** package: ACT 3's own team takes the production's feedback and executes it, for part or all of the production.
 
 If you are earlier in the evaluation, our guides on character consistency in AI video and on whether AI film production is enterprise-ready cover the two questions studios ask next.
 
@@ -161,5 +161,5 @@ The pre-production compression is the dramatic part: 80–200 hours of tradition
 
 If you are evaluating generative AI for a real series or feature rather than a test, the useful next step is to see the full pipeline against your own material — script in, structured beats and shots out, rendered against your characters and sets, reviewed at full length.
 
-**[Book a walkthrough of ACT 3 AI](/)** with your script and see how far the production actually gets.
+**[Book a walkthrough of ACT 3 AI](/contact)** with your script and see how far the production actually gets.
 

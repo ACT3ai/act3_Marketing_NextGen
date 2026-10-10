@@ -1,11 +1,11 @@
 ---
-title: "Outsource Your AI Video Production to Our Level-2 Team"
+title: "Outsource Your AI Video Production to Our Assistant Director Team"
 description: "You can outsource AI video production in three ways — hire a freelancer, retain a traditional agency, or use a done-for-you team that operates the AI..."
 keywords: ["outsource ai video production team", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "outsource_ai_level"
 article_target_query: "outsource ai video production team"
@@ -13,17 +13,17 @@ article_persona: "Marketing Team"
 article_funnel_stage: "Buy"
 article_search_intent: "Transactional"
 article_content_type: "Landing_Page"
-article_key_value: "Level_2_Team"
+article_key_value: "Assistant_Director_Team"
 ---
 
 {/* GENERATED FILE -- do not edit here.
     Source: <seo corpus>/outsource_ai_level/outsource_ai_level.md
     Regenerate with: node scripts/sync-articles.js */}
-# Outsource Your AI Video Production to Our Level-2 Team
+# Outsource Your AI Video Production to Our Assistant Director Team
 
 **Short answer:** you can outsource AI video production in three ways — hire a freelancer, retain a traditional agency, or use a done-for-you team that operates the AI production platform on your behalf. The third option is newest and, for most stretched marketing teams, the most practical: you keep the creative direction and the notes; someone else does the operating.
 
-That is what the **ACT 3 "Level 2 team"** is. It is an optional package where our team takes your feedback and makes the movie happen. You bring the script or the brief, you give all the feedback you want, and it gets accomplished — and you can use us for **part or all** of your video production team. You are not handing over your project to a black box; you are adding capacity to a production that still lives in your own workspace.
+That is what the **ACT 3 Assistant Director Team** is. It is an optional package where our team takes your feedback and makes the movie happen. You bring the script or the brief, you give all the feedback you want, and it gets accomplished — and you can use us for **part or all** of your video production team. You are not handing over your project to a black box; you are adding capacity to a production that still lives in your own workspace.
 
 ---
 
@@ -43,7 +43,7 @@ If two or more of those are true, buying execution is usually cheaper than build
 
 ## Your three options, honestly
 
-| | Freelancer | Traditional agency / production company | ACT 3 Level 2 team |
+| | Freelancer | Traditional agency / production company | ACT 3 Assistant Director Team |
 |---|---|---|---|
 | Best for | Small, well-defined jobs | Live action, big brand moments, full creative | AI production at volume or at length |
 | Knows the AI pipeline | Varies enormously | Sometimes | It is our own platform |
@@ -55,7 +55,7 @@ If two or more of those are true, buying execution is usually cheaper than build
 
 Traditional agencies and production companies are genuinely better at some things — live-action shoots, celebrity talent, big integrated campaigns. This page is not arguing otherwise. It is about the specific job of getting AI-generated video produced well, quickly, and at volume.
 
-## What the Level 2 team does
+## What the Assistant Director Team does
 
 The core promise is simple: **you give feedback, we make it happen.** In practice that covers the operating work of an AI production:
 
@@ -81,7 +81,7 @@ You can take all of that or any slice of it. Many teams keep creative direction 
 
 ## How to decide what to hand off
 
-| Keep in-house | Hand to the Level 2 team |
+| Keep in-house | Hand to the Assistant Director Team |
 |---|---|
 | Brand strategy and messaging | Platform operation and setup |
 | Script and creative direction | Shot list construction and cinematography metadata |
@@ -95,11 +95,11 @@ For related reading, see our comparison of an AI production service versus softw
 
 ## FAQ
 
-**What is the ACT 3 Level 2 team?**
+**What is the ACT 3 Assistant Director Team?**
 
 An optional done-for-you package in which our team operates ACT 3 AI on your production. You give the script and the feedback; we take that feedback into the movie and make it happen — for part or all of your video production team.
 
-**Can I use the Level 2 team for only part of a project?**
+**Can I use the Assistant Director Team for only part of a project?**
 
 Yes. That is the design. Use us for the whole production, for a single sequence, for a launch spike, or just for the operating work while you keep creative direction in-house.
 
@@ -121,7 +121,7 @@ Yes — that is one of the main advantages over generic outsourcing. The project
 
 ---
 
-## Talk to the Level 2 team
+## Talk to the Assistant Director Team
 
-If your team is stretched and the deadline is not moving, let us produce it. **[Talk to the Level 2 team](/contact)** about taking part or all of your AI video production — bring the script and the notes, and we will make it happen.
+If your team is stretched and the deadline is not moving, let us produce it. **[Talk to the Assistant Director Team](/contact)** about taking part or all of your AI video production — bring the script and the notes, and we will make it happen.
 

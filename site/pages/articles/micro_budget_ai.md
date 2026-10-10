@@ -1,11 +1,11 @@
 ---
 title: "Make a Movie on a Micro-Budget With AI: Real Numbers"
-description: "A micro-budget AI feature is possible today, but only if you attack the right constraint. The constraint is not the cost of a shot — generative video is..."
+description: "A micro-budget AI feature is possible today, but only if you attack the right constraint."
 keywords: ["make a movie on a micro budget with ai", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "micro_budget_ai"
 article_target_query: "make a movie on a micro budget with ai"
@@ -93,7 +93,7 @@ That is supported by the parts of the platform that make mass generation surviva
 
 On cost, plans start at a $0 Free plan (800 credits), through Creator at $49 with three concurrent jobs, and Pro at $175 with commercial use for audiences up to 100,000 and six concurrent jobs; Enterprise is quoted for unlimited commercial use and ten concurrent jobs. Every generation action shows its exact credit cost before you commit, and the render queue shows predicted spend — which is how you keep a feature inside a fixed budget instead of discovering the number afterwards.
 
-**If your bottleneck is your own time rather than money**, ACT 3 offers an optional "Level 2 team" package: our team takes your feedback and makes the movie happen, for part or all of the production. That is the route for a writer who has a script and no intention of becoming a full-time operator.
+**If your bottleneck is your own time rather than money**, ACT 3 offers an optional Assistant Director Team package: our team takes your feedback and makes the movie happen, for part or all of the production. That is the route for a writer who has a script and no intention of becoming a full-time operator.
 
 ## What to be realistic about
 
@@ -131,5 +131,5 @@ Yes. ACT 3 AI exports shot lists to Adobe Premiere and supports professional for
 
 ## Start with your script
 
-If you have a finished draft, the fastest path is to import it and let the pipeline build the whole film so you can watch a full-length cut and start the daily rebuild loop. Start a production on ACT 3 AI — or if you would rather hand the execution to someone else, talk to the Level 2 team about taking your script and your feedback through to a finished movie.
+If you have a finished draft, the fastest path is to import it and let the pipeline build the whole film so you can watch a full-length cut and start the daily rebuild loop. Start a production on ACT 3 AI — or if you would rather hand the execution to someone else, talk to the Assistant Director Team about taking your script and your feedback through to a finished movie.
 

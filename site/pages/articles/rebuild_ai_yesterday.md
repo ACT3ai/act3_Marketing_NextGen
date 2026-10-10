@@ -2,10 +2,10 @@
 title: "Rebuild Your Entire AI Movie From Daily Feedback"
 description: "Rebuilding an AI movie daily means treating your film like a build artifact: you screen the current cut, write notes, feed those notes back into the..."
 keywords: ["rebuild ai movie from feedback daily", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "rebuild_ai_yesterday"
 article_target_query: "rebuild ai movie from feedback daily"
@@ -140,9 +140,9 @@ Yes. Version history with a draft navigator lets you compare, restore, or branch
 
 **What if I want someone else to run the loop?**
 
-The optional ACT 3 "Level 2 team" package does exactly that — our team takes your feedback and makes the movie happen, for part or all of your production.
+The optional ACT 3 Assistant Director Team package does exactly that — our team takes your feedback and makes the movie happen, for part or all of your production.
 
 ## Try one cycle
 
-The loop is easier to understand after one turn of it. **Try ACT 3 AI free**, import a script, screen the first cut on a full-length timeline, and see what a night of rebuilding gets you. If you would rather hand off the cycle, talk to the Level 2 team.
+The loop is easier to understand after one turn of it. **Try ACT 3 AI free**, import a script, screen the first cut on a full-length timeline, and see what a night of rebuilding gets you. If you would rather hand off the cycle, talk to the Assistant Director Team.
 

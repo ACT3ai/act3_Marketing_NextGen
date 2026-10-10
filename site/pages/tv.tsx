@@ -20,7 +20,8 @@ import { applySiteNav, pickRows, replaceCopy } from "../components/v4/rowTransfo
  *  10  storyboards (its rotating tab starts on "TV episode")
  *  15  voice: cast voices and voice actors
  *  14  teams across time zones
- *  13  save money: the shot is right before the video is paid for
+ *  13  save money: the shot is right before the video is paid for (body trimmed
+ *      to its last two sentences; the visible "Illustration of..." caption dropped)
  * Row 16 (MCP + footer) is left out, so V4RowsPage renders the V4Footer.
  *
  * replaceCopy warns in the console when a `from` string is gone after a
@@ -47,11 +48,19 @@ const EDITS: Record<number, ReadonlyArray<readonly [string, string]>> = {
       '<li class="r10v48-tab" data-r10v48-word="TV episode">TV episode</li>\n        <li class="r10v48-tab" data-r10v48-word="movie">Movie</li>',
     ],
     ['<span class="r10v48-word">movie or video</span>', '<span class="r10v48-word">TV episode</span>'],
+    ["Whatever you are making, every shot gets its panel.", "Every shot gets its panel."],
   ],
   15: [["It is hers in every scene", "It is hers in every episode"]],
   14: [
     ["One movie that keeps moving", "One show that keeps moving"],
     ["different days in the movie", "different days in the episode"],
+  ],
+  13: [
+    [
+      "The video is the expensive step, so ACT&nbsp;3 has you settle the shot where a change costs little: as a storyboard, then as a first frame. When you do generate video, it is already the shot you wanted. That saves you money and time.",
+      "When you do generate video, it is already the shot you wanted. That saves you money and time.",
+    ],
+    ['<p class="r13v35-note">Illustration of one shot at its three stages.</p>', ""],
   ],
 };
 

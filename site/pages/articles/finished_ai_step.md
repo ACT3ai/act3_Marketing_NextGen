@@ -2,7 +2,7 @@
 title: "How to Turn a Script Into a Video With AI"
 description: "Turning a script into a finished video with AI is a nine-step pipeline, and the generation step is only one of them."
 keywords: ["how to turn a script into a video with ai", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

@@ -2,7 +2,7 @@
 title: "Best Sora Alternative for Filmmakers After the Shutdown"
 description: "If you built a filmmaking workflow around Sora, the safest replacement is not another single model — it is a platform that gives you access to several..."
 keywords: ["sora alternative for filmmakers", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-07-21

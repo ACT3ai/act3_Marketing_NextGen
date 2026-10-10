@@ -2,7 +2,7 @@
 title: "AI Video Maker for Realtors: Branded Tours in an Afternoon"
 description: "An AI video maker will not invent footage of a real house — and you should be suspicious of any tool that claims it can, because misrepresenting a..."
 keywords: ["ai video generator for realtors", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

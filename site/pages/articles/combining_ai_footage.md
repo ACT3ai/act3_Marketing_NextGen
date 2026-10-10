@@ -2,7 +2,7 @@
 title: "Combining AI Footage With Real Actors and Locations"
 description: "You can combine AI footage with real actors in four practical ways, and choosing the right one per shot is the whole craft of a hybrid indie film."
 keywords: ["combine ai footage with real actors", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-07-21

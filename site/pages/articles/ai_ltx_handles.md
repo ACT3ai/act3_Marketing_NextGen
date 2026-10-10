@@ -1,11 +1,11 @@
 ---
 title: "ACT 3 AI vs LTX Studio: Which Handles Full-Length Production"
-description: "Both tools take you from a script toward moving images. They diverge on what happens when the project is a real one — a 22-minute episode, a season, a..."
+description: "Both tools take you from a script toward moving images. They diverge on what happens when the project is a real one."
 keywords: ["act3 ai vs ltx studio", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_ltx_handles"
 article_target_query: "act3 ai vs ltx studio"
@@ -74,7 +74,7 @@ The category's boundary is what happens after approval. Pre-viz stops before fin
 
 **Built for a team, not a seat.** Version-controlled, role-based collaboration lets people work concurrently without conflicts. Permissions are granular — Read, Modify/Edit, Run AI, Use Credits, Billing, Owner — so a studio can give a coordinator script access without exposing the credit pool, and Run AI is separable from Use Credits. Owners can freeze approved pages, scenes, and shots as read-only so signed-off work does not drift. Persona-aware layouts give writer, director, and actor views of the same production, and real-time co-editing with presence cursors plus comment threads keep review in the tool.
 
-**And a Level 2 option when the team is the constraint.** For studios that have the script and the notes but not the headcount, ACT 3 offers an optional "Level 2 team" package: the ACT 3 team takes your feedback and makes the movie happen, for part or all of the production. That is a service, not a feature toggle — but for a studio weighing whether to staff up for a slate, it is a genuine third path.
+**And an Assistant Director Team option when the team is the constraint.** For studios that have the script and the notes but not the headcount, ACT 3 offers an optional Assistant Director Team package: the ACT 3 team takes your feedback and makes the movie happen, for part or all of the production. That is a service, not a feature toggle — but for a studio weighing whether to staff up for a slate, it is a genuine third path.
 
 ## How to decide
 
@@ -106,11 +106,11 @@ No. It routes across Google Veo 3, Runway, Flux, SDXL, ComfyUI, Hunyuan, and Wan
 
 **What if we don't have the crew to execute?**
 
-The optional ACT 3 "Level 2 team" package puts the ACT 3 team on part or all of your production, taking your feedback and producing against it.
+The optional ACT 3 Assistant Director Team package puts the ACT 3 team on part or all of your production, taking your feedback and producing against it.
 
 ---
 
 ## Put both through a real episode
 
-Pre-viz tools and production platforms both demo well; they separate under load. **[See how ACT 3 AI compares on a full episode](/features)**, or **[book a walkthrough with the Level 2 team](/contact)** and bring the script you actually need produced.
+Pre-viz tools and production platforms both demo well; they separate under load. **[See how ACT 3 AI compares on a full episode](/features)**, or **[book a walkthrough with the Assistant Director Team](/contact)** and bring the script you actually need produced.
 

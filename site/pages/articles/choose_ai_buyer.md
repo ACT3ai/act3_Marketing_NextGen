@@ -2,7 +2,7 @@
 title: "How to Choose an AI Video Platform: A Buyer's Checklist"
 description: "Choose an AI video platform by scoring it on eight things, in this order: (1) the scope it covers — clip generator, storyboard tool, or full..."
 keywords: ["how to choose an ai video platform", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

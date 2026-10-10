@@ -1,11 +1,11 @@
 ---
 title: "Managed AI Video Production: Our Team, Your Film"
-description: "Managed AI video production means a vendor's team operates the AI filmmaking platform on your behalf — you supply the script, the brand rules, and the..."
+description: "Managed AI video production means a vendor's team operates the AI filmmaking platform on your behalf."
 keywords: ["managed ai video production for brands", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "managed_ai_feedback"
 article_target_query: "managed ai video production for brands"
@@ -13,7 +13,7 @@ article_persona: "Enterprise"
 article_funnel_stage: "Buy"
 article_search_intent: "Transactional"
 article_content_type: "Use_Case"
-article_key_value: "Level_2_Team"
+article_key_value: "Assistant_Director_Team"
 ---
 
 {/* GENERATED FILE -- do not edit here.
@@ -23,7 +23,7 @@ article_key_value: "Level_2_Team"
 
 **Managed AI video production means a vendor's team operates the AI filmmaking platform on your behalf — you supply the script, the brand rules, and the notes, and they deliver finished video.** For brands, it removes the two things that usually kill an in-house AI video initiative: nobody has time to learn a production tool, and nobody wants to own the pipeline long-term. In a managed engagement you keep creative authority (every round of feedback is yours) while an external production team absorbs the labor of shot planning, prompt assembly, character consistency, rendering, and assembly.
 
-The practical decision is not "AI or not AI." It is **how much of the production seat you want to staff yourself**. Three models exist: fully self-serve software, fully outsourced agency work, and a hybrid where you license the platform *and* buy production hours against it. ACT 3 AI offers that hybrid directly — the **"Level 2 team"** package, an optional service where our team takes your feedback and makes the movie happen, for part or all of your production. This page explains when managed production is the right call, what to specify in a scope, and how to evaluate providers.
+The practical decision is not "AI or not AI." It is **how much of the production seat you want to staff yourself**. Three models exist: fully self-serve software, fully outsourced agency work, and a hybrid where you license the platform *and* buy production hours against it. ACT 3 AI offers that hybrid directly — the **Assistant Director Team** package, an optional service where our team takes your feedback and makes the movie happen, for part or all of your production. This page explains when managed production is the right call, what to specify in a scope, and how to evaluate providers.
 
 ---
 
@@ -67,9 +67,9 @@ AI production inverts that. Because the film is assembled from structured data �
 
 ## Where ACT 3 AI fits
 
-ACT 3 AI is a hosted web platform that takes a script or a rough story idea through story structure, cinematography, lighting, sets, digital actors, and generated video, and exports to the formats your post team already uses. Brands can run it themselves. Or they can buy the **Level 2 team** package.
+ACT 3 AI is a hosted web platform that takes a script or a rough story idea through story structure, cinematography, lighting, sets, digital actors, and generated video, and exports to the formats your post team already uses. Brands can run it themselves. Or they can buy the **Assistant Director Team** package.
 
-The Level 2 team is exactly the model described above: an optional package where you can use our team to take all of your feedback into your film, and we make it happen. You can use us for part of your production team or all of it. You bring the script and the notes; the production gets made.
+The Assistant Director Team is exactly the model described above: an optional package where you can use our team to take all of your feedback into your film, and we make it happen. You can use us for part of your production team or all of it. You bring the script and the notes; the production gets made.
 
 What makes that work at brand scale, rather than at clip scale:
 
@@ -113,7 +113,7 @@ No. An agency typically owns its own tools, its own process, and often the worki
 
 **Can we start managed and move to self-serve later?**
 
-Yes — that is a common reason to choose the hybrid. Because the Level 2 team works inside your Organization on the same platform, the transition is a staffing change, not a migration.
+Yes — that is a common reason to choose the hybrid. Because the Assistant Director Team works inside your Organization on the same platform, the transition is a staffing change, not a migration.
 
 **How much of the production can we hand over?**
 
@@ -135,5 +135,5 @@ Both. The Organization owns all projects and generated assets, and the platform 
 
 ## Start a managed production
 
-If you have a script or a brief and a delivery date, the fastest next step is a scoping conversation about the **ACT 3 AI Level 2 team** package: bring your feedback, we take it into the film, and the production gets made. **Talk to the Level 2 team about your project →**
+If you have a script or a brief and a delivery date, the fastest next step is a scoping conversation about the **ACT 3 AI Assistant Director Team** package: bring your feedback, we take it into the film, and the production gets made. **Talk to the Assistant Director Team about your project →**
 

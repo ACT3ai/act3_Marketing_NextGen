@@ -2,7 +2,7 @@
 title: "Best AI Animation Tools That Go From Script to Full Episode"
 description: "Most \"AI animation tools\" animate a shot, not an episode. If your goal is a script in and a finished 11-, 22-, or 44-minute episode out, you need to sort..."
 keywords: ["best ai animation tools from script", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-07-21

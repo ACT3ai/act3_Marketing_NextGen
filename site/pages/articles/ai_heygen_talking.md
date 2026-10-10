@@ -2,7 +2,7 @@
 title: "ACT 3 AI vs HeyGen: Talking Avatars vs Directed Scenes"
 description: "HeyGen is an AI avatar platform — you write a script, pick or clone a presenter, and get a talking-head video, typically with strong translation and..."
 keywords: ["act3 ai vs heygen", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-07-21

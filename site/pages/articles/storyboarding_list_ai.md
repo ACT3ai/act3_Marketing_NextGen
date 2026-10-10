@@ -2,7 +2,7 @@
 title: "Auto-Storyboarding: From Script to Shot List With AI"
 description: "To make an AI storyboard from a script, you run the script through four stages: parse → beat/scene breakdown → shot list → frame generation."
 keywords: ["how to make ai storyboard from script", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-07-21

@@ -1,11 +1,11 @@
 ---
 title: "AI Commercial Cost vs a Traditional Shoot"
-description: "A traditional commercial shoot spends most of its budget on things that never appear on screen — crew day rates, location and permits, equipment rental..."
+description: "A traditional commercial shoot spends most of its budget on things that never appear on screen."
 keywords: ["cost of ai commercial vs traditional shoot", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_commercial_breakdown"
 article_target_query: "cost of ai commercial vs traditional shoot"

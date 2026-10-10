@@ -1,11 +1,11 @@
 ---
 title: "Adapting a Novel to Screen: Full-Length AI From the Page"
-description: "Adapting a novel to screen with AI means importing the book itself, letting AI expansion convert it into screenplay structure — acts, beats, scenes, shots..."
+description: "Adapting a novel to screen with AI means importing the book itself, letting AI expansion convert it into screenplay structure — acts, beats, scenes, shots."
 keywords: ["adapt a novel to screen with ai", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "adapting_novel_ai"
 article_target_query: "adapt a novel to screen with ai"
@@ -121,7 +121,7 @@ Two governance points matter to any studio doing this seriously.
 
 **Team access.** Adaptation is a group activity: author or estate, screenwriter, director, producer, financier. Multi-tenant workspaces with invitation-only project access, granular permissions (Read, Modify/Edit, Run AI, Use Credits, Billing, Owner), full version history, and lock-down controls that freeze approved scenes as read-only let all of them into the same production without anyone breaking it or overspending.
 
-For studios that want the daily-rebuild cadence without staffing an AI production unit, the optional **Level 2 team** package puts ACT 3's team on it: we take your feedback and make the movie happen, for part or all of the production.
+For studios that want the daily-rebuild cadence without staffing an AI production unit, the optional **Assistant Director Team** package puts ACT 3's team on it: we take your feedback and make the movie happen, for part or all of the production.
 
 ---
 

@@ -2,7 +2,7 @@
 title: "How Much Does an AI Movie Cost to Make in 2026?"
 description: "In 2026 a 3-minute AI short costs roughly $45 to $300 to generate and finish, a 40-minute film roughly $630 to $4,400, and a 90-minute feature roughly..."
 keywords: ["how much does an ai movie cost 2026", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-16

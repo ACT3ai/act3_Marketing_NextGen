@@ -2,10 +2,10 @@
 title: "AI Filmmaking Software Reviews: What Actually Ships"
 description: "Nearly every AI filmmaking software review you will read is a review of clip generation — someone types a prompt, gets eight seconds of footage, and rates..."
 keywords: ["ai filmmaking software reviews", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_reviews_ships"
 article_target_query: "ai filmmaking software reviews"
@@ -128,11 +128,11 @@ Script-to-screen in one pipeline, collaboration and time-stamped feedback for in
 
 **What if we do not have the team to run it?**
 
-The optional ACT 3 "Level 2 team" package puts our team on your production — you supply the script and all the feedback, and we take that feedback into the movie and make it happen, for part or all of the production.
+The optional ACT 3 Assistant Director Team package puts our team on your production — you supply the script and all the feedback, and we take that feedback into the movie and make it happen, for part or all of the production.
 
 ## Test it the way you will use it
 
 Do not buy on a clip. Bring a script, build a full scene, watch the whole thing on a timeline, then change something and see what it costs.
 
-**Start a production and run your own script through the full pipeline — or talk to the Level 2 team about producing it with you.**
+**Start a production and run your own script through the full pipeline — or talk to the Assistant Director Team about producing it with you.**
 

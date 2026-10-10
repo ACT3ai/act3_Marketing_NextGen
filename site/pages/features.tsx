@@ -3,7 +3,7 @@ import Layout from "@theme/Layout";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import V4Link from "../components/v4/V4Link";
 import { V4Card, V4CardGrid, V4CtaBand, V4Hero, V4Prose, V4Section, V4Split } from "../components/v4/V4Blocks";
-import { FOOTER_COLUMNS, LINKS, PRIMARY_NAV } from "../data/siteNav";
+import { LINKS } from "../data/siteNav";
 
 /**
  * Route: /features — the hub of what ACT 3 does, on the v4 template.
@@ -14,29 +14,6 @@ import { FOOTER_COLUMNS, LINKS, PRIMARY_NAV } from "../data/siteNav";
  * Each topic appears ONCE on this page. No third-party model names here unless the
  * homepage shows them. Images are ones the homepage already ships (site/static/v4/).
  */
-
-/** Routes siteNav.ts still marks `pending` (page not built yet): their links skip the broken-link check. */
-const PENDING = new Set(
-  [...PRIMARY_NAV, ...FOOTER_COLUMNS.flatMap((c) => c.links)].filter((l) => l.pending).map((l) => l.href),
-);
-
-/**
- * A V4Card that links to a site route. V4Card cannot pass `pending` to its link,
- * so a pending route renders V4Card's own markup around a pending V4Link.
- * Once siteNav.ts drops every `pending` flag this is just V4Card.
- */
-function HubCard({ title, text, href }: { title: string; text: string; href: string }): React.JSX.Element {
-  if (!PENDING.has(href)) return <V4Card title={title} text={text} href={href} />;
-  return (
-    <V4Link className="v4t-card v4t-card--link" href={href} pending>
-      <h3 className="v4t-card-title">
-        {title}
-        <span className="v4t-card-arrow" aria-hidden="true">→</span>
-      </h3>
-      <p className="v4t-card-text">{text}</p>
-    </V4Link>
-  );
-}
 
 const IMG_STYLE: React.CSSProperties = {
   display: "block",
@@ -67,7 +44,7 @@ export default function Features(): React.JSX.Element {
   return (
     <Layout
       title="Features"
-      description="Everything ACT 3 does, from script to finished film: chat to your AI filmmaker, consistent characters, outfits and sets, AI storyboards, voices, teams, MCP and CLI."
+      description="Everything ACT 3 does, from script to finished film: chat to your AI filmmaker, consistent characters, outfits and sets, AI storyboards, voices, MCP and CLI."
     >
       <main>
         <V4Hero
@@ -182,8 +159,8 @@ export default function Features(): React.JSX.Element {
 
         <V4Section tone="raised" eyebrow="Automate" heading="Drive ACT 3" highlight="from your AI agent.">
           <V4CardGrid columns={2}>
-            <HubCard title="MCP" href="/mcp" text="Claude Code, Codex or any MCP client imports, storyboards and renders for you." />
-            <HubCard title="CLI" href="/cli" text="The same actions from your shell, scripted and repeatable." />
+            <V4Card title="MCP" href="/mcp" text="Claude Code, Codex or any MCP client imports, storyboards and renders for you." />
+            <V4Card title="CLI" href="/cli" text="The same actions from your shell, scripted and repeatable." />
           </V4CardGrid>
         </V4Section>
 
@@ -198,16 +175,14 @@ export default function Features(): React.JSX.Element {
           }
         >
           <V4CardGrid columns={3}>
-            <HubCard title="Movies" href="/movies" text="Feature films from your full screenplay." />
-            <HubCard title="TV" href="/tv" text="An hour-long episode in three days." />
-            <HubCard title="Minidramas" href="/minidramas" text="Short dramas, episode after episode." />
-            <HubCard title="Videos" href="/videos" text="Ads, social and marketing videos." />
-            <HubCard title="Assistant Director Team" href="/level2" text="Real filmmakers who produce inside ACT 3, by the week." />
-            <HubCard title="Articles" href="/articles" text="Guides to AI filmmaking." />
+            <V4Card title="Movies" href="/movies" text="Feature films from your full screenplay." />
+            <V4Card title="TV" href="/tv" text="An hour-long episode in three days." />
+            <V4Card title="Minidramas" href="/minidramas" text="Short dramas, episode after episode." />
+            <V4Card title="Videos" href="/videos" text="Ads, social and marketing videos." />
+            <V4Card title="Assistant Director Team" href="/level2" text="Real filmmakers who produce inside ACT 3, by the week." />
+            <V4Card title="Articles" href="/articles" text="Guides to AI filmmaking." />
           </V4CardGrid>
         </V4Section>
-
-        <V4CtaBand />
       </main>
     </Layout>
   );

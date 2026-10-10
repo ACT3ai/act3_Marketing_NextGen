@@ -2,7 +2,7 @@
 title: "AI Video Platforms With SSO, Multi-Tenancy, and Security"
 description: "If you are evaluating an AI video generator with SSO and security controls for a company, the short answer is this: most AI video tools are consumer..."
 keywords: ["ai video generator with sso and security", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

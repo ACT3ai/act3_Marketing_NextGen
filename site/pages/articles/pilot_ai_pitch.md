@@ -2,10 +2,10 @@
 title: "How to Produce a TV Pilot With AI to Pitch a Series"
 description: "To make a TV pilot with AI, you produce it the way a series is produced — as a structured, full-length production, not as a stack of clips."
 keywords: ["how to make a tv pilot with ai", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "pilot_ai_pitch"
 article_target_query: "how to make a tv pilot with ai"
@@ -111,7 +111,7 @@ You need to watch 22 or 44 uninterrupted minutes, repeatedly, and be able to zoo
 
 The one differentiator that matters for a pilot: **this is a platform for productions, not for clips.** Everything above exists because a 22-minute episode has 500 shots, a dozen recurring assets and a team, and none of that survives a workflow designed for a single generation.
 
-There is also an optional **"Level 2 team"** package: our team takes your feedback and makes the episode happen, for part or all of the production. If you have a script and a series in your head but not a crew, that is the route from one to the other.
+There is also an optional **Assistant Director Team** package: our team takes your feedback and makes the episode happen, for part or all of the production. If you have a script and a series in your head but not a crew, that is the route from one to the other.
 
 ## What a pilot needs to actually pitch
 
@@ -146,7 +146,7 @@ Your Organization legally owns all projects, content and generated assets create
 
 **What if I have the script but not the capacity to produce it?**
 
-The optional ACT 3 "Level 2 team" package exists for exactly that — our team takes your feedback and makes the movie or episode happen, covering part or all of the production.
+The optional ACT 3 Assistant Director Team package exists for exactly that — our team takes your feedback and makes the movie or episode happen, covering part or all of the production.
 
 **Can I take it into Premiere for the final cut?**
 
@@ -156,5 +156,5 @@ Yes. Shot lists export to Adobe Premiere and the platform exports FDX, PDF, EDL 
 
 ## Produce the pilot, not a proof of concept
 
-A pitch needs a full episode that holds together for 22 minutes — cast, sets, tone and pace. **Book a walkthrough of ACT 3 AI, or start a production free**, and see how a script becomes a structured episode your whole team can work on. If you would rather direct than operate, ask about the Level 2 team.
+A pitch needs a full episode that holds together for 22 minutes — cast, sets, tone and pace. **Book a walkthrough of ACT 3 AI, or start a production free**, and see how a script becomes a structured episode your whole team can work on. If you would rather direct than operate, ask about the Assistant Director Team.
 

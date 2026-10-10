@@ -7,7 +7,7 @@
 import React, { useState } from "react";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
-import { V4Hero, V4Section, V4CtaBand } from "../components/v4/V4Blocks";
+import { V4Hero, V4Section } from "../components/v4/V4Blocks";
 import { LINKS } from "../data/siteNav";
 
 const CONTACT_EMAIL = "contactus@act3ai.com";
@@ -382,8 +382,6 @@ export default function Contact(): React.ReactNode {
             </aside>
           </div>
         </V4Section>
-
-        <V4CtaBand />
       </main>
     </Layout>
   );

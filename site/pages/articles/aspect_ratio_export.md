@@ -1,11 +1,11 @@
 ---
 title: "One Project, Every Aspect Ratio: 16:9, 9:16, and 1:1 Export"
-description: "Multi-platform export means producing one piece of content and shipping it in every format the platforms demand — 16:9 for YouTube, vertical 9:16 for..."
+description: "Multi-platform export means producing one piece of content and shipping it in every format the platforms demand."
 keywords: ["ai video multi platform export", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "aspect_ratio_export"
 article_target_query: "ai video multi platform export"

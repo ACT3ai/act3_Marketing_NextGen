@@ -2,10 +2,10 @@
 title: "Is AI Film Production Enterprise-Ready? Teams and IP"
 description: "For most enterprise video work, yes — with conditions. AI film production is enterprise-ready where the requirement is structured, repeatable, long-form..."
 keywords: ["is ai film production ready for enterprise", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_enterprise_ready"
 article_target_query: "is ai film production ready for enterprise"
@@ -110,7 +110,7 @@ A realistic path, in order:
 2. **Run the security and legal review early**, not after the pilot succeeds. Ownership terms, tenancy model, SSO, and moderation are answerable on day one.
 3. **Stress the pilot at scale**, not at demo size. Generate a full piece, not a highlight. Watch it end to end.
 4. **Model the labor honestly.** Count the manual steps per shot in the pilot and multiply by your real shot count.
-5. **Decide the staffing model.** Either you build the internal capability, or you buy it. ACT 3 AI offers an optional **Level 2 team** package where our team takes your feedback and makes the production happen — for part or all of the production team. For enterprises with a script and a deadline but no AI production staff, that is often the difference between a pilot and a program.
+5. **Decide the staffing model.** Either you build the internal capability, or you buy it. ACT 3 AI offers an optional **Assistant Director Team** package where our team takes your feedback and makes the production happen — for part or all of the production team. For enterprises with a script and a deadline but no AI production staff, that is often the difference between a pilot and a program.
 6. **Then expand to brand-facing and long-form work.**
 
 Enterprise plans on ACT 3 AI include high-volume credits, unlimited storage, unlimited commercial use, ten concurrent jobs and custom terms. Pricing across the platform runs from a free plan through Creator ($49) and Pro ($175), with larger Editions from $395/month and Enterprise quoted individually.
@@ -141,7 +141,7 @@ Three-stage moderation is the standard: scanning prompts before generation, scri
 
 **Do we need in-house AI expertise to adopt this?**
 
-Not necessarily. The platforms are designed for storytellers rather than engineers, with persona-specific layouts and no node-graph requirement. And where an enterprise has the script and the deadline but not the staff, a done-for-you option like ACT 3's Level 2 team can execute part or all of the production against your feedback.
+Not necessarily. The platforms are designed for storytellers rather than engineers, with persona-specific layouts and no node-graph requirement. And where an enterprise has the script and the deadline but not the staff, a done-for-you option like ACT 3's Assistant Director Team can execute part or all of the production against your feedback.
 
 ---
 
@@ -149,5 +149,5 @@ Not necessarily. The platforms are designed for storytellers rather than enginee
 
 The fastest way to answer "is this enterprise-ready for us" is to put a real script and your actual security questionnaire in front of it at the same time.
 
-**[Book a walkthrough with the ACT 3 AI team](/)** — bring your script, your shot count, and your compliance requirements, and we will show you the pipeline, the ownership terms, and the Level 2 team option in one session.
+**[Book a walkthrough with the ACT 3 AI team](/contact)** — bring your script, your shot count, and your compliance requirements, and we will show you the pipeline, the ownership terms, and the Assistant Director Team option in one session.
 

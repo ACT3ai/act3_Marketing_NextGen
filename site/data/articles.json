@@ -2,14 +2,14 @@
   {
     "slug": "adapting_novel_ai",
     "title": "Adapting a Novel to Screen: Full-Length AI From the Page",
-    "description": "Adapting a novel to screen with AI means importing the book itself, letting AI expansion convert it into screenplay structure — acts, beats, scenes, shots...",
+    "description": "Adapting a novel to screen with AI means importing the book itself, letting AI expansion convert it into screenplay structure — acts, beats, scenes, shots.",
     "targetQuery": "adapt a novel to screen with ai",
     "persona": "Studio Production",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Use_Case",
     "keyValue": "Movie_In_3_Hours",
-    "updated": "2026-07-21",
+    "updated": "2026-10-09",
     "words": 1804,
     "faq": [
       {
@@ -126,7 +126,7 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1367,
     "faq": [
       {
@@ -158,14 +158,14 @@
   {
     "slug": "ai_10k_agency",
     "title": "AI Video Production Cost vs a $10k Agency Retainer",
-    "description": "The honest comparison is not \"software price versus retainer price.\" It is software price plus your team's hours versus the retainer price plus the hours...",
+    "description": "The honest comparison is not \"software price versus retainer price.\" It is software price plus your team's hours versus the retainer price plus the hours you still spend managing the agency.",
     "targetQuery": "ai video production cost vs agency",
     "persona": "Marketing Team",
     "funnelStage": "Buy",
     "searchIntent": "Transactional",
     "contentType": "Guide",
     "keyValue": "General",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1718,
     "faq": [
       {
@@ -240,14 +240,14 @@
   {
     "slug": "ai_animated_episodes",
     "title": "AI Animated Series Generator: Full, Consistent Episodes",
-    "description": "An AI animated series generator is only useful if it can do two things that clip tools cannot — hold a full episode as one structured project, and keep...",
+    "description": "An AI animated series generator is only useful if it can do two things that clip tools cannot — hold a full episode as one structured project, and keep your characters consistent across every shot of every episode.",
     "targetQuery": "ai animated series generator full episodes",
     "persona": "Animator",
     "funnelStage": "Buy",
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "Serious_Production",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1322,
     "faq": [
       {
@@ -279,7 +279,7 @@
   {
     "slug": "ai_animation_go",
     "title": "Best AI Animation Tools That Go From Script to Full Episode",
-    "description": "Most \"AI animation tools\" animate a shot, not an episode. If your goal is a script in and a finished 11-, 22-, or 44-minute episode out, you need to sort...",
+    "description": "Most \"AI animation tools\" animate a shot, not an episode. If your goal is a script in and a finished 11-, 22-, or 44-minute episode out, you need to sort the market into three groups.",
     "targetQuery": "best ai animation tools from script",
     "persona": "Animator",
     "funnelStage": "Compare",
@@ -318,14 +318,14 @@
   {
     "slug": "ai_brand_emotional",
     "title": "AI Brand-Story Video Maker for Emotional Campaigns",
-    "description": "An AI brand-story video maker is not a template filler. A brand story is a narrative — a person, a tension, a turn, a resolution — and it lands...",
+    "description": "An AI brand-story video maker is not a template filler. A brand story is a narrative — a person, a tension, a turn, a resolution.",
     "targetQuery": "ai brand story video maker",
     "persona": "Marketing Team",
     "funnelStage": "Buy",
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1466,
     "faq": [
       {
@@ -350,21 +350,21 @@
       },
       {
         "q": "What if we want the film made for us?",
-        "a": "The optional ACT 3 \"Level 2 team\" package puts our team on your production: you give the script and all the feedback you want, and we take that feedback into the movie and make it happen — for part of your team or all of it."
+        "a": "The optional ACT 3 Assistant Director Team package puts our team on your production: you give the script and all the feedback you want, and we take that feedback into the movie and make it happen — for part of your team or all of it."
       }
     ]
   },
   {
     "slug": "ai_building_movies",
     "title": "How Long Can AI Video Be? Building 2-Hour Movies",
-    "description": "Every current generative video model produces short clips — typically a handful of seconds per generation. No model today generates a two-hour movie in...",
+    "description": "Every current generative video model produces short clips — typically a handful of seconds per generation. No model today generates a two-hour movie in one pass, and none is close.",
     "targetQuery": "how long can ai generate video",
     "persona": "Studio Production",
     "funnelStage": "Learn",
     "searchIntent": "Informational",
     "contentType": "Guide",
     "keyValue": "FullLength_Preview",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1390,
     "faq": [
       {
@@ -396,14 +396,14 @@
   {
     "slug": "ai_builds_whole",
     "title": "Best AI Movie Generator That Builds a Whole Film",
-    "description": "Most tools marketed as an \"AI movie generator\" generate a shot, not a movie. You type a prompt, you get 5–10 seconds, and assembling those seconds into...",
+    "description": "Most tools marketed as an \"AI movie generator\" generate a shot, not a movie. You type a prompt, you get 5–10 seconds, and assembling those seconds into something with a story is entirely your problem.",
     "targetQuery": "best ai movie generator",
     "persona": "Content Creator",
     "funnelStage": "Buy",
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Movie_In_3_Hours",
-    "updated": "2026-07-21",
+    "updated": "2026-10-09",
     "words": 1356,
     "faq": [
       {
@@ -435,14 +435,14 @@
   {
     "slug": "ai_built_editor",
     "title": "AI Video Editor With a Built-In Full-Length Timeline",
-    "description": "An AI video tool with a built-in timeline lets you generate, assemble, and watch your production in one place — no exporting a folder of clips to an NLE...",
+    "description": "An AI video tool with a built-in timeline lets you generate, assemble, and watch your production in one place — no exporting a folder of clips to an NLE just to find out whether the scene works.",
     "targetQuery": "ai video editor built in timeline",
     "persona": "Studio Production",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "FullLength_Preview",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1384,
     "faq": [
       {
@@ -478,14 +478,14 @@
   {
     "slug": "ai_cartoon_2d",
     "title": "AI Cartoon and 2D Animation From Script to Full Episode",
-    "description": "An AI cartoon generator from script should do more than turn a paragraph into a pretty clip. To make an actual episode you need four things in one place...",
+    "description": "An AI cartoon generator from script should do more than turn a paragraph into a pretty clip. To make an actual episode you need four things in one place.",
     "targetQuery": "ai cartoon generator from script",
     "persona": "Animator",
     "funnelStage": "Buy",
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
+    "updated": "2026-10-09",
     "words": 1534,
     "faq": [
       {
@@ -510,7 +510,7 @@
       },
       {
         "q": "What if I want the episode made for me?",
-        "a": "That is the optional ACT 3 \"Level 2 team\" package: our team takes your script and your feedback and makes the movie or episode happen, covering part or all of the production work. You keep giving notes; we get it produced."
+        "a": "That is the optional ACT 3 Assistant Director Team package: our team takes your script and your feedback and makes the movie or episode happen, covering part or all of the production work. You keep giving notes; we get it produced."
       }
     ]
   },
@@ -524,7 +524,7 @@
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "Movie_In_3_Hours",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1404,
     "faq": [
       {
@@ -549,21 +549,21 @@
       },
       {
         "q": "What if we need production help, not just software?",
-        "a": "The optional ACT 3 \"Level 2 team\" package puts our team on your production — we take your feedback and make the movie happen for part or all of the work."
+        "a": "The optional ACT 3 Assistant Director Team package puts our team on your production — we take your feedback and make the movie happen for part or all of the work."
       }
     ]
   },
   {
     "slug": "ai_cinematography_lens",
     "title": "AI Video With Real Cinematography Control",
-    "description": "\"real cinematography control\" in AI video means the tool exposes the same decisions a director and DP make on set — shot type, camera position and height...",
+    "description": "\"Real cinematography control\" in AI video means the tool exposes the same decisions a director and DP make on set.",
     "targetQuery": "ai video with real cinematography control",
     "persona": "Indie Filmmaker",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "General",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1494,
     "faq": [
       {
@@ -599,14 +599,14 @@
   {
     "slug": "ai_client_work",
     "title": "AI Video Generator for Ad Agencies and Client Work",
-    "description": "Most AI video tools are built for one person making one clip. An agency needs the opposite — several client productions running at once, a team...",
+    "description": "Most AI video tools are built for one person making one clip. An agency needs the opposite.",
     "targetQuery": "ai video generator for ad agencies",
     "persona": "Agency Commercials",
     "funnelStage": "Buy",
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Serious_Production",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1443,
     "faq": [
       {
@@ -642,14 +642,14 @@
   {
     "slug": "ai_clip_pipeline",
     "title": "ACT 3 AI vs Runway: Clips or Full Production Pipeline?",
-    "description": "These two tools sit in different categories, and that is the whole comparison. Runway is a prompt-to-video generator: you describe a shot, it renders a...",
+    "description": "These two tools sit in different categories, and that is the whole comparison. Runway is a prompt-to-video generator.",
     "targetQuery": "act3 ai vs runway",
     "persona": "Studio Production",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "General",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1532,
     "faq": [
       {
@@ -681,14 +681,14 @@
   {
     "slug": "ai_commercial_brands",
     "title": "Best AI Commercial Generator for Agencies and Brands",
-    "description": "The best AI commercial generator for an agency or brand team is not the one with the prettiest single clip — it is the one that automates the whole spot...",
+    "description": "The best AI commercial generator for an agency or brand team is not the one with the prettiest single clip — it is the one that automates the whole spot, from copy to finished cut, and lets you turn out variations without redoing the work.",
     "targetQuery": "best ai commercial generator",
     "persona": "Agency Commercials",
     "funnelStage": "Buy",
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1357,
     "faq": [
       {
@@ -720,14 +720,14 @@
   {
     "slug": "ai_commercial_breakdown",
     "title": "AI Commercial Cost vs a Traditional Shoot",
-    "description": "A traditional commercial shoot spends most of its budget on things that never appear on screen — crew day rates, location and permits, equipment rental...",
+    "description": "A traditional commercial shoot spends most of its budget on things that never appear on screen — crew day rates, location and permits, equipment rental, catering, insurance, travel, and the contingency you hold against weather and reshoots.",
     "targetQuery": "cost of ai commercial vs traditional shoot",
     "persona": "Agency Commercials",
     "funnelStage": "Buy",
     "searchIntent": "Commercial",
     "contentType": "Guide",
     "keyValue": "General",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1464,
     "faq": [
       {
@@ -759,14 +759,14 @@
   {
     "slug": "ai_consistent_characters",
     "title": "AI Video With Consistent Characters Across Every Scene",
-    "description": "If you want AI video with consistent characters, you need a tool that stores the character as a record — identity, wardrobe, voice — and then builds every...",
+    "description": "If you want AI video with consistent characters, you need a tool that stores the character as a record — identity, wardrobe, voice — and then builds every shot from that record automatically.",
     "targetQuery": "ai video with consistent characters",
     "persona": "Content Creator",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
+    "updated": "2026-10-09",
     "words": 1466,
     "faq": [
       {
@@ -852,7 +852,7 @@
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "FullLength_Preview",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1524,
     "faq": [
       {
@@ -884,14 +884,14 @@
   {
     "slug": "ai_ecommerce_product",
     "title": "AI Video Generator for Ecommerce Product and Ad Videos",
-    "description": "An AI video generator lets an ecommerce brand produce product videos, lifestyle ads, and social cutdowns from product copy and existing product...",
+    "description": "An AI video generator lets an ecommerce brand produce product videos, lifestyle ads, and social cutdowns from product copy and existing product photography — without booking a studio, a set, or an editor for every SKU.",
     "targetQuery": "ai video generator for ecommerce",
     "persona": "Small Business",
     "funnelStage": "Buy",
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1454,
     "faq": [
       {
@@ -923,14 +923,14 @@
   {
     "slug": "ai_enterprise_ready",
     "title": "Is AI Film Production Enterprise-Ready? Teams and IP",
-    "description": "For most enterprise video work, yes — with conditions. AI film production is enterprise-ready where the requirement is structured, repeatable, long-form...",
+    "description": "For most enterprise video work, yes — with conditions. AI film production is enterprise-ready where the requirement is structured, repeatable, long-form video made by a team that owns its output.",
     "targetQuery": "is ai film production ready for enterprise",
     "persona": "Enterprise",
     "funnelStage": "Learn",
     "searchIntent": "Informational",
     "contentType": "Guide",
     "keyValue": "Serious_Production",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1795,
     "faq": [
       {
@@ -955,21 +955,21 @@
       },
       {
         "q": "Do we need in-house AI expertise to adopt this?",
-        "a": "Not necessarily. The platforms are designed for storytellers rather than engineers, with persona-specific layouts and no node-graph requirement. And where an enterprise has the script and the deadline but not the staff, a done-for-you option like ACT 3's Level 2 team can execute part or all of the production against your feedback."
+        "a": "Not necessarily. The platforms are designed for storytellers rather than engineers, with persona-specific layouts and no node-graph requirement. And where an enterprise has the script and the deadline but not the staff, a done-for-you option like ACT 3's Assistant Director Team can execute part or all of the production against your feedback."
       }
     ]
   },
   {
     "slug": "ai_estate_listings",
     "title": "AI Video Generator for Real Estate: Listings to Tours",
-    "description": "An AI video generator lets a real estate agent or brokerage turn listing copy and property photography into branded, narrated video — without a...",
+    "description": "An AI video generator lets a real estate agent or brokerage turn listing copy and property photography into branded, narrated video — without a videographer, a shoot day, or an editor.",
     "targetQuery": "ai video generator for real estate",
     "persona": "Small Business",
     "funnelStage": "Buy",
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1395,
     "faq": [
       {
@@ -1001,14 +1001,14 @@
   {
     "slug": "ai_feature_turn",
     "title": "AI Feature Film Generator: Turn a Script Into a Full Movie",
-    "description": "An AI feature film generator takes a complete screenplay and produces a full-length movie — not an 8-second clip, not a montage, but a structured film...",
+    "description": "An AI feature film generator takes a complete screenplay and produces a full-length movie.",
     "targetQuery": "ai feature film generator from script",
     "persona": "Indie Filmmaker",
     "funnelStage": "Buy",
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "Movie_In_3_Hours",
-    "updated": "2026-07-21",
+    "updated": "2026-10-09",
     "words": 1450,
     "faq": [
       {
@@ -1033,7 +1033,7 @@
       },
       {
         "q": "What if I don't want to run production myself?",
-        "a": "Use the ACT 3 \"Level 2 team\" package. Our team takes your script and your feedback and makes the movie happen, covering part or all of the production work."
+        "a": "Use the ACT 3 Assistant Director Team package. Our team takes your script and your feedback and makes the movie happen, covering part or all of the production work."
       }
     ]
   },
@@ -1118,14 +1118,14 @@
   {
     "slug": "ai_generators_compared",
     "title": "Best AI Video Generators for Marketing Teams, Compared",
-    "description": "For an in-house marketing team, the best AI video generator is the one that removes the most human steps between an approved script and a delivered video...",
+    "description": "For an in-house marketing team, the best AI video generator is the one that removes the most human steps between an approved script and a delivered video — not the one with the prettiest four-second demo.",
     "targetQuery": "best ai video generator for marketing",
     "persona": "Marketing Team",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Listicle",
     "keyValue": "Automation",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1496,
     "faq": [
       {
@@ -1235,7 +1235,7 @@
   {
     "slug": "ai_heygen_talking",
     "title": "ACT 3 AI vs HeyGen: Talking Avatars vs Directed Scenes",
-    "description": "HeyGen is an AI avatar platform — you write a script, pick or clone a presenter, and get a talking-head video, typically with strong translation and...",
+    "description": "HeyGen is an AI avatar platform — you write a script, pick or clone a presenter, and get a talking-head video, typically with strong translation and voice-cloning options.",
     "targetQuery": "act3 ai vs heygen",
     "persona": "Marketing Team",
     "funnelStage": "Compare",
@@ -1313,14 +1313,14 @@
   {
     "slug": "ai_horror_tension",
     "title": "AI Horror Film Maker: Full Scenes With Directed Tension",
-    "description": "An AI horror movie generator that actually works is not a prompt box — it is a cinematography system. Horror is the genre where prompt-only tools fail...",
+    "description": "An AI horror movie generator that actually works is not a prompt box — it is a cinematography system. Horror is the genre where prompt-only tools fail hardest, because fear is manufactured almost entirely by camera and light.",
     "targetQuery": "ai horror movie generator",
     "persona": "Content Creator",
     "funnelStage": "Buy",
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "General",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1406,
     "faq": [
       {
@@ -1359,7 +1359,7 @@
     "searchIntent": "Informational",
     "contentType": "How_To",
     "keyValue": "Automation",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1546,
     "faq": [
       {
@@ -1388,7 +1388,7 @@
       },
       {
         "q": "Can I get help actually finishing it?",
-        "a": "Yes. ACT 3 AI offers an optional \"Level 2 team\" package where our team takes your feedback and makes the movie happen — for part or all of the production — if you would rather direct than operate."
+        "a": "Yes. ACT 3 AI offers an optional Assistant Director Team package where our team takes your feedback and makes the movie happen — for part or all of the production — if you would rather direct than operate."
       }
     ]
   },
@@ -1473,14 +1473,14 @@
   {
     "slug": "ai_large_sprints",
     "title": "AI Video for Large Marketing Teams: Sprints, Seats, and IP",
-    "description": "Rolling AI video out to a large marketing team is not a tooling decision, it is an operations decision. You need one workspace that owns every project and...",
+    "description": "Rolling AI video out to a large marketing team is not a tooling decision, it is an operations decision.",
     "targetQuery": "ai video for large marketing teams",
     "persona": "Enterprise",
     "funnelStage": "Buy",
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Serious_Production",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1473,
     "faq": [
       {
@@ -1516,14 +1516,14 @@
   {
     "slug": "ai_ltx_handles",
     "title": "ACT 3 AI vs LTX Studio: Which Handles Full-Length Production",
-    "description": "Both tools take you from a script toward moving images. They diverge on what happens when the project is a real one — a 22-minute episode, a season, a...",
+    "description": "Both tools take you from a script toward moving images. They diverge on what happens when the project is a real one — a 22-minute episode, a season, a two-hour feature, worked on by a team, over months.",
     "targetQuery": "act3 ai vs ltx studio",
     "persona": "Studio Production",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
+    "updated": "2026-10-09",
     "words": 1547,
     "faq": [
       {
@@ -1548,14 +1548,14 @@
       },
       {
         "q": "What if we don't have the crew to execute?",
-        "a": "The optional ACT 3 \"Level 2 team\" package puts the ACT 3 team on part or all of your production, taking your feedback and producing against it."
+        "a": "The optional ACT 3 Assistant Director Team package puts the ACT 3 team on part or all of your production, taking your feedback and producing against it."
       }
     ]
   },
   {
     "slug": "ai_movie_cost",
     "title": "How Much Does an AI Movie Cost to Make in 2026?",
-    "description": "In 2026 a 3-minute AI short costs roughly $45 to $300 to generate and finish, a 40-minute film roughly $630 to $4,400, and a 90-minute feature roughly...",
+    "description": "In 2026 a 3-minute AI short costs roughly $45 to $300 to generate and finish, a 40-minute film roughly $630 to $4,400, and a 90-minute feature roughly $1,400 to $9,500.",
     "targetQuery": "how much does an ai movie cost 2026",
     "persona": "Indie Filmmaker",
     "funnelStage": "Buy",
@@ -1598,14 +1598,14 @@
   {
     "slug": "ai_music_cuts",
     "title": "AI Music Video Maker With Directed Camera and Cuts",
-    "description": "A music video is edited to the track, not to a prompt. That is the whole craft: the cut lands on the beat, the camera move resolves on the downbeat, the...",
+    "description": "A music video is edited to the track, not to a prompt. That is the whole craft: the cut lands on the beat, the camera move resolves on the downbeat, the wardrobe change happens at the chorus, and the artist's mouth matches the vocal.",
     "targetQuery": "ai music video generator",
     "persona": "Content Creator",
     "funnelStage": "Buy",
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "General",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1337,
     "faq": [
       {
@@ -1637,14 +1637,14 @@
   {
     "slug": "ai_pika_shots",
     "title": "ACT 3 AI vs Pika: Short Clips vs Full Scenes and Shots",
-    "description": "Pika and ACT 3 AI aren't really competing for the same job. Pika sits in the prompt-to-video category — you describe a moment, it generates a short clip...",
+    "description": "Pika and ACT 3 AI aren't really competing for the same job. Pika sits in the prompt-to-video category — you describe a moment, it generates a short clip, and it's fast, playful, and accessible.",
     "targetQuery": "act3 ai vs pika",
     "persona": "Content Creator",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "General",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1504,
     "faq": [
       {
@@ -1722,7 +1722,7 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Serious_Production",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1364,
     "faq": [
       {
@@ -1758,14 +1758,14 @@
   {
     "slug": "ai_pricing_studios",
     "title": "AI Film Production Pricing for Studios and Full Productions",
-    "description": "AI film production is not priced per movie — it is priced as a software subscription plus metered compute. On ACT 3 AI, published plans run from a free...",
+    "description": "AI film production is not priced per movie — it is priced as a software subscription plus metered compute.",
     "targetQuery": "ai film production pricing",
     "persona": "Studio Production",
     "funnelStage": "Buy",
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Serious_Production",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1318,
     "faq": [
       {
@@ -1801,14 +1801,14 @@
   {
     "slug": "ai_professionals_productions",
     "title": "Best AI Video Generator for Professionals",
-    "description": "Professionals need two different things from AI video, and no single product is best at both. For a shot — a striking few seconds with high fidelity — a...",
+    "description": "Professionals need two different things from AI video, and no single product is best at both. For a shot — a striking few seconds with high fidelity — a frontier prompt-to-video model like Google Veo 3 or Runway is the right tool.",
     "targetQuery": "best ai video generator for professionals",
     "persona": "Studio Production",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "Serious_Production",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1317,
     "faq": [
       {
@@ -1840,7 +1840,7 @@
   {
     "slug": "ai_realtors_branded",
     "title": "AI Video Maker for Realtors: Branded Tours in an Afternoon",
-    "description": "An AI video maker will not invent footage of a real house — and you should be suspicious of any tool that claims it can, because misrepresenting a...",
+    "description": "An AI video maker will not invent footage of a real house — and you should be suspicious of any tool that claims it can, because misrepresenting a property is a legal problem, not a creative one.",
     "targetQuery": "ai video generator for realtors",
     "persona": "Small Business",
     "funnelStage": "Buy",
@@ -1883,14 +1883,14 @@
   {
     "slug": "ai_restaurants_local",
     "title": "AI Video Generator for Restaurants and Local Business",
-    "description": "An AI video generator lets a restaurant or local business produce a steady stream of short vertical videos — specials, new menu items, seasonal promos...",
+    "description": "An AI video generator lets a restaurant or local business produce a steady stream of short vertical videos.",
     "targetQuery": "ai video generator for restaurants",
     "persona": "Small Business",
     "funnelStage": "Buy",
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1519,
     "faq": [
       {
@@ -1926,14 +1926,14 @@
   {
     "slug": "ai_reviews_ships",
     "title": "AI Filmmaking Software Reviews: What Actually Ships",
-    "description": "Nearly every AI filmmaking software review you will read is a review of clip generation — someone types a prompt, gets eight seconds of footage, and rates...",
+    "description": "Nearly every AI filmmaking software review you will read is a review of clip generation — someone types a prompt, gets eight seconds of footage, and rates how good those eight seconds look.",
     "targetQuery": "ai filmmaking software reviews",
     "persona": "Marketing Team",
     "funnelStage": "Buy",
     "searchIntent": "Commercial",
     "contentType": "Guide",
     "keyValue": "FullLength_Preview",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1461,
     "faq": [
       {
@@ -1958,7 +1958,7 @@
       },
       {
         "q": "What if we do not have the team to run it?",
-        "a": "The optional ACT 3 \"Level 2 team\" package puts our team on your production — you supply the script and all the feedback, and we take that feedback into the movie and make it happen, for part or all of the production."
+        "a": "The optional ACT 3 Assistant Director Team package puts our team on your production — you supply the script and all the feedback, and we take that feedback into the movie and make it happen, for part or all of the production."
       }
     ]
   },
@@ -2008,14 +2008,14 @@
   {
     "slug": "ai_running_many",
     "title": "Best AI Video Tools for Agencies With Many Clients",
-    "description": "An agency's problem with AI video is never one video. It is fourteen of them, for six clients, in parallel, with different brand rules, different...",
+    "description": "An agency's problem with AI video is never one video. It is fourteen of them, for six clients, in parallel, with different brand rules, different approvers, and a hard requirement that Client A's assets never touch Client B's workspace.",
     "targetQuery": "best ai video tools for agencies",
     "persona": "Agency Commercials",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Listicle",
     "keyValue": "Serious_Production",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1505,
     "faq": [
       {
@@ -2040,21 +2040,21 @@
       },
       {
         "q": "What if we win a project bigger than our bench?",
-        "a": "The optional ACT 3 \"Level 2 team\" package puts the ACT 3 team on part or all of the production, working from your feedback."
+        "a": "The optional ACT 3 Assistant Director Team package puts the ACT 3 team on part or all of the production, working from your feedback."
       }
     ]
   },
   {
     "slug": "ai_saas_demos",
     "title": "AI Video Generator for SaaS: Demos, Explainers, and Launches",
-    "description": "SaaS companies need three distinct kinds of video, and only two of them should be AI-generated. Product demos are best captured from the real product — a...",
+    "description": "SaaS companies need three distinct kinds of video, and only two of them should be AI-generated. Product demos are best captured from the real product — a screen recording is the truth, and no generator should invent your UI.",
     "targetQuery": "ai video generator for saas companies",
     "persona": "Enterprise",
     "funnelStage": "Buy",
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1468,
     "faq": [
       {
@@ -2090,14 +2090,14 @@
   {
     "slug": "ai_sci_fi",
     "title": "AI Sci-Fi Film Maker: Worlds, Sets, and Full Scenes",
-    "description": "Sci-fi is a world-building problem, and world-building is a 3D problem. That is why prompt-only AI video tools struggle with the genre: every generation...",
+    "description": "Sci-fi is a world-building problem, and world-building is a 3D problem. That is why prompt-only AI video tools struggle with the genre: every generation re-invents your ship corridor, your city skyline, your alien architecture.",
     "targetQuery": "ai sci fi movie generator",
     "persona": "Content Creator",
     "funnelStage": "Buy",
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "General",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1421,
     "faq": [
       {
@@ -2135,13 +2135,13 @@
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Comparison",
-    "keyValue": "Level_2_Team",
-    "updated": "2026-09-15",
+    "keyValue": "Assistant_Director_Team",
+    "updated": "2026-10-09",
     "words": 1340,
     "faq": [
       {
         "q": "What is the difference between an AI production service and AI production software?",
-        "a": "Software is the platform your team operates. A service is a team that operates the platform for you. With ACT 3 you can have both on the same project — the Level 2 team is an optional package layered on the software you already own."
+        "a": "Software is the platform your team operates. A service is a team that operates the platform for you. With ACT 3 you can have both on the same project — the Assistant Director Team is an optional package layered on the software you already own."
       },
       {
         "q": "Is a production service more expensive than software?",
@@ -2168,14 +2168,14 @@
   {
     "slug": "ai_show_seasons",
     "title": "AI TV Show Production Platform for Full Episodes and Seasons",
-    "description": "An AI TV show production platform has to do something clip generators do not: hold a series together. That means episodic structure across seasons...",
+    "description": "An AI TV show production platform has to do something clip generators do not: hold a series together.",
     "targetQuery": "ai tv show production platform",
     "persona": "Studio Production",
     "funnelStage": "Buy",
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Serious_Production",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1444,
     "faq": [
       {
@@ -2207,7 +2207,7 @@
   {
     "slug": "ai_social_reels",
     "title": "AI Video for Social Agencies: Reels and Shorts at Volume",
-    "description": "A social agency's constraint is not generating a video — it is generating the four hundredth video this month, across eight client brands, each on-brand...",
+    "description": "A social agency's constraint is not generating a video — it is generating the four hundredth video this month, across eight client brands, each on-brand, each in three aspect ratios, each traceable to an approved script.",
     "targetQuery": "ai video generator for social media agencies",
     "persona": "Marketing Team",
     "funnelStage": "Buy",
@@ -2250,14 +2250,14 @@
   {
     "slug": "ai_software_productions",
     "title": "The Best AI Filmmaking Software for Full Productions",
-    "description": "The best AI filmmaking software for you depends on whether you are making clips or making a film. If you need a 30-second hero shot, a prompt-to-video...",
+    "description": "The best AI filmmaking software for you depends on whether you are making clips or making a film. If you need a 30-second hero shot, a prompt-to-video model like Runway or Google Veo 3 is the fastest path.",
     "targetQuery": "best ai filmmaking software",
     "persona": "Indie Filmmaker",
     "funnelStage": "Buy",
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Serious_Production",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1626,
     "faq": [
       {
@@ -2328,14 +2328,14 @@
   {
     "slug": "ai_startups_shipping",
     "title": "AI Video Generator for Startups Shipping Content Weekly",
-    "description": "A startup marketing team does not have a video quality problem. It has a cadence problem. One person owns content, video is the highest-effort format, and...",
+    "description": "A startup marketing team does not have a video quality problem. It has a cadence problem. One person owns content, video is the highest-effort format, and so video becomes the thing that ships once a quarter instead of once a week.",
     "targetQuery": "ai video generator for startups",
     "persona": "Marketing Team",
     "funnelStage": "Buy",
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1320,
     "faq": [
       {
@@ -2371,14 +2371,14 @@
   {
     "slug": "ai_storing_protecting",
     "title": "Who Owns Your AI Film? Keeping Full Production IP",
-    "description": "If you are evaluating an AI video tool and ownership matters, the question to ask is narrower than \"do I own the output?\" Most platforms will tell you the...",
+    "description": "If you are evaluating an AI video tool and ownership matters, the question to ask is narrower than \"do I own the output?\"",
     "targetQuery": "ai video tool that keeps ip ownership",
     "persona": "Studio Production",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "Serious_Production",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1393,
     "faq": [
       {
@@ -2410,14 +2410,14 @@
   {
     "slug": "ai_studios_series",
     "title": "AI Production Software for Film Studios and Series Teams",
-    "description": "Studio-grade AI production software is a different category from consumer AI video generators. A studio does not need a tool that makes a nine-second...",
+    "description": "Studio-grade AI production software is a different category from consumer AI video generators. A studio does not need a tool that makes a nine-second clip; it needs a system that holds an entire show — season, episode, scene, shot.",
     "targetQuery": "ai production software for film studios",
     "persona": "Studio Production",
     "funnelStage": "Buy",
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Serious_Production",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1511,
     "faq": [
       {
@@ -2446,7 +2446,7 @@
       },
       {
         "q": "Can we get help staffing a production?",
-        "a": "Yes. The optional ACT 3 \"Level 2 team\" package puts our team on your production — for part or all of it — taking your feedback and making the movie happen."
+        "a": "Yes. The optional ACT 3 Assistant Director Team package puts our team on your production — for part or all of it — taking your feedback and making the movie happen."
       }
     ]
   },
@@ -2577,7 +2577,7 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1532,
     "faq": [
       {
@@ -2609,7 +2609,7 @@
   {
     "slug": "ai_voices_tts",
     "title": "AI Video Generator With Built-In Lipsync, Voices, and TTS",
-    "description": "Most creators end up stitching together three or four products to get talking characters — a text-to-speech tool for the voice, a video generator for the...",
+    "description": "Most creators end up stitching together three or four products to get talking characters.",
     "targetQuery": "ai video generator with lip sync and voices",
     "persona": "Content Creator",
     "funnelStage": "Compare",
@@ -2648,7 +2648,7 @@
   {
     "slug": "ai_workflow_explained",
     "title": "The End-to-End AI Film Production Workflow, Explained",
-    "description": "An end-to-end AI film production workflow has seven stages: story development → script → structure (beats, scenes, shots) → visual design (sets...",
+    "description": "An end-to-end AI film production workflow has seven stages: story development → script → structure (beats, scenes, shots) → visual design (sets, characters, cinematography, lighting) → generation → assembly → delivery.",
     "targetQuery": "ai film production workflow end to end",
     "persona": "Studio Production",
     "funnelStage": "Learn",
@@ -2726,7 +2726,7 @@
   {
     "slug": "anime_style_ai",
     "title": "How to Make Anime-Style Scenes With AI From a Script",
-    "description": "To make anime with AI from a script, you work in five stages: lock the script, break it into beats, scenes and shots, build a consistent cast, apply one...",
+    "description": "To make anime with AI from a script, you work in five stages: lock the script, break it into beats, scenes and shots, build a consistent cast, apply one anime style preset across every shot, then generate and assemble.",
     "targetQuery": "how to make anime with ai from script",
     "persona": "Animator",
     "funnelStage": "Learn",
@@ -2765,14 +2765,14 @@
   {
     "slug": "aspect_ratio_export",
     "title": "One Project, Every Aspect Ratio: 16:9, 9:16, and 1:1 Export",
-    "description": "Multi-platform export means producing one piece of content and shipping it in every format the platforms demand — 16:9 for YouTube, vertical 9:16 for...",
+    "description": "Multi-platform export means producing one piece of content and shipping it in every format the platforms demand — 16:9 for YouTube, vertical 9:16 for TikTok and Reels, 1:1 for Instagram posts — without rebuilding the video three times.",
     "targetQuery": "ai video multi platform export",
     "persona": "Content Creator",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1316,
     "faq": [
       {
@@ -2843,7 +2843,7 @@
   {
     "slug": "batch_produce_automation",
     "title": "Batch-Produce Videos From One Script With Full Automation",
-    "description": "To batch generate AI videos from a script, you need a pipeline that parses the script into individual shots, auto-writes the prompt and first frame for...",
+    "description": "To batch generate AI videos from a script, you need a pipeline that parses the script into individual shots, auto-writes the prompt and first frame for each one, queues them all as background jobs, and assembles the results.",
     "targetQuery": "batch generate ai videos from script",
     "persona": "Content Creator",
     "funnelStage": "Buy",
@@ -2882,14 +2882,14 @@
   {
     "slug": "blog_post_ai",
     "title": "Turn a Blog Post Into a Cinematic Video With AI",
-    "description": "To turn a blog post into a video with AI, you import the article, let the system restructure it into a script with a defined runtime, break that script...",
+    "description": "To turn a blog post into a video with AI, you import the article, let the system restructure it into a script with a defined runtime, break that script into scenes and shots, generate narration and footage, then export per platform.",
     "targetQuery": "turn blog post into video with ai",
     "persona": "Content Creator",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Use_Case",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
+    "updated": "2026-10-09",
     "words": 1412,
     "faq": [
       {
@@ -2921,14 +2921,14 @@
   {
     "slug": "brief_spot_ai",
     "title": "AI Commercials for Agencies: Brief to Finished Spot",
-    "description": "AI commercial production works for an agency when the platform automates the whole path from brief to spot — script, shot breakdown, character sheets...",
+    "description": "AI commercial production works for an agency when the platform automates the whole path from brief to spot.",
     "targetQuery": "ai commercial production for agencies",
     "persona": "Agency Commercials",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Use_Case",
     "keyValue": "Automation",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1566,
     "faq": [
       {
@@ -2964,14 +2964,14 @@
   {
     "slug": "busywork_ai_automate",
     "title": "Make Videos Faster: AI Automates Frames and Prompts",
-    "description": "The fastest way to make videos with AI is to automate the setup work — first frames, prompts, and character/wardrobe references — instead of speeding up...",
+    "description": "The fastest way to make videos with AI is to automate the setup work — first frames, prompts, and character/wardrobe references — instead of speeding up the generation step.",
     "targetQuery": "how to make videos faster with ai automation",
     "persona": "Small Business",
     "funnelStage": "Learn",
     "searchIntent": "Informational",
     "contentType": "How_To",
     "keyValue": "Automation",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1346,
     "faq": [
       {
@@ -3003,14 +3003,14 @@
   {
     "slug": "cheapest_way_still",
     "title": "Cheapest Way to Make Cinematic Video That Looks Directed",
-    "description": "The cheapest cinematic video is the one you do not shoot. Location fees, permits, crew days, and gear rental are the expensive part of \"cinematic\" — not...",
+    "description": "The cheapest cinematic video is the one you do not shoot. Location fees, permits, crew days, and gear rental are the expensive part of \"cinematic\" — not the camera and not the color.",
     "targetQuery": "cheapest way to make cinematic video",
     "persona": "Content Creator",
     "funnelStage": "Buy",
     "searchIntent": "Commercial",
     "contentType": "Guide",
     "keyValue": "General",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1420,
     "faq": [
       {
@@ -3042,7 +3042,7 @@
   {
     "slug": "choose_ai_buyer",
     "title": "How to Choose an AI Video Platform: A Buyer's Checklist",
-    "description": "Choose an AI video platform by scoring it on eight things, in this order: (1) the scope it covers — clip generator, storyboard tool, or full...",
+    "description": "Choose an AI video platform by scoring it on eight things, in this order: (1) the scope it covers — clip generator, storyboard tool, or full script-to-render pipeline.",
     "targetQuery": "how to choose an ai video platform",
     "persona": "Marketing Team",
     "funnelStage": "Buy",
@@ -3081,14 +3081,14 @@
   {
     "slug": "collaborate_ai_handoffs",
     "title": "AI Film Production Teams: Roles, Permissions, Handoffs",
-    "description": "AI film production team collaboration works when the entire crew operates inside one production project with role-based permissions and clean handoffs...",
+    "description": "AI film production team collaboration works when the entire crew operates inside one production project with role-based permissions and clean handoffs.",
     "targetQuery": "ai film production team collaboration",
     "persona": "Studio Production",
     "funnelStage": "Buy",
     "searchIntent": "Commercial",
     "contentType": "Use_Case",
     "keyValue": "Serious_Production",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1421,
     "faq": [
       {
@@ -3159,14 +3159,14 @@
   {
     "slug": "consistency_ai_means",
     "title": "Character Consistency in AI Video: What It Means",
-    "description": "Character consistency in AI video means that the same character looks like the same person in every shot — same face, same hair, same build, same wardrobe...",
+    "description": "Character consistency in AI video means that the same character looks like the same person in every shot — same face, same hair, same build, same wardrobe — across dozens or hundreds of separately generated clips.",
     "targetQuery": "what is character consistency ai",
     "persona": "Animator",
     "funnelStage": "Learn",
     "searchIntent": "Informational",
     "contentType": "Glossary",
     "keyValue": "Automation",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1753,
     "faq": [
       {
@@ -3326,7 +3326,7 @@
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Movie_In_3_Hours",
-    "updated": "2026-07-21",
+    "updated": "2026-10-09",
     "words": 1440,
     "faq": [
       {
@@ -3358,14 +3358,14 @@
   {
     "slug": "delivery_hands_off",
     "title": "Automated Video Production: Script to Delivery",
-    "description": "Automated video production software turns a written script into finished video without a human hand-building every intermediate step — no manual...",
+    "description": "Automated video production software turns a written script into finished video without a human hand-building every intermediate step — no manual storyboarding, no prompt-by-prompt frame generation, no shot-by-shot assembly.",
     "targetQuery": "automated video production software",
     "persona": "Marketing Team",
     "funnelStage": "Buy",
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
     "keyValue": "Automation",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1624,
     "faq": [
       {
@@ -3436,19 +3436,19 @@
   {
     "slug": "done_ai_happen",
     "title": "Done-for-You AI Movie Production: We Make Your Script Happen",
-    "description": "A done-for-you AI movie production service is one where you hand over a script and creative direction, and someone else runs the production — the shot...",
+    "description": "A done-for-you AI movie production service is one where you hand over a script and creative direction, and someone else runs the production.",
     "targetQuery": "done for you ai movie production service",
     "persona": "Indie Filmmaker",
     "funnelStage": "Buy",
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
-    "keyValue": "Level_2_Team",
-    "updated": "2026-07-21",
+    "keyValue": "Assistant_Director_Team",
+    "updated": "2026-10-09",
     "words": 1366,
     "faq": [
       {
         "q": "Can someone else make my AI movie for me?",
-        "a": "Yes. The ACT 3 \"Level 2 team\" is an optional package where our team takes your feedback into your movie and makes it happen, for part or all of the production."
+        "a": "Yes. The ACT 3 Assistant Director Team is an optional package where our team takes your feedback into your movie and makes it happen, for part or all of the production."
       },
       {
         "q": "Do I need a finished screenplay to start?",
@@ -3514,14 +3514,14 @@
   {
     "slug": "enterprise_ai_owned",
     "title": "Enterprise AI Film Production: Teams and Owned IP",
-    "description": "Enterprise AI film production software has to clear a bar that consumer AI video tools never face: it must produce full-length deliverables (a 40-minute...",
+    "description": "Enterprise AI film production software has to clear a bar that consumer AI video tools never face.",
     "targetQuery": "enterprise ai film production software",
     "persona": "Enterprise",
     "funnelStage": "Buy",
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
     "keyValue": "Serious_Production",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1407,
     "faq": [
       {
@@ -3553,14 +3553,14 @@
   {
     "slug": "explainer_ai_rough",
     "title": "How to Make an Explainer Video With AI From a Rough Draft",
-    "description": "You can make an explainer video with AI in five steps, starting from text you already have — a rough draft, a product page, an FAQ, or an email you wrote...",
+    "description": "You can make an explainer video with AI in five steps, starting from text you already have — a rough draft, a product page, an FAQ, or an email you wrote to a customer.",
     "targetQuery": "how to make explainer video with ai",
     "persona": "Small Business",
     "funnelStage": "Learn",
     "searchIntent": "Informational",
     "contentType": "How_To",
     "keyValue": "Automation",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1552,
     "faq": [
       {
@@ -3798,7 +3798,7 @@
     "searchIntent": "Informational",
     "contentType": "Guide",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
+    "updated": "2026-10-09",
     "words": 1895,
     "faq": [
       {
@@ -3830,14 +3830,14 @@
   {
     "slug": "get_screenplay_produced",
     "title": "How to Get Your Screenplay Produced With AI",
-    "description": "You can now get a finished screenplay produced as watchable video without raising money, attaching talent, or assembling a crew — by moving it through an...",
+    "description": "You can now get a finished screenplay produced as watchable video without raising money, attaching talent, or assembling a crew — by moving it through an AI filmmaking pipeline instead of a physical one.",
     "targetQuery": "get my screenplay produced with ai",
     "persona": "Indie Filmmaker",
     "funnelStage": "Learn",
     "searchIntent": "Informational",
     "contentType": "Use_Case",
-    "keyValue": "Level_2_Team",
-    "updated": "2026-09-15",
+    "keyValue": "Assistant_Director_Team",
+    "updated": "2026-10-09",
     "words": 1434,
     "faq": [
       {
@@ -3869,19 +3869,19 @@
   {
     "slug": "hand_produces_ai",
     "title": "Hand Us the Script: A Team That Produces Your Video With AI",
-    "description": "If you have a script and no one in the building who can shoot it, you have three ways to get a video made: hire a production company, hire freelancers and...",
+    "description": "If you have a script and no one in the building who can shoot it, you have three ways to get a video made: hire a production company, hire freelancers and coordinate them yourself, or hire a team that produces the video with AI.",
     "targetQuery": "hire team to make video from my script",
     "persona": "Small Business",
     "funnelStage": "Buy",
     "searchIntent": "Commercial",
     "contentType": "Landing_Page",
-    "keyValue": "Level_2_Team",
-    "updated": "2026-09-15",
+    "keyValue": "Assistant_Director_Team",
+    "updated": "2026-10-09",
     "words": 1284,
     "faq": [
       {
         "q": "Can I hire someone to turn my script into a video?",
-        "a": "Yes. The ACT 3 \"Level 2 team\" is an optional package where our team takes your feedback into the production and makes the video happen, for part or all of the work."
+        "a": "Yes. The ACT 3 Assistant Director Team is an optional package where our team takes your feedback into the production and makes the video happen, for part or all of the work."
       },
       {
         "q": "What if my script is really just rough copy?",
@@ -3908,14 +3908,14 @@
   {
     "slug": "integrating_ai_davinci",
     "title": "Integrating AI Video With Premiere and DaVinci Workflows",
-    "description": "You integrate AI-generated video into Adobe Premiere Pro or DaVinci Resolve the same way you integrate any other source — by delivering it as conformable...",
+    "description": "You integrate AI-generated video into Adobe Premiere Pro or DaVinci Resolve the same way you integrate any other source — by delivering it as conformable media plus an edit decision list, not as a folder of loose clips.",
     "targetQuery": "how to integrate ai video with premiere",
     "persona": "Studio Production",
     "funnelStage": "Learn",
     "searchIntent": "Informational",
     "contentType": "Guide",
     "keyValue": "FullLength_Preview",
-    "updated": "2026-07-21",
+    "updated": "2026-10-09",
     "words": 1385,
     "faq": [
       {
@@ -3947,7 +3947,7 @@
   {
     "slug": "iphone_motion_ai",
     "title": "iPhone Motion Capture to Blender to Final AI Render",
-    "description": "You can drive AI animation with an iPhone by capturing performance on the phone, retargeting it onto a rigged 3D character in Blender, and then rendering...",
+    "description": "You can drive AI animation with an iPhone by capturing performance on the phone, retargeting it onto a rigged 3D character in Blender, and then rendering that character either as 3D or through a generative video pass.",
     "targetQuery": "how to use iphone mocap for ai animation",
     "persona": "Animator",
     "funnelStage": "Learn",
@@ -3986,7 +3986,7 @@
   {
     "slug": "keep_character_ai",
     "title": "How to Keep a Character Consistent Across Every AI Scene",
-    "description": "You keep a character consistent in AI video by taking the description out of the prompt and putting it into a fixed, reusable record that every shot draws...",
+    "description": "You keep a character consistent in AI video by taking the description out of the prompt and putting it into a fixed, reusable record that every shot draws from.",
     "targetQuery": "how to keep character consistent in ai video",
     "persona": "Content Creator",
     "funnelStage": "Learn",
@@ -4025,14 +4025,14 @@
   {
     "slug": "keeping_continuity_ai",
     "title": "How to Keep Continuity Across a Full AI Film",
-    "description": "Continuity across an AI film is kept by making it data, not diligence. Define each character, wardrobe variant, set and visual style once as a reusable...",
+    "description": "Continuity across an AI film is kept by making it data, not diligence. Define each character, wardrobe variant, set and visual style once as a reusable, referenced object.",
     "targetQuery": "how to keep continuity across ai film",
     "persona": "Studio Production",
     "funnelStage": "Learn",
     "searchIntent": "Informational",
     "contentType": "Guide",
     "keyValue": "Serious_Production",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1508,
     "faq": [
       {
@@ -4064,14 +4064,14 @@
   {
     "slug": "localize_ten_ai",
     "title": "Localize One Ad Into Ten Languages With AI Lipsync",
-    "description": "You localize a video ad with AI by treating the script as the source of truth rather than the finished footage: swap the dialogue for the translated...",
+    "description": "You localize a video ad with AI by treating the script as the source of truth rather than the finished footage.",
     "targetQuery": "localize video ads with ai",
     "persona": "Marketing Team",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Use_Case",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
+    "updated": "2026-10-09",
     "words": 1706,
     "faq": [
       {
@@ -4146,14 +4146,14 @@
   {
     "slug": "ltx_studio_built",
     "title": "LTX Studio Alternative Built for Full-Length TV and Film",
-    "description": "If you are looking for an LTX Studio alternative for TV production, the question to ask is not \"which tool has better shots\" — it is which platform is...",
+    "description": "If you are looking for an LTX Studio alternative for TV production, the question to ask is not \"which tool has better shots\" — it is which platform is built for serious production.",
     "targetQuery": "ltx studio alternative for tv production",
     "persona": "Studio Production",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "Serious_Production",
-    "updated": "2026-07-21",
+    "updated": "2026-10-09",
     "words": 1355,
     "faq": [
       {
@@ -4178,7 +4178,7 @@
       },
       {
         "q": "Can you produce the show for us?",
-        "a": "That is what the ACT 3 \"Level 2 team\" package is for — our team takes your script and your feedback and makes the production happen, for part or all of the work."
+        "a": "That is what the ACT 3 Assistant Director Team package is for — our team takes your script and your feedback and makes the production happen, for part or all of the work."
       }
     ]
   },
@@ -4224,14 +4224,14 @@
   {
     "slug": "make_ai_clips",
     "title": "How to Make a Full-Length AI Movie From a Script",
-    "description": "To make a full-length AI movie you have to stop thinking in clips and start thinking in structure. A 90-minute feature is not one long generation — it is...",
+    "description": "To make a full-length AI movie you have to stop thinking in clips and start thinking in structure.",
     "targetQuery": "how to make a full length ai movie",
     "persona": "Indie Filmmaker",
     "funnelStage": "Learn",
     "searchIntent": "Informational",
     "contentType": "Guide",
     "keyValue": "Movie_In_3_Hours",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1706,
     "faq": [
       {
@@ -4263,14 +4263,14 @@
   {
     "slug": "managed_ai_feedback",
     "title": "Managed AI Video Production: Our Team, Your Film",
-    "description": "Managed AI video production means a vendor's team operates the AI filmmaking platform on your behalf — you supply the script, the brand rules, and the...",
+    "description": "Managed AI video production means a vendor's team operates the AI filmmaking platform on your behalf — you supply the script, the brand rules, and the notes, and they deliver finished video.",
     "targetQuery": "managed ai video production for brands",
     "persona": "Enterprise",
     "funnelStage": "Buy",
     "searchIntent": "Transactional",
     "contentType": "Use_Case",
-    "keyValue": "Level_2_Team",
-    "updated": "2026-09-15",
+    "keyValue": "Assistant_Director_Team",
+    "updated": "2026-10-09",
     "words": 1617,
     "faq": [
       {
@@ -4279,7 +4279,7 @@
       },
       {
         "q": "Can we start managed and move to self-serve later?",
-        "a": "Yes — that is a common reason to choose the hybrid. Because the Level 2 team works inside your Organization on the same platform, the transition is a staffing change, not a migration."
+        "a": "Yes — that is a common reason to choose the hybrid. Because the Assistant Director Team works inside your Organization on the same platform, the transition is a staffing change, not a migration."
       },
       {
         "q": "How much of the production can we hand over?",
@@ -4302,14 +4302,14 @@
   {
     "slug": "mega_prompt_bundling",
     "title": "What Is a Mega Prompt? Bundling Story, Camera, and Light",
-    "description": "A mega prompt is a single, assembled instruction for one shot that bundles everything a video model needs to know: the narrative action, the visual style...",
+    "description": "A mega prompt is a single, assembled instruction for one shot that bundles everything a video model needs to know: the narrative action, the visual style, the camera, the lighting, the audio, and the motion data.",
     "targetQuery": "what is a mega prompt ai video",
     "persona": "Content Creator",
     "funnelStage": "Learn",
     "searchIntent": "Informational",
     "contentType": "Glossary",
     "keyValue": "Automation",
-    "updated": "2026-07-21",
+    "updated": "2026-10-09",
     "words": 1454,
     "faq": [
       {
@@ -4341,14 +4341,14 @@
   {
     "slug": "micro_budget_ai",
     "title": "Make a Movie on a Micro-Budget With AI: Real Numbers",
-    "description": "A micro-budget AI feature is possible today, but only if you attack the right constraint. The constraint is not the cost of a shot — generative video is...",
+    "description": "A micro-budget AI feature is possible today, but only if you attack the right constraint. The constraint is not the cost of a shot — generative video is already cheap per clip.",
     "targetQuery": "make a movie on a micro budget with ai",
     "persona": "Indie Filmmaker",
     "funnelStage": "Buy",
     "searchIntent": "Commercial",
     "contentType": "Guide",
     "keyValue": "Movie_In_3_Hours",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1602,
     "faq": [
       {
@@ -4380,7 +4380,7 @@
   {
     "slug": "much_ai_minute",
     "title": "How Much Does AI Video Cost? Per-Minute Math",
-    "description": "AI video is priced in one of three ways — a flat monthly subscription, a per-second or per-clip generation fee, or a credit system where each render draws...",
+    "description": "AI video is priced in one of three ways — a flat monthly subscription, a per-second or per-clip generation fee, or a credit system where each render draws down a monthly allowance.",
     "targetQuery": "how much does ai video cost",
     "persona": "Small Business",
     "funnelStage": "Buy",
@@ -4418,23 +4418,23 @@
   },
   {
     "slug": "outsource_ai_level",
-    "title": "Outsource Your AI Video Production to Our Level-2 Team",
-    "description": "You can outsource AI video production in three ways — hire a freelancer, retain a traditional agency, or use a done-for-you team that operates the AI...",
+    "title": "Outsource Your AI Video Production to Our Assistant Director Team",
+    "description": "You can outsource AI video production in three ways — hire a freelancer, retain a traditional agency, or use a done-for-you team that operates the AI production platform on your behalf.",
     "targetQuery": "outsource ai video production team",
     "persona": "Marketing Team",
     "funnelStage": "Buy",
     "searchIntent": "Transactional",
     "contentType": "Landing_Page",
-    "keyValue": "Level_2_Team",
-    "updated": "2026-07-21",
+    "keyValue": "Assistant_Director_Team",
+    "updated": "2026-10-09",
     "words": 1305,
     "faq": [
       {
-        "q": "What is the ACT 3 Level 2 team?",
+        "q": "What is the ACT 3 Assistant Director Team?",
         "a": "An optional done-for-you package in which our team operates ACT 3 AI on your production. You give the script and the feedback; we take that feedback into the movie and make it happen — for part or all of your video production team."
       },
       {
-        "q": "Can I use the Level 2 team for only part of a project?",
+        "q": "Can I use the Assistant Director Team for only part of a project?",
         "a": "Yes. That is the design. Use us for the whole production, for a single sequence, for a launch spike, or just for the operating work while you keep creative direction in-house."
       },
       {
@@ -4458,14 +4458,14 @@
   {
     "slug": "pictory_alternative_slideshows",
     "title": "Pictory Alternative: Script to Cinematic, Not Slides",
-    "description": "The best Pictory alternative depends on what \"script to video\" means to you. Pictory and tools like it turn a script or article into a captioned montage...",
+    "description": "The best Pictory alternative depends on what \"script to video\" means to you. Pictory and tools like it turn a script or article into a captioned montage.",
     "targetQuery": "pictory alternative script to video",
     "persona": "Small Business",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "Automation",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1417,
     "faq": [
       {
@@ -4504,7 +4504,7 @@
     "searchIntent": "Informational",
     "contentType": "Guide",
     "keyValue": "Serious_Production",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1705,
     "faq": [
       {
@@ -4529,7 +4529,7 @@
       },
       {
         "q": "What if I have the script but not the capacity to produce it?",
-        "a": "The optional ACT 3 \"Level 2 team\" package exists for exactly that — our team takes your feedback and makes the movie or episode happen, covering part or all of the production."
+        "a": "The optional ACT 3 Assistant Director Team package exists for exactly that — our team takes your feedback and makes the movie or episode happen, covering part or all of the production."
       },
       {
         "q": "Can I take it into Premiere for the final cut?",
@@ -4540,14 +4540,14 @@
   {
     "slug": "preview_unified_ai",
     "title": "Preview the Whole Video, Not Clip by Clip",
-    "description": "To preview a whole AI video edit rather than clip by clip, you need a tool that assembles every generated shot onto one continuous timeline at full...",
+    "description": "To preview a whole AI video edit rather than clip by clip, you need a tool that assembles every generated shot onto one continuous timeline at full runtime — and lets you scrub, zoom and play across the entire thing.",
     "targetQuery": "ai tool to preview whole video edit",
     "persona": "Content Creator",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "FullLength_Preview",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1376,
     "faq": [
       {
@@ -4618,14 +4618,14 @@
   {
     "slug": "produce_month_ai",
     "title": "How to Produce 100+ Marketing Videos a Month With AI",
-    "description": "Producing 100+ marketing videos a month is not a rendering problem — it is a per-video human labor problem. At 100 videos a month with 15 shots each, you...",
+    "description": "Producing 100+ marketing videos a month is not a rendering problem — it is a per-video human labor problem. At 100 videos a month with 15 shots each, you are managing roughly 1,500 shots.",
     "targetQuery": "produce 100 marketing videos a month with ai",
     "persona": "Marketing Team",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Use_Case",
     "keyValue": "Automation",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1557,
     "faq": [
       {
@@ -4661,14 +4661,14 @@
   {
     "slug": "proof_concept_ai",
     "title": "Make a Proof-of-Concept Trailer to Raise Money With AI",
-    "description": "A proof-of-concept trailer made with AI is a 2–4 minute piece that shows financiers what your film looks and feels like — tone, world, cast...",
+    "description": "A proof-of-concept trailer made with AI is a 2–4 minute piece that shows financiers what your film looks and feels like — tone, world, cast, cinematography — built from generated shots instead of a shoot.",
     "targetQuery": "make a proof of concept trailer with ai",
     "persona": "Indie Filmmaker",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Use_Case",
-    "keyValue": "Level_2_Team",
-    "updated": "2026-07-21",
+    "keyValue": "Assistant_Director_Team",
+    "updated": "2026-10-09",
     "words": 1750,
     "faq": [
       {
@@ -4689,7 +4689,7 @@
       },
       {
         "q": "What if I don't know how to use AI production tools?",
-        "a": "Use the Level 2 team option. ACT 3's team takes your feedback and makes the production happen, for part or all of the work. You direct; we execute. That is specifically designed for filmmakers with a script and a deadline rather than a pipeline skillset."
+        "a": "Use the Assistant Director Team option. ACT 3's team takes your feedback and makes the production happen, for part or all of the work. You direct; we execute. That is specifically designed for filmmakers with a script and a deadline rather than a pipeline skillset."
       },
       {
         "q": "What formats can I deliver for festivals and investor screenings?",
@@ -4700,14 +4700,14 @@
   {
     "slug": "rebuild_ai_yesterday",
     "title": "Rebuild Your Entire AI Movie From Daily Feedback",
-    "description": "Rebuilding an AI movie daily means treating your film like a build artifact: you screen the current cut, write notes, feed those notes back into the...",
+    "description": "Rebuilding an AI movie daily means treating your film like a build artifact.",
     "targetQuery": "rebuild ai movie from feedback daily",
     "persona": "Indie Filmmaker",
     "funnelStage": "Learn",
     "searchIntent": "Informational",
     "contentType": "How_To",
     "keyValue": "Movie_In_3_Hours",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1419,
     "faq": [
       {
@@ -4732,21 +4732,21 @@
       },
       {
         "q": "What if I want someone else to run the loop?",
-        "a": "The optional ACT 3 \"Level 2 team\" package does exactly that — our team takes your feedback and makes the movie happen, for part or all of your production."
+        "a": "The optional ACT 3 Assistant Director Team package does exactly that — our team takes your feedback and makes the movie happen, for part or all of your production."
       }
     ]
   },
   {
     "slug": "roi_ai_output",
     "title": "ROI of AI Video for Marketing Teams: Output and Cost",
-    "description": "The ROI of AI video for an in-house marketing team almost never comes from the cost of a single video. It comes from three compounding effects — output...",
+    "description": "The ROI of AI video for an in-house marketing team almost never comes from the cost of a single video. It comes from three compounding effects.",
     "targetQuery": "roi of ai video for marketing teams",
     "persona": "Marketing Team",
     "funnelStage": "Buy",
     "searchIntent": "Commercial",
     "contentType": "Guide",
     "keyValue": "Automation",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1432,
     "faq": [
       {
@@ -4778,14 +4778,14 @@
   {
     "slug": "roll_ai_matches",
     "title": "How to Make B-Roll With AI That Matches Your Story",
-    "description": "To make B-roll with AI, you write a shot spec — not a vibe. A usable AI B-roll shot needs five things stated explicitly: subject and action, shot type...",
+    "description": "To make B-roll with AI, you write a shot spec — not a vibe. A usable AI B-roll shot needs five things stated explicitly: subject and action, shot type, camera movement, lens, and lighting.",
     "targetQuery": "how to make b roll with ai",
     "persona": "Content Creator",
     "funnelStage": "Learn",
     "searchIntent": "Informational",
     "contentType": "How_To",
     "keyValue": "General",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1384,
     "faq": [
       {
@@ -4817,14 +4817,14 @@
   {
     "slug": "run_faceless_ai",
     "title": "Run a Faceless YouTube Channel With AI Video",
-    "description": "A faceless YouTube channel built on AI video works by producing narrative or documentary content where you never appear on camera — the visuals are...",
+    "description": "A faceless YouTube channel built on AI video works by producing narrative or documentary content where you never appear on camera.",
     "targetQuery": "faceless youtube channel with ai video",
     "persona": "Content Creator",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Use_Case",
     "keyValue": "FullLength_Preview",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1712,
     "faq": [
       {
@@ -4856,14 +4856,14 @@
   {
     "slug": "runway_long_form",
     "title": "Runway Alternative for Long-Form and Full-Length Video",
-    "description": "Runway is a clip generator, and the wall you hit on long videos is structural, not a settings problem. Prompt-to-video tools in Runway's category produce...",
+    "description": "Runway is a clip generator, and the wall you hit on long videos is structural, not a settings problem. Prompt-to-video tools in Runway's category produce short shots.",
     "targetQuery": "runway alternative for long videos",
     "persona": "Content Creator",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Comparison",
     "keyValue": "FullLength_Preview",
-    "updated": "2026-07-21",
+    "updated": "2026-10-09",
     "words": 1416,
     "faq": [
       {
@@ -4934,14 +4934,14 @@
   {
     "slug": "scale_training_ai",
     "title": "Scale Training and Onboarding Videos With AI Production",
-    "description": "You scale training video production with AI by making the script the deliverable: write or import the module script, and let the pipeline automate the...",
+    "description": "You scale training video production with AI by making the script the deliverable.",
     "targetQuery": "ai training and onboarding videos at scale",
     "persona": "Enterprise",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Use_Case",
     "keyValue": "Automation",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1874,
     "faq": [
       {
@@ -4970,7 +4970,7 @@
       },
       {
         "q": "Is there an option to have it produced for us?",
-        "a": "Yes — the optional Level 2 team package. ACT 3's team takes your feedback and makes the production happen, for part or all of the production, which suits enterprises with a backlog and approved scripts but no internal video function."
+        "a": "Yes — the optional Assistant Director Team package. ACT 3's team takes your feedback and makes the production happen, for part or all of the production, which suits enterprises with a backlog and approved scripts but no internal video function."
       }
     ]
   },
@@ -4984,7 +4984,7 @@
     "searchIntent": "Commercial",
     "contentType": "Guide",
     "keyValue": "Serious_Production",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1640,
     "faq": [
       {
@@ -5016,7 +5016,7 @@
   {
     "slug": "sheets_right_outfits",
     "title": "Generate AI Character Sheets With the Right Outfits",
-    "description": "To generate a character sheet with outfits using AI, you need the outfits to be structured data attached to the character, not descriptions retyped into a...",
+    "description": "To generate a character sheet with outfits using AI, you need the outfits to be structured data attached to the character, not descriptions retyped into a prompt.",
     "targetQuery": "generate character sheet with outfits ai",
     "persona": "Animator",
     "funnelStage": "Learn",
@@ -5055,7 +5055,7 @@
   {
     "slug": "ship_launch_ai",
     "title": "Ship a Product Launch Video With AI Before the Deadline",
-    "description": "You can produce a launch video with AI by writing or importing the script, letting the platform automate the shot list, first frames, prompts, voiceover...",
+    "description": "You can produce a launch video with AI by writing or importing the script, letting the platform automate the shot list, first frames, prompts, voiceover, and assembly, then reviewing and regenerating the shots that need work.",
     "targetQuery": "product launch video with ai",
     "persona": "Small Business",
     "funnelStage": "Compare",
@@ -5094,7 +5094,7 @@
   {
     "slug": "shot_lists_storyboards",
     "title": "Auto Shot Lists and Storyboards From Your Script",
-    "description": "An AI storyboard and shot list generator reads your script, breaks it into beats and scenes, decides how each scene should be covered, and outputs a...",
+    "description": "An AI storyboard and shot list generator reads your script, breaks it into beats and scenes, decides how each scene should be covered, and outputs a numbered shot list with cinematography details plus a visual board frame for each shot.",
     "targetQuery": "ai storyboard and shot list generator",
     "persona": "Indie Filmmaker",
     "funnelStage": "Compare",
@@ -5133,7 +5133,7 @@
   {
     "slug": "sora_after_shutdown",
     "title": "Best Sora Alternative for Filmmakers After the Shutdown",
-    "description": "If you built a filmmaking workflow around Sora, the safest replacement is not another single model — it is a platform that gives you access to several...",
+    "description": "If you built a filmmaking workflow around Sora, the safest replacement is not another single model — it is a platform that gives you access to several models at once.",
     "targetQuery": "sora alternative for filmmakers",
     "persona": "Indie Filmmaker",
     "funnelStage": "Compare",
@@ -5211,14 +5211,14 @@
   {
     "slug": "test_dozens_ai",
     "title": "A/B Test Dozens of Ad Variants by Rebuilding With AI",
-    "description": "You A/B test video ad variants with AI by treating the ad as a rebuildable production rather than a finished file: define the creative as structured data...",
+    "description": "You A/B test video ad variants with AI by treating the ad as a rebuildable production rather than a finished file: define the creative as structured data.",
     "targetQuery": "ab test video ad variants with ai",
     "persona": "Agency Commercials",
     "funnelStage": "Compare",
     "searchIntent": "Commercial",
     "contentType": "Use_Case",
     "keyValue": "Movie_In_3_Hours",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1744,
     "faq": [
       {
@@ -5250,14 +5250,14 @@
   {
     "slug": "watch_entire_ai",
     "title": "Watch Your Entire 2-Hour AI Movie on One Premiere Timeline",
-    "description": "Reviewing a two-hour movie on a single timeline means loading the entire cut — every shot, in order, with audio — into one continuous sequence you can...",
+    "description": "Reviewing a two-hour movie on a single timeline means loading the entire cut — every shot, in order, with audio.",
     "targetQuery": "review two hour movie on timeline",
     "persona": "Studio Production",
     "funnelStage": "Learn",
     "searchIntent": "Informational",
     "contentType": "Use_Case",
     "keyValue": "FullLength_Preview",
-    "updated": "2026-07-21",
+    "updated": "2026-10-09",
     "words": 1324,
     "faq": [
       {
@@ -5289,7 +5289,7 @@
   {
     "slug": "white_label_ai",
     "title": "White-Label and API AI Video for Studios and Platforms",
-    "description": "A \"white-label AI video platform\" usually means one of three very different things, and buyers who do not separate them early end up in the wrong...",
+    "description": "A \"white-label AI video platform\" usually means one of three very different things, and buyers who do not separate them early end up in the wrong procurement conversation.",
     "targetQuery": "white label ai video platform",
     "persona": "Enterprise",
     "funnelStage": "Buy",
@@ -5328,7 +5328,7 @@
   {
     "slug": "working_sprints_ai",
     "title": "Working in 2-3 Hour Sprints to Build a Feature With AI",
-    "description": "The way to actually finish an AI feature is to stop working in five-minute prompt bursts and start working in 2–3 hour sprints with a single defined...",
+    "description": "The way to actually finish an AI feature is to stop working in five-minute prompt bursts and start working in 2–3 hour sprints with a single defined objective.",
     "targetQuery": "work in long sprints on ai film",
     "persona": "Indie Filmmaker",
     "funnelStage": "Learn",
@@ -5367,14 +5367,14 @@
   {
     "slug": "write_ai_shoot",
     "title": "How to Write a Script an AI Video Pipeline Can Shoot",
-    "description": "To write a script for AI video, write a normal screenplay — but make three things explicit that a human crew would have inferred: who is on screen, where...",
+    "description": "To write a script for AI video, write a normal screenplay — but make three things explicit that a human crew would have inferred: who is on screen, where they are, and what the camera is doing.",
     "targetQuery": "how to write a script for ai video",
     "persona": "Content Creator",
     "funnelStage": "Learn",
     "searchIntent": "Informational",
     "contentType": "How_To",
     "keyValue": "Automation",
-    "updated": "2026-09-15",
+    "updated": "2026-10-09",
     "words": 1779,
     "faq": [
       {

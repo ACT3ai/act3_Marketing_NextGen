@@ -2,10 +2,10 @@
 title: "Build a 3-Hour Movie in a Day: Mass-Automated AI Production"
 description: "Yes — a feature-length AI movie can be built in one day, but only if the entire production is mass-automated end to end."
 keywords: ["ai movie made in one day", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "day_mass_ai"
 article_target_query: "ai movie made in one day"
@@ -74,7 +74,7 @@ A realistic day looks like this:
 3. **Give notes at any level** — story factor, scene, shot, or a bulk tag like "shots for review."
 4. **Rebuild.** The next pass regenerates against those notes.
 
-For teams that want the notes handled for them, the optional ACT 3 "Level 2 team" package puts our team on the production: you give the feedback, we take it into the movie and make it happen — for part of the production or all of it.
+For teams that want the notes handled for them, the optional ACT 3 Assistant Director Team package puts our team on the production: you give the feedback, we take it into the movie and make it happen — for part of the production or all of it.
 
 ## What one day gets you, honestly
 
@@ -122,5 +122,5 @@ No. The same pipeline structures shows, seasons, episodes, scenes and shots, so 
 
 ## Start your one-day build
 
-If you have a script and a delivery date, the fastest way to find out what a mass-automated build gives you is to run one. Start a production in ACT 3 AI — or talk to the ACT 3 Level 2 team about handing us the script and the feedback and having the movie made for you.
+If you have a script and a delivery date, the fastest way to find out what a mass-automated build gives you is to run one. Start a production in ACT 3 AI — or talk to the ACT 3 Assistant Director Team about handing us the script and the feedback and having the movie made for you.
 

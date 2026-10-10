@@ -2,10 +2,10 @@
 title: "Scale Video Production for Agencies, Not Headcount"
 description: "Agencies scale video output by removing the two constraints that force hiring — sequential handoffs and per-project setup."
 keywords: ["scale video production for agencies", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "scaling_without_headcount"
 article_target_query: "scale video production for agencies"
@@ -122,7 +122,7 @@ Automation isn't a substitute for everything, and pretending otherwise costs cre
 - **New business and client relationships** don't automate. Scale that with people.
 - **Creative direction at volume.** More concurrent productions still need more people who can make the call.
 - **Highly bespoke 3D work.** That's a specialist hire — though ACT 3 AI's round-trip Blender Sync means one Blender artist can serve many productions instead of being embedded in one.
-- **When you'd rather not staff it at all**, ACT 3's optional Level 2 team package exists: our team takes your feedback and makes the production happen, for part or all of the work.
+- **When you'd rather not staff it at all**, ACT 3's optional Assistant Director Team package exists: our team takes your feedback and makes the production happen, for part or all of the work.
 
 ## FAQ
 
@@ -152,5 +152,5 @@ Yes. Export covers FDX, PDF, EDL, and MP4/MOV plus 4K ProRes masters, with Premi
 
 ## Scale the production, not the payroll
 
-If your capacity ceiling is handoffs rather than talent, the fix is putting the whole team on one live production and automating the middle. Talk to our team about running your next client brief as a 2–3 hour sprint — or about the Level 2 package, where we take your feedback and make the production happen alongside you.
+If your capacity ceiling is handoffs rather than talent, the fix is putting the whole team on one live production and automating the middle. Talk to our team about running your next client brief as a 2–3 hour sprint — or about the Assistant Director Team package, where we take your feedback and make the production happen alongside you.
 

@@ -2,7 +2,7 @@
 title: "iPhone Motion Capture to Blender to Final AI Render"
 description: "You can drive AI animation with an iPhone by capturing performance on the phone, retargeting it onto a rigged 3D character in Blender, and then rendering..."
 keywords: ["how to use iphone mocap for ai animation", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-07-21

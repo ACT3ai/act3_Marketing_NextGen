@@ -1,11 +1,11 @@
 ---
 title: "Watch Your Entire 2-Hour AI Movie on One Premiere Timeline"
-description: "Reviewing a two-hour movie on a single timeline means loading the entire cut — every shot, in order, with audio — into one continuous sequence you can..."
+description: "Reviewing a two-hour movie on a single timeline means loading the entire cut — every shot, in order, with audio."
 keywords: ["review two hour movie on timeline", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "watch_entire_ai"
 article_target_query: "review two hour movie on timeline"

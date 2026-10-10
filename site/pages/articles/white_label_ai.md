@@ -2,7 +2,7 @@
 title: "White-Label and API AI Video for Studios and Platforms"
 description: "A \"white-label AI video platform\" usually means one of three very different things, and buyers who do not separate them early end up in the wrong..."
 keywords: ["white label ai video platform", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

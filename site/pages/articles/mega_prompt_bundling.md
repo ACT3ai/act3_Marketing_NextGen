@@ -1,11 +1,11 @@
 ---
 title: "What Is a Mega Prompt? Bundling Story, Camera, and Light"
-description: "A mega prompt is a single, assembled instruction for one shot that bundles everything a video model needs to know: the narrative action, the visual style..."
+description: "A mega prompt is a single, assembled instruction for one shot that bundles everything a video model needs to know."
 keywords: ["what is a mega prompt ai video", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "mega_prompt_bundling"
 article_target_query: "what is a mega prompt ai video"

@@ -2,7 +2,7 @@
 title: "Adding TTS Voiceover and Lipsync Inside One AI Pipeline"
 description: "There are three ways to add voiceover to AI video, and they differ in how much cleanup you inherit later."
 keywords: ["how to add voiceover to ai video", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-07-21

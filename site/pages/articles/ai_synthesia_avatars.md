@@ -2,7 +2,7 @@
 title: "ACT 3 AI vs Synthesia: Avatars vs Real Cinematic Production"
 description: "Synthesia is an AI avatar video platform: you type a script, choose a presenter, and get a person on camera delivering it in many languages."
 keywords: ["act3 ai vs synthesia", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-07-21

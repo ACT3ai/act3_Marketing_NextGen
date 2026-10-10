@@ -2,7 +2,7 @@
 title: "Luma Dream Machine Alternative for Story-Driven Full Videos"
 description: "If you're looking for a Luma Dream Machine alternative, the useful question is whether you want a different clip generator or a different category of tool."
 keywords: ["luma dream machine alternative", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

@@ -2,7 +2,7 @@
 title: "The End-to-End AI Film Production Workflow, Explained"
 description: "An end-to-end AI film production workflow has seven stages: story development → script → structure (beats, scenes, shots) → visual design (sets..."
 keywords: ["ai film production workflow end to end", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-07-21

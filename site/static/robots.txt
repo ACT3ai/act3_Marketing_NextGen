@@ -15,52 +15,37 @@ Disallow: /backup
 
 # ---------------------------------------------------------------------------
 # AI crawlers and answer engines: explicitly allowed.
+#
+# These agents share ONE group on purpose. Under RFC 9309 a crawler obeys only
+# the most specific group that names it and ignores `User-agent: *`, so a bot
+# with its own `Allow: /` group would skip the Disallow lines above and crawl
+# the parked /backup pages, the /v/ variations and the stale local /docs/ copy.
+# Repeat those Disallow lines here whenever the `*` group changes.
 # ---------------------------------------------------------------------------
 
 # OpenAI
 User-agent: GPTBot
-Allow: /
-
 User-agent: OAI-SearchBot
-Allow: /
-
 User-agent: ChatGPT-User
-Allow: /
-
 # Anthropic
 User-agent: ClaudeBot
-Allow: /
-
 User-agent: Claude-SearchBot
-Allow: /
-
 User-agent: Claude-User
-Allow: /
-
 # Perplexity
 User-agent: PerplexityBot
-Allow: /
-
 User-agent: Perplexity-User
-Allow: /
-
 # Google Gemini grounding and training. Allowed on purpose: our audience asks
 # assistants for tool recommendations, and being groundable is worth more to us
 # than withholding a public marketing site.
 User-agent: Google-Extended
-Allow: /
-
 # Apple, Amazon, Meta, Common Crawl
 User-agent: Applebot-Extended
-Allow: /
-
 User-agent: Amazonbot
-Allow: /
-
 User-agent: meta-externalagent
-Allow: /
-
 User-agent: CCBot
 Allow: /
+Disallow: /v/
+Disallow: /backup
+Disallow: /docs/
 
 Sitemap: https://act3ai.com/sitemap.xml

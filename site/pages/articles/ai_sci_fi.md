@@ -1,11 +1,11 @@
 ---
 title: "AI Sci-Fi Film Maker: Worlds, Sets, and Full Scenes"
-description: "Sci-fi is a world-building problem, and world-building is a 3D problem. That is why prompt-only AI video tools struggle with the genre: every generation..."
+description: "Sci-fi is a world-building problem, and world-building is a 3D problem. That is why prompt-only AI video tools struggle with the genre."
 keywords: ["ai sci fi movie generator", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_sci_fi"
 article_target_query: "ai sci fi movie generator"
@@ -139,5 +139,5 @@ The platform structures content up to two-hour movies and TV series, with a time
 
 Bring the script and the world in your head. Build the set once, block it in 3D, and shoot every angle of it.
 
-**[Start a production](https://app.act3ai.com/signup/)** — or **[talk to the ACT 3 Level 2 team](/level2)** about having our team take your script and your feedback all the way to a finished film.
+**[Start a production](https://app.act3ai.com/signup/)** — or **[talk to the ACT 3 Assistant Director Team](/level2)** about having our team take your script and your feedback all the way to a finished film.
 

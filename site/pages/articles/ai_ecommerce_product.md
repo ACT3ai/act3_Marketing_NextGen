@@ -1,11 +1,11 @@
 ---
 title: "AI Video Generator for Ecommerce Product and Ad Videos"
-description: "An AI video generator lets an ecommerce brand produce product videos, lifestyle ads, and social cutdowns from product copy and existing product..."
+description: "An AI video generator lets an ecommerce brand produce product videos, lifestyle ads, and social cutdowns from product copy and existing product photography."
 keywords: ["ai video generator for ecommerce", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_ecommerce_product"
 article_target_query: "ai video generator for ecommerce"

@@ -25,7 +25,7 @@ export const LINKS = {
   plans: "https://app.act3ai.com/settings/plans/",
   youtube: "https://www.youtube.com/@ACT3AI",
   docs: "https://documentation.act3ai.com/",
-  privacy: "https://legal.act3ai.com/docs/privacy-policy",
+  privacy: "https://legal.act3ai.com/docs/privacy-policy/",
   terms: "https://legal.act3ai.com/docs/terms-of-service/",
   x: "https://x.com/act3ai",
   linkedin: "https://www.linkedin.com/company/act3ai/",
@@ -72,13 +72,13 @@ export interface SocialLink {
 /** The top bar, left to right (the homepage hero's order). */
 export const PRIMARY_NAV: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "About us", href: "/about" },
+  { label: "About Us", href: "/about" },
   { label: "Contact Us", href: "/contact" },
-  { label: "Movies", href: "/movies", pending: true },
-  { label: "TV", href: "/tv", pending: true },
-  { label: "Minidramas", href: "/minidramas", pending: true },
+  { label: "Movies", href: "/movies" },
+  { label: "TV", href: "/tv" },
+  { label: "Minidramas", href: "/minidramas" },
   { label: "Plans", href: LINKS.plans },
-  { label: "Videos", href: "/videos", pending: true },
+  { label: "Videos", href: "/videos" },
 ];
 
 /** The "More" dropdown. Articles MUST stay the last entry (SEO invariant). */
@@ -98,10 +98,10 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     links: [
       { label: "Pricing", href: LINKS.plans },
       { label: "Features", href: "/features" },
-      { label: "Movies", href: "/movies", pending: true },
-      { label: "TV", href: "/tv", pending: true },
-      { label: "Minidramas", href: "/minidramas", pending: true },
-      { label: "Videos", href: "/videos", pending: true },
+      { label: "Movies", href: "/movies" },
+      { label: "TV", href: "/tv" },
+      { label: "Minidramas", href: "/minidramas" },
+      { label: "Videos", href: "/videos" },
     ],
   },
   {

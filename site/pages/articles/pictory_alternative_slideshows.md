@@ -1,11 +1,11 @@
 ---
 title: "Pictory Alternative: Script to Cinematic, Not Slides"
-description: "The best Pictory alternative depends on what \"script to video\" means to you. Pictory and tools like it turn a script or article into a captioned montage..."
+description: "The best Pictory alternative depends on what \"script to video\" means to you. Pictory and tools like it turn a script or article into a captioned montage."
 keywords: ["pictory alternative script to video", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "pictory_alternative_slideshows"
 article_target_query: "pictory alternative script to video"

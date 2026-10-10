@@ -292,7 +292,14 @@
   .v4t-top { grid-template-columns: 1fr auto; }
   .v4t-nav { display: none; }
   .v4t-menu { display: block; }
-  .v4t-cta-sm { padding-block: 10px; } /* a 40px touch target */
+  .v4t-cta-sm { padding-block: 10px; }
+  /* A 40px touch target, held by min-height (not padding) so the smaller
+     paddings below (<=760px, <=400px) cannot shrink it back to 36px. It matches
+     MENU's 40px. (.v4t-cta is already inline-flex + align-items: center.) */
+  .v4t-top .v4t-cta-sm { min-height: 40px; }
+  /* "Sign in" is a bare 18px line of text: padding makes it a 40px target and
+     the negative margin cancels the padding, so nothing moves. */
+  .v4t-signin { display: inline-flex; align-items: center; min-height: 40px; padding: 11px 6px; margin: 0 -6px; }
 }
 @media (max-width: 760px) {
   .v4t-top { gap: 10px; padding: 0 16px; height: 64px; }
@@ -311,6 +318,16 @@
 @media (max-width: 359px) {
   /* MENU still reaches every page; sign-up is in the page's own CTAs. */
   .v4t-top .v4t-cta-sm { display: none; }
+}
+/* Landscape phones (e.g. 844x390): wider than 760px, so the 84px bar would stay
+   and cover over a fifth of the screen. A 56px bar with the <=760px logo, CTA
+   and MENU sizes (each control keeps its 40px touch target). */
+@media (max-height: 500px) and (min-width: 761px) {
+  .v4t-top { height: 56px; }
+  .v4t-logo { font-size: 23px; }
+  .v4t-logo-mark { width: 30px; height: 30px; font-size: 20px; }
+  .v4t-top .v4t-cta-sm { padding: 7px 14px; font-size: 16px; }
+  .v4t-menu summary { padding-block: 7px; font-size: 17px; min-height: 40px; display: flex; align-items: center; }
 }
 
 /* ══ V4Footer — copy of row 16's footer (.r16v38-foot) ══════════════════════ */
@@ -413,6 +430,10 @@ html.v4t {
 }
 @media (max-width: 760px) {
   html.v4t { --ifm-navbar-height: 64px; }
+}
+/* Landscape phones: the 56px bar (see V4Header, max-height: 500px). */
+@media (max-height: 500px) and (min-width: 761px) {
+  html.v4t { --ifm-navbar-height: 56px; }
 }
 /* Pages that keep their own (light) design overlay paint their body white, as
    before; :where() keeps this at element specificity so level2.css and
@@ -796,6 +817,28 @@ html.v4t-skin,
   border-bottom: 1px solid var(--v4t-line);
 }
 .v4t-skin .hero__subtitle { color: var(--v4t-body); }
+/* Pages that open on a bare H1 with no .hero band (the blog list at /blog, and
+   plain MDX pages such as /info/launch): the same hero ground painted behind
+   the top of the page, fading into the plain ground as the content starts
+   (the articles do the same in articles.css). Articles and the Assistant
+   Director Team pages carry their own overlay, so they are left out. */
+.v4t-skin:is(.blog-list-page, .mdx-wrapper:not(.article-page, .level2-page)) .main-wrapper {
+  position: relative;
+  isolation: isolate;
+}
+.v4t-skin:is(.blog-list-page, .mdx-wrapper:not(.article-page, .level2-page)) .main-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: clamp(300px, 34vw, 440px);
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(ellipse 70% 60% at 50% 0%, rgba(238, 188, 60, 0.07), transparent 70%),
+    repeating-linear-gradient(180deg, transparent 0, transparent 47px, var(--v4t-rule) 47px, var(--v4t-rule) 48px);
+  -webkit-mask-image: linear-gradient(#000 45%, transparent);
+  mask-image: linear-gradient(#000 45%, transparent);
+}
 
 /* ── buttons (custom.css paints them in the old purple gradient) ── */
 .v4t-skin .button--primary {
@@ -1026,6 +1069,8 @@ html.v4t-skin,
   letter-spacing: -0.01em;
   color: var(--v4t-ink);
 }
+/* The title's last word + its arrow (V4Card's TitleWithArrow): they wrap together. */
+.v4t-card-tail { white-space: nowrap; }
 .v4t-card-arrow { margin-left: 0.3em; color: var(--v4t-yellow); display: inline-block; transition: transform 0.15s ease; }
 .v4t-card--link:hover .v4t-card-arrow { transform: translateX(3px); }
 .v4t-card-text { margin: 0; font-size: 16px; line-height: 1.55; color: var(--v4t-muted); }
@@ -1058,7 +1103,9 @@ html.v4t-skin,
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(32px, 5vw, 72px);
-  align-items: center;
+  /* start, not center: centring the copy on a tall image pushed it 86-89px below
+     the section heading, where every other section starts at 52px. */
+  align-items: start;
 }
 .v4t-split--reverse .v4t-split-media { order: -1; }
 .v4t-split-copy > :first-child { margin-top: 0; }

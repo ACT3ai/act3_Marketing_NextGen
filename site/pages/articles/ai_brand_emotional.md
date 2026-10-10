@@ -1,11 +1,11 @@
 ---
 title: "AI Brand-Story Video Maker for Emotional Campaigns"
-description: "An AI brand-story video maker is not a template filler. A brand story is a narrative — a person, a tension, a turn, a resolution — and it lands..."
+description: "An AI brand-story video maker is not a template filler. A brand story is a narrative — a person, a tension, a turn, a resolution."
 keywords: ["ai brand story video maker", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_brand_emotional"
 article_target_query: "ai brand story video maker"
@@ -106,11 +106,11 @@ Every credit-consuming action displays its exact cost up front, the render queue
 
 **What if we want the film made for us?**
 
-The optional ACT 3 "Level 2 team" package puts our team on your production: you give the script and all the feedback you want, and we take that feedback into the movie and make it happen — for part of your team or all of it.
+The optional ACT 3 Assistant Director Team package puts our team on your production: you give the script and all the feedback you want, and we take that feedback into the movie and make it happen — for part of your team or all of it.
 
 ## Make the brand film you actually pitched
 
 The gap between the storyboard you sold internally and the video that ships is almost always a control gap. Close it by choosing a tool where beats, camera, lens, lighting, and pacing are decisions you make.
 
-**Start a production, or talk to the Level 2 team about having us make it with you.**
+**Start a production, or talk to the Assistant Director Team about having us make it with you.**
 

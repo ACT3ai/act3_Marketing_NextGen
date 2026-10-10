@@ -2,7 +2,7 @@
 title: "Daily Movie Rebuilds: Iterate a Whole Film Overnight"
 description: "A daily movie rebuild is a production loop in which the entire film — not a handful of flagged shots — is regenerated every day from the previous day's notes."
 keywords: ["ai for daily movie iteration production", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

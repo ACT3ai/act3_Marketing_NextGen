@@ -2,7 +2,7 @@
 title: "What Is Previs? AI Previsualization for Indie Filmmakers"
 description: "Previsualization — \"previs\" — is the practice of building a rough, moving version of a sequence before you shoot it."
 keywords: ["what is previsualization in filmmaking", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-07-21

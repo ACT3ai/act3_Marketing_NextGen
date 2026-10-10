@@ -2,7 +2,7 @@
 title: "AI Video Tool for Long-Form YouTube That Holds Attention"
 description: "For long-form YouTube — 20, 40, 60 minutes — the AI video tool you need is not the one with the best 8-second clip."
 keywords: ["ai video tool for youtube long form", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-07-21

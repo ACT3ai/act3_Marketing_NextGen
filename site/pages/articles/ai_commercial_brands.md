@@ -2,10 +2,10 @@
 title: "Best AI Commercial Generator for Agencies and Brands"
 description: "The best AI commercial generator for an agency or brand team is not the one with the prettiest single clip — it is the one that automates the whole spot..."
 keywords: ["best ai commercial generator", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_commercial_brands"
 article_target_query: "best ai commercial generator"
@@ -85,7 +85,7 @@ Automated assembly stitches approved shots with transitions and audio. Built-in 
 
 Work lives in an Organization — a shared workspace that owns the projects and assets — with granular permissions (Read, Modify/Edit, Run AI, Use Credits, Billing, Owner), version-controlled collaboration and full change history. Lock-down controls freeze approved scenes read-only once the client signs off. Multi-tenant isolation and optional SAML SSO cover larger shops, and a three-stage content scanner checks prompts, scripts and finished outputs before delivery.
 
-For a deeper look at the automation itself, see our guides to auto-generated first frames and prompts and to outsourcing production to the ACT 3 Level-2 team.
+For a deeper look at the automation itself, see our guides to auto-generated first frames and prompts and to outsourcing production to the ACT 3 Assistant Director Team.
 
 ## Is it right for your team?
 

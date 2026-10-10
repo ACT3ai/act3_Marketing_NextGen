@@ -17,7 +17,9 @@
  * V4Footer if no row brings the footer. Every row after a leading top-bar row
  * sits in <main id="v4-main"> (the page's main landmark, the skip link's target). Like the homepage it does NOT use the Docusaurus
  * <Layout>: the hero row carries the top bar and the MCP row carries the footer.
- * Row engines run through rowHarness (started on mount, fully stopped on unmount).
+ * Row engines run through rowHarness (started on mount, fully stopped on unmount),
+ * which also plays the rows' own muted autoplay videos while they are on screen.
+ * Every row goes through applyRowFixes (rowTransforms) here, so pages never call it.
  *
  * Links rewritten by applySiteNav carry data-v4-spa: this component turns their
  * clicks into SPA navigation, prefetches them on hover, marks the current route
@@ -33,6 +35,7 @@ import { useHistory, useLocation } from "@docusaurus/router";
 import { V4_FONT_HREF, type V4Row } from "../../pages/_rows.generated";
 import { MORE_NAV, SIGNUP, currentAttr } from "../../data/siteNav";
 import { useRowEngines } from "./rowHarness";
+import { applyRowFixes } from "./rowTransforms";
 import V4Header from "./V4Header";
 import V4Footer from "./V4Footer";
 
@@ -148,6 +151,17 @@ html, body { background: ${V4_PAGE_GROUND}; }
 .v4 [class$="-stage"]:has(> [class$="-top"] details[open]) { z-index: 60; }
 .v4 [class$="-top"] details[open] > [class$="-menu-pop"] { max-height: calc(100vh - 96px); overflow-y: auto; }
 
+/* The hero's scene ticks, <a href="#"> in the generated markup, are rendered as
+   <button data-v4-tick> by applyRowFixes. Strip the button chrome so they look and
+   size exactly as the links did: specificity (0,1,1) loses to the row's own
+   .v4 .{prefix}-tick rules (0,2,0), which keep their size, colour and cursor. */
+:where(.v4) button[data-v4-tick] {
+  -webkit-appearance: none; appearance: none;
+  margin: 0; padding: 0; border: 0; border-radius: 0;
+  background: transparent; color: inherit; font: inherit; line-height: inherit;
+  min-width: 0; text-align: inherit;
+}
+
 /* The hero top bar on narrow phones: the same steps as V4Header (v4-template.css),
    so MENU stays on screen at 320-400px. */
 @media (max-width: 400px) {
@@ -156,6 +170,54 @@ html, body { background: ${V4_PAGE_GROUND}; }
 }
 @media (max-width: 359px) {
   .v4 [class$="-top"] [class$="-cta-sm"] { display: none; }
+}
+
+/* Touch targets (all prefix-free, so they survive a regeneration). ─────────── */
+/* The hero top bar once it collapses to GET STARTED + MENU: both at least 40px tall
+   (the generated rules make them 36px), text still centred. GET STARTED is already
+   inline-flex, and must not get a display here: that would undo the max-width:
+   359px rule above that hides it. */
+@media (max-width: 1080px) {
+  .v4 [class$="-top"] [class$="-cta-sm"] { box-sizing: border-box; min-height: 40px; align-items: center; }
+  .v4 [class$="-top"] details > summary { box-sizing: border-box; min-height: 40px; display: inline-flex; align-items: center; }
+  /* "Sign in" (shown at 761-1080px): an 18px-tall text link; padding gives it a 40px
+     box with the same look. :where() keeps the specificity at (0,1,0), so the row's
+     own "display: none" on phones (.v4 .{prefix}-signin, (0,2,0)) still wins. */
+  :where(.v4 [class$="-top"]) [class$="-signin"] { display: inline-flex; align-items: center; padding: 11px 6px; }
+}
+/* The hero's scene ticks are 6px bars: a transparent ::before stretches the hit area
+   to about 40px tall without changing the bar (1px short of each side, so the 3px
+   gaps between ticks stay gaps). */
+.v4 button[data-v4-tick] { position: relative; }
+.v4 button[data-v4-tick]::before { content: ""; position: absolute; inset: -17px -1px; }
+/* Row tabs on touch screens (r5v73, r7v35 and r11v37 today: 27-35px tall). Matched
+   by shape, not row number (rows get renumbered): an <a> or <button> whose class
+   ends in "-tab", or has "-tab " before a state class the engine adds ("-tab -on").
+   Other "-tab" classes in the rows are <li>/<p> labels, which this leaves alone. */
+@media (pointer: coarse) {
+  .v4 :is(a, button):is([class$="-tab"], [class*="-tab "]) {
+    box-sizing: border-box; min-height: 40px; display: inline-flex; align-items: center;
+  }
+}
+/* The footer a row brings (the homepage MCP row, r16v38): the same targets as
+   V4Footer (v4-template.css): 18px social icons in a 34px hit area (padding
+   cancelled by margin, so the spacing is unchanged), and 40px links once the
+   columns stack. */
+.v4 footer [class$="-social"] a { padding: 8px; margin: -8px; }
+@media (max-width: 860px) {
+  .v4 footer [class$="-fnav"] a { padding: 9px 0; }
+}
+
+/* Row 7's script page (r7v35: a 640px-wide page in a full-width clipping
+   "-lens"). Below the row's 960px breakpoint the page is flat (no tilt) and sat
+   flush left: centre it in the lens. On phones it was cut mid-word ("THE LONG
+   WAT"): make it the lens's width so the lines wrap instead (the font size still
+   follows the row's own page width). The row engine never positions the page. */
+@media (max-width: 959.98px) {
+  .v4 [class$="-lens"] > [class$="-page"] { right: 0; margin: 0 auto; }
+}
+@media (max-width: 760px) {
+  .v4 [class$="-lens"] > [class$="-page"] { width: 100%; }
 }
 
 /* The hero top bar's "More" dropdown (inserted by applySiteNav). It sits inside the
@@ -196,6 +258,12 @@ html, body { background: ${V4_PAGE_GROUND}; }
 .v4 nav > [data-v4-nav][aria-current] { text-decoration: underline 2px; text-underline-offset: 8px; }
 .v4 .v4-more .v4-more-pop a[aria-current] { color: #fcd648; box-shadow: inset 3px 0 0 #eebc3c; }
 @media (prefers-reduced-motion: reduce) { .v4 .v4-more-pop { transition: none; } }
+
+/* The hero H1's first line is a fixed 62px and runs off both edges below ~360px
+   ("AI FILMMAKING" is ~338px wide). Scale it with the viewport on small phones.
+   Matched by class SUFFIX so it survives a regeneration; .v4-row raises the
+   specificity above the row's own .v4 .{prefix}-h1a rules. */
+@media (max-width: 400px) { .v4 .v4-row [class$="-h1a"] { font-size: min(62px, 16vw); } }
 `;
 
 export interface V4RowsPageProps {
@@ -237,7 +305,8 @@ export default function V4RowsPage({ rows, ctaEvery = 3, header }: V4RowsPagePro
   const rendered = useMemo(
     () =>
       rows.map((r) => {
-        const html = markCurrent(r.html, pathname);
+        // applyRowFixes here (not in the pages): every row on every rows page gets it.
+        const html = markCurrent(applyRowFixes(r).html, pathname);
         return { ...r, html, inner: { __html: html } };
       }),
     [rows, pathname],

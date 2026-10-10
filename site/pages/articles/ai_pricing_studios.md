@@ -1,11 +1,11 @@
 ---
 title: "AI Film Production Pricing for Studios and Full Productions"
-description: "AI film production is not priced per movie — it is priced as a software subscription plus metered compute. On ACT 3 AI, published plans run from a free..."
+description: "AI film production is not priced per movie — it is priced as a software subscription plus metered compute."
 keywords: ["ai film production pricing", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_pricing_studios"
 article_target_query: "ai film production pricing"
@@ -101,7 +101,7 @@ Work it in this order:
 5. **Pick the plan by concurrency and rights**, then use the credit allotment and Rollover Bank to smooth month-to-month.
 6. **Talk to sales before enterprise commitments.** Enterprise pricing is quoted, and it is where unlimited commercial use, unlimited storage and the highest concurrency live.
 
-For teams who would rather buy the outcome than build the workflow, ACT 3 AI also offers the **Level 2 team** package — our team takes your feedback and makes the movie happen, for part or all of your production. That is quoted per production, not per seat.
+For teams who would rather buy the outcome than build the workflow, ACT 3 AI also offers the **Assistant Director Team** package — our team takes your feedback and makes the movie happen, for part or all of your production. That is quoted per production, not per seat.
 
 ## FAQ
 
@@ -135,5 +135,5 @@ Give them Modify/Edit without Use Credits. Editing a script and spending money a
 
 ---
 
-**Start a production:** talk to the ACT 3 AI team with your script, runtime target, and delivery date, and get a plan and credit model sized to the actual production — or hand the whole thing to the Level 2 team.
+**Start a production:** talk to the ACT 3 AI team with your script, runtime target, and delivery date, and get a plan and credit model sized to the actual production — or hand the whole thing to the Assistant Director Team.
 

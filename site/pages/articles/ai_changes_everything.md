@@ -2,10 +2,10 @@
 title: "Full-Movie AI vs Short-Clip Generators: Why Runtime Wins"
 description: "The difference between an AI movie generator and a short-clip generator is not output quality — it is whether the system manages runtime."
 keywords: ["ai movie generator vs short clip tools", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_changes_everything"
 article_target_query: "ai movie generator vs short clip tools"
@@ -136,7 +136,7 @@ ACT 3 exports FDX, PDF, EDL, and MP4/MOV and syncs to an Adobe Premiere timeline
 
 **What if we need production help, not just software?**
 
-The optional ACT 3 "Level 2 team" package puts our team on your production — we take your feedback and make the movie happen for part or all of the work.
+The optional ACT 3 Assistant Director Team package puts our team on your production — we take your feedback and make the movie happen for part or all of the work.
 
 ## See the difference on your own material
 

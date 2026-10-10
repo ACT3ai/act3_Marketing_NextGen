@@ -2,7 +2,7 @@
 title: "ACT 3 AI vs Google Veo 3: One Model or a Whole Movie System"
 description: "Veo 3 is a model. ACT 3 AI is a system that uses models — Veo 3 included. That sentence resolves most of the confusion behind this comparison."
 keywords: ["act3 ai vs veo 3", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

@@ -2,7 +2,7 @@
 title: "Best AI Tool for Long-Form Video: Films, Not Clips"
 description: "The best AI tool for long-form video is whichever one lets you watch the whole thing. That sounds glib, but it is the actual differentiator."
 keywords: ["best ai tool for long form video", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

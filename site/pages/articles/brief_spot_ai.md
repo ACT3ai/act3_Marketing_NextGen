@@ -1,11 +1,11 @@
 ---
 title: "AI Commercials for Agencies: Brief to Finished Spot"
-description: "AI commercial production works for an agency when the platform automates the whole path from brief to spot — script, shot breakdown, character sheets..."
+description: "AI commercial production works for an agency when the platform automates the whole path from brief to spot."
 keywords: ["ai commercial production for agencies", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "brief_spot_ai"
 article_target_query: "ai commercial production for agencies"
@@ -110,7 +110,7 @@ Agencies have a structural requirement most creative tools ignore: multiple clie
 * **Sets and assets** can be kept private to the organization rather than shared publicly.
 * **Content moderation** scans prompts, scripts, and finished outputs before download.
 
-When a project outruns your bandwidth, ACT 3 also offers an optional "Level 2 team" package: our team takes the client's feedback and makes the spot happen, for part or all of the production. That is a capacity valve, not a replacement for your creative direction.
+When a project outruns your bandwidth, ACT 3 also offers an optional Assistant Director Team package: our team takes the client's feedback and makes the spot happen, for part or all of the production. That is a capacity valve, not a replacement for your creative direction.
 
 ## What to test in an evaluation
 

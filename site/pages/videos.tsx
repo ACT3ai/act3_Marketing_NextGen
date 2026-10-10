@@ -22,9 +22,11 @@ import { LINKS, SIGNUP } from "../data/siteNav";
  *   3  who it's for  eyebrow and the Filmmaking panel dropped (3-up wall + 3 rails
  *                  to the hub on desktop; 2 + 1 full-width panel on tablets)
  *   2  chat        "change the background, same actor" (as on the homepage)
- *   5  consistency character, set and outfit
+ *   5  consistency character, set and outfit (no "scene 88": not a long production);
+ *                  a dark lead-in (CLOSING's css) so it does not sit flush under
+ *                  the Get Started band ctaEvery=3 puts right before it
  *   10 storyboards "every ad / social video / marketing video"; only those tabs
- *   13 save money  as on the homepage
+ *   13 save money  body trimmed to its last two sentences; "Illustration of..." caption dropped
  *   15 voice       as on the homepage
  *   14 teams       retold for a campaign ("one project", scene 1, the last scene)
  *   +  closing band (page-local row below): Get Started + Watch ACT 3 on YouTube
@@ -37,7 +39,8 @@ const HERO = "r1v42";
  * footer follows the rows), so a band after the rows but before the footer has
  * to be a row. It reuses the template blocks' classes (v4t-section, v4t-h2,
  * v4t-cta, v4t-ghost from site/css/v4-template.css), so it looks like every
- * other v4 page. Its css also carries this page's one layout fix for row 3.
+ * other v4 page. Its css also carries this page's layout fixes for rows 3 and 5
+ * (page CSS goes in a row's css, never in a second body <style>).
  */
 const CLOSING: V4Row = {
   row: 900,
@@ -73,6 +76,11 @@ const CLOSING: V4Row = {
   .v4 [data-row="3"] ol[class$="-wall"] > li:last-child { grid-column: 1 / -1; aspect-ratio: 2 / 1.08; }
   .v4 [data-row="3"] ol[class$="-wall"] > li:not(:last-child) p[class$="-line"] { min-height: calc(2 * 1.38em + 21px); }
 }
+/* Row 5's clapper tab strip has no top padding; here it follows a navy Get
+   Started band (ctaEvery=3). Give it the dark lead-in it has on the homepage. */
+.v4 .v4-row[data-row="5"] { background: #0f0e0c; padding-top: 48px; }
+@media (max-width: 640px) { .v4 .v4-row[data-row="5"] { padding-top: 28px; } }
+.v4[data-v4-theme="light"] .v4-row[data-row="5"] { background: #ecebe8; }
 `,
   scripts: [],
   fonts: [],
@@ -113,7 +121,10 @@ const ROWS: V4Row[] = [
     [`<path class="r3v34-rail" d="M875 0 C875 70 500 40 500 110"/>`, `<path class="r3v34-rail" d="M833 0 C833 70 500 40 500 110"/>`],
   ]),
   row(2),
-  row(5, [[`into every scene of a two-hour movie:`, `into every scene:`]]),
+  row(5, [
+    [`into every scene of a two-hour movie:`, `into every scene:`],
+    [`a jet ski in scene 7, a blizzard in scene 88, a candle-lit library in scene 2`, `a jet ski, a blizzard, a candle-lit library`],
+  ]),
   row(10, [
     [`Storyboards for your entire`, `Storyboards for every`],
     [`<span class="r10v48-word">movie or video</span>`, `<span class="r10v48-word">ad</span>`],
@@ -122,7 +133,13 @@ const ROWS: V4Row[] = [
     [`<li class="r10v48-tab" data-r10v48-word="TV episode">TV episode</li>`, ``],
     [`<li class="r10v48-tab" data-r10v48-word="minidrama">Minidrama</li>`, ``],
   ]),
-  row(13),
+  row(13, [
+    [
+      `The video is the expensive step, so ACT&nbsp;3 has you settle the shot where a change costs little: as a storyboard, then as a first frame. When you do generate video, it is already the shot you wanted. That saves you money and time.`,
+      `When you do generate video, it is already the shot you wanted. That saves you money and time.`,
+    ],
+    [`<p class="r13v35-note">Illustration of one shot at its three stages.</p>`, ``],
+  ]),
   row(15),
   row(14, [
     [`One movie that keeps moving.`, `One project that keeps moving.`],

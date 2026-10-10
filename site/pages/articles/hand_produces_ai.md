@@ -2,10 +2,10 @@
 title: "Hand Us the Script: A Team That Produces Your Video With AI"
 description: "If you have a script and no one in the building who can shoot it, you have three ways to get a video made: hire a production company, hire freelancers and..."
 keywords: ["hire team to make video from my script", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "hand_produces_ai"
 article_target_query: "hire team to make video from my script"
@@ -13,7 +13,7 @@ article_persona: "Small Business"
 article_funnel_stage: "Buy"
 article_search_intent: "Commercial"
 article_content_type: "Landing_Page"
-article_key_value: "Level_2_Team"
+article_key_value: "Assistant_Director_Team"
 ---
 
 {/* GENERATED FILE -- do not edit here.
@@ -23,7 +23,7 @@ article_key_value: "Level_2_Team"
 
 If you have a script and no one in the building who can shoot it, you have three ways to get a video made: hire a production company, hire freelancers and coordinate them yourself, or hire a team that produces the video with AI. The third option is newer and it changes the economics — no location, no crew day, no equipment rental, and revisions that take hours instead of another shoot day. What stays the same is that you hand over a script and get back a finished video.
 
-The ACT 3 **"Level 2 team"** is that third option. It is an optional package where our team takes your script and your feedback and makes the video happen — for part of your production or all of it. You give the notes you want; they get accomplished. You do not learn software, manage vendors, or book anything.
+The ACT 3 **Assistant Director Team** is that third option. It is an optional package where our team takes your script and your feedback and makes the video happen — for part of your production or all of it. You give the notes you want; they get accomplished. You do not learn software, manage vendors, or book anything.
 
 This page is about hiring people to produce a video from a script you already have. It is not a guide to writing the script, and it is not a DIY tutorial.
 
@@ -96,7 +96,7 @@ A common and sensible hybrid: we produce the first videos while your team learns
 
 **Can I hire someone to turn my script into a video?**
 
-Yes. The ACT 3 "Level 2 team" is an optional package where our team takes your feedback into the production and makes the video happen, for part or all of the work.
+Yes. The ACT 3 Assistant Director Team is an optional package where our team takes your feedback into the production and makes the video happen, for part or all of the work.
 
 **What if my script is really just rough copy?**
 
@@ -120,5 +120,5 @@ Your Organization owns the projects, content and generated assets. Confirm your 
 
 ## Send us the script
 
-If the script is written and the video still is not made, that gap is the whole problem — and it is the one we fill. Talk to the ACT 3 Level 2 team with your script, your runtime and where it needs to run, and we will scope the production.
+If the script is written and the video still is not made, that gap is the whole problem — and it is the one we fill. Talk to the ACT 3 Assistant Director Team with your script, your runtime and where it needs to run, and we will scope the production.
 

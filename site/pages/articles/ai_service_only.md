@@ -2,10 +2,10 @@
 title: "AI Production Service vs Software-Only: Which to Pick"
 description: "Buy software-only when you have people who will operate it, a slate that justifies building the skill, and enough runway to absorb a learning curve."
 keywords: ["ai production service vs software only", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_service_only"
 article_target_query: "ai production service vs software only"
@@ -13,7 +13,7 @@ article_persona: "Studio Production"
 article_funnel_stage: "Compare"
 article_search_intent: "Commercial"
 article_content_type: "Comparison"
-article_key_value: "Level_2_Team"
+article_key_value: "Assistant_Director_Team"
 ---
 
 {/* GENERATED FILE -- do not edit here.
@@ -23,7 +23,7 @@ article_key_value: "Level_2_Team"
 
 **Short answer:** buy **software-only** when you have people who will operate it, a slate that justifies building the skill, and enough runway to absorb a learning curve. Buy an **AI production service** when the deadline is fixed, the team is already committed elsewhere, or you need to prove the approach on a real project before you staff around it. The two are not opposites — the best arrangement for most studios is software you own plus a service team you can dial up and down, on the *same* production.
 
-That is how ACT 3 AI is structured. You get the platform, and the **ACT 3 "Level 2 team"** is an optional package where our team takes your feedback and makes the movie happen — for part or all of your production team. The project stays in your workspace either way, so the decision is reversible.
+That is how ACT 3 AI is structured. You get the platform, and the **ACT 3 Assistant Director Team** is an optional package where our team takes your feedback and makes the movie happen — for part or all of your production team. The project stays in your workspace either way, so the decision is reversible.
 
 ---
 
@@ -73,7 +73,7 @@ This is the one most people skip, and it is the most important. If the project i
 
 The strongest pattern we see is not either/or. It is: **own the software, rent the execution where you are short.**
 
-Concretely, a studio might keep the script, the creative direction and final approval fully in-house, and hand the Level 2 team the operating work — shot list construction, casting and wardrobe setup, batch generation, assembly, and applying notes between cuts. As internal people learn the platform on the same project, the boundary moves. Nothing has to be handed back because nothing ever left.
+Concretely, a studio might keep the script, the creative direction and final approval fully in-house, and hand the Assistant Director Team the operating work — shot list construction, casting and wardrobe setup, batch generation, assembly, and applying notes between cuts. As internal people learn the platform on the same project, the boundary moves. Nothing has to be handed back because nothing ever left.
 
 This works because of how ACT 3 is built:
 
@@ -84,7 +84,7 @@ This works because of how ACT 3 is built:
 - **Costs are legible.** Every credit-consuming action shows its cost before it runs, and the render queue shows predicted spend for approval or postponement.
 - **Output is portable.** EDL, MP4/MOV, FDX and ProRes exports plus handoff to Premiere Pro and DaVinci Resolve, and Blender round-trip sync for custom 3D.
 
-## What the Level 2 team actually takes on
+## What the Assistant Director Team actually takes on
 
 The package is defined by a single promise: you give the feedback, we make it happen — for part or all of your production team. In practice that spans script setup and story expansion, shot planning with cinematography metadata, casting digital actors and building wardrobe-correct character sheets, sets and blocking, running generation at volume across multiple engines, automatic scene and episode assembly, and applying your notes between cuts.
 
@@ -95,19 +95,19 @@ Because the underlying pipeline automates the heavy lifting — per-shot prompts
 | Your situation | Recommendation |
 |---|---|
 | Recurring series, dedicated production staff, no hard deadline | Software-only |
-| Hard air date, staff committed elsewhere | Level 2 team on the whole production |
-| First AI project, want proof before staffing | Level 2 team for the pilot, in-house afterward |
+| Hard air date, staff committed elsewhere | Assistant Director Team on the whole production |
+| First AI project, want proof before staffing | Assistant Director Team for the pilot, in-house afterward |
 | Strong creative team, weak pipeline capacity | Hybrid — you direct, we operate |
 | Volume spike inside a steady baseline | Software-only baseline, service for the spike |
 | Highly confidential project | Software-only in an isolated workspace, or a scoped service engagement with restricted permissions |
 
-For related reading, see our page on outsourcing AI video production to the Level 2 team and our guide to daily whole-film rebuilds.
+For related reading, see our page on outsourcing AI video production to the Assistant Director Team and our guide to daily whole-film rebuilds.
 
 ## FAQ
 
 **What is the difference between an AI production service and AI production software?**
 
-Software is the platform your team operates. A service is a team that operates the platform for you. With ACT 3 you can have both on the same project — the Level 2 team is an optional package layered on the software you already own.
+Software is the platform your team operates. A service is a team that operates the platform for you. With ACT 3 you can have both on the same project — the Assistant Director Team is an optional package layered on the software you already own.
 
 **Is a production service more expensive than software?**
 
@@ -133,5 +133,5 @@ Yes. Part or all — a single sequence, one phase of production, or the whole pi
 
 ## Work out which one fits your slate
 
-Bring us the project and the constraints, and we will be straight with you about which model fits. **[Book a walkthrough](/level2)** to see the platform, or talk to the Level 2 team about running part or all of your production.
+Bring us the project and the constraints, and we will be straight with you about which model fits. **[Book a walkthrough](/contact)** to see the platform, or talk to the Assistant Director Team about running part or all of your production.
 

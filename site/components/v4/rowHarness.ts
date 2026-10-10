@@ -180,9 +180,109 @@ export function loadScript(src: string, ctx: Record<string, unknown>, added: HTM
 }
 
 /**
+ * Plays the rows' own muted autoplay videos while they are on screen.
+ *
+ * Why: a muted <video autoplay> that is off screen at load is held by Chrome
+ * until it scrolls into view, and that native resume is not reliable on these
+ * pages. On /movies, /tv, /minidramas and /videos row 13's "Video, take 1" stayed
+ * paused at 0:00 after a jump scroll (reload mid-page, End key, scrollbar drag)
+ * in most test runs while on / it played; with every row engine blocked it still
+ * failed, and nothing called pause() on it or moved it. So the page plays them
+ * itself instead of trusting the attribute.
+ *
+ * Which videos: only those the row MARKUP marks `autoplay` and `muted`, taken
+ * before any engine runs. Engines build their own videos (the hero's seven
+ * clips, row 6's wall) without the autoplay attribute and drive them
+ * themselves, so they are never touched. If anything else pauses a watched
+ * video while it is on screen and the tab is visible, an engine owns it: the
+ * page lets go of that video for good.
+ *
+ * ≥ 25% visible (or half the viewport tall): play().catch(() => {}); less: pause.
+ * prefers-reduced-motion: no autoplay at all (the poster stays), as the hero does.
+ * Returns stop(), which disconnects everything.
+ */
+export function watchAutoplayVideos(root: HTMLElement): () => void {
+  const vids = Array.from(root.querySelectorAll<HTMLVideoElement>("[data-row] video[autoplay][muted]"));
+  if (vids.length === 0) return () => {};
+
+  if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
+    vids.forEach((v) => {
+      v.removeAttribute("autoplay");
+      v.pause();
+    });
+    return () => {};
+  }
+  if (typeof IntersectionObserver === "undefined") return () => {};
+
+  const inView = new Set<HTMLVideoElement>();
+  const released = new WeakSet<HTMLVideoElement>();
+  const ourPauses = new WeakMap<HTMLVideoElement, number>(); // pause events we caused and have not seen yet
+
+  const play = (v: HTMLVideoElement): void => {
+    if (released.has(v) || !v.paused || document.visibilityState !== "visible") return;
+    v.muted = true; // the autoplay policy reads the property, not the attribute
+    const p = v.play();
+    if (p) p.catch(() => {});
+  };
+  const pause = (v: HTMLVideoElement): void => {
+    if (released.has(v) || v.paused) return;
+    ourPauses.set(v, (ourPauses.get(v) ?? 0) + 1);
+    v.pause();
+  };
+  const onPause = (e: Event): void => {
+    const v = e.target as HTMLVideoElement;
+    const mine = ourPauses.get(v) ?? 0;
+    if (mine > 0) {
+      ourPauses.set(v, mine - 1);
+      return;
+    }
+    // Paused by someone else while on screen in a visible tab: an engine drives it.
+    if (inView.has(v) && document.visibilityState === "visible" && !v.ended) {
+      released.add(v);
+      inView.delete(v);
+      io.unobserve(v);
+    }
+  };
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        const v = e.target as HTMLVideoElement;
+        const tall = e.rootBounds ? e.intersectionRect.height >= e.rootBounds.height * 0.5 : false;
+        if (e.isIntersecting && (e.intersectionRatio >= 0.25 || tall)) {
+          inView.add(v);
+          play(v);
+        } else {
+          inView.delete(v);
+          pause(v);
+        }
+      }
+    },
+    { threshold: [0, 0.25, 0.5, 0.75, 1] },
+  );
+  const onVisibility = (): void => {
+    if (document.visibilityState === "visible") inView.forEach(play);
+  };
+
+  vids.forEach((v) => {
+    v.addEventListener("pause", onPause);
+    io.observe(v);
+  });
+  document.addEventListener("visibilitychange", onVisibility);
+
+  return () => {
+    io.disconnect();
+    document.removeEventListener("visibilitychange", onVisibility);
+    vids.forEach((v) => v.removeEventListener("pause", onPause));
+    inView.clear();
+  };
+}
+
+/**
  * Loads and runs the engines of `rows` (rendered as [data-row="N"] inside
  * rootRef), and stops all of them on unmount. `rows` must be stable across
  * renders (a module constant or a useMemo), or the engines restart.
+ * Also plays the rows' own muted autoplay videos while on screen (watchAutoplayVideos).
  */
 export function useRowEngines(rootRef: RefObject<HTMLElement | null>, rows: readonly V4Row[]): void {
   useEffect(() => {
@@ -208,6 +308,9 @@ export function useRowEngines(rootRef: RefObject<HTMLElement | null>, rows: read
       return { r, el, ctx };
     });
 
+    // Before any engine runs, so only the markup's own autoplay videos are taken.
+    const stopAutoplay = watchAutoplayVideos(root);
+
     (async () => {
       for (const { r, el, ctx } of jobs) {
         if (!el || r.scripts.length === 0) continue;
@@ -225,6 +328,7 @@ export function useRowEngines(rootRef: RefObject<HTMLElement | null>, rows: read
 
     return () => {
       cancelled = true;
+      stopAutoplay();
       stops.forEach((stop) => stop());
       added.forEach((s) => s.remove());
       root.querySelectorAll("video").forEach((v) => v.pause());

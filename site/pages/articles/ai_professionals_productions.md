@@ -1,11 +1,11 @@
 ---
 title: "Best AI Video Generator for Professionals"
-description: "Professionals need two different things from AI video, and no single product is best at both. For a shot — a striking few seconds with high fidelity — a..."
+description: "Professionals need two different things from AI video, and no single product is best at both. For a shot — a striking few seconds with high fidelity."
 keywords: ["best ai video generator for professionals", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_professionals_productions"
 article_target_query: "best ai video generator for professionals"
@@ -127,5 +127,5 @@ Yes — EDL, MP4/MOV, FDX and ProRes exports, plus handoff to Adobe Premiere Pro
 
 ## See how it compares on your own footage
 
-The only comparison that settles it is your material. **[Book a walkthrough](/level2)** and we will run a scene from your script through ACT 3, or start a production and test the pipeline yourself.
+The only comparison that settles it is your material. **[Book a walkthrough](/contact)** and we will run a scene from your script through ACT 3, or start a production and test the pipeline yourself.
 

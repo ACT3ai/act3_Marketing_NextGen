@@ -1,11 +1,11 @@
 ---
 title: "How to Keep Continuity Across a Full AI Film"
-description: "Continuity across an AI film is kept by making it data, not diligence. Define each character, wardrobe variant, set and visual style once as a reusable..."
+description: "Continuity across an AI film is kept by making it data, not diligence."
 keywords: ["how to keep continuity across ai film", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "keeping_continuity_ai"
 article_target_query: "how to keep continuity across ai film"

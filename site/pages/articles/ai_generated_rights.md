@@ -2,7 +2,7 @@
 title: "Who Owns AI-Generated Film? IP, Rights, and Your Production"
 description: "Ownership of an AI-generated film splits into three separate questions, and conflating them is where productions get hurt."
 keywords: ["who owns ai generated film copyright", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

@@ -2,10 +2,10 @@
 title: "Affordable AI Video for Small Business That Still Looks Pro"
 description: "For a small business, an affordable AI video generator is one where the monthly subscription is small and the labor is small."
 keywords: ["affordable ai video generator for business", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "affordable_ai_small"
 article_target_query: "affordable ai video generator for business"
@@ -117,5 +117,5 @@ That's the design intent — the platform is built for storytellers rather than 
 
 ## Start on the free tier
 
-Pick a script you'd otherwise pay an agency for, run it through the Free plan, and see what comes back before you spend a dollar. When the output earns its place in your marketing, move to Creator at $49, or Pro at $175 for commercial use — or talk to our team about the Level 2 package, where we take your feedback and make the video happen for part or all of the production.
+Pick a script you'd otherwise pay an agency for, run it through the Free plan, and see what comes back before you spend a dollar. When the output earns its place in your marketing, move to Creator at $49, or Pro at $175 for commercial use — or talk to our team about the Assistant Director Team package, where we take your feedback and make the video happen for part or all of the production.
 

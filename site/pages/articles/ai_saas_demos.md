@@ -1,11 +1,11 @@
 ---
 title: "AI Video Generator for SaaS: Demos, Explainers, and Launches"
-description: "SaaS companies need three distinct kinds of video, and only two of them should be AI-generated. Product demos are best captured from the real product — a..."
+description: "SaaS companies need three distinct kinds of video, and only two of them should be AI-generated. Product demos are best captured from the real product."
 keywords: ["ai video generator for saas companies", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_saas_demos"
 article_target_query: "ai video generator for saas companies"

@@ -1,11 +1,11 @@
 ---
 title: "Runway Alternative for Long-Form and Full-Length Video"
-description: "Runway is a clip generator, and the wall you hit on long videos is structural, not a settings problem. Prompt-to-video tools in Runway's category produce..."
+description: "Runway is a clip generator, and the wall you hit on long videos is structural, not a settings problem."
 keywords: ["runway alternative for long videos", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "runway_long_form"
 article_target_query: "runway alternative for long videos"

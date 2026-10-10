@@ -11,8 +11,10 @@ import { LINKS } from "../data/siteNav";
 const EMAIL = LINKS.email.replace(/^mailto:/, "").toLowerCase();
 
 export default function About(): React.ReactNode {
-  // A homepage hero still (row 1, scene 6). Referenced only; site/static/v4 is generated.
-  const still = useBaseUrl("/v4/row_1/videos/6/poster.jpg");
+  // Homepage hero still (row 1, scene 6), as a 1280px web copy of
+  // site/static/v4/row_1/videos/6/poster.jpg (3840x2160) made for this page.
+  const stillJpg = useBaseUrl("/img/pages/about-mission-1280.jpg");
+  const stillWebp = useBaseUrl("/img/pages/about-mission-1280.webp");
   return (
     // No manual site-name suffix: Docusaurus appends " | ACT 3 AI" itself.
     <Layout
@@ -31,14 +33,17 @@ export default function About(): React.ReactNode {
         <V4Section tone="raised" eyebrow="Our mission" heading="Script to screen," highlight="in one workspace.">
           <V4Split
             media={
-              <img
-                src={still}
-                width={3840}
-                height={2160}
-                loading="lazy"
-                decoding="async"
-                alt="Scene 6 of the homepage hero: a shepherd boy and a mammoth herd on a hillside."
-              />
+              <picture>
+                <source srcSet={stillWebp} type="image/webp" />
+                <img
+                  src={stillJpg}
+                  width={1280}
+                  height={720}
+                  loading="lazy"
+                  decoding="async"
+                  alt="Scene 6 of the homepage hero: a shepherd boy and a mammoth herd on a hillside."
+                />
+              </picture>
             }
           >
             <V4Prose>
@@ -62,7 +67,7 @@ export default function About(): React.ReactNode {
         <V4Section eyebrow="Our values" heading="What we" highlight="stand for.">
           <V4CardGrid columns={3}>
             <V4Card eyebrow="01" title="Story first" text="You're a creative, not a prompt engineer." />
-            <V4Card eyebrow="02" title="Every scale" text="Solo creator or studio, the platform grows with you." />
+            <V4Card eyebrow="02" title="Every scale" text="Solo creator or studio." />
             <V4Card eyebrow="03" title="No surprises" text="Clear credit estimates and open pricing." href={LINKS.plans} />
           </V4CardGrid>
         </V4Section>
@@ -75,8 +80,6 @@ export default function About(): React.ReactNode {
             <V4Card title="Contact form" text="Support, sales, enterprise, press." href="/contact" />
           </V4CardGrid>
         </V4Section>
-
-        <V4CtaBand />
       </main>
     </Layout>
   );

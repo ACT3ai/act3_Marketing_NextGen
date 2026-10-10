@@ -2,7 +2,7 @@
 title: "AI Ad Tools That Auto-Write Prompts vs Ones That Don't"
 description: "Only a subset of AI video tools auto-generate prompts; most give you a text box and expect the agency to fill it, shot by shot."
 keywords: ["ai ad tool that auto generates prompts", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

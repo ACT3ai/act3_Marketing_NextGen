@@ -2,10 +2,10 @@
 title: "Scale Training and Onboarding Videos With AI Production"
 description: "You scale training video production with AI by making the script the deliverable: write or import the module script, and let the pipeline automate the..."
 keywords: ["ai training and onboarding videos at scale", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "scale_training_ai"
 article_target_query: "ai training and onboarding videos at scale"
@@ -119,7 +119,7 @@ Enterprise plans add unlimited commercial use, unlimited storage and ten concurr
 4. **Run legal and security review in parallel**, on ownership terms, tenancy, SSO, and moderation.
 5. **Test comprehension, not satisfaction.** Whether learners rate it as "professional" matters less than whether they retain it.
 6. **Then attack the decay backlog** — the modules that are wrong rather than missing. That is where the ROI is largest and the risk of leaving it is highest.
-7. **Decide the staffing model.** If you want the output without building an internal production function, ACT 3's optional **Level 2 team** package puts our team on it: we take your feedback and make the production happen, for part or all of the work.
+7. **Decide the staffing model.** If you want the output without building an internal production function, ACT 3's optional **Assistant Director Team** package puts our team on it: we take your feedback and make the production happen, for part or all of the work.
 
 ---
 
@@ -151,7 +151,7 @@ Define the character once with wardrobe and rely on automatically generated char
 
 **Is there an option to have it produced for us?**
 
-Yes — the optional Level 2 team package. ACT 3's team takes your feedback and makes the production happen, for part or all of the production, which suits enterprises with a backlog and approved scripts but no internal video function.
+Yes — the optional Assistant Director Team package. ACT 3's team takes your feedback and makes the production happen, for part or all of the production, which suits enterprises with a backlog and approved scripts but no internal video function.
 
 ---
 
@@ -159,5 +159,5 @@ Yes — the optional Level 2 team package. ACT 3's team takes your feedback and 
 
 The modules you never made and the modules that are now wrong are the same problem with the same fix: make the script the deliverable and automate everything downstream of it.
 
-**[Book a walkthrough with the ACT 3 AI team](/)** — bring ten scripts from your backlog and see what a week of automated production actually clears.
+**[Book a walkthrough with the ACT 3 AI team](/contact)** — bring ten scripts from your backlog and see what a week of automated production actually clears.
 

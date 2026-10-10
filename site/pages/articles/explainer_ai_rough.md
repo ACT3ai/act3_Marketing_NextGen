@@ -1,11 +1,11 @@
 ---
 title: "How to Make an Explainer Video With AI From a Rough Draft"
-description: "You can make an explainer video with AI in five steps, starting from text you already have — a rough draft, a product page, an FAQ, or an email you wrote..."
+description: "You can make an explainer video with AI in five steps, starting from text you already have."
 keywords: ["how to make explainer video with ai", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "explainer_ai_rough"
 article_target_query: "how to make explainer video with ai"
@@ -117,7 +117,7 @@ The honest summary of the market: there are many good template-based explainer t
 
 For a small business the practical effect is that the skill you need is *knowing your product*, not knowing video. The pipeline handles the parts that normally require a video person.
 
-If you need more than a tool — if you want the video made for you — ACT 3 AI also offers an optional "Level 2 team" package where our team takes your feedback and produces the video, for part or all of the work.
+If you need more than a tool — if you want the video made for you — ACT 3 AI also offers an optional Assistant Director Team package where our team takes your feedback and produces the video, for part or all of the work.
 
 ## Common mistakes
 

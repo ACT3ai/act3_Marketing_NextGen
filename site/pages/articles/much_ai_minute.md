@@ -2,7 +2,7 @@
 title: "How Much Does AI Video Cost? Per-Minute Math"
 description: "AI video is priced in one of three ways — a flat monthly subscription, a per-second or per-clip generation fee, or a credit system where each render draws..."
 keywords: ["how much does ai video cost", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

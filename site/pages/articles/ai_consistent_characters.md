@@ -1,11 +1,11 @@
 ---
 title: "AI Video With Consistent Characters Across Every Scene"
-description: "If you want AI video with consistent characters, you need a tool that stores the character as a record — identity, wardrobe, voice — and then builds every..."
+description: "If you want AI video with consistent characters, you need a tool that stores the character as a record — identity, wardrobe, voice."
 keywords: ["ai video with consistent characters", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_consistent_characters"
 article_target_query: "ai video with consistent characters"

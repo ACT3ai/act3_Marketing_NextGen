@@ -78,6 +78,9 @@
   color: var(--v4t-quiet);
 }
 .article-page .a3art__crumbs a { color: var(--v4t-muted); text-decoration: none; white-space: nowrap; }
+/* A 40px touch target around a 20px line: the padding grows the tap area, the
+   negative margin gives the space back, so the breadcrumb does not move. */
+.article-page .a3art__crumbs a { padding: 10px 0; margin: -10px 0; }
 .article-page .a3art__crumbs a:hover { color: var(--v4t-yellow-hi); text-decoration: underline; text-underline-offset: 3px; }
 .article-page .a3art__crumbs span[aria-hidden] { opacity: 0.5; }
 
@@ -132,6 +135,9 @@
   border-radius: 10px;
 }
 .article-page .a3art__toc-mobile button {
+  /* The stock button is display:flex at 33px; 40px is the touch target. */
+  min-height: 40px;
+  align-items: center;
   color: var(--v4t-ink);
   font-family: var(--v4t-sans);
   font-weight: 600;
@@ -373,6 +379,15 @@ html.article-page .a3art .markdown > * { max-width: none; }
   margin-top: 22px;
 }
 .article-page .a3cta a.a3cta__alt {
+  /* A 40px touch target. The row is align-items: center, and the negative
+     margin gives the extra height back, so when the row wraps on a phone the
+     link sits where it did and the band does not grow. */
+  display: inline-flex;
+  align-items: center;
+  /* Flex drops the space before the → span; the gap puts one back. */
+  gap: 0.25em;
+  min-height: 40px;
+  margin-block: -6px;
   color: var(--v4t-yellow);
   font-family: var(--v4t-sans);
   font-weight: 600;
@@ -442,6 +457,9 @@ html.article-page .a3art .markdown > * { max-width: none; }
 .article-page .a3art__related .v4t-card-title { font-size: 19px; line-height: 1.3; }
 .article-page .a3art__all { margin: 30px 0 0; font-family: var(--v4t-sans); font-size: 16px; }
 .article-page .a3art__all a { color: var(--v4t-yellow); font-weight: 600; text-decoration: none; }
+/* A 40px touch target around a 19px line; the negative margin keeps the
+   inline-block from growing the line, so the layout is unchanged. */
+.article-page .a3art__all a { display: inline-block; padding: 11px 0; margin: -11px 0; }
 .article-page .a3art__all a:hover { color: var(--v4t-yellow-hi); text-decoration: underline; text-underline-offset: 3px; }
 
 /* ── Responsive ──────────────────────────────────────────────────────────── */

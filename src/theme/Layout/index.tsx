@@ -42,6 +42,14 @@ export default function LayoutWrapper(props: Props): React.ReactNode {
           <meta name="theme-color" content="#C0531F" />
         </Head>
       ) : null}
+      {/* /docs/** is a stale local copy of the live docs at
+          documentation.act3ai.com: reachable, never indexed (and out of the
+          sitemap, docusaurus.config.ts). */}
+      {pathname === "/docs" || pathname.startsWith("/docs/") ? (
+        <Head>
+          <meta name="robots" content="noindex, follow" />
+        </Head>
+      ) : null}
       <Layout {...props} />
     </HtmlClassNameProvider>
   );

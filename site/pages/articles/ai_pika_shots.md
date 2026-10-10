@@ -1,11 +1,11 @@
 ---
 title: "ACT 3 AI vs Pika: Short Clips vs Full Scenes and Shots"
-description: "Pika and ACT 3 AI aren't really competing for the same job. Pika sits in the prompt-to-video category — you describe a moment, it generates a short clip..."
+description: "Pika and ACT 3 AI aren't really competing for the same job. Pika sits in the prompt-to-video category."
 keywords: ["act3 ai vs pika", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_pika_shots"
 article_target_query: "act3 ai vs pika"

@@ -2,7 +2,7 @@
 title: "The Best Runway Alternative for Agencies Producing at Volume"
 description: "If your agency generates a handful of hero clips a month, Runway is a strong tool and you probably do not need to switch."
 keywords: ["best runway alternative for agencies", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

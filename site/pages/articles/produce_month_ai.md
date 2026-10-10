@@ -1,11 +1,11 @@
 ---
 title: "How to Produce 100+ Marketing Videos a Month With AI"
-description: "Producing 100+ marketing videos a month is not a rendering problem — it is a per-video human labor problem. At 100 videos a month with 15 shots each, you..."
+description: "Producing 100+ marketing videos a month is not a rendering problem — it is a per-video human labor problem."
 keywords: ["produce 100 marketing videos a month with ai", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "produce_month_ai"
 article_target_query: "produce 100 marketing videos a month with ai"

@@ -16,6 +16,9 @@
  * prefix, so it survives a regeneration that renumbers the variation. When a
  * pattern is missing it console.warns with the row number and returns the row
  * unchanged — the page still renders, just with the generated markup.
+ *
+ * applyRowFixes (markup fixes every row needs, e.g. the hero's scene ticks as
+ * buttons) is NOT for pages: V4RowsPage applies it to every row it renders.
  */
 import { V4_ROWS, type V4Row } from "../../pages/_rows.generated";
 import { FOOTER_COLUMNS, MORE_NAV, PRIMARY_NAV, SIGNIN, SOCIAL, isExternal, type NavItem } from "../../data/siteNav";
@@ -24,6 +27,9 @@ const esc = (s: string): string =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
 const reEsc = (s: string): string => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+/** An absolute URL on this site (http or https, with or without www), up to its path. */
+const SELF_ORIGIN_RE = /^https?:\/\/(?:www\.)?act3ai\.com(?=$|[/?#])/i;
 
 /**
  * One link as raw HTML. Internal links carry data-v4-spa (V4RowsPage turns
@@ -116,6 +122,66 @@ export function applySiteNav(row: V4Row): V4Row {
   }
 
   return { ...row, html };
+}
+
+/**
+ * Markup fixes every row needs, whatever page shows it. V4RowsPage runs this on
+ * every row it renders (server and client), so pages never call it themselves.
+ * Idempotent: a row it already fixed comes back unchanged.
+ *
+ *  * Engine controls written as <a href="#" class="{prefix}-tick" ...> (the hero's
+ *    seven scene ticks) become <button type="button" class="{prefix}-tick" data-v4-tick ...>
+ *    with every other attribute kept. A bare href="#" is a dead link to crawlers
+ *    and jumps to the top when the engine has not called preventDefault yet. The
+ *    hero engine finds them by class ('.' + P + 'tick') and listens for click,
+ *    which a button also fires on Enter and Space. V4RowsPage's page CSS strips
+ *    the button chrome ([data-v4-tick]) so the row's own tick rule sizes them.
+ *  * Absolute links to this site (href="https://act3ai.com/mcp/", the bare domain
+ *    too) become root-relative routes without the trailing slash ("/mcp", "/"),
+ *    lose target/rel and open in the same tab. Otherwise a click on localhost or a
+ *    preview jumps to production, through a non-canonical URL, in a new tab.
+ *  * Every root-relative link ("/...", not "//...") without a target or download
+ *    attribute, and not pointing at a file ("/x.pdf"), gets data-v4-spa, so
+ *    V4RowsPage navigates it without a full reload (the rows' logo links).
+ *  * The hero H1's two spans (`{prefix}-h1a`, `{prefix}-h1b`) get one space between
+ *    them, so crawlers that read textContent see "AI Filmmaking at the speed ..."
+ *    and not "AI Filmmakingat the speed ...". The H1 is a flex column, so the space
+ *    is invisible.
+ */
+export function applyRowFixes(row: V4Row): V4Row {
+  const p = reEsc(row.prefix);
+  const tickRe = new RegExp(`<a\\b([^>]*?)\\sclass="(${p}-tick(?:\\s[^"]*)?)"([^>]*)>([\\s\\S]*?)</a>`, "g");
+  let html = row.html.replace(tickRe, (m, pre: string, cls: string, post: string, inner: string) => {
+    const attrs = `${pre}${post}`;
+    if (!/\shref="#"/.test(attrs)) return m; // a tick that is a real link stays a link
+    const rest = attrs.replace(/\shref="#"/, "");
+    return `<button type="button" class="${cls}" data-v4-tick${rest}>${inner}</button>`;
+  });
+
+  html = html.replace(/<a\b[^>]*>/g, (tag) => {
+    const hrefM = /\shref="([^"]*)"/.exec(tag);
+    if (!hrefM) return tag;
+    let out = tag;
+    let href = hrefM[1];
+    const self = SELF_ORIGIN_RE.exec(href);
+    if (self) {
+      // "https://act3ai.com/mcp/?x#y" → "/mcp?x#y"; the bare domain → "/".
+      const rest = href.slice(self[0].length);
+      const [, path = "", tail = ""] = /^([^?#]*)(.*)$/.exec(rest) || [];
+      href = (path.replace(/\/+$/, "") || "/") + tail;
+      out = out
+        .replace(hrefM[0], () => ` href="${href}"`)
+        .replace(/\s(?:target|rel)="[^"]*"/g, "");
+    }
+    const internal = href.startsWith("/") && !href.startsWith("//");
+    const isFile = /\.[a-z0-9]{2,5}$/i.test(href.split(/[?#]/)[0]);
+    if (!internal || isFile || /\s(?:data-v4-spa|target|download)\b/.test(out)) return out;
+    return out.replace(/\s*\/?>$/, " data-v4-spa>");
+  });
+
+  html = html.replace(new RegExp(`</span>(<span class="${p}-h1b[\\s"])`, "g"), "</span> $1");
+
+  return html === row.html ? row : { ...row, html };
 }
 
 /** Exact-string copy overrides on a row's markup (every occurrence). Warns on any `from` it cannot find. */

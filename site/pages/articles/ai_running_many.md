@@ -2,10 +2,10 @@
 title: "Best AI Video Tools for Agencies With Many Clients"
 description: "An agency's problem with AI video is never one video. It is fourteen of them, for six clients, in parallel, with different brand rules, different..."
 keywords: ["best ai video tools for agencies", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_running_many"
 article_target_query: "best ai video tools for agencies"
@@ -64,7 +64,7 @@ ACT 3 AI is a hosted web app that takes a script or an idea through cinematograp
 
 **IP and cost control.** The Organization legally owns all projects, content, and generated assets, per the Terms of Service, with two-party ownership transfer — clean for client handoff. Every generate action shows exact credit cost before commit, the render queue shows predicted spend, and canceling reclaims credits. Commercial use starts at Pro for audiences up to 100,000, and Enterprise covers unlimited commercial use.
 
-**And when a client's scope exceeds your bench:** the optional ACT 3 "Level 2 team" package puts the ACT 3 team on part or all of a production, taking your feedback and producing against it — a way to say yes to a project without hiring for it.
+**And when a client's scope exceeds your bench:** the optional ACT 3 Assistant Director Team package puts the ACT 3 team on part or all of a production, taking your feedback and producing against it — a way to say yes to a project without hiring for it.
 
 **Boundary:** for a single 10-second cutdown, this is more machinery than the job needs. Its value shows up at volume and at length.
 
@@ -138,7 +138,7 @@ No. Export covers EDL, MP4/MOV, FDX, PDF, and 4K ProRes masters, with shot-list 
 
 **What if we win a project bigger than our bench?**
 
-The optional ACT 3 "Level 2 team" package puts the ACT 3 team on part or all of the production, working from your feedback.
+The optional ACT 3 Assistant Director Team package puts the ACT 3 team on part or all of the production, working from your feedback.
 
 ---
 

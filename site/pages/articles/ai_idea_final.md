@@ -2,10 +2,10 @@
 title: "How to Make a Short Film With AI From Idea to Final Cut"
 description: "Making a short film with AI takes seven steps, and only one of them is generating video."
 keywords: ["how to make a short film with ai", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_idea_final"
 article_target_query: "how to make a short film with ai"
@@ -155,7 +155,7 @@ ACT 3 AI is a metered subscription: a free plan to start, paid plans from $49/mo
 
 **Can I get help actually finishing it?**
 
-Yes. ACT 3 AI offers an optional "Level 2 team" package where our team takes your feedback and makes the movie happen — for part or all of the production — if you would rather direct than operate.
+Yes. ACT 3 AI offers an optional Assistant Director Team package where our team takes your feedback and makes the movie happen — for part or all of the production — if you would rather direct than operate.
 
 ---
 

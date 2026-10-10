@@ -2,7 +2,7 @@
 title: "AI Video Generator With Built-In Lipsync, Voices, and TTS"
 description: "Most creators end up stitching together three or four products to get talking characters — a text-to-speech tool for the voice, a video generator for the..."
 keywords: ["ai video generator with lip sync and voices", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-07-21

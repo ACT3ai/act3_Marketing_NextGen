@@ -2,10 +2,10 @@
 title: "AI Feature Film Generator: Turn a Script Into a Full Movie"
 description: "An AI feature film generator takes a complete screenplay and produces a full-length movie — not an 8-second clip, not a montage, but a structured film..."
 keywords: ["ai feature film generator from script", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_feature_turn"
 article_target_query: "ai feature film generator from script"
@@ -107,7 +107,7 @@ If you want a single 30-second spot, a prompt-to-video tool is a better fit and 
 - Export to FDX, PDF, EDL, MP4/MOV and post workflows in Premiere Pro or DaVinci Resolve
 - Organization-owned IP, granular roles, and team collaboration on one production
 
-Want done-for-you? The optional **ACT 3 "Level 2 team"** package puts our team on your production — you supply the script and the feedback, and we make the movie happen, for part or all of the production.
+Want done-for-you? The optional **ACT 3 Assistant Director Team** package puts our team on your production — you supply the script and the feedback, and we make the movie happen, for part or all of the production.
 
 ## Practical notes before you start
 
@@ -140,9 +140,9 @@ Yes. Content is owned by your Organization — the workspace that holds your pro
 
 **What if I don't want to run production myself?**
 
-Use the ACT 3 "Level 2 team" package. Our team takes your script and your feedback and makes the movie happen, covering part or all of the production work.
+Use the ACT 3 Assistant Director Team package. Our team takes your script and your feedback and makes the movie happen, covering part or all of the production work.
 
 ## Start your feature
 
-Bring your script. Get a full movie you can watch end to end, give notes on, and rebuild tomorrow. **Start a production with ACT 3 AI, or talk to the Level 2 team** about having us produce it with you.
+Bring your script. Get a full movie you can watch end to end, give notes on, and rebuild tomorrow. **Start a production with ACT 3 AI, or talk to the Assistant Director Team** about having us produce it with you.
 

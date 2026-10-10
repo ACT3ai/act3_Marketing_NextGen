@@ -2,7 +2,7 @@
 title: "How AI Filmmaking Actually Works: Beats, Shots, and Renders"
 description: "AI filmmaking works by turning a story into structured data, and then turning that data into video one shot at a time."
 keywords: ["how does ai filmmaking work", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-07-21

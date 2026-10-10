@@ -2,10 +2,10 @@
 title: "Turn a Blog Post Into a Cinematic Video With AI"
 description: "To turn a blog post into a video with AI, you import the article, let the system restructure it into a script with a defined runtime, break that script..."
 keywords: ["turn blog post into video with ai", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "blog_post_ai"
 article_target_query: "turn blog post into video with ai"
@@ -134,5 +134,5 @@ Decide the aspect ratio before shots are composed, since framing differs, then e
 
 The honest test is a side-by-side: run your best-performing post through a slideshow tool and through a script-to-screen pipeline, and compare the first thirty seconds.
 
-**[See how ACT 3 AI compares — book a walkthrough](/level2)** and bring an article you want converted.
+**[See how ACT 3 AI compares — book a walkthrough](/contact)** and bring an article you want converted.
 

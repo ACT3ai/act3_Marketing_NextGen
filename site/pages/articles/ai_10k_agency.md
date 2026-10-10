@@ -1,11 +1,11 @@
 ---
 title: "AI Video Production Cost vs a $10k Agency Retainer"
-description: "The honest comparison is not \"software price versus retainer price.\" It is software price plus your team's hours versus the retainer price plus the hours..."
+description: "The honest comparison is not \"software price versus retainer price.\""
 keywords: ["ai video production cost vs agency", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_10k_agency"
 article_target_query: "ai video production cost vs agency"

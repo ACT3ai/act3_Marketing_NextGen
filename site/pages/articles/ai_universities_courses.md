@@ -2,10 +2,10 @@
 title: "AI Video for Universities: Courses and Recruiting"
 description: "Universities need AI video for three distinct jobs — course content (lectures, modules, lab explainers), recruiting and marketing (campus stories, program..."
 keywords: ["ai video generator for universities", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_universities_courses"
 article_target_query: "ai video generator for universities"
@@ -92,7 +92,7 @@ That model turns a three-person team from a production bottleneck into a creativ
 - **Anything where a real person's likeness is the point** — a named faculty testimonial, a real student's story on camera. Shoot it.
 - **Compliance content requiring legal sign-off on exact wording.** Produce it, but route it through the same legal review you'd use for any published material; the lock-down controls exist to protect the approved version afterward.
 
-If you want the output without staffing the work at all, ACT 3's optional **Level 2 team** package is available: our team takes your feedback and makes the production happen, for part or all of the work.
+If you want the output without staffing the work at all, ACT 3's optional **Assistant Director Team** package is available: our team takes your feedback and makes the production happen, for part or all of the work.
 
 ## FAQ
 
@@ -122,5 +122,5 @@ One department, one course, three modules, on Free or Standard. Measure credits 
 
 ## Start a campus pilot
 
-Pick one course with material already written and produce three modules end to end. Talk to our team about an Enterprise deployment with departmental Organizations — or about the Level 2 package, where we take your feedback and produce the semester's content alongside your media team.
+Pick one course with material already written and produce three modules end to end. Talk to our team about an Enterprise deployment with departmental Organizations — or about the Assistant Director Team package, where we take your feedback and produce the semester's content alongside your media team.
 

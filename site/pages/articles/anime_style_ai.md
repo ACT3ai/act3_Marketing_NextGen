@@ -2,7 +2,7 @@
 title: "How to Make Anime-Style Scenes With AI From a Script"
 description: "To make anime with AI from a script, you work in five stages: lock the script, break it into beats, scenes and shots, build a consistent cast, apply one..."
 keywords: ["how to make anime with ai from script", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-07-21

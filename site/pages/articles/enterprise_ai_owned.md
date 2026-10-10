@@ -1,11 +1,11 @@
 ---
 title: "Enterprise AI Film Production: Teams and Owned IP"
-description: "Enterprise AI film production software has to clear a bar that consumer AI video tools never face: it must produce full-length deliverables (a 40-minute..."
+description: "Enterprise AI film production software has to clear a bar that consumer AI video tools never face."
 keywords: ["enterprise ai film production software", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "enterprise_ai_owned"
 article_target_query: "enterprise ai film production software"
@@ -109,7 +109,7 @@ ACT 3 is designed to sit inside a real post organization rather than replace it:
 - **Assets**: open-standard character imports (MetaHuman, Reallusion, Daz — FBX/USD) with rigs, textures, and facial blend-shapes usable immediately.
 - **Models**: engine-agnostic routing across Google Veo 3, Runway, FLUX, Stable Diffusion SDXL, ComfyUI, Hunyuan, and Wan 2.1, reducing single-vendor exposure.
 
-## Optional: the ACT 3 "Level 2 team"
+## Optional: the ACT 3 Assistant Director Team
 
 If your production is under-resourced, ACT 3 offers an optional done-for-you package. Our team takes your script and your feedback and makes the movie or episodes happen — for part or all of the production. You keep the creative direction and the notes; we run the production work.
 
@@ -141,5 +141,5 @@ Enterprise is priced on request and includes high-volume credits, unlimited stor
 
 ## Talk to us about your slate
 
-Enterprise evaluations go faster with real material. **Talk to the ACT 3 team** about a production on your own script — we will walk through tenancy, permissions, IP ownership, deliverables, and pipeline fit, and scope whether the Level 2 team should run part of the work.
+Enterprise evaluations go faster with real material. **Talk to the ACT 3 team** about a production on your own script — we will walk through tenancy, permissions, IP ownership, deliverables, and pipeline fit, and scope whether the Assistant Director Team should run part of the work.
 

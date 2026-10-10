@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
-import { V4Hero, V4Section, V4CardGrid, V4Card, V4CtaBand } from "../components/v4/V4Blocks";
+import { V4Hero, V4Section, V4CardGrid, V4Card } from "../components/v4/V4Blocks";
 
 /*
  * The /mcp page.
@@ -17,6 +17,10 @@ import { V4Hero, V4Section, V4CardGrid, V4Card, V4CtaBand } from "../components/
  * on the download button, #act3-download-btn, #act3-download-label, #act3-clone-cmd,
  * #act3-copy-btn, #act3-copy-tip, #act3-os-list, and #act3-mcp-page as a fallback.
  *
+ * TWIN PAGE: site/pages/cli.tsx. The clone/download block (PAGE_CSS from .mcp-get
+ * through the .mcp-os list, plus the 760px and reduced-motion rules) must stay
+ * IDENTICAL to /cli's .cli-* block, prefix aside. Change one, change both.
+ *
  * The tool names on the cards are the real act3 MCP tools that homepage row 16 shows.
  */
 
@@ -26,10 +30,39 @@ const CLONE_COMMAND = "git clone https://github.com/ACT3ai/mcp.git";
 const CLONE_PARTS = CLONE_COMMAND.replace(/\/(?=ACT3ai\/|mcp\.git)/g, "/\n").split("\n");
 const JS_URL = "/js/download_platform.js";
 
-/* Page-scoped: the clone box, the copy button and the per-OS list. The rest is V4Blocks. */
+/*
+ * The per-OS links, in the server-rendered HTML so crawlers and no-JS readers get
+ * real binary links. MIRRORS PLATFORMS + PAGES.mcp in download_platform.js, and is
+ * the exact markup its buildOsList() writes (<li><a href download>label</a></li>);
+ * change both together.
+ *
+ * Why dangerouslySetInnerHTML and not JSX <li> children: buildOsList() does
+ * list.innerHTML = "" and rebuilds the six links on load. It never appends to an
+ * existing list, so there are no duplicates either way, but with JSX children React
+ * would still own <li> nodes the script has thrown away. As an innerHTML string,
+ * React owns only the <ul>; the script's identical rebuild touches nothing React
+ * tracks, and React never rewrites it (the string is a constant).
+ */
+const REPO = "ACT3ai/mcp";
+const BINARY = "act3-mcp";
+const OS_PLATFORMS: { id: string; label: string; windows?: boolean }[] = [
+  { id: "Mac-Apple_Silicon", label: "Mac (Apple Silicon)" },
+  { id: "Mac-Intel_CPU", label: "Mac (Intel)" },
+  { id: "windows-amd64", label: "Windows (x64)", windows: true },
+  { id: "windows-arm64", label: "Windows (ARM64)", windows: true },
+  { id: "linux-amd64", label: "Linux (x64)" },
+  { id: "linux-arm64", label: "Linux (ARM64)" },
+];
+const OS_LIST_HTML = OS_PLATFORMS.map(
+  (p) =>
+    `<li><a href="https://raw.githubusercontent.com/${REPO}/main/bin/${p.id}/${BINARY}${p.windows ? ".exe" : ""}" download="">${p.label}</a></li>`,
+).join("");
+
+/* Page-scoped: the clone box, the copy button and the per-OS list. The rest is V4Blocks.
+ * IDENTICAL to /cli's PAGE_CSS clone/download/OS-list rules (prefix aside); keep them in step. */
 const PAGE_CSS = `
 .mcp-get { width: 100%; max-width: 720px; margin: 36px auto 0; }
-/* Same lead, clone box and ghost download as /cli, so the two pages match. */
+/* Same lead, clone box and ghost download as /cli (identical CSS), so the two pages match. */
 .mcp-get__lead { margin: 0 0 16px; font-size: 17px; line-height: 1.5; color: var(--v4t-muted); text-wrap: balance; }
 .mcp-get__lead strong { color: var(--v4t-ink); font-weight: 700; }
 /* The clone command: the preferred path, so it carries the visual weight. */
@@ -253,7 +286,7 @@ export default function Mcp(): React.ReactNode {
               <a className="v4t-ghost" id="act3-download-btn" data-act3-download-page="mcp" href="#act3-os-list">
                 <span id="act3-download-label">Download</span>
               </a>
-              <p className="mcp-dl__note">Just the binary, from the same public repo.</p>
+              <p className="mcp-dl__note" id="act3-download-note">Just the binary, from the same public repo.</p>
             </div>
           </div>
         </V4Hero>
@@ -296,15 +329,13 @@ export default function Mcp(): React.ReactNode {
           eyebrow="All platforms"
           heading="Download for"
           highlight="another machine."
-          intro="The button above matches this computer."
+          intro={<span id="act3-os-note">The button above matches this computer.</span>}
         >
-          {/* The shared script fills this list in on load. */}
+          {/* Server-rendered; the shared script rebuilds the same six links on load. */}
           <div className="mcp-os">
-            <ul id="act3-os-list" />
+            <ul id="act3-os-list" dangerouslySetInnerHTML={{ __html: OS_LIST_HTML }} />
           </div>
         </V4Section>
-
-        <V4CtaBand />
       </main>
     </Layout>
   );

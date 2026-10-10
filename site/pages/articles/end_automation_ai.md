@@ -2,7 +2,7 @@
 title: "End-to-End Automation vs One-Step AI Video Tools"
 description: "Most AI video tools automate one step extremely well. A prompt-to-video generator turns text into a clip. An image generator turns text into a still."
 keywords: ["ai video tool that automates whole pipeline", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-07-21

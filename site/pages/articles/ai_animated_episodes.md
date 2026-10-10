@@ -1,11 +1,11 @@
 ---
 title: "AI Animated Series Generator: Full, Consistent Episodes"
-description: "An AI animated series generator is only useful if it can do two things that clip tools cannot — hold a full episode as one structured project, and keep..."
+description: "An AI animated series generator is only useful if it can do two things that clip tools cannot."
 keywords: ["ai animated series generator full episodes", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_animated_episodes"
 article_target_query: "ai animated series generator full episodes"

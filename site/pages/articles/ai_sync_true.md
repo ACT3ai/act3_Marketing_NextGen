@@ -2,7 +2,7 @@
 title: "AI Video With Blender Sync and True 3D Set Control"
 description: "Most AI video tools do not integrate with Blender at all. They take a text prompt (and sometimes a reference image) and hand back a clip."
 keywords: ["ai video with blender integration", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-07-21

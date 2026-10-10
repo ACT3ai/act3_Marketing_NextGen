@@ -1,11 +1,11 @@
 ---
 title: "AI Video Generator for Restaurants and Local Business"
-description: "An AI video generator lets a restaurant or local business produce a steady stream of short vertical videos — specials, new menu items, seasonal promos..."
+description: "An AI video generator lets a restaurant or local business produce a steady stream of short vertical videos."
 keywords: ["ai video generator for restaurants", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_restaurants_local"
 article_target_query: "ai video generator for restaurants"

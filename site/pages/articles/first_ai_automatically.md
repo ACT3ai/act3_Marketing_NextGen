@@ -2,7 +2,7 @@
 title: "Auto-Generate First Frames for Every AI Shot Automatically"
 description: "The first frame is the reference image an image-to-video model starts from, and it is the single biggest lever you have over what the clip looks like."
 keywords: ["auto generate first frame for ai video", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-07-21

@@ -2,7 +2,7 @@
 title: "Fliki Alternative for Cinematic, Directed AI Video"
 description: "If you're searching for a Fliki alternative for cinematic video, you've almost certainly hit the ceiling of the text-to-speech-plus-stock category."
 keywords: ["fliki alternative for cinematic video", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

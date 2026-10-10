@@ -2,7 +2,7 @@
 title: "One Login, Every Model: Veo, Runway, Flux, and More"
 description: "Yes, you can run the major AI video and image models from one tool instead of holding a separate subscription, login, and credit balance for each."
 keywords: ["one tool for all ai video models", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

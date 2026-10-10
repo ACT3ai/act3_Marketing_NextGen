@@ -2,7 +2,7 @@
 title: "Cost of Locking References vs Regenerating Video"
 description: "A rejected still first frame costs 25 to 98 credits, while a rejected 8-second video costs 314 to 2,080, so settle each decision on the still."
 keywords: ["cost of locking references vs regenerating video", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-18

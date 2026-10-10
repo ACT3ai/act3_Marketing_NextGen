@@ -1,11 +1,11 @@
 ---
 title: "AI Film Production Teams: Roles, Permissions, Handoffs"
-description: "AI film production team collaboration works when the entire crew operates inside one production project with role-based permissions and clean handoffs..."
+description: "AI film production team collaboration works when the entire crew operates inside one production project with role-based permissions and clean handoffs."
 keywords: ["ai film production team collaboration", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "collaborate_ai_handoffs"
 article_target_query: "ai film production team collaboration"
@@ -104,7 +104,7 @@ Three mechanisms do the heavy lifting:
 
 ## Running the day: the 2–3 hour sprint
 
-Because ACT 3 AI targets real 2–3 hour runtimes rather than clips, the natural rhythm is a 2–3 hour work sprint: the crew works a pass, the full assembly gets reviewed, notes come back, and the next pass regenerates against them. For teams that want the notes executed rather than staffed, the optional ACT 3 "Level 2 team" package puts our team on part or all of the production — you give feedback, we make it happen in the movie.
+Because ACT 3 AI targets real 2–3 hour runtimes rather than clips, the natural rhythm is a 2–3 hour work sprint: the crew works a pass, the full assembly gets reviewed, notes come back, and the next pass regenerates against them. For teams that want the notes executed rather than staffed, the optional ACT 3 Assistant Director Team package puts our team on part or all of the production — you give feedback, we make it happen in the movie.
 
 See our guides on keeping continuity across a full AI film and on production IP ownership for the two topics that most often come up once a crew is working in one place.
 
@@ -136,5 +136,5 @@ Removing a member revokes access immediately, and the Organization retains the p
 
 ## Get your crew onto one production
 
-If your team is currently passing scripts, prompts and clips between accounts, the fix is structural. Start a production in ACT 3 AI with your crew in one Organization — or talk to the Level 2 team about running part of the production with you.
+If your team is currently passing scripts, prompts and clips between accounts, the fix is structural. Start a production in ACT 3 AI with your crew in one Organization — or talk to the Assistant Director Team about running part of the production with you.
 

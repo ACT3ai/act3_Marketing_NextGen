@@ -2,7 +2,7 @@
 title: "Cost to Run a Faceless AI YouTube Channel in 2026"
 description: "A weekly 15-minute faceless AI YouTube channel with every shot generated costs about $1,342 to $1,933 a month in 2026, before music licensing."
 keywords: ["cost to run a faceless ai youtube channel 2026", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-18

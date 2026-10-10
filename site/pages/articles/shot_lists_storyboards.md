@@ -2,7 +2,7 @@
 title: "Auto Shot Lists and Storyboards From Your Script"
 description: "An AI storyboard and shot list generator reads your script, breaks it into beats and scenes, decides how each scene should be covered, and outputs a..."
 keywords: ["ai storyboard and shot list generator", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

@@ -2,7 +2,7 @@
 title: "How to Keep a Character Consistent Across Every AI Scene"
 description: "You keep a character consistent in AI video by taking the description out of the prompt and putting it into a fixed, reusable record that every shot draws..."
 keywords: ["how to keep character consistent in ai video", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-07-21

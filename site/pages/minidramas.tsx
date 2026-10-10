@@ -22,7 +22,7 @@ import { applySiteNav, pickRows, replaceCopy } from "../components/v4/rowTransfo
  *   10 Storyboards — opens on the "Minidrama" tab
  *   12 Sets — a set you keep for the whole series
  *   15 Voice — one voice per character, every episode
- *   13 Save money — settle the shot before paying for video (copy unchanged)
+ *   13 Save money — body trimmed to its last two sentences; the visible "Illustration of..." caption dropped
  *   14 Teams — one series, many hands
  * No MCP row (16), so V4RowsPage renders the template footer (V4Footer).
  */
@@ -50,12 +50,33 @@ function storyboards(r: V4Row): V4Row {
       [tab("minidrama", "Minidrama"), tab("movie", "Movie"), tab("TV episode", "TV episode")].join(sep),
     ],
     [`<span class="${p(r)}-word">movie or video</span>`, `<span class="${p(r)}-word">minidrama</span>`],
+    ["Whatever you are making, every shot gets its panel.", "Every shot gets its panel."],
   ]);
 }
 
+/*
+ * Row 5's clapper tab strip has no top padding: on the homepage it sits under
+ * row 4's #0f0e0c ground, so there is no edge. Here it follows row 2, whose
+ * lighter charcoal ground (#262626 at its foot) would end right on the strip.
+ * Give row 5 the same dark lead-in it gets on the homepage.
+ *
+ * It rides on row 5's own `css`, which V4RowsPage concatenates into its single
+ * <style>. Never render a second <style> next to V4RowsPage's: the production
+ * HTML minifier merges adjacent <style> elements, so the client renders one
+ * more than the server HTML holds and hydration fails (React error #418).
+ */
+const PAGE_CSS = `
+.v4 .v4-row[data-row="5"] { background: #0f0e0c; padding-top: 48px; }
+@media (max-width: 640px) { .v4 .v4-row[data-row="5"] { padding-top: 28px; } }
+.v4[data-v4-theme="light"] .v4-row[data-row="5"] { background: #ecebe8; } /* ?theme=light review aid: row 5's light ground */
+`;
+
 const EDITS: Record<number, (r: V4Row) => V4Row> = {
   1: hero,
-  5: (r) => replaceCopy(r, [["every scene of a two-hour movie", "every scene of your minidrama"]]),
+  5: (r) => {
+    const e = replaceCopy(r, [["every scene of a two-hour movie", "every scene of your minidrama"]]);
+    return { ...e, css: e.css + PAGE_CSS };
+  },
   10: storyboards,
   12: (r) => replaceCopy(r, [["come back to it whenever the story does.", "come back to it every episode."]]),
   14: (r) =>
@@ -64,25 +85,25 @@ const EDITS: Record<number, (r: V4Row) => V4Row> = {
       ["in the same movie", "in the same series"],
       ["different days in the movie", "different episodes"],
     ]),
-  15: (r) => replaceCopy(r, [["from the first scene to the last", "from the first episode to the last"]]),
+  13: (r) =>
+    replaceCopy(r, [
+      [
+        "The video is the expensive step, so ACT&nbsp;3 has you settle the shot where a change costs little: as a storyboard, then as a first frame. When you do generate video, it is already the shot you wanted. That saves you money and time.",
+        "When you do generate video, it is already the shot you wanted. That saves you money and time.",
+      ],
+      ['<p class="r13v35-note">Illustration of one shot at its three stages.</p>', ""],
+    ]),
+  15: (r) =>
+    replaceCopy(r, [
+      ["from the first scene to the last", "from the first episode to the last"],
+      ["It is hers in every scene", "It is hers in every episode"],
+    ]),
 };
 
 // A module constant: V4RowsPage restarts the row engines if this array changes identity.
 const ROWS = pickRows([1, 2, 5, 10, 12, 15, 13, 14])
   .map(applySiteNav)
   .map((r) => (EDITS[r.row] ? EDITS[r.row](r) : r));
-
-/*
- * Row 5's clapper tab strip has no top padding: on the homepage it sits under
- * row 4's #0f0e0c ground, so there is no edge. Here it follows row 2, whose
- * lighter charcoal ground (#262626 at its foot) would end right on the strip.
- * Give row 5 the same dark lead-in it gets on the homepage.
- */
-const PAGE_CSS = `
-.v4 .v4-row[data-row="5"] { background: #0f0e0c; padding-top: 48px; }
-@media (max-width: 640px) { .v4 .v4-row[data-row="5"] { padding-top: 28px; } }
-.v4[data-v4-theme="light"] .v4-row[data-row="5"] { background: #ecebe8; } /* ?theme=light review aid: row 5's light ground */
-`;
 
 const URL = "https://act3ai.com/minidramas";
 const TITLE = "AI Minidramas | ACT 3 AI";
@@ -106,8 +127,6 @@ export default function Minidramas(): React.JSX.Element {
         <meta name="theme-color" content={V4_PAGE_GROUND} />
       </Head>
 
-      {/* In the tree, not <Head>: the static build drops a <style> in <Head> until hydration. */}
-      <style dangerouslySetInnerHTML={{ __html: PAGE_CSS }} />
       <V4RowsPage rows={ROWS} ctaEvery={3} />
     </>
   );

@@ -1,11 +1,11 @@
 ---
 title: "How to Get Your Screenplay Produced With AI"
-description: "You can now get a finished screenplay produced as watchable video without raising money, attaching talent, or assembling a crew — by moving it through an..."
+description: "You can now get a finished screenplay produced as watchable video without raising money, attaching talent, or assembling a crew."
 keywords: ["get my screenplay produced with ai", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "get_screenplay_produced"
 article_target_query: "get my screenplay produced with ai"
@@ -13,7 +13,7 @@ article_persona: "Indie Filmmaker"
 article_funnel_stage: "Learn"
 article_search_intent: "Informational"
 article_content_type: "Use_Case"
-article_key_value: "Level_2_Team"
+article_key_value: "Assistant_Director_Team"
 ---
 
 {/* GENERATED FILE -- do not edit here.
@@ -61,9 +61,9 @@ Honest scope note: this is a real craft tool, not a one-button generator. The le
 
 ## Path 2 — Have a team produce it for you
 
-If your script is finished and your hours are not available, the constraint isn't the pipeline — it's the operator. That is the gap the **ACT 3 AI "Level 2 team"** fills.
+If your script is finished and your hours are not available, the constraint isn't the pipeline — it's the operator. That is the gap the **ACT 3 AI Assistant Director Team** fills.
 
-The Level 2 team is an optional package where you use our team to take all of your feedback into your movie, and we make it happen. You can use us for part of your production team or all of it. You bring the script, you give all the feedback you want, and it gets accomplished.
+The Assistant Director Team is an optional package where you use our team to take all of your feedback into your movie, and we make it happen. You can use us for part of your production team or all of it. You bring the script, you give all the feedback you want, and it gets accomplished.
 
 Why that model works better for AI production than it ever did for traditional production:
 
@@ -122,5 +122,5 @@ The export bridge covers FDX, PDF, EDL, and MP4/MOV plus project archives, and t
 
 ## Get the script off the shelf
 
-If your screenplay is finished, the only real question is who executes it. Start a production yourself, or bring the script and your notes to the **ACT 3 AI Level 2 team** and have the film made for you. **Read more about how a script becomes a finished film →**
+If your screenplay is finished, the only real question is who executes it. Start a production yourself, or bring the script and your notes to the **ACT 3 AI Assistant Director Team** and have the film made for you. **Read more about how a script becomes a finished film →**
 

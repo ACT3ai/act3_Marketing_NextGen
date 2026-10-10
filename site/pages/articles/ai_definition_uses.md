@@ -2,7 +2,7 @@
 title: "What Is Script-to-Video AI? Definition, Uses, and Limits"
 description: "Script-to-video AI is software that takes written text — a script, an article, or a rough draft — and produces finished video from it automatically."
 keywords: ["what is script to video ai", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

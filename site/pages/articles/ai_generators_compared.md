@@ -1,11 +1,11 @@
 ---
 title: "Best AI Video Generators for Marketing Teams, Compared"
-description: "For an in-house marketing team, the best AI video generator is the one that removes the most human steps between an approved script and a delivered video..."
+description: "For an in-house marketing team, the best AI video generator is the one that removes the most human steps between an approved script and a delivered video."
 keywords: ["best ai video generator for marketing", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_generators_compared"
 article_target_query: "best ai video generator for marketing"

@@ -2,7 +2,7 @@
 title: "AI Video Platforms With Real Team Roles and Permissions"
 description: "Most AI video products are single-player tools with a \"share\" button bolted on. For a team, that is not enough."
 keywords: ["ai video platform with team roles", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-07-21

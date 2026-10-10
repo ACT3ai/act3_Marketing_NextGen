@@ -2,7 +2,7 @@
 title: "Stop Paying Five AI Tools for One Video: The Math"
 description: "Five separate AI tools mean five monthly minimums and five credit pools that can't pay for each other, so part of every bill never reaches the video."
 keywords: ["stop paying five ai tools for one video", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-18

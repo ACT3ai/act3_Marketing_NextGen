@@ -2,7 +2,7 @@
 title: "How to Make Video Ads From a Script With AI in an Afternoon"
 description: "To turn a script into finished video ads with AI in a single afternoon, you break the job into five automated stages and refuse to do any of them by hand."
 keywords: ["how to make video ads from a script with ai", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

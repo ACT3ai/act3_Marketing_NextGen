@@ -2,10 +2,10 @@
 title: "Enterprise AI Video Platform Pricing, Seats, and Owned IP"
 description: "Enterprise AI video platforms are priced on three axes at once — a committed subscription, a metered compute allowance, and seat/workspace structure."
 keywords: ["enterprise ai video platform pricing", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_pricing_seats"
 article_target_query: "enterprise ai video platform pricing"
@@ -111,7 +111,7 @@ If your requirement is a few dozen short marketing clips a year, Pro is very lik
 5. **Price concurrency against your calendar.** Simultaneous campaigns need simultaneous jobs.
 6. **Get the quote.** Enterprise is priced per contract. If you'd rather not sign one, the self-serve Visionary and Iconic Editions cost $8,900 and $49,000/month.
 
-For organizations that would rather buy the outcome than staff the workflow, the **ACT 3 Level 2 team** package is available: our team takes your feedback and makes the production happen, for part or all of the work.
+For organizations that would rather buy the outcome than staff the workflow, the **ACT 3 Assistant Director Team** package is available: our team takes your feedback and makes the production happen, for part or all of the work.
 
 ## FAQ
 

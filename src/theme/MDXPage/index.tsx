@@ -120,7 +120,7 @@ function ArticlePage(props: Props): React.ReactNode {
   const absoluteUrl = `${siteUrl}${permalink}`;
   const imageUrl =
     (frontMatter as Record<string, string>).image ??
-    `${siteUrl}/img/Act3_Preview.jpg`;
+    `${siteUrl}/img/act3-social-card.jpg`;
 
   const jsonLd: unknown[] = [
     {

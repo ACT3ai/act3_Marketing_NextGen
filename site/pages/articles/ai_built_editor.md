@@ -1,11 +1,11 @@
 ---
 title: "AI Video Editor With a Built-In Full-Length Timeline"
-description: "An AI video tool with a built-in timeline lets you generate, assemble, and watch your production in one place — no exporting a folder of clips to an NLE..."
+description: "An AI video tool with a built-in timeline lets you generate, assemble, and watch your production in one place."
 keywords: ["ai video editor built in timeline", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_built_editor"
 article_target_query: "ai video editor built in timeline"

@@ -1,11 +1,11 @@
 ---
 title: "Preview the Whole Video, Not Clip by Clip"
-description: "To preview a whole AI video edit rather than clip by clip, you need a tool that assembles every generated shot onto one continuous timeline at full..."
+description: "To preview a whole AI video edit rather than clip by clip, you need a tool that assembles every generated shot onto one continuous timeline at full runtime."
 keywords: ["ai tool to preview whole video edit", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "preview_unified_ai"
 article_target_query: "ai tool to preview whole video edit"
@@ -132,5 +132,5 @@ Fix it at the source — script, story factors, beats — and regenerate. The de
 
 ## See your whole cut
 
-If you are judging AI video one clip at a time, you are judging the wrong thing. **[See how ACT 3 compares](/level2)** — bring a sequence and watch it review at full length on a unified timeline.
+If you are judging AI video one clip at a time, you are judging the wrong thing. **[See how ACT 3 compares](/features)** — bring a sequence and watch it review at full length on a unified timeline.
 

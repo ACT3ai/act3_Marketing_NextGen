@@ -1,11 +1,11 @@
 ---
 title: "AI Video Generator for Startups Shipping Content Weekly"
-description: "A startup marketing team does not have a video quality problem. It has a cadence problem. One person owns content, video is the highest-effort format, and..."
+description: "A startup marketing team does not have a video quality problem. It has a cadence problem."
 keywords: ["ai video generator for startups", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_startups_shipping"
 article_target_query: "ai video generator for startups"

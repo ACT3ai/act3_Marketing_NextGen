@@ -2,7 +2,7 @@
 title: "AI Video for Social Agencies: Reels and Shorts at Volume"
 description: "A social agency's constraint is not generating a video — it is generating the four hundredth video this month, across eight client brands, each on-brand..."
 keywords: ["ai video generator for social media agencies", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

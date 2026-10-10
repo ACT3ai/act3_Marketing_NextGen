@@ -1,11 +1,11 @@
 ---
 title: "Done-for-You AI Movie Production: We Make Your Script Happen"
-description: "A done-for-you AI movie production service is one where you hand over a script and creative direction, and someone else runs the production — the shot..."
+description: "A done-for-you AI movie production service is one where you hand over a script and creative direction, and someone else runs the production."
 keywords: ["done for you ai movie production service", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "done_ai_happen"
 article_target_query: "done for you ai movie production service"
@@ -13,7 +13,7 @@ article_persona: "Indie Filmmaker"
 article_funnel_stage: "Buy"
 article_search_intent: "Transactional"
 article_content_type: "Landing_Page"
-article_key_value: "Level_2_Team"
+article_key_value: "Assistant_Director_Team"
 ---
 
 {/* GENERATED FILE -- do not edit here.
@@ -23,7 +23,7 @@ article_key_value: "Level_2_Team"
 
 A done-for-you AI movie production service is one where you hand over a script and creative direction, and someone else runs the production — the shot breakdown, the generation, the cast and set work, the assembly — while you stay the director through notes. You are buying execution, not software. The right service should take your script, come back with a watchable cut, take your feedback, and come back again with the changes made.
 
-That is exactly what the ACT 3 **"Level 2 team"** package is: an optional service where our team takes your feedback into your movie and makes it happen. You can use us for part of your production team or all of it. You have a script; you want it made; you want to give all the notes you want and have them get accomplished. That is the arrangement.
+That is exactly what the ACT 3 **Assistant Director Team** package is: an optional service where our team takes your feedback into your movie and makes it happen. You can use us for part of your production team or all of it. You have a script; you want it made; you want to give all the notes you want and have them get accomplished. That is the arrangement.
 
 This page explains how a done-for-you AI production actually runs, what you should expect to supply, and how to judge whether DIY software or a done-for-you team is right for you. It is not a price list — engagements are scoped to the production.
 
@@ -35,7 +35,7 @@ You did not write a screenplay in order to become a prompt operator. A done-for-
 
 <ArticleCTA />
 
-## How the ACT 3 Level 2 team works
+## How the ACT 3 Assistant Director Team works
 
 The engagement is built around a loop, not a one-way handoff.
 
@@ -75,7 +75,7 @@ The engagements that go fastest arrive with:
 
 Both are real options and you should pick honestly.
 
-| | DIY on ACT 3 AI | ACT 3 Level 2 team |
+| | DIY on ACT 3 AI | ACT 3 Assistant Director Team |
 |---|---|---|
 | Best for | Filmmakers who want hands on every shot and have the hours | Filmmakers who want the film made |
 | Your time | Substantial and ongoing | Reviewing cuts and giving notes |
@@ -99,7 +99,7 @@ Being straight about scope saves everyone time:
 
 **Can someone else make my AI movie for me?**
 
-Yes. The ACT 3 "Level 2 team" is an optional package where our team takes your feedback into your movie and makes it happen, for part or all of the production.
+Yes. The ACT 3 Assistant Director Team is an optional package where our team takes your feedback into your movie and makes it happen, for part or all of the production.
 
 **Do I need a finished screenplay to start?**
 
@@ -123,5 +123,5 @@ Yes — the production lives in an ACT 3 AI project your Organization owns, so y
 
 ## Hand us the script
 
-If you have a screenplay and you want a film rather than a workflow, talk to the ACT 3 Level 2 team. Bring the script, the runtime you are targeting, and the three things that must be right — we will scope the production from there.
+If you have a screenplay and you want a film rather than a workflow, talk to the ACT 3 Assistant Director Team. Bring the script, the runtime you are targeting, and the three things that must be right — we will scope the production from there.
 

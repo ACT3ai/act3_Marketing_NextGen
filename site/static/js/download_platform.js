@@ -23,6 +23,10 @@
  *   #act3-copy-btn             the clipboard icon button.
  *   #act3-copy-tip             the tooltip element next to the clipboard icon.
  *   #act3-os-list              container for the per-OS download links.
+ *   #act3-download-note        (optional) helper line under the button; rewritten
+ *                              on phones/tablets to MOBILE_NOTE.
+ *   #act3-os-note              (optional) intro of the per-OS list; rewritten on
+ *                              phones/tablets to MOBILE_OS_NOTE.
  *
  * ENTRY POINT: window.ACT3DownloadPlatform.init()
  * Nothing runs at import time.
@@ -61,6 +65,8 @@
 
   var COPY_IDLE = "Copy to clipboard";
   var COPY_DONE = "Copied to clipboard";
+  var MOBILE_NOTE = "On a phone or tablet? Open this page on your computer, or pick a build below.";
+  var MOBILE_OS_NOTE = "Pick the build for the computer you will run it on.";
 
   function byId(id) {
     return document.getElementById(id);
@@ -145,11 +151,29 @@
     return "amd64"; // Windows and Linux default.
   }
 
+  /*
+   * Phones and tablets get no desktop binary. Every iOS UA contains "like Mac OS X"
+   * (isMac would say Mac), Android's says "Linux; Android" (isLinux would say
+   * Linux), and iPadOS Safari reports platform "MacIntel" — so this check has to
+   * run BEFORE the desktop ones. Touch on a "MacIntel" is the iPad tell: no Mac
+   * ships a touchscreen.
+   */
+  function isMobileDevice(hints) {
+    var nav = window.navigator || {};
+    var ua = nav.userAgent || "";
+    if (hints && hints.mobile === true) return true;
+    if (nav.userAgentData && nav.userAgentData.mobile === true) return true;
+    if (/iPhone|iPad|iPod|Android/i.test(ua)) return true;
+    if (nav.platform === "MacIntel" && (nav.maxTouchPoints || 0) > 1) return true;
+    return false;
+  }
+
   function detectPlatform(hints) {
     var nav = window.navigator || {};
     var ua = nav.userAgent || "";
     var plat = (hints && hints.platform) || nav.platform || "";
     var os = null;
+    if (isMobileDevice(hints)) return null; // -> the "Download" fallback below.
     if (isWindows(ua, plat)) os = "windows";
     else if (isMac(ua, plat)) os = "mac";
     else if (isLinux(ua, plat)) os = "linux";
@@ -180,10 +204,19 @@
     );
   }
 
-  function applyDownloadButton(page, platform) {
+  /* On a phone, the helper lines must not promise a build for "this computer". */
+  function applyMobileNotes() {
+    var note = byId("act3-download-note");
+    if (note) note.textContent = MOBILE_NOTE;
+    var osNote = byId("act3-os-note");
+    if (osNote) osNote.textContent = MOBILE_OS_NOTE;
+  }
+
+  function applyDownloadButton(page, platform, hints) {
     var btn = byId("act3-download-btn");
     if (!btn) return;
     var label = byId("act3-download-label") || btn;
+    if (isMobileDevice(hints)) applyMobileNotes();
 
     if (!platform) {
       // Detection failed: keep the button useful, send them to the full list.
@@ -274,7 +307,7 @@
       nav.userAgentData
         .getHighEntropyValues(["architecture", "platform"])
         .then(function (hints) {
-          applyDownloadButton(page, detectPlatform(hints));
+          applyDownloadButton(page, detectPlatform(hints), hints);
         })
         .catch(function () {
           applyDownloadButton(page, detectPlatform(null));
@@ -300,6 +333,7 @@
     init: init,
     detectPage: detectPage,
     detectPlatform: detectPlatform,
+    isMobileDevice: isMobileDevice,
     binaryUrl: binaryUrl,
     PLATFORMS: PLATFORMS,
     PAGES: PAGES

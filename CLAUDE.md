@@ -102,7 +102,7 @@ site/pages/backup/      — /backup (index.tsx: the homepage the v4 design repla
                           old-template copies (all noindex)
 site/pages/v/4/         — redirect stub only: /v/4 → /
 site/static/v4/         — GENERATED homepage row assets, served at /v4/row_N/
-site/pages/articles/    — GENERATED: the 133 published SEO articles
+site/pages/articles/    — GENERATED: the published SEO articles (138 on 2026-10-09)
 site/data/articles.json — GENERATED: the article index the site renders from
 site/components/        — SiteNavbar, SiteFooter, PageHero, ArticleCTA (old template + articles)
 site/components/v4/     — the v4 template pieces (see "Site templates")
@@ -138,7 +138,10 @@ Two templates live side by side. Pick by route, never by hand.
     V4CardGrid + V4Card, V4Prose, V4Split. Keep the copy short.
   * `site/components/v4/V4RowsPage.tsx` (+ `rowHarness.ts`, `rowTransforms.ts`)
     — pages made of generated homepage rows: `pickRows([...]).map(applySiteNav)`,
-    `replaceCopy(row, [[from, to]])`. The homepage is one of these.
+    `replaceCopy(row, [[from, to]])`. The homepage is one of these, and so are
+    /movies, /tv, /minidramas and /videos. V4RowsPage runs `applyRowFixes` on
+    every row (the hero's scene ticks become `<button>`s, never `href="#"`) and
+    plays the rows' own muted autoplay videos while they are on screen.
   * `site/css/v4-template.css` — all of the styling, scoped to `.v4t-*`
     classes, `html.v4t` (geometry, page ground) and `html.v4t-skin` (the dark
     Infima skin). The `--v4t-*` tokens are declared on every block root too,
@@ -156,7 +159,7 @@ Two templates live side by side. Pick by route, never by hand.
   SiteNavbar / SiteFooter directly, without Layout, so it has no html class.
   On /backup routes their internal links point at the /backup copies.
 * Every live page is on the v4 template, dark skin included — the Assistant
-  Director Team pages and the 133 articles too (Bryan, 2026-10-09: "switch all
+  Director Team pages and all the articles too (Bryan, 2026-10-09: "switch all
   other pages to the new template ... articles, and all those"). Their own
   overlays (level2.css, articles.css) are written for the dark skin.
   `<V4OwnDesign>` (`site/components/v4/templateContext.tsx`) still exists for a
@@ -167,10 +170,13 @@ Two templates live side by side. Pick by route, never by hand.
 * The `<style>` of a page or component: put it in `<Head>` or use
   `dangerouslySetInnerHTML` — never `<style>{CSS}</style>` in the body (the
   HTML minifier rewrites the CSS and React's hydration check then fails, #418).
+  Never render two sibling `<style>` elements in the body either (e.g. a page
+  `<style>` next to V4RowsPage's): the minifier merges adjacent `<style>` tags,
+  so hydration fails with #418. On a rows page, put page CSS in a row's `css`.
 
 ## The /articles section — where the SEO content lives
 
-The 133 SEO articles are authored OUTSIDE this repo, in
+The SEO articles are authored OUTSIDE this repo, in
 `~/BGit/all/film/marketing/seo/pages/<slug>/<slug>.md`, and published into the
 site by `scripts/sync-articles.js` (which `pnpm build` runs first). Everything in
 `site/pages/articles/`, `site/data/articles.json` and `site/static/llms.txt` is
@@ -189,6 +195,10 @@ plain text, not left as a link the build would reject.
 The sync also rewrites the dead CTA links the corpus was written with
 (`/signup`, `/demo`, `/compare`, `/level-2`, `/enterprise`) to destinations that
 resolve. `onBrokenLinks` is `"throw"`, so anything it misses fails the build.
+It also renames the "Level 2 team" (and "Level 2 package"/"option") to the
+public "Assistant Director Team" in the published copy, and ends each
+`articles.json` description at a sentence boundary instead of cutting it
+mid-sentence. The upstream corpus is not changed.
 
 The articles are **not** blog posts and must not move under `/blog`. They are
 evergreen reference pages; a visible post date makes a still-correct page look
@@ -198,7 +208,7 @@ stays for dated company news.
 
 Reader-facing entry points, all three of which must keep working:
 * `/articles` — the hub (`site/pages/articles.tsx`), the only inbound link most
-  of the 133 have.
+  of the articles have.
 * The **last** entry of the navbar "More" dropdown.
 * The **Resources** column of the footer — the load-bearing one, because the
   footer is server-rendered on every page and mobile has no More menu.
@@ -213,7 +223,10 @@ Reader-facing entry points, all three of which must keep working:
   keep the explicit AI-crawler allow list.
 * **Fonts load exactly once**, from the `headTags` block in
   `docusaurus.config.ts`. Do not add a `<link>` or a CSS `@import` for Google
-  Fonts anywhere else.
+  Fonts anywhere else. The one exception: V4RowsPage pages (/, /movies, /tv,
+  /minidramas, /videos) add ONE more stylesheet for the fonts only their
+  generated rows use (Antonio, Cabin, DM Sans, Teko...), with every family the
+  headTags link already loads stripped out of it, so no face loads twice.
 * **The site title is `ACT 3 AI`** and that is the one public spelling of the
   name. Docusaurus appends it to every page title, so it is also ~11 characters
   of every search result.

@@ -2,7 +2,7 @@
 title: "Free vs Paid AI Video: Where Free Tools Stop"
 description: "Free AI video generators are genuinely useful — for testing an idea, learning the medium, and making short clips you do not need to own commercially."
 keywords: ["free vs paid ai video generator", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

@@ -1,11 +1,11 @@
 ---
 title: "ROI of AI Video for Marketing Teams: Output and Cost"
-description: "The ROI of AI video for an in-house marketing team almost never comes from the cost of a single video. It comes from three compounding effects — output..."
+description: "The ROI of AI video for an in-house marketing team almost never comes from the cost of a single video. It comes from three compounding effects."
 keywords: ["roi of ai video for marketing teams", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "roi_ai_output"
 article_target_query: "roi of ai video for marketing teams"

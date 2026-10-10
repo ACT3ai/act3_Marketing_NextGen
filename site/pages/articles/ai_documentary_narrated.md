@@ -2,10 +2,10 @@
 title: "AI Documentary Maker: Narrated, Full-Length, and Sourced"
 description: "A documentary is not a long clip. It is a 60- to 120-minute argument, and the only way to know whether it works is to watch the whole thing."
 keywords: ["ai documentary maker from script", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_documentary_narrated"
 article_target_query: "ai documentary maker from script"
@@ -141,5 +141,5 @@ Your Organization legally owns all projects, content, and generated assets. Comm
 
 Bring the script, the treatment, or the research. Build it to length, and watch the whole film before you finish it.
 
-**[Start a production](https://app.act3ai.com/signup/)** — or **[talk to the ACT 3 Level 2 team](/level2)** about having our team take your script and your feedback all the way to a finished film.
+**[Start a production](https://app.act3ai.com/signup/)** — or **[talk to the ACT 3 Assistant Director Team](/level2)** about having our team take your script and your feedback all the way to a finished film.
 

@@ -1,11 +1,11 @@
 ---
 title: "Cheapest Way to Make Cinematic Video That Looks Directed"
-description: "The cheapest cinematic video is the one you do not shoot. Location fees, permits, crew days, and gear rental are the expensive part of \"cinematic\" — not..."
+description: "The cheapest cinematic video is the one you do not shoot. Location fees, permits, crew days, and gear rental are the expensive part of \"cinematic\"."
 keywords: ["cheapest way to make cinematic video", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "cheapest_way_still"
 article_target_query: "cheapest way to make cinematic video"

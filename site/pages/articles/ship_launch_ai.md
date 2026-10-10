@@ -2,7 +2,7 @@
 title: "Ship a Product Launch Video With AI Before the Deadline"
 description: "You can produce a launch video with AI by writing or importing the script, letting the platform automate the shot list, first frames, prompts, voiceover..."
 keywords: ["product launch video with ai", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

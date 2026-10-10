@@ -2,7 +2,7 @@
 title: "AI Ads Production Cost Per Variant in 2026"
 description: "In 2026 a 30-second AI ad variant costs roughly $12 to $83 to generate and finish on ACT 3 AI credits, averaged across a batch of ten."
 keywords: ["ai ads production cost per variant 2026", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-18

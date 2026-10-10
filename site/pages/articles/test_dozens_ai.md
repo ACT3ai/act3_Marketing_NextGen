@@ -1,11 +1,11 @@
 ---
 title: "A/B Test Dozens of Ad Variants by Rebuilding With AI"
-description: "You A/B test video ad variants with AI by treating the ad as a rebuildable production rather than a finished file: define the creative as structured data..."
+description: "You A/B test video ad variants with AI by treating the ad as a rebuildable production rather than a finished file: define the creative as structured data."
 keywords: ["ab test video ad variants with ai", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "test_dozens_ai"
 article_target_query: "ab test video ad variants with ai"
@@ -163,5 +163,5 @@ Run test rounds at lower render quality, with exact credit costs shown before ea
 
 The test is simple: take one of your current ads, define it as a production, and rebuild ten hook variants in an afternoon.
 
-**[See how ACT 3 AI compares for creative testing](/)** — the same mass-automation that rebuilds an entire feature film daily, pointed at your ad variants.
+**[See how ACT 3 AI compares for creative testing](/features)** — the same mass-automation that rebuilds an entire feature film daily, pointed at your ad variants.
 

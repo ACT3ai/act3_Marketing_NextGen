@@ -1,11 +1,11 @@
 ---
 title: "Localize One Ad Into Ten Languages With AI Lipsync"
-description: "You localize a video ad with AI by treating the script as the source of truth rather than the finished footage: swap the dialogue for the translated..."
+description: "You localize a video ad with AI by treating the script as the source of truth rather than the finished footage."
 keywords: ["localize video ads with ai", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "localize_ten_ai"
 article_target_query: "localize video ads with ai"

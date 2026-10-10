@@ -2,10 +2,10 @@
 title: "LTX Studio Alternative Built for Full-Length TV and Film"
 description: "If you are looking for an LTX Studio alternative for TV production, the question to ask is not \"which tool has better shots\" — it is which platform is..."
 keywords: ["ltx studio alternative for tv production", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-07-21
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ltx_studio_built"
 article_target_query: "ltx studio alternative for tv production"
@@ -93,7 +93,7 @@ Run any candidate — including ACT 3 — against these:
 9. Can you **control spend** per person and forecast it per job?
 10. Is there an option for **production help** if your team is short-staffed?
 
-On the last point: ACT 3 offers the optional **"Level 2 team"** package, where our team takes your feedback and makes the movie or episodes happen — for part or all of the production. That is a service most software alternatives simply do not offer.
+On the last point: ACT 3 offers the optional **Assistant Director Team** package, where our team takes your feedback and makes the movie or episodes happen — for part or all of the production. That is a service most software alternatives simply do not offer.
 
 ## Where a concepting tool is still the better answer
 
@@ -129,7 +129,7 @@ Yes. 4K ProRes masters per shot/scene/episode/season, FDX, PDF, EDL, MP4/MOV exp
 
 **Can you produce the show for us?**
 
-That is what the ACT 3 "Level 2 team" package is for — our team takes your script and your feedback and makes the production happen, for part or all of the work.
+That is what the ACT 3 Assistant Director Team package is for — our team takes your script and your feedback and makes the production happen, for part or all of the work.
 
 ## Compare it on your own show
 

@@ -2,7 +2,7 @@
 title: "ACT 3 AI vs InVideo: Templates or Real Filmmaking"
 description: "InVideo is a template-and-stock video editor with AI assistance — you start from a layout, swap in stock footage and your copy, and publish quickly."
 keywords: ["act3 ai vs invideo", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
   date: 2026-09-15

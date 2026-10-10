@@ -1,11 +1,11 @@
 ---
 title: "Who Owns Your AI Film? Keeping Full Production IP"
-description: "If you are evaluating an AI video tool and ownership matters, the question to ask is narrower than \"do I own the output?\" Most platforms will tell you the..."
+description: "If you are evaluating an AI video tool and ownership matters, the question to ask is narrower than \"do I own the output?\""
 keywords: ["ai video tool that keeps ip ownership", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_storing_protecting"
 article_target_query: "ai video tool that keeps ip ownership"

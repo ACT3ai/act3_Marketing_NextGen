@@ -1,11 +1,11 @@
 ---
 title: "The Best AI Filmmaking Software for Full Productions"
-description: "The best AI filmmaking software for you depends on whether you are making clips or making a film. If you need a 30-second hero shot, a prompt-to-video..."
+description: "The best AI filmmaking software for you depends on whether you are making clips or making a film."
 keywords: ["best ai filmmaking software", "AI filmmaking", "AI video generation"]
-image: "https://act3ai.com/img/Act3_Preview.jpg"
+image: "https://act3ai.com/img/act3-social-card.jpg"
 wrapperClassName: article-page
 last_update:
-  date: 2026-09-15
+  date: 2026-10-09
 # Provenance -- authored upstream, published by scripts/sync-articles.js.
 article_slug: "ai_software_productions"
 article_target_query: "best ai filmmaking software"
