@@ -26,6 +26,10 @@
  *         { flash: [x, y, w, h] },              // a pane flashes bright as it updates
  *         { layer: "img/b.jpg", box: [x, y, w, h], mode: "wipe" },// a region's picture changes
  *         { swap: "img/next.jpg", mode: "scan" },// the whole screen becomes another screenshot
+ *         { swap: "img/wide.jpg", fit: "contain" },  // keep a different-shaped screenshot whole (letterboxed)
+ *         { hl: [x, y, w, h] }, { unhl: true },  // a pressed menu-bar trigger
+ *         { menu: { at: [x, y], w: 1100, fs: 44, items: ["Columns ›", "✓ Show Sets", "—", "Visual Debugger|D"] } },
+ *         { menuHover: 2 }, { unmenu: true },     // pointer moves to menu row 2 (separators not counted) and lights it
  *         { progress: [x, y, w, h], label: "Importing", ms: 1500 },
  *         { sparkle: { from: [x, y], to: [x, y] } },
  *         { zoom: [x, y, w, h] }, { unzoom: true },
@@ -130,6 +134,9 @@
     this.inner.style.transition = "";
     this.root.style.removeProperty("--ga-z");
     if (this.base && this.base.getAttribute("src") !== this.baseSrc) this.base.setAttribute("src", this.baseSrc);
+    if (this.base) this.base.style.objectFit = "";
+    this.root.classList.remove("has-menu");
+    this.menuEl = null;
     this.captionEl.classList.remove("is-on");
     this.cursorEl.classList.remove("is-on");
     this.cx = this.W * 0.5;
@@ -163,9 +170,49 @@
     return this.logs[key];
   };
 
+  // A dropdown menu under a menu-bar trigger. m = { at: [x, y], w, fs, items: [...] }; an item is a
+  // label, "—" for a separator, "label|D" for a shortcut, a trailing " ›" for a submenu, "✓ label" checked.
+  Stage.prototype.menu = function (m) {
+    var mn = el("div", "ga-menu", this.ov);
+    mn.style.left = (m.at[0] / this.W) * 100 + "%";
+    mn.style.top = (m.at[1] / this.H) * 100 + "%";
+    mn.style.width = ((m.w || 1100) / this.W) * 100 + "%";
+    this.fs(mn, m.fs || 44);
+    m.items.forEach(function (it) {
+      if (it === "—") { el("div", "ga-menu-sep", mn); return; }
+      var row = el("div", "ga-menu-item", mn), parts = String(it).split("|");
+      var label = parts[0], sub = / ›$/.test(label);
+      if (sub) label = label.replace(/ ›$/, "");
+      var check = /^✓ /.test(label);
+      if (check) label = label.slice(2);
+      el("span", "ga-menu-check", row).textContent = check ? "✓" : "";
+      el("span", "ga-menu-label", row).textContent = label;
+      el("span", "ga-menu-key", row).textContent = sub ? "›" : parts[1] || "";
+    });
+    this.root.classList.add("has-menu");
+    this.menuEl = mn;
+    return mn;
+  };
+
+  /** Highlight menu row i (separators not counted); returns its center in image pixels. */
+  Stage.prototype.menuHot = function (i) {
+    if (!this.menuEl) return null;
+    var rows = this.menuEl.querySelectorAll(".ga-menu-item");
+    Array.prototype.forEach.call(rows, function (r, k) { r.classList.toggle("is-hot", k === i); });
+    var r = rows[i];
+    if (!r) return null;
+    var iw = this.inner.clientWidth || 1, ih = this.inner.clientHeight || 1;
+    var x = this.menuEl.offsetLeft + r.offsetLeft + r.offsetWidth * 0.32;
+    var y = this.menuEl.offsetTop + r.offsetTop + r.offsetHeight * 0.55;
+    return [(x / iw) * this.W, (y / ih) * this.H];
+  };
+
   Stage.prototype.drawStill = function () {
     var self = this;
     (this.o.still || []).forEach(function (s) {
+      if (s.hl) self.box(el("div", "ga-hl", self.ov), s.hl);
+      if (s.menu) self.menu(s.menu);
+      if (s.menuHover !== undefined) self.menuHot(s.menuHover);
       if (s.ring) self.ring(s);
       if (s.caption) { self.captionEl.textContent = s.caption; self.captionEl.classList.add("is-on"); }
       if (s.swap && self.base) self.base.setAttribute("src", s.swap);
@@ -276,6 +323,28 @@
       return this.sleep(s.ms || 700, token);
     }
 
+    if (s.hl) { this.box(el("div", "ga-hl", this.ov), s.hl); return this.sleep(s.ms || 150, token); }
+    if (s.unhl) { this.ov.querySelectorAll(".ga-hl").forEach(function (h) { h.remove(); }); return; }
+
+    if (s.menu) { this.menu(s.menu); return this.sleep(s.ms || 500, token); }
+    if (s.menuHover !== undefined) {
+      var at = this.menuHot(s.menuHover);
+      if (at) {
+        var mms = s.ms || 450;
+        this.cursorEl.classList.add("is-on");
+        this.cx = at[0];
+        this.cy = at[1];
+        this.placeCursor(mms);
+        await this.sleep(mms + 60, token);
+      }
+      return this.sleep(s.hold || 300, token);
+    }
+    if (s.unmenu) {
+      if (this.menuEl) { this.menuEl.remove(); this.menuEl = null; }
+      this.root.classList.remove("has-menu");
+      return;
+    }
+
     if (s.flash) {
       var f = this.box(el("div", "ga-flash", this.ov), s.flash);
       await this.sleep(s.ms || 850, token);
@@ -296,11 +365,13 @@
     if (s.swap) {
       var top = el("img", "ga-swap ga-swap-" + (s.mode || "fade"), this.inner);
       top.alt = "";
+      if (s.fit) top.style.objectFit = s.fit; // "contain" keeps a screenshot of another shape whole
       top.src = s.swap;
       await new Promise(function (r) { if (top.complete) r(); else { top.onload = r; top.onerror = r; } });
       requestAnimationFrame(function () { top.classList.add("is-in"); });
       await this.sleep(s.ms || 800, token);
       if (this.base) this.base.setAttribute("src", s.swap);
+      if (this.base && s.fit) this.base.style.objectFit = s.fit;
       this.ov.innerHTML = "";
       this.logs = {};
       top.remove();

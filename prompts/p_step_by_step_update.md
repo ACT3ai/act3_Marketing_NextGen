@@ -36,8 +36,9 @@ SHARED_KIT_DIR dir is {GUIDES_DIR}/_shared
       both Continue buttons, the screenshot frame, the detail section, Back, and the footer.
     * {SHARED_KIT_DIR}/guide.css and guide.js — layout and page behavior (classes .g-*).
     * {SHARED_KIT_DIR}/anim/anim.js (+ anim.css) — GuideAnim, the screenshot animator: cursor, click,
-      ring, typing into a box, chat post and AI reply, flash, region swap, whole-screen swap,
-      progress bar, sparkles, zoom, caption. Its header comment is the API. It works on ANY
+      ring, typing into a box, chat post and AI reply, flash, region swap, whole-screen swap
+      (fit "contain" for a screenshot of another shape), progress bar, sparkles, zoom, caption,
+      and a dropdown menu (hl a menu-bar trigger, menu, menuHover a row). Its header comment is the API. It works on ANY
       screenshot, in that image's own pixel coordinates.
     * GuideAnim.EDITOR (in anim.js) — the homepage editor screenshot, 5504 x 3072 coordinate space,
       with the boxes of its parts (input, post, log, script, toggle, firstFrame, timeline, ...).
@@ -113,6 +114,8 @@ THE_GUIDES are the eight guides below (number, folder, short button label, line 
   5  5_storyboard           Storyboard          Get the storyboard built for every shot.
   6  6_first_frame          Improve First Frame Perfect a shot's first frame, then return to the editor.
   7  7_build_videos         Build Videos        Build videos, improve the script, move through the timeline.
+  8  8_character_photos     Character from Photos  Add a character from your photos, then refine the look.
+  9  9_character_ai         AI-Built Character  Add a character and let ACT 3 AI draw the look.
   * Folder names and labels may be tightened by the guide's agent, but keep the leading number and
     keep the line beside each button at 12 words or fewer. If a folder is renamed, fix every link to it.
 
@@ -182,6 +185,8 @@ Create THE_LOG_FILE if it does not exist. Append a line to it at every stage bou
   5     | 5_storyboard            |       | [     ]  | [     ] |
   6     | 6_first_frame           |       | [     ]  | [     ] |
   7     | 7_build_videos          |       | [     ]  | [     ] |
+  8     | 8_character_photos      |       | [     ]  | [     ] |
+  9     | 9_character_ai          |       | [     ]  | [     ] |
 
   Plus one row for the shared kit:
   kit   | _shared                 |       | [     ]  | [     ] |
@@ -467,6 +472,11 @@ GUIDE 4: Create a new project with the AI Screenwriter writing your script
 * Explain Acts and Beats the way a screenwriter would, in one line each.
 
 GUIDE 5: Getting the storyboard built
+* STEP 1 IS FIXED (Bryan, 2026-10-19, "very, very critical"): from the Editor, the reader pulls down the
+  View menu in the menu bar, chooses Project Storyboard, and the screen transitions to the Storyboard.
+  It must be animated: GuideAnim steps hl (the View trigger), menu (the real View items, in production
+  order from act3ai-appclient MenuBarRadix.tsx), menuHover (Project Storyboard), click, then
+  swap to GuideAnim.EDITOR.storyboard with fit "contain". Every other step comes after it.
 * Path: the wizard's Storyboards for the full film decision and its progress wall, or, from the
   Editor, asking for the storyboard (the chat: "show me the storyboard") and the Storyboard page:
   read it shot by shot, regenerate a frame you do not like, approve.
@@ -493,6 +503,32 @@ GUIDE 7: Build videos, improve the script, and move through the timeline
   editor in {PRODUCTION_CODE_DIR}/p/editor and act3ai-appclient.
 * Motion idea: the editor row's chat typing a change ("change the set to a Maui beach, she carries a
   surfboard"), the pane flash, and the timeline scroll.
+
+GUIDE 8: Add a new character from your photos (added 2026-10-19, Appendix D)
+* Path, starting at the HOME page:
+  1. On Home, click Characters (the button beside the current film).
+  2. The Characters page (the cast wall) opens.
+  3. Review one character: open it and look at its character sheet.
+  4. Click the create / add new character button and upload photos (a headshot).
+  5. Let it render.
+  6. Show the result: the five-view CHARACTER SHEET built from the uploaded headshot, the headshot on the
+     left and the full-body views (front, back, left, right) beside it. Show one character's view there.
+  7. Click Edit on that character: transition to the Image Builder for the character.
+  8. Make a change there, for example a new hairstyle, build, and keep it.
+* Animate the critical moments: the Home click, the upload, the render, the sheet appearing, and the
+  Edit transition into the Image Builder.
+* Look in: {KEY_PAGES_DIR}/home, characters/list_of_characters, characters/character_view_one,
+  image_builder/character, new_project/character_image_upload; {PM_MOCK_DIR}/characters/*,
+  {PM_MOCK_DIR}/image_builder/character, {PM_MOCK_DIR}/new_project/character_image_upload; the
+  production cast pages in act3ai-appclient (src/pages/v2/projects/[projectId]/cast/).
+
+GUIDE 9: Add a new character and let ACT 3 AI generate the visuals (added 2026-10-19, Appendix D)
+* The same start as guide 8 (Home, Characters, the cast wall), but the new character is described in
+  words and ACT 3 AI generates the headshot and the five-view character sheet, instead of uploading
+  photos. Then review it, and change it with Edit in the Image Builder if needed.
+* Look in: the same folders as guide 8, plus {KEY_PAGES_DIR}/new_project/character_prompt_to_build and
+  {KEY_PAGES_DIR}/new_project/character_overview.
+* Guides 8 and 9 share their first steps; keep those steps' words and pictures the same in both.
 
 A.6  WRITING RULES
 -------------------
@@ -623,3 +659,31 @@ Interpretation notes:
   white text (A.2 item 2b). The guide 0 buttons use the same yellow primary style so the site has one
   primary button.
 * Every step is its own page; the last step's Continue returns to guide 0.
+
+
+
+
+====================================================================
+  APPENDIX D: BRYAN'S REQUEST FOR GUIDES 8 AND 9 (verbatim, 2026-10-19)
+====================================================================
+
+Create two new ones at the bottom. Think of them as number 8 and then number 9.
+Number 8 is adding a new character and uploading photos, and have that start at the home page.
+1. Click on the characters there.
+2. Go to the characters page and open that up.
+3. Review one.
+4. Hit Create New Character and upload the photos.
+5. Let it get rendered.
+6. Have it be where it can transition to Edit.
+After they upload a headshot, show that it then has what we call the 5-person view character sheet, with the headshot on the left and 5 more on each side of the body. Show the view of one character there after they upload the headshot. Now that we have a character sheet version of it, after that they go hit Edit, and we transition them over to the image builder for the character. Let's have it where they go make a change, maybe change the hairstyle or something like that.
+Build that as number 8, and then as number 9, have it where it creates a new character, but you have it generate the visuals. Create those two additional walkthroughs.
+
+Create the great graphics with it: Claude Design or Claude Motion or whatever, Claude Slides, whatever it is they used last time. You did a great job last time. Do whatever you did last time. You can look at the to/to directory to see what you did last time. Build those.
+
+Follow-up: When those were added, make sure the index page has the entry points to enter them and the Next buttons click through, and they'll all progress through.
+
+Interpretation notes:
+* "the 5-person view character sheet ... headshot on the left and 5 more on each side of the body" is the
+  five-view character sheet the key pages define: a shoulders-up headshot on the left beside full-body
+  front, back, left and right views.
+* "the index page" is guide 0 (and its copy /step_guides/index.html): it gets buttons for guides 8 and 9.

@@ -1,8 +1,9 @@
 import React from "react";
 import Head from "@docusaurus/Head";
-import { V4_ROWS } from "./_rows.generated";
+import { V4_ROWS, type V4Row } from "./_rows.generated";
 import V4RowsPage, { V4_PAGE_GROUND } from "../components/v4/V4RowsPage";
-import { applySiteNav } from "../components/v4/rowTransforms";
+import { applySiteNav, replaceCopy } from "../components/v4/rowTransforms";
+import { SIGNUP } from "../data/siteNav";
 
 /**
  * Route: /   (the homepage, https://act3ai.com/)
@@ -62,9 +63,41 @@ import { applySiteNav } from "../components/v4/rowTransforms";
  *    page stops every loop, timer, observer and listener on unmount.
  */
 
+/** The Step-by-Step Guide's table of contents: a static file (site/static/step_guides/), so a
+ *  root-relative link with a full page load (applyRowFixes skips data-v4-spa for file paths). */
+const LEARN_MORE_HREF = "/step_guides/0_step_by_step_guide/page_1.html";
+
+/**
+ * Hero (row 1): a secondary "Learn More ›" to the right of the main "Get Started ›" (Bryan,
+ * 2026-10-19). Not a primary button: a whitish outline, white text, see-through fill, the same
+ * height and type as Get Started. The whole rectangle is the link. Added here, not in the
+ * generated row, so a re-run of scripts/build-v4-rows.js keeps it.
+ */
+function addLearnMore(row: V4Row): V4Row {
+  if (row.row !== 1) return row;
+  const p = row.prefix;
+  const getStarted = `<a class="${p}-cta" href="${SIGNUP}">Get Started <span aria-hidden="true">›</span></a>`;
+  const out = replaceCopy(row, [
+    [getStarted, `${getStarted}\n        <a class="${p}-learn" href="${LEARN_MORE_HREF}">Learn More <span aria-hidden="true">›</span></a>`],
+  ]);
+  if (out === row) return row;
+  const css =
+    `.v4 .${p}-learn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; white-space: nowrap;` +
+    ` box-sizing: border-box; padding: 11px 28px; border: 2px solid rgba(255, 255, 255, 0.82); background: transparent;` +
+    ` color: #fff !important; font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 21px;` +
+    ` letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none !important; border-radius: 0;` +
+    ` -webkit-font-smoothing: antialiased; transition: background-color 160ms ease, border-color 160ms ease; }\n` +
+    `.v4 .${p}-learn span { font-size: 1.3em; line-height: 0.6; position: relative; top: -1px; }\n` +
+    `.v4 .${p}-learn:hover { background: rgba(255, 255, 255, 0.12); border-color: #fff; }\n` +
+    `.v4 .${p}-learn:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }\n` +
+    // The hero's own phone rule shrinks Get Started to 11px 22px / 19px; keep the pair the same height.
+    `@media (max-width: 760px) { .v4 .${p}-learn { padding: 9px 20px; font-size: 19px; } }\n`;
+  return { ...out, css: `${out.css}\n${css}` };
+}
+
 // Every row, with the hero nav / mobile menu / footer columns taken from site/data/siteNav.ts.
 // A module constant: V4RowsPage restarts the row engines if this array changes identity.
-const ROWS = V4_ROWS.map(applySiteNav);
+const ROWS = V4_ROWS.map(applySiteNav).map(addLearnMore);
 
 export default function Home(): React.JSX.Element {
   return (

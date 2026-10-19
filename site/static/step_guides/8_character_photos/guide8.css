@@ -1,0 +1,13 @@
+/*
+ * Guide 8 only (8_character_photos). The kit has no style for a picture inside the detail
+ * section, so the before/after character sheet on step 8 gets a framed figure here.
+ */
+.g8-figure { margin: 26px 0; }
+.g8-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px rgba(238, 188, 60, 0.22), 0 18px 44px rgba(0, 0, 0, 0.5);
+}
+.g8-figure figcaption { margin-top: 10px; color: var(--g-quiet); font-size: 14px; }
