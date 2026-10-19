@@ -1,0 +1,19 @@
+/* Guide 6 only: small framed stills inside the detail section (the shared kit has no gallery). */
+.g6-stills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin: 18px 0 22px;
+}
+.g6-stills figure { margin: 0; min-width: 0; }
+.g6-stills img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px rgba(238, 188, 60, 0.22), 0 14px 34px rgba(0, 0, 0, 0.5);
+}
+.g6-stills figcaption { margin-top: 8px; color: var(--g-quiet, #9a948a); font-size: 14px; line-height: 1.4; }
+.g6-stills.is-one { grid-template-columns: minmax(0, 640px); }
+.g6-checks { margin: 0 0 16px; padding-left: 22px; }
+.g6-checks li { margin: 6px 0; }

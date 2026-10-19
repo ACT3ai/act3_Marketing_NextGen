@@ -1,0 +1,10 @@
+/*
+ * Guide 7 only. Stages that ZOOM (a GuideAnim { zoom } step) scale their overlay text with the zoom,
+ * so the kit's 11 px floor becomes ~30 px on a phone. In a .g7-zoomed stage the floors are lowered to
+ * about 11 px / zoom factor, so the text reads at a normal size while zoomed. Without zoom nothing here
+ * applies (the kit's own sizes stand).
+ */
+.g7-zoomed .ga-ring-label { font-size: clamp(5px, calc(var(--ga-k) * 60px), 7px); padding: 1px 4px; border-radius: 2px; }
+.g7-zoomed .ga-input,
+.g7-zoomed .ga-post,
+.g7-zoomed .ga-log { font-size: max(4.5px, calc(var(--ga-k) * var(--ga-fs) * 1px)); }

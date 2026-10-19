@@ -21,10 +21,12 @@ export interface V4LinkProps extends Omit<React.AnchorHTMLAttributes<HTMLAnchorE
   newTab?: boolean;
   /** Internal links only: the route does not exist yet; skip the broken-link check. */
   pending?: boolean;
+  /** A static file outside the SPA (NavItem.plain): plain <a>, same tab, full page load. */
+  plain?: boolean;
 }
 
-export default function V4Link({ href, newTab, pending, children, ...rest }: V4LinkProps): React.JSX.Element {
-  if (isExternal(href)) {
+export default function V4Link({ href, newTab, pending, plain, children, ...rest }: V4LinkProps): React.JSX.Element {
+  if (plain || isExternal(href)) {
     const tab = newTab ? { target: "_blank", rel: "noopener noreferrer" } : {};
     return (
       <a href={href} {...tab} {...rest}>

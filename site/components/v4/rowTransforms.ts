@@ -38,7 +38,7 @@ const SELF_ORIGIN_RE = /^https?:\/\/(?:www\.)?act3ai\.com(?=$|[/?#])/i;
  */
 function linkHtml(item: NavItem, opts: { cls?: string; nav?: boolean; newTab?: boolean } = {}): string {
   const cls = opts.cls ? ` class="${opts.cls}"` : "";
-  if (isExternal(item.href)) {
+  if (item.plain || isExternal(item.href)) {
     const tab = opts.newTab || item.newTab ? ` target="_blank" rel="noopener noreferrer"` : "";
     return `<a${cls} href="${esc(item.href)}"${tab}>${esc(item.label)}</a>`;
   }

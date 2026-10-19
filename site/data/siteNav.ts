@@ -55,6 +55,12 @@ export interface NavItem {
    * opens every external link in a new tab.
    */
   newTab?: boolean;
+  /**
+   * A static file under site/static (e.g. the /step_guides/ HTML pages), not a
+   * Docusaurus route: render a plain <a> with a full page load, never the SPA
+   * router (which would show its 404 page for a path it has no route for).
+   */
+  plain?: boolean;
 }
 
 export interface FooterColumn {
@@ -88,6 +94,7 @@ export const MORE_NAV: NavItem[] = [
   { label: "MCP", href: "/mcp" },
   { label: "CLI", href: "/cli" },
   { label: "Documentation", href: LINKS.docs, newTab: true },
+  { label: "Step-by-Step Guide", href: "/step_guides/0_step_by_step_guide/page_1.html", plain: true },
   { label: "Articles", href: "/articles" },
 ];
 

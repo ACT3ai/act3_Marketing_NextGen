@@ -122,8 +122,9 @@ const V4_PRISM_THEME = {
 // docs and blog routes (V4DocsDrawer) lists these as its main menu. Built from
 // site/data/siteNav.ts so that drawer matches the top bar.
 const NAVBAR_ITEMS = [...PRIMARY_NAV, ...MORE_NAV, { label: "Sign in", href: SIGNIN }].map((item) =>
-  isExternal(item.href)
-    ? { href: item.href, label: item.label, position: "left" as const, target: "newTab" in item && item.newTab ? "_blank" : "_self" }
+  ("plain" in item && item.plain) || isExternal(item.href)
+    ? // pathname:// keeps a plain (static file) link out of the SPA router.
+      { href: "plain" in item && item.plain ? `pathname://${item.href}` : item.href, label: item.label, position: "left" as const, target: "newTab" in item && item.newTab ? "_blank" : "_self" }
     : { to: item.href, label: item.label, position: "left" as const, ...(item.href === "/" ? { activeBaseRegex: "^/$" } : {}) },
 );
 

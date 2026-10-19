@@ -1,0 +1,568 @@
+/*
+ * Step-by-Step Guide — the shared kit for every page under /step_guides/.
+ *
+ * Built by prompts/p_step_by_step_update.md (Appendix A). One stylesheet for guide 0 (the table of
+ * contents) and the seven walkthroughs, so they read as one product. Tokens are copied from
+ * site/css/v4-template.css (the homepage template), not imported: these pages are static HTML
+ * outside Docusaurus.
+ *
+ * Layout of a walkthrough page (A.2):
+ *   .g-top                      the site's top bar (logo, Step-by-Step Guide, Get Started)
+ *   .g-wrap > .g-rail           left step rail, 20% of the width or less, sticky on desktop
+ *           > .g-main           the wide right area: title, goal, Continue, screenshot, Continue, detail
+ *   .g-foot                     the site footer
+ */
+
+:root {
+  --g-ground: #0f0e0c;
+  --g-raised: #151419;
+  --g-panel: #1b1a1f;
+  --g-tray: #1f1e23;
+  --g-ink: #f5f4f1;
+  --g-body: #dcdbd7;
+  --g-muted: #c0beb7;
+  --g-quiet: #8f8e8a;
+  --g-rule: rgba(255, 255, 255, 0.055);
+  --g-rule-strong: rgba(255, 255, 255, 0.16);
+  --g-line: rgba(255, 255, 255, 0.12);
+  --g-edge: rgba(255, 255, 255, 0.2);
+  --g-yellow: #eebc3c;
+  --g-yellow-hi: #fcd648;
+  --g-yellow-deep: #c99a22;
+  --g-yellow-ink: #1a1405;
+  --g-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+  --g-ui: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --g-sans: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --g-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --g-gutter: clamp(16px, 3.4vw, 52px);
+  --g-maxw: 1560px;
+  --g-top-h: 72px;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--g-top-h) + 16px); }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* The homepage hero's ground: near-black with faint 48px rule lines. */
+  background-color: var(--g-ground);
+  background-image:
+    linear-gradient(var(--g-rule) 1px, transparent 1px),
+    linear-gradient(90deg, var(--g-rule) 1px, transparent 1px);
+  background-size: 48px 48px;
+  color: var(--g-body);
+  font-family: var(--g-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--g-yellow-hi); }
+a:hover { color: var(--g-yellow); }
+img { max-width: 100%; height: auto; }
+:focus-visible { outline: 2px solid var(--g-yellow-hi); outline-offset: 3px; }
+
+.g-skip {
+  position: absolute;
+  left: -9999px;
+  top: 8px;
+  z-index: 300;
+  background: var(--g-yellow);
+  color: var(--g-yellow-ink);
+  padding: 8px 14px;
+  font-weight: 700;
+}
+.g-skip:focus { left: 8px; }
+
+/* ── TOP BAR (the v4 template's .v4t-top, slimmed) ─────────────────────────── */
+.g-top {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: var(--g-top-h);
+  padding: 0 var(--g-gutter);
+  background: var(--g-ground);
+  border-bottom: 1px solid var(--g-rule-strong);
+  color: var(--g-ink);
+  font-family: var(--g-ui);
+}
+.g-top a { text-decoration: none; }
+.g-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--g-ink);
+  font-family: var(--g-display);
+  font-weight: 800;
+  font-size: 25px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.g-logo:hover { color: var(--g-ink); }
+.g-logo-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  background: var(--g-yellow);
+  color: var(--g-yellow-ink);
+  font-size: 21px;
+}
+.g-top-guide {
+  color: var(--g-muted);
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.g-top-guide:hover,
+.g-top-guide[aria-current] { color: var(--g-yellow-hi); }
+.g-top-spacer { flex: 1; }
+.g-top-signin { color: var(--g-muted); font-size: 15px; font-weight: 500; white-space: nowrap; }
+.g-top-signin:hover { color: var(--g-yellow-hi); }
+.g-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--g-yellow);
+  color: var(--g-yellow-ink) !important;
+  font-family: var(--g-display);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 9px 20px;
+  white-space: nowrap;
+  transition: background-color 160ms ease;
+}
+.g-cta:hover { background: var(--g-yellow-hi); }
+
+/* ── THE PRIMARY BUTTON: yellow fill, white text, right chevron (A.1, A.2 item 2b) ── */
+.g-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 48px;
+  padding: 10px 18px 10px 24px;
+  border: 0;
+  border-radius: 6px;
+  /* A slightly deeper gold toward the bottom keeps the white text readable. */
+  background: linear-gradient(180deg, var(--g-yellow) 0%, var(--g-yellow-deep) 100%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.28) inset, 0 6px 18px rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-family: var(--g-display);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-shadow: 0 1px 2px rgba(40, 26, 0, 0.75), 0 0 1px rgba(40, 26, 0, 0.6);
+  cursor: pointer;
+  transition: transform 140ms ease, box-shadow 140ms ease, filter 140ms ease;
+}
+.g-btn:hover {
+  color: #fff;
+  filter: brightness(1.07);
+  transform: translateY(-1px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 10px 24px rgba(0, 0, 0, 0.45);
+}
+.g-btn:active { transform: translateY(0); filter: brightness(0.97); }
+.g-btn-chev { flex: none; width: 20px; height: 20px; filter: drop-shadow(0 1px 1px rgba(40, 26, 0, 0.7)); }
+
+/* ── PAGE WRAP ─────────────────────────────────────────────────────────────── */
+.g-wrap {
+  flex: 1;
+  overflow-x: clip;
+  width: 100%;
+  max-width: var(--g-maxw);
+  margin: 0 auto;
+  padding: 36px var(--g-gutter) 72px;
+}
+
+/* ── GUIDE 0: THE TABLE OF CONTENTS (A.1) ──────────────────────────────────── */
+.g-toc-head { max-width: 860px; margin: 24px 0 36px; }
+.g-eyebrow {
+  margin: 0 0 10px;
+  color: var(--g-yellow);
+  font-family: var(--g-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.g-h1 {
+  margin: 0;
+  color: var(--g-ink);
+  font-family: var(--g-display);
+  font-weight: 800;
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 0.98;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+.g-lead { margin: 16px 0 0; max-width: 680px; color: var(--g-muted); font-size: 19px; }
+.g-toc {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+  max-width: 980px;
+}
+.g-toc-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  align-items: center;
+  gap: 26px;
+  padding: 14px 22px 14px 14px;
+  background: linear-gradient(90deg, rgba(27, 26, 31, 0.92), rgba(21, 20, 25, 0.75));
+  border: 1px solid var(--g-line);
+  border-radius: 10px;
+  transition: border-color 160ms ease, transform 160ms ease, background-color 160ms ease;
+}
+.g-toc-row:hover { border-color: rgba(238, 188, 60, 0.55); transform: translateX(3px); }
+.g-toc-row .g-btn { width: 100%; }
+.g-toc-btn-text { display: inline-flex; align-items: baseline; gap: 12px; }
+.g-toc-num { font-family: var(--g-mono); font-size: 15px; opacity: 0.92; letter-spacing: 0; }
+.g-toc-desc { margin: 0; color: var(--g-body); font-size: 17px; line-height: 1.45; }
+/* The whole row clicks through to the guide (the button is the real link). */
+.g-toc-row .g-btn::after { content: ""; position: absolute; inset: 0; border-radius: 10px; }
+.g-toc-group {
+  margin: 30px 0 4px;
+  color: var(--g-quiet);
+  font-family: var(--g-mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.g-toc-group:first-child { margin-top: 0; }
+.g-toc-art {
+  position: absolute;
+  right: var(--g-gutter);
+  top: 30px;
+  width: min(34vw, 420px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ── WALKTHROUGH: TWO COLUMNS (A.2) ────────────────────────────────────────── */
+.g-guide {
+  display: grid;
+  grid-template-columns: minmax(196px, 20%) minmax(0, 1fr);
+  gap: clamp(24px, 3vw, 48px);
+  align-items: start;
+}
+
+/* LEFT: THE STEP RAIL */
+.g-rail {
+  position: sticky;
+  top: calc(var(--g-top-h) + 24px);
+  max-height: calc(100vh - var(--g-top-h) - 48px);
+  overflow-y: auto;
+  padding-bottom: 8px;
+}
+.g-crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 10px;
+  color: var(--g-muted);
+  font-family: var(--g-ui);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-decoration: none;
+}
+.g-crumb:hover { color: var(--g-yellow-hi); }
+.g-crumb svg { flex: none; width: 16px; height: 16px; }
+.g-rail-now {
+  margin: 0 0 18px;
+  color: var(--g-ink);
+  font-family: var(--g-display);
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+.g-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.g-step {
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  align-items: start;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 6px;
+  color: var(--g-muted);
+  font-family: var(--g-ui);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.3;
+  text-decoration: none;
+  /* A label stays within three lines (A.2). */
+  overflow: hidden;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+.g-step:hover { background: rgba(255, 255, 255, 0.06); color: var(--g-ink); }
+.g-step-num {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--g-edge);
+  border-radius: 50%;
+  font-family: var(--g-mono);
+  font-size: 12px;
+  line-height: 1;
+}
+.g-step-label {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  padding-top: 3px;
+}
+.g-step.is-done .g-step-num { border-color: rgba(238, 188, 60, 0.6); color: var(--g-yellow); }
+/* The selected step: the dominant fill, white text. */
+.g-step[aria-current="step"] {
+  background: linear-gradient(180deg, var(--g-yellow) 0%, var(--g-yellow-deep) 100%);
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(40, 26, 0, 0.75);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+.g-step[aria-current="step"] .g-step-num { border-color: rgba(255, 255, 255, 0.85); color: #fff; }
+
+/* RIGHT: THE WIDE AREA */
+.g-main { min-width: 0; }
+.g-step-of {
+  margin: 0 0 8px;
+  color: var(--g-yellow);
+  font-family: var(--g-mono);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.g-title {
+  margin: 0;
+  color: var(--g-ink);
+  font-family: var(--g-display);
+  font-weight: 800;
+  font-size: clamp(36px, 4.4vw, 60px);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+.g-goal { margin: 16px 0 0; max-width: 980px; color: var(--g-body); font-size: 20px; line-height: 1.5; }
+.g-goal strong { color: var(--g-ink); }
+.g-continue-row { display: flex; justify-content: flex-end; align-items: center; gap: 18px; margin: 18px 0; }
+.g-continue-note { color: var(--g-quiet); font-size: 14px; }
+
+/* THE SCREENSHOT FRAME: thin warm rim + deep shadow so its edges read (like homepage row 4). */
+.g-shot {
+  position: relative;
+  margin: 0;
+  border-radius: 10px;
+  background: #0b0b0d;
+  box-shadow:
+    0 0 0 1px rgba(238, 188, 60, 0.22),
+    0 0 0 6px rgba(255, 255, 255, 0.025),
+    0 30px 70px rgba(0, 0, 0, 0.6),
+    0 0 120px rgba(238, 188, 60, 0.05);
+  overflow: hidden;
+}
+.g-shot > img,
+.g-shot .ga-stage { display: block; width: 100%; height: auto; }
+/* Too tall at full width: cap the height and let the frame narrow (A.2 item 3). */
+.g-shot.is-tall { max-width: min(100%, calc((100vh - var(--g-top-h) - 120px) * var(--g-shot-ratio, 0.75))); margin: 0 auto; }
+.g-shot figcaption,
+.g-shot-cap {
+  margin: 10px 2px 0;
+  color: var(--g-quiet);
+  font-size: 14px;
+}
+
+/* A static callout ring placed in % of the image (left, top, width, height). */
+.g-ring {
+  position: absolute;
+  border: 3px solid var(--g-yellow-hi);
+  border-radius: 8px;
+  box-shadow: 0 0 0 4px rgba(252, 214, 72, 0.25), 0 0 26px rgba(252, 214, 72, 0.55);
+  pointer-events: none;
+  animation: g-ring-pulse 2.2s ease-in-out infinite;
+}
+.g-ring-label {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%);
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: var(--g-yellow);
+  color: var(--g-yellow-ink);
+  font-family: var(--g-ui);
+  font-weight: 700;
+  font-size: 13px;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+.g-ring-label.is-below { bottom: auto; top: calc(100% + 8px); }
+@keyframes g-ring-pulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(252, 214, 72, 0.22), 0 0 22px rgba(252, 214, 72, 0.45); }
+  50% { box-shadow: 0 0 0 9px rgba(252, 214, 72, 0.08), 0 0 34px rgba(252, 214, 72, 0.7); }
+}
+
+/* DETAIL under the screenshot */
+.g-detail { max-width: 980px; margin-top: 40px; }
+.g-detail h2 {
+  margin: 34px 0 10px;
+  color: var(--g-ink);
+  font-family: var(--g-display);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.g-detail h2:first-child { margin-top: 0; }
+.g-detail h3 { margin: 22px 0 6px; color: var(--g-ink); font-family: var(--g-ui); font-size: 19px; }
+.g-detail p { margin: 0 0 14px; }
+.g-detail ul,
+.g-detail ol { margin: 0 0 16px; padding-left: 22px; }
+.g-detail li { margin: 4px 0; }
+.g-detail strong { color: var(--g-ink); }
+.g-ui {
+  /* A control's name as the screen shows it. */
+  padding: 1px 7px;
+  border: 1px solid var(--g-edge);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--g-ink);
+  font-family: var(--g-ui);
+  font-weight: 600;
+  font-size: 0.92em;
+  white-space: nowrap;
+}
+.g-decision {
+  margin: 22px 0;
+  padding: 18px 22px;
+  border: 1px solid rgba(238, 188, 60, 0.4);
+  border-left: 4px solid var(--g-yellow);
+  border-radius: 8px;
+  background: rgba(238, 188, 60, 0.06);
+}
+.g-decision > :last-child { margin-bottom: 0; }
+.g-decision-title {
+  margin: 0 0 8px !important;
+  color: var(--g-yellow-hi);
+  font-family: var(--g-mono);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.g-tip {
+  margin: 18px 0;
+  padding: 14px 18px;
+  border-radius: 8px;
+  background: var(--g-panel);
+  border: 1px solid var(--g-line);
+  color: var(--g-muted);
+  font-size: 16px;
+}
+.g-tip > :last-child { margin-bottom: 0; }
+
+/* BOTTOM: quiet Back on the left, Continue on the right */
+.g-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 44px;
+  padding-top: 22px;
+  border-top: 1px solid var(--g-line);
+}
+.g-back { color: var(--g-muted); font-family: var(--g-ui); font-weight: 600; font-size: 15px; text-decoration: none; }
+.g-back:hover { color: var(--g-yellow-hi); }
+
+/* ── FOOTER ────────────────────────────────────────────────────────────────── */
+.g-foot {
+  border-top: 1px solid var(--g-line);
+  background: var(--g-ground);
+  color: var(--g-quiet);
+  font-size: 14px;
+}
+.g-foot-in {
+  max-width: var(--g-maxw);
+  margin: 0 auto;
+  padding: 26px var(--g-gutter);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 28px;
+}
+.g-foot a { color: var(--g-muted); text-decoration: none; }
+.g-foot a:hover { color: var(--g-yellow-hi); }
+.g-foot nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+
+/* ── PHONE AND TABLET ──────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .g-guide { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .g-rail {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+  .g-rail-now { font-size: 22px; margin-bottom: 12px; }
+  /* The step list becomes a compact horizontal strip. */
+  .g-steps {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    padding-bottom: 6px;
+    margin: 0 calc(-1 * var(--g-gutter));
+    padding-left: var(--g-gutter);
+    padding-right: var(--g-gutter);
+  }
+  .g-steps li { flex: none; scroll-snap-align: start; }
+  .g-step { grid-template-columns: 24px auto; max-width: 220px; padding: 7px 10px; font-size: 14px; }
+  .g-step-label { -webkit-line-clamp: 2; }
+  .g-goal { font-size: 18px; }
+  .g-toc-row { grid-template-columns: 1fr; gap: 10px; padding: 12px; }
+  .g-toc-desc { padding: 0 4px 2px; }
+  .g-toc-art { display: none; }
+  .g-top-guide { display: none; }
+  .g-shot.is-tall { max-width: 100%; }
+}
+@media (max-width: 520px) {
+  .g-top { gap: 14px; }
+  .g-top-signin { display: none; }
+  .g-cta { font-size: 15px; padding: 8px 14px; }
+  .g-btn { font-size: 18px; min-height: 46px; }
+  .g-continue-row { justify-content: stretch; }
+  .g-continue-row .g-btn { flex: 1; }
+  .g-continue-note { display: none; }
+  .g-bottom { flex-wrap: wrap; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}

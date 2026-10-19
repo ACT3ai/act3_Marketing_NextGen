@@ -40,6 +40,7 @@ function NavItemLink({ item, pathname, className }: { item: NavItem; pathname: s
       href={item.href}
       newTab={item.newTab}
       pending={item.pending}
+      plain={item.plain}
       className={className}
       aria-current={currentAttr(item.href, pathname)}
     >
