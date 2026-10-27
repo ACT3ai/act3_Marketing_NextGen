@@ -455,6 +455,8 @@ const config: Config = {
             "/blog/tags",
             "/blog/tags/**",
             "/blog/archive",
+            // Redirect stub: merged into /blog/welcome (site/pages/info/launch.tsx).
+            "/info/launch",
           ],
           // One priority for every URL says nothing about what matters. This
           // ranks the homepage and the article hub above the articles, and the

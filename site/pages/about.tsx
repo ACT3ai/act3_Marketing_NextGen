@@ -64,6 +64,74 @@ export default function About(): React.ReactNode {
           </V4Split>
         </V4Section>
 
+        {/* Why, who for, what is different, who leads: facts from ~/BGit/all/film/Small_ACT3.md
+            (mission, "market of abandonment", founding team) and seo/key_values.txt (the five
+            differentiators and the three audiences). Invent none. */}
+        <V4Section eyebrow="Why we built it" heading="Too many stories" highlight="never get made.">
+          <V4Prose>
+            <p>
+              Our mission: write less, keep more creative control, and spend far less labor. Many would-be filmmakers
+              give up when they see the work involved; a single video can take six weeks of manual effort. ACT 3 AI
+              takes a rough idea or a finished script and turns it into a production-ready, AI-generated movie or
+              video, with scenes, cinematography, lighting and 3D set control, so the budget goes to creativity
+              instead of logistics.
+            </p>
+            <p>
+              It is a director&apos;s toolkit, not another prompt box: you stay in the loop at every decision, and the
+              platform keeps hundreds of shots consistent across a whole film or series.
+            </p>
+          </V4Prose>
+        </V4Section>
+
+        <V4Section tone="raised" eyebrow="Who it is for" heading="Three kinds of" highlight="storytellers.">
+          <V4CardGrid columns={3}>
+            <V4Card title="Content creators and YouTubers" text="Videos for your channel, made at the pace you publish." />
+            <V4Card title="Brands and marketing agencies" text="Ads and marketing videos with the same characters in every shot." />
+            <V4Card title="Storytellers and filmmakers" text="Movies, TV series and minidramas from your own screenplay." />
+          </V4CardGrid>
+        </V4Section>
+
+        <V4Section eyebrow="What is different" heading="Five things that" highlight="set ACT 3 apart.">
+          <V4CardGrid columns={3}>
+            <V4Card
+              eyebrow="01"
+              title="Automation that saves time"
+              text="First frames, video prompts and character sheets with the right outfits are created for you."
+            />
+            <V4Card
+              eyebrow="02"
+              title="Serious production"
+              text="TV and movies in two- to three-hour sprints, with your intellectual property stored and your team working in one place."
+            />
+            <V4Card
+              eyebrow="03"
+              title="A whole movie, rebuilt daily"
+              text="Import a script and build the entire movie, then rebuild it every day from the prior day's feedback."
+            />
+            <V4Card
+              eyebrow="04"
+              title="Assistant Director Team"
+              text="An optional package: our team takes your feedback into your movie and makes it happen."
+              href="/level2"
+            />
+            <V4Card
+              eyebrow="05"
+              title="Watch the whole film"
+              text="One unified timeline: zoom around a two-hour movie and watch every clip flow together, as in Premiere."
+            />
+          </V4CardGrid>
+        </V4Section>
+
+        <V4Section tone="raised" eyebrow="Who leads it" heading="Built by a" highlight="repeat entrepreneur.">
+          <V4Prose>
+            <p>
+              ACT 3 AI is led by CEO Bryan Starbuck: nine years at Microsoft, nine years of ML and AI experience,
+              founding-stage CTO at Assurance, and exits including TalentSpring (acquired by JobVite), ZenLedger and
+              WealthFlex (acquired by YieldStreet).
+            </p>
+          </V4Prose>
+        </V4Section>
+
         <V4Section eyebrow="Our values" heading="What we" highlight="stand for.">
           <V4CardGrid columns={3}>
             <V4Card eyebrow="01" title="Story first" text="You're a creative, not a prompt engineer." />

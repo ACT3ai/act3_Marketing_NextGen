@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
-import { V4Hero, V4Section, V4CardGrid, V4Card } from "../components/v4/V4Blocks";
+import { V4Hero, V4Section, V4CardGrid, V4Card, V4Prose } from "../components/v4/V4Blocks";
 
 /*
  * The platform detection and clipboard behaviour come from ONE shared script that
@@ -265,6 +265,48 @@ export default function Cli(): React.ReactNode {
               href="/mcp"
             />
           </V4CardGrid>
+        </V4Section>
+
+        {/* Facts and commands from the public CLI's own README (github.com/ACT3ai/cli). */}
+        <V4Section eyebrow="What it does" heading="Direct your movie" highlight="from the shell.">
+          <V4Prose>
+            <p>
+              The <code>act3</code> command line tool directs an ACT 3 production from your terminal: find shots,
+              change your movie, generate video, and move files between ACT 3 and your disk. It is one compiled
+              binary per platform, with nothing to build and no runtime to install.
+            </p>
+            <p>
+              One command does one thing, in the form <code>act3 &lt;noun&gt; &lt;verb&gt; [ids] [flags]</code>. To
+              act on many shots, use <code>act3 select</code> to get their ids and <code>act3 batch create</code> to act
+              on them, or a shell loop. Finding things and editing your movie are free; generating pixels and sound
+              spends credits.
+            </p>
+            <h3>Install and sign in</h3>
+            <pre>
+              <code>{`git clone https://github.com/ACT3ai/cli.git
+cd cli
+sudo install -m 755 bin/Mac-Apple_Silicon/act3 /usr/local/bin/act3   # your platform here
+act3 login     # opens your browser and hands the credential back
+act3 status    # which backend, signed in, reachable`}</code>
+            </pre>
+            <p>
+              On a machine with no browser, sign in with <code>act3 login --api-key &lt;your-api-key&gt;</code>. On
+              Windows, copy <code>act3.exe</code> into a directory on your <code>PATH</code>.
+            </p>
+            <h3>Learn any command</h3>
+            <p>
+              Every command documents itself, down to each flag&apos;s values and an example that runs:{" "}
+              <code>act3 &lt;noun&gt; --help</code> lists every verb for a noun, and{" "}
+              <code>act3 &lt;noun&gt; &lt;verb&gt; --help</code> shows every flag. Add <code>--json</code> to print
+              exactly what ACT 3 sent, one line, ready for <code>jq</code>, and <code>--project-id</code> to act on one
+              project without moving your cursor.
+            </p>
+            <p>
+              Prefer plain language over commands? The <a href="/mcp">ACT 3 MCP</a> gives Claude Code, Codex and other
+              AI agents the same actions. How to use the app itself is in the{" "}
+              <a href="https://documentation.act3ai.com/">documentation</a>.
+            </p>
+          </V4Prose>
         </V4Section>
 
         <V4Section
