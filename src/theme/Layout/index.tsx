@@ -28,6 +28,18 @@ import { useV4Skin } from "@site/site/components/v4/templateContext";
 
 type Props = WrapperProps<typeof LayoutType>;
 
+/** Routes served but kept out of search indexes (and out of the sitemap). */
+function isNoindexPath(pathname: string): boolean {
+  const p = pathname.replace(/\/+$/, "") || "/";
+  return (
+    p === "/docs" ||
+    p.startsWith("/docs/") ||
+    p === "/blog/tags" ||
+    p.startsWith("/blog/tags/") ||
+    p === "/blog/archive"
+  );
+}
+
 export default function LayoutWrapper(props: Props): React.ReactNode {
   const { pathname } = useLocation();
   const skin = useV4Skin();
@@ -43,9 +55,10 @@ export default function LayoutWrapper(props: Props): React.ReactNode {
         </Head>
       ) : null}
       {/* /docs/** is a stale local copy of the live docs at
-          documentation.act3ai.com: reachable, never indexed (and out of the
-          sitemap, docusaurus.config.ts). */}
-      {pathname === "/docs" || pathname.startsWith("/docs/") ? (
+          documentation.act3ai.com, and the blog's tag and archive pages are
+          thin index machinery: reachable, never indexed (isNoindexPath mirrors
+          the sitemap ignorePatterns in docusaurus.config.ts). */}
+      {isNoindexPath(pathname) ? (
         <Head>
           <meta name="robots" content="noindex, follow" />
         </Head>
