@@ -262,6 +262,15 @@ const config: Config = {
       tagName: "link",
       attributes: { rel: "stylesheet", href: GOOGLE_FONTS_HREF },
     },
+    // GitHub Pages cannot send a Referrer-Policy header; this meta gives
+    // browsers the same policy. (HSTS, nosniff and CSP still need a CDN.)
+    {
+      tagName: "meta",
+      attributes: {
+        name: "referrer",
+        content: "strict-origin-when-cross-origin",
+      },
+    },
     // ---- Structured data ----
     {
       tagName: "script",
