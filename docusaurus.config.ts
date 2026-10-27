@@ -1,10 +1,11 @@
 import { execFileSync } from "node:child_process";
-import { readdirSync, readFileSync, statSync } from "node:fs";
-import { join } from "node:path";
+import { mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import { dirname, join } from "node:path";
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 import { isExternal, MORE_NAV, PRIMARY_NAV, SIGNIN } from "./site/data/siteNav";
+import { ROWS_SHEET_CSS, ROWS_SHEET_HREF } from "./site/components/v4/rowsSheet";
 
 // The one canonical public spelling of the company. Docusaurus appends this to
 // every page title ("<page> | ACT 3 AI"), so it is also 11 characters of every
@@ -239,6 +240,22 @@ function stepGuideSitemapItems(dir = "site/static/step_guides") {
   return items;
 }
 
+/**
+ * Writes the shared stylesheet of the generated-row pages (site/components/v4/rowsSheet.ts)
+ * into the build, at its content-hashed path. V4RowsPage links it in production
+ * builds, so the homepage HTML no longer inlines ~220 KB of row CSS.
+ */
+function v4RowsSheetPlugin() {
+  return {
+    name: "v4-rows-sheet",
+    async postBuild({ outDir }: { outDir: string }) {
+      const file = join(outDir, ROWS_SHEET_HREF);
+      mkdirSync(dirname(file), { recursive: true });
+      writeFileSync(file, ROWS_SHEET_CSS, "utf8");
+    },
+  };
+}
+
 const config: Config = {
   title: BRAND,
   tagline: TAGLINE,
@@ -270,6 +287,12 @@ const config: Config = {
         name: "referrer",
         content: "strict-origin-when-cross-origin",
       },
+    },
+    // The generated-row pages' shared stylesheet, fetched at idle on every page so
+    // an in-app (SPA) move to /, /movies, /tv, /minidramas or /videos finds it cached.
+    {
+      tagName: "link",
+      attributes: { rel: "prefetch", href: ROWS_SHEET_HREF, as: "style" },
     },
     // ---- Structured data ----
     {
@@ -385,6 +408,8 @@ const config: Config = {
   },
 
   staticDirectories: ["site/static"],
+
+  plugins: [v4RowsSheetPlugin],
 
   presets: [
     [

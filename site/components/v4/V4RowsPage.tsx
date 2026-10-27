@@ -11,7 +11,9 @@
  *     return (<><Head>...title + meta...</Head><V4RowsPage rows={ROWS} /></>);
  *   }
  *
- * It renders, top to bottom: one <style> (the page CSS below + every row's CSS),
+ * It renders, top to bottom: one <style> (in production only what the page adds to
+ * its rows; the page CSS and the rows' own CSS are the shared stylesheet of
+ * rowsSheet.ts; the dev server inlines everything),
  * a skip link, V4Header if no row brings the hero top bar, the rows, a navy
  * "Get Started" band after every `ctaEvery`-th row (never after the last), and
  * V4Footer if no row brings the footer. Every row after a leading top-bar row
@@ -38,9 +40,11 @@ import { useRowEngines } from "./rowHarness";
 import { applyRowFixes } from "./rowTransforms";
 import V4Header from "./V4Header";
 import V4Footer from "./V4Footer";
+import { ROWS_SHEET_HREF, rowsInlineCss } from "./rowsSheet";
 
-/** The hero's ground colour, so overscroll and the area under a short page match it. */
-export const V4_PAGE_GROUND = "#060b18";
+// V4_PAGE_GROUND and the page CSS moved to rowsSheet.ts (pure strings, so
+// docusaurus.config.ts can write them into the shared rows stylesheet).
+export { V4_PAGE_GROUND } from "./rowsSheet";
 
 interface FontFamily {
   name: string;
@@ -84,187 +88,6 @@ function rowsFontHref(href: string, siteHref: string): string {
   return params.some((kv) => kv.startsWith("family=")) ? `${base}?${params.join("&")}` : "";
 }
 
-const PAGE_CSS = `
-/* Route-scoped: this <style> unmounts when the SPA navigates away. */
-html, body { background: ${V4_PAGE_GROUND}; }
-
-.v4 {
-  position: relative;
-  background: ${V4_PAGE_GROUND};
-  /* The rows were designed in a bare document, not under Infima's html font. */
-  line-height: normal;
-  overflow-wrap: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: auto;
-  -moz-osx-font-smoothing: auto;
-  overflow-x: clip;
-}
-.v4-row { display: block; }
-
-/* Roll Infima's element rules back to the browser defaults the rows were built
-   against. Specificity is at most one element (+ one pseudo-class), so it beats
-   Infima by source order and loses to every row rule (all of which start with .v4). */
-:where(.v4) * { box-sizing: revert; }
-:where(.v4) :is(h1, h2, h3, h4, h5, h6) {
-  color: revert; font-family: revert; font-weight: revert; font-size: revert;
-  line-height: revert; margin: revert;
-}
-:where(.v4) p { margin: revert; }
-:where(.v4) :is(ul, ol) { margin: revert; padding-left: revert; }
-:where(.v4) a { color: revert; text-decoration: revert; transition: revert; }
-:where(.v4) a:hover { color: revert; text-decoration: revert; }
-:where(.v4) img { max-width: revert; }
-:where(.v4) strong { font-weight: revert; }
-:where(.v4) :is(code, pre, kbd, blockquote, hr) { all: revert; }
-
-/* [Get Started] call-to-action band between every ctaEvery rows (not after the last row).
-   Solid CTA yellow with dark text, the primary-button look from design_input.md. */
-.v4-cta { display: flex; justify-content: center; padding: 56px 16px; }
-.v4 .v4-cta__btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 16px 40px; border-radius: 999px;
-  background: #eebc3c; color: #14100a;
-  font: 700 18px/1 Inter, system-ui, sans-serif; letter-spacing: 0.01em;
-  text-decoration: none;
-  box-shadow: 0 10px 30px rgba(238, 188, 60, 0.22);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-}
-.v4 .v4-cta__btn:hover { background: #f2c756; color: #14100a; text-decoration: none; transform: translateY(-1px); box-shadow: 0 14px 36px rgba(238, 188, 60, 0.32); }
-.v4 .v4-cta__btn:focus-visible { outline: 3px solid #f2c756; outline-offset: 4px; }
-.v4 .v4-cta__arrow { font-size: 20px; line-height: 1; }
-@media (prefers-reduced-motion: reduce) { .v4 .v4-cta__btn { transition: none; } .v4 .v4-cta__btn:hover { transform: none; } }
-
-/* Skip link: hidden until it gets keyboard focus. */
-.v4-skip {
-  position: absolute; left: 16px; top: 16px; z-index: 1000;
-  padding: 10px 16px; background: #eebc3c; color: #14100a;
-  font: 700 16px/1.2 Inter, system-ui, sans-serif; text-decoration: none;
-  transform: translateY(-200%);
-}
-.v4-skip:focus { transform: none; }
-.v4-main { display: block; }
-
-/* The hero's MENU panel (rewritten by applySiteNav to 15 entries) lives inside the
-   hero stage (z-index 1), under the hero's card desk (z-index 12). While the MENU
-   is open, lift the stage above the desk, and let a short viewport scroll the panel.
-   Prefix-free (suffix selectors) so it survives a regeneration. */
-.v4 [class$="-stage"]:has(> [class$="-top"] details[open]) { z-index: 60; }
-.v4 [class$="-top"] details[open] > [class$="-menu-pop"] { max-height: calc(100vh - 96px); overflow-y: auto; }
-
-/* The hero's scene ticks, <a href="#"> in the generated markup, are rendered as
-   <button data-v4-tick> by applyRowFixes. Strip the button chrome so they look and
-   size exactly as the links did: specificity (0,1,1) loses to the row's own
-   .v4 .{prefix}-tick rules (0,2,0), which keep their size, colour and cursor. */
-:where(.v4) button[data-v4-tick] {
-  -webkit-appearance: none; appearance: none;
-  margin: 0; padding: 0; border: 0; border-radius: 0;
-  background: transparent; color: inherit; font: inherit; line-height: inherit;
-  min-width: 0; text-align: inherit;
-}
-
-/* The hero top bar on narrow phones: the same steps as V4Header (v4-template.css),
-   so MENU stays on screen at 320-400px. */
-@media (max-width: 400px) {
-  .v4 [class$="-top"] > [class$="-actions"] { gap: 8px; }
-  .v4 [class$="-top"] [class$="-cta-sm"] { padding: 9px 10px; font-size: 15px; letter-spacing: 0.04em; }
-}
-@media (max-width: 359px) {
-  .v4 [class$="-top"] [class$="-cta-sm"] { display: none; }
-}
-
-/* Touch targets (all prefix-free, so they survive a regeneration). ─────────── */
-/* The hero top bar once it collapses to GET STARTED + MENU: both at least 40px tall
-   (the generated rules make them 36px), text still centred. GET STARTED is already
-   inline-flex, and must not get a display here: that would undo the max-width:
-   359px rule above that hides it. */
-@media (max-width: 1080px) {
-  .v4 [class$="-top"] [class$="-cta-sm"] { box-sizing: border-box; min-height: 40px; align-items: center; }
-  .v4 [class$="-top"] details > summary { box-sizing: border-box; min-height: 40px; display: inline-flex; align-items: center; }
-  /* "Sign in" (shown at 761-1080px): an 18px-tall text link; padding gives it a 40px
-     box with the same look. :where() keeps the specificity at (0,1,0), so the row's
-     own "display: none" on phones (.v4 .{prefix}-signin, (0,2,0)) still wins. */
-  :where(.v4 [class$="-top"]) [class$="-signin"] { display: inline-flex; align-items: center; padding: 11px 6px; }
-}
-/* The hero's scene ticks are 6px bars: a transparent ::before stretches the hit area
-   to about 40px tall without changing the bar (1px short of each side, so the 3px
-   gaps between ticks stay gaps). */
-.v4 button[data-v4-tick] { position: relative; }
-.v4 button[data-v4-tick]::before { content: ""; position: absolute; inset: -17px -1px; }
-/* Row tabs on touch screens (r5v73, r7v35 and r11v37 today: 27-35px tall). Matched
-   by shape, not row number (rows get renumbered): an <a> or <button> whose class
-   ends in "-tab", or has "-tab " before a state class the engine adds ("-tab -on").
-   Other "-tab" classes in the rows are <li>/<p> labels, which this leaves alone. */
-@media (pointer: coarse) {
-  .v4 :is(a, button):is([class$="-tab"], [class*="-tab "]) {
-    box-sizing: border-box; min-height: 40px; display: inline-flex; align-items: center;
-  }
-}
-/* The footer a row brings (the homepage MCP row, r16v38): the same targets as
-   V4Footer (v4-template.css): 18px social icons in a 34px hit area (padding
-   cancelled by margin, so the spacing is unchanged), and 40px links once the
-   columns stack. */
-.v4 footer [class$="-social"] a { padding: 8px; margin: -8px; }
-@media (max-width: 860px) {
-  .v4 footer [class$="-fnav"] a { padding: 9px 0; }
-}
-
-/* Row 7's script page (r7v35: a 640px-wide page in a full-width clipping
-   "-lens"). Below the row's 960px breakpoint the page is flat (no tilt) and sat
-   flush left: centre it in the lens. On phones it was cut mid-word ("THE LONG
-   WAT"): make it the lens's width so the lines wrap instead (the font size still
-   follows the row's own page width). The row engine never positions the page. */
-@media (max-width: 959.98px) {
-  .v4 [class$="-lens"] > [class$="-page"] { right: 0; margin: 0 auto; }
-}
-@media (max-width: 760px) {
-  .v4 [class$="-lens"] > [class$="-page"] { width: 100%; }
-}
-
-/* The hero top bar's "More" dropdown (inserted by applySiteNav). It sits inside the
-   hero's nav, so it inherits that nav's font; the button is made to read exactly
-   like the nav's links, and the panel copies the hero's MENU pop (.{prefix}-menu-pop).
-   ALWAYS in the served HTML, hidden with CSS (SEO invariant: crawlers see every link).
-   Revealed on hover, while focus is inside the panel, and by the click toggle
-   (data-open). Hidden with opacity (not visibility) so its links stay focusable. */
-.v4 .v4-more { position: relative; display: inline-flex; }
-.v4 .v4-more-btn {
-  all: unset; box-sizing: border-box; cursor: pointer;
-  display: inline-flex; align-items: center; gap: 4px;
-  font: inherit; color: rgba(255, 255, 255, 0.95); text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
-}
-.v4 .v4-more-btn:hover, .v4 .v4-more[data-open="true"] .v4-more-btn { color: #fcd648; }
-.v4 .v4-more-btn:focus-visible { outline: 2px solid #fcd648; outline-offset: 4px; }
-.v4 .v4-more-pop {
-  position: absolute; right: 0; top: calc(100% + 18px); z-index: 40;
-  min-width: 230px; display: grid; padding: 6px 0;
-  background: #151419; border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
-  opacity: 0; pointer-events: none; transform: translateY(-4px);
-  transition: opacity .15s ease, transform .15s ease;
-}
-.v4 .v4-more-pop::before { content: ""; position: absolute; left: 0; right: 0; top: -19px; height: 19px; }
-.v4 .v4-more:is(:hover, [data-open="true"]):not([data-open="false"]) .v4-more-pop,
-.v4 .v4-more:not([data-open="false"]) .v4-more-pop:focus-within {
-  opacity: 1; pointer-events: auto; transform: none;
-}
-.v4 .v4-more .v4-more-pop a {
-  padding: 10px 16px; font-weight: 500; font-size: 16px; color: #f5f5f3; text-shadow: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06); text-decoration: none;
-}
-.v4 .v4-more .v4-more-pop a:last-child { border-bottom: 0; }
-.v4 .v4-more .v4-more-pop a:hover { background: rgba(255, 255, 255, 0.07); color: #f5f5f3; }
-/* The current route ("page") or its section ("true"): yellow, with a yellow underline in the bar. */
-.v4 [data-v4-nav][aria-current], .v4 .v4-more-btn[data-active] { color: #fcd648; }
-.v4 nav > [data-v4-nav][aria-current] { text-decoration: underline 2px; text-underline-offset: 8px; }
-.v4 .v4-more .v4-more-pop a[aria-current] { color: #fcd648; box-shadow: inset 3px 0 0 #eebc3c; }
-@media (prefers-reduced-motion: reduce) { .v4 .v4-more-pop { transition: none; } }
-
-/* The hero H1's first line is a fixed 62px and runs off both edges below ~360px
-   ("AI FILMMAKING" is ~338px wide). Scale it with the viewport on small phones.
-   Matched by class SUFFIX so it survives a regeneration; .v4-row raises the
-   specificity above the row's own .v4 .{prefix}-h1a rules. */
-@media (max-width: 400px) { .v4 .v4-row [class$="-h1a"] { font-size: min(62px, 16vw); } }
-`;
 
 export interface V4RowsPageProps {
   /** The rows, top to bottom. Pass a module constant (or useMemo): a new array restarts the row engines. */
@@ -289,6 +112,9 @@ function markCurrent(html: string, pathname: string): string {
   return out;
 }
 
+/** Production builds link the shared rows stylesheet; `docusaurus start` inlines it. */
+const LINK_SHEET = process.env.NODE_ENV === "production";
+
 type Prefetchable = Window & { docusaurus?: { prefetch?: (path: string) => unknown } };
 
 export default function V4RowsPage({ rows, ctaEvery = 3, header }: V4RowsPageProps): React.JSX.Element {
@@ -311,15 +137,11 @@ export default function V4RowsPage({ rows, ctaEvery = 3, header }: V4RowsPagePro
       }),
     [rows, pathname],
   );
-  const style = useMemo(
-    () => ({
-      __html:
-        PAGE_CSS +
-        "\n" +
-        rows.map((r) => `/* ── row ${r.row} · ${r.title.replace(/\*\//g, "")} · v${r.variation} · ${r.prefix}- ── */\n${r.css}`).join("\n\n"),
-    }),
-    [rows],
-  );
+  // In a production build the page CSS and every generated row's own CSS come from
+  // ONE cached stylesheet (ROWS_SHEET_HREF, written by docusaurus.config.ts), so
+  // the HTML no longer carries ~220 KB of inline CSS; only what this page adds to
+  // its rows (and any row not in V4_ROWS) stays inline. The dev server inlines it all.
+  const style = useMemo(() => ({ __html: rowsInlineCss(rows, LINK_SHEET) }), [rows]);
   const showHeader = header ?? !rows.some(hasTopBar);
   // A first row that carries the hero top bar is the page's banner: it stays
   // outside <main>; every other row goes inside it.
@@ -472,6 +294,7 @@ export default function V4RowsPage({ rows, ctaEvery = 3, header }: V4RowsPagePro
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {fontHref ? <link rel="stylesheet" href={fontHref} /> : null}
+        {LINK_SHEET ? <link rel="stylesheet" href={ROWS_SHEET_HREF} /> : null}
       </Head>
 
       {/* In the component tree, not <Head>: server-rendered at first paint, and it
