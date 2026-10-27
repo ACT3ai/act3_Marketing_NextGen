@@ -123,6 +123,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     title: "Resources",
     links: [
       { label: "Articles", href: "/articles" },
+      { label: "Blog", href: "/blog" },
       { label: "Documentation", href: LINKS.docs },
       { label: "MCP (Model Context Protocol)", href: "/mcp" },
       { label: "CLI (command line interface)", href: "/cli" },
