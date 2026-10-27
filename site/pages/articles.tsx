@@ -263,7 +263,7 @@ export default function Articles(): React.ReactNode {
 
   return (
     <Layout
-      title="Articles"
+      title="AI Filmmaking Guides and Articles"
       description={`${total} guides to AI filmmaking: full-length films, cinematography, consistent characters, cost, and tool comparisons.`}
     >
       <Head>

@@ -104,17 +104,17 @@ export default function Home(): React.JSX.Element {
     <>
       <Head>
         <html lang="en" />
-        <title>ACT 3 AI | AI Video Filmmaking — Give a note. See the change.</title>
+        <title>ACT 3 AI | AI Video Filmmaking: Give a note. See the change.</title>
         <meta
           name="description"
           content="ACT 3 AI is AI video filmmaking: your storytelling, into video. Chat with your AI filmmaker, give a note, and see the change, from script to finished film."
         />
         {/* This page renders outside <Layout>, so Docusaurus never emits og:/twitter:
             titles for it; without these the shared-link preview shows the site title. */}
-        <meta property="og:title" content="ACT 3 AI | AI Video Filmmaking — Give a note. See the change." />
+        <meta property="og:title" content="ACT 3 AI | AI Video Filmmaking: Give a note. See the change." />
         <meta property="og:description" content="ACT 3 AI is AI video filmmaking: your storytelling, into video. Chat with your AI filmmaker, give a note, and see the change, from script to finished film." />
         <meta property="og:url" content="https://act3ai.com/" />
-        <meta name="twitter:title" content="ACT 3 AI | AI Video Filmmaking — Give a note. See the change." />
+        <meta name="twitter:title" content="ACT 3 AI | AI Video Filmmaking: Give a note. See the change." />
         <meta name="theme-color" content={V4_PAGE_GROUND} />
       </Head>
 

@@ -106,7 +106,7 @@ const ROWS = pickRows([1, 2, 5, 10, 12, 15, 13, 14])
   .map((r) => (EDITS[r.row] ? EDITS[r.row](r) : r));
 
 const URL = "https://act3ai.com/minidramas";
-const TITLE = "AI Minidramas | ACT 3 AI";
+const TITLE = "AI Minidramas: Make Micro-Drama Series | ACT 3 AI";
 const DESCRIPTION =
   "Make minidramas (micro-dramas) with ACT 3 AI: the same lead, sets and voices in every episode. Give a note in one sentence and see the change.";
 

@@ -18,7 +18,7 @@ export default function About(): React.ReactNode {
   return (
     // No manual site-name suffix: Docusaurus appends " | ACT 3 AI" itself.
     <Layout
-      title="About Us"
+      title="About the AI Filmmaking Team"
       description="Meet the team behind ACT 3 AI: filmmakers, writers and technologists building one AI workspace from script to finished video."
     >
       <main>

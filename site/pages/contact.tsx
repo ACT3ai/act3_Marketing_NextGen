@@ -213,7 +213,7 @@ export default function Contact(): React.ReactNode {
   return (
     // No manual site-name suffix: Docusaurus appends " | ACT 3 AI" itself.
     <Layout
-      title="Contact Us"
+      title="Contact Sales and Support"
       description="Questions, support or enterprise plans? Email ACT 3 at contactus@act3ai.com. We reply within 24 hours on business days."
     >
       <Head>

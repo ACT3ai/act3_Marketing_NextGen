@@ -1,5 +1,6 @@
 /**
- * Ejected @theme/BlogListPage (Docusaurus 3.10.0) — ONE change: a visible H1.
+ * Ejected @theme/BlogListPage (Docusaurus 3.10.0) — two changes: a visible H1, and a
+ * <title> with a search phrase (BLOG_LIST_TITLE) instead of the bare blogTitle.
  *
  * The stock list page (/blog, /blog/page/N) has no H1 at all: the post titles
  * are H2 links, so the page opened straight on "ACT 3 AI Is Live". It now opens
@@ -24,14 +25,18 @@ import BlogPostItems from "@theme/BlogPostItems";
 import BlogListPageStructuredData from "@theme/BlogListPage/StructuredData";
 import Heading from "@theme/Heading";
 
+const BLOG_LIST_TITLE = "Product News and Releases";
+
 function BlogListPageMetadata(props: Props): ReactNode {
   const { metadata } = props;
   const {
     siteConfig: { title: siteTitle },
   } = useDocusaurusContext();
-  const { blogDescription, blogTitle, permalink } = metadata;
+  const { blogDescription, permalink } = metadata;
   const isBlogOnlyMode = permalink === "/";
-  const title = isBlogOnlyMode ? siteTitle : blogTitle;
+  // The <title> carries a search phrase ("Blog | ACT 3 AI" was 15 characters);
+  // the visible H1 stays blogTitle.
+  const title = isBlogOnlyMode ? siteTitle : BLOG_LIST_TITLE;
   return (
     <>
       <PageMetadata title={title} description={blogDescription} />

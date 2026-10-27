@@ -43,7 +43,7 @@ export default function Features(): React.JSX.Element {
   const takeImg = useBaseUrl("/v4/row_13/v/take1_poster.jpg");
   return (
     <Layout
-      title="Features"
+      title="AI Filmmaking Features: Script to Film"
       description="Everything ACT 3 does, from script to finished film: chat to your AI filmmaker, consistent characters, outfits and sets, AI storyboards, voices, MCP and CLI."
     >
       <main>
