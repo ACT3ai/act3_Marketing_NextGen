@@ -353,4 +353,6 @@ A.8  FILES AND URLS
 * {GUIDES_DIR}/{n}_{name}/anim/                   that guide's animation scripts (if any)
 * Live: https://act3ai.com/step_guides/{n}_{name}/page_{N}.html
 * Relative links between guide pages (../2_import_script/page_1.html) so the same files work on localhost and act3ai.com.
-* Each page: a real <title> ("Import a Script, Step 3 · ACT 3 AI"), a meta description, a canonical act3ai.com URL, the site favicon.
+* Each page: a real <title> ("Import a Script, Step 3: Upload your screenplay · ACT 3 AI"), a meta description, a canonical act3ai.com URL, the site favicon.
+  * The <title> is 30 to 60 characters and unique: when the pattern runs over 60, drop " · ACT 3 AI", then shorten the step words. The meta description is 70 to 160 characters and unique (two guides that share a step still describe it for their own path).
+  * After the canonical, the Open Graph and twitter:card block of {GUIDES_DIR}/_shared/TEMPLATE_page.html, with og:title, og:description and og:url equal to the page's own title, description and canonical.
