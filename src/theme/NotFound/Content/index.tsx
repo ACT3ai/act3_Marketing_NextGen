@@ -1,8 +1,9 @@
 /**
  * Ejected @theme/NotFound/Content (Docusaurus 3.10.0) — the 404 on the v4 template.
  *
- * A V4Hero ("Page not found" + one line), the square yellow button home, and two
- * ways on: /articles and the documentation site (LINKS.docs, site/data/siteNav.ts).
+ * A V4Hero ("Page not found" + one line), the square yellow button home, and the
+ * ways on: the product sections (Movies, TV, Minidramas, Videos, Features), /articles
+ * and the documentation site (LINKS.docs, site/data/siteNav.ts).
  *
  * Only the CONTENT is swizzled. The stock @theme/NotFound still renders it inside
  * <Layout> and still sets the page title ("Page Not Found | ACT 3 AI"). The robots
@@ -17,7 +18,14 @@ import Head from "@docusaurus/Head";
 import type { Props } from "@theme/NotFound/Content";
 import { V4Hero } from "@site/site/components/v4/V4Blocks";
 import V4Link from "@site/site/components/v4/V4Link";
-import { LINKS } from "@site/site/data/siteNav";
+import { LINKS, MORE_NAV, PRIMARY_NAV } from "@site/site/data/siteNav";
+
+// The sections that show the product, read from the one nav source so labels
+// and hrefs never drift: Movies, TV, Minidramas, Videos (PRIMARY_NAV), Features (MORE_NAV).
+const NF_HREFS = ["/movies", "/tv", "/minidramas", "/videos", "/features"];
+const NF_SECTIONS = NF_HREFS.map((href) => [...PRIMARY_NAV, ...MORE_NAV].find((item) => item.href === href)).filter(
+  (item): item is (typeof PRIMARY_NAV)[number] => Boolean(item),
+);
 
 // Scoped to .nf-links; colours and fonts are the --v4t-* tokens V4Hero declares.
 const PAGE_CSS = `
@@ -46,6 +54,11 @@ export default function NotFoundContent({ className }: Props): ReactNode {
       </Head>
       <V4Hero eyebrow="404" title="Page not found" sub="There is nothing at this address." cta={{ label: "Home", href: "/" }}>
         <ul className="nf-links" aria-label="Elsewhere on the site">
+          {NF_SECTIONS.map(({ label, href }) => (
+            <li key={href}>
+              <V4Link href={href}>{label}</V4Link>
+            </li>
+          ))}
           <li>
             <V4Link href="/articles">Articles</V4Link>
           </li>
