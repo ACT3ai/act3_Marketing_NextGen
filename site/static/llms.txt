@@ -15,8 +15,22 @@ Everything below is a public page on https://act3ai.com. The articles are evergr
 - [TV](https://act3ai.com/tv): TV series. An hour-long episode in three days; series regulars, wardrobe and standing sets carry over all season.
 - [Minidramas](https://act3ai.com/minidramas): minidramas (micro-dramas). The same lead, sets and voices in every short episode.
 - [Videos](https://act3ai.com/videos): ads, social media and marketing videos. Consistent characters; approve each shot before you pay for video.
-- [Pricing](https://app.act3ai.com/settings/plans/): plans and credits.
+- [Pricing](https://act3ai.com/pricing): plans, monthly prices and credits.
 - [About](https://act3ai.com/about) / [Contact](https://act3ai.com/contact)
+
+## Pricing
+
+How much does ACT 3 AI cost? As of 2026-10-26: a Free plan with 800 credits a month (for the first 6 months after sign-up); paid plans from $49 a month (Creator) to $49,000 a month (Iconic Edition), billed monthly in US dollars; Enterprise by contact. Credits pay for AI work, and unused credits roll into a capped rollover bank. Full table: https://act3ai.com/pricing . Current prices: https://app.act3ai.com/settings/plans/
+
+- Free: $0/month, 800 credits/month, 0 credit rollover bank, 50 MB cloud storage
+- Creator: $49/month, 24,500 credits/month, 61,250 credit rollover bank, 50 GB cloud storage
+- Pro: $175/month, 87,500 credits/month, 218,750 credit rollover bank, 740 GB cloud storage
+- Enterprise: contact us (https://act3ai.com/contact)
+- Advanced Edition: $395/month, 197,500 credits/month, 493,750 credit rollover bank, 1.6 TB cloud storage
+- Premiere Edition: $795/month, 397,500 credits/month, 993,750 credit rollover bank, 1.6 TB cloud storage
+- Blockbuster Edition: $1,950/month, 975,000 credits/month, 2,437,500 credit rollover bank, 3.3 TB cloud storage
+- Visionary Edition: $8,900/month, 4,450,000 credits/month, 11,125,000 credit rollover bank, 8.2 TB cloud storage
+- Iconic Edition: $49,000/month, 24,500,000 credits/month, 61,250,000 credit rollover bank, 203.2 TB cloud storage
 
 ## Articles
 

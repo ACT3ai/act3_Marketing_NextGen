@@ -496,7 +496,7 @@ const config: Config = {
                     ? { priority: 0.9, changefreq: "weekly" as const }
                     : route.startsWith("/articles/")
                       ? { priority: 0.7, changefreq: "monthly" as const }
-                      : /^\/(features|level2|about|contact|mcp|cli|movies|tv|minidramas|videos)$/.test(route)
+                      : /^\/(features|level2|about|contact|mcp|cli|movies|tv|minidramas|videos|pricing)$/.test(route)
                         ? { priority: 0.8, changefreq: "monthly" as const }
                         : route.startsWith("/blog")
                           ? { priority: 0.3, changefreq: "monthly" as const }

@@ -1,0 +1,115 @@
+{
+  "source": "https://api.act3ai.com/plans",
+  "plansPage": "https://app.act3ai.com/settings/plans/",
+  "asOf": "2026-10-26",
+  "plans": [
+    {
+      "name": "Free",
+      "order": 1,
+      "priceUsd": 0,
+      "period": "month",
+      "creditsPerMonth": 800,
+      "rolloverBankCredits": 0,
+      "storage": "50 MB",
+      "firstMonthsOnly": 6,
+      "contactUs": false,
+      "description": "800 credits / month *** 0 credit rollover bank *** Cloud Storage 50 MB*"
+    },
+    {
+      "name": "Creator",
+      "order": 3,
+      "priceUsd": 49,
+      "period": "month",
+      "creditsPerMonth": 24500,
+      "rolloverBankCredits": 61250,
+      "storage": "50 GB",
+      "firstMonthsOnly": null,
+      "contactUs": false,
+      "description": "24,500 credits / month *** 61,250 credit rollover bank *** Cloud Storage 50 GB*"
+    },
+    {
+      "name": "Pro",
+      "order": 4,
+      "priceUsd": 175,
+      "period": "month",
+      "creditsPerMonth": 87500,
+      "rolloverBankCredits": 218750,
+      "storage": "740 GB",
+      "firstMonthsOnly": null,
+      "contactUs": false,
+      "description": "87,500 credits / month *** 218,750 credit rollover bank *** Cloud Storage 740 GB* *** All AI Video Models *** AI Generative with Blender *** 3D Sets with Blender *** 4k (Upscale) *** Priority Rendering *** Unlimited Digital Actors"
+    },
+    {
+      "name": "Enterprise",
+      "order": 5,
+      "priceUsd": null,
+      "period": null,
+      "creditsPerMonth": null,
+      "rolloverBankCredits": null,
+      "storage": null,
+      "firstMonthsOnly": null,
+      "contactUs": true,
+      "description": "High Credits / month *** High rollover bank *** High Cloud Storage"
+    },
+    {
+      "name": "Advanced Edition",
+      "order": 6,
+      "priceUsd": 395,
+      "period": "month",
+      "creditsPerMonth": 197500,
+      "rolloverBankCredits": 493750,
+      "storage": "1.6 TB",
+      "firstMonthsOnly": null,
+      "contactUs": false,
+      "description": "197,500 credits / month *** 493,750 credit rollover bank *** Cloud Storage 1.6 TB*"
+    },
+    {
+      "name": "Premiere Edition",
+      "order": 7,
+      "priceUsd": 795,
+      "period": "month",
+      "creditsPerMonth": 397500,
+      "rolloverBankCredits": 993750,
+      "storage": "1.6 TB",
+      "firstMonthsOnly": null,
+      "contactUs": false,
+      "description": "397,500 credits / month *** 993,750 credit rollover bank *** Cloud Storage 1.6 TB*"
+    },
+    {
+      "name": "Blockbuster Edition",
+      "order": 8,
+      "priceUsd": 1950,
+      "period": "month",
+      "creditsPerMonth": 975000,
+      "rolloverBankCredits": 2437500,
+      "storage": "3.3 TB",
+      "firstMonthsOnly": null,
+      "contactUs": false,
+      "description": "975,000 credits / month *** 2,437,500 credit rollover bank *** Cloud Storage 3.3 TB*"
+    },
+    {
+      "name": "Visionary Edition",
+      "order": 9,
+      "priceUsd": 8900,
+      "period": "month",
+      "creditsPerMonth": 4450000,
+      "rolloverBankCredits": 11125000,
+      "storage": "8.2 TB",
+      "firstMonthsOnly": null,
+      "contactUs": false,
+      "description": "4,450,000 credits / month *** 11,125,000 credit rollover bank *** Cloud Storage 8.2 TB*"
+    },
+    {
+      "name": "Iconic Edition",
+      "order": 10,
+      "priceUsd": 49000,
+      "period": "month",
+      "creditsPerMonth": 24500000,
+      "rolloverBankCredits": 61250000,
+      "storage": "203.2 TB",
+      "firstMonthsOnly": null,
+      "contactUs": false,
+      "description": "24,500,000 credits / month *** 61,250,000 credit rollover bank *** Cloud Storage 208 TB*"
+    }
+  ]
+}

@@ -721,9 +721,44 @@ llms.push(
 llms.push(
   "- [Videos](https://act3ai.com/videos): ads, social media and marketing videos. Consistent characters; approve each shot before you pay for video.",
 );
-llms.push("- [Pricing](https://app.act3ai.com/settings/plans/): plans and credits.");
+llms.push("- [Pricing](https://act3ai.com/pricing): plans, monthly prices and credits.");
 llms.push("- [About](https://act3ai.com/about) / [Contact](https://act3ai.com/contact)");
 llms.push("");
+// "How much does ACT 3 cost?" -- answered from site/data/plans.json, the same
+// dated snapshot of the app's plan list that /pricing renders (never typed here).
+{
+  const catalog = JSON.parse(fs.readFileSync(path.join(REPO, "site/data/plans.json"), "utf8"));
+  const usd = (n) => "$" + n.toLocaleString("en-US");
+  const priced = catalog.plans.filter((p) => p.priceUsd !== null);
+  const free = priced.find((p) => p.priceUsd === 0);
+  const paid = priced.filter((p) => p.priceUsd > 0).sort((a, b) => a.priceUsd - b.priceUsd);
+  llms.push("## Pricing");
+  llms.push("");
+  llms.push(
+    "How much does ACT 3 AI cost? As of " + catalog.asOf + ": " +
+      (free
+        ? "a Free plan with " + free.creditsPerMonth.toLocaleString("en-US") + " credits a month" +
+          (free.firstMonthsOnly ? " (for the first " + free.firstMonthsOnly + " months after sign-up)" : "") + "; "
+        : "") +
+      "paid plans from " + usd(paid[0].priceUsd) + " a month (" + paid[0].name + ") to " +
+      usd(paid[paid.length - 1].priceUsd) + " a month (" + paid[paid.length - 1].name + "), " +
+      "billed monthly in US dollars; Enterprise by contact. Credits pay for AI work, and unused credits " +
+      "roll into a capped rollover bank. Full table: https://act3ai.com/pricing . Current prices: " +
+      catalog.plansPage,
+  );
+  llms.push("");
+  for (const p of catalog.plans) {
+    llms.push(
+      "- " + p.name + ": " +
+        (p.contactUs
+          ? "contact us (https://act3ai.com/contact)"
+          : usd(p.priceUsd) + "/month, " + p.creditsPerMonth.toLocaleString("en-US") + " credits/month, " +
+            p.rolloverBankCredits.toLocaleString("en-US") + " credit rollover bank" +
+            (p.storage ? ", " + p.storage + " cloud storage" : "")),
+    );
+  }
+  llms.push("");
+}
 llms.push("## Articles");
 llms.push("");
 llms.push(
