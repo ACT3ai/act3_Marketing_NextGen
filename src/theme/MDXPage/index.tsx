@@ -67,8 +67,8 @@ const SERP_TITLE_BUDGET = 60;
 const BRAND_SUFFIX = " | ACT 3 AI";
 const BRAND = "ACT 3 AI";
 
-/** Related reading. A published article with no inbound link is an orphan. */
-function relatedArticles(current: ArticleRecord, limit = 6): ArticleRecord[] {
+/** Every other article, most related first. */
+function rankedRelated(current: ArticleRecord): ArticleRecord[] {
   const others = ARTICLES.filter((a) => a.slug !== current.slug);
   const score = (a: ArticleRecord): number =>
     (a.persona === current.persona ? 4 : 0) +
@@ -78,9 +78,55 @@ function relatedArticles(current: ArticleRecord, limit = 6): ArticleRecord[] {
     // funnel movement the cluster is supposed to encode.
     (current.funnelStage === "Compare" && a.funnelStage === "Buy" ? 3 : 0) +
     (a.funnelStage === current.funnelStage ? 1 : 0);
-  return [...others]
-    .sort((x, y) => score(y) - score(x) || x.title.localeCompare(y.title))
-    .slice(0, limit);
+  // Ties break on a hash of the pair, not the title: alphabetical ties gave the
+  // same early-alphabet articles every rail. Stable per build (no hydration mismatch).
+  const tie = (a: ArticleRecord): number => fnv1a(`${current.slug}>${a.slug}`);
+  return [...others].sort((x, y) => score(y) - score(x) || tie(x) - tie(y) || x.slug.localeCompare(y.slug));
+}
+
+/**
+ * Related reading. A published article with no inbound link is an orphan, so the
+ * rails are built once for the whole set: the first RAIL_SIZE - 1 slots are the
+ * most related articles, and the last slot goes to the most related candidate
+ * among those with the fewest rail links so far. Every article then gets at least
+ * one rail link. Deterministic (slug order), so server and client agree.
+ */
+const RAIL_SIZE = 6;
+const RAILS: Map<string, ArticleRecord[]> = (() => {
+  const ranked = new Map(ARTICLES.map((a) => [a.slug, rankedRelated(a)]));
+  const counts = new Map(ARTICLES.map((a) => [a.slug, 0]));
+  const rails = new Map<string, ArticleRecord[]>();
+  for (const a of ARTICLES) {
+    const top = (ranked.get(a.slug) ?? []).slice(0, RAIL_SIZE - 1);
+    rails.set(a.slug, top);
+    for (const t of top) counts.set(t.slug, (counts.get(t.slug) ?? 0) + 1);
+  }
+  for (const a of [...ARTICLES].sort((x, y) => x.slug.localeCompare(y.slug))) {
+    const rail = rails.get(a.slug) ?? [];
+    const taken = new Set(rail.map((r) => r.slug));
+    const candidates = (ranked.get(a.slug) ?? []).filter((c) => !taken.has(c.slug));
+    if (candidates.length === 0) continue;
+    const fewest = Math.min(...candidates.map((c) => counts.get(c.slug) ?? 0));
+    const pick = candidates.find((c) => (counts.get(c.slug) ?? 0) === fewest);
+    if (!pick) continue;
+    rail.push(pick);
+    counts.set(pick.slug, fewest + 1);
+  }
+  return rails;
+})();
+
+function relatedArticles(current: ArticleRecord): ArticleRecord[] {
+  return RAILS.get(current.slug) ?? rankedRelated(current).slice(0, RAIL_SIZE);
+}
+
+/** 32-bit FNV-1a hash of a string (unsigned). */
+function fnv1a(text: string): number {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < text.length; i++) {
+    h ^= text.charCodeAt(i);
+    h = Math.imul(h, 0x01000193);
+  }
+  return h >>> 0;
 }
 
 function readingMinutes(words: number): number {
