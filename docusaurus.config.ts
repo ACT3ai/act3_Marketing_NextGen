@@ -199,6 +199,46 @@ function newestBlogPostDate(dir = "site/blog"): string | undefined {
   return newest;
 }
 
+/**
+ * Sitemap items for the static Step-by-Step Guide pages
+ * (site/static/step_guides/{n}_{guide}/page_{k}.html). Skips _shared/ and the
+ * hub's index.html (not a canonical page). <lastmod> from git, like the .tsx pages.
+ */
+function stepGuideSitemapItems(dir = "site/static/step_guides") {
+  const items: {
+    url: string;
+    priority: number;
+    changefreq: "monthly";
+    lastmod?: string;
+  }[] = [];
+  let guides: string[] = [];
+  try {
+    guides = readdirSync(dir).filter((d) => /^\d+_/.test(d)).sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+  } catch {
+    return items;
+  }
+  for (const guide of guides) {
+    let pages: string[] = [];
+    try {
+      pages = readdirSync(join(dir, guide))
+        .filter((f) => /^page_\d+\.html$/.test(f))
+        .sort((a, b) => parseInt(a.slice(5), 10) - parseInt(b.slice(5), 10));
+    } catch {
+      continue;
+    }
+    for (const page of pages) {
+      const lastmod = gitLastCommitDate(join(dir, guide, page));
+      items.push({
+        url: `${SITE_URL}/step_guides/${guide}/${page}`,
+        priority: 0.4,
+        changefreq: "monthly",
+        ...(lastmod ? { lastmod } : {}),
+      });
+    }
+  }
+  return items;
+}
+
 const config: Config = {
   title: BRAND,
   tagline: TAGLINE,
@@ -433,7 +473,7 @@ const config: Config = {
             // post is published, so its <lastmod> is the newest post's date.
             const blogIndexDate = newestBlogPostDate();
 
-            return items.map((item) => {
+            const mapped = items.map((item) => {
               const path = item.url.replace(SITE_URL, "") || "/";
               const lastmod =
                 item.lastmod ??
@@ -454,6 +494,10 @@ const config: Config = {
                           : { priority: 0.5, changefreq: "monthly" as const };
               return { ...item, ...rule, ...(lastmod ? { lastmod } : {}) };
             });
+            // The Step-by-Step Guide is plain static HTML (site/static/step_guides/),
+            // which the sitemap plugin never sees; list every page_N.html so search
+            // engines find the guides without crawling the More menu.
+            return [...mapped, ...stepGuideSitemapItems()];
           },
         },
       } satisfies Preset.Options,
