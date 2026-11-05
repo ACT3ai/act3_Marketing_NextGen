@@ -22,6 +22,7 @@
  */
 import { V4_ROWS, type V4Row } from "../../pages/_rows.generated";
 import { FOOTER_COLUMNS, MORE_NAV, PRIMARY_NAV, SIGNIN, SOCIAL, isExternal, type NavItem } from "../../data/siteNav";
+import { ACT3_LOGO_HTML } from "./Act3Logo";
 
 const esc = (s: string): string =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -147,6 +148,8 @@ export function applySiteNav(row: V4Row): V4Row {
  *    them, so crawlers that read textContent see "AI Filmmaking at the speed ..."
  *    and not "AI Filmmakingat the speed ...". The H1 is a flex column, so the space
  *    is invisible.
+ *  * Every `<a class="{prefix}-logo">` (the hero bar's "3" square + "ACT 3", row 16's
+ *    clapper + "ACT 3 AI") draws the ONE ACT3 wordmark (Act3Logo) instead.
  */
 export function applyRowFixes(row: V4Row): V4Row {
   const p = reEsc(row.prefix);
@@ -180,6 +183,11 @@ export function applyRowFixes(row: V4Row): V4Row {
   });
 
   html = html.replace(new RegExp(`</span>(<span class="${p}-h1b[\\s"])`, "g"), "</span> $1");
+
+  const logoRe = new RegExp(`(<a\\b[^>]*\\sclass="${p}-logo(?:\\s[^"]*)?"[^>]*>)([\\s\\S]*?)</a>`, "g");
+  html = html.replace(logoRe, (m, open: string, inner: string) =>
+    inner === ACT3_LOGO_HTML ? m : `${open}${ACT3_LOGO_HTML}</a>`,
+  );
 
   return html === row.html ? row : { ...row, html };
 }

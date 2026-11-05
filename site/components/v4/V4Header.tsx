@@ -1,8 +1,8 @@
 /**
  * V4Header — the top bar of the v4 site template (the default for every page).
  *
- * A copy of the homepage hero's top bar (row 1, .r1v42-top): yellow "3" mark +
- * "ACT 3" in Barlow Condensed, the centre nav in Barlow 15/500, "Sign in" and the
+ * A copy of the homepage hero's top bar (row 1, .r1v42-top): the ACT3 wordmark
+ * (Act3Logo), the centre nav in Barlow 15/500, "Sign in" and the
  * square yellow GET STARTED › button on the right, 84px tall (64px at <=760px),
  * collapsing to a MENU button with a dark pop panel at <=1080px. Because it is
  * not laid over video it sits on the hero's ground colour and is sticky.
@@ -28,6 +28,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "@docusaurus/router";
 import V4Link from "./V4Link";
+import Act3Logo from "./Act3Logo";
 import { V4DocsDrawer, V4DocsMenuItem, hasDrawerSidebar } from "./V4DocsDrawer";
 import { MORE_NAV, PRIMARY_NAV, SIGNIN, SIGNUP, currentAttr, type NavItem } from "../../data/siteNav";
 
@@ -120,8 +121,7 @@ export default function V4Header({ inLayout = false }: V4HeaderProps): React.JSX
     <>
       <header className="v4t-top">
         <V4Link className="v4t-logo" href="/" aria-label="ACT 3 AI home">
-          <span className="v4t-logo-mark" aria-hidden="true">3</span>
-          <span>ACT&nbsp;3</span>
+          <Act3Logo />
         </V4Link>
 
         <nav className="v4t-nav" aria-label="Main">

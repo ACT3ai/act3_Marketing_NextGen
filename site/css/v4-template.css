@@ -103,25 +103,31 @@
   justify-self: start;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  color: var(--v4t-ink);
-  font-family: var(--v4t-display);
-  font-weight: 800;
-  font-size: 27px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+}
+
+/* ══ Act3Logo — the app's top-left wordmark, set as text (site/components/v4/Act3Logo.tsx) ══
+   Montserrat 650 matches act3_logo_{dark,light}.png; 33px gives the 23px cap height of the app's
+   26px-tall image, and the 3 sits a little apart as it does there. Colours are sampled from the files. */
+:root {
+  --act3-logo-font: "Montserrat", "Figtree", system-ui, sans-serif;
+  --act3-logo-ink: #ffffff;
+  --act3-logo-3: #f9cd5e;
+}
+.act3-logo {
+  display: inline-block;
+  color: var(--act3-logo-ink);
+  font: 650 33px/1 var(--act3-logo-font);
+  letter-spacing: 0;
+  text-transform: none;
   white-space: nowrap;
 }
-.v4t-logo:hover { color: var(--v4t-ink); }
-.v4t-logo-mark {
-  display: inline-grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  background: var(--v4t-yellow);
-  color: var(--v4t-yellow-ink);
-  font-size: 22px;
-  font-weight: 800;
+.act3-logo-3 { margin-left: 0.03em; color: var(--act3-logo-3); }
+/* Light ground. Not html[data-theme]: Docusaurus sets it to "light" on every page. On a rows
+   page under ?theme=light only the footer turns light; the hero bar stays on its dark video. */
+.act3-logo[data-theme="light"],
+.v4[data-v4-theme="light"] footer .act3-logo {
+  --act3-logo-ink: #1d1916;
+  --act3-logo-3: #d6a01e;
 }
 
 .v4t-nav {
@@ -304,7 +310,6 @@
 @media (max-width: 760px) {
   .v4t-top { gap: 10px; padding: 0 16px; height: 64px; }
   .v4t-signin { display: none; }
-  .v4t-logo { font-size: 23px; }
   .v4t-cta-sm { padding: 7px 14px; font-size: 16px; }
   /* The hero's own <=760px rule for .r1v42-cta comes after its -sm rule and wins
      for the top-bar button too; reproduced so the bar matches the homepage. */
@@ -324,8 +329,6 @@
    and MENU sizes (each control keeps its 40px touch target). */
 @media (max-height: 500px) and (min-width: 761px) {
   .v4t-top { height: 56px; }
-  .v4t-logo { font-size: 23px; }
-  .v4t-logo-mark { width: 30px; height: 30px; font-size: 20px; }
   .v4t-top .v4t-cta-sm { padding: 7px 14px; font-size: 16px; }
   .v4t-menu summary { padding-block: 7px; font-size: 17px; min-height: 40px; display: flex; align-items: center; }
 }
@@ -348,18 +351,8 @@
 .v4t-foot :focus-visible { outline: 2px solid var(--v4t-yellow-hi); outline-offset: 3px; }
 .v4t-foot-in { max-width: var(--v4t-maxw); margin: 0 auto; padding: 56px 32px 28px; }
 .v4t-foot-top { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 2fr); gap: 48px; }
-.v4t-foot-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--v4t-ink);
-  text-decoration: none;
-  font-weight: 800;
-  font-size: 20px;
-  letter-spacing: 0.01em;
-}
-.v4t-foot-logo:hover { color: var(--v4t-ink); text-decoration: none; }
-.v4t-foot-logo svg { color: var(--v4t-yellow); }
+.v4t-foot-logo { display: inline-flex; align-items: center; text-decoration: none; }
+.v4t-foot-logo:hover { text-decoration: none; }
 .v4t-foot-brand p { margin: 14px 0 20px; font-size: 16px; line-height: 1.5; color: var(--v4t-muted); }
 .v4t-foot-cta {
   display: inline-flex;
@@ -871,21 +864,24 @@ html.v4t-skin,
   font-family: var(--v4t-sans);
 }
 .v4t-drawer .navbar-sidebar { border-right: 1px solid var(--v4t-edge); }
-.v4t-drawer .navbar-sidebar__brand .navbar__brand { color: var(--v4t-ink); font-family: var(--v4t-display); font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; }
+/* The drawer brand draws the .act3-logo wordmark; the title stays for screen readers. */
 .v4t-drawer .navbar-sidebar__brand .navbar__logo { display: none; }
-/* The top bar's yellow "3" mark in front of the drawer brand (.v4t-logo-mark). */
-.v4t-drawer .navbar-sidebar__brand .navbar__brand { display: inline-flex; align-items: center; gap: 10px; }
-.v4t-drawer .navbar-sidebar__brand .navbar__brand::before {
-  content: "3";
-  display: inline-grid;
-  place-items: center;
-  flex: none;
-  width: 30px;
-  height: 30px;
-  background: var(--v4t-yellow);
-  color: var(--v4t-yellow-ink);
-  font-size: 20px;
-  font-weight: 800;
+.v4t-drawer .navbar-sidebar__brand .navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  color: var(--act3-logo-ink);
+  font: 650 33px/1 var(--act3-logo-font);
+  letter-spacing: 0;
+}
+.v4t-drawer .navbar-sidebar__brand .navbar__brand::before { content: "ACT"; content: "ACT" / ""; }
+.v4t-drawer .navbar-sidebar__brand .navbar__brand::after { content: "3"; content: "3" / ""; margin-left: 0.03em; color: var(--act3-logo-3); }
+.v4t-drawer .navbar-sidebar__brand .navbar__title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 .v4t-drawer .navbar-sidebar__back { color: var(--v4t-ink); }
 .v4t-drawer .menu__link { color: var(--v4t-body); }

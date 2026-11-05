@@ -30,8 +30,9 @@ const SOCIAL_CARD_ALT = "ACT 3 AI | AI Filmmaking at the Speed of Storytelling";
 //     the hero top bar's faces and row 16's footer face, same weights the homepage
 //     rows request, so scripts/build-v4-rows.js dedupes them out of the rows' link
 //     (it reads this literal; keep it ONE string) and V4RowsPage drops them too.
+//   Montserrat 650 — the ACT3 wordmark (site/components/v4/Act3Logo.tsx).
 const GOOGLE_FONTS_HREF =
-  "https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700;800&family=Figtree:wght@300;400;500;600;700;800;900&family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400;9..144,1,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap";
+  "https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700;800&family=Figtree:wght@300;400;500;600;700;800;900&family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400;9..144,1,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Montserrat:wght@650&display=swap";
 
 // Site-wide structured data. This is the machine-readable statement of who we
 // are: the sameAs list is what ties four separate social profiles into one

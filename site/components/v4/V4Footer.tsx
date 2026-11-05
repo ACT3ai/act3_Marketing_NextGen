@@ -1,8 +1,8 @@
 /**
  * V4Footer — the footer of the v4 site template (the default for every page).
  *
- * A copy of the homepage's footer (row 16, .r16v38-foot): the yellow clapper
- * mark + "ACT 3 AI", the tagline, the yellow rounded "Get Started →" button, four
+ * A copy of the homepage's footer (row 16, .r16v38-foot): the ACT3 wordmark
+ * (Act3Logo), the tagline, the yellow rounded "Get Started →" button, four
  * link columns with small uppercase headings, a rule, the copyright line and the
  * social icons. Figtree throughout, on the hero ground colour.
  *
@@ -19,17 +19,8 @@
 import React from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import V4Link from "./V4Link";
+import Act3Logo from "./Act3Logo";
 import { FOOTER_COLUMNS, FOOTER_TAGLINE, SIGNUP, SOCIAL } from "../../data/siteNav";
-
-/** Row 16's logo mark: a film clapperboard, drawn in the accent yellow. */
-export function V4ClapperMark({ size = 28 }: { size?: number }): React.JSX.Element {
-  return (
-    <svg viewBox="0 0 32 32" width={size} height={size} aria-hidden="true">
-      <rect x="3" y="12" width="26" height="17" rx="3" fill="currentColor" />
-      <path d="M3.6 10.2 27.4 4.4l.9 3.7L4.5 13.9z" fill="currentColor" />
-    </svg>
-  );
-}
 
 export default function V4Footer(): React.JSX.Element {
   // The build year (customFields.buildYear in docusaurus.config.ts), NOT
@@ -43,8 +34,7 @@ export default function V4Footer(): React.JSX.Element {
         <div className="v4t-foot-top">
           <div className="v4t-foot-brand">
             <V4Link className="v4t-foot-logo" href="/" aria-label="ACT 3 AI home">
-              <V4ClapperMark />
-              <span>ACT 3 AI</span>
+              <Act3Logo />
             </V4Link>
             <p>{FOOTER_TAGLINE}</p>
             <a className="v4t-foot-cta" href={SIGNUP}>
