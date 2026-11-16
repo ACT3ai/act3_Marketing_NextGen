@@ -136,20 +136,13 @@ html, body { background: ${V4_PAGE_GROUND}; }
 /* Row 6 (r6v55) floor grid: perspective(420px) rotateX(74deg) on a plane 150% of
    the stage tall (1410px on a phone, 810px on desktop). Everything more than
    ~437px down that plane is behind the virtual camera (w <= 0), so its projection
-   is unbounded, and iPhone WebKit killed the page's process on every load
-   ("A problem repeatedly occurred", or a white page reloading in Brave), even with
-   JavaScript off. Capped at 380px every point stays in front of the camera; the
-   part cut off was drawn below the row's clip anyway, so nothing visible changes.
+   is unbounded. Found while chasing the iPhone crash (whose real cause was every
+   row-6 panel being laid out at once; see presetPanelJs in rowTransforms.ts), and
+   capped because an unbounded 3D plane is a liability on its own. Capped at 380px
+   every point stays in front of the camera; the part cut off was drawn below the
+   row's clip anyway, so nothing visible changes.
    Keep any 3D plane here under its perspective distance / sin(angle). */
 .v4 [data-row] .r6v55-stage::before { height: min(150%, 380px); }
-/* Phones: the hero (r1v42) grades its playing video with a backdrop-filter and a
-   mix-blend-mode tint, set inline by its engine. On iPhone WebKit that kept the
-   homepage tab crashing on load (white page, reload, again). Phones get the plain
-   video; desktop keeps the grade. Same phone test as sdMedia.ts PHONE_MEDIA. */
-@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
-  .v4 [data-row] [class*="-grade"] { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
-  .v4 [data-row] [class*="-tint"] { mix-blend-mode: normal !important; }
-}
 /* The footer a row brings (the homepage MCP row, r16v38): the same targets as
    V4Footer (v4-template.css): 18px social icons in a 34px hit area (padding
    cancelled by margin, so the spacing is unchanged), and 40px links once the
