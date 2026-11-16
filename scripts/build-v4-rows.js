@@ -1066,3 +1066,9 @@ log(`videos: ${videoList.length} files, ${(videoBytes / 1048576).toFixed(2)} MB 
 log(`static: ${path.relative(REPO_DIR, V4_STATIC_DIR)}/ ${totalCopied} bytes`);
 log(`wrote:  ${path.relative(REPO_DIR, V4_ROWS_DATA_FILE)}`);
 log(warnings.length ? `${warnings.length} WARNING(S)` : "clean: 0 warnings");
+
+// ── phone copies ─────────────────────────────────────────────────────────────
+// The oversized media kept at full resolution above (4K hero clips, 5504 px
+// screenshots) got the homepage tab killed for memory on phones. Rebuild their
+// phone-sized copies in site/static/v4-sd/ against what was just written.
+execFileSync(process.execPath, [path.join(__dirname, "build-v4-sd.js")], { stdio: "inherit" });

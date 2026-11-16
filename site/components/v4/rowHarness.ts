@@ -17,9 +17,12 @@
  *    of their own, so without this SPA navigation would leave them running on
  *    detached DOM and stack a second copy on return.
  *  * ?theme=light | ?theme=dark (review aid only) switches every row together.
+ *  * On phones, media an engine creates use the phone-sized copies (sdMedia.ts):
+ *    the full-size hero clips got the tab killed for memory (white page, reload).
  */
 import { useEffect, type RefObject } from "react";
 import type { V4Row } from "../../pages/_rows.generated";
+import { isPhone, useSdOn } from "./sdMedia";
 
 // ── lifecycle harness for the row engines ────────────────────────────────────
 // Each loaded script reads document.currentScript.__v4ctx and uses it in place of
@@ -130,7 +133,19 @@ export function makeRowContext(): { ctx: Record<string, unknown>; stop: () => vo
       },
     });
 
-  const doc = forward(document, { addEventListener: addFor(document), removeEventListener: removeFor(document) }, true);
+  // Phones: the <img>/<video> an engine creates (the hero's clips and posters)
+  // load the phone-sized copy of an oversized file (sdMedia.ts). Desktop: untouched.
+  const phone = isPhone();
+  const createElement = (tag: string, opts?: ElementCreationOptions): HTMLElement => {
+    const el = document.createElement(tag, opts);
+    if (phone && /^(img|video)$/i.test(tag)) useSdOn(el);
+    return el;
+  };
+  const doc = forward(
+    document,
+    { addEventListener: addFor(document), removeEventListener: removeFor(document), createElement },
+    true,
+  );
   const winExtra: Record<string, unknown> = {
     document: doc,
     requestAnimationFrame,

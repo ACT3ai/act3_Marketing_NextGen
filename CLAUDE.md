@@ -102,6 +102,10 @@ site/pages/backup/      — /backup (index.tsx: the homepage the v4 design repla
                           old-template copies (all noindex)
 site/pages/v/4/         — redirect stub only: /v/4 → /
 site/static/v4/         — GENERATED homepage row assets, served at /v4/row_N/
+site/static/v4-sd/      — GENERATED phone-sized copies of the oversized row media (scripts/build-v4-sd.js,
+                          run by build-v4-rows.js). Phones get them via sdMedia.ts; desktop keeps
+                          the originals. Without them the homepage tab ran out of memory on phones
+                          (white page, then a reload by itself). Re-run after the row media change.
 site/pages/articles/    — GENERATED: the published SEO articles (138 on 2026-10-09)
 site/data/articles.json — GENERATED: the article index the site renders from
 site/components/        — SiteNavbar, SiteFooter, PageHero, ArticleCTA (old template + articles)
