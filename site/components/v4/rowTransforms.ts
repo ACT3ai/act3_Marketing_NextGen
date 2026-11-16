@@ -151,6 +151,8 @@ export function applySiteNav(row: V4Row): V4Row {
  *    is invisible.
  *  * Every `<a class="{prefix}-logo">` (the hero bar's "3" square + "ACT 3", row 16's
  *    clapper + "ACT 3 AI") draws the ONE ACT3 wordmark (Act3Logo) instead.
+ *  * A row that shows one panel at a time gets its `{prefix}-js` class in the
+ *    server HTML (presetPanelJs), so only the active panel is ever laid out.
  *  * An `<img>` with a phone-sized copy (scripts/build-v4-sd.js) and no srcset gets
  *    one, so phones load the copy and desktop the original (sdMedia.addSdSrcset).
  */
@@ -195,7 +197,29 @@ export function applyRowFixes(row: V4Row): V4Row {
   // Phones take the smaller copy of an oversized image (sdMedia.ts).
   html = addSdSrcset(html);
 
+  html = presetPanelJs(row, html);
+
   return html === row.html ? row : { ...row, html };
+}
+
+/**
+ * A row that shows one panel at a time (rows 6 and 7 today) hides the inactive
+ * ones with `.{prefix}-js .{prefix}-pt { display: none }`, but its engine only
+ * adds `{prefix}-js` once it runs. Until then the browser lays out EVERY panel,
+ * stacked, each with its own 3D stage. Row 6's four at once made iPhone WebKit
+ * kill the homepage on every load, with JavaScript off too ("A problem
+ * repeatedly occurred"); any one panel alone loaded. So the server HTML already
+ * carries `{prefix}-js`, as long as the markup marks a panel active
+ * (`{prefix}-pt {prefix}-on`); the engine's own classList.add is then a no-op.
+ */
+function presetPanelJs(row: V4Row, html: string): string {
+  const p = reEsc(row.prefix);
+  const hidesPanels = new RegExp(`\\.${p}-js \\.${p}-pt[^{,]*\\{[^}]*display:\\s*none`).test(row.css);
+  const hasActive = new RegExp(`class="${p}-pt ${p}-on[\\s"]`).test(html);
+  if (!hidesPanels || !hasActive) return html;
+  return html.replace(new RegExp(`class="(${p}-row)([\\s"])`), (m, cls: string, end: string) =>
+    new RegExp(`\\b${p}-js\\b`).test(m) ? m : `class="${cls} ${row.prefix}-js${end}`,
+  );
 }
 
 /** Exact-string copy overrides on a row's markup (every occurrence). Warns on any `from` it cannot find. */
