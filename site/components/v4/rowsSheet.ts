@@ -133,6 +133,15 @@ html, body { background: ${V4_PAGE_GROUND}; }
     box-sizing: border-box; min-height: 40px; display: inline-flex; align-items: center;
   }
 }
+/* Row 6 (r6v55) floor grid: perspective(420px) rotateX(74deg) on a plane 150% of
+   the stage tall (1410px on a phone, 810px on desktop). Everything more than
+   ~437px down that plane is behind the virtual camera (w <= 0), so its projection
+   is unbounded, and iPhone WebKit killed the page's process on every load
+   ("A problem repeatedly occurred", or a white page reloading in Brave), even with
+   JavaScript off. Capped at 380px every point stays in front of the camera; the
+   part cut off was drawn below the row's clip anyway, so nothing visible changes.
+   Keep any 3D plane here under its perspective distance / sin(angle). */
+.v4 [data-row] .r6v55-stage::before { height: min(150%, 380px); }
 /* Phones: the hero (r1v42) grades its playing video with a backdrop-filter and a
    mix-blend-mode tint, set inline by its engine. On iPhone WebKit that kept the
    homepage tab crashing on load (white page, reload, again). Phones get the plain
