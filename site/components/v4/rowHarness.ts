@@ -19,6 +19,9 @@
  *  * ?theme=light | ?theme=dark (review aid only) switches every row together.
  *  * On phones, media an engine creates use the phone-sized copies (sdMedia.ts):
  *    the full-size hero clips got the tab killed for memory (white page, reload).
+ *  * On phones, a row's engine starts only when the row nears the viewport, and
+ *    no row gets three.js / WebGL (NO_WEBGL_ON_PHONES): iPhone WebKit kept
+ *    crashing the homepage tab while every engine started at once.
  */
 import { useEffect, type RefObject } from "react";
 import type { V4Row } from "../../pages/_rows.generated";
@@ -32,6 +35,33 @@ import { isPhone, useSdOn } from "./sdMedia";
 type AnyFn = (...args: any[]) => any;
 type Listener = [EventTarget, string, EventListenerOrEventListenerObject, boolean | AddEventListenerOptions | undefined];
 type ScriptWithCtx = HTMLScriptElement & { __v4ctx?: Record<string, unknown> };
+
+/**
+ * NO_WEBGL_ON_PHONES: on phones no row gets three.js, so no WebGL context. With
+ * WebGL in rows 6 and 8, the hero's video grade and every engine starting at
+ * once, iPhone WebKit kept killing the homepage tab while it loaded (a white
+ * page that reloads by itself, again and again). Both engines fall back to a
+ * 2D canvas. A three.js <script> an engine adds itself (row 6) is never
+ * fetched: it reports an error at once, which the engine treats as "missing".
+ */
+export const THREE_SRC_RE = /\/three(?:\.module)?(?:\.min)?\.js(?:$|[?#])/;
+
+function noThreeOn(el: HTMLScriptElement): void {
+  const desc = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, "src");
+  if (!desc?.set || !desc.get) return;
+  const { get, set } = desc;
+  Object.defineProperty(el, "src", {
+    configurable: true,
+    enumerable: true,
+    get() {
+      return get.call(el);
+    },
+    set(v: string) {
+      if (!THREE_SRC_RE.test(String(v))) return set.call(el, v);
+      window.setTimeout(() => el.dispatchEvent(new Event("error")), 0);
+    },
+  });
+}
 
 export function makeRowContext(): { ctx: Record<string, unknown>; stop: () => void } {
   let alive = true;
@@ -139,6 +169,7 @@ export function makeRowContext(): { ctx: Record<string, unknown>; stop: () => vo
   const createElement = (tag: string, opts?: ElementCreationOptions): HTMLElement => {
     const el = document.createElement(tag, opts);
     if (phone && /^(img|video)$/i.test(tag)) useSdOn(el);
+    if (phone && /^script$/i.test(tag)) noThreeOn(el as HTMLScriptElement);
     return el;
   };
   const doc = forward(
@@ -157,6 +188,9 @@ export function makeRowContext(): { ctx: Record<string, unknown>; stop: () => vo
     IntersectionObserver: track(window.IntersectionObserver),
     ResizeObserver: track(window.ResizeObserver),
     MutationObserver: track(window.MutationObserver),
+    // Phones: no three.js (WebGL). The engines that use it (rows 6 and 8) draw
+    // the same lights on a 2D canvas when it is missing (see NO_WEBGL_ON_PHONES).
+    ...(phone ? { THREE: undefined } : {}),
     addEventListener: addFor(window),
     removeEventListener: removeFor(window),
   };
@@ -326,23 +360,51 @@ export function useRowEngines(rootRef: RefObject<HTMLElement | null>, rows: read
     // Before any engine runs, so only the markup's own autoplay videos are taken.
     const stopAutoplay = watchAutoplayVideos(root);
 
-    (async () => {
-      for (const { r, el, ctx } of jobs) {
-        if (!el || r.scripts.length === 0) continue;
-        el.dataset.v4Ran = "1";
-        for (const src of r.scripts) {
-          if (cancelled) return;
-          const ok = await loadScript(src, ctx, added);
-          if (!ok) {
-            console.warn(`[v4] row ${r.row}: failed to load ${src}; skipping the rest of this row's scripts`);
-            break;
-          }
+    // Phones start a row's engine only when the row comes within about a screen
+    // and a half of the viewport, not all of them at once on load: that startup
+    // burst (with WebGL and the hero's video grade) is what kept crashing the
+    // homepage tab in iPhone WebKit. They also skip three.js (NO_WEBGL_ON_PHONES).
+    // Desktop: every engine starts at once, in row order, as before.
+    const phone = isPhone() && typeof IntersectionObserver !== "undefined";
+    const nearObservers: IntersectionObserver[] = [];
+    const whenNear = (el: HTMLElement): Promise<void> =>
+      new Promise((resolve) => {
+        const io = new IntersectionObserver(
+          (entries) => {
+            if (!entries.some((e) => e.isIntersecting)) return;
+            io.disconnect();
+            resolve();
+          },
+          { rootMargin: "150% 0px" },
+        );
+        nearObservers.push(io);
+        io.observe(el);
+      });
+    const runRow = async ({ r, el, ctx }: (typeof jobs)[number]): Promise<void> => {
+      if (!el) return;
+      const scripts = phone ? r.scripts.filter((src) => !THREE_SRC_RE.test(src)) : r.scripts;
+      if (scripts.length === 0) return;
+      if (phone) await whenNear(el);
+      if (cancelled) return;
+      el.dataset.v4Ran = "1";
+      for (const src of scripts) {
+        if (cancelled) return;
+        const ok = await loadScript(src, ctx, added);
+        if (!ok) {
+          console.warn(`[v4] row ${r.row}: failed to load ${src}; skipping the rest of this row's scripts`);
+          break;
         }
       }
-    })();
+    };
+    if (phone) jobs.forEach((job) => void runRow(job));
+    else
+      void (async () => {
+        for (const job of jobs) await runRow(job);
+      })();
 
     return () => {
       cancelled = true;
+      nearObservers.forEach((io) => io.disconnect());
       stopAutoplay();
       stops.forEach((stop) => stop());
       added.forEach((s) => s.remove());

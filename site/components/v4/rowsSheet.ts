@@ -133,6 +133,14 @@ html, body { background: ${V4_PAGE_GROUND}; }
     box-sizing: border-box; min-height: 40px; display: inline-flex; align-items: center;
   }
 }
+/* Phones: the hero (r1v42) grades its playing video with a backdrop-filter and a
+   mix-blend-mode tint, set inline by its engine. On iPhone WebKit that kept the
+   homepage tab crashing on load (white page, reload, again). Phones get the plain
+   video; desktop keeps the grade. Same phone test as sdMedia.ts PHONE_MEDIA. */
+@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
+  .v4 [data-row] [class*="-grade"] { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+  .v4 [data-row] [class*="-tint"] { mix-blend-mode: normal !important; }
+}
 /* The footer a row brings (the homepage MCP row, r16v38): the same targets as
    V4Footer (v4-template.css): 18px social icons in a 34px hit area (padding
    cancelled by margin, so the spacing is unchanged), and 40px links once the
