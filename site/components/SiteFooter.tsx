@@ -85,8 +85,8 @@ export default function SiteFooter(): React.ReactNode {
               <div className="sf-footer__col">
                 <div className="sf-footer__col-head">Legal</div>
                 <ul>
-                  <li><a href="https://legal.act3ai.com/docs/privacy-policy#welcome">Privacy Policy</a></li>
-                  <li><a href="https://legal.act3ai.com/docs/terms-of-service/">Terms of Service</a></li>
+                  <li><a href="https://act3ai.com/docs/legal/privacy-policy">Privacy Policy</a></li>
+                  <li><a href="https://act3ai.com/docs/legal/terms-of-service">Terms of Service</a></li>
                 </ul>
               </div>
             </div>
