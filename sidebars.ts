@@ -32,7 +32,12 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Reference",
-      items: ["roadmap", "changelog"],
+      items: [
+        "training/overview",
+        "ownership_of_output/overview",
+        "roadmap",
+        "changelog",
+      ],
     },
   ],
 };
