@@ -12,9 +12,9 @@ description: Official Terms of Service for ACT 3 AI, Inc.
 
 **Effective Date:** July 1, 2025
 
-**Last Updated:** November 20, 2026
+**Last Updated:** November 24, 2026
 
-**What changed:** We clarified that you own your content, including Sets; that ACT 3 AI does not train AI models on your content; how AI Providers fit in; and how to export your work. We also made storage its own topic: when you stop paying or downgrade, you have 30 days to download your files, after which we delete them (Section 2.3). Deleting stored files never affects your ownership of them (Section 9).
+**What changed:** We now link our list of the other AI companies whose services make your video, images, voices and text, and say plainly that their terms apply (Section 2.5); we spelled out what you own, what ACT 3 AI keeps and does not promise, and that ACT 3 AI does not indemnify you or your buyers (Sections 9, 15, 16 and 17); we made clear the Service is for making your own films, not for reselling AI generation (Section 5.13); that money spent on a generation that has started is not refunded (Section 6.6); and what happens to your files if ACT 3 AI stops operating (Section 19.13).
 
 Welcome! Please read these ACT 3 AI, Inc. Terms of Service carefully before accessing or using our Services or Platform.
 
@@ -50,10 +50,10 @@ The following capitalized terms have the meanings set out below. They apply thro
 
 ### 2.1 Scope of Services
 
-ACT 3 AI operates and facilitates access to the Platform, which enables Users to plan, generate, edit, and manage audiovisual works and related Digital Assets. The Platform is delivered through our Website, web-application, command-line tools, plug-ins, programmatic application-programming interfaces ("APIs"), and any downloadable software we make available. Core capabilities of the Platform presently include, without limitation:
+ACT 3 AI operates and facilitates access to the Platform, which enables Users to plan, generate, edit, and manage audiovisual works and related Digital Assets. The Service is for filmmakers and creative teams who direct and make their own films, videos, and shows (and those of their Organization or its clients) with it. It is not offered to software companies that build their own product on it to generate videos and other media for their own customers (Section 5.13). The Platform is delivered through our Website, web-application, command-line tools, plug-ins, programmatic application-programming interfaces ("APIs"), and any downloadable software we make available. Core capabilities of the Platform presently include, without limitation:
 
 - AI-assisted expansion of rough concepts into complete scripts and story structures;
-- Integration of large-scale generative-video models (e.g., Flux, Stable Diffusion SDXL, Runway, Google Veo 3) to create draft, standard, or high-quality shots;
+- Integration of large-scale generative-video and image models from AI Providers (the current ones are in the AI Providers list, Section 2.5(b)) to create draft, standard, or high-quality shots;
 - Management of Beats, Scenes, Shots, cinematography, lighting, and 3-D set control; and
 - Project-level collaboration within Organizations, each owning its Projects, members, and subscription.
 
@@ -63,7 +63,7 @@ Access to paid functionality is packaged into subscription plans (Free, Communit
 
 ### 2.3 Cloud Storage; Your Obligation to Download
 
-**This Section is about storage, not ownership.** You own Your Content (Section 9), and that never changes. This Section explains how long ACT 3 AI keeps your files on its servers. Deleting stored files does not affect your ownership of them.
+**This Section is about storage, not ownership.** As between you and ACT 3 AI, you own Your Content (Section 9), and that never changes. This Section explains how long ACT 3 AI keeps your files on its servers. Deleting stored files does not affect your ownership of them.
 
 a. **Storage comes with an active plan.** The Service stores your generated media and uploads only while your plan is active, and only up to your plan's storage quota shown in the billing dashboard. When an Organization reaches its limit, new media generation is blocked until the Organization deletes files or upgrades its plan. Cloud storage is a working space for making your projects. It is not an archive or backup service, and you should keep your own copies of anything you want to keep.
 
@@ -81,15 +81,17 @@ We may, from time to time, offer software, services, or features identified as "
 
 ### 2.5 AI Providers and Other Third-Party Services
 
-**a. AI Providers.** ACT 3 AI is a production system built on top of third-party generative-AI models for video, images, voice, and text, and the brokers through which we reach them (each, an "**AI Provider**"). When you use a feature that an AI Provider runs, the Content needed for that feature (for example, a prompt, a reference image, a character sheet, a first frame, or dialogue for a voice) is sent to that AI Provider so it can produce the Output you asked for.
+**a. AI Providers.** ACT 3 AI is a production system built on top of third-party generative-AI models for video, images, voice, and text, and the brokers through which we reach them (each, an "**AI Provider**"). When you use a feature that an AI Provider runs, the Content needed for that feature (for example, a prompt, a reference image, a character sheet, a first frame, or dialogue for a voice) is sent to that AI Provider so it can produce the Output you asked for. AI Providers are not ACT 3 AI, nor its licensors or agents, for the purposes of these Terms, and nothing ACT 3 AI says in these Terms binds or speaks for any AI Provider.
 
-**b. The AI Providers list.** The current AI Providers, the features each one runs, and links to their terms, usage policies, and privacy and data-use statements are listed at https://act3ai.com/ai-providers (the "**AI Providers list**"). Where we know it, the list also states whether the AI Provider's terms allow it to retain your Content or use it to train its models, and whether a no-training or limited-retention setting is in place for our account. We update the list when we add or remove an AI Provider.
+**b. The AI Providers list.** ACT 3 AI uses other companies' generative-AI services to make your video, images, voices and audio, and text (scripts, prompts, and chat). You need to understand that we keep a list of those AI Providers at https://act3ai.com/docs/ownership_of_output (the "**AI Providers list**"), and that each AI Provider's own legal terms, including what it says about who owns what it makes, its usage policies, and its restrictions, apply to what it makes for you. ACT 3 AI does not remove those terms. The AI Providers list names the current AI Providers and links to each one's own terms; our Training page (https://act3ai.com/docs/training) links each one's own documents on how it uses the data sent to it, including training. We update the list when we add or remove an AI Provider. The AI Providers list, including its "Summary by AI" table, is information only: it may be incomplete or out of date, it is not a contract, and it is not a statement by ACT 3 AI about any AI Provider's terms. The AI Provider's own linked page is always the current authority.
 
-**c. Their terms apply.** When you use a feature run by an AI Provider, that AI Provider's usage policies and use restrictions, as they change from time to time, apply to your use of that feature and form part of this Agreement for that purpose. AI Providers handle the Content they receive under their own terms, which may include retaining it or using it to improve their models. ACT 3 AI does not control and cannot change those terms. ACT 3 AI's own commitments in Sections 8 (AI Training) and 9 (Your Content) apply on top of them and are not reduced by them.
+**c. Their terms apply.** Much of the Output is generated by AI models from other companies; their terms also apply. When you use a feature run by an AI Provider, that AI Provider's usage policies and use restrictions, as they change from time to time, apply to your use of that feature and form part of this Agreement for that purpose, and you must follow them. AI Providers handle the Content they receive under their own terms, which may include retaining it or using it to improve their models. ACT 3 AI does not control and cannot change those terms. ACT 3 AI's own commitments in Sections 8 (AI Training) and 9 (Your Content) apply on top of them and are not reduced by them. If your use breaks an AI Provider's usage policies or restrictions, or could put ACT 3 AI in breach of its agreement with that AI Provider, ACT 3 AI may refuse the request and may suspend or terminate your access under Section 10.3.
 
-**d. Your choice of AI Provider.** Where the Platform offers more than one AI Provider for a feature, you may choose which one runs your work, and you may switch at any time, so that you can avoid AI Providers whose terms you do not accept. Some features or models are available from only one AI Provider; the AI Providers list says which.
+**d. Your choice of AI Provider.** Where the Platform offers more than one AI Provider for a feature, you may choose which one runs your work, and you may switch at any time, so that you can avoid AI Providers whose terms you do not accept. Some features or models are available from only one AI Provider, and some steps (for example, script analysis, chat, and image description) use AI Providers that ACT 3 AI selects.
 
 **e. Other Third-Party Services.** The Platform also uses third-party cloud infrastructure, payment processors, and similar services ("**Third-Party Services**"). We are not responsible for Third-Party Services that you choose to connect yourself; your use of those is governed by your terms with that provider.
+
+**f. AI Providers change.** AI Providers may change, limit, re-price, or stop their models and services, and may have outages. ACT 3 AI may add, change, or remove AI Providers and models at any time. ACT 3 AI is not responsible for an AI Provider's acts or omissions, its outages, its changes to its models or terms, or its ending a service, and ACT 3 AI does not promise that any model will stay available, unchanged, or at the same price.
 
 ### 2.6 Modifications to the Service
 
@@ -105,7 +107,7 @@ To maintain platform stability, we may throttle bandwidth, storage, API calls, o
 
 ### 2.9 Service-Generated Assets
 
-Digital Assets produced through the Service (e.g., rendered clips, 3-D models, prompts) are stored within the originating Organization's workspace. You own these assets. Ownership, licensing, export, and permitted use of them are governed by [Section 9](#9-your-content-ownership-use-and-export) (Your Content: Ownership, Use, and Export).
+Digital Assets produced through the Service (e.g., rendered clips, 3-D models, prompts) are stored within the originating Organization's workspace. They are Your Content, and as between you and ACT 3 AI, you own them. Ownership, licensing, export, and permitted use of them are governed by [Section 9](#9-your-content-ownership-use-and-export) (Your Content: Ownership, Use, and Export).
 
 ### 2.10 Feedback
 
@@ -212,7 +214,7 @@ Customer authorizes Company and its designated payment processors (presently Str
 ### 4.8 Billing; Refunds
 
 - Advance Billing. Subscription fees are invoiced and payable in advance unless the order specifies usage-based components that are billed in arrears.
-- Refunds. Except as set forth below, all payments are non-refundable, and no refund, credit, or proration is given for Plan upgrades, downgrades, or cancellations. Company will issue a pro-rata refund of prepaid fees only if: (i) Company discontinues the Services for convenience, or (ii) Customer terminates for Company's uncured material breach, or (iii) refund is required by non-waivable consumer law. Credits are not convertible to cash except where required by law.
+- Refunds. Except as set forth below, all payments are non-refundable, and no refund, credit, or proration is given for Plan upgrades, downgrades, or cancellations. Company will issue a pro-rata refund of prepaid fees only if: (i) Company discontinues the Services for convenience, or (ii) Customer terminates for Company's uncured material breach, or (iii) refund is required by non-waivable consumer law. Credits are not convertible to cash except where required by law. No refund, credit return, or pro-rata amount is ever owed for Credits or fees already spent on a generation that has started, because ACT 3 AI has already paid the AI Provider for it (Section 6.6); the only exceptions are the automatic re-credit for a task that fails because of a Platform fault (Section 6.6) and non-waivable consumer law (Section 4.15).
 
 ### 4.9 Taxes; Late Charges
 
@@ -314,8 +316,13 @@ Advertising may appear only in materials directly related to your Project and mu
 When using generative features, do not:
 
 - input material you lack the right to use or that violates these Acceptable-Use rules;
-- attempt to regenerate or distribute infringing, hateful, or disallowed Content via prompts; or
-- use Outputs to train AI models where the terms of the AI Provider that generated them prohibit it (see the AI Providers list in Section 2.5).
+- attempt to regenerate or distribute infringing, hateful, or disallowed Content via prompts;
+- use Outputs to train AI models where the terms of the AI Provider that generated them prohibit it (see the AI Providers list in Section 2.5);
+- use an identifiable real person's face, likeness, or voice without that person's written consent (Section 13.3);
+- remove, alter, or obscure any watermark or content credential (for example, C2PA content credentials or SynthID) that identifies an Output as AI-generated; or
+- break any law that requires you to disclose that material is AI-generated.
+
+These marks do not affect your ownership of Your Content (Section 9). ACT 3 AI does not promise that every export carries them.
 
 ### 5.11 Export Control & Sanctions
 
@@ -326,6 +333,14 @@ You may not use the Service if such use is prohibited under U.S. or other applic
 ACT 3 AI may remove UGC, suspend Accounts, or terminate access for violations of this Section 5. We will attempt to provide notice and an opportunity to appeal where practical but reserve full discretion to act immediately when User safety, legal compliance, or platform integrity is at risk.
 
 If you believe someone is violating these rules, please report the matter to AntiAbuse@ACT3ai.com with relevant details. Violating any part of this Acceptable Use section constitutes a material breach of the Agreement and may result in suspension or termination of your Account, forfeiture of AI Credits, and other legal remedies.
+
+### 5.13 Who the Service Is For; No Reselling AI Generation
+
+a. **Made for filmmakers.** You may use the Service, including the APIs, the MCP server, the command-line tools, and AI agents you run yourself, to make your own creative projects and your Organization's: films, videos, shows, episodes, advertisements, and similar works. A production company or agency that makes films or videos FOR its clients with the Service is allowed; the client may receive the finished work and the assets made for it.
+
+b. **No reselling AI generation.** You may not provide, sell, or offer AI generation, or access to the Service or to any AI Provider's models, to third parties as your own product or service, without a separate written agreement signed by an officer of ACT 3 AI. This is strictly disallowed. For example, a software company may not build its own app, website, or service that calls our APIs or MCP server so that its own customers or users can generate videos, images, voices, or other media, and then hand those results out to them.
+
+c. **Enforcement.** If ACT 3 AI reasonably believes an Account is used this way, ACT 3 AI may suspend or terminate the Account and its API keys and MCP access under Section 10.3, without refund of any fees or Credits.
 
 ## 6. AI Credits
 
@@ -349,7 +364,7 @@ Where to Find Current Pricing. All tasks, their Credit costs, and plan-specific 
 
 ### 6.3 How Credits Are Spent
 
-- Real-time display. Before you launch a task, the interface shows the exact or estimated Credit cost. Starting the task is your authorization to deduct those Credits.
+- Real-time display. Before you launch a task, the interface shows the exact or estimated Credit cost. Starting the task is your authorization to deduct those Credits, and once it has started those Credits are spent (Section 6.6).
 - Usage Order. We deduct from the current Monthly Allocation first, then from any Rollover Bank (see § 6.4).
 - Failed or Aborted Jobs. If a task fails solely because of a Platform fault, we automatically re-credit the full amount. Credits are not returned if failure results from (i) your breach of these Terms, (ii) invalid inputs, or (iii) external factors beyond our control (e.g., your internet outage).
 - Insufficient Balance. If a task would exceed your remaining Credits, we pause the task and prompt you to top-up or upgrade. We are not liable for delays caused by insufficient Credits.
@@ -371,10 +386,13 @@ Where to Find Current Pricing. All tasks, their Credit costs, and plan-specific 
 
 ### 6.6 Refunds & Adjustments
 
+**Money spent on a generation is not refunded.** When you start a generation (for example, a video, image, voice, upscale, or AI writing task), ACT 3 AI pays the AI Provider or uses its own compute for it at once, and that money cannot be recovered. You know and accept that once a generation has started, no refund, credit return, or cash payment is owed for it, including when you do not like the result, change your mind, or cancel it after it has started. The only exceptions are the ones in the table below and any non-waivable right under consumer law (Section 4.15).
+
 | Situation | Credit refund? |
 | --- | --- |
 | Platform fault causes task failure | Yes. Full automatic re-credit. |
 | You cancel an in-progress task | No. Credits already consumed are not returned. |
+| A generation that delivered a result, including one you do not like | No. |
 | Downtime >24 consecutive hours attributable solely to ACT 3 AI | Yes. Upon written request within 30 days, we will credit an amount equal to the Credits you would have received under the Monthly Allocation for each full 24-hour period of outage. |
 | Any other circumstance | No refunds, except as required by law. |
 
@@ -399,7 +417,7 @@ Using Credits does not guarantee uninterrupted access to the Service, and Credit
 
 ### 7.1 Pricing and Subscription Plans
 
-Our pricing, subscription tiers, and payment terms are available at https://app.act3ai.com/settings/plans/. Pricing is based on subscription plans that vary by features, usage limits (e.g., generation credits, storage quotas, concurrent jobs), and commercial use rights. Subscription plans may include free tiers, individual creator plans, professional plans, and enterprise plans, each with specific credit allocations and feature sets. By selecting a subscription plan, you agree to pay the fees associated with that plan for the duration of the billing term, as outlined at the time of purchase. Prices are subject to change at the end of your billing term, and we will provide at least 30 days' prior notice of any material price changes via email to the primary email address associated with your Account or through a notice on the Platform.
+Our pricing, subscription tiers, and payment terms are available at https://app.act3ai.com/settings/plans/. Pricing is based on subscription plans that vary by features, usage limits (e.g., generation credits, storage quotas, concurrent jobs). Plans do not differ in your ownership of, or right to use, your Outputs commercially (Section 14.6). Subscription plans may include free tiers, individual creator plans, professional plans, and enterprise plans, each with specific credit allocations and feature sets. By selecting a subscription plan, you agree to pay the fees associated with that plan for the duration of the billing term, as outlined at the time of purchase. Prices are subject to change at the end of your billing term, and we will provide at least 30 days' prior notice of any material price changes via email to the primary email address associated with your Account or through a notice on the Platform.
 
 ### 7.2 Billing and Payment Terms
 
@@ -443,7 +461,7 @@ ACT 3 AI reserves the right to modify pricing and subscription plans at any time
 
 ## 8. AI Training
 
-**Summary:** ACT 3 AI does not train AI models on your content. The AI Providers that run some features have their own terms, which we show you, and you can choose among them.
+**Summary:** ACT 3 AI does not train AI models on your content. The AI Providers that run some features have their own terms, which we link in the AI Providers list, and where the Platform offers a choice you can choose among them.
 
 ### 8.1 We Do Not Train on Your Content
 
@@ -455,7 +473,7 @@ We process Your Content only to provide the Service to you (Section 9.4), includ
 
 ### 8.3 AI Providers
 
-AI Providers receive the Content needed to run the features you choose and handle it under their own terms, as described in Section 2.5. Some AI Providers' terms allow them to retain Content or use it to improve their models. Where an AI Provider offers API customers a setting or agreement that excludes customer Content from model training or limits retention, we use it where it is available to us, and the AI Providers list shows where that is in place. If you do not accept an AI Provider's terms, you may choose a different AI Provider for that feature (Section 2.5(d)).
+AI Providers receive the Content needed to run the features you choose and handle it under their own terms, as described in Section 2.5. Some AI Providers' terms allow them to retain Content or use it to improve their models. Where an AI Provider offers API customers a setting or agreement that excludes customer Content from model training or limits retention, we use it where it is available to us. Our Training page (https://act3ai.com/docs/training) links each AI Provider's own documents on how it uses the data sent to it, including training. If you do not accept an AI Provider's terms, you may choose a different AI Provider for that feature (Section 2.5(d)).
 
 ### 8.4 Any Future Training Requires Your Opt-In
 
@@ -463,7 +481,7 @@ If ACT 3 AI ever offers a program that uses Content to train models, it will be 
 
 ## 9. Your Content: Ownership, Use, and Export
 
-**Summary:** You own what you bring to ACT 3 AI and what you make with it, including your characters, worlds, stories, sets, images, and videos. We claim no ownership, we do not train on it, and you can take it with you.
+**Summary:** As between you and ACT 3 AI, you own what you bring to ACT 3 AI and what you make with it, including your characters, worlds, stories, sets, images, videos, and audio. ACT 3 AI claims no ownership of it, we do not train on it, and you can take it with you. Much of the Output is made by other companies' AI models, and their terms also apply (Section 2.5). ACT 3 AI does not promise that an Output is free of other people's rights or protected by copyright, and ACT 3 AI does not indemnify or defend you or your buyers.
 
 ### 9.1 Key Definitions
 
@@ -473,12 +491,22 @@ If ACT 3 AI ever offers a program that uses Content to train models, it will be 
 | Inputs | Anything you upload, enter, or create on the Platform, including character designs, illustrations, backgrounds, environment concepts, reference images, story and beat data, character attributes, voices, motion-capture data, and settings. |
 | Scripts | Screenplays, dialogue, scene descriptions, and other written narrative you upload or write on the Platform. |
 | Sets | Virtual environments, set images, 4D sets, floor plans, layouts, 3-D geometry, textures, lighting, and related data that you create, upload, modify, or have generated on the Platform. |
-| Outputs | Everything the Service generates for you, including videos, shots, edits, storyboards, first frames, character sheets, set images, renders, still frames, audio, and derivative files. |
-| ACT 3 AI Materials | The Platform itself and the stock assets, templates, presets, and sample content that ACT 3 AI provides to all Users. |
+| Outputs | Everything the Service generates for you, including videos, shots, edits, storyboards, first frames, character sheets, set images, renders, still frames, audio, scripts and other text, and derivative files. |
+| ACT 3 AI Materials | The stock assets, templates, presets, and sample content that ACT 3 AI provides to all Users. |
+
+Where these Terms say "outputs", "AI-generated outputs", "AI-Generated Outputs", "Service-generated assets", "deliverables", or (in Section 13.3) "AI-Generated Content" for something the Service generates for you, they mean Outputs.
 
 ### 9.2 You Own Your Content
 
-As between you and ACT 3 AI, you own all right, title, and interest in Your Content, including the characters, environments, stories, and other intellectual property in it. ACT 3 AI claims no ownership of Your Content, and nothing in this Agreement assigns or transfers any of it to ACT 3 AI. To the extent ACT 3 AI acquires any right in an Output generated for you, ACT 3 AI assigns that right to you. Whether a particular Output is protectable by copyright depends on applicable law, including the amount of human authorship in it; ACT 3 AI makes no promise about that.
+As between you and ACT 3 AI, you own your output: ACT 3 AI claims no ownership of it and assigns to you any right in it that we may have.
+
+As between you and ACT 3 AI, you own all right, title, and interest in Your Content, including the characters, environments, stories, and other intellectual property in it, except the ACT 3 AI Materials incorporated in it, which are licensed to you under Sections 9.3 and 9.11. ACT 3 AI claims no ownership of Your Content, and nothing in this Agreement assigns or transfers any of it to ACT 3 AI. Nothing in this Agreement, and no use of the Service, gives ACT 3 AI, its affiliates (including any company that employs our staff or owns our software, such as WhiteHat Engineering) or its contractors any ownership of Your Content.
+
+**Element by element.** You direct; ACT 3 AI's AI crew and the AI models generate. As between you and ACT 3 AI, each of these is yours, and ACT 3 AI claims no ownership of any of it: (a) your script, and any Script written for you on the Platform; (b) the picture: videos, shots, first frames, storyboards, character sheets, set images, and other images; (c) dialogue, voices, and other audio; (d) music and sound effects; (e) your edit; and (f) every Input you bring, such as scripts, reference images, faces, voices, music, and motion capture (a person shown or heard in them keeps their own rights of publicity and privacy, which you must clear; Section 13.3). What an AI Provider gives or keeps in an Output it generates is set by its own terms (Sections 2.5 and 9.5); the AI Providers list (Section 2.5(b)) links each one. This Section gives you clarity about what ACT 3 AI claims; it is not a guarantee about anyone else's rights.
+
+**Assignment.** ACT 3 AI hereby assigns to you all right, title and interest, if any, that ACT 3 AI has or acquires in the Outputs generated for you and in Scripts written for you through the Service, including any rights ACT 3 AI receives from an AI Provider (to the extent ACT 3 AI's agreement with that AI Provider permits; where ACT 3 AI holds only a license, ACT 3 AI grants you a sublicense on the same terms, to the extent permitted), without any warranty of any kind, including any warranty that such rights exist, are complete, are protectable, or are free of claims by others. At your request, ACT 3 AI will sign documents reasonably needed to confirm this assignment, for example for a copyright registration or a distributor's chain-of-title review. ACT 3 AI signs a short confirmation in its standard form, which adds no representation, warranty, indemnity, or other obligation beyond this Section 9.2; this obligation ends if ACT 3 AI stops operating (Section 19.13).
+
+**What ACT 3 AI does not promise.** ACT 3 AI does not promise that no one else has or claims rights in an Output, that the AI Provider or any third party will not assert rights in it, or that an Output is protected by copyright. Copyright and similar laws generally protect only material created by a human. Material generated by AI with little or no human creative control may not be protected, and you may need to disclose it when you register a copyright. Your own work is what makes your claim strong: your script, your direction, your choices, and your edit. See also Section 15.3.
 
 ### 9.3 Sets
 
@@ -486,11 +514,15 @@ Sets are Your Content, whether you upload them, create them, modify them, or hav
 
 ### 9.4 The Limited License You Give ACT 3 AI
 
-You grant ACT 3 AI a non-exclusive, worldwide, royalty-free license to host, store, copy, process, transmit, and display Your Content, and to make technical changes to it (for example, resizing, transcoding, or cropping for display), solely to: (a) provide, secure, and support the Service for you and for the people you authorize; (b) send it to the AI Providers that run the features you choose (Section 2.5); (c) comply with law; and (d) display it in Community Videos if you choose (Section 9.6). We may extend this license only to our service providers and AI Providers acting to provide the Service. This license does not allow ACT 3 AI to sell Your Content, use it to train AI models (Section 8), or use it in our marketing without your opt-in. It ends when you delete the Content or your Account closes, except for backup copies kept under Section 10.6 and Community Videos uses under Section 9.6.3.
+ACT 3 AI keeps no ownership of, and no right to exploit, your Output. The only rights ACT 3 AI keeps in Your Content are the limited license in this Section 9.4 and, only if you opt in, the Community Videos license in Section 9.6.
+
+You grant ACT 3 AI a non-exclusive, worldwide, royalty-free license to host, store, copy, back up, process, transmit, and display Your Content, and to make technical changes to it (for example, resizing, transcoding, or cropping for display), solely to: (a) provide, secure, and support the Service for you and for the people you authorize, including investigating errors, abuse, and security issues; (b) send it to the AI Providers that run the features you choose (Section 2.5); (c) comply with law; and (d) display it in Community Videos if you choose (Section 9.6). We may extend this license only to our service providers and AI Providers acting to provide the Service. This license does not allow ACT 3 AI to sell Your Content, use it to train AI models (Section 8), or use it in our marketing without your opt-in. It ends when you delete the Content or your Account closes, except for backup copies kept under Section 10.6 and Community Videos uses under Section 9.6.3. We do not sell your Output, license it to others, use it in our marketing without your opt-in, or use it to train AI models.
+
+We treat Your Content, including Outputs, as your confidential customer data: we process it only to provide the Service as described in this Section 9.4, we do not sell it, we do not use it to train AI models, and our staff access private Projects only as described in our Privacy Policy. These promises are ACT 3 AI's own. When a feature is run by an AI Provider, that AI Provider handles the Content it receives under its own terms (Section 2.5), which may include retention, license, or training rights; those rights are the AI Provider's, not ACT 3 AI's. You authorize ACT 3 AI to send Content to the AI Provider that runs a feature you use, on that AI Provider's terms, including any license, retention, or training rights those terms give it, and you grant ACT 3 AI the rights needed to do so. Doing this is not a sale or license by ACT 3 AI, or use for training by ACT 3 AI, under Section 8.
 
 ### 9.5 Outputs Made with AI Providers
 
-Outputs are generated by AI Providers. ACT 3 AI passes to you every right in an Output that the AI Provider gives us. Some AI Providers' terms attach conditions to Outputs or give the AI Provider a license to the Content it receives; those terms are linked in the AI Providers list (Section 2.5). Because AI models can produce similar results for different users, ACT 3 AI does not promise that an Output is unique to you.
+Much of the Output is generated by AI models from other companies; their terms also apply. ACT 3 AI passes to you whatever rights in an Output the AI Provider that generated it gives us, and nothing more. This is true for every kind of Output: video, images, dialogue and voices, audio and sounds, scripts, and other text written by a language model. ACT 3 AI does not remove any AI Provider's terms about ownership or use; they still apply. Some AI Providers' terms attach conditions to Outputs or give the AI Provider a license to the Content it receives or the Output it generates (for example, a perpetual license, or a right to train on it); those licenses belong to the AI Provider, not to ACT 3 AI, and those terms are linked in the AI Providers list (Section 2.5(b)). Because AI models can produce similar results for different users, ACT 3 AI does not promise that an Output is unique to you.
 
 ### 9.6 Community Videos (Opt-In)
 
@@ -508,13 +540,27 @@ You may export Your Content at any time while your Account is active, and use it
 
 You represent and warrant that: (a) you have all rights needed to upload your Inputs and grant the license in Section 9.4; (b) your Inputs, and your use of Outputs, do not infringe any third-party right or violate law; and (c) any likeness, voice, motion-capture, or other personal-data uploads comply with Section 13.3 and applicable privacy and publicity laws. You agree to defend and indemnify ACT 3 AI from claims arising from your Inputs or your use of Outputs, as set out in Section 17 (Release and Indemnification).
 
+You alone are responsible for any representation, warranty, or indemnity you give to anyone who receives, buys, licenses, or distributes your Content or Outputs (a "buyer"). You must not tell a buyer that ACT 3 AI gave any warranty, indemnity, or defense. ACT 3 AI does not indemnify or defend you or your buyers (Section 17.4).
+
 ### 9.9 Moral Rights
 
 You keep all moral rights in Your Content. You consent to the technical changes described in Section 9.4 that are needed to provide the Service; you waive nothing else.
 
 ### 9.10 After Your Account Ends
 
-Your ownership of Your Content survives the end of your Account, even after your stored files are deleted under Section 2.3. Ownership does not mean ACT 3 AI will keep storing your files. ACT 3 AI keeps no right to use Your Content after deletion, except backup copies under Section 10.6 (which we do not use for any other purpose) and Community Videos uses under Section 9.6.3.
+As between you and ACT 3 AI, your ownership of Your Content survives the end of your Account, even after your stored files are deleted under Section 2.3. Ownership does not mean ACT 3 AI will keep storing your files. ACT 3 AI keeps no right to use Your Content after deletion, except backup copies under Section 10.6 (which we do not use for any other purpose) and Community Videos uses under Section 9.6.3.
+
+### 9.11 ACT 3 AI Materials (the Shared Library)
+
+ACT 3 AI keeps ownership of the ACT 3 AI Materials, including its reusable library (stock digital actors, places, presets, render styles, prompt templates, objects, and voices we license). To the extent ACT 3 AI's own license allows (third-party library items are also subject to their owners' terms), ACT 3 AI grants you a perpetual, worldwide, royalty-free, non-exclusive license to use them in your work, inside or outside the Platform, including commercial release; that license is transferable together with your work and survives the end of your Account. You may not sell or license a library item by itself, apart from your work. Other Users may use the same library items. If you edit a global digital actor, it is cloned into your Organization: your changes are Your Content, and the base look stays ACT 3 AI Material.
+
+### 9.12 Before You Sell: Practical Steps
+
+These are practical suggestions, not conditions of this Agreement and not legal advice. Before you sell or license a film: (1) keep your script and edit records; (2) get written consent for any real person's face or voice; (3) license your music; (4) check, in the AI Providers list (Section 2.5(b)), the terms of every model your film used; (5) register your copyright and disclose AI material; and (6) get E&O insurance and answer its AI questions honestly.
+
+### 9.13 Only a Signed Writing Changes This Section
+
+Statements by ACT 3 AI personnel, marketing materials, or AI features of the Service (including the AI chat and MCP answers) do not change this Section 9; only a written amendment signed by an officer of ACT 3 AI can.
 
 ## 10. Suspension, Cancellation and Termination
 
@@ -572,7 +618,7 @@ The ACT 3 AI APIs ("APIs") enable programmatic interaction with the Platform to 
 
 ### 11.2 Permitted Uses
 
-You may use the APIs for development, testing, or data collection purposes related to your use of the Service, such as integrating ACT 3 AI functionalities into your applications or workflows (e.g., automating video rendering or managing digital actors), provided such use complies with these Terms and all applicable laws. If accessing the APIs on behalf of an Organization Account, you represent that you have the authority to bind the owner of the Organization Account to these Terms, and the owners of the Organization Account is responsible for all API activities conducted through the Organization Account.
+You may use the APIs and the MCP server, including through AI agents you run yourself, for your own creative projects and your Organization's, such as automating your own production workflows (e.g., automating video rendering or managing digital actors for your own films), provided such use complies with these Terms, Section 5.13, and all applicable laws. You may not use the APIs or the MCP server to provide, sell, or offer AI generation, or access to the Service or to any AI Provider's models, to third parties as your own product or service, including by building an application, website, or service whose own customers or users generate videos or other media through it, without a separate written agreement signed by an officer of ACT 3 AI (Section 5.13). If accessing the APIs on behalf of an Organization Account, you represent that you have the authority to bind the owner of the Organization Account to these Terms, and the owners of the Organization Account is responsible for all API activities conducted through the Organization Account.
 
 ### 11.3 Usage Limits and Restrictions
 
@@ -587,6 +633,7 @@ You may not use the APIs to:
 - Violate [Section 5](#5-acceptable-use) (Acceptable Use), including generating unlawful, infringing, or harmful Content.
 - Bypass or attempt to bypass API rate limits, authentication measures, or other security controls.
 - Reproduce, duplicate, copy, sell, resell, or exploit any portion of the Service or API access without our express written permission.
+- Provide, sell, or offer AI generation, or access to the Service or to any AI Provider's models, to third parties as your own product or service (Section 5.13). ACT 3 AI may suspend or terminate API and MCP access for this.
 
 #### 11.3.3 Token Security
 You are responsible for securing your API tokens and credentials. Sharing tokens to exceed rate limits or allow unauthorized access is prohibited. You must promptly notify us at contactus@act3ai.com of any unauthorized use, as described in [Section 3](#3-accounts) (Accounts).
@@ -626,7 +673,7 @@ Support for API-related issues is provided via email or in-Service communication
 
 ### 11.9 Liability and Indemnification
 
-You agree to indemnify ACT 3 AI, Inc., defend us, and hold us harmless from any claims, liabilities, or expenses arising from your use of the APIs, as described in [Section 17](#17-release-and-indemnification) (Release and Indemnification).
+You agree to indemnify ACT 3 AI, Inc., defend us, and hold us harmless from any claims, liabilities, or expenses arising from your use of the APIs, as described in [Section 17](#17-release-and-indemnification) (Release and Indemnification), including the limit at the end of Section 17.2.
 
 ACT 3 AI, Inc.'s liability for API-related issues is limited as described in [Section 16](#16-limitation-of-liability) (Limitation of Liability), including for any loss of profits, data, or functionality resulting from your API usage.
 
@@ -670,7 +717,7 @@ You are solely responsible for ensuring that all Content you upload, create, or 
 
 Before submitting a takedown notice or counter-notice, you must consider legal defenses such as fair use, licensed use, or other applicable exceptions. There may be legal consequences for submitting a false or frivolous DMCA notice or counter-notice.
 
-You agree to indemnify ACT 3 AI, Inc. for any claims arising from your Content or DMCA notices, as described in [Section 17](#17-release-and-indemnification) (Release and Indemnification).
+You agree to indemnify ACT 3 AI, Inc. for any claims arising from your Content or DMCA notices, as described in [Section 17](#17-release-and-indemnification) (Release and Indemnification), including the limit at the end of Section 17.2.
 
 ### 12.6 No Liability for Compliance
 
@@ -682,7 +729,7 @@ All DMCA notices and counter-notices must be sent to our designated copyright ag
 
 ## 13. Intellectual Property
 
-**Summary:** ACT 3 AI owns the Service and its Content. You own Your Content, as set out in Section 9. Please read this section carefully to understand your intellectual property rights and responsibilities.
+**Summary:** ACT 3 AI owns the Service and the ACT 3 AI Content described in Section 13.1. You own Your Content, as set out in Section 9. Please read this section carefully to understand your intellectual property rights and responsibilities.
 
 ### 13.1. ACT 3 AI's Intellectual Property
 
@@ -721,7 +768,7 @@ g. **Biometric Data Protection and Security.** ACT 3 AI implements industry-stan
 
 h. **Content Review and Enforcement.** We reserve the right to review Content for compliance with the terms in this Section 13 and may remove or restrict Content that violates these Terms or applicable laws. We may suspend or terminate Accounts that misuse actor Biometric Data or AI-Generated Content. Upon such termination, all copies of such AI-Generated Content using Biometric Data must be destroyed unless retention is legally required.
 
-i. **Indemnification.** You agree to indemnify, defend, and hold harmless ACT 3 AI Parties from and against any claims, losses, liabilities, and expenses, including attorneys' fees, arising from or in connection with your unauthorized possession or use of Biometric Data, including any Biometric Data you have obtained without the required prior written consent or agreement of an actor or that is used in a manner not legally permitted under these Terms or in violation of applicable law, as further described in Section 17 (Release and Indemnification).
+i. **Indemnification.** You agree to indemnify, defend, and hold harmless ACT 3 AI Parties from and against any claims, losses, liabilities, and expenses, including attorneys' fees, arising from or in connection with your unauthorized possession or use of Biometric Data, including any Biometric Data you have obtained without the required prior written consent or agreement of an actor or that is used in a manner not legally permitted under these Terms or in violation of applicable law, as further described in Section 17 (Release and Indemnification), including the limit at the end of Section 17.2.
 
 ### 13.4. Your Content
 
@@ -747,7 +794,7 @@ The ACT 3 AI Platform offers a range of features and products, including but not
 
 ### 14.2. Subscription Tiers and Usage Limits
 
-The Platform operates on a subscription-based model with tiered plans (e.g., Free, Creator, Professional, Enterprise) that provide varying levels of access to features, generation credits, storage quotas, concurrent job limits, and commercial use rights, as detailed at https://app.act3ai.com/settings/plans/. Your use of certain features, such as rendering tasks, AI-generated storyboards, or high-resolution video outputs, may consume generation credits or be subject to specific usage limits based on your subscription tier. Exceeding these limits may require upgrading your plan or purchasing additional credits, as described in [Section 7](#7-payment) (Payment). You are responsible for monitoring your usage to avoid service interruptions.
+The Platform operates on a subscription-based model with tiered plans (e.g., Free, Creator, Professional, Enterprise) that provide varying levels of access to features, generation credits, storage quotas, and concurrent job limits, as detailed at https://app.act3ai.com/settings/plans/. Your use of certain features, such as rendering tasks, AI-generated storyboards, or high-resolution video outputs, may consume generation credits or be subject to specific usage limits based on your subscription tier. Exceeding these limits may require upgrading your plan or purchasing additional credits, as described in [Section 7](#7-payment) (Payment). You are responsible for monitoring your usage to avoid service interruptions.
 
 ### 14.3. AI-Driven Features
 
@@ -759,7 +806,7 @@ b. **Virtual Set Design.** Creation and customization of 3D sets, including loca
 
 c. **Digital Actors.** Tools for creating, managing, and animating digital actors, including motion capture integration and wardrobe management.
 
-d. **Rendering Services.** Cloud-based rendering of videos using generative AI technologies (e.g., Flux, Stable Diffusion SDXL, Runway AI).
+d. **Rendering Services.** Cloud-based rendering of videos using generative AI models from AI Providers (the current ones are in the AI Providers list, Section 2.5(b)).
 
 Your use of AI-driven features is subject to the AI Training provisions in [Section 8](#8-ai-training), under which ACT 3 AI does not use Your Content to train AI models; AI Providers that run these features handle Content under their own terms, as described in Section 2.5. You are responsible for ensuring that all inputs you provide comply with [Section 5](#5-acceptable-use) (Acceptable Use) and do not infringe third-party rights.
 
@@ -789,7 +836,7 @@ b. **Our Intellectual Property provisions** in [Section 13](#13-intellectual-pro
 
 c. **All applicable laws and regulations**, including those related to copyright, trademark, and publicity rights.
 
-ACT 3 AI provides tools, such as rights-tracking dashboards and watermarked dailies, to help you manage licensing and protect your intellectual property, but you remain solely responsible for verifying the legal suitability of all outputs for commercial use.
+ACT 3 AI may provide tools to help you keep track of licensing, but you remain solely responsible for verifying the legal suitability of all outputs for commercial use. ACT 3 AI charges no royalties on what you make.
 
 ### 14.7. Beta Previews and Experimental Features
 
@@ -833,11 +880,21 @@ e. **The Service will be available** at any particular time or location; or
 
 f. **The Service is free** of viruses or other harmful components.
 
-You assume full responsibility and risk of loss resulting from your use of any Service and the Platform, including any downloading, uploading, or use of files, information, Content, or AI-generated Outputs (e.g., scripts, set designs, motion capture data) obtained through the Services or on the Platform. Your sole remedy against ACT 3 AI for dissatisfaction with the Service or the Platform is to stop using them.
+You assume full responsibility and risk of loss resulting from your use of any Service and the Platform, including any downloading, uploading, or use of files, information, Content, or AI-generated Outputs (e.g., scripts, set designs, motion capture data) obtained through the Services or on the Platform. Except as stated in Sections 4.8 and 6.6, your sole remedy against ACT 3 AI for dissatisfaction with the Service or the Platform is to stop using them.
 
 ### 15.2 Exceptions
 
 Some jurisdictions do not allow the exclusion of certain warranties. Accordingly, some of the above disclaimers may not apply to you. To the extent that ACT 3 AI may not, as a matter of applicable law, disclaim any warranty, the scope and duration of such warranty will be the minimum required under such law.
+
+### 15.3 No Promise About Outputs
+
+**OUTPUTS ARE PROVIDED "AS IS". ACT 3 AI DOES NOT PROMISE THAT ANY OUTPUT IS FREE OF THIRD-PARTY RIGHTS; DOES NOT INFRINGE OR MISAPPROPRIATE ANY COPYRIGHT, TRADEMARK, RIGHT OF PUBLICITY, PRIVACY RIGHT, OR OTHER RIGHT; IS PROTECTABLE BY COPYRIGHT; OR CAN BE REGISTERED, ENFORCED, SOLD, OR LICENSED.**
+
+a. **No uniqueness or exclusivity.** Other Users may receive the same or similar Outputs and may use the same library items (Section 9.11). Owning your Output gives you no right against other Users' similar Outputs.
+
+b. **No promise of fitness for distribution.** ACT 3 AI does not promise that any Output is fit for commercial release, broadcast, theatrical exhibition, or delivery to a distributor, or that any distributor, platform, festival, insurer, or registry will accept it.
+
+c. **What you acknowledge.** Outputs come from AI models trained by third parties on data ACT 3 AI did not select and cannot inspect. They may resemble existing works, people, voices, or trademarks. The law on AI training and AI-generated material is unsettled and may change. You review and clear Outputs before you publish, sell, or distribute them.
 
 ## 16. Limitation of Liability
 
@@ -845,7 +902,7 @@ Some jurisdictions do not allow the exclusion of certain warranties. Accordingly
 
 ### 16.1 Limitation of Liability
 
-To the fullest extent permitted by applicable law, ACT 3 AI, Inc., and its affiliates, directors, officers, employees, agents, licensors, and service providers will not be liable to you or any third party for any indirect, incidental, special, consequential, exemplary, or punitive damages, including but not limited to loss of profits, revenue, use, goodwill, data, or other intangible losses, arising out of or relating to:
+To the fullest extent permitted by applicable law, ACT 3 AI, Inc., and its affiliates, directors, officers, employees, agents, licensors, and service providers will not be liable to you or any third party for any indirect, incidental, special, consequential, exemplary, or punitive damages, including but not limited to loss of profits, revenue, use, goodwill, data, or other intangible losses, and including the loss, delay, cancellation or reduced value of any sale, license, distribution, broadcast, festival, financing, insurance or other deal involving your Content or Outputs, and any amount you owe to a third party under such a deal, arising out of or relating to:
 
 a. **Your use or inability to use** the Platform or Service;
 
@@ -867,7 +924,7 @@ ACT 3 AI's liability is limited regardless of whether we have been informed of t
 
 ### 16.2 Maximum Liability
 
-In any event, the total aggregate liability of ACT 3 AI, Inc., for all claims arising out of or relating to this Agreement or your use of the Service will not exceed the greater of: (a) the amount you paid to ACT 3 AI for access to the Service in the 12 months preceding the claim; or (b) one hundred U.S. dollars ($100). This limitation applies to all causes of action, whether based in contract, tort, statute, or any other legal theory.
+In any event, the total aggregate liability of ACT 3 AI, Inc., for all claims arising out of or relating to this Agreement or your use of the Service will not exceed the greater of: (a) the amount you paid to ACT 3 AI for access to the Service in the 12 months preceding the claim; or (b) one hundred U.S. dollars ($100). This limitation applies to all causes of action, whether based in contract, tort, statute, or any other legal theory, including claims arising from Outputs or from the AI models that make them.
 
 ### 16.3 Exceptions
 
@@ -875,7 +932,7 @@ Some jurisdictions do not allow the limitation of liability for certain types of
 
 ## 17. Release and Indemnification
 
-**Summary:** You are responsible for your use of the ACT 3 AI Platform and any disputes arising with other Users or third parties. You agree to release ACT 3 AI from liability for such disputes and to indemnify us against claims related to your actions. Please read this Section 17 carefully, as it limits our obligations to you and outlines your responsibilities.
+**Summary:** You are responsible for your use of the ACT 3 AI Platform and any disputes arising with other Users or third parties. You agree to release ACT 3 AI from liability for such disputes and to indemnify us against claims related to your actions. Please read this Section 17 carefully, as it limits our obligations to you and outlines your responsibilities. ACT 3 AI does not indemnify or defend you or your buyers.
 
 ### 17.1 Release
 
@@ -891,15 +948,23 @@ b. **Your violation of the Agreement**, including these Terms, our Privacy Polic
 
 c. **Your violation of any third-party rights**, including intellectual property, privacy, or publicity rights;
 
-d. **Your Content that infringes** applicable laws or third-party licenses (e.g., third-party assets used in AI-generated outputs); or
+d. **Your Content that infringes** applicable laws or third-party licenses (e.g., third-party assets used in AI-generated outputs);
 
-e. **Any disputes between you and other Users** or third parties arising from your use of the Service, including collaborative features within Organization Accounts.
+e. **Any disputes between you and other Users** or third parties arising from your use of the Service, including collaborative features within Organization Accounts; or
+
+f. **Your Inputs and what you do with Outputs**, including your scripts, prompts, reference images, voices, likenesses, and motion capture, and your selection, editing, publication, sale, licensing, or distribution of Outputs, including any promise you give a buyer.
+
+This Section 17.2 does not apply to the extent a claim is caused by ACT 3 AI's own breach, gross negligence or willful misconduct.
 
 ACT 3 AI, Inc. will: (i) promptly notify you in writing of any claim, demand, suit, or proceeding for which indemnification is sought; (ii) give you sole control of the defense and settlement of the claim, provided you may not settle any claim unless it unconditionally releases the ACT 3 AI Parties of all liability; and (iii) provide reasonable assistance at your expense. ACT 3 AI reserves the right to assume control of the defense of any claim at our own expense if you fail to promptly assume such defense.
 
 ### 17.3 Scope of Indemnification
 
 Your indemnification obligations extend to claims arising from your use of AI-driven features (e.g., virtual set design, digital actors, rendering services), including any misuse of third-party tools or assets integrated with the Platform (e.g., Autodesk Character Creator, Blender, as described in [Section 14](#14-additional-product-terms) (Additional Product Terms). You are responsible for ensuring that your inputs and outputs comply with all applicable laws and third-party license terms, and you will indemnify ACT 3 AI Parties for any claims resulting from non-compliance.
+
+### 17.4 ACT 3 AI Does Not Indemnify You
+
+ACT 3 AI does not indemnify, defend or hold harmless you, your Organization, or anyone who receives, buys, licenses or distributes your Content or Outputs (for example, distributors, broadcasters, streaming services, financiers, insurers, and audiences), against any claim, including a claim that an Output or the AI model used to make it infringes any right. Any indemnity an AI Provider gives ACT 3 AI is for ACT 3 AI alone, and you are not a third-party beneficiary of it. Only a separate written agreement signed by an officer of ACT 3 AI can change this Section 17.4.
 
 ## 18. Dispute Resolution – Binding Arbitration
 
@@ -967,7 +1032,7 @@ Your use of the Platform does not create any agency, partnership, joint venture,
 
 ### 19.3 No Third-Party Beneficiaries
 
-Except as expressly provided in this Agreement, nothing in this Agreement is intended to confer any rights or benefits on any third party. ACT 3 AI, Inc. may assign or delegate these Terms of Service and/or our Privacy Policy, in whole or in part, to any person or entity at any time, with or without your consent, including the license grants in [Section 13](#13-intellectual-property) (Intellectual Property). You may not assign or delegate any rights or obligations under this Agreement without our prior written consent, and any unauthorized assignment or delegation by you is void.
+Except as expressly provided in this Agreement, nothing in this Agreement is intended to confer any rights or benefits on any third party. You are not a third-party beneficiary of ACT 3 AI's agreements with AI Providers, including any indemnity an AI Provider gives ACT 3 AI, which is for ACT 3 AI alone (Section 17.4). ACT 3 AI, Inc. may assign or delegate these Terms of Service and/or our Privacy Policy, in whole or in part, to any person or entity at any time, with or without your consent, including the license grants in [Section 13](#13-intellectual-property) (Intellectual Property). You may not assign or delegate any rights or obligations under this Agreement without our prior written consent, and any unauthorized assignment or delegation by you is void.
 
 ### 19.4 Contractual Statute of Limitations
 
@@ -975,7 +1040,7 @@ You and ACT 3 AI agree that any cause of action arising out of or related to the
 
 ### 19.5 Consent to Electronic Communications
 
-By using the Service, you consent to receive communications from ACT 3 AI in electronic form, including via the email address associated with your Account or through the Platform, as described in our Privacy Policy https://act3ai.com/privacy. You agree that all Terms of Service, agreements, notices, disclosures, and other communications provided electronically satisfy any legal requirement that such communications be in writing. This consent does not affect your non-waivable rights.
+By using the Service, you consent to receive communications from ACT 3 AI in electronic form, including via the email address associated with your Account or through the Platform, as described in our Privacy Policy (https://act3ai.com/docs/legal/privacy-policy). You agree that all Terms of Service, agreements, notices, disclosures, and other communications provided electronically satisfy any legal requirement that such communications be in writing. This consent does not affect your non-waivable rights.
 
 ### 19.6 Severability of Provisions
 
@@ -987,7 +1052,7 @@ Any failure by ACT 3 to enforce any provision of this Agreement will not constit
 
 ### 19.8 Complete Agreement and Changes to These Terms
 
-These Terms of Service, together with our Privacy Policy https://act3ai.com/privacy and other terms and policies comprising the Agreement, represent the complete and exclusive agreement between you and ACT 3 AI, Inc. regarding the Platform and Service. The Agreement supersedes any prior or contemporaneous agreements, proposals, or communications, whether oral or written, relating to the subject matter of the Agreement, including these Terms, and any confidentiality or nondisclosure agreements. We may make changes to the Agreement from time to time, including to address changes in the use and administration of the Services or the Platform or to comply with the law, by our posting of a revised version to our Website.
+These Terms of Service, together with our Privacy Policy (https://act3ai.com/docs/legal/privacy-policy) and other terms and policies comprising the Agreement, represent the complete and exclusive agreement between you and ACT 3 AI, Inc. regarding the Platform and Service. The Agreement supersedes any prior or contemporaneous agreements, proposals, or communications, whether oral or written, relating to the subject matter of the Agreement, including these Terms, and any confidentiality or nondisclosure agreements. We may make changes to the Agreement from time to time, including to address changes in the use and administration of the Services or the Platform or to comply with the law, by our posting of a revised version to our Website.
 
 ### 19.9 Prevailing Language
 
@@ -1004,3 +1069,11 @@ If you have questions about these Terms of Service or any related policies, you 
 ### 19.12 Order of Precedence
 
 If any part of this Agreement conflicts with Section 8 (AI Training) or Section 9 (Your Content), Section 8 and Section 9 control. If any other provisions of this Agreement conflict, the more specific provision controls.
+
+### 19.13 If ACT 3 AI Stops Operating
+
+ACT 3 AI may stop operating the Service, or cease operations as a company, at some point. If that happens, ACT 3 AI is not responsible for Your Content or for keeping, returning, or delivering any of it, and is not liable for its loss. ACT 3 AI may try to give notice before the Service stops, but is not required to. Cloud storage is a working space, not an archive (Section 2.3), so keep your own copies: downloading the files you want to keep is your responsibility at all times (Section 2.3(d)). As between you and ACT 3 AI, your ownership of Your Content (Section 9) does not depend on ACT 3 AI continuing to operate.
+
+### 19.14 Headings and Summaries
+
+Headings and the "Summary" paragraphs in these Terms are for convenience only and do not change what these Terms mean.
