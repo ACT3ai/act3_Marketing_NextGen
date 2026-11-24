@@ -6,3 +6,7 @@ declare module '@theme-original/*'
 declare module '@docusaurus/*'
 declare module '@site/*'
 declare module '@generated/*'
+declare module '*.html?raw' {
+  const text: string
+  export default text
+}
