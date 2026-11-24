@@ -32,12 +32,30 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Reference",
+      items: ["roadmap", "changelog"],
+    },
+    {
+      type: "category",
+      label: "Customer Service",
+      collapsed: false,
       items: [
-        "training/overview",
+        {
+          type: "doc",
+          id: "customer_service/overview",
+          label: "Contact Customer Service",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Legal",
+      collapsed: false,
+      items: [
+        { type: "doc", id: "legal/intro", label: "Intro" },
+        "legal/terms-of-service",
+        "legal/privacy-policy",
         "ownership_of_output/overview",
-        "customer_service/overview",
-        "roadmap",
-        "changelog",
+        "training/overview",
       ],
     },
   ],
