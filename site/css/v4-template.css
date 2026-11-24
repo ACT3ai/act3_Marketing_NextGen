@@ -369,7 +369,8 @@
   transition: background 0.15s, transform 0.15s;
 }
 .v4t-foot-cta:hover { background: var(--v4t-yellow-hi); color: #17140a; text-decoration: none; transform: translateY(-1px); }
-.v4t-fnav { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+/* One column per FOOTER_COLUMNS entry (site/data/siteNav.ts): 5 since Customer Service. */
+.v4t-fnav { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; }
 .v4t-fnav h3 {
   margin: 0 0 12px;
   font-family: inherit;
