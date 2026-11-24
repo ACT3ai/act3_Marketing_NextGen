@@ -257,6 +257,25 @@ function v4RowsSheetPlugin() {
   };
 }
 
+/**
+ * `import html from "./x.html?raw"` returns the file's text. Used by
+ * site/components/OwnershipTable.tsx, which embeds the generated
+ * site/docs/ownership_of_output/table_ownership.html in the Ownership of
+ * Output page, so regenerating that HTML file is all it takes to update it.
+ */
+function rawHtmlPlugin() {
+  return {
+    name: "raw-html",
+    configureWebpack() {
+      return {
+        module: {
+          rules: [{ test: /\.html$/i, resourceQuery: /raw/, type: "asset/source" }],
+        },
+      };
+    },
+  };
+}
+
 const config: Config = {
   title: BRAND,
   tagline: TAGLINE,
@@ -410,7 +429,7 @@ const config: Config = {
 
   staticDirectories: ["site/static"],
 
-  plugins: [v4RowsSheetPlugin],
+  plugins: [v4RowsSheetPlugin, rawHtmlPlugin],
 
   presets: [
     [
@@ -421,6 +440,15 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           editUrl: undefined,
           routeBasePath: "docs",
+          // The Docusaurus defaults, plus p_*.md: prompt files that generate a
+          // page's content live next to it but are not pages themselves.
+          exclude: [
+            "**/_*.{js,jsx,ts,tsx,md,mdx}",
+            "**/_*/**",
+            "**/*.test.{js,jsx,ts,tsx}",
+            "**/__tests__/**",
+            "**/p_*.md",
+          ],
         },
         blog: {
           path: "site/blog",
