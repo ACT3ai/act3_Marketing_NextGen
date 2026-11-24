@@ -14,7 +14,7 @@ description: Official Terms of Service for ACT 3 AI, Inc.
 
 **Last Updated:** November 24, 2026
 
-**What changed:** We now link our list of the other AI companies whose services make your video, images, voices and text, and say plainly that their terms apply (Section 2.5); we spelled out what you own, what ACT 3 AI keeps and does not promise, and that ACT 3 AI does not indemnify you or your buyers (Sections 9, 15, 16 and 17); we made clear the Service is for making your own films, not for reselling AI generation (Section 5.13); that money spent on a generation that has started is not refunded (Section 6.6); and what happens to your files if ACT 3 AI stops operating (Section 19.13).
+**What changed:** We now link our list of the other AI companies whose services make your video, images, voices and text, and say plainly that their terms apply (Section 2.5); we spelled out what you own, what ACT 3 AI keeps and does not promise, and that ACT 3 AI does not indemnify you or your buyers (Sections 9, 15, 16 and 17); we made clear the Service is for making your own films, not for reselling AI generation (Section 5.13); that money spent on a generation that has started is not refunded (Section 6.6); and what happens to your files if ACT 3 AI stops operating (Section 19.13). We also added a numbered list of prohibited content and uses that follows the rules of the AI companies we use, including that a real person's face or voice needs their written consent (Section 5.2), and raised the minimum age to 18 (Section 3.1).
 
 Welcome! Please read these ACT 3 AI, Inc. Terms of Service carefully before accessing or using our Services or Platform.
 
@@ -41,7 +41,7 @@ The following capitalized terms have the meanings set out below. They apply thro
 | "Project" | A discrete creative work (e.g., a film, TV episode, marketing spot, or social-media video) managed within the Service and owned by a single Organization. |
 | "Service" | Every service we provide through the Platform, including paid subscriptions, Beta Features, APIs, and support. |
 | "Subscription" | The paid or free plan that governs the Credits, feature set, and support level available to an Account, as selected during signup or later changed in the billing dashboard. |
-| "User," "you," "your" | The individual or legal entity that visits or uses any part of the Website or Service, or directs such use. Users must be at least 13 years old (or the minimum age required by applicable law). |
+| "User," "you," "your" | The individual or legal entity that visits or uses any part of the Website or Service, or directs such use. Users must be at least 18 years old (or the age of majority where they live, if higher). |
 | "Website" | ACT3ai.com and any sub-domain or successor site we control, as well as product-specific sites for ACT 3 AI or other ACT 3 AI services. |
 
 ## 2. Our Services
@@ -119,7 +119,7 @@ If you choose to provide ideas, suggestions, or other feedback regarding the Ser
 
 ### 3.1 Eligibility & Authority
 
-a. **Minimum age.** You must be at least 13 years old—or the minimum age required by the laws of your jurisdiction—to register or use the Service. If we learn that a minor younger than the applicable age has created an Account, we will close the Account and delete associated personal data as required by law.
+a. **Minimum age.** You must be at least 18 years old, or the age of majority where you live if that is higher, to register or use the Service. The AI Providers whose models run the Service require this. If we learn that a person under that age has created an Account, we will close the Account and delete associated personal data as required by law.
 
 b. **Legal capacity.** By opening an Account on your own behalf, you represent that you have the legal capacity to enter into a binding contract. If you create an Organization Account, you represent that you have authority to bind the Organization to these Terms.
 
@@ -261,7 +261,33 @@ Content or activity on the Platform must not:
 - be defamatory, fraudulent, or intentionally deceptive in ways likely to harm public interests such as health, safety, or election integrity;
 - harass, abuse, or threaten violence against any person or group;
 - depict, glorify, or incite gratuitous violence; or
+- depict, glorify, or incite gratuitous violence; or
 - significantly or repeatedly disrupt other Users' experience.
+
+**Prohibited Content and Uses.** The AI companies whose models run the Service each have usage policies (linked from the AI Providers list at https://act3ai.com/docs/ownership_of_output). The rules below include their requirements, so that your use never puts ACT 3 AI in breach of them. Films may tell stories about crime, violence, villains and dark themes; these rules bar real-world harm, sexual exploitation, and deceiving people about what is real. You must not use the Service, Inputs or Outputs to:
+
+1. **Use a real person without consent.** Use any identifiable real person's face, body, likeness or voice (including a voice clone or digital actor made from them) without that person's explicit, informed, written consent, or other lawful authorization (for a person who has died, from whoever controls their rights where the law requires it). You must keep that consent and show it to us on request. See also Section 13.3.
+2. **Make non-consensual sexual or intimate content.** Depict a real person in a sexual, intimate, degrading, defamatory or fraudulent way without their consent, or make non-consensual intimate imagery of anyone, real or AI-generated.
+3. **Harm minors.** Make anything that sexualizes, exploits or endangers anyone under 18, including AI-generated child sexual abuse material, which we report to the authorities; or use the voice or likeness of a specific real minor without written consent from a parent or legal guardian.
+4. **Make pornography.** Make sexually explicit material for sexual gratification, or sexual content involving incest, bestiality or sexual violence presented for gratification.
+5. **Deceive people with real people.** Make a deepfake, impersonation or fabricated recording that a reasonable viewer could take as a real event, statement, endorsement or piece of evidence, unless it is clearly presented as fiction or labelled as AI-generated; or make false endorsements.
+6. **Interfere with elections.** Make content meant to mislead voters, suppress voting or interfere with an election or civic process, or a realistic depiction or voice of a real political candidate or official used to deceive. Political campaign or electoral advertising made with the Service needs ACT 3 AI's prior written consent.
+7. **Hate, harass or threaten.** Make content that is hateful, harasses, threatens, stalks, bullies or defames real people or groups, incites violence, or promotes terrorism or violent extremism.
+8. **Teach real-world harm.** Give real instructions for weapons (including chemical, biological, radiological and nuclear weapons), explosives, illegal drugs, human trafficking, or self-harm, suicide or eating disorders. Depicting these things in a story is allowed; teaching how to do them is not.
+9. **Defraud or spam.** Run fraud, scams, phishing or spam, or create fake personas, accounts or engagement.
+10. **Remove AI marks.** Remove, alter, crop out or hide watermarks, C2PA content credentials, SynthID or other marks or metadata that identify an Output as AI-generated, or build or use tools to do so. See also Section 5.10.
+11. **Hide AI where it matters.** Fail to disclose that content is AI-generated where the law requires it (for example, rules on deepfakes) or where hiding it would materially mislead people, or claim AI-generated material was made only by humans in order to deceive.
+12. **Infringe.** Upload material you do not have the rights to use (scripts, images, music, voices, faces, motion capture), or infringe any copyright, trademark, right of publicity, privacy right or other right.
+13. **Invade privacy.** Collect or expose someone's private information; use faces, voices or voiceprints to identify, track or profile real people; build facial-recognition databases; or infer sensitive traits (such as health, sexuality, religion or politics) about real people.
+14. **Make high-stakes decisions about people.** Use Outputs to decide employment, housing, credit, insurance, healthcare, legal or government outcomes about real people without meaningful human review, or present Outputs as professional legal, medical or financial advice.
+15. **Train competing AI.** Use Outputs to train AI models where the AI Provider that generated them forbids it, or to build a model that competes with that AI Provider.
+16. **Get around safeguards.** Circumvent safety filters, guardrails, voice verification, usage limits or AI Credit metering, or reverse engineer the Service or the AI models behind it.
+17. **Resell or wrap the Service.** Give third parties access to the Service, its APIs or MCP, or the AI Providers' models, or make Outputs available to others on terms looser than these rules (see Section 5.13).
+18. **Break sanctions or serve military or surveillance ends.** Use the Service from a sanctioned country or as a restricted party (Section 5.11), or for military, surveillance or law-enforcement purposes without ACT 3 AI's prior written approval.
+19. **Upload sensitive data.** Upload health records (protected health information), payment card or bank account numbers, or government identification numbers.
+20. **Break an AI Provider's own rules.** Violate the usage policy of the AI Provider that runs a feature you use (Section 2.5(c)). Where its policy is stricter than this list, the stricter rule applies to that AI Provider's Outputs.
+
+Breaking any of these rules is a material breach of these Terms (Section 5.12), and you are responsible for it under Section 17.
 
 ### 5.3 Intellectual-Property, Authenticity & Privacy
 
@@ -758,7 +784,7 @@ d. **No Ownership; Contractual Rights of Use.** Any AI-Generated Content of an a
 e. **Prohibited Uses.** You may not use the Platform to:
 
 - Generate or distribute deepfakes, impersonations, or misleading representations without full legal and ethical compliance;
-- Upload or use Biometric Data of individuals without property legal authorization and consent;
+- Upload or use Biometric Data of individuals without proper legal authorization and consent;
 - Sell, sublicense, or transfer Biometric Data outside the Platform unless allowed by a written agreement with the specific actor; or
 - Use the Platform for defamatory, exploitative, or unlawful Content, including an Actor's Biometric Data for political endorsements, hate speech, or pornography.
 
