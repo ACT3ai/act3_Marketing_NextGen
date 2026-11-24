@@ -811,8 +811,8 @@ export default function SlateVariation(): React.JSX.Element {
                 <div>
                   <div className="v2-foot__k">LEGAL</div>
                   <div className="v2-foot__list">
-                    <a href="https://legal.act3ai.com/docs/privacy-policy#welcome">Privacy Policy</a>
-                    <a href="https://legal.act3ai.com/docs/terms-of-service/">Terms of Service</a>
+                    <a href="https://act3ai.com/docs/legal/privacy-policy">Privacy Policy</a>
+                    <a href="https://act3ai.com/docs/legal/terms-of-service">Terms of Service</a>
                   </div>
                 </div>
               </div>
