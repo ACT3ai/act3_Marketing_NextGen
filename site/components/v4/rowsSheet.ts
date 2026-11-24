@@ -14,6 +14,7 @@
  * each row in V4_ROWS order.
  */
 import { V4_ROWS, type V4Row } from "../../pages/_rows.generated";
+import { FOOTER_COLUMNS } from "../../data/siteNav";
 
 /** The hero's ground colour, so overscroll and the area under a short page match it. */
 export const V4_PAGE_GROUND = "#060b18";
@@ -208,6 +209,11 @@ html, body { background: ${V4_PAGE_GROUND}; }
    Matched by class SUFFIX so it survives a regeneration; .v4-row raises the
    specificity above the row's own .v4 .{prefix}-h1a rules. */
 @media (max-width: 400px) { .v4 .v4-row [class$="-h1a"] { font-size: min(62px, 16vw); } }
+
+/* Row 16's footer was generated with 4 link columns; applySiteNav fills it from
+   FOOTER_COLUMNS (site/data/siteNav.ts), which has 5 since Customer Service.
+   Desktop only: the row's own phone rule (2 columns, max-width 860px) still applies there. */
+@media (min-width: 861px) { .v4 .v4-row [class$="-fnav"] { grid-template-columns: repeat(${FOOTER_COLUMNS.length}, minmax(0, 1fr)); } }
 `;
 
 const rowBlock = (r: V4Row, css: string): string =>

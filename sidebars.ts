@@ -35,6 +35,7 @@ const sidebars: SidebarsConfig = {
       items: [
         "training/overview",
         "ownership_of_output/overview",
+        "customer_service/overview",
         "roadmap",
         "changelog",
       ],

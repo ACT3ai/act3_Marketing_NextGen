@@ -29,6 +29,7 @@ export const LINKS = {
   linkedin: "https://www.linkedin.com/company/act3ai/",
   github: "https://github.com/ACT3ai",
   email: "mailto:ContactUs@ACT3ai.com",
+  support: "mailto:support@act3ai.com",
 } as const;
 
 export const SIGNUP = LINKS.signup;
@@ -96,8 +97,9 @@ export const PRIMARY_NAV: NavItem[] = [
   { label: "Videos", href: "/videos" },
 ];
 
-/** The "More" dropdown. Articles MUST stay the last entry (SEO invariant). */
+/** The "More" dropdown. Customer Service is first; Articles MUST stay the last entry (SEO invariant). */
 export const MORE_NAV: NavItem[] = [
+  { label: "Customer Service", href: "/docs/customer_service" },
   { label: "Features", href: "/features" },
   { label: "Assistant Director Team", href: "/level2" },
   { label: "MCP", href: "/mcp" },
@@ -109,7 +111,11 @@ export const MORE_NAV: NavItem[] = [
   { label: "Articles", href: "/articles" },
 ];
 
-/** The footer's four link columns (row 16's structure). Resources MUST keep Articles. */
+/**
+ * The footer's link columns (row 16's structure plus Customer Service). Resources MUST keep Articles.
+ * The desktop footer grid takes its column count from this list's length
+ * (v4-template.css .v4t-fnav, and rowsSheet.ts for row 16's footer) — keep them in step.
+ */
 export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     title: "Product",
@@ -138,6 +144,13 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: "Documentation", href: LINKS.docs },
       { label: "MCP (Model Context Protocol)", href: "/mcp" },
       { label: "CLI (command line interface)", href: "/cli" },
+    ],
+  },
+  {
+    title: "Customer Service",
+    links: [
+      { label: "Customer Service", href: "/docs/customer_service" },
+      { label: "Email support@act3ai.com", href: LINKS.support },
     ],
   },
   {
