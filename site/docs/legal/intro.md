@@ -13,6 +13,7 @@ Our legal documentation includes the following key documents:
 ### Core Legal Documents
 - **[Terms of Service](./terms-of-service/)** - The main agreement governing your use of our services
 - **[Privacy Policy](./privacy-policy/)** - How we collect, use, and protect your personal information
+- **[Ownership of Output](https://act3ai.com/docs/ownership_of_output)** - The AI services we use, and links to their terms
 
 ## Contact Information
 
