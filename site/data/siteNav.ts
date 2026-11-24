@@ -25,8 +25,6 @@ export const LINKS = {
   plans: "https://app.act3ai.com/settings/plans/",
   youtube: "https://www.youtube.com/@ACT3AI",
   docs: "https://documentation.act3ai.com/",
-  privacy: "https://legal.act3ai.com/docs/privacy-policy/",
-  terms: "https://legal.act3ai.com/docs/terms-of-service/",
   x: "https://x.com/act3ai",
   linkedin: "https://www.linkedin.com/company/act3ai/",
   github: "https://github.com/ACT3ai",
@@ -35,6 +33,17 @@ export const LINKS = {
 
 export const SIGNUP = LINKS.signup;
 export const SIGNIN = LINKS.signin;
+
+/**
+ * Legal and policy pages, all on this site (site/docs/). The Terms of Service and
+ * Privacy Policy moved here from legal.act3ai.com (ACT3ai/legal_docs) on 2026-11-24.
+ */
+export const LEGAL = {
+  terms: "/docs/legal/terms-of-service",
+  privacy: "/docs/legal/privacy-policy",
+  ownership: "/docs/ownership_of_output",
+  training: "/docs/training",
+} as const;
 
 /** The footer brand line (row 16). */
 export const FOOTER_TAGLINE = "Create movies at the speed of storytelling.";
@@ -95,6 +104,8 @@ export const MORE_NAV: NavItem[] = [
   { label: "CLI", href: "/cli" },
   { label: "Documentation", href: LINKS.docs, newTab: true },
   { label: "Step-by-Step Guide", href: "/step_guides/0_step_by_step_guide/page_1.html", plain: true },
+  { label: "Terms of Service", href: LEGAL.terms },
+  { label: "Privacy Policy", href: LEGAL.privacy },
   { label: "Articles", href: "/articles" },
 ];
 
@@ -132,8 +143,10 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     title: "Legal",
     links: [
-      { label: "Privacy Policy", href: LINKS.privacy },
-      { label: "Terms of Service", href: LINKS.terms },
+      { label: "Privacy Policy", href: LEGAL.privacy },
+      { label: "Terms of Service", href: LEGAL.terms },
+      { label: "Ownership of Output", href: LEGAL.ownership },
+      { label: "Training", href: LEGAL.training },
     ],
   },
 ];
