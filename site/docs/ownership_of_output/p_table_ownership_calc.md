@@ -1,3 +1,9 @@
+---
+title: "Prompt: Summary by AI table"
+slug: /ownership_of_output/p_table_ownership_calc
+format: md
+---
+
 
 You will output the file: table_ownership.html
 * The goal is to output an HTML table. It will generally be 50% of the width of a browser page. Design the content to be appropriate for that. 
