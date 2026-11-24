@@ -276,6 +276,39 @@ function rawHtmlPlugin() {
   };
 }
 
+/**
+ * `import url from "./x.html"` under site/docs returns a hashed URL to that
+ * file, served as-is (assets/docs-html/[name].[hash].htm). Used by
+ * site/docs/ownership_of_output/overview.mdx, whose HtmlInclude component
+ * fetches overview.html (and the table_ownership.html it includes) at view
+ * time: the page always shows the current files, nothing is pasted into the
+ * .mdx, and the content hash stops browsers keeping a stale copy.
+ * `?raw` imports are left to rawHtmlPlugin above.
+ */
+function docsHtmlAssetPlugin() {
+  return {
+    name: "docs-html-asset",
+    configureWebpack() {
+      return {
+        module: {
+          rules: [
+            {
+              test: /\.html$/i,
+              include: join(process.cwd(), "site", "docs"),
+              resourceQuery: { not: [/raw/] },
+              type: "asset/resource",
+              // .htm, not .html: `docusaurus serve` rewrites *.html URLs to clean URLs and
+              // scripts/emit-trailing-slash-pages.js aliases every *.html into a directory,
+              // either of which would 404 this asset. The source files stay .html.
+              generator: { filename: "assets/docs-html/[name].[contenthash:8].htm" },
+            },
+          ],
+        },
+      };
+    },
+  };
+}
+
 const config: Config = {
   title: BRAND,
   tagline: TAGLINE,
@@ -429,7 +462,7 @@ const config: Config = {
 
   staticDirectories: ["site/static"],
 
-  plugins: [v4RowsSheetPlugin, rawHtmlPlugin],
+  plugins: [v4RowsSheetPlugin, rawHtmlPlugin, docsHtmlAssetPlugin],
 
   presets: [
     [
@@ -442,12 +475,14 @@ const config: Config = {
           routeBasePath: "docs",
           // The Docusaurus defaults, plus p_*.md: prompt files that generate a
           // page's content live next to it but are not pages themselves.
+          // Exception: p_table_ownership_calc.md is public (the Ownership of
+          // Output page links to it as the prompt behind its AI summary table).
           exclude: [
             "**/_*.{js,jsx,ts,tsx,md,mdx}",
             "**/_*/**",
             "**/*.test.{js,jsx,ts,tsx}",
             "**/__tests__/**",
-            "**/p_*.md",
+            "**/p_!(table_ownership_calc).md",
           ],
         },
         blog: {
