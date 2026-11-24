@@ -7,8 +7,17 @@ format: md
 
 You will output the file: table_ownership.html
 * The goal is to output an HTML table. It will generally be 50% of the width of a browser page. Design the content to be appropriate for that. 
-* Don't have anything above the table and nothing underneath the table. 
+* Nothing underneath the table. Above the table there is exactly one short line: the Acceptable Use line (see the section "Line Above the Table: Acceptable Use"). Nothing else above it.
 * Before you pick columns or write any cell, read Appendix A (Who the Customer Is and What They Need From This Table) at the bottom of this file. Every column and every cell must answer the customer's question described there.
+
+===============================
+Line Above the Table: Acceptable Use
+===============================
+* Put one short line directly above the table, inside table_ownership.html (above the table element, inside the same wrapper div). It is a reminder, not content: one brief sentence, no tooltip, no heading, small text so it does not push the table down.
+* The text: "We have our acceptable use list that they must follow." Phrase it from the filmmaker's seat; the visible wording is: "You must follow our Acceptable Use rules." with "Acceptable Use rules" as the link.
+* Link target: the Acceptable Use section of the ACT 3 AI Terms of Service, scrolled to that section: /docs/legal/terms-of-service#5-acceptable-use (live: https://act3ai.com/docs/legal/terms-of-service#5-acceptable-use). If that section is renumbered or renamed, update the anchor here and in the HTML.
+* Why it is there: that section is the list of prohibited uses and requirements, e.g. consent is required for any real person's likeness or voice, no pornography, no illegal content. Owning the output does not matter if the film breaks those rules. Do not list those rules above the table; the link carries them.
+* Keep it one line at 50% page width. Do not add more sentences.
 
 ===============================
 List of Columns
