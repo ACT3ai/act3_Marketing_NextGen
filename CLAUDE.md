@@ -340,3 +340,23 @@ source, so a plain copy is enough) → `pnpm build`. Styling is never re-touched
 it lives only in `site/css/level2.css`.
 
 To change the LOOK of all four pages, edit only `site/css/level2.css`.
+
+## Legal docs moved: Terms of Service + Privacy Policy (Bryan, 2026-11-24)
+* OLD (retired): our Terms of Service used to live in a Docusaurus site powered by this Git repo:
+  https://github.com/ACT3ai/legal_docs/ (local clone ~/BGit/act3/old_legal_docusaurus/).
+* NEW location for the Terms of Service: repo https://github.com/ACT3ai/act3_Marketing_NextGen
+  (local ~/BGit/act3/act3_Marketing_NextGen/), directory site/docs/legal/:
+```
+~/BGit/act3/act3_Marketing_NextGen/site/docs/legal> tree
+.
+├── intro.md
+├── privacy-policy.md
+└── terms-of-service.md
+```
+  * Intro: https://act3ai.com/docs/legal/intro
+  * Terms of Service: https://act3ai.com/docs/legal/terms-of-service
+  * Privacy Policy: https://act3ai.com/docs/legal/privacy-policy
+* When a Claude session finds something not compatible with this move (a link, doc, page, code, config or spec
+  that still points at ACT3ai/legal_docs, ~/BGit/act3/old_legal_docusaurus/, or an old Terms of Service / Privacy
+  Policy URL), output a clear warning in the session: file + line, what it points at, and that it should change
+  to the new location above.
