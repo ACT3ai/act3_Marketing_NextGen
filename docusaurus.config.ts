@@ -475,14 +475,15 @@ const config: Config = {
           routeBasePath: "docs",
           // The Docusaurus defaults, plus p_*.md: prompt files that generate a
           // page's content live next to it but are not pages themselves.
-          // Exception: p_table_ownership_calc.md is public (the Ownership of
-          // Output page links to it as the prompt behind its AI summary table).
+          // Exceptions: p_table_ownership_calc.md and p_table_training_calc.md
+          // are public (the Ownership of Output and Training pages link to them
+          // as the prompts behind their AI summary tables).
           exclude: [
             "**/_*.{js,jsx,ts,tsx,md,mdx}",
             "**/_*/**",
             "**/*.test.{js,jsx,ts,tsx}",
             "**/__tests__/**",
-            "**/p_!(table_ownership_calc).md",
+            "**/p_!(table_ownership_calc|table_training_calc).md",
           ],
         },
         blog: {
