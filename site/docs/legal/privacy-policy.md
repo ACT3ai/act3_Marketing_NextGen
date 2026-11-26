@@ -6,7 +6,7 @@ description: Privacy Policy for ACT 3 AI, Inc.
 
 # Privacy Policy
 
-**Effective as of July 1, 2025 · Last revised November 12, 2026**
+**Effective as of July 1, 2025 · Last revised November 26, 2026**
 
 ## Welcome
 
@@ -90,6 +90,20 @@ Below we detail the information we collect through each of these channels:
 
 **Vendors, Partners, and Affiliates**: We may receive information about you from third parties, like vendors, resellers, partners, or affiliates for the purposes outlined in this statement. 
 
+## Biometric Data (Faces and Voices)
+
+**What we collect**: Images of faces and bodies, and voice recordings, that you upload or generate for characters, digital actors, cast and voices. These may contain biometric data (such as facial geometry or voiceprints) of the people in them ("Biometric Data").
+
+**Why we use it**: To provide and support the Services for you. We do not sell Biometric Data.
+
+**Who may receive it**: The AI Providers that generate Outputs from it (listed at https://act3ai.com/docs/ownership_of_output), which handle it under their own terms; our hosting and storage providers; our staff when they help you with support; people you share it with or who can access your Organization's Projects; and others where the law requires.
+
+**How long we keep it**: We keep Biometric Data while it is needed to provide the Services to you, and we retain and destroy it as required by applicable law, including the Illinois Biometric Information Privacy Act (BIPA) where it applies.
+
+**Consent of the people shown**: You must have the written consent of each real person whose face, body or voice you upload or use, as required by Section 5.2 (item 1) and Section 13.3 of our Terms of Service.
+
+**Security**: ACT 3 AI uses reasonable administrative, technical and organizational measures designed to protect Biometric Data and AI-Generated Content on the Platform. Files may be delivered through links, and anyone who has a link may be able to open the file, so share links only with people you trust. No method of storage or transmission is completely secure, and we cannot guarantee absolute security.
+
 ## Processing Purposes: How We Use Your Personal Data
 
 The Personal Data we process depends on your interaction and access methods with our Services, including the interfaces (web, desktop, mobile apps), features used (pull requests), and your preferred access tools (like your IDE). This section details all the potential ways ACT 3 may process your Personal Data:
@@ -140,21 +154,21 @@ We may share Personal Data with the following recipients:
 
 **Subprocessors and Service Providers**: We may use vendors to provide services on our behalf, including hosting, marketing, advertising, social, analytics, support ticketing, credit card processing, or security services. They are bound by contractual obligations to ensure the security, privacy, and confidentiality of your information.
 
-**Other Third-party Applications**: Upon your instruction, we may share Personal Data with third-party applications available on our Marketplace. You are responsible for the data you instruct us to share with these applications.
+**Other Third-party Applications**: Upon your instruction, we may share Personal Data with third-party applications you choose to connect, where available. You are responsible for the data you instruct us to share with these applications.
 
 **Other Users and the Public**: Depending on your account settings, we may share Personal Data with other users of the Services and the public. You control what information is made public. To adjust your settings, visit User Settings in your profile. Please be aware that any information you share in a collaborative context may become publicly accessible. 
 
 ## Private Projects: ACT 3 Access
 
-If your ACT 3 account has private Projects, you control the access to that information. ACT 3 personnel does not access private Project information without your consent except as provided in this Privacy Statement and for:
+If your ACT 3 account has private Projects, you control the access to that information. Files in a private Project may be delivered through links, and anyone who has a link may be able to open the file, so share links only with people you trust. ACT 3 personnel does not access private Project information without your consent except as provided in this Privacy Statement and for:
 
 - **Security purposes**
 - **Automated scanning or manual review for known vulnerabilities, active malware, or other content known to violate our Terms of Service**
 - **To assist the Project owner with a support matter**
 - **To maintain the integrity of the Services**
+- **To fix and improve the Services' prompts, templates and quality checks**
 - **To comply with our legal obligations if we have reason to believe the contents are in violation of the law**
 
-ACT 3 will provide you with notice regarding private Project access unless doing so is prohibited by law or if ACT 3 acted in response to a security threat or other risk to security. 
 
 ## Lawful Bases for Processing Personal Data (Applicable to EEA and UK End Users)
 
@@ -215,7 +229,7 @@ ACT 3 is subject to the investigatory and enforcement powers of the Federal Trad
 
 ## Security and Retention
 
-ACT 3 uses appropriate administrative, technical, and physical security controls to protect your Personal Data. We will retain your Personal Data as long as your ACT 3 account is active and as needed to fulfill contractual obligations, comply with legal requirements, resolve disputes, and enforce agreements. After your paid plan ends, you have 30 days to download your content, and we then delete your profile and content, as described in Section 2.3 of our Terms of Service, except encrypted backups (removed on our normal backup cycle) and data we must keep by law.8 and 10.6 of our Terms of Service, except encrypted backups and data we must keep by law. The retention duration depends on the purpose of data collection and any legal obligations. ACT 3 uses administrative, technical, and physical security controls where appropriate to protect your Personal Data.
+ACT 3 uses appropriate administrative, technical, and physical security controls to protect your Personal Data. We will retain your Personal Data as long as your ACT 3 account is active and as needed to fulfill contractual obligations, comply with legal requirements, resolve disputes, and enforce agreements. After your paid plan ends, you have 30 days to download your content, and we may then delete your profile and content, as described in Section 2.3 of our Terms of Service, except encrypted backups (removed on our normal backup cycle) and data we must keep by law. The retention duration depends on the purpose of data collection and any legal obligations. ACT 3 uses administrative, technical, and physical security controls where appropriate to protect your Personal Data.
 
 The safety and security of your information also depends on you. Where we have given you (or where you have chosen) a password for access to certain parts of ACT 3, you are responsible for keeping this password confidential. We ask you not to share your password with anyone.
 
@@ -223,9 +237,9 @@ Unfortunately, the transmission of information via the internet and mobile platf
 
 ## Information for Minors
 
-Our Services are not intended for individuals under the age of 13. No one under age 13 may provide any Personal Data of children under 13. We do not intentionally gather Personal Data from such individuals.
+Our Services are not intended for individuals under the age of 18 (see Section 3.1 of our Terms of Service). No one under age 13 may provide any Personal Data of children under 13. We do not intentionally gather Personal Data from such individuals.
 
-If you are under the age of 13, do not create an ACT 3 account or use or provide any information on ACT 3, through any of its features, make any purchases through the Services, use any of the interactive or public comment features of ACT 3, or provide any information about yourself to us, including your name, address, telephone number, email address, or any screen name or user name you may use.
+If you are under the age of 18, do not create an ACT 3 account or use or provide any information on ACT 3, through any of its features, make any purchases through the Services, use any of the interactive or public comment features of ACT 3, or provide any information about yourself to us, including your name, address, telephone number, email address, or any screen name or user name you may use.
 
 If we learn we have collected or received Personal Data from a child under the age of 13 without verification of parental consent, we will delete that information. If you believe we might have any information from or about a child under the age of 13, please contact us immediately at contactus@act3ai.com.
 
