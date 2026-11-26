@@ -94,15 +94,15 @@ Below we detail the information we collect through each of these channels:
 
 **What we collect**: Images of faces and bodies, and voice recordings, that you upload or generate for characters, digital actors, cast and voices. These may contain biometric data (such as facial geometry or voiceprints) of the people in them ("Biometric Data").
 
-**Why we use it**: Only to make your own films on the Services. We do not use Biometric Data to identify, track or profile people, we do not sell it, and we do not use it to train AI models.
+**Why we use it**: Only to make your own films on the Services. We do not use Biometric Data to recognize who a person is, or to track or profile people, we do not sell it, and we do not use it to train AI models.
 
-**Who receives it**: The AI Providers that generate Outputs from it (listed at https://act3ai.com/docs/ownership_of_output), which handle it under their own terms; our hosting and storage providers; and our staff when they help you with support.
+**Who receives it**: The AI Providers that generate Outputs from it (listed at https://act3ai.com/docs/ownership_of_output), which handle it under their own terms; our hosting and storage providers; our staff when they help you with support; people you share it with or who can access your Organization's Projects; and others where the law requires.
 
-**How long we keep it**: Until you delete it or close your account. After your account closes or your paid plan ends, it stays available for the 30-day Download Window described in Section 2.3 of our Terms of Service and is then deleted; copies in encrypted backups are removed on our normal backup cycle. In any case, we destroy it no later than the law requires; where the Illinois Biometric Information Privacy Act (BIPA) applies, that is when the purpose for collecting it has been met or within 3 years of the person's last interaction with ACT 3, whichever comes first.
+**How long we keep it**: Until you delete it or close your account. After your account closes or your paid plan ends, it stays available for the 30-day Download Window described in Section 2.3 of our Terms of Service and may then be deleted; copies in encrypted backups are removed on our normal backup cycle. In any case, we destroy it no later than the law requires; where the Illinois Biometric Information Privacy Act (BIPA) applies, that is when the purpose for collecting it has been met or within 3 years of the person's last interaction with ACT 3, whichever comes first.
 
 **Consent of the people shown**: You must have the written consent of each real person whose face, body or voice you upload or use, as required by Section 5.2 (item 1) and Section 13.3 of our Terms of Service.
 
-**Security**: ACT 3 AI uses reasonable administrative, technical and organizational measures designed to protect Biometric Data and AI-Generated Content on the Platform. Stored files are encrypted at rest. Files are delivered through unlisted links that we do not publish; anyone who has a link can open the file, so share links only with people you trust. No method of storage or transmission is completely secure, and we cannot guarantee absolute security.
+**Security**: ACT 3 AI uses reasonable administrative, technical and organizational measures designed to protect Biometric Data and AI-Generated Content on the Platform. Files in our main cloud storage are encrypted at rest. Unless you choose to share or publish them, files are delivered through unlisted links; anyone who has a link can open the file, so share links only with people you trust. No method of storage or transmission is completely secure, and we cannot guarantee absolute security.
 
 ## Processing Purposes: How We Use Your Personal Data
 
@@ -229,7 +229,7 @@ ACT 3 is subject to the investigatory and enforcement powers of the Federal Trad
 
 ## Security and Retention
 
-ACT 3 uses appropriate administrative, technical, and physical security controls to protect your Personal Data. We will retain your Personal Data as long as your ACT 3 account is active and as needed to fulfill contractual obligations, comply with legal requirements, resolve disputes, and enforce agreements. After your paid plan ends, you have 30 days to download your content, and we then delete your profile and content, as described in Section 2.3 of our Terms of Service, except encrypted backups (removed on our normal backup cycle) and data we must keep by law. The retention duration depends on the purpose of data collection and any legal obligations. ACT 3 uses administrative, technical, and physical security controls where appropriate to protect your Personal Data.
+ACT 3 uses appropriate administrative, technical, and physical security controls to protect your Personal Data. We will retain your Personal Data as long as your ACT 3 account is active and as needed to fulfill contractual obligations, comply with legal requirements, resolve disputes, and enforce agreements. After your paid plan ends, you have 30 days to download your content, and we may then delete your profile and content, as described in Section 2.3 of our Terms of Service, except encrypted backups (removed on our normal backup cycle) and data we must keep by law. The retention duration depends on the purpose of data collection and any legal obligations. ACT 3 uses administrative, technical, and physical security controls where appropriate to protect your Personal Data.
 
 The safety and security of your information also depends on you. Where we have given you (or where you have chosen) a password for access to certain parts of ACT 3, you are responsible for keeping this password confidential. We ask you not to share your password with anyone.
 

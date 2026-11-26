@@ -201,7 +201,7 @@ ACT 3 AI may offer Free, Trial, or promotional Plans subject to the usage limits
 | Cancellation | When you cancel, your Plan Credits and rolled-over Credits end when the paid Billing Cycle ends (Section 4.13). |
 | Account Closure | All unredeemed Credits immediately expire upon termination for any reason and are not redeemable for cash or other value. |
 
-If a task fails because of a Platform fault (Section 6.3), ACT 3 AI will automatically re-credit the consumed Credits.
+If a task fails because of a Platform fault (Section 6.3), ACT 3 AI will re-credit the consumed Credits.
 
 ### 4.6 Dormancy; Archiving
 
@@ -234,7 +234,7 @@ ACT 3 AI may suspend or throttle the Services upon: (i) failure to pay undispute
 
 ### 4.13 Customer Cancellation
 
-You may cancel a subscription at any time through the Billing dashboard. The Services remain available at the subscribed Plan level through the end of the then-current Billing Cycle, for which no refund is given, after which the Organization Account enters read-only Archive Mode for the 30-day Download Window, and stored files are then deleted, as described in Section 2.3.
+You may cancel a subscription at any time through the Billing dashboard. The Services remain available at the subscribed Plan level through the end of the then-current Billing Cycle, for which no refund is given, after which the 30-day Download Window in Section 2.3 applies and stored files may then be deleted, as described in Section 2.3.
 
 ### 4.14 Effect of Termination
 
@@ -403,7 +403,7 @@ Where to Find Current Pricing. All tasks, their Credit costs, and plan-specific 
 
 - Real-time display. Before you launch a task, the interface shows the exact or estimated Credit cost. Starting the task is your authorization to deduct those Credits, and once it has started those Credits are spent (Section 6.6).
 - Usage Order. We deduct from the current Monthly Allocation first, then from any Rollover Bank (see § 6.4).
-- Failed or Aborted Jobs. A "**Platform fault**" is a task that fails and delivers no result for a reason on ACT 3 AI's or an AI Provider's side; a delivered result, or a task you cancel yourself, is never a Platform fault. If a task fails because of a Platform fault, we automatically re-credit the full amount. Credits are not returned if failure results from (i) your breach of these Terms, (ii) invalid inputs, or (iii) external factors beyond our control (e.g., your internet outage).
+- Failed or Aborted Jobs. A "**Platform fault**" is a task that fails and delivers no result for a reason on ACT 3 AI's or an AI Provider's side; a delivered result, or a task you cancel yourself, is never a Platform fault. If a task fails because of a Platform fault, we re-credit the Credits consumed by that task. Credits are not returned if failure results from (i) your breach of these Terms, (ii) invalid inputs, or (iii) external factors beyond our control (e.g., your internet outage).
 - Insufficient Balance. If a task would exceed your remaining Credits, we pause the task and prompt you to top-up or upgrade. We are not liable for delays caused by insufficient Credits.
 
 ### 6.4 Rollover, Expiration & Account Changes
@@ -428,7 +428,7 @@ Where to Find Current Pricing. All tasks, their Credit costs, and plan-specific 
 
 | Situation | Credit refund? |
 | --- | --- |
-| Platform fault (Section 6.3) causes task failure | Yes. Full automatic re-credit. |
+| Platform fault (Section 6.3) causes task failure | Yes. The Credits are re-credited. |
 | You cancel an in-progress task | No. Credits already consumed are not returned. |
 | A generation that delivered a result, including one you do not like | No. |
 | Downtime >24 consecutive hours attributable solely to ACT 3 AI | Yes. Upon written request within 30 days, we will credit an amount equal to the Credits you would have received under the Monthly Allocation for each full 24-hour period of outage. |
@@ -447,7 +447,7 @@ If you believe a Credit charge is incorrect, e-mail contactus@act3ai.com within 
 
 ### 6.9 Disclaimer
 
-Using Credits does not guarantee uninterrupted access to the Service, and Credits may not always be available due to maintenance or force-majeure events. Except for the automatic re-credit remedy in [§ 6.6](#66-refunds--adjustments), ACT 3 AI's aggregate liability relating to Credits is limited as set out in [Section 16](#16-limitation-of-liability) (Liability).
+Using Credits does not guarantee uninterrupted access to the Service, and Credits may not always be available due to maintenance or force-majeure events. Except for the re-credit remedy in [§ 6.6](#66-refunds--adjustments), ACT 3 AI's aggregate liability relating to Credits is limited as set out in [Section 16](#16-limitation-of-liability) (Liability).
 
 ## 7. Payment
 
@@ -610,7 +610,7 @@ You may cancel your Account with ACT 3 AI at any time through the Account settin
 
 ### 10.2 Effects of Cancellation
 
-Upon cancellation of your Account, ACT 3 AI will retain and use your information only as necessary to comply with our legal obligations, resolve disputes, enforce our agreements, or maintain encrypted backups, as outlined in our Privacy Policy (https://act3ai.com/docs/legal/privacy-policy). Barring legal requirements, we will delete your full profile and Your Content after the 30-day Download Window in Section 2.3. This information cannot be recovered once your Account is cancelled. Your Content that you have contributed to Projects owned by another Organization Account will not be deleted from those Projects. Downloading Your Content before the Download Window ends is your responsibility (Section 2.3(d)).
+Upon cancellation of your Account, ACT 3 AI will retain and use your information only as necessary to comply with our legal obligations, resolve disputes, enforce our agreements, or maintain encrypted backups, as outlined in our Privacy Policy (https://act3ai.com/docs/legal/privacy-policy). Barring legal requirements, we may delete your full profile and Your Content after the 30-day Download Window in Section 2.3. This information cannot be recovered once your Account is cancelled. Your Content that you have contributed to Projects owned by another Organization Account will not be deleted from those Projects. Downloading Your Content before the Download Window ends is your responsibility (Section 2.3(d)).
 
 ### 10.3 Suspension or Termination by ACT 3 AI
 
@@ -640,7 +640,7 @@ All provisions of this Agreement that, by their nature, should survive terminati
 
 ### 10.6 Data Retention and Deletion
 
-Except as required by law or as described in this Section 10, ACT 3 AI will not retain your Content after the Download Window in Section 2.3 ends, except in encrypted backups, which may be retained for a longer period to ensure system integrity. You are responsible for downloading any of your Content that you wish to keep before the Download Window ends, as ACT 3 AI has no obligation to store it after that and cannot recover deleted UGC. For Organization Accounts, the Account owner is responsible for ensuring all authorized Users are informed of cancellation and data deletion policies.
+Except as required by law or as described in this Section 10, ACT 3 AI has no obligation to retain your Content after the Download Window in Section 2.3 ends and may delete it at any time after that; copies may remain in encrypted backups for a longer period to ensure system integrity. You are responsible for downloading any of your Content that you wish to keep before the Download Window ends, as ACT 3 AI has no obligation to store it after that and cannot recover deleted UGC. For Organization Accounts, the Account owner is responsible for ensuring all authorized Users are informed of cancellation and data deletion policies.
 
 ### 10.7 No Liability for Suspension or Termination
 
@@ -802,7 +802,7 @@ e. **Prohibited Uses.** You may not use the Platform to:
 
 f. **Legal Compliance.** Users must at all times comply with all applicable local, state, federal, and international Biometric Data protection laws when collecting, storing, or using Biometric Data, including (as applicable): the Illinois Biometric Information Privacy Act (BIPA); Texas Capture or Use of Biometric Identifier Act (CUBI); California Consumer Privacy Act (CCPA), the EU General Data Protection Regulation (GDPR), and SAG-AFTRA and other union or guild agreements.
 
-g. **Biometric Data Protection and Security.** ACT 3 AI uses reasonable administrative, technical and organizational measures designed to protect Biometric Data and AI-Generated Content on the Platform. Stored files are encrypted at rest. Files are delivered through unlisted links that we do not publish; anyone who has a link can open the file, so share links only with people you trust. No method of storage or transmission is completely secure, and we cannot guarantee absolute security. Retention of Biometric Data will not exceed the duration necessary for authorized use unless otherwise required by law or contract. To run features such as digital actors, character reference images, lip sync, and voices, the Platform sends images, video, and voice recordings containing Biometric Data to the AI Providers listed under Section 2.5, solely for that purpose. ACT 3 AI does not use Biometric Data to train AI models (Section 8). The consent you obtain under Section 13.3(c) must cover this processing.
+g. **Biometric Data Protection and Security.** ACT 3 AI uses reasonable administrative, technical and organizational measures designed to protect Biometric Data and AI-Generated Content on the Platform. Files in our main cloud storage are encrypted at rest. Unless you choose to share or publish them, files are delivered through unlisted links; anyone who has a link can open the file, so share links only with people you trust. No method of storage or transmission is completely secure, and we cannot guarantee absolute security. Retention of Biometric Data will not exceed the duration necessary for authorized use unless otherwise required by law or contract. To run features such as digital actors, character reference images, lip sync, and voices, the Platform sends images, video, and voice recordings containing Biometric Data to the AI Providers listed under Section 2.5, solely for that purpose. ACT 3 AI does not use Biometric Data to train AI models (Section 8). The consent you obtain under Section 13.3(c) must cover this processing.
 
 h. **Content Review and Enforcement.** We reserve the right to review Content for compliance with the terms in this Section 13 and may remove or restrict Content that violates these Terms or applicable laws. We may suspend or terminate Accounts that misuse actor Biometric Data or AI-Generated Content. Upon such termination, all copies of such AI-Generated Content using Biometric Data must be destroyed unless retention is legally required.
 
@@ -850,7 +850,7 @@ Your use of AI-driven features is subject to the AI Training provisions in [Sect
 
 ### 14.4. Third-Party Integrations and Licenses
 
-The Platform may work with third-party tools and services, such as Reallusion Character Creator and Blender, where available, to support features like 3D character creation, motion capture, and post-production workflows. The Platform does not integrate directly with Adobe Premiere Pro, but edits can be exported as OTIO, FCPXML and EDL files that Premiere Pro and other editing tools can import. Your use of third-party tools may be subject to third-party license terms, which, where they apply, will be disclosed at the point of use. For example, Outputs incorporating third-party assets may require compliance with the respective provider's licensing terms. You agree to comply with all applicable third-party terms and to ensure that your use of integrated tools does not violate any intellectual property rights.
+The Platform may work with third-party tools and services, such as Reallusion Character Creator and Blender, where available, to support features like 3D character creation, motion capture, and post-production workflows. The Platform does not integrate directly with Adobe Premiere Pro, but edits may be exported as OTIO, FCPXML or EDL files, formats that many editing tools, such as Premiere Pro, can import. Your use of third-party tools may be subject to third-party license terms, which, where they apply, will be disclosed at the point of use. For example, Outputs incorporating third-party assets may require compliance with the respective provider's licensing terms. You agree to comply with all applicable third-party terms and to ensure that your use of integrated tools does not violate any intellectual property rights.
 
 ### 14.5. Collaboration and Organization Features
 
