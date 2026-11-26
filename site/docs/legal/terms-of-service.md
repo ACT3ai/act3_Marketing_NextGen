@@ -14,7 +14,7 @@ description: Official Terms of Service for ACT 3 AI, Inc.
 
 **Last Updated:** November 26, 2026
 
-**What changed:** In this November 26, 2026 update we reworded the security of faces, voices and files (Section 13.3(g)), made the AI Credit rules consistent (Sections 4.5, 6.3, 6.4 and 6.6), described features that are not available yet as "may" or removed them, fixed broken links and drafting errors, and added more prohibited uses from our AI Providers' policies (Section 5.2). In the November 24, 2026 update we linked our list of the other AI companies whose services make your video, images, voices and text, and say plainly that their terms apply (Section 2.5); we spelled out what you own, what ACT 3 AI keeps and does not promise, and that ACT 3 AI does not indemnify you or your buyers (Sections 9, 15, 16 and 17); we made clear the Service is for making your own films, not for reselling AI generation (Section 5.13); that money spent on a generation that has started is not refunded (Section 6.6); and what happens to your files if ACT 3 AI stops operating (Section 19.13). We also added a numbered list of prohibited content and uses that follows the rules of the AI companies we use, including that a real person's face or voice needs their written consent (Section 5.2), and raised the minimum age to 18 (Section 3.1).
+**What changed:** In this November 26, 2026 update we reworded the security of faces, voices and files (Section 13.3(g)), made the AI Credit rules consistent (Sections 4.5, 6.3, 6.4 and 6.6), removed descriptions of features that are not available, fixed broken links and drafting errors, and added more prohibited uses from our AI Providers' policies (Section 5.2). In the November 24, 2026 update we linked our list of the other AI companies whose services make your video, images, voices and text, and say plainly that their terms apply (Section 2.5); we spelled out what you own, what ACT 3 AI keeps and does not promise, and that ACT 3 AI does not indemnify you or your buyers (Sections 9, 15, 16 and 17); we made clear the Service is for making your own films, not for reselling AI generation (Section 5.13); that money spent on a generation that has started is not refunded (Section 6.6); and what happens to your files if ACT 3 AI stops operating (Section 19.13). We also added a numbered list of prohibited content and uses that follows the rules of the AI companies we use, including that a real person's face or voice needs their written consent (Section 5.2), and raised the minimum age to 18 (Section 3.1).
 
 Welcome! Please read these ACT 3 AI, Inc. Terms of Service carefully before accessing or using our Services or Platform.
 
@@ -196,7 +196,7 @@ ACT 3 AI may offer Free, Trial, or promotional Plans subject to the usage limits
 | --- | --- |
 | Monthly Allocation | Credits are added to your balance on the first day of each Billing Cycle. |
 | Rollover | Unused monthly Credits roll into the Rollover Bank up to the Rollover Bank Cap shown for your Plan in the Pricing Table. |
-| Expiry | Rolled-over Credits have no separate expiry date, but at each renewal any Credits above your Plan's Rollover Bank Cap are not carried over. Promotional Credits expire as stated when they are granted (Section 6.2). |
+| Expiry | At each renewal, any Credits above your Plan's Rollover Bank Cap are not carried over. Promotional Credits expire as stated when they are granted (Section 6.2). |
 | Downgrade | When a downgrade takes effect at the start of the next Billing Cycle, Credits above the new Plan's Rollover Bank Cap are removed at once. |
 | Cancellation | When you cancel, your Plan Credits and rolled-over Credits end when the paid Billing Cycle ends (Section 4.13). |
 | Account Closure | All unredeemed Credits immediately expire upon termination for any reason and are not redeemable for cash or other value. |
@@ -286,16 +286,16 @@ Content or activity on the Platform must not:
 19. **Upload sensitive data.** Upload health records (protected health information), payment card or bank account numbers, or government identification numbers.
 20. **Break an AI Provider's own rules.** Violate the usage policy of the AI Provider that runs a feature you use (Section 2.5(c)). Where its policy is stricter than this list, the stricter rule applies to that AI Provider's Outputs.
 21. **Spread false propaganda.** Make false propaganda, or spread false information presented as fact in order to deceive the public.
-22. **Threaten national security or obstruct justice.** Make content that is meant to threaten the security of a country, or to interfere with a legitimate court or judicial process (for example, fake evidence or intimidating a witness). Fiction, drama, documentary and political commentary about these subjects, including criticism of governments and courts, are allowed.
+22. **Threaten national security or obstruct justice.** Make content that is meant to threaten the security of a country, or to interfere with a legitimate court or judicial process (for example, fake evidence or intimidating a witness). This item does not by itself prohibit fiction, drama, documentary or political commentary about these subjects.
 23. **Leak state secrets.** Disclose state secrets or classified information.
 24. **Advertise unlawful gambling.** Make advertising for betting, gambling or online gaming where it is unlawful.
 25. **Break a contract or confidence.** Make content that causes you or anyone else to breach a contract or a duty of confidentiality.
 26. **Spread malware or attack systems.** Create or spread malware or viruses, or carry out denial-of-service (DDoS) attacks. See also Section 5.5.
 27. **Misuse AI Provider names.** Use the names, trademarks or logos of BytePlus, ByteDance or any other AI Provider, or imply that an AI Provider endorses you or your work, except as that AI Provider allows.
-28. **Harm animals.** Make content that shows or promotes real-world cruelty to animals. Depicting harm to animals in a story is allowed.
+28. **Harm animals.** Make content that shows or promotes real-world cruelty to animals. This item does not by itself prohibit depicting harm to animals in a story.
 29. **Put a real person in a false light.** Portray an identifiable real person in a false light, that is, in a false and highly offensive way that viewers could take as true.
 30. **Hack, spy or dox.** Use the Service for hacking, espionage, or doxing (exposing someone's private identifying information so that others can target them).
-31. **Forge documents or evidence.** Falsify or forge documents, records, identities, credentials, signatures or evidence. A prop that is clearly part of a story is allowed; one meant to be used as real is not.
+31. **Forge documents or evidence.** Falsify or forge documents, records, identities, credentials, signatures or evidence. A prop meant to be used as real is prohibited.
 32. **Control critical infrastructure.** Use the Service or Outputs to operate or control critical infrastructure, such as power, water, transport or medical systems.
 
 Breaking any of these rules is a material breach of these Terms (Section 5.12), and you are responsible for it under Section 17.
@@ -411,7 +411,7 @@ Where to Find Current Pricing. All tasks, their Credit costs, and plan-specific 
 | Scenario | What happens |
 | --- | --- |
 | Rollover Bank | Unused Monthly Allocation rolls into a Rollover Bank up to the Rollover Bank Cap shown for your plan on the Pricing Page. |
-| Expiry | Rollover Credits have no separate expiry date, but at each renewal any Credits above your plan's Rollover Bank Cap are not carried over. Promotional Credits expire as stated when they are granted (Section 6.2). |
+| Expiry | At each renewal, any Credits above your plan's Rollover Bank Cap are not carried over. Promotional Credits expire as stated when they are granted (Section 6.2). |
 | Plan Downgrade | When a downgrade takes effect, any Credits above the lower plan's Rollover Bank Cap are removed at once. |
 | Subscription Cancellation | If you cancel your subscription, your plan Credits and Rollover Credits end when the paid billing period ends (Section 4.13). |
 | Account Cancellation or Termination | All unused Credits expire immediately when the Organization Account is closed or terminated under [Section 10](#10-suspension-cancellation-and-termination). They are not refunded or reinstated if you reopen an Account. |
@@ -564,7 +564,7 @@ Much of the Output is generated by AI models from other companies; their terms a
 
 ### 9.6 Community Videos (Opt-In)
 
-**9.6.1 Opt-In.** Projects are private by default, which means they are not shown in Community Videos or to other Users (files in them are still delivered through unlisted links, Section 13.3(g)). You may choose to show one or more Projects or Outputs in Community Videos through the Project settings.
+**9.6.1 Opt-In.** Projects are private by default, which means they are not shown in Community Videos or to other Users (files in them may still be delivered through links, Section 13.3(g)). You may choose to show one or more Projects or Outputs in Community Videos through the Project settings.
 
 **9.6.2 License.** For each Output you place in Community Videos, you grant ACT 3 AI a non-exclusive, worldwide, royalty-free, sublicensable license to display, perform, and distribute that Output, unaltered or in compilations, across ACT 3 AI products, marketing sites, demos, social-media channels, and in-product galleries.
 
@@ -802,7 +802,7 @@ e. **Prohibited Uses.** You may not use the Platform to:
 
 f. **Legal Compliance.** Users must at all times comply with all applicable local, state, federal, and international Biometric Data protection laws when collecting, storing, or using Biometric Data, including (as applicable): the Illinois Biometric Information Privacy Act (BIPA); Texas Capture or Use of Biometric Identifier Act (CUBI); California Consumer Privacy Act (CCPA), the EU General Data Protection Regulation (GDPR), and SAG-AFTRA and other union or guild agreements.
 
-g. **Biometric Data Protection and Security.** ACT 3 AI uses reasonable administrative, technical and organizational measures designed to protect Biometric Data and AI-Generated Content on the Platform. Files in our main cloud storage are encrypted at rest. Unless you choose to share or publish them, files are delivered through unlisted links; anyone who has a link can open the file, so share links only with people you trust. No method of storage or transmission is completely secure, and we cannot guarantee absolute security. Retention of Biometric Data will not exceed the duration necessary for authorized use unless otherwise required by law or contract. To run features such as digital actors, character reference images, lip sync, and voices, the Platform sends images, video, and voice recordings containing Biometric Data to the AI Providers listed under Section 2.5, solely for that purpose. ACT 3 AI does not use Biometric Data to train AI models (Section 8). The consent you obtain under Section 13.3(c) must cover this processing.
+g. **Biometric Data Protection and Security.** ACT 3 AI uses reasonable administrative, technical and organizational measures designed to protect Biometric Data and AI-Generated Content on the Platform. Files may be delivered through links, and anyone who has a link may be able to open the file, so share links only with people you trust. No method of storage or transmission is completely secure, and we cannot guarantee absolute security. Retention of Biometric Data will not exceed the duration necessary for authorized use unless otherwise required by law or contract. To run features such as digital actors, character reference images, lip sync, and voices, the Platform sends images, video, and voice recordings containing Biometric Data to the AI Providers listed under Section 2.5, solely for that purpose. ACT 3 AI does not use Biometric Data to train AI models (Section 8). The consent you obtain under Section 13.3(c) must cover this processing.
 
 h. **Content Review and Enforcement.** We reserve the right to review Content for compliance with the terms in this Section 13 and may remove or restrict Content that violates these Terms or applicable laws. We may suspend or terminate Accounts that misuse actor Biometric Data or AI-Generated Content. Upon such termination, all copies of such AI-Generated Content using Biometric Data must be destroyed unless retention is legally required.
 
@@ -850,7 +850,7 @@ Your use of AI-driven features is subject to the AI Training provisions in [Sect
 
 ### 14.4. Third-Party Integrations and Licenses
 
-The Platform may work with third-party tools and services, such as Reallusion Character Creator and Blender, where available, to support features like 3D character creation, motion capture, and post-production workflows. The Platform does not integrate directly with Adobe Premiere Pro, but edits may be exported as OTIO, FCPXML or EDL files, formats that many editing tools, such as Premiere Pro, can import. Your use of third-party tools may be subject to third-party license terms, which, where they apply, will be disclosed at the point of use. For example, Outputs incorporating third-party assets may require compliance with the respective provider's licensing terms. You agree to comply with all applicable third-party terms and to ensure that your use of integrated tools does not violate any intellectual property rights.
+Your use of third-party tools may be subject to third-party license terms, and you are responsible for reviewing and following them. For example, Outputs incorporating third-party assets may require compliance with the respective provider's licensing terms. You agree to comply with all applicable third-party terms and to ensure that your use of integrated tools does not violate any intellectual property rights.
 
 ### 14.5. Collaboration and Organization Features
 
@@ -998,7 +998,7 @@ ACT 3 AI, Inc. will: (i) promptly notify you in writing of any claim, demand, su
 
 ### 17.3 Scope of Indemnification
 
-Your indemnification obligations extend to claims arising from your use of AI-driven features (e.g., virtual set design, digital actors, rendering services), including any misuse of third-party tools or assets integrated with the Platform (e.g., Reallusion Character Creator, Blender), as described in [Section 14](#14-additional-product-terms) (Additional Product Terms). You are responsible for ensuring that your inputs and outputs comply with all applicable laws and third-party license terms, and you will indemnify ACT 3 AI Parties for any claims resulting from non-compliance.
+Your indemnification obligations extend to claims arising from your use of AI-driven features (e.g., virtual set design, digital actors, rendering services), including any misuse of third-party tools or assets used with the Platform, as described in [Section 14](#14-additional-product-terms) (Additional Product Terms). You are responsible for ensuring that your inputs and outputs comply with all applicable laws and third-party license terms, and you will indemnify ACT 3 AI Parties for any claims resulting from non-compliance.
 
 ### 17.4 ACT 3 AI Does Not Indemnify You
 

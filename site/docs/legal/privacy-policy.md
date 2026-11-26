@@ -94,15 +94,15 @@ Below we detail the information we collect through each of these channels:
 
 **What we collect**: Images of faces and bodies, and voice recordings, that you upload or generate for characters, digital actors, cast and voices. These may contain biometric data (such as facial geometry or voiceprints) of the people in them ("Biometric Data").
 
-**Why we use it**: Only to make your own films on the Services. We do not use Biometric Data to recognize who a person is, or to track or profile people, we do not sell it, and we do not use it to train AI models.
+**Why we use it**: To provide and support the Services for you. We do not sell Biometric Data.
 
-**Who receives it**: The AI Providers that generate Outputs from it (listed at https://act3ai.com/docs/ownership_of_output), which handle it under their own terms; our hosting and storage providers; our staff when they help you with support; people you share it with or who can access your Organization's Projects; and others where the law requires.
+**Who may receive it**: The AI Providers that generate Outputs from it (listed at https://act3ai.com/docs/ownership_of_output), which handle it under their own terms; our hosting and storage providers; our staff when they help you with support; people you share it with or who can access your Organization's Projects; and others where the law requires.
 
-**How long we keep it**: Until you delete it or close your account. After your account closes or your paid plan ends, it stays available for the 30-day Download Window described in Section 2.3 of our Terms of Service and may then be deleted; copies in encrypted backups are removed on our normal backup cycle. In any case, we destroy it no later than the law requires; where the Illinois Biometric Information Privacy Act (BIPA) applies, that is when the purpose for collecting it has been met or within 3 years of the person's last interaction with ACT 3, whichever comes first.
+**How long we keep it**: We keep Biometric Data while it is needed to provide the Services to you, and we retain and destroy it as required by applicable law, including the Illinois Biometric Information Privacy Act (BIPA) where it applies.
 
 **Consent of the people shown**: You must have the written consent of each real person whose face, body or voice you upload or use, as required by Section 5.2 (item 1) and Section 13.3 of our Terms of Service.
 
-**Security**: ACT 3 AI uses reasonable administrative, technical and organizational measures designed to protect Biometric Data and AI-Generated Content on the Platform. Files in our main cloud storage are encrypted at rest. Unless you choose to share or publish them, files are delivered through unlisted links; anyone who has a link can open the file, so share links only with people you trust. No method of storage or transmission is completely secure, and we cannot guarantee absolute security.
+**Security**: ACT 3 AI uses reasonable administrative, technical and organizational measures designed to protect Biometric Data and AI-Generated Content on the Platform. Files may be delivered through links, and anyone who has a link may be able to open the file, so share links only with people you trust. No method of storage or transmission is completely secure, and we cannot guarantee absolute security.
 
 ## Processing Purposes: How We Use Your Personal Data
 
@@ -160,15 +160,15 @@ We may share Personal Data with the following recipients:
 
 ## Private Projects: ACT 3 Access
 
-If your ACT 3 account has private Projects, you control the access to that information. Private means a Project is not shown to other users or the public; files in it are delivered through unlisted links that we do not publish, and anyone who has a link can open the file, so share links only with people you trust. ACT 3 personnel does not access private Project information without your consent except as provided in this Privacy Statement and for:
+If your ACT 3 account has private Projects, you control the access to that information. Files in a private Project may be delivered through links, and anyone who has a link may be able to open the file, so share links only with people you trust. ACT 3 personnel does not access private Project information without your consent except as provided in this Privacy Statement and for:
 
 - **Security purposes**
 - **Automated scanning or manual review for known vulnerabilities, active malware, or other content known to violate our Terms of Service**
 - **To assist the Project owner with a support matter**
 - **To maintain the integrity of the Services**
+- **To fix and improve the Services' prompts, templates and quality checks**
 - **To comply with our legal obligations if we have reason to believe the contents are in violation of the law**
 
-ACT 3 will provide you with notice regarding private Project access unless doing so is prohibited by law or if ACT 3 acted in response to a security threat or other risk to security. 
 
 ## Lawful Bases for Processing Personal Data (Applicable to EEA and UK End Users)
 
