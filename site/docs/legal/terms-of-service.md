@@ -12,9 +12,9 @@ description: Official Terms of Service for ACT 3 AI, Inc.
 
 **Effective Date:** July 1, 2025
 
-**Last Updated:** November 24, 2026
+**Last Updated:** November 26, 2026
 
-**What changed:** We now link our list of the other AI companies whose services make your video, images, voices and text, and say plainly that their terms apply (Section 2.5); we spelled out what you own, what ACT 3 AI keeps and does not promise, and that ACT 3 AI does not indemnify you or your buyers (Sections 9, 15, 16 and 17); we made clear the Service is for making your own films, not for reselling AI generation (Section 5.13); that money spent on a generation that has started is not refunded (Section 6.6); and what happens to your files if ACT 3 AI stops operating (Section 19.13). We also added a numbered list of prohibited content and uses that follows the rules of the AI companies we use, including that a real person's face or voice needs their written consent (Section 5.2), and raised the minimum age to 18 (Section 3.1).
+**What changed:** In this November 26, 2026 update we reworded the security of faces, voices and files (Section 13.3(g)), made the AI Credit rules consistent (Sections 4.5, 6.3, 6.4 and 6.6), described features that are not available yet as "may" or removed them, fixed broken links and drafting errors, and added more prohibited uses from our AI Providers' policies (Section 5.2). In the November 24, 2026 update we linked our list of the other AI companies whose services make your video, images, voices and text, and say plainly that their terms apply (Section 2.5); we spelled out what you own, what ACT 3 AI keeps and does not promise, and that ACT 3 AI does not indemnify you or your buyers (Sections 9, 15, 16 and 17); we made clear the Service is for making your own films, not for reselling AI generation (Section 5.13); that money spent on a generation that has started is not refunded (Section 6.6); and what happens to your files if ACT 3 AI stops operating (Section 19.13). We also added a numbered list of prohibited content and uses that follows the rules of the AI companies we use, including that a real person's face or voice needs their written consent (Section 5.2), and raised the minimum age to 18 (Section 3.1).
 
 Welcome! Please read these ACT 3 AI, Inc. Terms of Service carefully before accessing or using our Services or Platform.
 
@@ -37,7 +37,7 @@ The following capitalized terms have the meanings set out below. They apply thro
 | "Digital Asset" | Any AI-generated or User-uploaded file—such as a rendered clip, 3-D model, prompt, or storyboard—created or stored within the Platform. |
 | "ACT 3 AI," "we," "us," or "our" | ACT 3 AI, Inc., a Washington corporation, together with its affiliates, officers, directors, employees, contractors, licensors, and agents. |
 | "Owner" | The individual or entity designated as the legal owner of a Personal Account or Organization Account and its Digital Assets. |
-| "Platform" | A cloud-based creative platform currently branded ACT 3 ai, including all websites, sub-domains, applications, services, features, Content, and interfaces we operate—including the ACT 3 AI web application—plus any successor or related offerings. |
+| "Platform" | A cloud-based creative platform currently branded ACT 3 AI, including all websites, sub-domains, applications, services, features, Content, and interfaces we operate—including the ACT 3 AI web application—plus any successor or related offerings. |
 | "Project" | A discrete creative work (e.g., a film, TV episode, marketing spot, or social-media video) managed within the Service and owned by a single Organization. |
 | "Service" | Every service we provide through the Platform, including paid subscriptions, Beta Features, APIs, and support. |
 | "Subscription" | The paid or free plan that governs the Credits, feature set, and support level available to an Account, as selected during signup or later changed in the billing dashboard. |
@@ -59,7 +59,7 @@ ACT 3 AI operates and facilitates access to the Platform, which enables Users to
 
 ### 2.2 Subscription Tiers and AI Credits
 
-Access to paid functionality is packaged into subscription plans (Free, Community, Standard, Business, Enterprise). Each plan allocates a monthly pool of AI Credits that meter high-compute tasks—such as script generation, 3-D asset synthesis, and video rendering. When a User initiates a credit-consuming task, the exact cost is disclosed in the interface and deducted from the Organization's active credit balance; unused credits may roll into a capped rollover bank as described in the billing specification.
+Access to paid functionality is packaged into subscription plans (Free, Creator, Pro, Advanced Edition and Enterprise). Each plan allocates a monthly pool of AI Credits that meter high-compute tasks—such as script generation, 3-D asset synthesis, and video rendering. When a User initiates a credit-consuming task, the exact cost is disclosed in the interface and deducted from the Organization's active credit balance; unused credits may roll into a capped rollover bank as described in Section 6.4.
 
 ### 2.3 Cloud Storage; Your Obligation to Download
 
@@ -167,82 +167,82 @@ By creating an Account, you consent to receive notices and disclosures electroni
 
 ## 4. Subscriptions
 
-**Summary:**  This "Subscriptions" section governs the purchase, renewal, modification, suspension, and termination of all fee-bearing or promotional subscriptions to the Services. The Services are offered on a subscription basis. Each Organization Account selects a plan that grants (i) a monthly allocation of Credits, (ii) defined storage, concurrency and feature limits, and (iii) access for its members under the roles described in this section. Plans renew automatically each Billing Cycle until cancelled. All fees are due in advance, non-refundable, and subject to the payment terms below.
+**Summary:**  This "Subscriptions" section governs the purchase, renewal, modification, suspension, and termination of all fee-bearing or promotional subscriptions to the Services. The Services are offered on a subscription basis. Each Organization Account selects a plan that grants (i) a monthly allocation of Credits, (ii) defined storage, concurrency and feature limits, and (iii) access for its members under the roles described in this section. Plans renew automatically each Billing Cycle until cancelled. All fees are due in advance, non-refundable except as described in Section 4.8, and subject to the payment terms below.
 
 ### 4.1 Plan Structure; Pricing Table
 
 - Plans. The Services are offered on multiple subscription tiers (each, a "Plan") that specify: (i) the periodic fee, (ii) the number of AI Credits allocated per Billing Cycle, (iii) the maximum rollover-credit balance permitted (the "Rollover Bank Cap"), (iv) storage and concurrency limits, (v) support level, and (vi) any other usage or feature restrictions.
-- Incorporation by Reference. The current Plan specifications are set forth in the version-dated pricing schedule located at www.ACT3ai.com/pricing (the "Pricing Table"), which is incorporated by reference and forms part of these Terms. The Company may reproduce the same information in an Appendix to these Terms for archival purposes.
+- Incorporation by Reference. The current Plan specifications are set forth in the version-dated pricing schedule located at www.ACT3ai.com/pricing (the "Pricing Table"), which is incorporated by reference and forms part of these Terms. ACT 3 AI may reproduce the same information in an Appendix to these Terms for archival purposes.
 - Credits. Credits are metering units used by Users to consume resource-intensive features as described in the Documentation. Credits accrue only to the Personal Account or Organization Account and have no monetary or property value.
 
 ### 4.2 Term; Billing Cycle; Auto-Renewal
 
 - Initial Term. A subscription commences on the Effective Date of the applicable order and continues for the period stated therein (a "Billing Cycle").
-- Renewal. At the end of each Billing Cycle the subscription automatically renews for a successive Billing Cycle of equal length unless Customer cancels in accordance with Section 4.13.
-- Renewal Notice. For annual Plans, Company shall send an e-mail renewal reminder at least 14 days prior to the renewal date stating the then-current fees and a link to cancel. For monthly Plans, the checkout disclosure and receipt constitute ongoing renewal notice.
+- Renewal. At the end of each Billing Cycle the subscription automatically renews for a successive Billing Cycle of equal length unless you cancel in accordance with Section 4.13.
+- Renewal Notice. For annual Plans, ACT 3 AI shall send an e-mail renewal reminder at least 14 days prior to the renewal date stating the then-current fees and a link to cancel. For monthly Plans, the checkout disclosure and receipt constitute ongoing renewal notice.
 
 ### 4.3 Plan Changes
 
-- Upgrades. Customer may upgrade at any time. An upgrade takes effect immediately: Company charges the full fee of the new Plan when the upgrade is made, a new Billing Cycle begins on that date, and the new Plan's full Credit allocation is added once that payment succeeds. Fees are not prorated, and no refund or credit is given for the unused part of the prior Billing Cycle. If the payment does not succeed, the upgrade is not applied and the current Plan continues unchanged.
-- Downgrades. Downgrades become effective on the next Billing Cycle. Until then the current Plan, its Credits and its limits remain in effect, and no refund or credit is given for the remainder of the current Billing Cycle; from the next Billing Cycle the lower Plan's fee is charged and its Credits are allocated. A pending downgrade may be withdrawn before it takes effect, and is withdrawn if Customer cancels the subscription. If Customer's usage exceeds the limits of the lower Plan, Customer shall reduce such usage within 30 days after the downgrade takes effect, failing which Company may restrict functionality or delete excess data, as described in Section 2.3(c).
-- Pause. Once per rolling twelve-month period, Customer may pause a subscription for up to 90 consecutive days. During a pause: (i) no new Credits accrue, (ii) existing Credits remain in the Rollover Bank, (iii) subscription fees are suspended, and (iv) access is limited to read-only. Absent earlier cancellation, the subscription automatically resumes at the end of the pause.
+- Upgrades. You may upgrade at any time. An upgrade takes effect immediately: ACT 3 AI charges the full fee of the new Plan when the upgrade is made, a new Billing Cycle begins on that date, and the new Plan's full Credit allocation is added once that payment succeeds. Fees are not prorated, and no refund or credit is given for the unused part of the prior Billing Cycle. If the payment does not succeed, the upgrade is not applied and the current Plan continues unchanged.
+- Downgrades. Downgrades become effective on the next Billing Cycle. Until then the current Plan, its Credits and its limits remain in effect, and no refund or credit is given for the remainder of the current Billing Cycle; from the next Billing Cycle the lower Plan's fee is charged and its Credits are allocated. A pending downgrade may be withdrawn before it takes effect, and is withdrawn if you cancel the subscription. If your usage exceeds the limits of the lower Plan, you shall reduce such usage within 30 days after the downgrade takes effect, failing which ACT 3 AI may restrict functionality or delete excess data, as described in Section 2.3(c).
 
 ### 4.4 Free, Trial, and Promotional Plans
 
-Company may offer Free, Trial, or promotional Plans subject to the usage limits, watermarks, or other restrictions stated at sign-up. After six (6) consecutive months of Free-tier generative use, continued generation of new assets requires conversion to a fee-bearing Plan. Company may modify or terminate any Free or promotional Plan on 30 days' prior written notice.
+ACT 3 AI may offer Free, Trial, or promotional Plans subject to the usage limits, watermarks, or other restrictions stated at sign-up. After six (6) consecutive months of Free-tier generative use, continued generation of new assets requires conversion to a fee-bearing Plan. ACT 3 AI may modify or terminate any Free or promotional Plan on 30 days' prior written notice.
 
 ### 4.5 Credit Allocation; Rollover; Expiry
 
 | Rule | Provision |
 | --- | --- |
-| Monthly Allocation | Credits are added to Customer's balance on the first day of each Billing Cycle. |
-| Rollover | Unused monthly Credits roll into the Rollover Bank up to the applicable Cap. |
-| Expiry | Rolled-over Credits expire twelve (12) months after the date of original allocation unless otherwise specified at the time of grant. |
-| Downgrade | When a downgrade takes effect at the start of the next Billing Cycle, the Rollover Bank is capped at the new Plan's Cap and Credits above it expire. |
+| Monthly Allocation | Credits are added to your balance on the first day of each Billing Cycle. |
+| Rollover | Unused monthly Credits roll into the Rollover Bank up to the Rollover Bank Cap shown for your Plan in the Pricing Table. |
+| Expiry | Rolled-over Credits have no separate expiry date, but at each renewal any Credits above your Plan's Rollover Bank Cap are not carried over. Promotional Credits expire as stated when they are granted (Section 6.2). |
+| Downgrade | When a downgrade takes effect at the start of the next Billing Cycle, Credits above the new Plan's Rollover Bank Cap are removed at once. |
+| Cancellation | When you cancel, your Plan Credits and rolled-over Credits end when the paid Billing Cycle ends (Section 4.13). |
 | Account Closure | All unredeemed Credits immediately expire upon termination for any reason and are not redeemable for cash or other value. |
 
-If a task fails solely due to a verified Service error, Company will automatically re-credit the consumed Credits.
+If a task fails because of a Platform fault (Section 6.3), ACT 3 AI will automatically re-credit the consumed Credits.
 
 ### 4.6 Dormancy; Archiving
 
-If no User associated with an Organization Account logs in or spends Credits for twelve (12) consecutive months ("Dormancy"), Company may: (i) notify Customer of Dormancy and the intent to archive, (ii) place the Organization Account in read-only archive status 30 days thereafter, and (iii) permanently delete stored Digital Assets 60 days after archiving.
+If no User associated with an Organization Account logs in or spends Credits for twelve (12) consecutive months ("Dormancy"), ACT 3 AI may: (i) notify you of Dormancy and the intent to archive, (ii) place the Organization Account in read-only archive status 30 days thereafter, and (iii) permanently delete stored Digital Assets 60 days after archiving.
 
 ### 4.7 Payment Credentials; Authorization
 
-Customer authorizes Company and its designated payment processors (presently Stripe and PayPal) to charge all fees, usage overages, applicable Taxes (defined below), chargebacks, and collection costs to the payment method(s) provided. Customer represents that it is authorized to use each payment method furnished.
+You authorize ACT 3 AI and its designated payment processors (presently Stripe and PayPal) to charge all fees, usage overages, applicable Taxes (defined below), chargebacks, and collection costs to the payment method(s) provided. You represent that you are authorized to use each payment method furnished.
 
 ### 4.8 Billing; Refunds
 
 - Advance Billing. Subscription fees are invoiced and payable in advance unless the order specifies usage-based components that are billed in arrears.
-- Refunds. Except as set forth below, all payments are non-refundable, and no refund, credit, or proration is given for Plan upgrades, downgrades, or cancellations. Company will issue a pro-rata refund of prepaid fees only if: (i) Company discontinues the Services for convenience, or (ii) Customer terminates for Company's uncured material breach, or (iii) refund is required by non-waivable consumer law. Credits are not convertible to cash except where required by law. No refund, credit return, or pro-rata amount is ever owed for Credits or fees already spent on a generation that has started, because ACT 3 AI has already paid the AI Provider for it (Section 6.6); the only exceptions are the automatic re-credit for a task that fails because of a Platform fault (Section 6.6) and non-waivable consumer law (Section 4.15).
+- Refunds. Except as set forth below, all payments are non-refundable, and no refund, credit, or proration is given for Plan upgrades, downgrades, or cancellations. ACT 3 AI will issue a pro-rata refund of prepaid fees only if: (i) ACT 3 AI discontinues the Services for convenience, or (ii) you terminate for ACT 3 AI's uncured material breach, or (iii) refund is required by non-waivable consumer law. Credits are not convertible to cash except where required by law. No refund, credit return, or pro-rata amount is ever owed for Credits or fees already spent on a generation that has started, because ACT 3 AI has already paid the AI Provider for it (Section 6.6); the only exceptions are the automatic re-credit for a task that fails because of a Platform fault (Section 6.3) and non-waivable consumer law (Section 4.15).
 
 ### 4.9 Taxes; Late Charges
 
-Fees are exclusive of all sales, value-added, goods and services, use, withholding, or similar taxes ("Taxes"). Customer shall pay such Taxes (other than taxes on Company's net income) or provide a valid exemption certificate. Overdue amounts accrue interest at 1% per month or the maximum rate permitted by law, whichever is lower. Customer is liable for reasonable costs of collection and any processor chargeback fees.
+Fees are exclusive of all sales, value-added, goods and services, use, withholding, or similar taxes ("Taxes"). You shall pay such Taxes (other than taxes on ACT 3 AI's net income) or provide a valid exemption certificate. Overdue amounts accrue interest at 1% per month, or the highest rate the law allows if lower. You are liable for reasonable costs of collection and any processor chargeback fees.
 
 ### 4.10 Price and Rate Changes
 
-Company may modify Plan pricing or Credit consumption rates upon at least 30 days' prior written notice. A "Material Increase" means an increase of more than 5% in any twelve-month period. If Customer does not agree to a Material Increase, Customer may cancel the subscription before the effective date; continued use after that date constitutes acceptance.
+ACT 3 AI may modify Plan pricing or Credit consumption rates upon at least 30 days' prior written notice. A "Material Increase" means an increase of more than 5% in any twelve-month period. If you do not agree to a Material Increase, you may cancel the subscription before the effective date; continued use after that date constitutes acceptance.
 
 ### 4.11 Seats; Overage Billing
 
-If the number of active Personal Accounts linked to an Organization Account exceeds the seat limit of the subscribed Plan, Company may automatically (a) upgrade the Plan, or (b) invoice the excess seats monthly in arrears at the then-current seat overage rate. Counting methodology and audit rights are set forth in the Documentation.
+If the number of active Personal Accounts linked to an Organization Account exceeds the seat limit of the subscribed Plan, ACT 3 AI may automatically (a) upgrade the Plan, or (b) invoice the excess seats monthly in arrears at the then-current seat overage rate. Counting methodology and audit rights are set forth in the Documentation.
 
 ### 4.12 Suspension
 
-Company may suspend or throttle the Services upon: (i) failure to pay undisputed amounts when due and failure to cure within five (5) days of notice, (ii) material breach of the Acceptable-Use Policy, or (iii) Customer usage that materially exceeds Plan norms and threatens Service stability. Company will provide prior notice and an opportunity to cure unless immediate suspension is reasonably necessary to protect the Services.
+ACT 3 AI may suspend or throttle the Services upon: (i) failure to pay undisputed amounts when due and failure to cure within five (5) days of notice, (ii) material breach of the Acceptable-Use Policy, or (iii) your usage that materially exceeds Plan norms and threatens Service stability. ACT 3 AI will provide prior notice and an opportunity to cure unless immediate suspension is reasonably necessary to protect the Services.
 
 ### 4.13 Customer Cancellation
 
-Customer may cancel a subscription at any time through the Billing dashboard. The Services remain available at the subscribed Plan level through the end of the then-current Billing Cycle, for which no refund is given, after which the Organization Account enters read-only Archive Mode for the 30-day Download Window, and stored files are then deleted, as described in Section 2.3.
+You may cancel a subscription at any time through the Billing dashboard. The Services remain available at the subscribed Plan level through the end of the then-current Billing Cycle, for which no refund is given, after which the Organization Account enters read-only Archive Mode for the 30-day Download Window, and stored files are then deleted, as described in Section 2.3.
 
 ### 4.14 Effect of Termination
 
-Upon termination or expiration of a subscription for any reason: (i) your right to access and use the Services immediately ceases (this does not affect your ownership of Your Content, your right to download it during the Download Window in Section 2.3, or your right to keep using Outputs you have already downloaded); (ii) Customer shall cease all use of the Services; (iii) any unpaid fees become immediately due; and (iv) all unredeemed Credits are forfeited. Sections of these Terms that by their nature should survive such termination or cancellation (including, without limitation, ownership, confidentiality, warranty disclaimers, limitations of liability, indemnities, and dispute-resolution provisions) shall survive.
+Upon termination or expiration of a subscription for any reason: (i) your right to access and use the Services immediately ceases (this does not affect your ownership of Your Content, your right to download it during the Download Window in Section 2.3, or your right to keep using Outputs you have already downloaded); (ii) you shall cease all use of the Services; (iii) any unpaid fees become immediately due; and (iv) all unredeemed Credits are forfeited. Sections of these Terms that by their nature should survive such termination or cancellation (including, without limitation, ownership, confidentiality, warranty disclaimers, limitations of liability, indemnities, and dispute-resolution provisions) shall survive.
 
 ### 4.15 Consumer-Law Reservation
 
-Nothing in this Section 4 limits any non-waivable rights that Customer may possess under applicable consumer-protection or mandatory local law.
+Nothing in this Section 4 limits any non-waivable rights that you may possess under applicable consumer-protection or mandatory local law.
 
 ## 5. Acceptable Use
 
@@ -260,7 +260,6 @@ Content or activity on the Platform must not:
 - be sexually obscene, exploitative, or abusive (including of minors);
 - be defamatory, fraudulent, or intentionally deceptive in ways likely to harm public interests such as health, safety, or election integrity;
 - harass, abuse, or threaten violence against any person or group;
-- depict, glorify, or incite gratuitous violence; or
 - depict, glorify, or incite gratuitous violence; or
 - significantly or repeatedly disrupt other Users' experience.
 
@@ -281,11 +280,23 @@ Content or activity on the Platform must not:
 13. **Invade privacy.** Collect or expose someone's private information; use faces, voices or voiceprints to identify, track or profile real people; build facial-recognition databases; or infer sensitive traits (such as health, sexuality, religion or politics) about real people.
 14. **Make high-stakes decisions about people.** Use Outputs to decide employment, housing, credit, insurance, healthcare, legal or government outcomes about real people without meaningful human review, or present Outputs as professional legal, medical or financial advice.
 15. **Train competing AI.** Use Outputs to train AI models where the AI Provider that generated them forbids it, or to build a model that competes with that AI Provider.
-16. **Get around safeguards.** Circumvent safety filters, guardrails, voice verification, usage limits or AI Credit metering, or reverse engineer the Service or the AI models behind it.
+16. **Get around safeguards.** Circumvent safety filters, guardrails, voice verification, usage limits or AI Credit metering (including by jailbreaking or prompt injection), or reverse engineer the Service or the AI models behind it.
 17. **Resell or wrap the Service.** Give third parties access to the Service, its APIs or MCP, or the AI Providers' models, or make Outputs available to others on terms looser than these rules (see Section 5.13).
 18. **Break sanctions or serve military or surveillance ends.** Use the Service from a sanctioned country or as a restricted party (Section 5.11), or for military, surveillance or law-enforcement purposes without ACT 3 AI's prior written approval.
 19. **Upload sensitive data.** Upload health records (protected health information), payment card or bank account numbers, or government identification numbers.
 20. **Break an AI Provider's own rules.** Violate the usage policy of the AI Provider that runs a feature you use (Section 2.5(c)). Where its policy is stricter than this list, the stricter rule applies to that AI Provider's Outputs.
+21. **Spread false propaganda.** Make false propaganda, or spread false information presented as fact in order to deceive the public.
+22. **Threaten national security or obstruct justice.** Make content that is meant to threaten the security of a country, or to interfere with a legitimate court or judicial process (for example, fake evidence or intimidating a witness). Fiction, drama, documentary and political commentary about these subjects, including criticism of governments and courts, are allowed.
+23. **Leak state secrets.** Disclose state secrets or classified information.
+24. **Advertise unlawful gambling.** Make advertising for betting, gambling or online gaming where it is unlawful.
+25. **Break a contract or confidence.** Make content that causes you or anyone else to breach a contract or a duty of confidentiality.
+26. **Spread malware or attack systems.** Create or spread malware or viruses, or carry out denial-of-service (DDoS) attacks. See also Section 5.5.
+27. **Misuse AI Provider names.** Use the names, trademarks or logos of BytePlus, ByteDance or any other AI Provider, or imply that an AI Provider endorses you or your work, except as that AI Provider allows.
+28. **Harm animals.** Make content that shows or promotes real-world cruelty to animals. Depicting harm to animals in a story is allowed.
+29. **Put a real person in a false light.** Portray an identifiable real person in a false light, that is, in a false and highly offensive way that viewers could take as true.
+30. **Hack, spy or dox.** Use the Service for hacking, espionage, or doxing (exposing someone's private identifying information so that others can target them).
+31. **Forge documents or evidence.** Falsify or forge documents, records, identities, credentials, signatures or evidence. A prop that is clearly part of a story is allowed; one meant to be used as real is not.
+32. **Control critical infrastructure.** Use the Service or Outputs to operate or control critical infrastructure, such as power, water, transport or medical systems.
 
 Breaking any of these rules is a material breach of these Terms (Section 5.12), and you are responsible for it under Section 17.
 
@@ -392,16 +403,17 @@ Where to Find Current Pricing. All tasks, their Credit costs, and plan-specific 
 
 - Real-time display. Before you launch a task, the interface shows the exact or estimated Credit cost. Starting the task is your authorization to deduct those Credits, and once it has started those Credits are spent (Section 6.6).
 - Usage Order. We deduct from the current Monthly Allocation first, then from any Rollover Bank (see § 6.4).
-- Failed or Aborted Jobs. If a task fails solely because of a Platform fault, we automatically re-credit the full amount. Credits are not returned if failure results from (i) your breach of these Terms, (ii) invalid inputs, or (iii) external factors beyond our control (e.g., your internet outage).
+- Failed or Aborted Jobs. A "**Platform fault**" is a task that fails and delivers no result for a reason on ACT 3 AI's or an AI Provider's side; a delivered result, or a task you cancel yourself, is never a Platform fault. If a task fails because of a Platform fault, we automatically re-credit the full amount. Credits are not returned if failure results from (i) your breach of these Terms, (ii) invalid inputs, or (iii) external factors beyond our control (e.g., your internet outage).
 - Insufficient Balance. If a task would exceed your remaining Credits, we pause the task and prompt you to top-up or upgrade. We are not liable for delays caused by insufficient Credits.
 
 ### 6.4 Rollover, Expiration & Account Changes
 
 | Scenario | What happens |
 | --- | --- |
-| Rollover Bank | Unused Monthly Allocation rolls into a Rollover Bank up to the cap shown on your plan (e.g., 2× Monthly Allocation). |
-| Expiry | Rollover Credits expire 12 months after the month in which they were earned unless a shorter period is stated for promotional Credits. |
-| Plan Downgrade | If you downgrade, any Credits above the lower plan's cap remain usable for 30 days; after that they expire. |
+| Rollover Bank | Unused Monthly Allocation rolls into a Rollover Bank up to the Rollover Bank Cap shown for your plan on the Pricing Page. |
+| Expiry | Rollover Credits have no separate expiry date, but at each renewal any Credits above your plan's Rollover Bank Cap are not carried over. Promotional Credits expire as stated when they are granted (Section 6.2). |
+| Plan Downgrade | When a downgrade takes effect, any Credits above the lower plan's Rollover Bank Cap are removed at once. |
+| Subscription Cancellation | If you cancel your subscription, your plan Credits and Rollover Credits end when the paid billing period ends (Section 4.13). |
 | Account Cancellation or Termination | All unused Credits expire immediately when the Organization Account is closed or terminated under [Section 10](#10-suspension-cancellation-and-termination). They are not refunded or reinstated if you reopen an Account. |
 
 ### 6.5 Rate & Policy Changes
@@ -416,7 +428,7 @@ Where to Find Current Pricing. All tasks, their Credit costs, and plan-specific 
 
 | Situation | Credit refund? |
 | --- | --- |
-| Platform fault causes task failure | Yes. Full automatic re-credit. |
+| Platform fault (Section 6.3) causes task failure | Yes. Full automatic re-credit. |
 | You cancel an in-progress task | No. Credits already consumed are not returned. |
 | A generation that delivered a result, including one you do not like | No. |
 | Downtime >24 consecutive hours attributable solely to ACT 3 AI | Yes. Upon written request within 30 days, we will credit an amount equal to the Credits you would have received under the Monthly Allocation for each full 24-hour period of outage. |
@@ -431,7 +443,7 @@ No cash refunds are provided; remedies are limited to re-crediting your Account.
 
 ### 6.8 Disputing a Credit Charge
 
-If you believe a Credit charge is incorrect, e-mail billing@ACT 3ai.com within 30 calendar days of the charge. We will review logs and respond in good faith. Failure to dispute within 30 days waives the claim.
+If you believe a Credit charge is incorrect, e-mail contactus@act3ai.com within 30 calendar days of the charge. We will review logs and respond in good faith. Failure to dispute within 30 days waives the claim.
 
 ### 6.9 Disclaimer
 
@@ -449,7 +461,7 @@ Our pricing, subscription tiers, and payment terms are available at https://app.
 
 - Subscription Billing. For monthly or yearly subscription plans, fees are billed in advance on a recurring basis (monthly or annually, as applicable) and are non-refundable, except as expressly provided in this Agreement. No refunds or credits will be issued for partial periods of service, plan upgrades or downgrades, cancellations, or unused subscription periods; however, your access to the Service will remain active for the duration of the paid billing period.
 - Usage-Based Billing. Certain features, such as additional generation credits or cloud rendering tasks, are billed based on your actual usage. Usage-based fees are calculated monthly in arrears and charged to your on-file payment method. A limited quantity of usage-based features may be included in your subscription plan without additional charge, as specified in your plan details.
-- Invoicing for Enterprise Plans. For Users on invoiced enterprise plans, fees are due in full, in U.S. Dollars, within 30 days of the invoice date, without deduction or setoff. Late payments may incur interest at the lesser of 1.5% per month or the maximum rate permitted by law, and ACT 3 AI reserves the right to charge for recovery expenses or suspend your Account until payment is received. You are responsible for all taxes, duties, or governmental assessments (except taxes based on ACT 3 AI's net income) associated with your use of the Service.
+- Invoicing for Enterprise Plans. For Users on invoiced enterprise plans, fees are due in full, in U.S. Dollars, within 30 days of the invoice date, without deduction or setoff. Late payments may incur interest at 1% per month, or the highest rate the law allows if lower, and ACT 3 AI reserves the right to charge for recovery expenses or suspend your Account until payment is received. You are responsible for all taxes, duties, or governmental assessments (except taxes based on ACT 3 AI's net income) associated with your use of the Service.
 
 ### 7.3 Payment Authorization
 
@@ -552,7 +564,7 @@ Much of the Output is generated by AI models from other companies; their terms a
 
 ### 9.6 Community Videos (Opt-In)
 
-**9.6.1 Opt-In.** Projects are private by default. You may choose to show one or more Projects or Outputs in Community Videos through the Project settings.
+**9.6.1 Opt-In.** Projects are private by default, which means they are not shown in Community Videos or to other Users (files in them are still delivered through unlisted links, Section 13.3(g)). You may choose to show one or more Projects or Outputs in Community Videos through the Project settings.
 
 **9.6.2 License.** For each Output you place in Community Videos, you grant ACT 3 AI a non-exclusive, worldwide, royalty-free, sublicensable license to display, perform, and distribute that Output, unaltered or in compilations, across ACT 3 AI products, marketing sites, demos, social-media channels, and in-product galleries.
 
@@ -598,7 +610,7 @@ You may cancel your Account with ACT 3 AI at any time through the Account settin
 
 ### 10.2 Effects of Cancellation
 
-Upon cancellation of your Account, ACT 3 AI will retain and use your information only as necessary to comply with our legal obligations, resolve disputes, enforce our agreements, or maintain encrypted backups, as outlined in our Privacy Policy contactus@act3ai.com. Barring legal requirements, we will delete your full profile and Your Content after the 30-day Download Window in Section 2.3. This information cannot be recovered once your Account is cancelled. Your Content that you have contributed to Projects owned by another Organization Account will not be deleted from those Projects. Downloading Your Content before the Download Window ends is your responsibility (Section 2.3(d)).
+Upon cancellation of your Account, ACT 3 AI will retain and use your information only as necessary to comply with our legal obligations, resolve disputes, enforce our agreements, or maintain encrypted backups, as outlined in our Privacy Policy (https://act3ai.com/docs/legal/privacy-policy). Barring legal requirements, we will delete your full profile and Your Content after the 30-day Download Window in Section 2.3. This information cannot be recovered once your Account is cancelled. Your Content that you have contributed to Projects owned by another Organization Account will not be deleted from those Projects. Downloading Your Content before the Download Window ends is your responsibility (Section 2.3(d)).
 
 ### 10.3 Suspension or Termination by ACT 3 AI
 
@@ -640,11 +652,11 @@ ACT 3 AI will not be liable for any damages, losses, or inconveniences arising f
 
 ### 11.1 Scope of API Access
 
-The ACT 3 AI APIs ("APIs") enable programmatic interaction with the Platform to access or manage features such as generative AI video creation, script processing, set design, character management, motion capture integration, or other functionalities, as detailed in our API documentation available at https://act3ai.com/api. Use of the APIs is subject to these Terms of Service, our Privacy Policy, and any additional API-specific terms provided in the documentation.
+The ACT 3 AI APIs ("APIs") enable programmatic interaction with the Platform to access or manage features such as generative AI video creation, script processing, set design, character management, motion capture integration, or other functionalities, as detailed in our API documentation. Use of the APIs is subject to these Terms of Service, our Privacy Policy, and any additional API-specific terms provided in the documentation.
 
 ### 11.2 Permitted Uses
 
-You may use the APIs and the MCP server, including through AI agents you run yourself, for your own creative projects and your Organization's, such as automating your own production workflows (e.g., automating video rendering or managing digital actors for your own films), provided such use complies with these Terms, Section 5.13, and all applicable laws. You may not use the APIs or the MCP server to provide, sell, or offer AI generation, or access to the Service or to any AI Provider's models, to third parties as your own product or service, including by building an application, website, or service whose own customers or users generate videos or other media through it, without a separate written agreement signed by an officer of ACT 3 AI (Section 5.13). If accessing the APIs on behalf of an Organization Account, you represent that you have the authority to bind the owner of the Organization Account to these Terms, and the owners of the Organization Account is responsible for all API activities conducted through the Organization Account.
+You may use the APIs and the MCP server, including through AI agents you run yourself, for your own creative projects and your Organization's, such as automating your own production workflows (e.g., automating video rendering or managing digital actors for your own films), provided such use complies with these Terms, Section 5.13, and all applicable laws. You may not use the APIs or the MCP server to provide, sell, or offer AI generation, or access to the Service or to any AI Provider's models, to third parties as your own product or service, including by building an application, website, or service whose own customers or users generate videos or other media through it, without a separate written agreement signed by an officer of ACT 3 AI (Section 5.13). If accessing the APIs on behalf of an Organization Account, you represent that you have the authority to bind the owner of the Organization Account to these Terms, and the owner of the Organization Account is responsible for all API activities conducted through the Organization Account.
 
 ### 11.3 Usage Limits and Restrictions
 
@@ -685,7 +697,7 @@ Inputs submitted and Outputs generated through the APIs or MCP are Your Content 
 Any personal information collected or processed through the APIs must comply with our Privacy Policy and [Section 5](#5-acceptable-use) (Acceptable Use) of these Terms. You are responsible for ensuring that your API usage does not violate third-party privacy rights.
 
 #### 11.6.3 Content Restrictions
-API-generated Content must comply with [Section 5](#5-acceptable-use) (Acceptable Use) and may be subject to automated scanning for inappropriate Content, as described in [Section 9](#9-your-content-ownership-use-and-export) (Your Content).
+API-generated Content must comply with [Section 5](#5-acceptable-use) (Acceptable Use) and may be reviewed by automated tools and human review, as described in [Section 14.8](#148-content-safety-and-moderation) (Content Safety and Moderation).
 
 ### 11.7 Modifications to APIs
 
@@ -728,8 +740,8 @@ If you believe that your Content was removed or disabled as a result of a mistak
 
 - Your physical or electronic signature;
 - Identification of the Content that was removed or disabled and the location where it appeared before removal;
-- A statement, under penalty of perjury, that you have a good faith belief that the Content was removed or disabled as a result of a mistake or misidentification;
-- Your name, address, telephone number, and email address, and a statement that you consent to the jurisdiction of the federal court in King County, Washington, and that you will accept service of process from the person who submitted the original takedown notice; and
+- A statement, under penalty of perjury, that you have a good faith belief that the Content was removed or disabled as a result of a mistake or misidentification; and
+- Your name, address, telephone number, and email address, and a statement that you consent to the jurisdiction of the federal court in King County, Washington, and that you will accept service of process from the person who submitted the original takedown notice.
 
 Upon receipt of a valid counter-notice, ACT 3 AI will forward it to the original complainant and, unless the complainant files a court action within 10 business days, we may restore the Content, as permitted by law.
 
@@ -763,7 +775,7 @@ ACT 3 AI, and our licensors, vendors, agents, and/or Content providers retain ow
 
 ### 13.2. ACT 3 AI Trademarks and Logos
 
-All trademarks, service marks, logos, and trade names associated with the Platform and Service (collectively, "ACT 3 AI Marks") are owned by ACT 3 AI, Inc. or our licensors. You may not use ACT 3 AI Marks without our prior written consent, which may be subject to our trademark guidelines and license provisions available at https://act3ai.com/trademarks. Unauthorized use of ACT 3 AI Marks is strictly prohibited and may violate trademark law.
+All trademarks, service marks, logos, and trade names associated with the Platform and Service (collectively, "ACT 3 AI Marks") are owned by ACT 3 AI, Inc. or our licensors. You may not use ACT 3 AI Marks without our prior written consent. Unauthorized use of ACT 3 AI Marks is strictly prohibited and may violate trademark law.
 
 ### 13.3. Actor Biometric Data
 
@@ -790,7 +802,7 @@ e. **Prohibited Uses.** You may not use the Platform to:
 
 f. **Legal Compliance.** Users must at all times comply with all applicable local, state, federal, and international Biometric Data protection laws when collecting, storing, or using Biometric Data, including (as applicable): the Illinois Biometric Information Privacy Act (BIPA); Texas Capture or Use of Biometric Identifier Act (CUBI); California Consumer Privacy Act (CCPA), the EU General Data Protection Regulation (GDPR), and SAG-AFTRA and other union or guild agreements.
 
-g. **Biometric Data Protection and Security.** ACT 3 AI implements industry-standard security protocols to protect Biometric Data and AI-Generated Content on the Platform from unauthorized use, access, or disclosure. [All Biometric Data on the Platform is encrypted at rest and in transit.] Retention of Biometric Data will not exceed the duration necessary for authorized use unless otherwise required by law or contract. To run features such as digital actors, character reference images, lip sync, and voices, the Platform sends images, video, and voice recordings containing Biometric Data to the AI Providers listed under Section 2.5, solely for that purpose. ACT 3 AI does not use Biometric Data to train AI models (Section 8). The consent you obtain under Section 13.3(c) must cover this processing.
+g. **Biometric Data Protection and Security.** ACT 3 AI uses reasonable administrative, technical and organizational measures designed to protect Biometric Data and AI-Generated Content on the Platform. Stored files are encrypted at rest. Files are delivered through unlisted links that we do not publish; anyone who has a link can open the file, so share links only with people you trust. No method of storage or transmission is completely secure, and we cannot guarantee absolute security. Retention of Biometric Data will not exceed the duration necessary for authorized use unless otherwise required by law or contract. To run features such as digital actors, character reference images, lip sync, and voices, the Platform sends images, video, and voice recordings containing Biometric Data to the AI Providers listed under Section 2.5, solely for that purpose. ACT 3 AI does not use Biometric Data to train AI models (Section 8). The consent you obtain under Section 13.3(c) must cover this processing.
 
 h. **Content Review and Enforcement.** We reserve the right to review Content for compliance with the terms in this Section 13 and may remove or restrict Content that violates these Terms or applicable laws. We may suspend or terminate Accounts that misuse actor Biometric Data or AI-Generated Content. Upon such termination, all copies of such AI-Generated Content using Biometric Data must be destroyed unless retention is legally required.
 
@@ -804,7 +816,7 @@ Ownership, licensing, AI training, and export of Your Content are governed only 
 
 ### 13.10. Copyright Infringement and DMCA Policy
 
-If you believe that any Content on the Platform infringes your copyright, you may submit a notice in accordance with our Digital Millennium Copyright Act (DMCA) Policy, available at https://act3ai.com/dmca. Please contact us at contactus@act3ai.com with your takedown request, ensuring it complies with DMCA requirements. You must consider legal uses, such as fair use or licensed Content, before submitting a takedown notice, as there may be consequences for false or frivolous claims. ACT 3 AI reserves the right to terminate the Accounts of repeat infringers in accordance with our DMCA Policy.
+If you believe that any Content on the Platform infringes your copyright, you may submit a notice in accordance with our Digital Millennium Copyright Act (DMCA) Policy in [Section 12](#12-copyright-infringement-and-dmca-policy) of these Terms. Please contact us at contactus@act3ai.com with your takedown request, ensuring it complies with DMCA requirements. You must consider legal uses, such as fair use or licensed Content, before submitting a takedown notice, as there may be consequences for false or frivolous claims. ACT 3 AI reserves the right to terminate the Accounts of repeat infringers in accordance with our DMCA Policy (Section 12.4).
 
 ### 13.11. Removal of Content
 
@@ -816,11 +828,11 @@ ACT 3 AI reserves the right, in our sole discretion, to refuse or remove any UGC
 
 ### 14.1. Scope of Additional Product Terms
 
-The ACT 3 AI Platform offers a range of features and products, including but not limited to script-to-screen workflows, AI-driven story generation, virtual set design, digital actor creation, motion capture integration, and video rendering services. These Additional Product Terms apply to your use of these features and any other services or products specified on the ACT 3 AI website at https://act3ai.com/product-terms. If these Additional Product Terms conflict with other provisions of the Terms of Service, these terms will govern with respect to the specific feature or product, except that no Additional Product Term reduces your rights under Section 8 (AI Training) or Section 9 (Your Content).
+The ACT 3 AI Platform offers a range of features and products, including but not limited to script-to-screen workflows, AI-driven story generation, virtual set design, digital actor creation, motion capture integration, and video rendering services. These Additional Product Terms apply to your use of these features. Product-specific terms, if any, are shown in the product where they apply. If these Additional Product Terms conflict with other provisions of the Terms of Service, these terms will govern with respect to the specific feature or product, except that no Additional Product Term reduces your rights under Section 8 (AI Training) or Section 9 (Your Content).
 
 ### 14.2. Subscription Tiers and Usage Limits
 
-The Platform operates on a subscription-based model with tiered plans (e.g., Free, Creator, Professional, Enterprise) that provide varying levels of access to features, generation credits, storage quotas, and concurrent job limits, as detailed at https://app.act3ai.com/settings/plans/. Your use of certain features, such as rendering tasks, AI-generated storyboards, or high-resolution video outputs, may consume generation credits or be subject to specific usage limits based on your subscription tier. Exceeding these limits may require upgrading your plan or purchasing additional credits, as described in [Section 7](#7-payment) (Payment). You are responsible for monitoring your usage to avoid service interruptions.
+The Platform operates on a subscription-based model with tiered plans (Free, Creator, Pro, Advanced Edition and Enterprise) that provide varying levels of access to features, generation credits, storage quotas, and concurrent job limits, as detailed at https://app.act3ai.com/settings/plans/. Your use of certain features, such as rendering tasks, AI-generated storyboards, or high-resolution video outputs, may consume generation credits or be subject to specific usage limits based on your subscription tier. Exceeding these limits may require upgrading your plan or purchasing additional credits, as described in [Section 7](#7-payment) (Payment). You are responsible for monitoring your usage to avoid service interruptions.
 
 ### 14.3. AI-Driven Features
 
@@ -838,7 +850,7 @@ Your use of AI-driven features is subject to the AI Training provisions in [Sect
 
 ### 14.4. Third-Party Integrations and Licenses
 
-The Platform integrates with third-party tools and services, such as Autodesk Character Creator, Blender, and Adobe Premiere Pro, to support features like 3D character creation, motion capture, and post-production workflows. Your use of these integrations may be subject to third-party license terms, which will be disclosed at the point of use or in the ACT 3 AI Additional Product Terms at https://act3ai.com/product-terms. For example, AI-generated outputs incorporating third-party assets (e.g., Metahuman characters, NVIDIA Audio2Face) may require compliance with the respective provider's licensing terms. You agree to comply with all applicable third-party terms and to ensure that your use of integrated tools does not violate any intellectual property rights.
+The Platform may work with third-party tools and services, such as Reallusion Character Creator and Blender, where available, to support features like 3D character creation, motion capture, and post-production workflows. The Platform does not integrate directly with Adobe Premiere Pro, but edits can be exported as OTIO, FCPXML and EDL files that Premiere Pro and other editing tools can import. Your use of third-party tools may be subject to third-party license terms, which, where they apply, will be disclosed at the point of use. For example, Outputs incorporating third-party assets may require compliance with the respective provider's licensing terms. You agree to comply with all applicable third-party terms and to ensure that your use of integrated tools does not violate any intellectual property rights.
 
 ### 14.5. Collaboration and Organization Features
 
@@ -850,7 +862,7 @@ b. **Ensuring all Users comply** with these Terms, including Acceptable Use Poli
 
 c. **Maintaining the confidentiality** of shared Content, as outlined in [Section 9.4](#94-the-limited-license-you-give-act-3-ai) (The Limited License You Give ACT 3 AI).
 
-You acknowledge that Content shared within an Organization Account may be accessible to other authorized Users, and you grant ACT 3 AI the necessary rights to facilitate such collaboration, as described in [Section 13](#13-intellectual-property) (Intellectual Property).
+You acknowledge that Content shared within an Organization Account may be accessible to other authorized Users, and you grant ACT 3 AI the necessary rights to facilitate such collaboration, as described in [Section 9.4](#94-the-limited-license-you-give-act-3-ai) (The Limited License You Give ACT 3 AI).
 
 ### 14.6. Commercial Use and Licensing
 
@@ -870,13 +882,13 @@ Certain features, such as new AI models, rendering options, or integration tools
 
 a. **Beta Previews may change or be discontinued** at any time without notice, and ACT 3 AI is not liable for any resulting loss or disruption;
 
-b. **You may receive confidential information** about Beta Previews, which you must keep confidential and use only for testing and evaluation purposes, as described in [Section 14.7](#147-beta-previews-and-experimental-features) (Beta Previews); and
+b. **You may receive confidential information** about Beta Previews, which you must keep confidential and use only for testing and evaluation purposes, as described in [Section 2.4](#24-beta-features) (Beta Features); and
 
 c. **Your feedback on Beta Previews** (e.g., suggestions, enhancement requests) grants ACT 3 AI a royalty-free, worldwide, transferable, sub-licensable, irrevocable, and perpetual license to use, modify, and incorporate such feedback into our products and services, as outlined in [Section 2.10](#210-feedback).
 
 ### 14.8. Content Safety and Moderation
 
-ACT 3 AI employs tools, such as the Inappropriate Content Scanner, to review certain inputs (e.g., motion capture uploads, character textures) and AI-generated outputs for compliance with [Section 5](#5-acceptable-use) (Acceptable Use Policies). You agree not to use the Platform to create or upload any Content that is unlawful, obscene, defamatory, discriminatory, or otherwise prohibited. ACT 3 AI reserves the right to remove or restrict access to any Content that violates these Terms, as described in [Section 13](#13-intellectual-property) (Intellectual Property).
+ACT 3 AI may use automated tools and human review to review certain inputs (e.g., motion capture uploads, character textures) and Outputs for compliance with [Section 5](#5-acceptable-use) (Acceptable Use Policies). You agree not to use the Platform to create or upload any Content that is unlawful, obscene, defamatory, discriminatory, or otherwise prohibited. ACT 3 AI reserves the right to remove or restrict access to any Content that violates these Terms, as described in [Section 13.11](#1311-removal-of-content) (Removal of Content).
 
 ### 14.9. Export and Deliverable Formats
 
@@ -986,7 +998,7 @@ ACT 3 AI, Inc. will: (i) promptly notify you in writing of any claim, demand, su
 
 ### 17.3 Scope of Indemnification
 
-Your indemnification obligations extend to claims arising from your use of AI-driven features (e.g., virtual set design, digital actors, rendering services), including any misuse of third-party tools or assets integrated with the Platform (e.g., Autodesk Character Creator, Blender, as described in [Section 14](#14-additional-product-terms) (Additional Product Terms). You are responsible for ensuring that your inputs and outputs comply with all applicable laws and third-party license terms, and you will indemnify ACT 3 AI Parties for any claims resulting from non-compliance.
+Your indemnification obligations extend to claims arising from your use of AI-driven features (e.g., virtual set design, digital actors, rendering services), including any misuse of third-party tools or assets integrated with the Platform (e.g., Reallusion Character Creator, Blender), as described in [Section 14](#14-additional-product-terms) (Additional Product Terms). You are responsible for ensuring that your inputs and outputs comply with all applicable laws and third-party license terms, and you will indemnify ACT 3 AI Parties for any claims resulting from non-compliance.
 
 ### 17.4 ACT 3 AI Does Not Indemnify You
 
@@ -998,7 +1010,7 @@ ACT 3 AI does not indemnify, defend or hold harmless you, your Organization, or 
 
 ### 18.1 Binding Arbitration
 
-By creating an Account and using the Services, you agree that any Dispute shall be determined by binding arbitration. Arbitration shall be administered by the American Bar Association ("AAA") under its Consumer Arbitration Rules and, where applicable, the AAA Supplementary Procedures for the Resolution of Disputes Involving Small Claims. The arbitration shall be conducted by a single, neutral arbitrator, and judgment on the award rendered by the arbitrator may be entered in any court having jurisdiction. As used in this Section 18, a "Dispute" is any dispute, action, controversy or claim arising out of or relating to the Agreement, including these Terms, the Platform, the Services, or the breach, termination, enforcement, interpretation, or validity thereof, including the determination of the scope and applicability of this agreement to arbitrate, whether based in contract, tort, statute, fraud, misrepresentation, or any other legal basis. This includes Disputes arising before or after the effective date of these Terms.
+By creating an Account and using the Services, you agree that any Dispute shall be determined by binding arbitration. Arbitration shall be administered by the American Arbitration Association ("AAA") under its Consumer Arbitration Rules and, where applicable, the AAA Supplementary Procedures for the Resolution of Disputes Involving Small Claims. The arbitration shall be conducted by a single, neutral arbitrator, and judgment on the award rendered by the arbitrator may be entered in any court having jurisdiction. As used in this Section 18, a "Dispute" is any dispute, action, controversy or claim arising out of or relating to the Agreement, including these Terms, the Platform, the Services, or the breach, termination, enforcement, interpretation, or validity thereof, including the determination of the scope and applicability of this agreement to arbitrate, whether based in contract, tort, statute, fraud, misrepresentation, or any other legal basis. This includes Disputes arising before or after the effective date of these Terms.
 
 ### 18.2 Governing Law and Location
 
@@ -1006,11 +1018,11 @@ The arbitration shall take place in Seattle, Washington, unless the parties othe
 
 ### 18.3 No Class Actions
 
-You and ACT 3 AI agree to resolve any Dispute on an individual basis and waive the right to bring or participate in, or seek relief on, any class, collective, or representative action. The arbitrator shall not have the authority to consolidate claims or otherwise preside over any form of a representative or class proceeding. that any arbitration shall be conducted in your individual capacities only and not as a class action or other representative proceeding. [This class action waiver does not prohibit you and ACT 3 AI from resolving Disputes through a settlement approved by a court.]
+You and ACT 3 AI agree to resolve any Dispute on an individual basis and waive the right to bring or participate in, or seek relief on, any class, collective, or representative action. The arbitrator shall not have the authority to consolidate claims or otherwise preside over any form of a representative or class proceeding. This class action waiver does not prohibit you and ACT 3 AI from resolving Disputes through a settlement approved by a court.
 
 ### 18.4 Opt-Out Procedure
 
-You may opt out of this arbitration agreement by sending written notice to us at contactus@act3ai.com within 30 days of first accepting these Terms[, including by using any of the Services]. The opt-out notice must include your full name, the email address associated with your Account, and a clear statement that you decline arbitration.
+You may opt out of this arbitration agreement by sending written notice to us at contactus@act3ai.com within 30 days of first accepting these Terms, including by using any of the Services. The opt-out notice must include your full name, the email address associated with your Account, and a clear statement that you decline arbitration.
 
 ### 18.5 Exceptions to Arbitration
 
@@ -1058,7 +1070,7 @@ Your use of the Platform does not create any agency, partnership, joint venture,
 
 ### 19.3 No Third-Party Beneficiaries
 
-Except as expressly provided in this Agreement, nothing in this Agreement is intended to confer any rights or benefits on any third party. You are not a third-party beneficiary of ACT 3 AI's agreements with AI Providers, including any indemnity an AI Provider gives ACT 3 AI, which is for ACT 3 AI alone (Section 17.4). ACT 3 AI, Inc. may assign or delegate these Terms of Service and/or our Privacy Policy, in whole or in part, to any person or entity at any time, with or without your consent, including the license grants in [Section 13](#13-intellectual-property) (Intellectual Property). You may not assign or delegate any rights or obligations under this Agreement without our prior written consent, and any unauthorized assignment or delegation by you is void.
+Except as expressly provided in this Agreement, nothing in this Agreement is intended to confer any rights or benefits on any third party. You are not a third-party beneficiary of ACT 3 AI's agreements with AI Providers, including any indemnity an AI Provider gives ACT 3 AI, which is for ACT 3 AI alone (Section 17.4). ACT 3 AI, Inc. may assign or delegate these Terms of Service and/or our Privacy Policy, in whole or in part, to any person or entity at any time, with or without your consent, including the license grants in [Section 9](#9-your-content-ownership-use-and-export) (Your Content: Ownership, Use, and Export). You may not assign or delegate any rights or obligations under this Agreement without our prior written consent, and any unauthorized assignment or delegation by you is void.
 
 ### 19.4 Contractual Statute of Limitations
 
@@ -1074,7 +1086,7 @@ If any provision of this Agreement is found to be invalid or unenforceable by a 
 
 ### 19.7 No Waiver
 
-Any failure by ACT 3 to enforce any provision of this Agreement will not constitute a waiver of our right to enforce that provision or any other provision. Our rights under this Agreement will survive any termination of this Agreement, as described in [Section 10](#10-suspension-cancellation-and-termination) (Suspension, Cancellation, and Termination).
+Any failure by ACT 3 AI to enforce any provision of this Agreement will not constitute a waiver of our right to enforce that provision or any other provision. Our rights under this Agreement will survive any termination of this Agreement, as described in [Section 10](#10-suspension-cancellation-and-termination) (Suspension, Cancellation, and Termination).
 
 ### 19.8 Complete Agreement and Changes to These Terms
 
